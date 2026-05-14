@@ -1,0 +1,148 @@
+{
+  "tasks": [
+    {
+      "id": "prapor-1",
+      "title": "Debut",
+      "trader": "Prapor",
+      "location": "Customs",
+      "objectives": [
+        "Eliminate 5 Scavs on Customs",
+        "Find 2 MP‑133 12ga shotguns in raid",
+        "Hand over 2 MP‑133 12ga shotguns"
+      ],
+      "description": "Prapor wants you to thin out the scav population on Customs and collect a couple of MP‑133 shotguns to show your dedication.",
+      "rewards": "AKS‑74U, ammunition, and experience",
+      "prerequisites": [],
+      "countsForKappa": true
+    },
+    {
+      "id": "prapor-2",
+      "title": "Checking",
+      "trader": "Prapor",
+      "location": "Factory / Customs",
+      "objectives": [
+        "Obtain the bronze pocket watch on a chain on Customs",
+        "Survive and extract from the location",
+        "Hand over the watch to Prapor"
+      ],
+      "description": "Recover Prapor's bronze pocket watch from a truck at Customs. You'll need the Machinery key to access it.",
+      "rewards": "PP‑91 Kedr submachine gun and supplies",
+      "prerequisites": ["Debut"],
+      "countsForKappa": true
+    },
+    {
+      "id": "therapist-1",
+      "title": "Shortage",
+      "trader": "Therapist",
+      "location": "Any",
+      "objectives": [
+        "Find 3 Salewa first aid kits in raid",
+        "Hand over 3 Salewa first aid kits"
+      ],
+      "description": "The Therapist's clinic is running low on first aid kits. She needs you to bring her Salewa kits as soon as possible.",
+      "rewards": "IFAK, bandages, money",
+      "prerequisites": [],
+      "countsForKappa": true
+    },
+    {
+      "id": "therapist-2",
+      "title": "Operation Aquarius – Part 1",
+      "trader": "Therapist",
+      "location": "Dorms",
+      "objectives": [
+        "Locate the water hidden inside Dorm Room 206 on Customs",
+        "Survive and extract from Customs",
+        "Hand over the water to Therapist"
+      ],
+      "description": "Gain access to Dorm Room 206 on Customs and retrieve the bottled water left there by Therapist's helpers.",
+      "rewards": "Roubles, experience, and reputation",
+      "prerequisites": ["Shortage"],
+      "countsForKappa": true
+    },
+    {
+      "id": "therapist-3",
+      "title": "General Wares",
+      "trader": "Therapist",
+      "location": "Interchange",
+      "objectives": [
+        "Find 2 Can of beef stew (Large) in raid",
+        "Find 2 Bottles of water (0.6L) in raid",
+        "Hand over the items to Therapist"
+      ],
+      "description": "The Therapist is looking to stock up on some basic supplies. Bring her beef stew and water found in raid.",
+      "rewards": "Medications and reputation",
+      "prerequisites": ["Operation Aquarius – Part 1"],
+      "countsForKappa": true
+    },
+    {
+      "id": "skier-1",
+      "title": "Supplier",
+      "trader": "Skier",
+      "location": "Any",
+      "objectives": [
+        "Find 7.62×39mm 30‑round magazine for AK and hand over",
+        "Find Tushonka in raid and hand over 4 cans"
+      ],
+      "description": "Skier wants to check if you can deliver some basic goods. Get him a few 7.62 AK magazines and cans of tushonka.",
+      "rewards": "PP‑91 Kedr‐B and supplies",
+      "prerequisites": ["Debut"],
+      "countsForKappa": true
+    },
+    {
+      "id": "skier-2",
+      "title": "The Extortionist",
+      "trader": "Skier",
+      "location": "Customs",
+      "objectives": [
+        "Find the hidden valuable cargo on Customs",
+        "Obtain the documents in the bunkhouse",
+        "Hand over the valuable cargo and the documents"
+      ],
+      "description": "Recover a valuable jacket with documents hidden in a stash at Customs. Watch out for other players!",
+      "rewards": "Weapon accessories and money",
+      "prerequisites": ["Supplier"],
+      "countsForKappa": true
+    },
+    {
+      "id": "mechanic-1",
+      "title": "Gunsmith – Part 1",
+      "trader": "Mechanic",
+      "location": "Any",
+      "objectives": [
+        "Modify an MP‑133 to comply with the required specifications"
+      ],
+      "description": "Mechanic has given you your first gunsmithing task: modify an MP‑133 shotgun so that it meets a list of ergonomic and part requirements.",
+      "rewards": "Reputation, technical stash items",
+      "prerequisites": [],
+      "countsForKappa": true
+    },
+    {
+      "id": "mechanic-2",
+      "title": "Gunsmith – Part 2",
+      "trader": "Mechanic",
+      "location": "Any",
+      "objectives": [
+        "Modify an AKS‑74U to comply with the required specifications"
+      ],
+      "description": "Continuing the gunsmith series, Mechanic asks you to tune an AKS‑74U with better ergonomics, recoil control, and compactness.",
+      "rewards": "Reputation, parts, and experience",
+      "prerequisites": ["Gunsmith – Part 1"],
+      "countsForKappa": true
+    },
+    {
+      "id": "peacekeeper-1",
+      "title": "Fishing Gear",
+      "trader": "Peacekeeper",
+      "location": "Shoreline",
+      "objectives": [
+        "Mark the first boat with an MS2000 marker",
+        "Mark the second boat with an MS2000 marker",
+        "Survive and extract from Shoreline"
+      ],
+      "description": "Peacekeeper needs intel on boats used by scav smugglers on Shoreline. Plant markers on the boats and make it out alive.",
+      "rewards": "USD, reputation, and equipment",
+      "prerequisites": ["Debut"],
+      "countsForKappa": true
+    }
+  ]
+}

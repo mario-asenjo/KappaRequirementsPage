@@ -1,0 +1,55 @@
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import useLocalStorage from '../hooks/useLocalStorage';
+import { Task } from '../types';
+
+interface SidebarProps {
+  tasks: Task[];
+}
+
+/**
+ * Sidebar lists all traders for whom tasks exist. For each trader it also
+ * displays a small badge showing how many of their tasks are completed. The
+ * links use NavLink to automatically apply an active class when the route
+ * matches. On small screens the sidebar collapses into a vertical list.
+ */
+const Sidebar: React.FC<SidebarProps> = ({ tasks }) => {
+  const [completedIds] = useLocalStorage<string[]>('completedTasks', []);
+
+  // Derive a sorted list of unique trader names from the tasks
+  const traders = Array.from(new Set(tasks.map((t) => t.trader))).sort();
+
+  return (
+    <nav
+      className="d-flex flex-column bg-white border-end"
+      style={{ width: '220px', minWidth: '200px' }}
+    >
+      <div className="list-group list-group-flush">
+        {traders.map((trader) => {
+          const traderTasks = tasks.filter((t) => t.trader === trader);
+          const completedForTrader = traderTasks.filter((t) =>
+            completedIds.includes(t.id)
+          ).length;
+          return (
+            <NavLink
+              key={trader}
+              to={`/trader/${encodeURIComponent(trader)}`}
+              className={({ isActive }) =>
+                `list-group-item list-group-item-action d-flex justify-content-between align-items-center ${
+                  isActive ? 'active' : ''
+                }`
+              }
+            >
+              <span>{trader}</span>
+              <span className="badge bg-secondary rounded-pill">
+                {completedForTrader}/{traderTasks.length}
+              </span>
+            </NavLink>
+          );
+        })}
+      </div>
+    </nav>
+  );
+};
+
+export default Sidebar;
