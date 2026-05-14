@@ -1,0 +1,40 @@
+.app-shell {
+  min-height: 100vh;
+}
+
+.app-body {
+  min-height: 0;
+}
+
+.app-sidebar {
+  flex: 0 0 220px;
+  overflow-y: auto;
+}
+
+.app-main {
+  background: linear-gradient(180deg, #f8f9fa 0%, #eef2f6 100%);
+}
+
+.card {
+  box-shadow: 0 0.35rem 1rem rgba(20, 32, 46, 0.08);
+}
+
+@media (max-width: 767.98px) {
+  .navbar {
+    align-items: flex-start;
+  }
+
+  .kappa-progress {
+    flex-basis: 100%;
+  }
+
+  .app-sidebar {
+    flex: 0 0 auto;
+    max-height: 35vh;
+    overflow-y: auto;
+  }
+
+  .app-main {
+    min-height: 0;
+  }
+}

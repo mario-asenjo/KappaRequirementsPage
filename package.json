@@ -5,9 +5,11 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "update:tasks": "tsx scripts/fetchTasks.ts",
     "preview": "vite preview"
   },
   "dependencies": {
+    "bootstrap": "^5.3.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.13.0"
@@ -17,6 +19,7 @@
     "@types/react-dom": "^18.2.0",
     "@types/react-router-dom": "^5.3.3",
     "@vitejs/plugin-react": "^4.0.0",
+    "tsx": "^4.22.0",
     "typescript": "^5.0.2",
     "vite": "^4.2.0"
   }

@@ -21,8 +21,8 @@ const Sidebar: React.FC<SidebarProps> = ({ tasks }) => {
 
   return (
     <nav
-      className="d-flex flex-column bg-white border-end"
-      style={{ width: '220px', minWidth: '200px' }}
+      className="app-sidebar bg-white border-end"
+      aria-label="Comerciantes"
     >
       <div className="list-group list-group-flush">
         {traders.map((trader) => {

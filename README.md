@@ -8,6 +8,8 @@ Este repositorio contiene una aplicación SPA escrita en **React** (con Vite y T
 - **Seguimiento persistente**: las misiones marcadas como completadas se guardan en `localStorage` para que tu progreso persista entre sesiones sin necesidad de registrarse.
 - **Resumen global de Kappa**: una barra de progreso en la cabecera indica cuántas misiones que cuentan para Kappa has completado y cuál es el avance total.
 - **Página de detalle**: cada misión tiene una página dedicada con su descripción, objetivos, prerrequisitos y recompensas.
+- **Datos sincronizables**: `src/data/tasks.json` se puede regenerar desde `tarkov.dev` con las misiones que cuentan para Kappa.
+- **Estilos versionados**: Bootstrap se instala como dependencia npm y se complementa con estilos locales responsivos en `src/styles.css`.
 
 ## Estructura del proyecto
 
@@ -22,13 +24,14 @@ kappa-tracker/
 ├── src/
 │   ├── main.tsx        Punto de entrada de React
 │   ├── App.tsx         Estructura principal con rutas y layout
+│   ├── styles.css      Ajustes visuales y responsivos del layout
 │   ├── types.ts        Definición de tipos para las misiones
 │   ├── hooks/
 │   │   └── useLocalStorage.ts Hook para persistir datos en localStorage
 │   ├── components/     Componentes reutilizables (Header, Sidebar, TaskCard)
 │   ├── pages/          Vistas de alto nivel (Home, QuestListPage, QuestDetailPage)
 │   └── data/
-│       └── tasks.json  Base de datos de misiones (ejemplo)
+│       └── tasks.json  Base de datos de misiones sincronizada desde tarkov.dev
 └── scripts/
     └── fetchTasks.ts   Script opcional para actualizar las misiones desde una API
 ```
@@ -54,13 +57,13 @@ kappa-tracker/
 
 ## Actualizar la lista de misiones
 
-El archivo `src/data/tasks.json` contiene un ejemplo de misiones. Para actualizarlo de forma automática se puede crear un script que consulte la API pública de [tarkov.dev](https://api.tarkov.dev/graphql) o bien haga scraping de la wiki oficial. El archivo `scripts/fetchTasks.ts` incluye un ejemplo básico de cómo podría implementarse esta descarga mediante GraphQL. Para usarlo:
+El archivo `src/data/tasks.json` contiene las misiones marcadas por [tarkov.dev](https://api.tarkov.dev/graphql) como necesarias para Kappa. Para regenerarlo desde la API pública:
 
 ```bash
-node scripts/fetchTasks.ts
+npm run update:tasks
 ```
 
-Esto sobrescribirá `src/data/tasks.json` con los datos más recientes. Por defecto el script no se ejecuta automáticamente; deberás lanzarlo manualmente cuando quieras actualizar la base de datos. Asegúrate de que `node-fetch` o cualquier librería necesaria esté instalada en tu entorno de desarrollo.
+Esto sobrescribe `src/data/tasks.json` con los datos más recientes e incluye metadata con la fuente, fecha de sincronización y total de misiones Kappa. La última sincronización registrada en este repositorio es `2026-05-14` y contiene `257` misiones Kappa.
 
 ## Despliegue en Cloudflare Pages
 
@@ -70,4 +73,4 @@ Esto sobrescribirá `src/data/tasks.json` con los datos más recientes. Por defe
 
 ## Nota sobre scraping y API
 
-Actualmente el proyecto incluye una pequeña selección de misiones de ejemplo. Para una cobertura completa será necesario hacer scraping de la wiki de Fandom o consumir una API como `tarkov.dev`. Debido a las protecciones de Cloudflare, los scrapers necesitan ejecutarse en un entorno que soporte JavaScript y manejar los desafíos de Cloudflare (por ejemplo, usando Puppeteer/Playwright). Esto se deja como tarea futura y no afecta al funcionamiento básico de la aplicación.
+La fuente primaria del proyecto es `tarkov.dev`, que a su vez enlaza a la wiki de Fandom cuando existe una guía externa para la misión. Si en el futuro se necesita enriquecer descripciones o recompensas no expuestas por la API, el scraping de Fandom debería ejecutarse como paso separado y con control de errores para no bloquear el build.
