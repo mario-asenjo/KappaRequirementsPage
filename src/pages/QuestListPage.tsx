@@ -29,11 +29,11 @@ const QuestListPage: React.FC<QuestListPageProps> = ({ tasks }) => {
 
   return (
     <div className="container-fluid">
-      <div className="d-flex align-items-center mb-3">
-          <h2 className="me-auto">Misiones de {trader}</h2>
+      <div className="page-heading d-flex flex-column flex-sm-row align-items-sm-center gap-2 mb-3">
+          <h2 className="me-auto mb-0">Misiones de {trader}</h2>
           <Link to="/" className="btn btn-link">← Volver</Link>
       </div>
-      <div className="row mb-3">
+      <div className="filter-panel row mb-3">
         <div className="col-md-6 col-lg-4 mb-2">
           <input
             type="text"
@@ -57,7 +57,7 @@ const QuestListPage: React.FC<QuestListPageProps> = ({ tasks }) => {
         </div>
       </div>
       {filtered.length === 0 ? (
-        <p>No hay misiones que coincidan con tu búsqueda.</p>
+        <p className="empty-state">No hay misiones que coincidan con tu busqueda.</p>
       ) : (
         filtered.map((task) => <TaskCard key={task.id} task={task} />)
       )}

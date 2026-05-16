@@ -1,147 +1,4068 @@
 {
+  "metadata": {
+    "source": "https://api.tarkov.dev/graphql",
+    "syncedAt": "2026-05-14T14:33:15.426Z",
+    "kappaTaskCount": 257
+  },
   "tasks": [
     {
-      "id": "prapor-1",
-      "title": "Debut",
-      "trader": "Prapor",
+      "id": "5c51aac186f77432ea65c552",
+      "title": "Collector",
+      "trader": "Fence",
+      "objectives": [
+        "Hand over the found in raid item: Old firesteel",
+        "Hand over the found in raid item: Antique axe",
+        "Hand over the found in raid item: Battered antique book",
+        "Hand over the found in raid item: #FireKlean gun lube",
+        "Hand over the found in raid item: Golden rooster figurine",
+        "Hand over the found in raid item: Silver Badge",
+        "Hand over the found in raid item: Deadlyslob's beard oil",
+        "Hand over the found in raid item: Golden 1GPhone smartphone",
+        "Hand over the found in raid item: Jar of DevilDog mayo",
+        "Hand over the found in raid item: Can of sprats",
+        "Hand over the found in raid item: Fake mustache",
+        "Hand over the found in raid item: Kotton beanie",
+        "Hand over the found in raid item: Raven figurine",
+        "Hand over the found in raid item: Pestily plague mask",
+        "Hand over the found in raid item: Shroud half-mask",
+        "Hand over the found in raid item: Can of Dr. Lupo's coffee beans",
+        "Hand over the found in raid item: 42 Signature Blend English Tea",
+        "Hand over the found in raid item: Veritas guitar pick",
+        "Hand over the found in raid item: Evasion armband",
+        "Hand over the found in raid item: Can of RatCola soda",
+        "Hand over the found in raid item: Loot Lord plushie",
+        "Hand over the found in raid item: Smoke balaclava",
+        "Hand over the found in raid item: WZ Wallet",
+        "Hand over the found in raid item: LVNDMARK's rat poison",
+        "Hand over the found in raid item: Missam forklift key",
+        "Hand over the found in raid item: Video cassette with the Cyborg Killer movie",
+        "Hand over the found in raid item: BakeEzy cook book",
+        "Hand over the found in raid item: JohnB Liquid DNB glasses",
+        "Hand over the found in raid item: Baddie's red beard",
+        "Hand over the found in raid item: DRD body armor",
+        "Hand over the found in raid item: Gingy keychain",
+        "Hand over the found in raid item: Golden egg",
+        "Hand over the found in raid item: Press pass (issued for NoiceGuy)",
+        "Hand over the found in raid item: Axel parrot figurine",
+        "Hand over the found in raid item: BEAR Buddy plush toy",
+        "Hand over the found in raid item: Glorious E lightweight armored mask",
+        "Hand over the found in raid item: Inseq gas pipe wrench",
+        "Hand over the found in raid item: Viibiin sneaker",
+        "Hand over the found in raid item: Tamatthi kunai knife replica",
+        "Hand over the found in raid item: Nut Sack balaclava",
+        "Hand over the found in raid item: Mazoni golden dumbbell",
+        "Hand over the found in raid item: Tigzresq splint",
+        "Hand over the found in raid item: Domontovich ushanka hat"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Collector",
+      "prerequisites": [
+        "The Tarkov Shooter - Part 8",
+        "The Survivalist Path - Junkie",
+        "The Huntsman Path - Justice",
+        "The Huntsman Path - Controller",
+        "The Huntsman Path - Evil Watchman",
+        "Every Hunter Knows This",
+        "Claustrophobia",
+        "Rite of Passage",
+        "Search Mission",
+        "Belka and Strelka",
+        "Stirrup",
+        "Car Repair",
+        "Possessor",
+        "Postman Pat - Part 2",
+        "Bad Habit",
+        "Insider",
+        "The Huntsman Path - Factory Chief",
+        "Broadcast - Part 1",
+        "The Walls Have Eyes",
+        "All Is Revealed",
+        "Passion for Ergonomics",
+        "A Shooter Born in Heaven",
+        "Classified Technologies",
+        "Surplus Goods",
+        "Revision - Lighthouse",
+        "Signal - Part 4",
+        "Safe Corridor",
+        "Dragnet",
+        "Inventory Check",
+        "Corporate Secrets",
+        "Break the Deal",
+        "Closer to the People",
+        "The Cult - Part 2",
+        "Easy Job - Part 2",
+        "Reconnaissance",
+        "Documents",
+        "The Hermit",
+        "Health Care Privacy - Part 6",
+        "Vitamins - Part 2",
+        "The Huntsman Path - Outcasts",
+        "TerraGroup Employee",
+        "Minibus",
+        "Private Club",
+        "Ambulance",
+        "Insomnia",
+        "Energy Crisis",
+        "Charisma Brings Success",
+        "Regulated Materials",
+        "No Fuss Needed",
+        "Drug Trafficking",
+        "Fishing Place",
+        "Scavenger",
+        "Living High is Not a Crime - Part 2",
+        "Fertilizers",
+        "The Huntsman Path - Eraser - Part 2",
+        "Missing Cargo",
+        "Peacekeeping Mission",
+        "The Guide",
+        "Hunting Trip",
+        "Decontamination Service",
+        "Flint",
+        "Psycho Sniper",
+        "Perfect Mediator",
+        "Import",
+        "Stray Dogs",
+        "Test Drive - Part 6",
+        "Crisis",
+        "Gunsmith - Part 22",
+        "Supervisor",
+        "Intimidator"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5d24b81486f77439c92d6ba8",
+      "title": "Acquaintance",
+      "trader": "Jaeger",
+      "objectives": [
+        "Hand over the found in raid Iskra ration packs",
+        "Hand over the found in raid Packs of instant noodles",
+        "Hand over the found in raid Cans of beef stew (Large)"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Acquaintance",
+      "prerequisites": [
+        "Introduction"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5d25e46e86f77409453bce7c",
+      "title": "Ambulance",
+      "trader": "Jaeger",
+      "objectives": [
+        "Hand over the defibrillator",
+        "Find CMS surgical kits in raid",
+        "Find Portable defibrillator in raid",
+        "Hand over the CMS kits"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Ambulance",
+      "prerequisites": [
+        "Shady Business"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "669fa3979b0ce3feae01a130",
+      "title": "Claustrophobia",
+      "trader": "Jaeger",
+      "location": "Factory",
+      "objectives": [
+        "Eliminate any target in the old cellars while using a shotgun on Factory"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Claustrophobia",
+      "prerequisites": [
+        "The Huntsman Path - Forest Cleaning"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5d25e48186f77443e625e386",
+      "title": "Courtesy Visit",
+      "trader": "Jaeger",
+      "location": "Shoreline",
+      "objectives": [
+        "Locate the chairman's house in the abandoned village on Shoreline",
+        "Locate the fisherman's house in the abandoned village on Shoreline",
+        "Locate the priest's house in the abandoned village on Shoreline",
+        "Survive and extract from the location with the \"Survived\" exit status"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Courtesy_Visit",
+      "prerequisites": [
+        "The Survivalist Path - Tough Guy"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "669fa3a08b4a64b332041ff7",
+      "title": "Dragnet",
+      "trader": "Jaeger",
+      "location": "Factory",
+      "objectives": [
+        "Locate and obtain the chemical container at the TerraGroup warehouse on Factory",
+        "Hand over the chemical container"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Dragnet",
+      "prerequisites": [
+        "One Less Loose End"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "66b38e144f2ab7cc530c3fe7",
+      "title": "Every Hunter Knows This",
+      "trader": "Jaeger",
+      "objectives": [
+        "Locate a good tripwire installation spot on Factory",
+        "Locate a good tripwire installation spot on Customs"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Every_Hunter_Knows_This",
+      "prerequisites": [
+        "Rough Tarkov"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5d25e4b786f77408251c4bfc",
+      "title": "Fishing Place",
+      "trader": "Jaeger",
+      "objectives": [
+        "Find TerraGroup Labs access keycards in raid",
+        "Hand over the access keycards"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Fishing_Place",
+      "prerequisites": [
+        "Nostalgia"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5d25e4ca86f77409dd5cdf2c",
+      "title": "Hunting Trip",
+      "trader": "Jaeger",
+      "location": "Woods",
+      "objectives": [
+        "Locate and neutralize Shturman with a headshot from over 40 meters away while using an M700 sniper rifle with the specified scope"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Hunting_Trip",
+      "prerequisites": [
+        "The Huntsman Path - Woods Keeper"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5d25e4ad86f77443e625e387",
+      "title": "Nostalgia",
+      "trader": "Jaeger",
+      "location": "Shoreline",
+      "objectives": [
+        "Locate Jaeger's Health Resort room with a view of the bay on Shoreline",
+        "Obtain Jaeger's photo album",
+        "Hand over the photo album"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Nostalgia",
+      "prerequisites": [
+        "Courtesy Visit"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "608a768d82e40b3c727fd17d",
+      "title": "Pest Control",
+      "trader": "Jaeger",
+      "location": "Reserve",
+      "objectives": [
+        "Eliminate Scavs inside the main barracks on Reserve"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Pest_Control",
+      "prerequisites": [
+        "Reserve"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5d25e4d586f77443e625e388",
+      "title": "Reserve",
+      "trader": "Jaeger",
+      "location": "Reserve",
+      "objectives": [
+        "Locate the food storage location on Reserve",
+        "Survive and extract from the location"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Reserve_(quest)",
+      "prerequisites": [
+        "The Delicious Sausage"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "675c1ec7a46173572a0bf20a",
+      "title": "Rite of Passage",
+      "trader": "Jaeger",
       "location": "Customs",
       "objectives": [
-        "Eliminate 5 Scavs on Customs",
-        "Find 2 MP‑133 12ga shotguns in raid",
-        "Hand over 2 MP‑133 12ga shotguns"
+        "Eliminate Scavs at the old gas station on Customs",
+        "Eliminate Scavs at the new gas station on Customs",
+        "Hand over the found in raid item: Metal fuel tank"
       ],
-      "description": "Prapor wants you to thin out the scav population on Customs and collect a couple of MP‑133 shotguns to show your dedication.",
-      "rewards": "AKS‑74U, ammunition, and experience",
-      "prerequisites": [],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Rite_of_Passage",
+      "prerequisites": [
+        "Work Smarter"
+      ],
       "countsForKappa": true
     },
     {
-      "id": "prapor-2",
-      "title": "Checking",
-      "trader": "Prapor",
-      "location": "Factory / Customs",
+      "id": "66b38c7bf85b8bf7250f9cb6",
+      "title": "Rough Tarkov",
+      "trader": "Jaeger",
       "objectives": [
-        "Obtain the bronze pocket watch on a chain on Customs",
-        "Survive and extract from the location",
-        "Hand over the watch to Prapor"
+        "Locate the heavily mined area on Woods",
+        "Locate the Claymore mine on Ground Zero"
       ],
-      "description": "Recover Prapor's bronze pocket watch from a truck at Customs. You'll need the Machinery key to access it.",
-      "rewards": "PP‑91 Kedr submachine gun and supplies",
-      "prerequisites": ["Debut"],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Rough_Tarkov",
+      "prerequisites": [
+        "Acquaintance"
+      ],
       "countsForKappa": true
     },
     {
-      "id": "therapist-1",
-      "title": "Shortage",
-      "trader": "Therapist",
-      "location": "Any",
+      "id": "5d25e48d86f77408251c4bfb",
+      "title": "Shady Business",
+      "trader": "Jaeger",
       "objectives": [
-        "Find 3 Salewa first aid kits in raid",
-        "Hand over 3 Salewa first aid kits"
+        "Find Secure Flash drives in raid",
+        "Hand over the Flash drives"
       ],
-      "description": "The Therapist's clinic is running low on first aid kits. She needs you to bring her Salewa kits as soon as possible.",
-      "rewards": "IFAK, bandages, money",
-      "prerequisites": [],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Shady_Business",
+      "prerequisites": [
+        "Acquaintance",
+        "What’s on the Flash Drive?"
+      ],
       "countsForKappa": true
     },
     {
-      "id": "therapist-2",
-      "title": "Operation Aquarius – Part 1",
-      "trader": "Therapist",
-      "location": "Dorms",
+      "id": "626bdcc3a371ee3a7a3514c5",
+      "title": "Stray Dogs",
+      "trader": "Jaeger",
       "objectives": [
-        "Locate the water hidden inside Dorm Room 206 on Customs",
-        "Survive and extract from Customs",
-        "Hand over the water to Therapist"
+        "Locate and neutralize Knight",
+        "Locate and neutralize Big Pipe",
+        "Locate and neutralize Birdeye"
       ],
-      "description": "Gain access to Dorm Room 206 on Customs and retrieve the bottled water left there by Therapist's helpers.",
-      "rewards": "Roubles, experience, and reputation",
-      "prerequisites": ["Shortage"],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Stray_Dogs",
+      "prerequisites": [
+        "The Huntsman Path - Trophy",
+        "The Huntsman Path - Woods Keeper",
+        "The Huntsman Path - Sellout"
+      ],
       "countsForKappa": true
     },
     {
-      "id": "therapist-3",
-      "title": "General Wares",
-      "trader": "Therapist",
+      "id": "63a88045abf76d719f42d715",
+      "title": "The Delicious Sausage",
+      "trader": "Jaeger",
+      "location": "Streets of Tarkov",
+      "objectives": [
+        "Scout the Shestyorochka store at Nikitskaya street",
+        "Scout the Sparja store at Primorsky ave",
+        "Scout the Sparja store in Pinewood hotel",
+        "Scout the Goshan store in Concordia",
+        "Hand over the found in raid Salty Dog beef sausage"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Delicious_Sausage",
+      "prerequisites": [
+        "The Survivalist Path - Thrifty"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "61904daa7d0d857927447b9c",
+      "title": "The Hermit",
+      "trader": "Jaeger",
+      "location": "Lighthouse",
+      "objectives": [
+        "Locate the hideout of Jaeger's friend on Lighthouse",
+        "Find and obtain the message for Jaeger",
+        "Hand over the message"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Hermit",
+      "prerequisites": [
+        "The Survivalist Path - Tough Guy"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5d25e2d886f77442734d335e",
+      "title": "The Huntsman Path - Controller",
+      "trader": "Jaeger",
+      "objectives": [
+        "Eliminate PMC operatives while they are suffering from the stun effect"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Controller",
+      "prerequisites": [
+        "The Huntsman Path - Forest Cleaning"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5d25e44f86f77443e625e385",
+      "title": "The Huntsman Path - Eraser - Part 1",
+      "trader": "Jaeger",
+      "location": "Reserve",
+      "objectives": [
+        "Locate and neutralize Glukhar"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Eraser_-_Part_1",
+      "prerequisites": [
+        "Pest Control"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5d25e45e86f77408251c4bfa",
+      "title": "The Huntsman Path - Eraser - Part 2",
+      "trader": "Jaeger",
+      "objectives": [
+        "Eliminate Raiders"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Eraser_-_Part_2",
+      "prerequisites": [
+        "The Huntsman Path - Secured Perimeter",
+        "The Huntsman Path - Eraser - Part 1"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5d25e44386f77409453bce7b",
+      "title": "The Huntsman Path - Evil Watchman",
+      "trader": "Jaeger",
+      "location": "Customs",
+      "objectives": [
+        "Eliminate PMC operatives in the Dorms area on Customs"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Evil_Watchman",
+      "prerequisites": [
+        "The Huntsman Path - Forest Cleaning"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "60c0c018f7afb4354815096a",
+      "title": "The Huntsman Path - Factory Chief",
+      "trader": "Jaeger",
+      "location": "Factory",
+      "objectives": [
+        "Locate and neutralize Tagilla",
+        "Find Tagilla's BOSS cap in raid",
+        "Hand over the BOSS cap"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Factory_Chief",
+      "prerequisites": [
+        "The Huntsman Path - Forest Cleaning",
+        "Scout"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5d25e2cc86f77443e47ae019",
+      "title": "The Huntsman Path - Forest Cleaning",
+      "trader": "Jaeger",
+      "objectives": [
+        "Eliminate Scavs all over the Tarkov territory"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Forest_Cleaning",
+      "prerequisites": [
+        "The Huntsman Path - Secured Perimeter"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5d25e43786f7740a212217fa",
+      "title": "The Huntsman Path - Justice",
+      "trader": "Jaeger",
+      "objectives": [
+        "Eliminate Scavs dressed in police uniform (Reshala's bodyguards)"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Justice",
+      "prerequisites": [
+        "The Huntsman Path - Trophy"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "6179ad0a6e9dd54ac275e3f2",
+      "title": "The Huntsman Path - Outcasts",
+      "trader": "Jaeger",
+      "location": "Lighthouse",
+      "objectives": [
+        "Eliminate Rogues on Lighthouse"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Outcasts",
+      "prerequisites": [
+        "The Huntsman Path - Forest Cleaning"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5edab4b1218d181e29451435",
+      "title": "The Huntsman Path - Sadist",
+      "trader": "Jaeger",
+      "location": "Shoreline",
+      "objectives": [
+        "Locate and neutralize Sanitar"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Sadist",
+      "prerequisites": [
+        "Rigged Game",
+        "Colleagues - Part 2",
+        "Chemistry Closet"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5d25e2b486f77409de05bba0",
+      "title": "The Huntsman Path - Secured Perimeter",
+      "trader": "Jaeger",
+      "location": "Factory",
+      "objectives": [
+        "Eliminate PMC operatives in the office area (any floor) on Factory"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Secured_Perimeter",
+      "prerequisites": [
+        "The Tarkov Shooter - Part 3",
+        "The Survivalist Path - Tough Guy"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5d25e2e286f77444001e2e48",
+      "title": "The Huntsman Path - Sellout",
+      "trader": "Jaeger",
       "location": "Interchange",
       "objectives": [
-        "Find 2 Can of beef stew (Large) in raid",
-        "Find 2 Bottles of water (0.6L) in raid",
-        "Hand over the items to Therapist"
+        "Locate and neutralize Killa",
+        "Find Killa's Maska-1SCh bulletproof helmet in raid",
+        "Hand over Killa's helmet"
       ],
-      "description": "The Therapist is looking to stock up on some basic supplies. Bring her beef stew and water found in raid.",
-      "rewards": "Medications and reputation",
-      "prerequisites": ["Operation Aquarius – Part 1"],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Sellout",
+      "prerequisites": [
+        "The Huntsman Path - Forest Cleaning",
+        "Sales Night"
+      ],
       "countsForKappa": true
     },
     {
-      "id": "skier-1",
-      "title": "Supplier",
-      "trader": "Skier",
-      "location": "Any",
-      "objectives": [
-        "Find 7.62×39mm 30‑round magazine for AK and hand over",
-        "Find Tushonka in raid and hand over 4 cans"
-      ],
-      "description": "Skier wants to check if you can deliver some basic goods. Get him a few 7.62 AK magazines and cans of tushonka.",
-      "rewards": "PP‑91 Kedr‐B and supplies",
-      "prerequisites": ["Debut"],
-      "countsForKappa": true
-    },
-    {
-      "id": "skier-2",
-      "title": "The Extortionist",
-      "trader": "Skier",
+      "id": "5d25e2c386f77443e7549029",
+      "title": "The Huntsman Path - Trophy",
+      "trader": "Jaeger",
       "location": "Customs",
       "objectives": [
-        "Find the hidden valuable cargo on Customs",
-        "Obtain the documents in the bunkhouse",
-        "Hand over the valuable cargo and the documents"
+        "Locate and neutralize Reshala",
+        "Find Reshala's Golden TT in raid",
+        "Hand over Reshala's Golden TT pistol"
       ],
-      "description": "Recover a valuable jacket with documents hidden in a stash at Customs. Watch out for other players!",
-      "rewards": "Weapon accessories and money",
-      "prerequisites": ["Supplier"],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Trophy",
+      "prerequisites": [
+        "The Huntsman Path - Secured Perimeter"
+      ],
       "countsForKappa": true
     },
     {
-      "id": "mechanic-1",
-      "title": "Gunsmith – Part 1",
-      "trader": "Mechanic",
-      "location": "Any",
+      "id": "5d25e2ee86f77443e35162ea",
+      "title": "The Huntsman Path - Woods Keeper",
+      "trader": "Jaeger",
+      "location": "Woods",
       "objectives": [
-        "Modify an MP‑133 to comply with the required specifications"
+        "Locate and neutralize Shturman",
+        "Find Shturman's stash key in raid",
+        "Hand over Shturman's stash key"
       ],
-      "description": "Mechanic has given you your first gunsmithing task: modify an MP‑133 shotgun so that it meets a list of ergonomic and part requirements.",
-      "rewards": "Reputation, technical stash items",
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Woods_Keeper",
+      "prerequisites": [
+        "The Huntsman Path - Secured Perimeter",
+        "Supply Plans"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5d25e2a986f77409dd5cdf2a",
+      "title": "The Survivalist Path - Combat Medic",
+      "trader": "Jaeger",
+      "objectives": [
+        "Reach the required Vitality skill level"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Survivalist_Path_-_Combat_Medic",
+      "prerequisites": [
+        "The Survivalist Path - Eagle-Owl"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5d25e29d86f7740a22516326",
+      "title": "The Survivalist Path - Eagle-Owl",
+      "trader": "Jaeger",
+      "objectives": [
+        "Eliminate Scavs in the time period of 21:00-04:00 without using any NVGs or thermal sights (Excluding Factory)"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Survivalist_Path_-_Eagle-Owl",
+      "prerequisites": [
+        "The Survivalist Path - Tough Guy"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5eaaaa7c93afa0558f3b5a1c",
+      "title": "The Survivalist Path - Junkie",
+      "trader": "Jaeger",
+      "location": "Woods",
+      "objectives": [
+        "Eliminate Scavs while under any stimulant effect on Woods"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Survivalist_Path_-_Junkie",
+      "prerequisites": [
+        "The Survivalist Path - Combat Medic"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5d25b6be86f77444001e1b89",
+      "title": "The Survivalist Path - Thrifty",
+      "trader": "Jaeger",
+      "location": "Woods",
+      "objectives": [
+        "Stash an Iskra ration pack in the ZB-016 bunker on Woods",
+        "Stash a Bottle of water (0.6L) in the ZB-016 bunker on Woods",
+        "Stash an Iskra ration pack in the ZB-014 bunker on Woods",
+        "Stash a Bottle of water (0.6L) in the ZB-014 bunker on Woods"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Survivalist_Path_-_Thrifty",
+      "prerequisites": [
+        "The Survivalist Path - Unprotected but Dangerous"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5d25cf2686f77443e75488d4",
+      "title": "The Survivalist Path - Tough Guy",
+      "trader": "Jaeger",
+      "location": "Woods",
+      "objectives": [
+        "Eliminate Scavs in a single raid without using any medicine on Woods"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Survivalist_Path_-_Tough_Guy",
+      "prerequisites": [
+        "The Survivalist Path - Wounded Beast"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5d25aed386f77442734d25d2",
+      "title": "The Survivalist Path - Unprotected but Dangerous",
+      "trader": "Jaeger",
+      "location": "Woods",
+      "objectives": [
+        "Eliminate Scavs without wearing any body armor on Woods"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Survivalist_Path_-_Unprotected_but_Dangerous",
+      "prerequisites": [
+        "Acquaintance"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5d25c81b86f77443e625dd71",
+      "title": "The Survivalist Path - Wounded Beast",
+      "trader": "Jaeger",
+      "objectives": [
+        "Eliminate Scavs while suffering from the pain effect"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Survivalist_Path_-_Wounded_Beast",
+      "prerequisites": [
+        "The Survivalist Path - Zhivchik"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5d25bfd086f77442734d3007",
+      "title": "The Survivalist Path - Zhivchik",
+      "trader": "Jaeger",
+      "objectives": [
+        "Survive for 5 minutes while suffering from complete dehydration (excluding Factory)",
+        "Survive and extract from the location"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Survivalist_Path_-_Zhivchik",
+      "prerequisites": [
+        "The Survivalist Path - Thrifty"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5bc4776586f774512d07cf05",
+      "title": "The Tarkov Shooter - Part 1",
+      "trader": "Jaeger",
+      "objectives": [
+        "Eliminate Scavs from over 40 meters away while using a bolt-action rifle with iron sights"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Tarkov_Shooter_-_Part_1",
+      "prerequisites": [
+        "Acquaintance"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5bc479e586f7747f376c7da3",
+      "title": "The Tarkov Shooter - Part 2",
+      "trader": "Jaeger",
+      "objectives": [
+        "Shoot any target in the legs from over 40 meters away while using a bolt-action rifle",
+        "Shoot any target in the head from over 40 meters away while using a bolt-action rifle"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Tarkov_Shooter_-_Part_2",
+      "prerequisites": [
+        "The Tarkov Shooter - Part 1"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5bc47dbf86f7741ee74e93b9",
+      "title": "The Tarkov Shooter - Part 3",
+      "trader": "Jaeger",
+      "objectives": [
+        "Eliminate PMC operatives from less than 25 meters away while using a bolt-action rifle"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Tarkov_Shooter_-_Part_3",
+      "prerequisites": [
+        "The Tarkov Shooter - Part 2"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5bc480a686f7741af0342e29",
+      "title": "The Tarkov Shooter - Part 4",
+      "trader": "Jaeger",
+      "objectives": [
+        "Eliminate PMC operatives from over 80 meters away while using a bolt-action rifle"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Tarkov_Shooter_-_Part_4",
+      "prerequisites": [
+        "The Tarkov Shooter - Part 3"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5bc4826c86f774106d22d88b",
+      "title": "The Tarkov Shooter - Part 5",
+      "trader": "Jaeger",
+      "location": "Customs",
+      "objectives": [
+        "Eliminate Scavs while using a bolt-action rifle in the time period of 21:00-05:00 on Customs"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Tarkov_Shooter_-_Part_5",
+      "prerequisites": [
+        "The Tarkov Shooter - Part 4"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5bc4836986f7740c0152911c",
+      "title": "The Tarkov Shooter - Part 6",
+      "trader": "Jaeger",
+      "objectives": [
+        "Eliminate Sniper Scavs while using a bolt-action rifle"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Tarkov_Shooter_-_Part_6",
+      "prerequisites": [
+        "The Tarkov Shooter - Part 5"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5bc4856986f77454c317bea7",
+      "title": "The Tarkov Shooter - Part 7",
+      "trader": "Jaeger",
+      "objectives": [
+        "Eliminate PMC operatives from over 45 meters away while using a suppressed bolt-action rifle"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Tarkov_Shooter_-_Part_7",
+      "prerequisites": [
+        "The Tarkov Shooter - Part 6"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5bc4893c86f774626f5ebf3e",
+      "title": "The Tarkov Shooter - Part 8",
+      "trader": "Jaeger",
+      "objectives": [
+        "Eliminate PMC operatives with a headshot without dying while using a bolt-action rifle"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Tarkov_Shooter_-_Part_8",
+      "prerequisites": [
+        "The Tarkov Shooter - Part 7"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "675c1cf4a757ddd00404f0a3",
+      "title": "Work Smarter",
+      "trader": "Jaeger",
+      "location": "Customs",
+      "objectives": [
+        "Obtain the special item to extract through the secret exfil",
+        "Locate the secret exfil on Customs"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Work_Smarter",
+      "prerequisites": [
+        "Acquaintance"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5c0bde0986f77479cf22c2f8",
+      "title": "A Shooter Born in Heaven",
+      "trader": "Mechanic",
+      "objectives": [
+        "Eliminate PMC operatives with a headshot while using a bolt-action rifle on Woods",
+        "Eliminate PMC operatives with a headshot while using a bolt-action rifle on Reserve",
+        "Eliminate PMC operatives with a headshot while using a bolt-action rifle on Shoreline",
+        "Eliminate PMC operatives with a headshot while using a bolt-action rifle on Customs",
+        "Eliminate PMC operatives with a headshot while using a bolt-action rifle on Lighthouse ",
+        "Eliminate PMC operatives with a headshot while using a bolt-action rifle on Streets of Tarkov",
+        "Eliminate PMC operatives with a headshot while using a bolt-action rifle on Interchange",
+        "Eliminate PMC operatives with a headshot while using a bolt-action rifle on Ground Zero"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/A_Shooter_Born_in_Heaven",
+      "prerequisites": [
+        "Farming - Part 3"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "6089736efa70fc097863b8f6",
+      "title": "Back Door",
+      "trader": "Mechanic",
+      "location": "Reserve",
+      "objectives": [
+        "Find the unpowered secret exit on Reserve",
+        "Survive and extract from the location through the secret exit"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Back_Door",
+      "prerequisites": [
+        "Scout"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5ac3475486f7741d6224abd3",
+      "title": "Bad Habit",
+      "trader": "Mechanic",
+      "objectives": [
+        "Find Malboro cigarettes in raid",
+        "Hand over the items",
+        "Find Strike cigarettes in raid",
+        "Hand over the items",
+        "Find Wilston cigarettes in raid",
+        "Hand over the items"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Bad_Habit",
+      "prerequisites": [
+        "Farming - Part 2"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "669fa39b91b0a8c9680fc467",
+      "title": "Black Swan",
+      "trader": "Mechanic",
+      "location": "Factory",
+      "objectives": [
+        "Locate and mark the first heat exchanger with an MS2000 Marker on Factory",
+        "Locate and mark the second heat exchanger with an MS2000 Marker on Factory",
+        "Locate and mark the third heat exchanger with an MS2000 Marker on Factory"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Black_Swan",
+      "prerequisites": [
+        "Scout"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "626bd75e47ea7f506e5493c5",
+      "title": "Broadcast - Part 1",
+      "trader": "Mechanic",
+      "location": "Lighthouse",
+      "objectives": [
+        "Locate the hidden recording studio on Lighthouse",
+        "Place a Signal Jammer inside the studio"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Broadcast_-_Part_1",
+      "prerequisites": [
+        "Farming - Part 2"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "669fa3a1c26f13bd04030f37",
+      "title": "Capacity Check",
+      "trader": "Mechanic",
+      "location": "Factory",
+      "objectives": [
+        "Fix the first reactor mixer with a Toolset on Factory",
+        "Fix the second reactor mixer with a Toolset on Factory",
+        "Fix the third reactor mixer with a Toolset on Factory"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Capacity_Check",
+      "prerequisites": [
+        "Forklift Certified",
+        "Farming - Part 1"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5f04886a3937dc337a6b8238",
+      "title": "Chemistry Closet",
+      "trader": "Mechanic",
+      "location": "Shoreline",
+      "objectives": [
+        "Locate Sanitar's office in the health resort",
+        "Survive and extract from the location"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Chemistry_Closet",
+      "prerequisites": [
+        "Anesthesia",
+        "Colleagues - Part 1"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "6179b3bdc7560e13d23eeb8d",
+      "title": "Corporate Secrets",
+      "trader": "Mechanic",
+      "location": "Lighthouse",
+      "objectives": [
+        "Find the data on the water pump operation on Lighthouse",
+        "Hand over the extracted data",
+        "Find the data on the pumping station operation on Lighthouse",
+        "Hand over the extracted data"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Corporate_Secrets",
+      "prerequisites": [
+        "Farming - Part 3"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "6179b3a12153c15e937d52bc",
+      "title": "Energy Crisis",
+      "trader": "Mechanic",
+      "location": "Lighthouse",
+      "objectives": [
+        "Find and mark the group of fuel tanks with an MS2000 Marker on Lighthouse",
+        "Find and mark the first tanker truck with an MS2000 Marker on Lighthouse",
+        "Find and mark the second tanker truck with an MS2000 Marker on Lighthouse",
+        "Find and mark the third tanker truck with an MS2000 Marker on Lighthouse"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Energy_Crisis",
+      "prerequisites": [
+        "Farming - Part 4"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5ac345dc86f774288030817f",
+      "title": "Farming - Part 1",
+      "trader": "Mechanic",
+      "location": "Factory",
+      "objectives": [
+        "Fix the first control board with a Toolset on Factory",
+        "Fix the second control board with a Toolset on Factory"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Farming_-_Part_1",
+      "prerequisites": [
+        "Gunsmith - Part 1"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5ac3460c86f7742880308185",
+      "title": "Farming - Part 2",
+      "trader": "Mechanic",
+      "objectives": [
+        "Find Power cords in raid",
+        "Hand over the items",
+        "Find T-Shaped Plugs in raid",
+        "Hand over the items",
+        "Find Printed circuit boards in raid",
+        "Hand over the items"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Farming_-_Part_2",
+      "prerequisites": [
+        "Farming - Part 1"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5ac3462b86f7741d6118b983",
+      "title": "Farming - Part 3",
+      "trader": "Mechanic",
+      "location": "Customs",
+      "objectives": [
+        "Locate the warehouse of seized goods on Customs",
+        "Obtain the package of graphics cards",
+        "Hand over the package"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Farming_-_Part_3",
+      "prerequisites": [
+        "Farming - Part 2"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5ac3464c86f7741d651d6877",
+      "title": "Farming - Part 4",
+      "trader": "Mechanic",
+      "objectives": [
+        "Find Graphics cards in raid",
+        "Hand over the items",
+        "Find CPU Fans in raid",
+        "Hand over the items"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Farming_-_Part_4",
+      "prerequisites": [
+        "Farming - Part 3"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5c1128e386f7746565181106",
+      "title": "Fertilizers",
+      "trader": "Mechanic",
+      "objectives": [
+        "Find Bundles of wires in raid",
+        "Find Capacitors in raid",
+        "Hand over the wires",
+        "Hand over the capacitors"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Fertilizers",
+      "prerequisites": [
+        "Farming - Part 4"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "669fa394e0c9f9fafa082897",
+      "title": "Forklift Certified",
+      "trader": "Mechanic",
+      "location": "Factory",
+      "objectives": [
+        "Locate the first forklift on Factory",
+        "Locate the second forklift on Factory",
+        "Locate the third forklift on Factory",
+        "Locate the fourth forklift on Factory",
+        "Locate the fifth forklift on Factory",
+        "Locate the sixth forklift on Factory",
+        "Locate the seventh forklift on Factory",
+        "Locate the eighth forklift on Factory",
+        "Locate the ninth forklift on Factory",
+        "Locate the tenth forklift on Factory",
+        "Locate the eleventh forklift on Factory",
+        "Locate the twelfth forklift on Factory"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Forklift_Certified",
+      "prerequisites": [
+        "Black Swan"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5ac23c6186f7741247042bad",
+      "title": "Gunsmith - Part 1",
+      "trader": "Mechanic",
+      "objectives": [
+        "Modify an MP-133 to comply with the given specifications"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_1",
+      "prerequisites": [
+        "Saving the Mole"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5ae327c886f7745c7b3f2f3f",
+      "title": "Gunsmith - Part 10",
+      "trader": "Mechanic",
+      "objectives": [
+        "Modify an AK-105 to comply with the given specifications"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_10",
+      "prerequisites": [
+        "Gunsmith - Part 9"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "639872fc93ae507d5858c3a6",
+      "title": "Gunsmith - Part 11",
+      "trader": "Mechanic",
+      "objectives": [
+        "Modify a KRISS Vector 9x19 to comply with the given specifications"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_11",
+      "prerequisites": [
+        "Gunsmith - Part 10"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5b47799d86f7746c5d6a5fd8",
+      "title": "Gunsmith - Part 12",
+      "trader": "Mechanic",
+      "objectives": [
+        "Modify a SIG MPX to comply with the given specifications"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_12",
+      "prerequisites": [
+        "Gunsmith - Part 11"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5ac244c486f77413e12cf945",
+      "title": "Gunsmith - Part 13",
+      "trader": "Mechanic",
+      "objectives": [
+        "Modify an R11 RSASS to comply with the given specifications"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_13",
+      "prerequisites": [
+        "Gunsmith - Part 12"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "639872fe8871e1272b10ccf6",
+      "title": "Gunsmith - Part 14",
+      "trader": "Mechanic",
+      "objectives": [
+        "Modify an HK 416A5 to comply with the given specifications"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_14",
+      "prerequisites": [
+        "Gunsmith - Part 13"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5ae3280386f7742a41359364",
+      "title": "Gunsmith - Part 15",
+      "trader": "Mechanic",
+      "objectives": [
+        "Modify an AS VAL to comply with the given specifications"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_15",
+      "prerequisites": [
+        "Gunsmith - Part 14"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5ac242ab86f77412464f68b4",
+      "title": "Gunsmith - Part 16",
+      "trader": "Mechanic",
+      "objectives": [
+        "Modify a DVL-10 to comply with the given specifications"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_16",
+      "prerequisites": [
+        "Gunsmith - Part 15"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5b47749f86f7746c5d6a5fd4",
+      "title": "Gunsmith - Part 17",
+      "trader": "Mechanic",
+      "objectives": [
+        "Modify an AK-102 to comply with the given specifications"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_17",
+      "prerequisites": [
+        "Gunsmith - Part 16"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5b477b6f86f7747290681823",
+      "title": "Gunsmith - Part 18",
+      "trader": "Mechanic",
+      "objectives": [
+        "Modify an AKMN to comply with the given specifications"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_18",
+      "prerequisites": [
+        "Gunsmith - Part 17"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "639873003693c63d86328f25",
+      "title": "Gunsmith - Part 19",
+      "trader": "Mechanic",
+      "objectives": [
+        "Modify an SVDS to comply with the given specifications"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_19",
+      "prerequisites": [
+        "Gunsmith - Part 18"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5ac2426c86f774138762edfe",
+      "title": "Gunsmith - Part 2",
+      "trader": "Mechanic",
+      "objectives": [
+        "Modify an AKS-74U to comply with the given specifications"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_2",
+      "prerequisites": [
+        "Gunsmith - Part 1"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5b477f7686f7744d1b23c4d2",
+      "title": "Gunsmith - Part 20",
+      "trader": "Mechanic",
+      "objectives": [
+        "Modify an M1A to comply with the given specifications"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_20",
+      "prerequisites": [
+        "Gunsmith - Part 19"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "63987301e11ec11ff5504036",
+      "title": "Gunsmith - Part 21",
+      "trader": "Mechanic",
+      "objectives": [
+        "Modify an M700 to comply with the given specifications",
+        "Modify an M1911 to comply with the given specifications"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_21",
+      "prerequisites": [
+        "Gunsmith - Part 20"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5b47825886f77468074618d3",
+      "title": "Gunsmith - Part 22",
+      "trader": "Mechanic",
+      "objectives": [
+        "Modify an M4A1 to comply with the given specifications"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_22",
+      "prerequisites": [
+        "Gunsmith - Part 21"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5ac2428686f77412450b42bf",
+      "title": "Gunsmith - Part 3",
+      "trader": "Mechanic",
+      "objectives": [
+        "Modify an MP5 to comply with the given specifications"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_3",
+      "prerequisites": [
+        "Gunsmith - Part 1"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "639872f9decada40426d3447",
+      "title": "Gunsmith - Part 4",
+      "trader": "Mechanic",
+      "objectives": [
+        "Modify an OP-SKS to comply with the given specifications"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_4",
+      "prerequisites": [
+        "Gunsmith - Part 2",
+        "Gunsmith - Part 3"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5ae3267986f7742a413592fe",
+      "title": "Gunsmith - Part 5",
+      "trader": "Mechanic",
+      "objectives": [
+        "Modify a Remington Model 870 to comply with the given specifications"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_5",
+      "prerequisites": [
+        "Gunsmith - Part 4"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5ae3270f86f77445ba41d4dd",
+      "title": "Gunsmith - Part 6",
+      "trader": "Mechanic",
+      "objectives": [
+        "Modify an AKM to comply with the given specifications"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_6",
+      "prerequisites": [
+        "Gunsmith - Part 5"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5ac244eb86f7741356335af1",
+      "title": "Gunsmith - Part 7",
+      "trader": "Mechanic",
+      "objectives": [
+        "Modify an M4A1 to comply with the given specifications"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_7",
+      "prerequisites": [
+        "Gunsmith - Part 6"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5ae3277186f7745973054106",
+      "title": "Gunsmith - Part 8",
+      "trader": "Mechanic",
+      "objectives": [
+        "Modify an AKS-74N to comply with the given specifications"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_8",
+      "prerequisites": [
+        "Gunsmith - Part 7"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "639872fa9b4fb827b200d8e5",
+      "title": "Gunsmith - Part 9",
+      "trader": "Mechanic",
+      "objectives": [
+        "Modify a P226R to comply with the given specifications"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Gunsmith_-_Part_9",
+      "prerequisites": [
+        "Gunsmith - Part 8"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5c139eb686f7747878361a6f",
+      "title": "Import",
+      "trader": "Mechanic",
+      "objectives": [
+        "Find UHF RFID Reader in raid",
+        "Find VPX Flash Storage Module in raid",
+        "Hand over the reader",
+        "Hand over the storage module"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Import",
+      "prerequisites": [
+        "Farming - Part 4"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5ac3479086f7742880308199",
+      "title": "Insider",
+      "trader": "Mechanic",
+      "objectives": [
+        "Reach level 3 loyalty with Prapor"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Insider",
+      "prerequisites": [
+        "Gunsmith - Part 3",
+        "Signal - Part 1"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5d2495a886f77425cd51e403",
+      "title": "Introduction",
+      "trader": "Mechanic",
+      "location": "Woods",
+      "objectives": [
+        "Find Jaeger's camp at the specified spot on Woods",
+        "Obtain Jaeger's encrypted message",
+        "Hand over the message"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Introduction",
+      "prerequisites": [
+        "Gunsmith - Part 1"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "675c1570526ff496850895d9",
+      "title": "Passion for Ergonomics",
+      "trader": "Mechanic",
+      "location": "Customs",
+      "objectives": [
+        "Locate and obtain the customized tool set at the garage complex on Customs",
+        "Hand over the found item"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Passion_for_Ergonomics",
+      "prerequisites": [
+        "Farming - Part 2"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5c0be13186f7746f016734aa",
+      "title": "Psycho Sniper",
+      "trader": "Mechanic",
+      "objectives": [
+        "Reach the required Bolt-action Rifles skill level",
+        "Eliminate PMC operatives without dying while using a bolt-action rifle"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Psycho_Sniper",
+      "prerequisites": [
+        "Wet Job - Part 6"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "657315e4a6af4ab4b50f3459",
+      "title": "Saving the Mole",
+      "trader": "Mechanic",
+      "location": "Ground Zero",
+      "objectives": [
+        "Locate the USEC group at the parking lot of the TerraGroup complex",
+        "Locate the lab scientist in the TerraGroup complex",
+        "Access the lab scientist's office on Ground Zero",
+        "Locate and obtain the scientist's hard drive",
+        "Hand over the hard drive"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Saving_the_Mole",
       "prerequisites": [],
       "countsForKappa": true
     },
     {
-      "id": "mechanic-2",
-      "title": "Gunsmith – Part 2",
+      "id": "5ac3477486f7741d651d6885",
+      "title": "Scout",
       "trader": "Mechanic",
-      "location": "Any",
+      "location": "Factory",
       "objectives": [
-        "Modify an AKS‑74U to comply with the required specifications"
+        "Locate the first Factory extraction",
+        "Locate the second Factory extraction",
+        "Locate the third Factory extraction",
+        "Locate the fourth Factory extraction",
+        "Survive and extract from the location"
       ],
-      "description": "Continuing the gunsmith series, Mechanic asks you to tune an AKS‑74U with better ergonomics, recoil control, and compactness.",
-      "rewards": "Reputation, parts, and experience",
-      "prerequisites": ["Gunsmith – Part 1"],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Scout",
+      "prerequisites": [
+        "Signal - Part 2"
+      ],
       "countsForKappa": true
     },
     {
-      "id": "peacekeeper-1",
+      "id": "5ac3467986f7741d6224abc2",
+      "title": "Signal - Part 1",
+      "trader": "Mechanic",
+      "location": "Shoreline",
+      "objectives": [
+        "Locate the first signal source on Shoreline",
+        "Locate the second signal source on Shoreline",
+        "Survive and extract from the location"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Signal_-_Part_1",
+      "prerequisites": [
+        "Gunsmith - Part 2"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5ac346a886f7744e1b083d67",
+      "title": "Signal - Part 2",
+      "trader": "Mechanic",
+      "objectives": [
+        "Find PC CPUs in raid",
+        "Hand over the items",
+        "Find Rechargeable batteries in raid",
+        "Hand over the items",
+        "Find Printed circuit boards in raid",
+        "Hand over the items",
+        "Find Broken GPhone smartphones in raid",
+        "Hand over the items"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Signal_-_Part_2",
+      "prerequisites": [
+        "Signal - Part 1"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5ac346cf86f7741d63233a02",
+      "title": "Signal - Part 3",
+      "trader": "Mechanic",
+      "location": "Shoreline",
+      "objectives": [
+        "Place the Signal jammer on the first specified place on Shoreline",
+        "Place the Signal jammer on the second specified place on Shoreline",
+        "Place the Signal jammer on the third specified place on Shoreline"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Signal_-_Part_3",
+      "prerequisites": [
+        "Signal - Part 2"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5ac346e886f7741d6118b99b",
+      "title": "Signal - Part 4",
+      "trader": "Mechanic",
+      "objectives": [
+        "Reach the required Attention skill level"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Signal_-_Part_4",
+      "prerequisites": [
+        "Signal - Part 3"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "6089732b59b92115597ad789",
+      "title": "Surplus Goods",
+      "trader": "Mechanic",
+      "location": "Reserve",
+      "objectives": [
+        "Obtain the MBT Integrated Navigation System on Reserve",
+        "Hand over the navigation system"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Surplus_Goods",
+      "prerequisites": [
+        "Back Door"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5a27bb1e86f7741f27621b7e",
+      "title": "Cargo X - Part 1",
+      "trader": "Peacekeeper",
+      "location": "Shoreline",
+      "objectives": [
+        "Locate and obtain the data in Health Resort east wing computer room on Shoreline",
+        "Hand over the retrieved data"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Cargo_X_-_Part_1",
+      "prerequisites": [
+        "Spa Tour - Part 7"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5a27bb3d86f77411ea361a21",
+      "title": "Cargo X - Part 2",
+      "trader": "Peacekeeper",
+      "location": "Shoreline",
+      "objectives": [
+        "Locate the room with reservoirs in the Health Resort on Shoreline",
+        "Obtain any information about the second part of the cargo shipment",
+        "Hand over the retrieved information"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Cargo_X_-_Part_2",
+      "prerequisites": [
+        "Cargo X - Part 1"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5a27bb5986f7741dfb660900",
+      "title": "Cargo X - Part 3",
+      "trader": "Peacekeeper",
+      "location": "Shoreline",
+      "objectives": [
+        "Locate the TerraGroup cargo hidden inside the Health Resort on Shoreline",
+        "Survive and extract from the location"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Cargo_X_-_Part_3",
+      "prerequisites": [
+        "Cargo X - Part 2"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "61958c366726521dd96828ec",
+      "title": "Cargo X - Part 4",
+      "trader": "Peacekeeper",
+      "location": "Lighthouse",
+      "objectives": [
+        "Locate and mark the TerraGroup cargo with an MS2000 Marker on Lighthouse"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Cargo_X_-_Part_4",
+      "prerequisites": [
+        "Cargo X - Part 3"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "60896888e4a85c72ef3fa300",
+      "title": "Classified Technologies",
+      "trader": "Peacekeeper",
+      "location": "Reserve",
+      "objectives": [
+        "Obtain the package with T-90M Commander control panel on Reserve",
+        "Hand over the package"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Classified_Technologies",
+      "prerequisites": [
+        "Revision - Reserve"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5a27b80086f774429a5d7e20",
+      "title": "Eagle Eye",
+      "trader": "Peacekeeper",
+      "location": "Shoreline",
+      "objectives": [
+        "Locate the first UAV crash site on Shoreline",
+        "Obtain the SAS disk from the first crashed drone",
+        "Hand over the first SAS disk",
+        "Locate the second UAV crash site on Shoreline",
+        "Obtain the SAS disk from the second crashed drone",
+        "Hand over the second SAS disk"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Eagle_Eye",
+      "prerequisites": [
+        "Scrap Metal"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5a27b75b86f7742e97191958",
       "title": "Fishing Gear",
       "trader": "Peacekeeper",
       "location": "Shoreline",
       "objectives": [
-        "Mark the first boat with an MS2000 marker",
-        "Mark the second boat with an MS2000 marker",
-        "Survive and extract from Shoreline"
+        "Locate the boat hidden next to the breakwater on Shoreline",
+        "Stash an SV-98 sniper rifle in the boat",
+        "Stash a Leatherman Multitool in the boat"
       ],
-      "description": "Peacekeeper needs intel on boats used by scav smugglers on Shoreline. Plant markers on the boats and make it out alive.",
-      "rewards": "USD, reputation, and equipment",
-      "prerequisites": ["Debut"],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Fishing_Gear",
+      "prerequisites": [
+        "Friend From the West - Part 2"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5a27b87686f77460de0252a8",
+      "title": "Humanitarian Supplies",
+      "trader": "Peacekeeper",
+      "location": "Shoreline",
+      "objectives": [
+        "Locate and mark the first UN truck with an MS2000 Marker",
+        "Locate and mark the second UN truck with an MS2000 Marker",
+        "Obtain MRE ration packs",
+        "Hand over the ration packs",
+        "Eliminate Scavs while wearing a UN uniform (MF-UNTAR body armor and UNTAR helmet) on Shoreline",
+        "Locate the first truck that was holding the lost UN cargo on Shoreline",
+        "Locate the second truck that was holding the lost UN cargo on Shoreline"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Humanitarian_Supplies",
+      "prerequisites": [
+        "Eagle Eye"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5c0bd01e86f7747cdd799e56",
+      "title": "Insomnia",
+      "trader": "Peacekeeper",
+      "objectives": [
+        "Eliminate PMC operatives in the time period of 21:00-06:00 (excluding Factory and The Lab)"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Insomnia",
+      "prerequisites": [
+        "Cargo X - Part 4"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5c0d0f1886f77457b8210226",
+      "title": "Lend-Lease - Part 2",
+      "trader": "Peacekeeper",
+      "objectives": [
+        "Find Virtex programmable processors in raid",
+        "Find Military COFDM Wireless Signal Transmitter in raid",
+        "Hand over the processors",
+        "Hand over the transmitter"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Lend-Lease_-_Part_2",
+      "prerequisites": [
+        "Lend-Lease - Part 1"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "669fa38fad7f1eac2607ed46",
+      "title": "One Less Loose End",
+      "trader": "Peacekeeper",
+      "objectives": [
+        "Locate and obtain the lab journal on Factory",
+        "Stash the journal at the old sawmill on Woods"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/One_Less_Loose_End",
+      "prerequisites": [
+        "Overpopulation"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "6179aff8f57fb279792c60a1",
+      "title": "Overpopulation",
+      "trader": "Peacekeeper",
+      "location": "Lighthouse",
+      "objectives": [
+        "Eliminate Scavs around the chalet area on Lighthouse"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Overpopulation",
+      "prerequisites": [
+        "Spa Tour - Part 1"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5c0d4c12d09282029f539173",
+      "title": "Peacekeeping Mission",
+      "trader": "Peacekeeper",
+      "objectives": [
+        "Eliminate Scavs while wearing a UN uniform (UNTAR helmet, MF-UNTAR body armor, M4A1 rifle) on Woods",
+        "Eliminate Scavs while wearing a UN uniform (UNTAR helmet, MF-UNTAR body armor, M4A1 rifle) on Customs",
+        "Eliminate Scavs while wearing a UN uniform (UNTAR helmet, MF-UNTAR body armor, M4A1 rifle) on Interchange",
+        "Eliminate Scavs while wearing a UN uniform (UNTAR helmet, MF-UNTAR body armor, M4A1 rifle) on Shoreline",
+        "Eliminate Scavs while wearing a UN uniform (UNTAR helmet, MF-UNTAR body armor, M4A1 rifle) on Streets of Tarkov",
+        "Eliminate Scavs while wearing a UN uniform (UNTAR helmet, MF-UNTAR body armor, M4A1 rifle) on Ground Zero"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Peacekeeping_Mission",
+      "prerequisites": [
+        "Lend-Lease - Part 2"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "6179b4d1bca27a099552e04e",
+      "title": "Revision - Lighthouse",
+      "trader": "Peacekeeper",
+      "location": "Lighthouse",
+      "objectives": [
+        "Locate and mark the first BRDM with an MS2000 Marker on Lighthouse",
+        "Locate and mark the second BRDM with an MS2000 Marker on Lighthouse",
+        "Locate and mark the first Stryker with an MS2000 Marker on Lighthouse",
+        "Locate and mark the second Stryker with an MS2000 Marker on Lighthouse"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Revision_-_Lighthouse",
+      "prerequisites": [
+        "Revision - Reserve"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "6086c852c945025d41566124",
+      "title": "Revision - Reserve",
+      "trader": "Peacekeeper",
+      "location": "Reserve",
+      "objectives": [
+        "Locate and inspect the first BMP-2 on Reserve",
+        "Mark the first BMP-2 with an MS2000 Marker",
+        "Locate and inspect the second BMP-2 on Reserve",
+        "Mark the second BMP-2 with an MS2000 Marker",
+        "Locate and inspect the third BMP-2 on Reserve",
+        "Mark the third BMP-2 with an MS2000 Marker",
+        "Locate and inspect the fourth BMP-2 on Reserve",
+        "Mark the fourth BMP-2 with an MS2000 Marker",
+        "Locate and inspect the first LAV III on Reserve",
+        "Mark the first LAV III with an MS2000 Marker",
+        "Locate and inspect the second LAV III on Reserve",
+        "Locate and inspect the T-90 tank on Reserve"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Revision_-_Reserve",
+      "prerequisites": [
+        "Humanitarian Supplies"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5edac020218d181e29451446",
+      "title": "Samples",
+      "trader": "Peacekeeper",
+      "objectives": [
+        "Find M.U.L.E. stimulant injector in raid",
+        "Hand over the injector",
+        "Find \"Obdolbos\" cocktail injector in raid",
+        "Hand over the injector",
+        "Find Meldonin stimulant injector in raid",
+        "Hand over the injector",
+        "Find AHF1-M stimulant injector in raid",
+        "Hand over the injector",
+        "Find P22 stimulant injector in raid",
+        "Hand over the injector",
+        "Find L1 (Norepinephrine) stimulant injector in raid",
+        "Hand over the injector",
+        "Find 3-(b-TG) stimulant injector in raid",
+        "Hand over the injector"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Samples",
+      "prerequisites": [
+        "Fishing Gear",
+        "Anesthesia"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5a27b7d686f77460d847e6a6",
+      "title": "Scrap Metal",
+      "trader": "Peacekeeper",
+      "location": "Shoreline",
+      "objectives": [
+        "Locate and mark the first T-90 tank with an MS2000 Marker on Shoreline",
+        "Locate and mark the second T-90 tank with an MS2000 Marker on Shoreline",
+        "Locate and mark the third T-90 tank with an MS2000 Marker on Shoreline"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Scrap_Metal",
+      "prerequisites": [
+        "Tigr Safari"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5a03153686f77442d90e2171",
+      "title": "Spa Tour - Part 1",
+      "trader": "Peacekeeper",
+      "location": "Shoreline",
+      "objectives": [
+        "Eliminate Scavs with headshots while using a 12ga shotgun on Shoreline"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Spa_Tour_-_Part_1",
+      "prerequisites": [
+        "Humanitarian Supplies"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5a03173786f77451cb427172",
+      "title": "Spa Tour - Part 2",
+      "trader": "Peacekeeper",
+      "location": "Shoreline",
+      "objectives": [
+        "Locate and mark the helicopter at the Health Resort with an MS2000 Marker on Shoreline",
+        "Mark the safe passage to the helicopter with an MS2000 Marker on Shoreline"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Spa_Tour_-_Part_2",
+      "prerequisites": [
+        "Spa Tour - Part 1"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5a0327ba86f77456b9154236",
+      "title": "Spa Tour - Part 3",
+      "trader": "Peacekeeper",
+      "objectives": [
+        "Hand over the found in raid item: WD-40",
+        "Hand over the found in raid item: Clin window cleaner",
+        "Hand over the found in raid item: Corrugated hose",
+        "Hand over the found in raid item: Ox bleach"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Spa_Tour_-_Part_3",
+      "prerequisites": [
+        "Spa Tour - Part 2"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5a03296886f774569778596a",
+      "title": "Spa Tour - Part 4",
+      "trader": "Peacekeeper",
+      "location": "Shoreline",
+      "objectives": [
+        "Locate the generators in the east wing of the Health Resort on Shoreline",
+        "Locate the generators in the west wing of the Health Resort on Shoreline",
+        "Survive and extract from the location"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Spa_Tour_-_Part_4",
+      "prerequisites": [
+        "Spa Tour - Part 3"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5a0449d586f77474e66227b7",
+      "title": "Spa Tour - Part 5",
+      "trader": "Peacekeeper",
+      "location": "Shoreline",
+      "objectives": [
+        "Locate and obtain the key to the closed premises of the Health Resort on Shoreline",
+        "Hand over the key"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Spa_Tour_-_Part_5",
+      "prerequisites": [
+        "Spa Tour - Part 4"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5a27ba9586f7741b543d8e85",
+      "title": "Spa Tour - Part 6",
+      "trader": "Peacekeeper",
+      "objectives": [
+        "Hand over USD"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Spa_Tour_-_Part_6",
+      "prerequisites": [
+        "Spa Tour - Part 5"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5a27bafb86f7741c73584017",
+      "title": "Spa Tour - Part 7",
+      "trader": "Peacekeeper",
+      "objectives": [
+        "Find Morphine injectors in raid",
+        "Hand over the items",
+        "Find Alkaline cleaners for heat exchangers in raid",
+        "Hand over the items",
+        "Find Corrugated hoses in raid",
+        "Hand over the items",
+        "Find Propane tanks (5L) in raid",
+        "Hand over the items"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Spa_Tour_-_Part_7",
+      "prerequisites": [
+        "Spa Tour - Part 6"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5edac63b930f5454f51e128b",
+      "title": "TerraGroup Employee",
+      "trader": "Peacekeeper",
+      "location": "The Lab",
+      "objectives": [
+        "Find Sanitar's workplace in The Lab",
+        "Obtain information about Sanitar's work",
+        "Hand over the Flash drive marked with blue tape"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/TerraGroup_Employee",
+      "prerequisites": [
+        "Samples",
+        "Colleagues - Part 3"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5a27b9de86f77464e5044585",
+      "title": "The Cult - Part 1",
+      "trader": "Peacekeeper",
+      "location": "Shoreline",
+      "objectives": [
+        "Locate the missing informant on Shoreline",
+        "Survive and extract from the location"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Cult_-_Part_1",
+      "prerequisites": [
+        "Humanitarian Supplies"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5a27ba1c86f77461ea5a3c56",
+      "title": "The Cult - Part 2",
+      "trader": "Peacekeeper",
+      "objectives": [
+        "Locate and mark the first ritual spot with an MS2000 Marker on Woods",
+        "Locate and mark the ritual spot with an MS2000 Marker on Customs",
+        "Locate and mark the second ritual spot with an MS2000 Marker on Woods",
+        "Locate and mark the ritual spot with an MS2000 Marker on Shoreline"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Cult_-_Part_2",
+      "prerequisites": [
+        "The Cult - Part 1"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5c0d4e61d09282029f53920e",
+      "title": "The Guide",
+      "trader": "Peacekeeper",
+      "objectives": [
+        "Survive and extract from Woods with the \"Survived\" exit status",
+        "Survive and extract from Customs with the \"Survived\" exit status",
+        "Survive and extract from Interchange with the \"Survived\" exit status",
+        "Survive and extract from Shoreline with the \"Survived\" exit status",
+        "Survive and extract from Factory with the \"Survived\" exit status",
+        "Survive and extract from The Lab with the \"Survived\" exit status",
+        "Survive and extract from Reserve with the \"Survived\" exit status",
+        "Survive and extract from Lighthouse with the \"Survived\" exit status",
+        "Survive and extract from Streets of Tarkov with the \"Survived\" exit status",
+        "Survive and extract from Ground Zero with the \"Survived\" exit status"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Guide",
+      "prerequisites": [
+        "Wet Job - Part 6"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5a27b7a786f774579c3eb376",
+      "title": "Tigr Safari",
+      "trader": "Peacekeeper",
+      "location": "Customs",
+      "objectives": [
+        "Locate and mark the first Tigr vehicle with an MS2000 Marker on Customs",
+        "Locate and mark the second Tigr vehicle with an MS2000 Marker on Customs",
+        "Locate and mark the third Tigr vehicle with an MS2000 Marker on Customs"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Tigr_Safari",
+      "prerequisites": [
+        "Fishing Gear"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5a27bb8386f7741c770d2d0a",
+      "title": "Wet Job - Part 1",
+      "trader": "Peacekeeper",
+      "location": "Shoreline",
+      "objectives": [
+        "Eliminate Scavs while using a suppressed M4A1, ADAR, or TX-15 on Shoreline"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Wet_Job_-_Part_1",
+      "prerequisites": [
+        "Spa Tour - Part 7"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5a27bbf886f774333a418eeb",
+      "title": "Wet Job - Part 2",
+      "trader": "Peacekeeper",
+      "location": "Shoreline",
+      "objectives": [
+        "Locate the fishermen's dwelling on Shoreline",
+        "Mark the fishing table with an MS2000 Marker"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Wet_Job_-_Part_2",
+      "prerequisites": [
+        "Wet Job - Part 1"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5a27bc1586f7741f6d40fa2f",
+      "title": "Wet Job - Part 3",
+      "trader": "Peacekeeper",
+      "location": "Shoreline",
+      "objectives": [
+        "Locate Artyom’s car on Shoreline",
+        "Survive and extract from the location"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Wet_Job_-_Part_3",
+      "prerequisites": [
+        "Wet Job - Part 2"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5a27bc3686f7741c73584026",
+      "title": "Wet Job - Part 4",
+      "trader": "Peacekeeper",
+      "location": "Shoreline",
+      "objectives": [
+        "Locate and obtain the list of Health Resort tenants on Shoreline",
+        "Hand over the found items"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Wet_Job_-_Part_4",
+      "prerequisites": [
+        "Wet Job - Part 3"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5a27bc6986f7741c7358402b",
+      "title": "Wet Job - Part 5",
+      "trader": "Peacekeeper",
+      "location": "Shoreline",
+      "objectives": [
+        "Locate and obtain any information on Artyom’s work on Shoreline",
+        "Hand over the information"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Wet_Job_-_Part_5",
+      "prerequisites": [
+        "Wet Job - Part 4"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5a27bc8586f7741b543d8ea4",
+      "title": "Wet Job - Part 6",
+      "trader": "Peacekeeper",
+      "objectives": [
+        "Reach the required Bolt-action Rifles skill level"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Wet_Job_-_Part_6",
+      "prerequisites": [
+        "Wet Job - Part 5"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5eda19f0edce541157209cee",
+      "title": "Anesthesia",
+      "trader": "Prapor",
+      "location": "Shoreline",
+      "objectives": [
+        "Mark the first trading post with an MS2000 Marker on Shoreline",
+        "Mark the second trading post with an MS2000 Marker on Shoreline",
+        "Mark the third trading post with an MS2000 Marker on Shoreline"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Anesthesia",
+      "prerequisites": [
+        "Shaking Up the Teller"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5936da9e86f7742d65037edf",
+      "title": "Background Check",
+      "trader": "Prapor",
+      "location": "Customs",
+      "objectives": [
+        "Locate and obtain the bronze pocket watch on Customs",
+        "Hand over the found item",
+        "Obtain the key to the fuel tanker truck"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Background_Check",
+      "prerequisites": [
+        "Luxurious Life"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5967530a86f77462ba22226b",
+      "title": "Bad Rep Evidence",
+      "trader": "Prapor",
+      "objectives": [
+        "Gain access to the locked room in the office hallway on the third floor on Factory",
+        "Obtain the Portable bunkhouse key",
+        "Locate and obtain Secure Folder 0031 in one of the bunkhouses on Customs",
+        "Hand over the folder",
+        "Survive and extract from the location"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Bad_Rep_Evidence",
+      "prerequisites": [
+        "BP Depot"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "675c3507a06634b5110e3c18",
+      "title": "Belka and Strelka",
+      "trader": "Prapor",
+      "location": "Customs",
+      "objectives": [
+        "Survive and extract from Customs through Railroad Passage"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Belka_and_Strelka",
+      "prerequisites": [
+        "BP Depot"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "597a171586f77405ba6887d3",
+      "title": "Big Customer",
+      "trader": "Prapor",
+      "location": "Customs",
+      "objectives": [
+        "Locate the transport with the chemicals on Customs",
+        "Mark the vehicle with an MS2000 Marker"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Big_Customer",
+      "prerequisites": [
+        "Chemical - Part 4"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "59c124d686f774189b3c843f",
+      "title": "BP Depot",
+      "trader": "Prapor",
+      "location": "Customs",
+      "objectives": [
+        "Locate and mark the first fuel tank with an MS2000 Marker on Customs",
+        "Locate and mark the second fuel tank with an MS2000 Marker on Customs",
+        "Locate and mark the third fuel tank with an MS2000 Marker on Customs",
+        "Locate and mark the fourth fuel tank with an MS2000 Marker on Customs"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/BP_Depot",
+      "prerequisites": [
+        "Delivery From the Past"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5936d90786f7742b1420ba5b",
+      "title": "Debut",
+      "trader": "Prapor",
+      "objectives": [
+        "Eliminate Scavs on any location",
+        "Hand over the item: MP-133 12ga shotgun"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Debut",
+      "prerequisites": [
+        "Shooting Cans"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "59674eb386f774539f14813a",
+      "title": "Delivery From the Past",
+      "trader": "Prapor",
+      "objectives": [
+        "Locate and obtain the valuable folder in Tarcone director's office on Customs",
+        "Stash the package in the break room on the 2nd floor near Gate 3 on Factory"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Delivery_From_the_Past",
+      "prerequisites": [
+        "Background Check"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "60896b7bfa70fc097863b8f5",
+      "title": "Documents",
+      "trader": "Prapor",
+      "location": "Reserve",
+      "objectives": [
+        "Obtain the first folder with military documents in the command bunker offices on Reserve",
+        "Obtain the second folder with military documents in the command bunker offices on Reserve",
+        "Obtain the third folder with military documents in the command bunker offices on Reserve",
+        "Hand over the first documents",
+        "Hand over the second documents",
+        "Hand over the third documents"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Documents",
+      "prerequisites": [
+        "No Place for Renegades"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "6179ac7511973d018217d0b9",
+      "title": "Easy Job - Part 1",
+      "trader": "Prapor",
+      "location": "Lighthouse",
+      "objectives": [
+        "Locate the helicopter at the water treatment plant on Lighthouse",
+        "Mark the helicopter with an MS2000 Marker"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Easy_Job_-_Part_1",
+      "prerequisites": [
+        "The Punisher - Part 2"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "6179acbdc760af5ad2053585",
+      "title": "Easy Job - Part 2",
+      "trader": "Prapor",
+      "location": "Lighthouse",
+      "objectives": [
+        "Eliminate any target around the helicopter area at the water treatment plant on Lighthouse"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Easy_Job_-_Part_2",
+      "prerequisites": [
+        "Easy Job - Part 1"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "59675d6c86f7740a842fc482",
+      "title": "Ice Cream Cones",
+      "trader": "Prapor",
+      "location": "Woods",
+      "objectives": [
+        "Find AK-74 5.45x39 6L31 60-round magazines in raid",
+        "Hand over the items",
+        "Find the key to the bunker in the TerraGroup employee's dorm room",
+        "Locate the locked bunker on Woods"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Ice_Cream_Cones",
+      "prerequisites": [
+        "Bad Rep Evidence"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "60e71bb4e456d449cd47ca75",
+      "title": "Intimidator",
+      "trader": "Prapor",
+      "objectives": [
+        "Eliminate Scavs with headshots"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Intimidator",
+      "prerequisites": [
+        "The Punisher - Part 6"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "657315e1dccd301f1301416a",
+      "title": "Luxurious Life",
+      "trader": "Prapor",
+      "location": "Ground Zero",
+      "objectives": [
+        "Locate the liquor store on Ground Zero",
+        "Locate and obtain the wine bottle in the store",
+        "Hand over the wine bottle"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Luxurious_Life",
+      "prerequisites": [
+        "Debut"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "60896bca6ee58f38c417d4f2",
+      "title": "No Place for Renegades",
+      "trader": "Prapor",
+      "location": "Reserve",
+      "objectives": [
+        "Eliminate Raiders in the command bunker on Reserve"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/No_Place_for_Renegades",
+      "prerequisites": [
+        "The Bunker - Part 2"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5c12452c86f7744b83469073",
+      "title": "Perfect Mediator",
+      "trader": "Prapor",
+      "objectives": [
+        "Reach level 4 loyalty with Ragman",
+        "Reach level 4 loyalty with Skier",
+        "Reach level 4 loyalty with Mechanic",
+        "Reach level 4 loyalty with Peacekeeper",
+        "Reach level 4 loyalty with Prapor",
+        "Reach level 4 loyalty with Therapist",
+        "Reach level 4 loyalty with Jaeger"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Perfect_Mediator",
+      "prerequisites": [
+        "Shaking Up the Teller"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5979f8bb86f7743ec214c7a6",
+      "title": "Polikhim Hobo",
+      "trader": "Prapor",
+      "location": "Customs",
+      "objectives": [
+        "Eliminate Scavs on Customs"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Polikhim_Hobo",
+      "prerequisites": [
+        "Chemical - Part 1"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "669fa399033a3ce9870338a8",
+      "title": "Possessor",
+      "trader": "Prapor",
+      "location": "Factory",
+      "objectives": [
+        "Locate and obtain the helicopter logbook on Factory",
+        "Hand over the found information"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Possessor",
+      "prerequisites": [
+        "Postman Pat - Part 1"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "59675ea386f77414b32bded2",
+      "title": "Postman Pat - Part 1",
+      "trader": "Prapor",
+      "location": "Factory",
+      "objectives": [
+        "Locate the dead messenger and obtain his letter on Factory",
+        "Survive and extract from the location",
+        "Hand over the letter to Therapist"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Postman_Pat_-_Part_1",
+      "prerequisites": [
+        "Ice Cream Cones"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "626bd75c71bd851e971b82a5",
+      "title": "Reconnaissance",
+      "trader": "Prapor",
+      "location": "Lighthouse",
+      "objectives": [
+        "Recon the roof of the first water treatment plant facility on Lighthouse",
+        "Recon the roof of the second water treatment plant facility on Lighthouse",
+        "Recon the roof of the third water treatment plant facility on Lighthouse",
+        "Survive and extract from the location"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Reconnaissance",
+      "prerequisites": [
+        "Easy Job - Part 1"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5d4bec3486f7743cac246665",
+      "title": "Regulated Materials",
+      "trader": "Prapor",
+      "objectives": [
+        "Find 6-STEN-140-M military battery in raid",
+        "Hand over the military battery",
+        "Find OFZ 30x165mm shells in raid",
+        "Hand over the OFZ shells"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Regulated_Materials",
+      "prerequisites": [
+        "Polikhim Hobo"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5fd9fad9c1ce6b1a3b486d00",
+      "title": "Search Mission",
+      "trader": "Prapor",
+      "location": "Woods",
+      "objectives": [
+        "Locate Prapor's missing convoy on Woods",
+        "Locate the temporary USEC camp on Woods",
+        "Survive and extract from the location"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Search_Mission",
+      "prerequisites": [
+        "Debut"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5967725e86f774601a446662",
+      "title": "Shaking Up the Teller",
+      "trader": "Prapor",
+      "location": "Customs",
+      "objectives": [
+        "Locate and obtain the valuable item in dorm room 203 on Customs",
+        "Hand over the valuable item",
+        "Gain access to dorm room 214 on Customs"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Shaking_Up_the_Teller",
+      "prerequisites": [
+        "Ice Cream Cones"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "657315df034d76585f032e01",
+      "title": "Shooting Cans",
+      "trader": "Prapor",
+      "location": "Ground Zero",
+      "objectives": [
+        "Locate the Utyos machine gun on Ground Zero",
+        "Locate the AGS grenade launcher on Ground Zero",
+        "Eliminate any target on Ground Zero"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Shooting_Cans",
+      "prerequisites": [],
+      "countsForKappa": true
+    },
+    {
+      "id": "5c0bd94186f7747a727f09b2",
+      "title": "Test Drive - Part 1",
+      "trader": "Prapor",
+      "objectives": [
+        "Eliminate PMC operatives using an SR-25 rifle with Hybrid 46 suppressor and Schmidt & Bender PM II 1-8x24 scope"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Test_Drive_-_Part_1",
+      "prerequisites": [
+        "Shooting Cans"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "63a5cf262964a7488f5243ce",
+      "title": "Test Drive - Part 2",
+      "trader": "Prapor",
+      "location": "Streets of Tarkov",
+      "objectives": [
+        "Eliminate PMCs using an MP5SD on Streets of Tarkov, Ground Zero, or Interchange"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Test_Drive_-_Part_2",
+      "prerequisites": [
+        "Test Drive - Part 1"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "64f5deac39e45b527a7c4232",
+      "title": "Test Drive - Part 3",
+      "trader": "Prapor",
+      "objectives": [
+        "Eliminate 20 PMCs with AK-12 with the proprietary suppressor and PS-320 scope on Lighthouse, Customs, or Reserve"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Test_Drive_-_Part_3",
+      "prerequisites": [
+        "Test Drive - Part 2"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "6574e0dedc0d635f633a5805",
+      "title": "Test Drive - Part 4",
+      "trader": "Prapor",
+      "location": "Shoreline",
+      "objectives": [
+        "Eliminate any target while using an RPDN with EKP-1S-03 sight on Shoreline, Interchange, or Woods"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Test_Drive_-_Part_4",
+      "prerequisites": [
+        "Test Drive - Part 3"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "669fa3a40c828825de06d6a1",
+      "title": "Test Drive - Part 5",
+      "trader": "Prapor",
+      "location": "Factory",
+      "objectives": [
+        "Eliminate any target while using an SR-2M with suppressor and KP-SR2 sight on Factory"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Test_Drive_-_Part_5",
+      "prerequisites": [
+        "Test Drive - Part 4"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "675c1ff1a757ddd00404f0aa",
+      "title": "Test Drive - Part 6",
+      "trader": "Prapor",
+      "location": "Customs",
+      "objectives": [
+        "Eliminate any target while using an Aklys Defense Velociraptor on Customs"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Test_Drive_-_Part_6",
+      "prerequisites": [
+        "Test Drive - Part 5"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5ede55112c95834b583f052a",
+      "title": "The Bunker - Part 1",
+      "trader": "Prapor",
+      "location": "Reserve",
+      "objectives": [
+        "Locate the underground bunker on Reserve",
+        "Locate the control room in the underground bunker on Reserve",
+        "Survive and extract from the location"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Bunker_-_Part_1",
+      "prerequisites": [
+        "BP Depot"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5ede567cfa6dc072ce15d6e3",
+      "title": "The Bunker - Part 2",
+      "trader": "Prapor",
+      "location": "Reserve",
+      "objectives": [
+        "Locate the hermetic door leading to the hospital (White Bishop) on Reserve",
+        "Locate one of the two hermetic doors leading to the academy building (Black Bishop) on Reserve",
+        "Locate one of the two hermetic doors leading to barracks #1 (Black Pawn) on Reserve",
+        "Locate one of the two hermetic doors leading to barracks #2 (White Pawn) on Reserve",
+        "Locate the hermetic door leading to the building of the air control center (King) on Reserve",
+        "Survive and extract from the location"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Bunker_-_Part_2",
+      "prerequisites": [
+        "The Bunker - Part 1"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "59c50a9e86f7745fef66f4ff",
+      "title": "The Punisher - Part 1",
+      "trader": "Prapor",
+      "location": "Shoreline",
+      "objectives": [
+        "Eliminate Scavs while using an AKM series weapon on Shoreline"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Punisher_-_Part_1",
+      "prerequisites": [
+        "Shaking Up the Teller"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "59c50c8886f7745fed3193bf",
+      "title": "The Punisher - Part 2",
+      "trader": "Prapor",
+      "location": "Reserve",
+      "objectives": [
+        "Eliminate Scavs while using a suppressed weapon on Reserve",
+        "Find Lower half-masks in raid",
+        "Hand over the half-masks"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Punisher_-_Part_2",
+      "prerequisites": [
+        "The Punisher - Part 1"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "59c512ad86f7741f0d09de9b",
+      "title": "The Punisher - Part 3",
+      "trader": "Prapor",
+      "location": "Customs",
+      "objectives": [
+        "Eliminate Scavs while using an AKS-74U on Customs"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Punisher_-_Part_3",
+      "prerequisites": [
+        "The Punisher - Part 2"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "59ca264786f77445a80ed044",
+      "title": "The Punisher - Part 4",
+      "trader": "Prapor",
+      "location": "Lighthouse",
+      "objectives": [
+        "Eliminate Scavs while using a 12ga shotgun on Lighthouse",
+        "Eliminate PMC operatives while wearing a balaclava and Scav vest on Lighthouse",
+        "Find Bars A-2607 95Kh18 knives in raid",
+        "Hand over the knives"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Punisher_-_Part_4",
+      "prerequisites": [
+        "The Punisher - Part 3"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "59ca29fb86f77445ab465c87",
+      "title": "The Punisher - Part 5",
+      "trader": "Prapor",
+      "objectives": [
+        "Find any Kalashnikov AK-74 assault rifle in raid",
+        "Hand over the AK-74",
+        "Find a Colt M4A1 assault rifle in raid",
+        "Hand over the M4A1",
+        "Find any Makarov PM pistols in raid",
+        "Hand over the pistols",
+        "Eliminate PMC operatives while wearing a PACA body armor and 6B47 helmet"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Punisher_-_Part_5",
+      "prerequisites": [
+        "The Punisher - Part 4"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "59ca2eb686f77445a80ed049",
+      "title": "The Punisher - Part 6",
+      "trader": "Prapor",
+      "objectives": [
+        "Eliminate PMC operatives while using an SVD rifle (excluding Factory)",
+        "Hand over any BEAR dogtags",
+        "Hand over any USEC dogtags"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Punisher_-_Part_6",
+      "prerequisites": [
+        "The Punisher - Part 5"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "608974d01a66564e74191fc0",
+      "title": "A Fuel Matter",
+      "trader": "Ragman",
+      "location": "Reserve",
+      "objectives": [
+        "Mark the first group of fuel tanks with an MS2000 Marker on Reserve",
+        "Mark the second group of fuel tanks with an MS2000 Marker on Reserve"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/A_Fuel_Matter",
+      "prerequisites": [
+        "The Blood of War - Part 1"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5ae448e586f7744dcf0c2a67",
+      "title": "Big Sale",
+      "trader": "Ragman",
+      "location": "Interchange",
+      "objectives": [
+        "Locate the AVOKADO store on Interchange",
+        "Locate the KOSTIN store on Interchange",
+        "Locate the tRend store on Interchange",
+        "Locate the DINO CLOTHES store on Interchange",
+        "Locate the TOP BRAND store on Interchange",
+        "Survive and extract from the location"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Big_Sale",
+      "prerequisites": [
+        "Only Business"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "675c085d59b0575973005f52",
+      "title": "Break the Deal",
+      "trader": "Ragman",
+      "location": "Customs",
+      "objectives": [
+        "Stash a DVL-10 sniper rifle at the specified spot on Customs",
+        "Stash a DVL-10 magazine at the specified spot on Customs",
+        "Stash an ELCAN SpecterDR scope at the specified spot on Customs",
+        "Stash a pack of any 7.62x51 ammo at the specified spot on Customs"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Break_the_Deal",
+      "prerequisites": [
+        "Make ULTRA Great Again"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5ae4499a86f77449783815db",
+      "title": "Charisma Brings Success",
+      "trader": "Ragman",
+      "objectives": [
+        "Reach the required Charisma skill level"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Charisma_Brings_Success",
+      "prerequisites": [
+        "The Blood of War - Part 1",
+        "Sew it Good - Part 4"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5ae4493486f7744efa289417",
+      "title": "Database - Part 1",
+      "trader": "Ragman",
+      "location": "Interchange",
+      "objectives": [
+        "Locate and obtain the Goshan cargo manifests on Interchange",
+        "Hand over the Goshan cargo manifests",
+        "Locate and obtain the OLI cargo manifests on Interchange",
+        "Hand over the OLI cargo manifests",
+        "Locate and obtain the IDEA cargo manifests on Interchange",
+        "Hand over the IDEA cargo manifests"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Database_-_Part_1",
+      "prerequisites": [
+        "Big Sale",
+        "Make ULTRA Great Again"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5ae4493d86f7744b8e15aa8f",
+      "title": "Database - Part 2",
+      "trader": "Ragman",
+      "location": "Interchange",
+      "objectives": [
+        "Locate and obtain the OLI cargo route documents on Interchange",
+        "Hand over the documents"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Database_-_Part_2",
+      "prerequisites": [
+        "Database - Part 1"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5ae4490786f7744ca822adcc",
+      "title": "Dressed to Kill",
+      "trader": "Ragman",
+      "objectives": [
+        "Find Kinda Cowboy hats in raid",
+        "Find Ushanka ear-flap hats in raid",
+        "Hand over the ushankas",
+        "Hand over the hats"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Dressed_to_Kill",
+      "prerequisites": [
+        "The Blood of War - Part 1"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5ae449b386f77446d8741719",
+      "title": "Gratitude",
+      "trader": "Ragman",
+      "location": "Woods",
+      "objectives": [
+        "Stash a Ghost balaclava at the sawmill docks on Woods",
+        "Stash a Shemagh (Green) at the sawmill docks on Woods",
+        "Stash RayBench Hipster Reserve sunglasses at the sawmill docks on Woods",
+        "Stash Round frame sunglasses at the sawmill docks on Woods"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Gratitude",
+      "prerequisites": [
+        "Dressed to Kill",
+        "Database - Part 2"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5b478b1886f7744d1b23c57d",
+      "title": "Hot Delivery",
+      "trader": "Ragman",
+      "location": "Interchange",
+      "objectives": [
+        "Stash the ComTac II headsets in the specified place on Interchange",
+        "Stash the 6B47 helmets (Olive Drab) in the specified place on Interchange",
+        "Stash the Gzhel-K body armor in the specified place on Interchange"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Hot_Delivery",
+      "prerequisites": [
+        "Gratitude"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "608974af4b05530f55550c21",
+      "title": "Inventory Check",
+      "trader": "Ragman",
+      "location": "Reserve",
+      "objectives": [
+        "Check the first arsenal in the eastern barracks (Black Pawn) on Reserve",
+        "Check the duty room in the eastern barracks (Black Pawn) on Reserve",
+        "Check the second arsenal in the eastern barracks (Black Pawn) on Reserve",
+        "Check the first arsenal in the southern barracks (White Pawn) on Reserve",
+        "Check the second arsenal in the southern barracks (White Pawn) on Reserve",
+        "Survive and extract from the location"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Inventory_Check",
+      "prerequisites": [
+        "A Fuel Matter"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5b47891f86f7744d1b23c571",
+      "title": "Living High is Not a Crime - Part 1",
+      "trader": "Ragman",
+      "objectives": [
+        "Find Bronze lion figurines in raid",
+        "Hand over the figurines",
+        "Find Horse figurines in raid",
+        "Hand over the figurines",
+        "Find a Cat figurine in raid",
+        "Hand over the figurine",
+        "Find a Roler Submariner gold wrist watch in raid",
+        "Hand over the wrist watch",
+        "Find Golden egg in raid",
+        "Hand over the figurine"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Living_High_is_Not_a_Crime_-_Part_1",
+      "prerequisites": [
+        "The Blood of War - Part 1",
+        "Sew it Good - Part 3"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5c1141f386f77430ff393792",
+      "title": "Living High is Not a Crime - Part 2",
+      "trader": "Ragman",
+      "objectives": [
+        "Find Antique teapots in raid",
+        "Find Antique vases in raid",
+        "Find Axel parrot figurine in raid",
+        "Find Raven figurines in raid",
+        "Hand over the teapots",
+        "Hand over the vases",
+        "Hand over the Axel parrot figurine",
+        "Hand over the Raven figurines"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Living_High_is_Not_a_Crime_-_Part_2",
+      "prerequisites": [
+        "Living High is Not a Crime - Part 1",
+        "The Blood of War - Part 3"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5ae448bf86f7744d733e55ee",
+      "title": "Make ULTRA Great Again",
+      "trader": "Ragman",
+      "location": "Interchange",
+      "objectives": [
+        "Eliminate Scavs on Interchange"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Make_ULTRA_Great_Again",
+      "prerequisites": [
+        "Only Business"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5b478d0f86f7744d190d91b5",
+      "title": "Minibus",
+      "trader": "Ragman",
+      "location": "Interchange",
+      "objectives": [
+        "Locate and mark the first yellow minibus with an MS2000 Marker on Interchange",
+        "Locate and mark the second yellow minibus with an MS2000 Marker on Interchange",
+        "Locate and mark the third yellow minibus with an MS2000 Marker on Interchange"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Minibus",
+      "prerequisites": [
+        "Database - Part 2"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5ae449a586f7744bde357696",
+      "title": "No Fuss Needed",
+      "trader": "Ragman",
+      "objectives": [
+        "Reach level 3 loyalty with Therapist"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/No_Fuss_Needed",
+      "prerequisites": [
+        "The Key to Success"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5ae448a386f7744d3730fff0",
+      "title": "Only Business",
+      "trader": "Ragman",
+      "objectives": [
+        "Reach level 2 loyalty with Ragman"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Only_Business",
+      "prerequisites": [],
+      "countsForKappa": true
+    },
+    {
+      "id": "5ae449c386f7744bde357697",
+      "title": "Sales Night",
+      "trader": "Ragman",
+      "location": "Interchange",
+      "objectives": [
+        "Survive and extract from Interchange"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Sales_Night",
+      "prerequisites": [
+        "Gratitude"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5c112d7e86f7740d6f647486",
+      "title": "Scavenger",
+      "trader": "Ragman",
+      "objectives": [
+        "Reach the required Search skill level"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Scavenger",
+      "prerequisites": [
+        "Hot Delivery"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5ae4495086f77443c122bc40",
+      "title": "Sew it Good - Part 1",
+      "trader": "Ragman",
+      "objectives": [
+        "Find a Ski hat with holes for eyes in raid",
+        "Hand over the ski hat",
+        "Find a Pilgrim tourist backpack in raid",
+        "Hand over the backpack"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Sew_it_Good_-_Part_1",
+      "prerequisites": [
+        "Database - Part 2"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5ae4495c86f7744e87761355",
+      "title": "Sew it Good - Part 2",
+      "trader": "Ragman",
+      "objectives": [
+        "Obtain BNTI Gzhel-K armor in 0-50% durability",
+        "Hand over the armor",
+        "Obtain BNTI Gzhel-K armor in 50-100% durability",
+        "Hand over the armor"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Sew_it_Good_-_Part_2",
+      "prerequisites": [
+        "Sew it Good - Part 1"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5ae4496986f774459e77beb6",
+      "title": "Sew it Good - Part 3",
+      "trader": "Ragman",
+      "objectives": [
+        "Hand over the 6B43 assault armor in 0-75% durability",
+        "Hand over the 6B43 assault armor in 75-100% durability"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Sew_it_Good_-_Part_3",
+      "prerequisites": [
+        "Sew it Good - Part 2"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5ae4497b86f7744cf402ed00",
+      "title": "Sew it Good - Part 4",
+      "trader": "Ragman",
+      "objectives": [
+        "Find WARTECH TV-109 + TV-106 chest rigs in raid",
+        "Hand over the chest rigs",
+        "Find BlackRock chest rigs in raid",
+        "Hand over the chest rigs"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Sew_it_Good_-_Part_4",
+      "prerequisites": [
+        "Sew it Good - Part 3"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5ae449d986f774453a54a7e1",
+      "title": "Supervisor",
+      "trader": "Ragman",
+      "objectives": [
+        "Obtain the Goshan cash register key",
+        "Hand over the key"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Supervisor",
+      "prerequisites": [
+        "The Key to Success",
+        "Sales Night"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5ae448f286f77448d73c0131",
+      "title": "The Blood of War - Part 1",
+      "trader": "Ragman",
+      "location": "Interchange",
+      "objectives": [
+        "Locate and mark the first fuel tank with an MS2000 Marker on Interchange",
+        "Locate and mark the second fuel tank with an MS2000 Marker on Interchange",
+        "Locate and mark the third fuel tank with an MS2000 Marker on Interchange",
+        "Locate and mark the fourth fuel tank with an MS2000 Marker on Interchange"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Blood_of_War_-_Part_1",
+      "prerequisites": [
+        "Big Sale",
+        "Make ULTRA Great Again"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5b47876e86f7744d1c353205",
+      "title": "The Blood of War - Part 2",
+      "trader": "Ragman",
+      "objectives": [
+        "Find Fuel conditioners in raid",
+        "Hand over the items"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Blood_of_War_-_Part_2",
+      "prerequisites": [
+        "The Blood of War - Part 1",
+        "Sew it Good - Part 1"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5c10f94386f774227172c572",
+      "title": "The Blood of War - Part 3",
+      "trader": "Ragman",
+      "location": "Woods",
+      "objectives": [
+        "Locate and mark the first fuel stash with an MS2000 Marker on Woods",
+        "Locate and mark the second fuel stash with an MS2000 Marker on Woods",
+        "Locate and mark the third fuel stash with an MS2000 Marker on Woods"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Blood_of_War_-_Part_3",
+      "prerequisites": [
+        "The Blood of War - Part 2"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5ae4498786f7744bde357695",
+      "title": "The Key to Success",
+      "trader": "Ragman",
+      "location": "Interchange",
+      "objectives": [
+        "Locate and obtain the first book of clothes design on Interchange",
+        "Hand over the first book",
+        "Locate and obtain the second book of clothes design on Interchange",
+        "Hand over the second book"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Key_to_Success",
+      "prerequisites": [
+        "Sew it Good - Part 2"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "657315e270bb0b8dba00cc48",
+      "title": "Burning Rubber",
+      "trader": "Skier",
+      "location": "Ground Zero",
+      "objectives": [
+        "Use the paid vehicle extraction on Ground Zero"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Burning_Rubber",
+      "prerequisites": [],
+      "countsForKappa": true
+    },
+    {
+      "id": "5979f9ba86f7740f6c3fe9f2",
+      "title": "Chemical - Part 1",
+      "trader": "Skier",
+      "location": "Customs",
+      "objectives": [
+        "Locate and obtain any information about the deputy chief’s past life on Customs",
+        "Hand over the information",
+        "Locate and obtain any item that could help with the investigation",
+        "Hand over the item",
+        "Locate the sleeping place of the former Deputy Chief of Security on Customs"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Chemical_-_Part_1",
+      "prerequisites": [
+        "Golden Swag"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "597a0b2986f77426d66c0633",
+      "title": "Chemical - Part 2",
+      "trader": "Skier",
+      "location": "Customs",
+      "objectives": [
+        "Locate and obtain any evidence that could help with the investigation on Customs",
+        "Hand over the evidence",
+        "Locate and obtain any information that could help with the investigation on Customs",
+        "Hand over the info"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Chemical_-_Part_2",
+      "prerequisites": [
+        "Chemical - Part 1"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "597a0e5786f77426d66c0636",
+      "title": "Chemical - Part 3",
+      "trader": "Skier",
+      "location": "Factory",
+      "objectives": [
+        "Locate and obtain the chemical syringe on Factory",
+        "Hand over the syringe"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Chemical_-_Part_3",
+      "prerequisites": [
+        "Chemical - Part 2"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "597a0f5686f774273b74f676",
+      "title": "Chemical - Part 4",
+      "trader": "Skier",
+      "location": "Customs",
+      "objectives": [
+        "Locate the transport with the chemicals on Customs",
+        "Mark the vehicle with an MS2000 Marker"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Chemical_-_Part_4",
+      "prerequisites": [
+        "Chemical - Part 3"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5b4795fb86f7745876267770",
+      "title": "Chumming",
+      "trader": "Skier",
+      "objectives": [
+        "Stash Golden neck chains under the mattress next to BTR-82A in Generic Store on Interchange",
+        "Stash Golden neck chains in the microwave on the 3rd floor of the dorm on Customs",
+        "Stash Golden neck chains in the middle wooden cabin at the sawmill on Woods",
+        "Eliminate PMC operatives in the time period of 22:00-10:00 on Interchange"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Chumming",
+      "prerequisites": [
+        "Informed Means Armed"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "669fa395c4c5c04798002497",
+      "title": "Exit Here",
+      "trader": "Skier",
+      "location": "Factory",
+      "objectives": [
+        "Survive and extract from Factory through the main exit"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Exit_Here",
+      "prerequisites": [
+        "Scout"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5c0bdb5286f774166e38eed4",
+      "title": "Flint",
+      "trader": "Skier",
+      "objectives": [
+        "Reach the required Stress Resistance skill level"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Flint",
+      "prerequisites": [
+        "Chumming"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5a27c99a86f7747d2c6bdd8e",
+      "title": "Friend From the West - Part 1",
+      "trader": "Skier",
+      "objectives": [
+        "Eliminate USEC PMC operatives",
+        "Hand over any USEC PMC dogtags"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Friend_From_the_West_-_Part_1",
+      "prerequisites": [
+        "Supplier"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5a27d2af86f7744e1115b323",
+      "title": "Friend From the West - Part 2",
+      "trader": "Skier",
+      "objectives": [
+        "Hand over USD"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Friend_From_the_West_-_Part_2",
+      "prerequisites": [
+        "Friend From the West - Part 1"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5979eee086f774311955e614",
+      "title": "Golden Swag",
+      "trader": "Skier",
+      "location": "Customs",
+      "objectives": [
+        "Locate and obtain the golden Zibbo lighter on Customs",
+        "Stash the lighter in the bunkhouse at the trailer park on Customs"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Golden_Swag",
+      "prerequisites": [
+        "What’s on the Flash Drive?"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5b47926a86f7747ccc057c15",
+      "title": "Informed Means Armed",
+      "trader": "Skier",
+      "objectives": [
+        "Install a WI-FI Camera to watch the sawmill dock on Woods",
+        "Install a WI-FI Camera to watch the road to the port on Customs",
+        "Install a WI-FI Camera to watch the Kiba Arms store entrance on Interchange"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Informed_Means_Armed",
+      "prerequisites": [
+        "Setup"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "596a101f86f7741ddb481582",
+      "title": "Kind of Sabotage",
+      "trader": "Skier",
+      "objectives": [
+        "Hand over Secure Folder 0052"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Kind_of_Sabotage",
+      "prerequisites": [
+        "Supply Plans"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5b4794cb86f774598100d5d4",
+      "title": "Lend-Lease - Part 1",
+      "trader": "Skier",
+      "objectives": [
+        "Obtain the first motor controller on Woods",
+        "Hand over the first controller",
+        "Obtain the second motor controller on Shoreline",
+        "Hand over the second controller",
+        "Obtain the third motor controller on Shoreline",
+        "Hand over the third controller",
+        "Obtain the first single-axis fiber optic gyroscope on Woods",
+        "Hand over the first gyroscope",
+        "Obtain the second single-axis fiber optic gyroscope on Shoreline",
+        "Hand over the second gyroscope"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Lend-Lease_-_Part_1",
+      "prerequisites": [
+        "Friend From the West - Part 2"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "6193850f60b34236ee0483de",
+      "title": "Long Road",
+      "trader": "Skier",
+      "location": "Lighthouse",
+      "objectives": [
+        "Eliminate Scavs along the shore and the main road on Lighthouse"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Long_Road",
+      "prerequisites": [
+        "Friend From the West - Part 2"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "6179b4f16e9dd54ac275e407",
+      "title": "Missing Cargo",
+      "trader": "Skier",
+      "location": "Lighthouse",
+      "objectives": [
+        "Locate the crashed helicopter on Lighthouse",
+        "Find the informant's intelligence folder",
+        "Hand over the folder"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Missing_Cargo",
+      "prerequisites": [
+        "Long Road"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "675c3582f6ddc329a90f9c6d",
+      "title": "Private Club",
+      "trader": "Skier",
+      "location": "Customs",
+      "objectives": [
+        "Locate and obtain Skier's wallet on Customs",
+        "Hand over the found item"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Private_Club",
+      "prerequisites": [
+        "Chumming"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5edabd13218d181e29451442",
+      "title": "Rigged Game",
+      "trader": "Skier",
+      "location": "Shoreline",
+      "objectives": [
+        "Mark the medical container at the Health Resort with an MS2000 Marker on Shoreline",
+        "Mark the medical container by cottages with an MS2000 Marker on Shoreline",
+        "Mark the medical container at the river pier with an MS2000 Marker on Shoreline"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Rigged_Game",
+      "prerequisites": [
+        "Anesthesia"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "6089743983426423753cd58a",
+      "title": "Safe Corridor",
+      "trader": "Skier",
+      "location": "Reserve",
+      "objectives": [
+        "Eliminate Scavs in the underground warehouse on Reserve"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Safe_Corridor",
+      "prerequisites": [
+        "Chemical - Part 4"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5c1234c286f77406fa13baeb",
+      "title": "Setup",
+      "trader": "Skier",
+      "location": "Customs",
+      "objectives": [
+        "Eliminate PMC operatives while wearing the specified gear on Customs"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Setup",
+      "prerequisites": [
+        "Friend From the West - Part 2"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "596b455186f77457cb50eccb",
+      "title": "Stirrup",
+      "trader": "Skier",
+      "objectives": [
+        "Eliminate PMC operatives while using pistols"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Stirrup",
+      "prerequisites": [
+        "Supplier"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "596b36c586f77450d6045ad2",
+      "title": "Supplier",
+      "trader": "Skier",
+      "objectives": [
+        "Hand over the found in raid item: BNTI Module-3M body armor",
+        "Hand over the found in raid item: TOZ-106 20ga bolt-action shotgun"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Supplier",
+      "prerequisites": [
+        "Burning Rubber"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "596b43fb86f77457ca186186",
+      "title": "The Extortionist",
+      "trader": "Skier",
+      "location": "Customs",
+      "objectives": [
+        "Locate and obtain the hidden valuable cargo on Customs",
+        "Hand over the valuable cargo",
+        "Locate the messenger's body on Customs",
+        "Locate the place where the messenger hid the cargo on Customs"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Extortionist",
+      "prerequisites": [
+        "Supplier"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "669fa39c64ea11e84c0642a6",
+      "title": "The Walls Have Eyes",
+      "trader": "Skier",
+      "location": "Factory",
+      "objectives": [
+        "Install a WI-FI Camera in the first crane's cockpit on Factory",
+        "Install a WI-FI Camera in the second crane's cockpit on Factory",
+        "Install a WI-FI Camera in the third crane's cockpit on Factory"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/The_Walls_Have_Eyes",
+      "prerequisites": [
+        "Exit Here"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5b478eca86f7744642012254",
+      "title": "Vitamins - Part 1",
+      "trader": "Skier",
+      "objectives": [
+        "Locate and obtain the first chemical container on Shoreline",
+        "Hand over the first container",
+        "Locate and obtain the second chemical container on Interchange",
+        "Hand over the second container",
+        "Locate and obtain the third chemical container on Interchange",
+        "Hand over the third container"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Vitamins_-_Part_1",
+      "prerequisites": [
+        "Chemical - Part 3"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5b478ff486f7744d184ecbbf",
+      "title": "Vitamins - Part 2",
+      "trader": "Skier",
+      "objectives": [
+        "Hand over the respirators",
+        "Find Respirators in raid",
+        "Find Medical bloodsets in raid",
+        "Hand over the bloodsets"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Vitamins_-_Part_2",
+      "prerequisites": [
+        "Vitamins - Part 1"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5979ed3886f77431307dc512",
+      "title": "What’s on the Flash Drive?",
+      "trader": "Skier",
+      "objectives": [
+        "Find Secure Flash drives in raid",
+        "Hand over the Flash drives"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/What%E2%80%99s_on_the_Flash_Drive%3F",
+      "prerequisites": [
+        "The Extortionist"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "669fa3910c828825de06d69f",
+      "title": "A Healthy Alternative",
+      "trader": "Therapist",
+      "objectives": [
+        "Hand over the lab journal"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/A_Healthy_Alternative",
+      "prerequisites": [
+        "One Less Loose End"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "675c03d1f7da9792a405549a",
+      "title": "Abandoned Cargo",
+      "trader": "Therapist",
+      "location": "Customs",
+      "objectives": [
+        "Locate and mark the first special TerraGroup cargo with an MS2000 Marker on Customs",
+        "Locate and mark the second special TerraGroup cargo with an MS2000 Marker on Customs",
+        "Locate and mark the third special TerraGroup cargo with an MS2000 Marker on Customs",
+        "Locate and mark the fourth special TerraGroup cargo with an MS2000 Marker on Customs",
+        "Locate and mark the fifth special TerraGroup cargo with an MS2000 Marker on Customs",
+        "Locate and mark the sixth special TerraGroup cargo with an MS2000 Marker on Customs",
+        "Locate and mark the seventh special TerraGroup cargo with an MS2000 Marker on Customs"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Abandoned_Cargo",
+      "prerequisites": [
+        "Seaside Vacation"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "669fa39ee749756c920d02c8",
+      "title": "All Is Revealed",
+      "trader": "Therapist",
+      "location": "Factory",
+      "objectives": [
+        "Take a sample of the chemicals from the damaged tank container on Factory",
+        "Hand over the collected sample"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/All_Is_Revealed",
+      "prerequisites": [
+        "Capacity Check"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5c0d0d5086f774363760aef2",
+      "title": "Athlete",
+      "trader": "Therapist",
+      "objectives": [
+        "Reach the required Health skill level"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Athlete",
+      "prerequisites": [
+        "Health Care Privacy - Part 4"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "596a218586f77420d232807c",
+      "title": "Car Repair",
+      "trader": "Therapist",
+      "objectives": [
+        "Find Car batteries in raid",
+        "Find Spark plugs in raid",
+        "Hand over the batteries",
+        "Hand over the spark plugs"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Car_Repair",
+      "prerequisites": [
+        "Pharmacist"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "675c04f4db8807b75d0f38e8",
+      "title": "Closer to the People",
+      "trader": "Therapist",
+      "location": "Customs",
+      "objectives": [
+        "Locate and obtain the delivery crew's shipment notes on Customs",
+        "Hand over the found information"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Closer_to_the_People",
+      "prerequisites": [
+        "Shipment Tracking"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5edab736cc183c769d778bc2",
+      "title": "Colleagues - Part 1",
+      "trader": "Therapist",
+      "location": "Shoreline",
+      "objectives": [
+        "Locate the group that was sent to the Health Resort on Shoreline",
+        "Locate the group that was sent to the pier on Shoreline",
+        "Locate the group that was sent to the cottages on Shoreline",
+        "Survive and extract from the location"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Colleagues_-_Part_1",
+      "prerequisites": [
+        "General Wares"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5edaba7c0c502106f869bc02",
+      "title": "Colleagues - Part 2",
+      "trader": "Therapist",
+      "location": "Shoreline",
+      "objectives": [
+        "Locate and obtain Sanitar's surgery kit marked with a blue symbol on Shoreline",
+        "Hand over Sanitar's surgery kit",
+        "Locate and obtain Sanitar's ophthalmoscope on Shoreline",
+        "Hand over Sanitar's ophthalmoscope"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Colleagues_-_Part_2",
+      "prerequisites": [
+        "Colleagues - Part 1"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5edac34d0bb72a50635c2bfa",
+      "title": "Colleagues - Part 3",
+      "trader": "Therapist",
+      "objectives": [
+        "Do not kill Sanitar",
+        "Find TerraGroup Labs access keycards in raid",
+        "Hand over the keycards",
+        "Find AHF1-M stimulant injector in raid",
+        "Hand over the injector",
+        "Find 3-(b-TG) stimulant injector in raid",
+        "Hand over the injector"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Colleagues_-_Part_3",
+      "prerequisites": [
+        "The Huntsman Path - Sadist"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "60e71c48c1bfa3050473b8e5",
+      "title": "Crisis",
+      "trader": "Therapist",
+      "objectives": [
+        "Find Portable defibrillators in raid",
+        "Find Ophthalmoscopes in raid",
+        "Find LEDX Skin Transilluminators in raid",
+        "Find Piles of meds in raid",
+        "Find Bottles of OLOLO Multivitamins in raid",
+        "Hand over the defibrillators",
+        "Hand over the ophthalmoscopes",
+        "Hand over the LEDX",
+        "Hand over the Piles of meds",
+        "Hand over the multivitamins"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Crisis",
+      "prerequisites": [
+        "Athlete"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5c0d1c4cd0928202a02a6f5c",
+      "title": "Decontamination Service",
+      "trader": "Therapist",
+      "location": "Interchange",
+      "objectives": [
+        "Eliminate Scavs from less than 60 meters away while wearing a gas mask or respirator on Interchange"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Decontamination_Service",
+      "prerequisites": [
+        "Health Care Privacy - Part 5",
+        "Private Clinic"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "60896e28e4a85c72ef3fa301",
+      "title": "Disease History",
+      "trader": "Therapist",
+      "location": "Reserve",
+      "objectives": [
+        "Obtain Medical record #1 on Reserve",
+        "Obtain Medical record #2 on Reserve",
+        "Hand over the first journal",
+        "Hand over the second journal"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Disease_History",
+      "prerequisites": [
+        "Pharmacist"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "626bd75b05f287031503c7f6",
+      "title": "Drug Trafficking",
+      "trader": "Therapist",
+      "location": "Lighthouse",
+      "objectives": [
+        "Locate the hidden drug lab on Lighthouse",
+        "Stash a WI-FI Camera in the drug lab"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Drug_Trafficking",
+      "prerequisites": [
+        "Lost Contact"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "657315ddab5a49b71f098853",
+      "title": "First in Line",
+      "trader": "Therapist",
+      "location": "Ground Zero",
+      "objectives": [
+        "Locate the Emercom station on Ground Zero",
+        "Hand over any found in raid medicine items"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/First_in_Line",
+      "prerequisites": [],
+      "countsForKappa": true
+    },
+    {
+      "id": "596a1e6c86f7741ddc2d3206",
+      "title": "General Wares",
+      "trader": "Therapist",
+      "objectives": [
+        "Find Cans of beef stew (Small) in raid",
+        "Hand over the cans"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/General_Wares",
+      "prerequisites": [
+        "Pharmacist"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5a68661a86f774500f48afb0",
+      "title": "Health Care Privacy - Part 1",
+      "trader": "Therapist",
+      "location": "Shoreline",
+      "objectives": [
+        "Locate and mark the first ambulance with an MS2000 Marker on Shoreline",
+        "Locate and mark the second ambulance with an MS2000 Marker on Shoreline",
+        "Locate and mark the third ambulance with an MS2000 Marker on Shoreline"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Health_Care_Privacy_-_Part_1",
+      "prerequisites": [
+        "Pharmacist"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5a68663e86f774501078f78a",
+      "title": "Health Care Privacy - Part 2",
+      "trader": "Therapist",
+      "location": "Shoreline",
+      "objectives": [
+        "Locate and obtain any info about TerraGroup's research in Health Resort west wing on Shoreline",
+        "Hand over the retrieved information",
+        "Survive and extract from the location"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Health_Care_Privacy_-_Part_2",
+      "prerequisites": [
+        "Health Care Privacy - Part 1"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5a68665c86f774255929b4c7",
+      "title": "Health Care Privacy - Part 3",
+      "trader": "Therapist",
+      "location": "Woods",
+      "objectives": [
+        "Locate the van of the Health Resort medical services director on Woods",
+        "Take a sample of the blood",
+        "Hand over the blood sample",
+        "Survive and extract from the location"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Health_Care_Privacy_-_Part_3",
+      "prerequisites": [
+        "Health Care Privacy - Part 2"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5a68667486f7742607157d28",
+      "title": "Health Care Privacy - Part 4",
+      "trader": "Therapist",
+      "objectives": [
+        "Reach the required Health skill level"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Health_Care_Privacy_-_Part_4",
+      "prerequisites": [
+        "Health Care Privacy - Part 3"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5a68669a86f774255929b4d4",
+      "title": "Health Care Privacy - Part 5",
+      "trader": "Therapist",
+      "location": "Night Factory",
+      "objectives": [
+        "Locate the drop spot on night-time Factory",
+        "Obtain 3 packs of Gunpowder \"Kite\" and stash them in the designated spot"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Health_Care_Privacy_-_Part_5",
+      "prerequisites": [
+        "Health Care Privacy - Part 4"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "669fa3a3ad7f1eac2607ed48",
+      "title": "Health Care Privacy - Part 6",
+      "trader": "Therapist",
+      "location": "Factory",
+      "objectives": [
+        "Locate the dead worker and take their blood sample on Factory",
+        "Hand over the blood sample"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Health_Care_Privacy_-_Part_6",
+      "prerequisites": [
+        "Health Care Privacy - Part 5"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "6179afd0bca27a099552e040",
+      "title": "Lost Contact",
+      "trader": "Therapist",
+      "location": "Lighthouse",
+      "objectives": [
+        "Find the lost group in the chalet area on Lighthouse",
+        "Survive and extract from the location"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Lost_Contact",
+      "prerequisites": [
+        "Health Care Privacy - Part 2"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "597a160786f77477531d39d2",
+      "title": "Out of Curiosity",
+      "trader": "Therapist",
+      "location": "Customs",
+      "objectives": [
+        "Locate the transport with the chemicals on Customs",
+        "Mark the vehicle with an MS2000 Marker"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Out_of_Curiosity",
+      "prerequisites": [
+        "Chemical - Part 4"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5969f90786f77420d2328015",
+      "title": "Painkiller",
+      "trader": "Therapist",
+      "objectives": [
+        "Find Morphine injectors in raid",
+        "Hand over the injectors"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Painkiller",
+      "prerequisites": [
+        "Sanitary Standards - Part 2"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5969f9e986f7741dde183a50",
+      "title": "Pharmacist",
+      "trader": "Therapist",
+      "location": "Customs",
+      "objectives": [
+        "Locate and obtain the suitcase with the device on Customs",
+        "Hand over the suitcase",
+        "Locate the paramedic’s car on Customs",
+        "Find a way inside the two-story dorm room 114 on Customs"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Pharmacist",
+      "prerequisites": [
+        "Painkiller"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "596760e186f7741e11214d58",
+      "title": "Postman Pat - Part 2",
+      "trader": "Therapist",
+      "objectives": [
+        "Hand over the letter from Prapor's messenger"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Postman_Pat_-_Part_2",
+      "prerequisites": [
+        "Postman Pat - Part 1"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5c0be5fc86f774467a116593",
+      "title": "Private Clinic",
+      "trader": "Therapist",
+      "objectives": [
+        "Find an Ophthalmoscope in raid",
+        "Find a LEDX Skin Transilluminator in raid",
+        "Hand over the Ophthalmoscope",
+        "Hand over the LEDX Skin Transilluminator"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Private_Clinic",
+      "prerequisites": [
+        "Health Care Privacy - Part 4"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "59689ee586f7740d1570bbd5",
+      "title": "Sanitary Standards - Part 1",
+      "trader": "Therapist",
+      "location": "Factory",
+      "objectives": [
+        "Find a Gas analyzer in raid",
+        "Hand over the items"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Sanitary_Standards_-_Part_1",
+      "prerequisites": [
+        "Shortage"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "596a204686f774576d4c95de",
+      "title": "Sanitary Standards - Part 2",
+      "trader": "Therapist",
+      "objectives": [
+        "Find Gas analyzers in raid",
+        "Hand over the items"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Sanitary_Standards_-_Part_2",
+      "prerequisites": [
+        "Sanitary Standards - Part 1"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "6179ad56c760af5ad2053587",
+      "title": "Seaside Vacation",
+      "trader": "Therapist",
+      "location": "Lighthouse",
+      "objectives": [
+        "Find the informant's briefcase on Lighthouse",
+        "Hand over the found package"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Seaside_Vacation",
+      "prerequisites": [
+        "Disease History"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "675c047fa46173572a0bd878",
+      "title": "Shipment Tracking",
+      "trader": "Therapist",
+      "location": "Customs",
+      "objectives": [
+        "Locate and obtain the TerraGroup shipment lists on Customs",
+        "Hand over the found information"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Shipment_Tracking",
+      "prerequisites": [
+        "Abandoned Cargo"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "5967733e86f774602332fc84",
+      "title": "Shortage",
+      "trader": "Therapist",
+      "objectives": [
+        "Find Salewa first aid kits in raid",
+        "Hand over the items"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Shortage",
+      "prerequisites": [
+        "First in Line"
+      ],
+      "countsForKappa": true
+    },
+    {
+      "id": "596a0e1686f7741ddf17dbee",
+      "title": "Supply Plans",
+      "trader": "Therapist",
+      "location": "Woods",
+      "objectives": [
+        "Locate and obtain Secure Folder 0052 in the sawmill cabin on Woods",
+        "Survive and extract from the location",
+        "Hand over the folder"
+      ],
+      "description": "Guia externa: https://escapefromtarkov.fandom.com/wiki/Supply_Plans",
+      "prerequisites": [
+        "Pharmacist"
+      ],
       "countsForKappa": true
     }
   ]

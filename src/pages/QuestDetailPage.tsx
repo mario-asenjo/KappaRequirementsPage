@@ -36,16 +36,16 @@ const QuestDetailPage: React.FC<QuestDetailPageProps> = ({ tasks }) => {
 
   return (
     <div className="container-fluid">
-      <div className="mb-3 d-flex align-items-center">
+      <div className="page-heading mb-3 d-flex flex-column flex-sm-row align-items-sm-center gap-2">
         <Link to={`/trader/${encodeURIComponent(task.trader)}`} className="btn btn-link me-3">
           ← Volver a {task.trader}
         </Link>
         <h2 className="mb-0">{task.title}</h2>
       </div>
       {task.description && (
-        <p className="lead">{task.description}</p>
+        <p className="detail-lead lead">{task.description}</p>
       )}
-      <div className="mb-3">
+      <div className="detail-panel mb-3">
         <h5>Objetivos</h5>
         <ul>
           {task.objectives.map((obj, idx) => (
@@ -54,7 +54,7 @@ const QuestDetailPage: React.FC<QuestDetailPageProps> = ({ tasks }) => {
         </ul>
       </div>
       {task.prerequisites && task.prerequisites.length > 0 && (
-        <div className="mb-3">
+        <div className="detail-panel mb-3">
           <h5>Prerrequisitos</h5>
           <ul>
             {task.prerequisites.map((pre, idx) => (
@@ -64,7 +64,7 @@ const QuestDetailPage: React.FC<QuestDetailPageProps> = ({ tasks }) => {
         </div>
       )}
       {task.rewards && (
-        <div className="mb-3">
+        <div className="detail-panel mb-3">
           <h5>Recompensas</h5>
           <p>{task.rewards}</p>
         </div>

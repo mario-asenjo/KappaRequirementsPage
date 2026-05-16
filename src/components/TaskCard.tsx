@@ -29,8 +29,8 @@ const TaskCard: React.FC<TaskCardProps> = ({ task }) => {
   };
 
   return (
-    <div className={`card mb-3 ${isCompleted ? 'border-success' : ''}`}> 
-      <div className="card-body d-flex justify-content-between align-items-start">
+    <div className={`task-card card mb-3 ${isCompleted ? 'is-completed' : ''}`}> 
+      <div className="card-body d-flex flex-column flex-sm-row gap-3 justify-content-between align-items-start">
         <div>
           <h5 className="card-title mb-1">
             <Link to={`/task/${encodeURIComponent(task.id)}`}>{task.title}</Link>

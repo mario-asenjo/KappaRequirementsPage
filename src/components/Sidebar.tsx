@@ -21,8 +21,8 @@ const Sidebar: React.FC<SidebarProps> = ({ tasks }) => {
 
   return (
     <nav
-      className="d-flex flex-column bg-white border-end"
-      style={{ width: '220px', minWidth: '200px' }}
+      className="app-sidebar bg-white border-end"
+      aria-label="Comerciantes"
     >
       <div className="list-group list-group-flush">
         {traders.map((trader) => {
@@ -35,13 +35,13 @@ const Sidebar: React.FC<SidebarProps> = ({ tasks }) => {
               key={trader}
               to={`/trader/${encodeURIComponent(trader)}`}
               className={({ isActive }) =>
-                `list-group-item list-group-item-action d-flex justify-content-between align-items-center ${
+                `trader-link list-group-item list-group-item-action d-flex justify-content-between align-items-center ${
                   isActive ? 'active' : ''
                 }`
               }
             >
               <span>{trader}</span>
-              <span className="badge bg-secondary rounded-pill">
+              <span className="badge trader-badge">
                 {completedForTrader}/{traderTasks.length}
               </span>
             </NavLink>

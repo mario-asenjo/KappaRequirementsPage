@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
 import QuestListPage from './pages/QuestListPage';
@@ -6,48 +6,24 @@ import QuestDetailPage from './pages/QuestDetailPage';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import { Task } from './types';
+import taskData from './data/tasks.json';
 
 /**
- * Root component. Loads task data from a JSON file and sets up application
- * layout. Displays a sidebar, header, and the routed content. The JSON file
- * resides in the src/data directory and can be updated by running the provided
- * fetch script. This component also handles a loading state while the tasks
- * are being fetched.
+ * Root component. Bundles task data from src/data/tasks.json and sets up the
+ * application layout. The JSON file can be refreshed with `npm run update:tasks`.
  */
 const App: React.FC = () => {
-  const [tasks, setTasks] = useState<Task[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    // Fetch task data from the bundled JSON file. The fetch API will load
-    // `/data/tasks.json` relative to the base URL. If the file is missing or
-    // malformed this will error, so errors are logged to the console.
-    fetch('/src/data/tasks.json')
-      .then(async (res) => {
-        const data = await res.json();
-        // Support both { tasks: [...] } and direct array in the JSON file
-        const loadedTasks: Task[] = Array.isArray(data) ? data : data.tasks;
-        setTasks(loadedTasks);
-      })
-      .catch((err) => {
-        console.error('Failed to load tasks:', err);
-      })
-      .finally(() => setLoading(false));
-  }, []);
-
-  if (loading) {
-    return <div className="p-3">Cargando misiones...</div>;
-  }
+  const tasks = taskData.tasks as Task[];
 
   return (
-    <div className="d-flex flex-column" style={{ height: '100vh' }}>
+    <div className="app-shell d-flex flex-column">
       {/* Header at the top */}
       <Header tasks={tasks} />
-      <div className="d-flex flex-grow-1 overflow-hidden">
+      <div className="app-body d-flex flex-column flex-md-row flex-grow-1 overflow-hidden">
         {/* Sidebar on the left */}
         <Sidebar tasks={tasks} />
         {/* Main content area */}
-        <main className="flex-grow-1 overflow-auto p-3">
+        <main className="app-main flex-grow-1 overflow-auto p-3">
           <Routes>
             <Route path="/" element={<Home tasks={tasks} />} />
             <Route
