@@ -1,3 +1,43 @@
+:root {
+  --kraken-purple: #7132f5;
+  --kraken-purple-dark: #5741d8;
+  --kraken-purple-deep: #5b1ecf;
+  --kraken-purple-subtle: rgba(133, 91, 251, 0.16);
+  --kraken-text: #101114;
+  --kraken-muted: #9497a9;
+  --kraken-neutral: #686b82;
+  --kraken-border: #dedee5;
+  --kraken-success: #149e61;
+  --kraken-success-dark: #026b3f;
+  --kraken-shadow: rgba(0, 0, 0, 0.03) 0 4px 24px;
+  --kraken-micro-shadow: rgba(16, 24, 40, 0.04) 0 1px 4px;
+}
+
+body {
+  color: var(--kraken-text);
+  font-family: Kraken-Product, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.navbar-brand {
+  color: var(--kraken-text);
+  font-family: Kraken-Brand, "IBM Plex Sans", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+a {
+  color: var(--kraken-purple-dark);
+}
+
+a:hover {
+  color: var(--kraken-purple-deep);
+}
+
 .app-shell {
   min-height: 100vh;
 }
@@ -9,14 +49,218 @@
 .app-sidebar {
   flex: 0 0 220px;
   overflow-y: auto;
+  border-color: var(--kraken-border) !important;
 }
 
 .app-main {
-  background: linear-gradient(180deg, #f8f9fa 0%, #eef2f6 100%);
+  background:
+    radial-gradient(circle at top left, rgba(113, 50, 245, 0.1), transparent 28rem),
+    linear-gradient(180deg, #ffffff 0%, #f7f7fb 100%);
+}
+
+.app-header {
+  background: #ffffff;
+  border-bottom: 1px solid var(--kraken-border);
+  box-shadow: var(--kraken-micro-shadow);
+}
+
+.app-header .navbar-brand {
+  color: var(--kraken-text);
+}
+
+.kappa-progress-label {
+  color: var(--kraken-neutral);
 }
 
 .card {
-  box-shadow: 0 0.35rem 1rem rgba(20, 32, 46, 0.08);
+  border-color: rgba(104, 107, 130, 0.18);
+  border-radius: 16px;
+  box-shadow: var(--kraken-shadow);
+}
+
+.hero-panel {
+  background: #ffffff;
+  border: 1px solid rgba(104, 107, 130, 0.16);
+  border-radius: 16px;
+  box-shadow: var(--kraken-shadow);
+  padding: 25px;
+}
+
+.hero-panel h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.17;
+  letter-spacing: -1px;
+  margin-bottom: 12px;
+  max-width: 760px;
+}
+
+.hero-panel p {
+  color: var(--kraken-neutral);
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 720px;
+}
+
+.eyebrow {
+  color: var(--kraken-purple);
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.hero-stats span,
+.trader-badge {
+  background: rgba(104, 107, 130, 0.12);
+  border-radius: 8px;
+  color: #484b5e;
+  font-weight: 600;
+  padding: 6px 10px;
+}
+
+.hero-stats strong {
+  color: var(--kraken-text);
+}
+
+.section-title,
+.page-heading h2 {
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+}
+
+.btn {
+  border-radius: 12px;
+  font-weight: 600;
+  line-height: 1.38;
+  padding: 13px 16px;
+}
+
+.btn-sm {
+  padding: 8px 12px;
+}
+
+.btn-primary,
+.btn-primary:focus,
+.btn-primary:active {
+  background: var(--kraken-purple) !important;
+  border-color: var(--kraken-purple) !important;
+  color: #ffffff !important;
+}
+
+.btn-primary:hover {
+  background: var(--kraken-purple-deep) !important;
+  border-color: var(--kraken-purple-deep) !important;
+}
+
+.btn-outline-secondary {
+  background: #ffffff;
+  border-color: var(--kraken-purple-dark);
+  color: var(--kraken-purple-dark);
+}
+
+.btn-outline-secondary:hover,
+.btn-outline-secondary:focus {
+  background: var(--kraken-purple-subtle);
+  border-color: var(--kraken-purple-dark);
+  color: var(--kraken-purple-deep);
+}
+
+.btn-success,
+.btn-success:hover,
+.btn-success:focus {
+  background: rgba(20, 158, 97, 0.16) !important;
+  border-color: transparent !important;
+  color: var(--kraken-success-dark) !important;
+}
+
+.btn-link {
+  color: var(--kraken-purple-dark);
+  text-decoration: none;
+}
+
+.btn-link:hover {
+  color: var(--kraken-purple-deep);
+}
+
+.progress {
+  background: rgba(148, 151, 169, 0.18);
+  border-radius: 9999px;
+}
+
+.progress-bar {
+  background: linear-gradient(90deg, var(--kraken-purple), var(--kraken-purple-dark));
+  border-radius: inherit;
+}
+
+.trader-link {
+  border-color: var(--kraken-border) !important;
+  color: var(--kraken-text);
+  font-weight: 500;
+  padding: 13px 16px;
+}
+
+.trader-link.active,
+.trader-link.active:hover {
+  background: var(--kraken-purple-subtle);
+  border-color: rgba(113, 50, 245, 0.24) !important;
+  color: var(--kraken-purple-deep);
+}
+
+.trader-link.active .trader-badge {
+  background: #ffffff;
+  color: var(--kraken-purple-dark);
+}
+
+.trader-card .card-title,
+.task-card .card-title {
+  font-size: 1.375rem;
+}
+
+.task-card.is-completed {
+  border-color: rgba(20, 158, 97, 0.35);
+}
+
+.task-card.is-completed::before {
+  background: var(--kraken-success);
+  border-radius: 16px 16px 0 0;
+  content: "";
+  display: block;
+  height: 4px;
+}
+
+.filter-panel,
+.detail-panel,
+.detail-lead,
+.empty-state {
+  background: #ffffff;
+  border: 1px solid rgba(104, 107, 130, 0.16);
+  border-radius: 16px;
+  box-shadow: var(--kraken-shadow);
+  padding: 16px;
+}
+
+.form-control,
+.form-check-input {
+  border-color: var(--kraken-border);
+}
+
+.form-control:focus,
+.form-check-input:focus {
+  border-color: var(--kraken-purple);
+  box-shadow: 0 0 0 0.25rem rgba(113, 50, 245, 0.16);
+}
+
+.form-check-input:checked {
+  background-color: var(--kraken-purple);
+  border-color: var(--kraken-purple);
 }
 
 @media (max-width: 767.98px) {

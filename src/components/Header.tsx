@@ -29,7 +29,7 @@ const Header: React.FC<HeaderProps> = ({ tasks }) => {
   const progressPercent = Math.round(progress * 100);
 
   return (
-    <header className="navbar navbar-dark bg-primary px-3 gap-3">
+    <header className="app-header navbar px-3 gap-3">
       <span className="navbar-brand mb-0 h1">Kappa Progress Tracker</span>
       <div className="kappa-progress flex-grow-1">
         <div className="progress" style={{ height: '1rem' }}>
@@ -44,7 +44,7 @@ const Header: React.FC<HeaderProps> = ({ tasks }) => {
             {progressPercent}%
           </div>
         </div>
-        <small className="text-light">
+        <small className="kappa-progress-label">
           {completedKappaTasks} de {totalKappaTasks} misiones de Kappa completadas
         </small>
       </div>

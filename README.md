@@ -10,11 +10,15 @@ Este repositorio contiene una aplicación SPA escrita en **React** (con Vite y T
 - **Página de detalle**: cada misión tiene una página dedicada con su descripción, objetivos, prerrequisitos y recompensas.
 - **Datos sincronizables**: `src/data/tasks.json` se puede regenerar desde `tarkov.dev` con las misiones que cuentan para Kappa.
 - **Estilos versionados**: Bootstrap se instala como dependencia npm y se complementa con estilos locales responsivos en `src/styles.css`.
+- **Sistema visual Kraken**: `DESIGN.md` documenta paleta, tipografia, radios y componentes base usados por la UI.
 
 ## Estructura del proyecto
 
 ```
 kappa-tracker/
+├── AGENTS.md           Reglas operativas del agente de mantenimiento
+├── DESIGN.md           Sistema visual inspirado en Kraken
+├── MEMORY.md           Memoria persistente de estructura, fuentes y cambios
 ├── index.html          Página HTML de entrada que carga la aplicación
 ├── package.json        Dependencias y scripts de npm
 ├── vite.config.ts      Configuración de Vite para React
