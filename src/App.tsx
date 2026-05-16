@@ -7,14 +7,15 @@ import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import { Task } from './types';
 import taskData from './data/tasks.json';
+import { sortTasksByGameOrder } from './utils/taskOrder';
+
+const tasks = sortTasksByGameOrder(taskData.tasks as Task[]);
 
 /**
  * Root component. Bundles task data from src/data/tasks.json and sets up the
  * application layout. The JSON file can be refreshed with `npm run update:tasks`.
  */
 const App: React.FC = () => {
-  const tasks = taskData.tasks as Task[];
-
   return (
     <div className="app-shell d-flex flex-column">
       {/* Header at the top */}

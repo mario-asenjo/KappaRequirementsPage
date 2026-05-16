@@ -20,6 +20,10 @@ const QuestListPage: React.FC<QuestListPageProps> = ({ tasks }) => {
   const [completedIds] = useLocalStorage<string[]>('completedTasks', []);
   const [search, setSearch] = useState('');
   const [hideCompleted, setHideCompleted] = useState(false);
+  const completedForTrader = traderTasks.filter((task) => completedIds.includes(task.id)).length;
+  const traderProgress = traderTasks.length > 0
+    ? Math.round((completedForTrader / traderTasks.length) * 100)
+    : 0;
 
   const filtered = traderTasks.filter((task) => {
     const matchesTitle = task.title.toLowerCase().includes(search.toLowerCase());
@@ -30,8 +34,24 @@ const QuestListPage: React.FC<QuestListPageProps> = ({ tasks }) => {
   return (
     <div className="container-fluid">
       <div className="page-heading d-flex flex-column flex-sm-row align-items-sm-center gap-2 mb-3">
-          <h2 className="me-auto mb-0">Misiones de {trader}</h2>
+          <div className="me-auto">
+            <span className="eyebrow">Ruta ordenada por aparicion</span>
+            <h2 className="mb-1">Misiones de {trader}</h2>
+            <p className="page-subtitle mb-0">
+              {completedForTrader} de {traderTasks.length} completadas ({traderProgress}%).
+            </p>
+          </div>
           <Link to="/" className="btn btn-link">← Volver</Link>
+      </div>
+      <div className="progress trader-page-progress mb-3" aria-label={`Progreso de ${trader}`}>
+        <div
+          className="progress-bar"
+          role="progressbar"
+          style={{ width: `${traderProgress}%` }}
+          aria-valuenow={traderProgress}
+          aria-valuemin={0}
+          aria-valuemax={100}
+        ></div>
       </div>
       <div className="filter-panel row mb-3">
         <div className="col-md-6 col-lg-4 mb-2">
@@ -59,7 +79,9 @@ const QuestListPage: React.FC<QuestListPageProps> = ({ tasks }) => {
       {filtered.length === 0 ? (
         <p className="empty-state">No hay misiones que coincidan con tu busqueda.</p>
       ) : (
-        filtered.map((task) => <TaskCard key={task.id} task={task} />)
+        filtered.map((task) => (
+          <TaskCard key={task.id} task={task} position={traderTasks.indexOf(task) + 1} />
+        ))
       )}
     </div>
   );
