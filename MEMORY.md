@@ -37,6 +37,16 @@
 
 ## Historial De Cambios
 
+### 2026-05-16
+
+- Rama de trabajo: `improve-dashboard-progress-order`.
+- Se corrigio `src/hooks/useLocalStorage.ts` para sincronizar cambios de `completedTasks` entre cabecera, sidebar, panel y tarjetas sin recargar la pagina.
+- Se anadio `src/utils/taskOrder.ts` para ordenar misiones por prerequisitos de la API y mantener prerequisitos antes de dependientes, con fallback estable por comerciante/titulo.
+- Se mejoro el panel principal con tarjeta de progreso global, pendientes, siguiente mision recomendada y tarjetas de comerciante mas informativas.
+- Se mejoro la pagina de comerciante con progreso propio y numeracion de misiones segun el orden calculado.
+- Se verifico `tarkov.dev` sin regenerar datos: la API sigue exponiendo `257` misiones Kappa, igual que `src/data/tasks.json`.
+- Verificacion: `npm run build` correcto.
+
 ### 2026-05-14
 
 - Rama de trabajo: `chore/sync-kappa-tracker`.

@@ -5,6 +5,7 @@ import { Task } from '../types';
 
 interface TaskCardProps {
   task: Task;
+  position?: number;
 }
 
 /**
@@ -13,7 +14,7 @@ interface TaskCardProps {
  * is persisted in localStorage using the custom hook. Styling is kept
  * minimal using Bootstrap utility classes.
  */
-const TaskCard: React.FC<TaskCardProps> = ({ task }) => {
+const TaskCard: React.FC<TaskCardProps> = ({ task, position }) => {
   const [completedIds, setCompletedIds] = useLocalStorage<string[]>('completedTasks', []);
 
   const isCompleted = completedIds.includes(task.id);
@@ -31,7 +32,8 @@ const TaskCard: React.FC<TaskCardProps> = ({ task }) => {
   return (
     <div className={`task-card card mb-3 ${isCompleted ? 'is-completed' : ''}`}> 
       <div className="card-body d-flex flex-column flex-sm-row gap-3 justify-content-between align-items-start">
-        <div>
+        <div className="task-card-content">
+          {position !== undefined && <span className="task-order">#{position}</span>}
           <h5 className="card-title mb-1">
             <Link to={`/task/${encodeURIComponent(task.id)}`}>{task.title}</Link>
           </h5>

@@ -18,21 +18,39 @@ const Home: React.FC<HomeProps> = ({ tasks }) => {
   // Group tasks by trader
   const traders = Array.from(new Set(tasks.map((t) => t.trader))).sort();
   const totalCompleted = tasks.filter((task) => completedIds.includes(task.id)).length;
+  const totalPending = tasks.length - totalCompleted;
   const totalProgress = tasks.length > 0 ? Math.round((totalCompleted / tasks.length) * 100) : 0;
+  const nextPending = tasks.find((task) => !completedIds.includes(task.id));
 
   return (
     <div className="container-fluid">
-      <section className="hero-panel mb-4">
-        <span className="eyebrow">Kappa mission control</span>
-        <h1>Tu ruta hacia Kappa, limpia y medible.</h1>
-        <p>
-          Sigue el avance por comerciante, filtra pendientes y conserva el progreso
-          localmente sin cuentas ni credenciales.
-        </p>
-        <div className="hero-stats">
-          <span><strong>{totalCompleted}</strong> completadas</span>
-          <span><strong>{tasks.length}</strong> misiones Kappa</span>
-          <span><strong>{totalProgress}%</strong> progreso global</span>
+      <section className="hero-panel dashboard-panel mb-4">
+        <div className="dashboard-copy">
+          <span className="eyebrow">Kappa mission control</span>
+          <h1>Tu ruta hacia Kappa, limpia y medible.</h1>
+          <p>
+            Sigue el avance por comerciante, filtra pendientes y conserva el progreso
+            localmente sin cuentas ni credenciales.
+          </p>
+          <div className="hero-stats" aria-label="Resumen global">
+            <span><strong>{totalCompleted}</strong> completadas</span>
+            <span><strong>{totalPending}</strong> pendientes</span>
+            <span><strong>{tasks.length}</strong> misiones Kappa</span>
+          </div>
+        </div>
+        <div className="dashboard-card" aria-label="Progreso global hacia Kappa">
+          <span className="dashboard-label">Progreso global</span>
+          <strong>{totalProgress}%</strong>
+          <div className="progress" aria-hidden="true">
+            <div className="progress-bar" style={{ width: `${totalProgress}%` }}></div>
+          </div>
+          {nextPending ? (
+            <Link className="next-task" to={`/task/${encodeURIComponent(nextPending.id)}`}>
+              Siguiente: {nextPending.title}
+            </Link>
+          ) : (
+            <span className="next-task is-done">Todas las misiones Kappa estan completadas</span>
+          )}
         </div>
       </section>
       <h2 className="section-title mb-4">Resumen por comerciante</h2>
@@ -48,11 +66,14 @@ const Home: React.FC<HomeProps> = ({ tasks }) => {
             <div key={trader} className="col">
               <div className="trader-card card h-100">
                 <div className="card-body d-flex flex-column">
-                  <h5 className="card-title">{trader}</h5>
+                  <div className="trader-card-header">
+                    <h5 className="card-title">{trader}</h5>
+                    <span>{progressPercent}%</span>
+                  </div>
                   <p className="card-text flex-grow-1">
-                    {completedForTrader} de {traderTasks.length} misiones completadas
+                    {completedForTrader} completadas, {traderTasks.length - completedForTrader} pendientes
                   </p>
-                  <div className="progress mb-2" style={{ height: '0.5rem' }}>
+                  <div className="progress mb-3" style={{ height: '0.55rem' }}>
                     <div
                       className="progress-bar"
                       role="progressbar"
@@ -62,7 +83,7 @@ const Home: React.FC<HomeProps> = ({ tasks }) => {
                       aria-valuemax={100}
                     ></div>
                   </div>
-                  <Link className="btn btn-primary" to={`/trader/${encodeURIComponent(trader)}`}>Ver misiones</Link>
+                  <Link className="btn btn-primary" to={`/trader/${encodeURIComponent(trader)}`}>Continuar ruta</Link>
                 </div>
               </div>
             </div>
