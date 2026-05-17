@@ -26,4 +26,41 @@ export interface Task {
   prerequisites?: string[];
   /** Whether this task counts toward the Kappa secure container */
   countsForKappa: boolean;
+  /** Whether this task counts toward Lightkeeper progression */
+  lightkeeperRequired?: boolean;
+  /** Achievement rewards granted by finishing this task */
+  achievementRewards?: AchievementReference[];
+}
+
+export interface AchievementReference {
+  id: string;
+  name: string;
+}
+
+export interface Achievement {
+  id: string;
+  name: string;
+  description?: string;
+  hidden: boolean;
+  rarity?: string;
+  imageLink?: string;
+  playersCompletedPercent?: number;
+  wiki?: {
+    section?: string;
+    reward?: string;
+    rawDescription?: string;
+    links: string[];
+  };
+}
+
+export type GoalType = 'task-set' | 'achievement' | 'manual-achievement';
+
+export interface Goal {
+  id: string;
+  name: string;
+  type: GoalType;
+  description: string;
+  taskIds: string[];
+  achievementIds: string[];
+  source: 'tarkov.dev' | 'wiki' | 'derived';
 }

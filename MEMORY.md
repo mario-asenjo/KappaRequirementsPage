@@ -14,12 +14,16 @@
 - `src/components/`: componentes reutilizables `Header`, `Sidebar` y `TaskCard`.
 - `src/pages/`: paginas `Home`, `QuestListPage`, `QuestDetailPage` y `QuestTreePage`.
 - `src/hooks/useLocalStorage.ts`: persistencia local de misiones completadas.
-- `src/data/tasks.json`: datos versionados de misiones Kappa.
+- `src/data/tasks.json`: datos versionados de todas las misiones desde `tarkov.dev`, con flags Kappa/Lightkeeper.
+- `src/data/achievements.json`: achievements desde `tarkov.dev` enriquecidos con la tabla de la wiki.
+- `src/data/goals.json`: perfiles de progreso derivados para Kappa, Lightkeeper, todas las misiones y achievements.
 - `src/data/questTree.json`: arbol de misiones generado desde `tasks.json`.
 - `src/utils/questTree.ts`: construccion de arbol por comerciante y estados de nodos.
 - `src/styles.css`: ajustes visuales y responsivos locales.
 - `DESIGN.md`: sistema visual inspirado en Kraken para guiar cualquier cambio de interfaz.
-- `scripts/fetchTasks.ts`: sincronizacion de misiones desde `tarkov.dev`.
+- `scripts/fetchTasks.ts`: sincronizacion de todas las misiones desde `tarkov.dev`.
+- `scripts/fetchAchievements.ts`: sincronizacion de achievements desde `tarkov.dev` y wiki.
+- `scripts/buildGoals.ts`: generacion de perfiles de progreso derivados.
 
 ## Convenciones
 
@@ -36,9 +40,19 @@
 - Fuente primaria actual: `https://api.tarkov.dev/graphql`.
 - Fuente secundaria para guias externas: `https://escapefromtarkov.fandom.com` enlazada por `wikiLink` cuando la API la expone.
 - Ultima sincronizacion registrada: `2026-05-14T14:33:15.426Z`.
-- Total registrado de misiones Kappa: `257`.
+- Total registrado de misiones: `499` (`257` Kappa, `102` Lightkeeper).
+- Total registrado de achievements: `105`.
 
 ## Historial De Cambios
+
+### 2026-05-17 (fase 1 objetivos)
+
+- Rama de trabajo: `feature/data-goals-achievements`.
+- Se amplio `src/data/tasks.json` de `257` misiones Kappa a `499` misiones totales desde `tarkov.dev`, manteniendo `countsForKappa` y anadiendo `lightkeeperRequired` y `achievementRewards`.
+- Se mantuvo la UI actual filtrada a Kappa en `src/App.tsx` hasta implementar el selector de objetivos en una fase posterior.
+- Se anadio `scripts/fetchAchievements.ts` y `src/data/achievements.json` con `105` achievements desde `tarkov.dev`, enriquecidos con la tabla `Achievements` de la wiki mediante API MediaWiki.
+- Se anadio `scripts/buildGoals.ts` y `src/data/goals.json` con objetivos derivados: Kappa, Lightkeeper, todas las misiones y goals por achievement.
+- Se regenero `src/data/questTree.json` con todas las misiones disponibles.
 
 ### 2026-05-17 (gating de progreso)
 

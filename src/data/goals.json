@@ -1,0 +1,2064 @@
+{
+  "metadata": {
+    "source": "src/data/tasks.json + src/data/achievements.json",
+    "builtAt": "2026-05-17T13:05:42.313Z",
+    "goalCount": 108,
+    "taskGoalCount": 6,
+    "manualAchievementGoalCount": 102
+  },
+  "goals": [
+    {
+      "id": "kappa",
+      "name": "Kappa",
+      "description": "Misiones necesarias para desbloquear el contenedor Kappa.",
+      "taskIds": [
+        "5c51aac186f77432ea65c552",
+        "5d24b81486f77439c92d6ba8",
+        "5d25e46e86f77409453bce7c",
+        "669fa3979b0ce3feae01a130",
+        "5d25e48186f77443e625e386",
+        "669fa3a08b4a64b332041ff7",
+        "66b38e144f2ab7cc530c3fe7",
+        "5d25e4b786f77408251c4bfc",
+        "5d25e4ca86f77409dd5cdf2c",
+        "5d25e4ad86f77443e625e387",
+        "608a768d82e40b3c727fd17d",
+        "5d25e4d586f77443e625e388",
+        "675c1ec7a46173572a0bf20a",
+        "66b38c7bf85b8bf7250f9cb6",
+        "5d25e48d86f77408251c4bfb",
+        "626bdcc3a371ee3a7a3514c5",
+        "63a88045abf76d719f42d715",
+        "61904daa7d0d857927447b9c",
+        "5d25e2d886f77442734d335e",
+        "5d25e44f86f77443e625e385",
+        "5d25e45e86f77408251c4bfa",
+        "5d25e44386f77409453bce7b",
+        "60c0c018f7afb4354815096a",
+        "5d25e2cc86f77443e47ae019",
+        "5d25e43786f7740a212217fa",
+        "6179ad0a6e9dd54ac275e3f2",
+        "5edab4b1218d181e29451435",
+        "5d25e2b486f77409de05bba0",
+        "5d25e2e286f77444001e2e48",
+        "5d25e2c386f77443e7549029",
+        "5d25e2ee86f77443e35162ea",
+        "5d25e2a986f77409dd5cdf2a",
+        "5d25e29d86f7740a22516326",
+        "5eaaaa7c93afa0558f3b5a1c",
+        "5d25b6be86f77444001e1b89",
+        "5d25cf2686f77443e75488d4",
+        "5d25aed386f77442734d25d2",
+        "5d25c81b86f77443e625dd71",
+        "5d25bfd086f77442734d3007",
+        "5bc4776586f774512d07cf05",
+        "5bc479e586f7747f376c7da3",
+        "5bc47dbf86f7741ee74e93b9",
+        "5bc480a686f7741af0342e29",
+        "5bc4826c86f774106d22d88b",
+        "5bc4836986f7740c0152911c",
+        "5bc4856986f77454c317bea7",
+        "5bc4893c86f774626f5ebf3e",
+        "675c1cf4a757ddd00404f0a3",
+        "5c0bde0986f77479cf22c2f8",
+        "6089736efa70fc097863b8f6",
+        "5ac3475486f7741d6224abd3",
+        "669fa39b91b0a8c9680fc467",
+        "626bd75e47ea7f506e5493c5",
+        "669fa3a1c26f13bd04030f37",
+        "5f04886a3937dc337a6b8238",
+        "6179b3bdc7560e13d23eeb8d",
+        "6179b3a12153c15e937d52bc",
+        "5ac345dc86f774288030817f",
+        "5ac3460c86f7742880308185",
+        "5ac3462b86f7741d6118b983",
+        "5ac3464c86f7741d651d6877",
+        "5c1128e386f7746565181106",
+        "669fa394e0c9f9fafa082897",
+        "5ac23c6186f7741247042bad",
+        "5ae327c886f7745c7b3f2f3f",
+        "639872fc93ae507d5858c3a6",
+        "5b47799d86f7746c5d6a5fd8",
+        "5ac244c486f77413e12cf945",
+        "639872fe8871e1272b10ccf6",
+        "5ae3280386f7742a41359364",
+        "5ac242ab86f77412464f68b4",
+        "5b47749f86f7746c5d6a5fd4",
+        "5b477b6f86f7747290681823",
+        "639873003693c63d86328f25",
+        "5ac2426c86f774138762edfe",
+        "5b477f7686f7744d1b23c4d2",
+        "63987301e11ec11ff5504036",
+        "5b47825886f77468074618d3",
+        "5ac2428686f77412450b42bf",
+        "639872f9decada40426d3447",
+        "5ae3267986f7742a413592fe",
+        "5ae3270f86f77445ba41d4dd",
+        "5ac244eb86f7741356335af1",
+        "5ae3277186f7745973054106",
+        "639872fa9b4fb827b200d8e5",
+        "5c139eb686f7747878361a6f",
+        "5ac3479086f7742880308199",
+        "5d2495a886f77425cd51e403",
+        "675c1570526ff496850895d9",
+        "5c0be13186f7746f016734aa",
+        "657315e4a6af4ab4b50f3459",
+        "5ac3477486f7741d651d6885",
+        "5ac3467986f7741d6224abc2",
+        "5ac346a886f7744e1b083d67",
+        "5ac346cf86f7741d63233a02",
+        "5ac346e886f7741d6118b99b",
+        "6089732b59b92115597ad789",
+        "5a27bb1e86f7741f27621b7e",
+        "5a27bb3d86f77411ea361a21",
+        "5a27bb5986f7741dfb660900",
+        "61958c366726521dd96828ec",
+        "60896888e4a85c72ef3fa300",
+        "5a27b80086f774429a5d7e20",
+        "5a27b75b86f7742e97191958",
+        "5a27b87686f77460de0252a8",
+        "5c0bd01e86f7747cdd799e56",
+        "5c0d0f1886f77457b8210226",
+        "669fa38fad7f1eac2607ed46",
+        "6179aff8f57fb279792c60a1",
+        "5c0d4c12d09282029f539173",
+        "6179b4d1bca27a099552e04e",
+        "6086c852c945025d41566124",
+        "5edac020218d181e29451446",
+        "5a27b7d686f77460d847e6a6",
+        "5a03153686f77442d90e2171",
+        "5a03173786f77451cb427172",
+        "5a0327ba86f77456b9154236",
+        "5a03296886f774569778596a",
+        "5a0449d586f77474e66227b7",
+        "5a27ba9586f7741b543d8e85",
+        "5a27bafb86f7741c73584017",
+        "5edac63b930f5454f51e128b",
+        "5a27b9de86f77464e5044585",
+        "5a27ba1c86f77461ea5a3c56",
+        "5c0d4e61d09282029f53920e",
+        "5a27b7a786f774579c3eb376",
+        "5a27bb8386f7741c770d2d0a",
+        "5a27bbf886f774333a418eeb",
+        "5a27bc1586f7741f6d40fa2f",
+        "5a27bc3686f7741c73584026",
+        "5a27bc6986f7741c7358402b",
+        "5a27bc8586f7741b543d8ea4",
+        "5eda19f0edce541157209cee",
+        "5936da9e86f7742d65037edf",
+        "5967530a86f77462ba22226b",
+        "675c3507a06634b5110e3c18",
+        "597a171586f77405ba6887d3",
+        "59c124d686f774189b3c843f",
+        "5936d90786f7742b1420ba5b",
+        "59674eb386f774539f14813a",
+        "60896b7bfa70fc097863b8f5",
+        "6179ac7511973d018217d0b9",
+        "6179acbdc760af5ad2053585",
+        "59675d6c86f7740a842fc482",
+        "60e71bb4e456d449cd47ca75",
+        "657315e1dccd301f1301416a",
+        "60896bca6ee58f38c417d4f2",
+        "5c12452c86f7744b83469073",
+        "5979f8bb86f7743ec214c7a6",
+        "669fa399033a3ce9870338a8",
+        "59675ea386f77414b32bded2",
+        "626bd75c71bd851e971b82a5",
+        "5d4bec3486f7743cac246665",
+        "5fd9fad9c1ce6b1a3b486d00",
+        "5967725e86f774601a446662",
+        "657315df034d76585f032e01",
+        "5c0bd94186f7747a727f09b2",
+        "63a5cf262964a7488f5243ce",
+        "64f5deac39e45b527a7c4232",
+        "6574e0dedc0d635f633a5805",
+        "669fa3a40c828825de06d6a1",
+        "675c1ff1a757ddd00404f0aa",
+        "5ede55112c95834b583f052a",
+        "5ede567cfa6dc072ce15d6e3",
+        "59c50a9e86f7745fef66f4ff",
+        "59c50c8886f7745fed3193bf",
+        "59c512ad86f7741f0d09de9b",
+        "59ca264786f77445a80ed044",
+        "59ca29fb86f77445ab465c87",
+        "59ca2eb686f77445a80ed049",
+        "608974d01a66564e74191fc0",
+        "5ae448e586f7744dcf0c2a67",
+        "675c085d59b0575973005f52",
+        "5ae4499a86f77449783815db",
+        "5ae4493486f7744efa289417",
+        "5ae4493d86f7744b8e15aa8f",
+        "5ae4490786f7744ca822adcc",
+        "5ae449b386f77446d8741719",
+        "5b478b1886f7744d1b23c57d",
+        "608974af4b05530f55550c21",
+        "5b47891f86f7744d1b23c571",
+        "5c1141f386f77430ff393792",
+        "5ae448bf86f7744d733e55ee",
+        "5b478d0f86f7744d190d91b5",
+        "5ae449a586f7744bde357696",
+        "5ae448a386f7744d3730fff0",
+        "5ae449c386f7744bde357697",
+        "5c112d7e86f7740d6f647486",
+        "5ae4495086f77443c122bc40",
+        "5ae4495c86f7744e87761355",
+        "5ae4496986f774459e77beb6",
+        "5ae4497b86f7744cf402ed00",
+        "5ae449d986f774453a54a7e1",
+        "5ae448f286f77448d73c0131",
+        "5b47876e86f7744d1c353205",
+        "5c10f94386f774227172c572",
+        "5ae4498786f7744bde357695",
+        "657315e270bb0b8dba00cc48",
+        "5979f9ba86f7740f6c3fe9f2",
+        "597a0b2986f77426d66c0633",
+        "597a0e5786f77426d66c0636",
+        "597a0f5686f774273b74f676",
+        "5b4795fb86f7745876267770",
+        "669fa395c4c5c04798002497",
+        "5c0bdb5286f774166e38eed4",
+        "5a27c99a86f7747d2c6bdd8e",
+        "5a27d2af86f7744e1115b323",
+        "5979eee086f774311955e614",
+        "5b47926a86f7747ccc057c15",
+        "596a101f86f7741ddb481582",
+        "5b4794cb86f774598100d5d4",
+        "6193850f60b34236ee0483de",
+        "6179b4f16e9dd54ac275e407",
+        "675c3582f6ddc329a90f9c6d",
+        "5edabd13218d181e29451442",
+        "6089743983426423753cd58a",
+        "5c1234c286f77406fa13baeb",
+        "596b455186f77457cb50eccb",
+        "596b36c586f77450d6045ad2",
+        "596b43fb86f77457ca186186",
+        "669fa39c64ea11e84c0642a6",
+        "5b478eca86f7744642012254",
+        "5b478ff486f7744d184ecbbf",
+        "5979ed3886f77431307dc512",
+        "669fa3910c828825de06d69f",
+        "675c03d1f7da9792a405549a",
+        "669fa39ee749756c920d02c8",
+        "5c0d0d5086f774363760aef2",
+        "596a218586f77420d232807c",
+        "675c04f4db8807b75d0f38e8",
+        "5edab736cc183c769d778bc2",
+        "5edaba7c0c502106f869bc02",
+        "5edac34d0bb72a50635c2bfa",
+        "60e71c48c1bfa3050473b8e5",
+        "5c0d1c4cd0928202a02a6f5c",
+        "60896e28e4a85c72ef3fa301",
+        "626bd75b05f287031503c7f6",
+        "657315ddab5a49b71f098853",
+        "596a1e6c86f7741ddc2d3206",
+        "5a68661a86f774500f48afb0",
+        "5a68663e86f774501078f78a",
+        "5a68665c86f774255929b4c7",
+        "5a68667486f7742607157d28",
+        "5a68669a86f774255929b4d4",
+        "669fa3a3ad7f1eac2607ed48",
+        "6179afd0bca27a099552e040",
+        "597a160786f77477531d39d2",
+        "5969f90786f77420d2328015",
+        "5969f9e986f7741dde183a50",
+        "596760e186f7741e11214d58",
+        "5c0be5fc86f774467a116593",
+        "59689ee586f7740d1570bbd5",
+        "596a204686f774576d4c95de",
+        "6179ad56c760af5ad2053587",
+        "675c047fa46173572a0bd878",
+        "5967733e86f774602332fc84",
+        "596a0e1686f7741ddf17dbee"
+      ],
+      "achievementIds": [
+        "664f1f8768508d74604bf556"
+      ],
+      "type": "task-set",
+      "source": "derived"
+    },
+    {
+      "id": "lightkeeper",
+      "name": "Lightkeeper",
+      "description": "Misiones marcadas por tarkov.dev como requeridas para la progresion de Lightkeeper.",
+      "taskIds": [
+        "5d24b81486f77439c92d6ba8",
+        "5d25e48186f77443e625e386",
+        "5d25e2cc86f77443e47ae019",
+        "5d25e2b486f77409de05bba0",
+        "5d25b6be86f77444001e1b89",
+        "5d25cf2686f77443e75488d4",
+        "5d25aed386f77442734d25d2",
+        "5d25c81b86f77443e625dd71",
+        "5d25bfd086f77442734d3007",
+        "5bc4776586f774512d07cf05",
+        "5bc479e586f7747f376c7da3",
+        "5bc47dbf86f7741ee74e93b9",
+        "625d6ffcaa168e51321d69d7",
+        "625d6fff4149f1149b5b12c9",
+        "625d7001c4874104f230c0c5",
+        "626bd75e47ea7f506e5493c5",
+        "63913715f8e5dd32bf4e3aaa",
+        "5ac345dc86f774288030817f",
+        "5ac3460c86f7742880308185",
+        "5ac23c6186f7741247042bad",
+        "5ae327c886f7745c7b3f2f3f",
+        "5ac2426c86f774138762edfe",
+        "5ac2428686f77412450b42bf",
+        "639872f9decada40426d3447",
+        "5ae3267986f7742a413592fe",
+        "5ae3270f86f77445ba41d4dd",
+        "5ac244eb86f7741356335af1",
+        "5ae3277186f7745973054106",
+        "639872fa9b4fb827b200d8e5",
+        "5d2495a886f77425cd51e403",
+        "625d70031ed3bb5bcc5bd9e5",
+        "625d7005a4eb80027c4f2e09",
+        "625d6ff5ddc94657c21a1625",
+        "625d6ffaf7308432be1d44c5",
+        "657315e4a6af4ab4b50f3459",
+        "5a27bb1e86f7741f27621b7e",
+        "5a27bb3d86f77411ea361a21",
+        "5a27bb5986f7741dfb660900",
+        "61958c366726521dd96828ec",
+        "5a27b80086f774429a5d7e20",
+        "5a27b75b86f7742e97191958",
+        "5a27b87686f77460de0252a8",
+        "5a27b7d686f77460d847e6a6",
+        "5a03153686f77442d90e2171",
+        "5a03173786f77451cb427172",
+        "5a0327ba86f77456b9154236",
+        "5a03296886f774569778596a",
+        "5a0449d586f77474e66227b7",
+        "5a27ba9586f7741b543d8e85",
+        "5a27bafb86f7741c73584017",
+        "5a27b9de86f77464e5044585",
+        "5a27ba1c86f77461ea5a3c56",
+        "5a27b7a786f774579c3eb376",
+        "5936da9e86f7742d65037edf",
+        "5967530a86f77462ba22226b",
+        "597a171586f77405ba6887d3",
+        "59c124d686f774189b3c843f",
+        "5936d90786f7742b1420ba5b",
+        "59674eb386f774539f14813a",
+        "59675d6c86f7740a842fc482",
+        "657315e1dccd301f1301416a",
+        "5967725e86f774601a446662",
+        "657315df034d76585f032e01",
+        "59c50a9e86f7745fef66f4ff",
+        "59c50c8886f7745fed3193bf",
+        "59c512ad86f7741f0d09de9b",
+        "59ca264786f77445a80ed044",
+        "608974d01a66564e74191fc0",
+        "5ae448e586f7744dcf0c2a67",
+        "5ae4493486f7744efa289417",
+        "5ae4493d86f7744b8e15aa8f",
+        "5ae448bf86f7744d733e55ee",
+        "5ae448a386f7744d3730fff0",
+        "5ae448f286f77448d73c0131",
+        "657315e270bb0b8dba00cc48",
+        "5979f9ba86f7740f6c3fe9f2",
+        "597a0b2986f77426d66c0633",
+        "597a0e5786f77426d66c0636",
+        "597a0f5686f774273b74f676",
+        "5b4795fb86f7745876267770",
+        "639dbaf17c898a131e1cffff",
+        "5a27c99a86f7747d2c6bdd8e",
+        "5a27d2af86f7744e1115b323",
+        "5979eee086f774311955e614",
+        "639135c3744e452011470807",
+        "5b47926a86f7747ccc057c15",
+        "5c1234c286f77406fa13baeb",
+        "596b36c586f77450d6045ad2",
+        "596b43fb86f77457ca186186",
+        "5979ed3886f77431307dc512",
+        "60896e28e4a85c72ef3fa301",
+        "657315ddab5a49b71f098853",
+        "5a68661a86f774500f48afb0",
+        "5a68663e86f774501078f78a",
+        "6179afd0bca27a099552e040",
+        "597a160786f77477531d39d2",
+        "5969f90786f77420d2328015",
+        "5969f9e986f7741dde183a50",
+        "59689ee586f7740d1570bbd5",
+        "596a204686f774576d4c95de",
+        "6179ad56c760af5ad2053587",
+        "5967733e86f774602332fc84"
+      ],
+      "achievementIds": [],
+      "type": "task-set",
+      "source": "derived"
+    },
+    {
+      "id": "all-quests",
+      "name": "Todas las misiones",
+      "description": "Todas las misiones disponibles en la fuente de datos actual.",
+      "taskIds": [
+        "674492b6909d2013670a347a",
+        "6744a728352b4da8e003eda9",
+        "6744a9dfef61d56e020b5c4a",
+        "673f629c5b555b53460cf827",
+        "6744aca8d3346c216702c583",
+        "673f4e956f1b89c7bc0f56ef",
+        "673f5a4976553f78350bdac1",
+        "673f6027352b4da8e00322d2",
+        "6740a02a69a58fceba0ff399",
+        "6744ab1def61d56e020b5c56",
+        "67a096ed77dd677f600804ba",
+        "673f2cd5d3346c2167020484",
+        "6745fcded0fbbc74ca0f721d",
+        "6744af0969a58fceba101fed",
+        "6745cbee909d2013670a4a55",
+        "66058ccf06ef1d50a60c1f48",
+        "5c51aac186f77432ea65c552",
+        "61e6e615eea2935bc018a2c5",
+        "61e6e621bfeab00251576265",
+        "61e6e5e0f5b9633f6719ed95",
+        "61e6e60223374d168a4576a6",
+        "61e6e60c5ca3b3783662be27",
+        "6672d9def1c88688a707d042",
+        "66631489acf8442f8b05319f",
+        "6663148ca9290f9e0806cca1",
+        "66d9cbb67b491f9d5304f6e6",
+        "6663148ed7f171c4c20226c1",
+        "6663149196a9349baa021baa",
+        "66631493312343839d032d22",
+        "60effd818b669d08a35bfad5",
+        "5d24b81486f77439c92d6ba8",
+        "5d25e46e86f77409453bce7c",
+        "63a511ea30d85e10e375b045",
+        "6391372c8ba6894d155e77d7",
+        "64ee99639878a0569d6ec8c9",
+        "639136e84ed9512be67647db",
+        "669fa3979b0ce3feae01a130",
+        "5d25e48186f77443e625e386",
+        "669fa3a08b4a64b332041ff7",
+        "66b38e144f2ab7cc530c3fe7",
+        "5d25e4b786f77408251c4bfc",
+        "66ab9da7eb102b9bcd08591c",
+        "600302d73b897b11364cd161",
+        "5d25e4ca86f77409dd5cdf2c",
+        "5d25e4ad86f77443e625e387",
+        "608a768d82e40b3c727fd17d",
+        "5d25e4d586f77443e625e388",
+        "675c1ec7a46173572a0bf20a",
+        "66b38c7bf85b8bf7250f9cb6",
+        "5d25e48d86f77408251c4bfb",
+        "63a9b36cc31b00242d28a99f",
+        "626bdcc3a371ee3a7a3514c5",
+        "60e729cf5698ee7b05057439",
+        "63a88045abf76d719f42d715",
+        "61904daa7d0d857927447b9c",
+        "639136df4b15ca31f76bc31f",
+        "64e7b971f9d6fa49d6769b44",
+        "5d25e2d886f77442734d335e",
+        "6578eb36e5020875d64645cd",
+        "5d25e44f86f77443e625e385",
+        "5d25e45e86f77408251c4bfa",
+        "5d25e44386f77409453bce7b",
+        "60c0c018f7afb4354815096a",
+        "5d25e2cc86f77443e47ae019",
+        "5d25e43786f7740a212217fa",
+        "6179ad0a6e9dd54ac275e3f2",
+        "60e71e8ed54b755a3b53eb67",
+        "5edab4b1218d181e29451435",
+        "5d25e2b486f77409de05bba0",
+        "5d25e2e286f77444001e2e48",
+        "5d25e2c386f77443e7549029",
+        "5d25e2ee86f77443e35162ea",
+        "5d25d2c186f77443e35162e5",
+        "5d25e2a986f77409dd5cdf2a",
+        "5d25e29d86f7740a22516326",
+        "5eaaaa7c93afa0558f3b5a1c",
+        "5d25b6be86f77444001e1b89",
+        "5d25cf2686f77443e75488d4",
+        "5d25aed386f77442734d25d2",
+        "5d25c81b86f77443e625dd71",
+        "5d25bfd086f77442734d3007",
+        "5bc4776586f774512d07cf05",
+        "5bc479e586f7747f376c7da3",
+        "5bc47dbf86f7741ee74e93b9",
+        "5bc480a686f7741af0342e29",
+        "5bc4826c86f774106d22d88b",
+        "5bc4836986f7740c0152911c",
+        "5bc4856986f77454c317bea7",
+        "5bc4893c86f774626f5ebf3e",
+        "665eeacf5d86b6c8aa03c79b",
+        "675c1cf4a757ddd00404f0a3",
+        "639670029113f06a7c3b2377",
+        "63966faeea19ac7ed845db2c",
+        "67a09761e720611a6a01f288",
+        "6396701b9113f06a7c3b2379",
+        "63966fbeea19ac7ed845db2e",
+        "673f61a066e6a521aa04b62b",
+        "63966fd9ea19ac7ed845db30",
+        "63966ff54c3ef01b6f3ffad8",
+        "63966fe7ea74a47c2d3fc0e6",
+        "6745fdddd3346c216702e0bf",
+        "63966fccac6f8f3c677b9d89",
+        "6396700fea19ac7ed845db32",
+        "67e993b1ac26bf29380a320b",
+        "63967028c4a91c5cb76abd81",
+        "6752f6d83038f7df520c83e8",
+        "5c0bde0986f77479cf22c2f8",
+        "666314b8312343839d032d24",
+        "625d6ffcaa168e51321d69d7",
+        "625d6fff4149f1149b5b12c9",
+        "625d7001c4874104f230c0c5",
+        "6089736efa70fc097863b8f6",
+        "5ac3475486f7741d6224abd3",
+        "669fa39b91b0a8c9680fc467",
+        "626bd75e47ea7f506e5493c5",
+        "63913715f8e5dd32bf4e3aaa",
+        "60e71d23c1bfa3050473b8e6",
+        "666314c10aa5c7436c00908c",
+        "669fa3a1c26f13bd04030f37",
+        "5f04886a3937dc337a6b8238",
+        "6179b3bdc7560e13d23eeb8d",
+        "65733403eefc2c312a759ddb",
+        "6573382e557ff128bf3da536",
+        "6179b3a12153c15e937d52bc",
+        "5ac345dc86f774288030817f",
+        "5ac3460c86f7742880308185",
+        "5ac3462b86f7741d6118b983",
+        "5ac3464c86f7741d651d6877",
+        "5c1128e386f7746565181106",
+        "669fa394e0c9f9fafa082897",
+        "625d700cc48e6c62a440fab5",
+        "68db9c7557bc51a8c804c14b",
+        "676529af9c90953d090882e7",
+        "5ac23c6186f7741247042bad",
+        "5ae327c886f7745c7b3f2f3f",
+        "639872fc93ae507d5858c3a6",
+        "5b47799d86f7746c5d6a5fd8",
+        "5ac244c486f77413e12cf945",
+        "639872fe8871e1272b10ccf6",
+        "5ae3280386f7742a41359364",
+        "5ac242ab86f77412464f68b4",
+        "5b47749f86f7746c5d6a5fd4",
+        "5b477b6f86f7747290681823",
+        "639873003693c63d86328f25",
+        "5ac2426c86f774138762edfe",
+        "5b477f7686f7744d1b23c4d2",
+        "63987301e11ec11ff5504036",
+        "5b47825886f77468074618d3",
+        "64f83bb69878a0569d6ecfbe",
+        "64f83bcdde58fc437700d8fa",
+        "64f83bd983cfca080a362c82",
+        "5ac2428686f77412450b42bf",
+        "639872f9decada40426d3447",
+        "5ae3267986f7742a413592fe",
+        "5ae3270f86f77445ba41d4dd",
+        "5ac244eb86f7741356335af1",
+        "5ae3277186f7745973054106",
+        "639872fa9b4fb827b200d8e5",
+        "67a096577e86e067eb045733",
+        "684009026ceedc792c09b2a7",
+        "67a0970f05d1611ed90be75d",
+        "5c139eb686f7747878361a6f",
+        "5ac3479086f7742880308199",
+        "5d2495a886f77425cd51e403",
+        "625d70031ed3bb5bcc5bd9e5",
+        "625d7005a4eb80027c4f2e09",
+        "6391d90f4ed9512be67647df",
+        "6391d912f8e5dd32bf4e3ab2",
+        "6391d9144b15ca31f76bc323",
+        "626148251ed3bb5bcc5bd9ed",
+        "6261482fa4eb80027c4f2e11",
+        "6261483dc4874104f230c0cd",
+        "626148334149f1149b5b12ca",
+        "6261483ac48e6c62a440fab7",
+        "62614836f7308432be1d44cc",
+        "67a0964e972c11a3f507731b",
+        "625d6ff5ddc94657c21a1625",
+        "625d6ffaf7308432be1d44c5",
+        "67a0970744893b9f3f0d9b68",
+        "675c1570526ff496850895d9",
+        "5c0be13186f7746f016734aa",
+        "657315e4a6af4ab4b50f3459",
+        "5ac3477486f7741d651d6885",
+        "66aa74571e5e199ecd094f18",
+        "6942b44f891369fc790e385a",
+        "67a09636b8725511260bc421",
+        "5ac3467986f7741d6224abc2",
+        "5ac346a886f7744e1b083d67",
+        "5ac346cf86f7741d63233a02",
+        "5ac346e886f7741d6118b99b",
+        "6578ec473dbd035d04531a8d",
+        "6089732b59b92115597ad789",
+        "639135e8c115f907b14700aa",
+        "60e71d6d7fcf9c556f325055",
+        "64ee9df4496db64f9b7a4432",
+        "639136fa9444fb141f4e6eee",
+        "5a27bb1e86f7741f27621b7e",
+        "5a27bb3d86f77411ea361a21",
+        "5a27bb5986f7741dfb660900",
+        "61958c366726521dd96828ec",
+        "60896888e4a85c72ef3fa300",
+        "67a09724972c11a3f5077324",
+        "6179b5eabca27a099552e052",
+        "5a27b80086f774429a5d7e20",
+        "5a27b75b86f7742e97191958",
+        "5a27b87686f77460de0252a8",
+        "5c0bd01e86f7747cdd799e56",
+        "5c0d0f1886f77457b8210226",
+        "5d6fbc2886f77449d825f9d3",
+        "66aa58245ab22944110db6e9",
+        "669fa38fad7f1eac2607ed46",
+        "6179aff8f57fb279792c60a1",
+        "5c0d4c12d09282029f539173",
+        "6179b4d1bca27a099552e04e",
+        "6086c852c945025d41566124",
+        "639135f286e646067c176a87",
+        "639282134ed9512be67647ed",
+        "5edac020218d181e29451446",
+        "5a27b7d686f77460d847e6a6",
+        "675c1d6d59b0575973008fc7",
+        "5a03153686f77442d90e2171",
+        "5a03173786f77451cb427172",
+        "5a0327ba86f77456b9154236",
+        "5a03296886f774569778596a",
+        "5a0449d586f77474e66227b7",
+        "5a27ba9586f7741b543d8e85",
+        "5a27bafb86f7741c73584017",
+        "60e71ce009d7c801eb0c0ec6",
+        "5edac63b930f5454f51e128b",
+        "60e71c9ad54b755a3b53eb66",
+        "5a27b9de86f77464e5044585",
+        "5a27ba1c86f77461ea5a3c56",
+        "5c0d4e61d09282029f53920e",
+        "5a27b7a786f774579c3eb376",
+        "60e71ccb5688f6424c7bfec4",
+        "5a27bb8386f7741c770d2d0a",
+        "5a27bbf886f774333a418eeb",
+        "5a27bc1586f7741f6d40fa2f",
+        "5a27bc3686f7741c73584026",
+        "5a27bc6986f7741c7358402b",
+        "5a27bc8586f7741b543d8ea4",
+        "63a9b229813bba58a50c9ee5",
+        "639135534b15ca31f76bc317",
+        "5eda19f0edce541157209cee",
+        "5936da9e86f7742d65037edf",
+        "5967530a86f77462ba22226b",
+        "675c3507a06634b5110e3c18",
+        "63a9ae24009ffc6a551631a5",
+        "597a171586f77405ba6887d3",
+        "59c124d686f774189b3c843f",
+        "60e71b9bbd90872cb85440f3",
+        "5936d90786f7742b1420ba5b",
+        "59674eb386f774539f14813a",
+        "60896b7bfa70fc097863b8f5",
+        "6179ac7511973d018217d0b9",
+        "6179acbdc760af5ad2053585",
+        "60e71b62a0beca400d69efc4",
+        "6740a15566e6a521aa051b15",
+        "64e7b9bffd30422ed03dad38",
+        "64e7b99017ab941a6f7bf9d7",
+        "64e7b9a4aac4cd0a726562cb",
+        "639135b04ed9512be67647d7",
+        "64f5aac4b63b74469b6c14c2",
+        "639136d68ba6894d155e77cf",
+        "5c0d190cd09282029f5390d8",
+        "6740a2c17e3818d5bb0648b6",
+        "666314b0acf8442f8b0531a1",
+        "666314b2a9290f9e0806cca3",
+        "59675d6c86f7740a842fc482",
+        "60e71bb4e456d449cd47ca75",
+        "639136f086e646067c176a8b",
+        "657315e1dccd301f1301416a",
+        "59ca1a6286f774509a270942",
+        "60896bca6ee58f38c417d4f2",
+        "68ee1c18b4e5bc9a68018cd7",
+        "6179b5b06e9dd54ac275e409",
+        "5c12452c86f7744b83469073",
+        "5979f8bb86f7743ec214c7a6",
+        "669fa399033a3ce9870338a8",
+        "59675ea386f77414b32bded2",
+        "6573397ef3f8344c4575cd87",
+        "626bd75c71bd851e971b82a5",
+        "5d4bec3486f7743cac246665",
+        "5fd9fad9c1ce6b1a3b486d00",
+        "5967725e86f774601a446662",
+        "673f348dd3346c21670217e7",
+        "657315df034d76585f032e01",
+        "59674cd986f7744ab26e32f2",
+        "66ab970848ddbe9d4a0c49a8",
+        "6740a3f4eca8acb2d2055159",
+        "5c0bd94186f7747a727f09b2",
+        "63a5cf262964a7488f5243ce",
+        "64f5deac39e45b527a7c4232",
+        "6574e0dedc0d635f633a5805",
+        "669fa3a40c828825de06d6a1",
+        "675c1ff1a757ddd00404f0aa",
+        "67b45467814ab0ffa000c7e7",
+        "5ede55112c95834b583f052a",
+        "5ede567cfa6dc072ce15d6e3",
+        "666314b4d7f171c4c20226c3",
+        "666314bafd5ca9577902e03a",
+        "59c50a9e86f7745fef66f4ff",
+        "59c50c8886f7745fed3193bf",
+        "59c512ad86f7741f0d09de9b",
+        "59ca264786f77445a80ed044",
+        "59ca29fb86f77445ab465c87",
+        "59ca2eb686f77445a80ed049",
+        "666314bd920800278d0f6748",
+        "6391359b9444fb141f4e6ee6",
+        "608974d01a66564e74191fc0",
+        "6740b60c60a98cad1b0e0aa0",
+        "639135bbc115f907b14700a6",
+        "638fcd23dc65553116701d33",
+        "639135a7e705511c8a4a1b78",
+        "5ae448e586f7744dcf0c2a67",
+        "60e71dc67fcf9c556f325056",
+        "675c085d59b0575973005f52",
+        "5ae4499a86f77449783815db",
+        "6663149f1d3ec95634095e75",
+        "666314a31cd52e3d040a2e76",
+        "65734c186dc1e402c80dc19e",
+        "5ae4493486f7744efa289417",
+        "5ae4493d86f7744b8e15aa8f",
+        "5ae4490786f7744ca822adcc",
+        "6613f3007f6666d56807c929",
+        "66151401efb0539ae10875ae",
+        "6613f307fca4f2f386029409",
+        "6615141bfda04449120269a7",
+        "5ae449b386f77446d8741719",
+        "5b478b1886f7744d1b23c57d",
+        "608974af4b05530f55550c21",
+        "666314c5a9290f9e0806cca5",
+        "66aa61663aa37705c5024277",
+        "5b47891f86f7744d1b23c571",
+        "5c1141f386f77430ff393792",
+        "60e71dc0a94be721b065bbfc",
+        "5ae448bf86f7744d733e55ee",
+        "5b478d0f86f7744d190d91b5",
+        "6761f28a022f60bb320f3e95",
+        "6761ff17cdc36bd66102e9d0",
+        "6848100b00afffa81f09e365",
+        "68481881f43abfdda2058369",
+        "5ae449a586f7744bde357696",
+        "65802b627b44fa5e14638899",
+        "666314a50aa5c7436c00908a",
+        "5ae448a386f7744d3730fff0",
+        "5ae449c386f7744bde357697",
+        "5c112d7e86f7740d6f647486",
+        "67a0967c003a9986cb0f5ac1",
+        "5ae4495086f77443c122bc40",
+        "5ae4495c86f7744e87761355",
+        "5ae4496986f774459e77beb6",
+        "5ae4497b86f7744cf402ed00",
+        "666314a1920800278d0f6746",
+        "6744a4717e3818d5bb0680bb",
+        "5ae449d986f774453a54a7e1",
+        "5e381b0286f77420e3417a74",
+        "5e383a6386f77465910ce1f3",
+        "5e4d4ac186f774264f758336",
+        "5e4d515e86f77438b2195244",
+        "5ae448f286f77448d73c0131",
+        "5b47876e86f7744d1c353205",
+        "5c10f94386f774227172c572",
+        "6663149cfd5ca9577902e037",
+        "5ae4498786f7744bde357695",
+        "67d03be712fb5f8fd2096332",
+        "66058ccbc7f3584787181478",
+        "66058ccde8e4f17985230807",
+        "697877e0c639962b2e0cf24f",
+        "66058cb7c7f3584787181476",
+        "66058cb9e8e4f17985230805",
+        "66058cbd9f59e625462acc8e",
+        "66058cbf2f19c31a5a1337ec",
+        "66058cd19f59e625462acc90",
+        "66058cb5ae4719735349b9e8",
+        "697895b6c639962b2e0cf268",
+        "67e993f5ed537409f009da75",
+        "69788c2bac719606e40b4e77",
+        "69788db3878a4385d10c0718",
+        "675c15fbf7da9792a4059871",
+        "66058cbb06ef1d50a60c1f46",
+        "66058cc1da30b620a34e6e86",
+        "66058cc208308761cf390993",
+        "66058cc5bb83da7ba474aba9",
+        "66058cc72cee99303f1ba069",
+        "66058cc9ae4719735349b9ea",
+        "69789418b2187365e70bb947",
+        "67af4c1cc0e59d55e2010b97",
+        "64f5e20652fc01298e2c61e3",
+        "64f6aafd67e11a7c6206e0d0",
+        "5c0bbaa886f7746941031d82",
+        "657315e270bb0b8dba00cc48",
+        "5979f9ba86f7740f6c3fe9f2",
+        "597a0b2986f77426d66c0633",
+        "597a0e5786f77426d66c0636",
+        "597a0f5686f774273b74f676",
+        "67460662d0fbbc74ca0f7229",
+        "5b4795fb86f7745876267770",
+        "6764174c86addd02bc033d68",
+        "67af4c1d8c9482eca103e477",
+        "671a59e43d73dac1360765cc",
+        "639dbaf17c898a131e1cffff",
+        "66058cb22cee99303f1ba067",
+        "669fa395c4c5c04798002497",
+        "68400926706e0a55e90b0007",
+        "68400953506db3b4db0700e7",
+        "5c0bdb5286f774166e38eed4",
+        "5a27c99a86f7747d2c6bdd8e",
+        "5a27d2af86f7744e1115b323",
+        "67af4c1991ee75c6d7060a16",
+        "5979eee086f774311955e614",
+        "674602307e3818d5bb069489",
+        "639135c3744e452011470807",
+        "639135cd8ba6894d155e77cb",
+        "67a097379f2068e74603c6ac",
+        "5b47926a86f7747ccc057c15",
+        "671a49f77d49aea42c029b5f",
+        "6746053b5b555b53460d9896",
+        "674605df60a98cad1b0ec799",
+        "596a101f86f7741ddb481582",
+        "5b4794cb86f774598100d5d4",
+        "6193850f60b34236ee0483de",
+        "59c93e8e86f7742a406989c4",
+        "666314bc1d3ec95634095e77",
+        "6179b4f16e9dd54ac275e407",
+        "67af4c17f4f1fb58a907f8f6",
+        "60e71c11d54b755a3b53eb65",
+        "658027799634223183395339",
+        "675c3582f6ddc329a90f9c6d",
+        "67af4c1a6c3ebfd8e6034916",
+        "67af4c1405c58dc6f7056667",
+        "666314c3acf8442f8b0531a3",
+        "6572e876dc0d635f633a5714",
+        "5edabd13218d181e29451442",
+        "674600a366e6a521aa05eb66",
+        "6089743983426423753cd58a",
+        "67af4c169d95ad16e004fd86",
+        "666314bf1cd52e3d040a2e78",
+        "5c1234c286f77406fa13baeb",
+        "5c0bc91486f7746ab41857a2",
+        "596b455186f77457cb50eccb",
+        "596b36c586f77450d6045ad2",
+        "596b43fb86f77457ca186186",
+        "6745fae369a58fceba10343d",
+        "669fa39c64ea11e84c0642a6",
+        "665eec1f5e47a79f8605565a",
+        "665eec4a4dfc83b0ed0a9dca",
+        "626bd75d5bef5d7d590bd415",
+        "5b478eca86f7744642012254",
+        "5b478ff486f7744d184ecbbf",
+        "5979ed3886f77431307dc512",
+        "669fa3910c828825de06d69f",
+        "675c03d1f7da9792a405549a",
+        "669fa39ee749756c920d02c8",
+        "64f3176921045e77405d63b5",
+        "5d6fb2c086f77449da599c24",
+        "5c0d0d5086f774363760aef2",
+        "66aba85403e0ee3101042877",
+        "596a218586f77420d232807c",
+        "675c04f4db8807b75d0f38e8",
+        "5edab736cc183c769d778bc2",
+        "5edaba7c0c502106f869bc02",
+        "5edac34d0bb72a50635c2bfa",
+        "60e71c48c1bfa3050473b8e5",
+        "63ab180c87413d64ae0ac20a",
+        "5c0d1c4cd0928202a02a6f5c",
+        "60896e28e4a85c72ef3fa301",
+        "626bd75b05f287031503c7f6",
+        "657315ddab5a49b71f098853",
+        "596a1e6c86f7741ddc2d3206",
+        "5a68661a86f774500f48afb0",
+        "5a68663e86f774501078f78a",
+        "5a68665c86f774255929b4c7",
+        "5a68667486f7742607157d28",
+        "5a68669a86f774255929b4d4",
+        "669fa3a3ad7f1eac2607ed48",
+        "6179afd0bca27a099552e040",
+        "59689fbd86f7740d137ebfc4",
+        "5968eb3186f7741dde183a4d",
+        "597a160786f77477531d39d2",
+        "5969f90786f77420d2328015",
+        "64f731ab83cfca080a361e42",
+        "6573387d0b26ed4fde798de3",
+        "5969f9e986f7741dde183a50",
+        "639135d89444fb141f4e6eea",
+        "596760e186f7741e11214d58",
+        "5c0be5fc86f774467a116593",
+        "666314b696a9349baa021bac",
+        "59689ee586f7740d1570bbd5",
+        "596a204686f774576d4c95de",
+        "6179ad56c760af5ad2053587",
+        "675c047fa46173572a0bd878",
+        "5967733e86f774602332fc84",
+        "596a0e1686f7741ddf17dbee",
+        "665eeca45d86b6c8aa03c79d",
+        "665eeca92f7aedcc900b0437",
+        "67a0972e77dd677f600804bd",
+        "59c9392986f7742f6923add2",
+        "639135e0fa894f0a866afde6"
+      ],
+      "achievementIds": [],
+      "type": "task-set",
+      "source": "derived"
+    },
+    {
+      "id": "achievement-66742c003a67b164a300fcbf",
+      "name": "A Key to Salvation",
+      "type": "manual-achievement",
+      "description": "Help Therapist save lives and complete the Key to Salvation event task line",
+      "taskIds": [],
+      "achievementIds": [
+        "66742c003a67b164a300fcbf"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-67c838a4c566b0028f0f2d07",
+      "name": "All on Red",
+      "type": "manual-achievement",
+      "description": "Go all in on the BEAR squad beyond the cordon and complete Skier's Profitable Venture task line",
+      "taskIds": [],
+      "achievementIds": [
+        "67c838a4c566b0028f0f2d07"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-675709bef4e2a2ce0f058f56",
+      "name": "All-Wheel Drive",
+      "type": "achievement",
+      "description": "Resolve the issue with the BTR driver one way or another",
+      "taskIds": [
+        "6744af0969a58fceba101fed",
+        "6745cbee909d2013670a4a55",
+        "67460662d0fbbc74ca0f7229"
+      ],
+      "achievementIds": [
+        "675709bef4e2a2ce0f058f56"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-65141032a3dd9b6aa7159ed3",
+      "name": "Another Cold Case",
+      "type": "manual-achievement",
+      "description": "Neutralize Glukhar 15 times while playing as a PMC",
+      "taskIds": [],
+      "achievementIds": [
+        "65141032a3dd9b6aa7159ed3"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-6512f1e3be73cc7f07358ed5",
+      "name": "Art of Style",
+      "type": "manual-achievement",
+      "description": "Neutralize Killa for the first time while playing as a PMC",
+      "taskIds": [],
+      "achievementIds": [
+        "6512f1e3be73cc7f07358ed5"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-6a04f93d7a6a2b325906bb5c",
+      "name": "Awaiting Departure",
+      "type": "manual-achievement",
+      "description": "Complete the Full Speed Ahead event task line",
+      "taskIds": [],
+      "achievementIds": [
+        "6a04f93d7a6a2b325906bb5c"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-65141bdfcf2f1c285e606446",
+      "name": "BEAR With Me",
+      "type": "manual-achievement",
+      "description": "Eliminate 50 BEAR PMC operatives",
+      "taskIds": [],
+      "achievementIds": [
+        "65141bdfcf2f1c285e606446"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-6912163e680e04c5da057e5b",
+      "name": "Better Served",
+      "type": "manual-achievement",
+      "description": "Refuse to sell TerraGroup technology",
+      "taskIds": [],
+      "achievementIds": [
+        "6912163e680e04c5da057e5b"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-651419eea3dd9b6aa7159ee5",
+      "name": "Blind Fury",
+      "type": "manual-achievement",
+      "description": "Eliminate any enemy while suffering from the Flash effect while playing as a PMC",
+      "taskIds": [],
+      "achievementIds": [
+        "651419eea3dd9b6aa7159ee5"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-6513eb6e0dc723592b0f9095",
+      "name": "Call Your Brother",
+      "type": "manual-achievement",
+      "description": "Neutralize Tagilla for the first time while playing as a PMC",
+      "taskIds": [],
+      "achievementIds": [
+        "6513eb6e0dc723592b0f9095"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-6634c8886e083a141f4aa3f4",
+      "name": "Cardinal Richelieu",
+      "type": "manual-achievement",
+      "description": "Find out who actually controls Tarkov and complete The Tarkov Mystery event task line",
+      "taskIds": [],
+      "achievementIds": [
+        "6634c8886e083a141f4aa3f4"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-6514174fb1c08b0feb216d73",
+      "name": "Chris's Heir",
+      "type": "manual-achievement",
+      "description": "Eliminate a PMC operative with a headshot from over 500 meters away while playing as a PMC",
+      "taskIds": [],
+      "achievementIds": [
+        "6514174fb1c08b0feb216d73"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-670feb95a4e71050310cc14b",
+      "name": "Complete Remission",
+      "type": "manual-achievement",
+      "description": "Cure all the infected and complete the Halloween 2024 event task line",
+      "taskIds": [],
+      "achievementIds": [
+        "670feb95a4e71050310cc14b"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-6513ee11a3dd9b6aa7159b4a",
+      "name": "Deal to Make",
+      "type": "manual-achievement",
+      "description": "Neutralize Reshala for the first time while playing as a PMC",
+      "taskIds": [],
+      "achievementIds": [
+        "6513ee11a3dd9b6aa7159b4a"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-68e8f04eb841bc8ac305350a",
+      "name": "Debtor",
+      "type": "manual-achievement",
+      "description": "Escape from Tarkov without ever escaping from yourself",
+      "taskIds": [],
+      "achievementIds": [
+        "68e8f04eb841bc8ac305350a"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-68f76353c152253a5b01a612",
+      "name": "Debtor (PVE ZONE)",
+      "type": "manual-achievement",
+      "description": "Escape from Tarkov without ever escaping from yourself",
+      "taskIds": [],
+      "achievementIds": [
+        "68f76353c152253a5b01a612"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-65141ab70dc723592b0f9482",
+      "name": "Drunken Master",
+      "type": "manual-achievement",
+      "description": "Eliminate a PMC operative with a headshot while under the alcohol effect while playing as a PMC",
+      "taskIds": [],
+      "achievementIds": [
+        "65141ab70dc723592b0f9482"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-6984ab58ee0ae2c0d5075f33",
+      "name": "Duck Hunt",
+      "type": "manual-achievement",
+      "description": "Complete the Duck Hunt 2026 event task",
+      "taskIds": [],
+      "achievementIds": [
+        "6984ab58ee0ae2c0d5075f33"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-67a0e57b972c11a3f50773b2",
+      "name": "Dungeon Master",
+      "type": "manual-achievement",
+      "description": "Complete the Labyrinth 2025 event task line and all side tasks",
+      "taskIds": [],
+      "achievementIds": [
+        "67a0e57b972c11a3f50773b2"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-6912153f761a11e52408fbd2",
+      "name": "Easy Way",
+      "type": "manual-achievement",
+      "description": "Use the instructions given by TerraGroup. Wonder what could go wrong?",
+      "taskIds": [],
+      "achievementIds": [
+        "6912153f761a11e52408fbd2"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-69121515e329984a340f00b4",
+      "name": "Enough of Your Games!",
+      "type": "manual-achievement",
+      "description": "Refuse to fall for Mr. Kerman's schemes",
+      "taskIds": [],
+      "achievementIds": [
+        "69121515e329984a340f00b4"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-68e8f042b8efa2bbeb009d89",
+      "name": "Fallen",
+      "type": "manual-achievement",
+      "description": "Escape from Tarkov only to fall in the darkness",
+      "taskIds": [],
+      "achievementIds": [
+        "68e8f042b8efa2bbeb009d89"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-68f76344bc0e8927900279f0",
+      "name": "Fallen (PVE ZONE)",
+      "type": "manual-achievement",
+      "description": "Escape from Tarkov only to fall in the darkness",
+      "taskIds": [],
+      "achievementIds": [
+        "68f76344bc0e8927900279f0"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-670febed5ee0fc738a0965a4",
+      "name": "Fatal Outcome",
+      "type": "manual-achievement",
+      "description": "Destroy the virus along with all the infected and complete the Halloween 2024 event task line",
+      "taskIds": [],
+      "achievementIds": [
+        "670febed5ee0fc738a0965a4"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-6514321bec10ff011f17ccac",
+      "name": "Firefly",
+      "type": "manual-achievement",
+      "description": "Meet Lightkeeper for the first time while playing as a PMC",
+      "taskIds": [],
+      "achievementIds": [
+        "6514321bec10ff011f17ccac"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-65141c80ec10ff011f17cc3e",
+      "name": "First Time Always Hurts",
+      "type": "manual-achievement",
+      "description": "Survive a raid without the Run-through status for the first time",
+      "taskIds": [],
+      "achievementIds": [
+        "65141c80ec10ff011f17cc3e"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-68d3fe84757f8967ec09099b",
+      "name": "Five Plus",
+      "type": "manual-achievement",
+      "description": "Earn the Prestige level 5",
+      "taskIds": [],
+      "achievementIds": [
+        "68d3fe84757f8967ec09099b"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-6513f0a10dc723592b0f90cf",
+      "name": "Funny Graveyard Keeper",
+      "type": "manual-achievement",
+      "description": "Neutralize Kaban for the first time while playing as a PMC",
+      "taskIds": [],
+      "achievementIds": [
+        "6513f0a10dc723592b0f90cf"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-68dfdeb7958a19b62b0ae460",
+      "name": "Going Light",
+      "type": "manual-achievement",
+      "description": "Final prep before the release!",
+      "taskIds": [],
+      "achievementIds": [
+        "68dfdeb7958a19b62b0ae460"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-6513eec00dc723592b0f90cc",
+      "name": "Grouse Hunting",
+      "type": "manual-achievement",
+      "description": "Neutralize Glukhar for the first time while playing as a PMC",
+      "taskIds": [],
+      "achievementIds": [
+        "6513eec00dc723592b0f90cc"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-69de1be5d378f8aef8008409",
+      "name": "Habet, hoc habet!",
+      "type": "manual-achievement",
+      "description": "Help Skier disrupt the start of the new season in Arena and complete the Casus Belli event task line",
+      "taskIds": [],
+      "achievementIds": [
+        "69de1be5d378f8aef8008409"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-65140b55cf2f1c285e606414",
+      "name": "Hammer and Scythe",
+      "type": "manual-achievement",
+      "description": "Neutralize Tagilla 15 times while playing as a PMC",
+      "taskIds": [],
+      "achievementIds": [
+        "65140b55cf2f1c285e606414"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-668bf47c781d446fdc083711",
+      "name": "High Competition",
+      "type": "manual-achievement",
+      "description": "Choose your side and complete the Arms Race event task line",
+      "taskIds": [],
+      "achievementIds": [
+        "668bf47c781d446fdc083711"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-6842c27a38482d35ac0bd847",
+      "name": "Higher and Higher",
+      "type": "manual-achievement",
+      "description": "Earn the Prestige level 4",
+      "taskIds": [],
+      "achievementIds": [
+        "6842c27a38482d35ac0bd847"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-66e2a7e5919bad697104f4b3",
+      "name": "Highway to the Danger Zone",
+      "type": "manual-achievement",
+      "description": "Complete the Mortar Strike 2024 event task line",
+      "taskIds": [],
+      "achievementIds": [
+        "66e2a7e5919bad697104f4b3"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-691216216cd39d8e1d09173b",
+      "name": "I Am Speed",
+      "type": "manual-achievement",
+      "description": "Complete Prapor's tasks within three days",
+      "taskIds": [],
+      "achievementIds": [
+        "691216216cd39d8e1d09173b"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-6514134eec10ff011f17cc26",
+      "name": "I Hear the Voice of Darkness",
+      "type": "manual-achievement",
+      "description": "Neutralize Knight 15 times while playing as a PMC",
+      "taskIds": [],
+      "achievementIds": [
+        "6514134eec10ff011f17cc26"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-67a0e57117e34930e50075f3",
+      "name": "In Search of an Exit",
+      "type": "manual-achievement",
+      "description": "Complete the Labyrinth 2025 event task line",
+      "taskIds": [],
+      "achievementIds": [
+        "67a0e57117e34930e50075f3"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-691213c8680e04c5da0571eb",
+      "name": "Inferno",
+      "type": "manual-achievement",
+      "description": "Learn everything about the Blue Fire",
+      "taskIds": [],
+      "achievementIds": [
+        "691213c8680e04c5da0571eb"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-6634ca69ee506a5c3e61be56",
+      "name": "INVOLVED IN PEACE",
+      "type": "manual-achievement",
+      "description": "Pick Peacekeeper's side and complete The Tarkov Mystery event task line",
+      "taskIds": [],
+      "achievementIds": [
+        "6634ca69ee506a5c3e61be56"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-664f23e44702fd5db50ee732",
+      "name": "Jack of All Trades",
+      "type": "achievement",
+      "description": "Complete all of Gunsmith series tasks",
+      "taskIds": [
+        "64f83bd983cfca080a362c82"
+      ],
+      "achievementIds": [
+        "664f23e44702fd5db50ee732"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-651417d6ec10ff011f17cc31",
+      "name": "John's Heir",
+      "type": "manual-achievement",
+      "description": "Eliminate 4 PMC operatives with a headshot while using a pistol in a single raid while playing as a PMC",
+      "taskIds": [],
+      "achievementIds": [
+        "651417d6ec10ff011f17cc31"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-691213563d597b2ef80a21cf",
+      "name": "Just Business",
+      "type": "manual-achievement",
+      "description": "Double-cross Prapor",
+      "taskIds": [],
+      "achievementIds": [
+        "691213563d597b2ef80a21cf"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-655b49bc91aa9e07687ae47c",
+      "name": "Justice",
+      "type": "manual-achievement",
+      "description": "Neutralize Kollontay for the first time while playing as a PMC",
+      "taskIds": [],
+      "achievementIds": [
+        "655b49bc91aa9e07687ae47c"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-6842c25bd02bc07d70054019",
+      "name": "Keeping Up the Pace",
+      "type": "manual-achievement",
+      "description": "Earn the Prestige level 3",
+      "taskIds": [],
+      "achievementIds": [
+        "6842c25bd02bc07d70054019"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-675998a894008342eb04e47f",
+      "name": "Khorovod",
+      "type": "manual-achievement",
+      "description": "Celebrate Christmas and New Year and complete the Khorovod 2024 event task line",
+      "taskIds": [],
+      "achievementIds": [
+        "675998a894008342eb04e47f"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-6512f16bde333c33d5127cbc",
+      "name": "Killer of Killers",
+      "type": "manual-achievement",
+      "description": "Eliminate one of the hooded men with their own knife at night time while playing as a PMC",
+      "taskIds": [],
+      "achievementIds": [
+        "6512f16bde333c33d5127cbc"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-6514184ec31fcb0e163577d2",
+      "name": "Killer7",
+      "type": "manual-achievement",
+      "description": "Eliminate 7 PMC operatives in a single raid while playing as a PMC",
+      "taskIds": [],
+      "achievementIds": [
+        "6514184ec31fcb0e163577d2"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-65140bbec31fcb0e163577b9",
+      "name": "King of the Sawmill",
+      "type": "manual-achievement",
+      "description": "Neutralize Shturman 15 times while playing as a PMC",
+      "taskIds": [],
+      "achievementIds": [
+        "65140bbec31fcb0e163577b9"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-691215e8680e04c5da057e57",
+      "name": "Little Triumphs",
+      "type": "manual-achievement",
+      "description": "Gather evidence of all of TerraGroup's \"minor\" misdeeds",
+      "taskIds": [],
+      "achievementIds": [
+        "691215e8680e04c5da057e57"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-6634cae870af846d2868dada",
+      "name": "Local Strong Man",
+      "type": "manual-achievement",
+      "description": "Pick Skier's side and complete The Tarkov Mystery event task line",
+      "taskIds": [],
+      "achievementIds": [
+        "6634cae870af846d2868dada"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-651415feb49e3253755f4b68",
+      "name": "Long Live the King!",
+      "type": "manual-achievement",
+      "description": "Neutralize every Boss once while playing as a PMC",
+      "taskIds": [],
+      "achievementIds": [
+        "651415feb49e3253755f4b68"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-65141eb5c31fcb0e163577dd",
+      "name": "Lost",
+      "type": "manual-achievement",
+      "description": "Locate the crashed plane on Woods while playing as a PMC",
+      "taskIds": [],
+      "achievementIds": [
+        "65141eb5c31fcb0e163577dd"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-65141a3059647d2cb3213c9e",
+      "name": "Make a Notch",
+      "type": "manual-achievement",
+      "description": "Eliminate 30 PMC operatives with a melee weapon while playing as a PMC",
+      "taskIds": [],
+      "achievementIds": [
+        "65141a3059647d2cb3213c9e"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-691212088e10a4e1fb0f48c4",
+      "name": "Man of His Word",
+      "type": "manual-achievement",
+      "description": "Complete the task given to you to the end",
+      "taskIds": [],
+      "achievementIds": [
+        "691212088e10a4e1fb0f48c4"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-66b493bc2d8cd3b5e90a3648",
+      "name": "Marathon",
+      "type": "manual-achievement",
+      "description": "Visit all locations in one raid as a PMC",
+      "taskIds": [],
+      "achievementIds": [
+        "66b493bc2d8cd3b5e90a3648"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-660fe21454670811e304c045",
+      "name": "Maslenitsa",
+      "type": "manual-achievement",
+      "description": "Сomplete the Maslenitsa 2024 event task line",
+      "taskIds": [],
+      "achievementIds": [
+        "660fe21454670811e304c045"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-6514143d59647d2cb3213c93",
+      "name": "Master of ULTRA",
+      "type": "manual-achievement",
+      "description": "Neutralize Killa 100 times while playing as a PMC",
+      "taskIds": [],
+      "achievementIds": [
+        "6514143d59647d2cb3213c93"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-676094451fec2f7426093be6",
+      "name": "More Prestigious",
+      "type": "manual-achievement",
+      "description": "Earn the Prestige level 2",
+      "taskIds": [],
+      "achievementIds": [
+        "676094451fec2f7426093be6"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-69de1c2be33584b09a098e93",
+      "name": "Morituri te salutant",
+      "type": "manual-achievement",
+      "description": "Help Ref save the start of the new season in Arena and complete the Casus Belli event task line",
+      "taskIds": [],
+      "achievementIds": [
+        "69de1c2be33584b09a098e93"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-68d3ff840531ed76e808866c",
+      "name": "No Limit to Perfection",
+      "type": "manual-achievement",
+      "description": "Earn the Prestige level 6",
+      "taskIds": [],
+      "achievementIds": [
+        "68d3ff840531ed76e808866c"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-651413e9c31fcb0e163577c9",
+      "name": "Now That's a Good Shot",
+      "type": "manual-achievement",
+      "description": "Neutralize Zryachiy 15 times while playing as a PMC",
+      "taskIds": [],
+      "achievementIds": [
+        "651413e9c31fcb0e163577c9"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-6513f1feec10ff011f17c7ea",
+      "name": "Now There Are Three of Them!",
+      "type": "manual-achievement",
+      "description": "Neutralize Knight, Birdeye, and Big Pipe in a single raid for the first time while playing as a PMC",
+      "taskIds": [],
+      "achievementIds": [
+        "6513f1feec10ff011f17c7ea"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-651412b8c31fcb0e163577c5",
+      "name": "Old Dog With Old tricks",
+      "type": "manual-achievement",
+      "description": "Neutralize Kaban 15 times while playing as a PMC",
+      "taskIds": [],
+      "achievementIds": [
+        "651412b8c31fcb0e163577c5"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-685d3d6b81d993fda109cdb8",
+      "name": "One Last Ride",
+      "type": "manual-achievement",
+      "description": "Experience the Hardcore Wipe",
+      "taskIds": [],
+      "achievementIds": [
+        "685d3d6b81d993fda109cdb8"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-691213956b60607135006811",
+      "name": "Pathfinder",
+      "type": "manual-achievement",
+      "description": "Fully explore Tarkov and its inhabitants",
+      "taskIds": [],
+      "achievementIds": [
+        "691213956b60607135006811"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-69121487d2f0e6de2f0561ef",
+      "name": "Pay Your Debt",
+      "type": "manual-achievement",
+      "description": "Learn what happened to Kozlov",
+      "taskIds": [],
+      "achievementIds": [
+        "69121487d2f0e6de2f0561ef"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-65141dd6303df252af1c72c9",
+      "name": "PMC",
+      "type": "manual-achievement",
+      "description": "Survive 300 raids while playing as a PMC",
+      "taskIds": [],
+      "achievementIds": [
+        "65141dd6303df252af1c72c9"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-6512ea46f7a078264a4376e4",
+      "name": "PMC's Best Friend",
+      "type": "manual-achievement",
+      "description": "Survive and extract from Interchange through the Scav Co-Op extraction while playing as a PMC",
+      "taskIds": [],
+      "achievementIds": [
+        "6512ea46f7a078264a4376e4"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-676091c0f457869a94017a23",
+      "name": "Prestigious",
+      "type": "manual-achievement",
+      "description": "Earn the Prestige level 1",
+      "taskIds": [],
+      "achievementIds": [
+        "676091c0f457869a94017a23"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-65141cd2cf2f1c285e606449",
+      "name": "Ready for Anything",
+      "type": "manual-achievement",
+      "description": "Survive 10 consecutive raids while playing as a PMC",
+      "taskIds": [],
+      "achievementIds": [
+        "65141cd2cf2f1c285e606449"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-66c32996b4c0c017a3319cc3",
+      "name": "Samsara Wheel Spins Again",
+      "type": "manual-achievement",
+      "description": "Neutralize Partisan 15 times while playing as a PMC",
+      "taskIds": [],
+      "achievementIds": [
+        "66c32996b4c0c017a3319cc3"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-6513efa1b49e3253755f47eb",
+      "name": "Sanatorium Orderly",
+      "type": "manual-achievement",
+      "description": "Neutralize Sanitar for the first time while playing as a PMC",
+      "taskIds": [],
+      "achievementIds": [
+        "6513efa1b49e3253755f47eb"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-68e8f0575eb7e5ce5000ba0a",
+      "name": "Savior",
+      "type": "manual-achievement",
+      "description": "Escape from Tarkov to save the humanity",
+      "taskIds": [],
+      "achievementIds": [
+        "68e8f0575eb7e5ce5000ba0a"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-68f7635e006f73031b0336fa",
+      "name": "Savior (PVE ZONE)",
+      "type": "manual-achievement",
+      "description": "Escape from Tarkov to save the humanity",
+      "taskIds": [],
+      "achievementIds": [
+        "68f7635e006f73031b0336fa"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-6513ed89cf2f1c285e606068",
+      "name": "Silence of the Sawmill",
+      "type": "manual-achievement",
+      "description": "Neutralize Shturman for the first time while playing as a PMC",
+      "taskIds": [],
+      "achievementIds": [
+        "6513ed89cf2f1c285e606068"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-6527d2e2c656a951ad1528c3",
+      "name": "Smoke the Peace Pipe",
+      "type": "manual-achievement",
+      "description": "Neutralize Big Pipe 15 times while playing as a PMC",
+      "taskIds": [],
+      "achievementIds": [
+        "6527d2e2c656a951ad1528c3"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-6529097eccf6aa5f8737b3d0",
+      "name": "Snowball",
+      "type": "manual-achievement",
+      "description": "Neutralize every Boss without dying while playing as a PMC",
+      "taskIds": [],
+      "achievementIds": [
+        "6529097eccf6aa5f8737b3d0"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-67fce0c2f18dc20eae02240b",
+      "name": "Star Called Sun",
+      "type": "manual-achievement",
+      "description": "Obliterate a cultist while using the RShG-2 rocket launcher",
+      "taskIds": [],
+      "achievementIds": [
+        "67fce0c2f18dc20eae02240b"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-68e8f02ff3a1196d1a05f2cb",
+      "name": "Survivor",
+      "type": "manual-achievement",
+      "description": "Escape from Tarkov no matter the cost",
+      "taskIds": [],
+      "achievementIds": [
+        "68e8f02ff3a1196d1a05f2cb"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-68f76335c3f68167b8029c18",
+      "name": "Survivor (PVE ZONE)",
+      "type": "manual-achievement",
+      "description": "Escape from Tarkov no matter the cost",
+      "taskIds": [],
+      "achievementIds": [
+        "68f76335c3f68167b8029c18"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-68936a7a672ffe94a509446b",
+      "name": "Targrad Tales",
+      "type": "manual-achievement",
+      "description": "He that steals honey, should beware of the sting",
+      "taskIds": [],
+      "achievementIds": [
+        "68936a7a672ffe94a509446b"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-65141e37cf2f1c285e606361",
+      "name": "That's What She Said",
+      "type": "manual-achievement",
+      "description": "Search the office in Factory while playing as a PMC",
+      "taskIds": [],
+      "achievementIds": [
+        "65141e37cf2f1c285e606361"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-6513f28cb49e3253755f47f3",
+      "name": "The Blind Watcher",
+      "type": "manual-achievement",
+      "description": "Neutralize Zryachiy for the first time while playing as a PMC",
+      "taskIds": [],
+      "achievementIds": [
+        "6513f28cb49e3253755f47f3"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-664f1f8768508d74604bf556",
+      "name": "The Kappa Path",
+      "type": "achievement",
+      "description": "Obtain Secure container Kappa",
+      "taskIds": [
+        "5c51aac186f77432ea65c552"
+      ],
+      "achievementIds": [
+        "664f1f8768508d74604bf556"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-6527d3aac656a951ad1528ce",
+      "name": "The Red Book",
+      "type": "manual-achievement",
+      "description": "Neutralize Birdeye 15 times while playing as a PMC",
+      "taskIds": [],
+      "achievementIds": [
+        "6527d3aac656a951ad1528ce"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-691214c93d597b2ef80a2206",
+      "name": "Theseus",
+      "type": "manual-achievement",
+      "description": "Uncover the secret of The Labyrinth",
+      "taskIds": [],
+      "achievementIds": [
+        "691214c93d597b2ef80a2206"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-65140c00b1c08b0feb216d50",
+      "name": "This Is a Tarkov Showdown",
+      "type": "manual-achievement",
+      "description": "Neutralize Reshala 15 times while playing as a PMC",
+      "taskIds": [],
+      "achievementIds": [
+        "65140c00b1c08b0feb216d50"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-691214eafc9b2bc7f3042a57",
+      "name": "This Is All (Not) Coincidence",
+      "type": "manual-achievement",
+      "description": "Find out what happened to a certain BEAR squad",
+      "taskIds": [],
+      "achievementIds": [
+        "691214eafc9b2bc7f3042a57"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-6912145e52ddd29bf002d343",
+      "name": "Through Another's Eyes",
+      "type": "manual-achievement",
+      "description": "Discover what the cultists were really after",
+      "taskIds": [],
+      "achievementIds": [
+        "6912145e52ddd29bf002d343"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-685d6539127e4806240f3bcd",
+      "name": "Through to the End",
+      "type": "manual-achievement",
+      "description": "Collect the scars of the Hardcore Wipe",
+      "taskIds": [],
+      "achievementIds": [
+        "685d6539127e4806240f3bcd"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-66c328de9dc78468f4040f35",
+      "name": "Time To Clean My Karma",
+      "type": "manual-achievement",
+      "description": "Neutralize Partisan for the first time while playing as a PMC",
+      "taskIds": [],
+      "achievementIds": [
+        "66c328de9dc78468f4040f35"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-691213f0dbcdbbc54402fe00",
+      "name": "Trail of Breadcrumbs",
+      "type": "manual-achievement",
+      "description": "Find traces of a mysterious organization in Tarkov",
+      "taskIds": [],
+      "achievementIds": [
+        "691213f0dbcdbbc54402fe00"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-6512eb3ddfb0ae1ee75a0376",
+      "name": "Traveler",
+      "type": "manual-achievement",
+      "description": "Survive and extract from every location in Tarkov while playing as a PMC ",
+      "taskIds": [],
+      "achievementIds": [
+        "6512eb3ddfb0ae1ee75a0376"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-655b4a576689c676ce57acb6",
+      "name": "True Crime",
+      "type": "manual-achievement",
+      "description": "Neutralize Kollontay 15 times while playing as a PMC",
+      "taskIds": [],
+      "achievementIds": [
+        "655b4a576689c676ce57acb6"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-65141b9859647d2cb3213ca2",
+      "name": "U-SUCC",
+      "type": "manual-achievement",
+      "description": "Eliminate 50 USEC PMC operatives",
+      "taskIds": [],
+      "achievementIds": [
+        "65141b9859647d2cb3213ca2"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-6912156f3d597b2ef80a2209",
+      "name": "U-Turn",
+      "type": "manual-achievement",
+      "description": "Agree to the job only to change your mind after",
+      "taskIds": [],
+      "achievementIds": [
+        "6912156f3d597b2ef80a2209"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-66c328aca91e7d66fa1b0b7b",
+      "name": "Vagabond",
+      "type": "manual-achievement",
+      "description": "Use the transit from any location",
+      "taskIds": [],
+      "achievementIds": [
+        "66c328aca91e7d66fa1b0b7b"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-65141c30ec10ff011f17cc3b",
+      "name": "Welcome to Tarkov",
+      "type": "manual-achievement",
+      "description": "Die in Tarkov for the first time",
+      "taskIds": [],
+      "achievementIds": [
+        "65141c30ec10ff011f17cc3b"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-65140ab8ec10ff011f17cc10",
+      "name": "What Not To Wear",
+      "type": "manual-achievement",
+      "description": "Neutralize Killa 15 times while playing as a PMC",
+      "taskIds": [],
+      "achievementIds": [
+        "65140ab8ec10ff011f17cc10"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-6912168c52ddd29bf002d37a",
+      "name": "When the Light Fades",
+      "type": "manual-achievement",
+      "description": "Free Tarkov from the priests' eyes",
+      "taskIds": [],
+      "achievementIds": [
+        "6912168c52ddd29bf002d37a"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-693a83434cb1cf587c0a63f9",
+      "name": "Whiteout",
+      "type": "manual-achievement",
+      "description": "Celebrate Christmas and New Year and complete the Kolotun 2025 event task line",
+      "taskIds": [],
+      "achievementIds": [
+        "693a83434cb1cf587c0a63f9"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-651411f1cf2f1c285e606423",
+      "name": "Who Called the Doctor?",
+      "type": "manual-achievement",
+      "description": "Neutralize Sanitar 15 times while playing as a PMC",
+      "taskIds": [],
+      "achievementIds": [
+        "651411f1cf2f1c285e606423"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-6912159adf87c6a94a0b9f34",
+      "name": "Will It Blow?",
+      "type": "manual-achievement",
+      "description": "Hand the case with dangerous contents to the wrong people. You clearly had no other choice!",
+      "taskIds": [],
+      "achievementIds": [
+        "6912159adf87c6a94a0b9f34"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-6527ee4a647c29201011defe",
+      "name": "You Are Not My Brother",
+      "type": "manual-achievement",
+      "description": "Eliminate a Scav while playing as a Scav",
+      "taskIds": [],
+      "achievementIds": [
+        "6527ee4a647c29201011defe"
+      ],
+      "source": "wiki"
+    }
+  ]
+}

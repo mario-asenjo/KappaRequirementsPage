@@ -10,7 +10,8 @@ import { Task } from './types';
 import taskData from './data/tasks.json';
 import { sortTasksByGameOrder } from './utils/taskOrder';
 
-const tasks = sortTasksByGameOrder(taskData.tasks as Task[]);
+const allTasks = taskData.tasks as Task[];
+const tasks = sortTasksByGameOrder(allTasks.filter((task) => task.countsForKappa));
 
 /**
  * Root component. Bundles task data from src/data/tasks.json and sets up the
