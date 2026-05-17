@@ -8,7 +8,7 @@ Este repositorio contiene una aplicación SPA escrita en **React** (con Vite y T
 - **Seguimiento persistente**: las misiones marcadas como completadas se guardan en `localStorage` para que tu progreso persista entre sesiones sin necesidad de registrarse.
 - **Resumen global de Kappa**: una barra de progreso en la cabecera indica cuántas misiones que cuentan para Kappa has completado y cuál es el avance total.
 - **Página de detalle**: cada misión tiene una página dedicada con su descripción, objetivos, prerrequisitos y recompensas.
-- **Árbol de misiones**: la ruta `/quest-tree` muestra todos los comerciantes en secciones horizontales tipo eft.monster, con nodos desbloqueados, bloqueados y completados.
+- **Árbol de misiones**: la ruta `/quest-tree` muestra todos los comerciantes en secciones horizontales tipo eft.monster, con desbloqueo por prerequisitos y nivel PMC.
 - **Datos sincronizables**: `src/data/tasks.json` se puede regenerar desde `tarkov.dev` con las misiones que cuentan para Kappa.
 - **Estilos versionados**: Bootstrap se instala como dependencia npm y se complementa con estilos locales responsivos en `src/styles.css`.
 - **Sistema visual Kraken**: `DESIGN.md` documenta paleta, tipografia, radios y componentes base usados por la UI.
@@ -84,9 +84,9 @@ El árbol se construye desde `tasks.json`, agrupa misiones por comerciante y con
 
 ## Árbol de misiones
 
-La vista `/quest-tree` permite explorar la progresión Kappa por comerciante. Usa el mismo `localStorage` (`completedTasks`) que el tracker, por lo que marcar una misión en la lista, detalle o árbol actualiza el resto de vistas en tiempo real.
+La vista `/quest-tree` permite explorar la progresión Kappa por comerciante. Usa el mismo `localStorage` (`completedTasks`) que el tracker y persiste el nivel PMC en `localStorage` bajo `playerLevel`.
 
-La presentación sigue el patrón de eft.monster: cada comerciante aparece como una sección independiente con un SVG horizontal, nodos compactos, nivel mínimo junto al nodo y scroll lateral para cadenas grandes. Pulsa click, `Enter` o `Espacio` sobre una misión para alternar su estado completado.
+La presentación sigue el patrón de eft.monster: cada comerciante aparece como una sección independiente con un SVG horizontal, nodos compactos, nivel mínimo junto al nodo y scroll lateral para cadenas grandes. Solo se renderizan misiones desbloqueadas por prerequisitos y por el nivel PMC indicado. Selecciona un nodo para ver información rápida, marcar/desmarcar la misión o abrir su página de detalle.
 
 Para validar la construcción del árbol y un render básico de la página:
 
