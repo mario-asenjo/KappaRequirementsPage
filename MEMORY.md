@@ -40,6 +40,15 @@
 
 ## Historial De Cambios
 
+### 2026-05-17 (gating de progreso)
+
+- Rama de trabajo: `feature/quest-tree-progression-gates`.
+- Se anadio nivel PMC persistido en `localStorage` bajo `playerLevel` para desbloquear misiones por `levelRequirement`.
+- Se actualizo `src/utils/questTree.ts` para validar completadas contra prerequisitos y nivel, evitando completar misiones adelantadas si falta la cadena previa.
+- Se cambio `QuestTreePage` para ocultar nodos bloqueados hasta que sus prerequisitos y nivel esten satisfechos.
+- Se anadio panel de informacion de mision seleccionada con objetivo principal, accion de marcar/desmarcar y enlace a la pagina de detalle.
+- Se ampliaron pruebas de `npm run test:quests` con una cadena sintetica A -> B -> C y gating por nivel.
+
 ### 2026-05-17 (revision visual)
 
 - Rama de trabajo: `feature/quest-tree-monster-layout`.

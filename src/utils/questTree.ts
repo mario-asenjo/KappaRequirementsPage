@@ -24,21 +24,27 @@ export function getTaskPrerequisites(task: Task) {
   return task.prerequisites?.filter(Boolean) ?? [];
 }
 
-export function getQuestStatus(task: Task, completedIds: string[], tasksByNameOrId: Map<string, Task>) {
-  if (completedIds.includes(task.id)) return 'completed';
+export function getQuestStatus(
+  task: Task,
+  completedIds: string[],
+  tasksByNameOrId: Map<string, Task>,
+  playerLevel = 79
+) {
+  if ((task.levelRequirement ?? 1) > playerLevel) return 'locked';
 
   const prerequisites = getTaskPrerequisites(task)
     .map((nameOrId) => tasksByNameOrId.get(normalize(nameOrId)))
     .filter((prerequisite): prerequisite is Task => Boolean(prerequisite));
 
-  if (prerequisites.length === 0) return 'available';
+  const prerequisitesCompleted = prerequisites.every((prerequisite) => completedIds.includes(prerequisite.id));
+  if (!prerequisitesCompleted) return 'locked';
 
-  return prerequisites.every((prerequisite) => completedIds.includes(prerequisite.id))
-    ? 'available'
-    : 'locked';
+  if (completedIds.includes(task.id)) return 'completed';
+
+  return 'available';
 }
 
-export function buildQuestTree(tasks: Task[], completedIds: string[] = []): QuestTreeGroup[] {
+export function buildQuestTree(tasks: Task[], completedIds: string[] = [], playerLevel = 79): QuestTreeGroup[] {
   const tasksByNameOrId = new Map<string, Task>();
   tasks.forEach((task) => {
     tasksByNameOrId.set(normalize(task.id), task);
@@ -77,7 +83,7 @@ export function buildQuestTree(tasks: Task[], completedIds: string[] = []): Ques
 
       return {
         task,
-        status: getQuestStatus(task, completedIds, tasksByNameOrId),
+        status: getQuestStatus(task, completedIds, tasksByNameOrId, playerLevel),
         children,
         crossTraderPrerequisites,
       };
@@ -91,6 +97,37 @@ export function buildQuestTree(tasks: Task[], completedIds: string[] = []): Ques
       totalTasks: traderTasks.length,
     };
   });
+}
+
+export function getValidCompletedTaskIds(tasks: Task[], completedIds: string[], playerLevel = 79) {
+  const completedSet = new Set(completedIds);
+  const validCompleted = new Set<string>();
+  const tasksByNameOrId = new Map<string, Task>();
+
+  tasks.forEach((task) => {
+    tasksByNameOrId.set(normalize(task.id), task);
+    tasksByNameOrId.set(normalize(task.title), task);
+  });
+
+  let changed = true;
+  while (changed) {
+    changed = false;
+    tasks.forEach((task) => {
+      if (!completedSet.has(task.id) || validCompleted.has(task.id)) return;
+      if ((task.levelRequirement ?? 1) > playerLevel) return;
+
+      const prerequisites = getTaskPrerequisites(task)
+        .map((nameOrId) => tasksByNameOrId.get(normalize(nameOrId)))
+        .filter((prerequisite): prerequisite is Task => Boolean(prerequisite));
+      const prerequisitesCompleted = prerequisites.every((prerequisite) => validCompleted.has(prerequisite.id));
+
+      if (!prerequisitesCompleted) return;
+      validCompleted.add(task.id);
+      changed = true;
+    });
+  }
+
+  return completedIds.filter((id) => validCompleted.has(id));
 }
 
 export function flattenQuestTree(nodes: QuestTreeNode[]) {

@@ -5,7 +5,7 @@ import { StaticRouter } from 'react-router-dom/server';
 import taskData from '../src/data/tasks.json';
 import QuestTreePage from '../src/pages/QuestTreePage';
 import { Task } from '../src/types';
-import { buildQuestTree, flattenQuestTree } from '../src/utils/questTree';
+import { buildQuestTree, flattenQuestTree, getValidCompletedTaskIds } from '../src/utils/questTree';
 
 const tasks = taskData.tasks as Task[];
 const tree = buildQuestTree(tasks);
@@ -20,6 +20,23 @@ assert.equal(
   tree.every((trader) => flattenQuestTree(trader.roots).length > 0),
   true,
   'each trader should expose visible nodes'
+);
+
+const chainTasks: Task[] = [
+  { id: 'a', title: 'A', trader: 'Prapor', levelRequirement: 1, objectives: [], countsForKappa: true },
+  { id: 'b', title: 'B', trader: 'Prapor', levelRequirement: 1, prerequisites: ['A'], objectives: [], countsForKappa: true },
+  { id: 'c', title: 'C', trader: 'Prapor', levelRequirement: 10, prerequisites: ['B'], objectives: [], countsForKappa: true },
+];
+
+assert.deepEqual(
+  getValidCompletedTaskIds(chainTasks, ['c'], 79),
+  [],
+  'descendants cannot be completed without their prerequisite chain'
+);
+assert.deepEqual(
+  getValidCompletedTaskIds(chainTasks, ['a', 'b', 'c'], 5),
+  ['a', 'b'],
+  'level-gated quests should not count as completed until the player level is high enough'
 );
 
 const html = renderToString(

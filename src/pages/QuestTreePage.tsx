@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import useLocalStorage from '../hooks/useLocalStorage';
 import { Task } from '../types';
-import { buildQuestTree, QuestTreeGroup, QuestTreeNode } from '../utils/questTree';
+import { buildQuestTree, getValidCompletedTaskIds, QuestTreeGroup, QuestTreeNode } from '../utils/questTree';
 
 interface QuestTreePageProps {
   tasks: Task[];
@@ -83,6 +84,8 @@ function getSubtreeLeafCount(node: QuestTreeNode): number {
   return node.children.reduce((total, child) => total + getSubtreeLeafCount(child), 0);
 }
 
+const isVisibleNode = (node: QuestTreeNode) => node.status === 'available' || node.status === 'completed';
+
 function layoutTraderTree(group: QuestTreeGroup) {
   const nodes: DrawableNode[] = [];
   const links: DrawableLink[] = [];
@@ -91,7 +94,8 @@ function layoutTraderTree(group: QuestTreeGroup) {
 
   const placeNode = (node: QuestTreeNode, depth: number): TreePoint => {
     maxDepth = Math.max(maxDepth, depth);
-    const childPoints = node.children.map((child) => placeNode(child, depth + 1));
+    const visibleChildren = node.status === 'completed' ? node.children.filter(isVisibleNode) : [];
+    const childPoints = visibleChildren.map((child) => placeNode(child, depth + 1));
     const y = childPoints.length > 0
       ? childPoints.reduce((sum, point) => sum + point.y, 0) / childPoints.length
       : topPadding + leafCursor++ * yGap;
@@ -111,13 +115,15 @@ function layoutTraderTree(group: QuestTreeGroup) {
     });
 
     childPoints.forEach((childPoint, index) => {
-      links.push({ source: point, target: childPoint, status: node.children[index].status });
+      links.push({ source: point, target: childPoint, status: visibleChildren[index].status });
     });
 
     return point;
   };
 
-  const rootTasks = [...group.roots].sort((a, b) => getSubtreeLeafCount(b) - getSubtreeLeafCount(a));
+  const rootTasks = [...group.roots]
+    .filter(isVisibleNode)
+    .sort((a, b) => getSubtreeLeafCount(b) - getSubtreeLeafCount(a));
   const rootPoints = rootTasks.map((node) => placeNode(node, 1));
   const traderY = rootPoints.length > 0
     ? rootPoints.reduce((sum, point) => sum + point.y, 0) / rootPoints.length
@@ -155,21 +161,39 @@ function getPath(source: TreePoint, target: TreePoint) {
 
 const QuestTreePage: React.FC<QuestTreePageProps> = ({ tasks }) => {
   const [completedIds, setCompletedIds] = useLocalStorage<string[]>('completedTasks', []);
-  const groups = sortGroups(buildQuestTree(tasks, completedIds));
-  const completedCount = tasks.filter((task) => completedIds.includes(task.id)).length;
+  const [playerLevel, setPlayerLevel] = useLocalStorage<number>('playerLevel', 1);
+  const [selectedTaskId, setSelectedTaskId] = useState<string | null>(null);
+  const validCompletedIds = getValidCompletedTaskIds(tasks, completedIds, playerLevel);
+  const groups = sortGroups(buildQuestTree(tasks, validCompletedIds, playerLevel));
+  const completedCount = tasks.filter((task) => validCompletedIds.includes(task.id)).length;
+  const selectedTask = selectedTaskId ? tasks.find((task) => task.id === selectedTaskId) : undefined;
+
+  useEffect(() => {
+    if (validCompletedIds.join('|') !== completedIds.join('|')) {
+      setCompletedIds(validCompletedIds);
+    }
+  }, [completedIds, setCompletedIds, validCompletedIds]);
 
   const toggleCompletion = (task: Task) => {
-    setCompletedIds((current) => (
-      current.includes(task.id)
-        ? current.filter((id) => id !== task.id)
-        : [...current, task.id]
-    ));
+    setCompletedIds((current) => {
+      if (current.includes(task.id)) {
+        return getValidCompletedTaskIds(tasks, current.filter((id) => id !== task.id), playerLevel);
+      }
+
+      const nextCompletedIds = [...current, task.id];
+      return getValidCompletedTaskIds(tasks, nextCompletedIds, playerLevel);
+    });
   };
 
   const handleNodeKeyDown = (event: React.KeyboardEvent<SVGGElement>, task?: Task) => {
     if (!task || (event.key !== 'Enter' && event.key !== ' ')) return;
     event.preventDefault();
-    toggleCompletion(task);
+    setSelectedTaskId(task.id);
+  };
+
+  const handlePlayerLevelChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const nextLevel = Math.min(79, Math.max(1, Number(event.target.value) || 1));
+    setPlayerLevel(nextLevel);
   };
 
   return (
@@ -186,9 +210,40 @@ const QuestTreePage: React.FC<QuestTreePageProps> = ({ tasks }) => {
         <div className="quest-tree-legend" aria-label="Leyenda de estados">
           <span><i className="is-completed"></i> Completada</span>
           <span><i className="is-available"></i> Disponible</span>
-          <span><i className="is-locked"></i> Bloqueada</span>
+          <label className="quest-tree-level-control">
+            Nivel PMC
+            <input type="number" min="1" max="79" value={playerLevel} onChange={handlePlayerLevelChange} />
+          </label>
           <strong>{completedCount}/{tasks.length}</strong>
         </div>
+      </section>
+
+      <section className="quest-tree-info-panel" aria-live="polite">
+        {selectedTask ? (
+          <>
+            <div>
+              <span className="eyebrow">Mision seleccionada</span>
+              <h2>{selectedTask.title}</h2>
+              <p>
+                {selectedTask.trader} · Nivel {selectedTask.levelRequirement ?? 1}
+                {selectedTask.location ? ` · ${selectedTask.location}` : ''}
+              </p>
+              {selectedTask.objectives.length > 0 && (
+                <p className="quest-tree-info-objective">{selectedTask.objectives[0]}</p>
+              )}
+            </div>
+            <div className="quest-tree-info-actions">
+              <button className="btn btn-primary" type="button" onClick={() => toggleCompletion(selectedTask)}>
+                {validCompletedIds.includes(selectedTask.id) ? 'Desmarcar' : 'Marcar completada'}
+              </button>
+              <Link className="btn btn-outline-light" to={`/task/${encodeURIComponent(selectedTask.id)}`}>
+                Ver detalle
+              </Link>
+            </div>
+          </>
+        ) : (
+          <p>Selecciona una mision visible del arbol para ver sus objetivos, marcarla o abrir su pagina de detalle.</p>
+        )}
       </section>
 
       <div className="quest-tree-stack" aria-label="Arboles de misiones por comerciante">
@@ -196,7 +251,7 @@ const QuestTreePage: React.FC<QuestTreePageProps> = ({ tasks }) => {
           const layout = layoutTraderTree(group);
           const accent = getAccent(group.trader);
           const completedForTrader = tasks.filter(
-            (task) => task.trader === group.trader && completedIds.includes(task.id)
+            (task) => task.trader === group.trader && validCompletedIds.includes(task.id)
           ).length;
 
           return (
@@ -243,7 +298,7 @@ const QuestTreePage: React.FC<QuestTreePageProps> = ({ tasks }) => {
                           role={node.task ? 'button' : 'img'}
                           tabIndex={node.task ? 0 : undefined}
                           aria-label={node.task ? `${node.label}, nivel ${node.level}, ${node.status}` : group.trader}
-                          onClick={() => node.task && toggleCompletion(node.task)}
+                          onClick={() => node.task && setSelectedTaskId(node.task.id)}
                           onKeyDown={(event) => handleNodeKeyDown(event, node.task)}
                         >
                           <title>{node.task ? `${node.label} - nivel ${node.level}` : group.trader}</title>
@@ -285,7 +340,7 @@ const QuestTreePage: React.FC<QuestTreePageProps> = ({ tasks }) => {
         })}
       </div>
       <p className="quest-tree-help">
-        Desplazate horizontalmente dentro de cada comerciante. Pulsa Enter, Espacio o click en una mision para alternar completada.
+        Solo se muestran misiones desbloqueadas por prerequisitos y nivel. Selecciona un nodo para marcarlo, desmarcarlo o abrir su detalle.
       </p>
     </div>
   );
