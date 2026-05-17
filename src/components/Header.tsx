@@ -1,10 +1,18 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import useProgress from '../hooks/useProgress';
-import { Task } from '../types';
+import { Goal, Task } from '../types';
 
 interface HeaderProps {
   tasks: Task[];
+  goals: Goal[];
+  activeGoal?: Goal;
+  goalProgress: {
+    completed: number;
+    total: number;
+    percent: number;
+  };
+  onGoalChange: (goalId: string) => void;
 }
 
 /**
@@ -14,18 +22,11 @@ interface HeaderProps {
  * progress bar with a label gives users an at‑a‑glance view of their
  * journey.
  */
-const Header: React.FC<HeaderProps> = ({ tasks }) => {
+const Header: React.FC<HeaderProps> = ({ tasks, goals, activeGoal, goalProgress, onGoalChange }) => {
   const { completedTaskIds } = useProgress();
 
-  // Calculate counts for tasks that count towards the Kappa container
-  const totalKappaTasks = tasks.filter((t) => t.countsForKappa).length;
-  const completedKappaTasks = tasks.filter(
-    (t) => t.countsForKappa && completedTaskIds.includes(t.id)
-  ).length;
-  const progress = totalKappaTasks > 0 ? completedKappaTasks / totalKappaTasks : 0;
-
-  // Format as percentage with no decimals
-  const progressPercent = Math.round(progress * 100);
+  const completedTasks = tasks.filter((task) => completedTaskIds.includes(task.id)).length;
+  const progressPercent = goalProgress.percent;
 
   return (
     <header className="app-header navbar px-3 gap-3">
@@ -34,6 +35,14 @@ const Header: React.FC<HeaderProps> = ({ tasks }) => {
         <NavLink to="/" end>Panel</NavLink>
         <NavLink to="/quest-tree">Arbol</NavLink>
       </nav>
+      <label className="goal-selector">
+        <span>Objetivo</span>
+        <select value={activeGoal?.id ?? ''} onChange={(event) => onGoalChange(event.target.value)}>
+          {goals.map((goal) => (
+            <option key={goal.id} value={goal.id}>{goal.name}</option>
+          ))}
+        </select>
+      </label>
       <div className="kappa-progress flex-grow-1">
         <div className="progress" style={{ height: '1rem' }}>
           <div
@@ -48,7 +57,7 @@ const Header: React.FC<HeaderProps> = ({ tasks }) => {
           </div>
         </div>
         <small className="kappa-progress-label">
-          {completedKappaTasks} de {totalKappaTasks} misiones de Kappa completadas
+          {completedTasks} de {tasks.length} misiones de {activeGoal?.name ?? 'objetivo'} completadas
         </small>
       </div>
     </header>

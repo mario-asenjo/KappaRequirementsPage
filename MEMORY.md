@@ -47,6 +47,14 @@
 
 ## Historial De Cambios
 
+### 2026-05-17 (fase 3 selector)
+
+- Rama de trabajo: `feature/goal-selector-filtering`.
+- Se anadio `src/hooks/useGoals.ts` para cargar `goals.json`, resolver el objetivo activo desde `userProgress.selectedGoalId`, filtrar tareas y calcular progreso.
+- Se cambio `src/App.tsx` para pasar tareas filtradas por objetivo a Header, Sidebar, Home, QuestListPage, QuestDetailPage y QuestTreePage.
+- Se anadio selector `Objetivo` en Header para alternar entre Kappa, Lightkeeper, todas las misiones y achievements con quests asociadas.
+- Se ajustaron textos del panel y del arbol para no estar acoplados solo a Kappa.
+
 ### 2026-05-17 (fase 2 progreso)
 
 - Rama de trabajo: `feature/progress-model-goals`.

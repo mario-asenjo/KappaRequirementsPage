@@ -8,35 +8,42 @@ import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import { Task } from './types';
 import taskData from './data/tasks.json';
-import { sortTasksByGameOrder } from './utils/taskOrder';
+import useGoals from './hooks/useGoals';
 
 const allTasks = taskData.tasks as Task[];
-const tasks = sortTasksByGameOrder(allTasks.filter((task) => task.countsForKappa));
 
 /**
  * Root component. Bundles task data from src/data/tasks.json and sets up the
  * application layout. The JSON file can be refreshed with `npm run update:tasks`.
  */
 const App: React.FC = () => {
+  const { goals, activeGoal, activeTasks, goalProgress, setActiveGoalId } = useGoals(allTasks);
+
   return (
     <div className="app-shell d-flex flex-column">
       {/* Header at the top */}
-      <Header tasks={tasks} />
+      <Header
+        tasks={activeTasks}
+        goals={goals}
+        activeGoal={activeGoal}
+        goalProgress={goalProgress}
+        onGoalChange={setActiveGoalId}
+      />
       <div className="app-body d-flex flex-column flex-md-row flex-grow-1 overflow-hidden">
         {/* Sidebar on the left */}
-        <Sidebar tasks={tasks} />
+        <Sidebar tasks={activeTasks} />
         {/* Main content area */}
         <main className="app-main flex-grow-1 overflow-auto p-3">
           <Routes>
-            <Route path="/" element={<Home tasks={tasks} />} />
-            <Route path="/quest-tree" element={<QuestTreePage tasks={tasks} />} />
+            <Route path="/" element={<Home tasks={activeTasks} goal={activeGoal} goalProgress={goalProgress} />} />
+            <Route path="/quest-tree" element={<QuestTreePage tasks={activeTasks} />} />
             <Route
               path="/trader/:traderName"
-              element={<QuestListPage tasks={tasks} />}
+              element={<QuestListPage tasks={activeTasks} />}
             />
             <Route
               path="/task/:taskId"
-              element={<QuestDetailPage tasks={tasks} />}
+              element={<QuestDetailPage tasks={activeTasks} />}
             />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
