@@ -64,3 +64,12 @@ export interface Goal {
   achievementIds: string[];
   source: 'tarkov.dev' | 'wiki' | 'derived';
 }
+
+export interface UserProgress {
+  version: 1;
+  playerLevel: number;
+  completedTaskIds: string[];
+  completedAchievementIds: string[];
+  manualAchievementProgress: Record<string, boolean>;
+  selectedGoalId: string;
+}

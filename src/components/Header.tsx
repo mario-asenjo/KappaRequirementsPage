@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import useLocalStorage from '../hooks/useLocalStorage';
+import useProgress from '../hooks/useProgress';
 import { Task } from '../types';
 
 interface HeaderProps {
@@ -15,14 +15,12 @@ interface HeaderProps {
  * journey.
  */
 const Header: React.FC<HeaderProps> = ({ tasks }) => {
-  // Retrieve a set of completed task IDs from localStorage. Default to an
-  // empty array if nothing is stored yet.
-  const [completedIds] = useLocalStorage<string[]>('completedTasks', []);
+  const { completedTaskIds } = useProgress();
 
   // Calculate counts for tasks that count towards the Kappa container
   const totalKappaTasks = tasks.filter((t) => t.countsForKappa).length;
   const completedKappaTasks = tasks.filter(
-    (t) => t.countsForKappa && completedIds.includes(t.id)
+    (t) => t.countsForKappa && completedTaskIds.includes(t.id)
   ).length;
   const progress = totalKappaTasks > 0 ? completedKappaTasks / totalKappaTasks : 0;
 

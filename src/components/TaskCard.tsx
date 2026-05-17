@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import useLocalStorage from '../hooks/useLocalStorage';
+import useProgress from '../hooks/useProgress';
 import { Task } from '../types';
 
 interface TaskCardProps {
@@ -15,12 +15,12 @@ interface TaskCardProps {
  * minimal using Bootstrap utility classes.
  */
 const TaskCard: React.FC<TaskCardProps> = ({ task, position }) => {
-  const [completedIds, setCompletedIds] = useLocalStorage<string[]>('completedTasks', []);
+  const { completedTaskIds, setCompletedTaskIds } = useProgress();
 
-  const isCompleted = completedIds.includes(task.id);
+  const isCompleted = completedTaskIds.includes(task.id);
 
   const toggleCompletion = () => {
-    setCompletedIds((prev) => {
+    setCompletedTaskIds((prev) => {
       if (prev.includes(task.id)) {
         return prev.filter((id) => id !== task.id);
       } else {

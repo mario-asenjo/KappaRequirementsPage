@@ -32,7 +32,8 @@ kappa-tracker/
 │   ├── styles.css      Ajustes visuales y responsivos del layout
 │   ├── types.ts        Definición de tipos para las misiones
 │   ├── hooks/
-│   │   └── useLocalStorage.ts Hook para persistir datos en localStorage
+│   │   ├── useLocalStorage.ts Hook base para persistir datos en localStorage
+│   │   └── useProgress.ts Hook de progreso compatible con objetivos
 │   ├── components/     Componentes reutilizables (Header, Sidebar, TaskCard)
 │   ├── pages/          Vistas de alto nivel (Home, QuestListPage, QuestDetailPage, QuestTreePage)
 │   ├── utils/          Ordenacion y construccion del arbol de misiones
@@ -108,7 +109,10 @@ Para validar la construcción del árbol y un render básico de la página:
 
 ```bash
 npm run test:quests
+npm run test:progress
 ```
+
+El modelo de progreso nuevo se guarda en `localStorage` bajo `userProgress`, pero mantiene sincronización con las claves antiguas `completedTasks` y `playerLevel` para no perder progreso existente.
 
 ## Despliegue en Cloudflare Pages
 

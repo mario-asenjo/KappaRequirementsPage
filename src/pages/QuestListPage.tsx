@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import TaskCard from '../components/TaskCard';
-import useLocalStorage from '../hooks/useLocalStorage';
+import useProgress from '../hooks/useProgress';
 import { Task } from '../types';
 
 interface QuestListPageProps {
@@ -17,17 +17,17 @@ const QuestListPage: React.FC<QuestListPageProps> = ({ tasks }) => {
   const { traderName } = useParams();
   const trader = decodeURIComponent(traderName ?? '');
   const traderTasks = tasks.filter((t) => t.trader === trader);
-  const [completedIds] = useLocalStorage<string[]>('completedTasks', []);
+  const { completedTaskIds } = useProgress();
   const [search, setSearch] = useState('');
   const [hideCompleted, setHideCompleted] = useState(false);
-  const completedForTrader = traderTasks.filter((task) => completedIds.includes(task.id)).length;
+  const completedForTrader = traderTasks.filter((task) => completedTaskIds.includes(task.id)).length;
   const traderProgress = traderTasks.length > 0
     ? Math.round((completedForTrader / traderTasks.length) * 100)
     : 0;
 
   const filtered = traderTasks.filter((task) => {
     const matchesTitle = task.title.toLowerCase().includes(search.toLowerCase());
-    const isCompleted = completedIds.includes(task.id);
+    const isCompleted = completedTaskIds.includes(task.id);
     return matchesTitle && (!hideCompleted || !isCompleted);
   });
 

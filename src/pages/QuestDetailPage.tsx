@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
-import useLocalStorage from '../hooks/useLocalStorage';
+import useProgress from '../hooks/useProgress';
 import { Task } from '../types';
 
 interface QuestDetailPageProps {
@@ -17,16 +17,16 @@ const QuestDetailPage: React.FC<QuestDetailPageProps> = ({ tasks }) => {
   const { taskId } = useParams();
   const id = decodeURIComponent(taskId ?? '');
   const task = tasks.find((t) => t.id === id);
-  const [completedIds, setCompletedIds] = useLocalStorage<string[]>('completedTasks', []);
+  const { completedTaskIds, setCompletedTaskIds } = useProgress();
 
   if (!task) {
     // If the task is not found redirect to home
     return <Navigate to="/" replace />;
   }
 
-  const isCompleted = completedIds.includes(task.id);
+  const isCompleted = completedTaskIds.includes(task.id);
   const toggleCompletion = () => {
-    setCompletedIds((prev) => {
+    setCompletedTaskIds((prev) => {
       if (prev.includes(task.id)) {
         return prev.filter((t) => t !== task.id);
       }

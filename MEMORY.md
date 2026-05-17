@@ -14,6 +14,7 @@
 - `src/components/`: componentes reutilizables `Header`, `Sidebar` y `TaskCard`.
 - `src/pages/`: paginas `Home`, `QuestListPage`, `QuestDetailPage` y `QuestTreePage`.
 - `src/hooks/useLocalStorage.ts`: persistencia local de misiones completadas.
+- `src/hooks/useProgress.ts`: modelo de progreso persistido en `userProgress`, sincronizado con claves legacy.
 - `src/data/tasks.json`: datos versionados de todas las misiones desde `tarkov.dev`, con flags Kappa/Lightkeeper.
 - `src/data/achievements.json`: achievements desde `tarkov.dev` enriquecidos con la tabla de la wiki.
 - `src/data/goals.json`: perfiles de progreso derivados para Kappa, Lightkeeper, todas las misiones y achievements.
@@ -32,6 +33,7 @@
 - Estilos base con Bootstrap y ajustes propios en `src/styles.css`.
 - Look and feel basado en `DESIGN.md`: superficies blancas, texto near-black, acentos `#7132f5`, botones de 12px y sombras suaves.
 - Progreso del usuario persistido solo en `localStorage` bajo `completedTasks`.
+- Modelo de progreso actual persistido en `localStorage` bajo `userProgress`; mantiene compatibilidad con `completedTasks` y `playerLevel`.
 - Las misiones se importan desde `src/data/tasks.json` para quedar incluidas en el bundle de produccion.
 - El arbol se puede regenerar con `npm run build:quests`; las pruebas basicas se ejecutan con `npm run test:quests`.
 
@@ -44,6 +46,15 @@
 - Total registrado de achievements: `105`.
 
 ## Historial De Cambios
+
+### 2026-05-17 (fase 2 progreso)
+
+- Rama de trabajo: `feature/progress-model-goals`.
+- Se anadio `UserProgress` a `src/types.ts` con `playerLevel`, `completedTaskIds`, `completedAchievementIds`, `manualAchievementProgress` y `selectedGoalId`.
+- Se anadio `src/utils/progress.ts` para normalizar progreso y calcular avance por `Goal`.
+- Se anadio `src/hooks/useProgress.ts`, que persiste `userProgress` y migra/sincroniza las claves antiguas `completedTasks` y `playerLevel`.
+- Se migraron Header, Sidebar, Home, QuestListPage, QuestDetailPage, TaskCard y QuestTreePage para usar `useProgress` sin cambiar la UI visible.
+- Se anadio `npm run test:progress` para validar normalizacion y calculo de avance por objetivo.
 
 ### 2026-05-17 (fase 1 objetivos)
 
