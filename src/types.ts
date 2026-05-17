@@ -14,6 +14,8 @@ export interface Task {
   trader: string;
   /** Map or location associated with the task, if any */
   location?: string;
+  /** Minimum player level required to unlock the task */
+  levelRequirement?: number;
   /** List of objectives to complete this task */
   objectives: string[];
   /** Task description giving more detail */

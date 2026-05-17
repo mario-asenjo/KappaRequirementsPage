@@ -16,6 +16,7 @@ const query = `{
     id
     name
     kappaRequired
+    minPlayerLevel
     trader {
       name
     }
@@ -58,6 +59,7 @@ async function fetchTasks() {
       title: t.name,
       trader: t.trader?.name || 'Unknown',
       location: t.map?.name || undefined,
+      levelRequirement: t.minPlayerLevel || undefined,
       objectives: Array.isArray(t.objectives)
         ? t.objectives.map((o: any) => o.description).filter(Boolean)
         : [],

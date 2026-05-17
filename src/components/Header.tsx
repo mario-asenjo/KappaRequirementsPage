@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import useLocalStorage from '../hooks/useLocalStorage';
 import { Task } from '../types';
 
@@ -30,7 +31,11 @@ const Header: React.FC<HeaderProps> = ({ tasks }) => {
 
   return (
     <header className="app-header navbar px-3 gap-3">
-      <span className="navbar-brand mb-0 h1">Kappa Progress Tracker</span>
+      <NavLink to="/" className="navbar-brand mb-0 h1">Kappa Progress Tracker</NavLink>
+      <nav className="header-nav" aria-label="Navegacion principal">
+        <NavLink to="/" end>Panel</NavLink>
+        <NavLink to="/quest-tree">Arbol</NavLink>
+      </nav>
       <div className="kappa-progress flex-grow-1">
         <div className="progress" style={{ height: '1rem' }}>
           <div

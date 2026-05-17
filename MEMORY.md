@@ -12,9 +12,11 @@
 - `src/App.tsx`: layout principal y rutas.
 - `src/main.tsx`: entrada de React e importacion de estilos globales.
 - `src/components/`: componentes reutilizables `Header`, `Sidebar` y `TaskCard`.
-- `src/pages/`: paginas `Home`, `QuestListPage` y `QuestDetailPage`.
+- `src/pages/`: paginas `Home`, `QuestListPage`, `QuestDetailPage` y `QuestTreePage`.
 - `src/hooks/useLocalStorage.ts`: persistencia local de misiones completadas.
 - `src/data/tasks.json`: datos versionados de misiones Kappa.
+- `src/data/questTree.json`: arbol de misiones generado desde `tasks.json`.
+- `src/utils/questTree.ts`: construccion de arbol por comerciante y estados de nodos.
 - `src/styles.css`: ajustes visuales y responsivos locales.
 - `DESIGN.md`: sistema visual inspirado en Kraken para guiar cualquier cambio de interfaz.
 - `scripts/fetchTasks.ts`: sincronizacion de misiones desde `tarkov.dev`.
@@ -27,6 +29,7 @@
 - Look and feel basado en `DESIGN.md`: superficies blancas, texto near-black, acentos `#7132f5`, botones de 12px y sombras suaves.
 - Progreso del usuario persistido solo en `localStorage` bajo `completedTasks`.
 - Las misiones se importan desde `src/data/tasks.json` para quedar incluidas en el bundle de produccion.
+- El arbol se puede regenerar con `npm run build:quests`; las pruebas basicas se ejecutan con `npm run test:quests`.
 
 ## Fuentes Oficiales De Misiones
 
@@ -36,6 +39,18 @@
 - Total registrado de misiones Kappa: `257`.
 
 ## Historial De Cambios
+
+### 2026-05-17
+
+- Rama de trabajo: `feature/quest-tree`.
+- Se extendio `Task` y `scripts/fetchTasks.ts` con `levelRequirement` usando `minPlayerLevel` de `tarkov.dev`.
+- Se regenero `src/data/tasks.json` desde `tarkov.dev` con `257` misiones Kappa y niveles minimos.
+- Se anadio `src/utils/questTree.ts` y `scripts/buildQuestTree.ts` para construir arboles por comerciante desde prerequisitos.
+- Se genero `src/data/questTree.json` con `npm run build:quests`.
+- Se anadio la ruta `/quest-tree`, navegacion en cabecera y una vista de arbol SVG con selector de comerciante, layout cartesian/polar, orientacion, tipo de enlace, zoom y scroll.
+- El arbol usa `completedTasks` para sincronizar completadas/disponibles/bloqueadas con el tracker existente.
+- Se anadio `scripts/testQuestTree.tsx` y el script `npm run test:quests` para validar construccion y render basico.
+- Verificacion: `npm run test:quests` correcto; `npm run build` correcto.
 
 ### 2026-05-16
 

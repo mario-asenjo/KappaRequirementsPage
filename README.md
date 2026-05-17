@@ -8,6 +8,7 @@ Este repositorio contiene una aplicación SPA escrita en **React** (con Vite y T
 - **Seguimiento persistente**: las misiones marcadas como completadas se guardan en `localStorage` para que tu progreso persista entre sesiones sin necesidad de registrarse.
 - **Resumen global de Kappa**: una barra de progreso en la cabecera indica cuántas misiones que cuentan para Kappa has completado y cuál es el avance total.
 - **Página de detalle**: cada misión tiene una página dedicada con su descripción, objetivos, prerrequisitos y recompensas.
+- **Árbol de misiones**: la ruta `/quest-tree` muestra la progresión por comerciante con nodos desbloqueados, bloqueados y completados, controles de layout y zoom.
 - **Datos sincronizables**: `src/data/tasks.json` se puede regenerar desde `tarkov.dev` con las misiones que cuentan para Kappa.
 - **Estilos versionados**: Bootstrap se instala como dependencia npm y se complementa con estilos locales responsivos en `src/styles.css`.
 - **Sistema visual Kraken**: `DESIGN.md` documenta paleta, tipografia, radios y componentes base usados por la UI.
@@ -33,11 +34,15 @@ kappa-tracker/
 │   ├── hooks/
 │   │   └── useLocalStorage.ts Hook para persistir datos en localStorage
 │   ├── components/     Componentes reutilizables (Header, Sidebar, TaskCard)
-│   ├── pages/          Vistas de alto nivel (Home, QuestListPage, QuestDetailPage)
+│   ├── pages/          Vistas de alto nivel (Home, QuestListPage, QuestDetailPage, QuestTreePage)
+│   ├── utils/          Ordenacion y construccion del arbol de misiones
 │   └── data/
-│       └── tasks.json  Base de datos de misiones sincronizada desde tarkov.dev
+│       ├── tasks.json      Base de datos de misiones sincronizada desde tarkov.dev
+│       └── questTree.json  Arbol generado desde tasks.json
 └── scripts/
-    └── fetchTasks.ts   Script opcional para actualizar las misiones desde una API
+    ├── fetchTasks.ts       Script opcional para actualizar las misiones desde una API
+    ├── buildQuestTree.ts   Script para generar src/data/questTree.json
+    └── testQuestTree.tsx   Pruebas basicas del arbol y renderizado
 ```
 
 ## Primeros pasos
@@ -68,6 +73,32 @@ npm run update:tasks
 ```
 
 Esto sobrescribe `src/data/tasks.json` con los datos más recientes e incluye metadata con la fuente, fecha de sincronización y total de misiones Kappa. La última sincronización registrada en este repositorio es `2026-05-14` y contiene `257` misiones Kappa.
+
+Después de actualizar misiones, regenera el árbol versionado:
+
+```bash
+npm run build:quests
+```
+
+El árbol se construye desde `tasks.json`, agrupa misiones por comerciante y conecta misiones cuando un prerequisito pertenece al mismo comerciante. Los prerequisitos cruzados se conservan para calcular el estado de disponibilidad.
+
+## Árbol de misiones
+
+La vista `/quest-tree` permite explorar la progresión Kappa por comerciante. Usa el mismo `localStorage` (`completedTasks`) que el tracker, por lo que marcar una misión en la lista, detalle o árbol actualiza el resto de vistas en tiempo real.
+
+Controles disponibles:
+
+- `Comerciante`: cambia el árbol visible.
+- `Layout`: alterna entre `cartesian` y `polar`.
+- `Orientacion`: alterna horizontal o vertical cuando el layout es cartesiano.
+- `Enlaces`: alterna `diagonal`, `step`, `curve` o `line`.
+- `Zoom`: aumenta o reduce el lienzo; el panel permite desplazamiento con scroll.
+
+Para validar la construcción del árbol y un render básico de la página:
+
+```bash
+npm run test:quests
+```
 
 ## Despliegue en Cloudflare Pages
 
