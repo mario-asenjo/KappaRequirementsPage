@@ -29,6 +29,7 @@ const html = renderToString(
 );
 
 assert.match(html, /Arbol de misiones Kappa/, 'quest tree page should render its title');
-assert.match(html, /Comerciante/, 'quest tree page should render controls');
+assert.match(html, /scroll-container-Prapor/, 'quest tree page should render trader sections');
+assert.match(html, /Leyenda de estados/, 'quest tree page should render the status legend');
 
 console.log('Quest tree tests passed');

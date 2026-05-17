@@ -355,7 +355,11 @@ a:hover {
 }
 
 .quest-tree-page {
+  background: #05090a;
   color: #e6e7ee;
+  margin: -1rem;
+  min-height: calc(100vh - 80px);
+  padding: 28px 18px 34px;
 }
 
 .quest-tree-hero,
@@ -375,6 +379,12 @@ a:hover {
   gap: 20px;
   grid-template-columns: minmax(0, 1fr) minmax(220px, 300px);
   padding: 24px;
+}
+
+.quest-tree-hero--compact {
+  grid-template-columns: minmax(0, 1fr) auto;
+  margin-inline: auto;
+  max-width: 1280px;
 }
 
 .quest-tree-hero h1 {
@@ -409,6 +419,194 @@ a:hover {
   font-size: clamp(2.2rem, 7vw, 4rem);
   letter-spacing: -0.07em;
   line-height: 1;
+}
+
+.quest-tree-legend {
+  align-content: center;
+  display: grid;
+  gap: 8px 16px;
+  grid-template-columns: repeat(2, auto);
+}
+
+.quest-tree-legend span {
+  align-items: center;
+  color: #c8ccd8;
+  display: flex;
+  font-size: 0.86rem;
+  font-weight: 800;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.quest-tree-legend i {
+  border-radius: 9999px;
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+}
+
+.quest-tree-legend i.is-completed {
+  background: #26c67c;
+}
+
+.quest-tree-legend i.is-available {
+  background: var(--kraken-purple);
+}
+
+.quest-tree-legend i.is-locked {
+  background: #4c5365;
+}
+
+.quest-tree-legend strong {
+  color: #ffffff;
+  font-size: 1.3rem;
+  grid-column: 1 / -1;
+}
+
+.quest-tree-stack {
+  display: grid;
+  gap: 18px;
+  margin-inline: auto;
+  max-width: 1280px;
+}
+
+.quest-tree-trader-section {
+  --trader-accent: 113, 50, 245;
+  background: #05090a;
+  border: 1px solid rgba(var(--trader-accent), 0.34);
+  border-radius: 7px;
+  box-shadow: rgba(0, 0, 0, 0.32) 0 14px 36px;
+  overflow: hidden;
+}
+
+.quest-tree-trader-heading {
+  align-items: center;
+  background: linear-gradient(90deg, rgba(var(--trader-accent), 0.2), rgba(255, 255, 255, 0.02));
+  border-bottom: 1px solid rgba(var(--trader-accent), 0.22);
+  display: flex;
+  gap: 14px;
+  justify-content: space-between;
+  padding: 10px 14px;
+}
+
+.quest-tree-trader-heading > div {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+
+.quest-tree-trader-heading h2 {
+  color: #eeeeee;
+  font-size: 1.05rem;
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+
+.quest-tree-trader-heading p {
+  color: #aeb4c4;
+  font-size: 0.86rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.quest-tree-trader-mark {
+  align-items: center;
+  background: rgba(var(--trader-accent), 0.18);
+  border: 1px solid rgba(var(--trader-accent), 0.58);
+  border-radius: 50%;
+  color: #ffffff;
+  display: inline-flex;
+  font-size: 0.72rem;
+  font-weight: 900;
+  height: 34px;
+  justify-content: center;
+  width: 34px;
+}
+
+.quest-tree-scroll {
+  cursor: grab;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-color: rgba(var(--trader-accent), 0.48) rgba(255, 255, 255, 0.06);
+  scrollbar-width: thin;
+}
+
+.quest-tree-scroll:focus {
+  outline: 3px solid rgba(var(--trader-accent), 0.35);
+  outline-offset: -3px;
+}
+
+.quest-tree-scroll::-webkit-scrollbar {
+  height: 10px;
+}
+
+.quest-tree-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.quest-tree-scroll::-webkit-scrollbar-thumb {
+  background: rgba(var(--trader-accent), 0.48);
+  border-radius: 9999px;
+}
+
+.quest-tree-node-svg {
+  cursor: pointer;
+}
+
+.quest-tree-node-svg rect {
+  fill: rgba(var(--trader-accent), 0.12);
+  stroke: rgba(var(--trader-accent), 0.76);
+  stroke-width: 1;
+}
+
+.quest-tree-node-svg.is-trader rect {
+  fill: rgba(var(--trader-accent), 0.28);
+  stroke: rgba(var(--trader-accent), 0.94);
+  stroke-width: 1.4;
+}
+
+.quest-tree-node-svg.is-completed rect {
+  fill: rgba(38, 198, 124, 0.18);
+  stroke: rgba(38, 198, 124, 0.86);
+}
+
+.quest-tree-node-svg.is-available rect {
+  fill: rgba(var(--trader-accent), 0.2);
+}
+
+.quest-tree-node-svg.is-locked {
+  opacity: 0.48;
+}
+
+.quest-tree-node-svg:focus {
+  outline: none;
+}
+
+.quest-tree-node-svg:focus rect,
+.quest-tree-node-svg:hover rect {
+  filter: drop-shadow(0 0 10px rgba(var(--trader-accent), 0.45));
+  stroke-width: 2;
+}
+
+.quest-tree-label {
+  fill: #eeeeee;
+  font-size: 12px;
+  font-weight: 800;
+  pointer-events: none;
+}
+
+.quest-tree-level {
+  fill: rgba(238, 238, 238, 0.8);
+  font-size: 12px;
+  font-weight: 900;
+  pointer-events: none;
+}
+
+.quest-tree-cross-prereq {
+  fill: #f3c94b;
+  font-size: 10px;
+  font-weight: 900;
+  pointer-events: none;
 }
 
 .quest-tree-controls {
@@ -553,8 +751,10 @@ a:hover {
 }
 
 .quest-tree-help {
+  color: #8f96a8;
   font-size: 0.92rem;
-  margin: 12px 0 0;
+  margin: 14px auto 0;
+  max-width: 1280px;
 }
 
 .task-card.is-completed {
@@ -628,9 +828,24 @@ a:hover {
     min-height: 210px;
   }
 
+  .quest-tree-page {
+    margin: -1rem;
+    padding: 18px 12px 28px;
+  }
+
   .quest-tree-hero,
+  .quest-tree-hero--compact,
   .quest-tree-controls {
     grid-template-columns: 1fr;
+  }
+
+  .quest-tree-legend {
+    grid-template-columns: 1fr;
+  }
+
+  .quest-tree-trader-heading {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .quest-tree-stage {

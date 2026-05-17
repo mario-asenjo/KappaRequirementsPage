@@ -1,115 +1,162 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
 import useLocalStorage from '../hooks/useLocalStorage';
 import { Task } from '../types';
-import { buildQuestTree, flattenQuestTree, QuestTreeNode } from '../utils/questTree';
+import { buildQuestTree, QuestTreeGroup, QuestTreeNode } from '../utils/questTree';
 
 interface QuestTreePageProps {
   tasks: Task[];
 }
 
-type TreeLayout = 'cartesian' | 'polar';
-type TreeOrientation = 'horizontal' | 'vertical';
-type LinkType = 'diagonal' | 'step' | 'curve' | 'line';
-
-interface PositionedNode {
-  node: QuestTreeNode;
+interface TreePoint {
   x: number;
   y: number;
-  depth: number;
-  order: number;
 }
 
-interface TreeLink {
-  source: PositionedNode;
-  target: PositionedNode;
+interface DrawableNode extends TreePoint {
+  id: string;
+  label: string;
+  level?: number;
+  status: QuestTreeNode['status'] | 'trader';
+  task?: Task;
+  crossTraderPrerequisiteCount?: number;
 }
 
-const nodeWidth = 220;
-const nodeHeight = 88;
-const horizontalGap = 310;
-const verticalGap = 132;
+interface DrawableLink {
+  source: TreePoint;
+  target: TreePoint;
+  status: QuestTreeNode['status'];
+}
 
-const countUniqueNodes = (nodes: QuestTreeNode[]) =>
-  new Set(flattenQuestTree(nodes).map((node) => node.task.id)).size;
+const traderOrder = ['Prapor', 'Therapist', 'Skier', 'Peacekeeper', 'Mechanic', 'Ragman', 'Jaeger', 'Fence'];
+const nodeWidth = 150;
+const nodeHeight = 38;
+const xGap = 190;
+const yGap = 72;
+const topPadding = 76;
+const leftPadding = 62;
 
-function layoutTree(nodes: QuestTreeNode[], layout: TreeLayout, orientation: TreeOrientation) {
-  const positioned: PositionedNode[] = [];
-  const links: TreeLink[] = [];
-  let order = 0;
+const traderAccents: Record<string, string> = {
+  Prapor: '41, 101, 204',
+  Therapist: '41, 166, 52',
+  Skier: '217, 158, 11',
+  Peacekeeper: '209, 57, 19',
+  Mechanic: '143, 57, 143',
+  Ragman: '0, 179, 164',
+  Jaeger: '219, 44, 111',
+  Fence: '150, 98, 45',
+};
 
-  const walk = (node: QuestTreeNode, depth: number, parent?: PositionedNode) => {
-    const current: PositionedNode = {
-      node,
-      depth,
-      order,
-      x: orientation === 'horizontal' ? depth * horizontalGap + 80 : order * (nodeWidth + 42) + 80,
-      y: orientation === 'horizontal' ? order * verticalGap + 80 : depth * verticalGap + 80,
+const getAccent = (trader: string) => traderAccents[trader] ?? '113, 50, 245';
+
+const sortGroups = (groups: QuestTreeGroup[]) => [...groups].sort((a, b) => {
+  const indexA = traderOrder.indexOf(a.trader);
+  const indexB = traderOrder.indexOf(b.trader);
+  return (indexA === -1 ? Number.MAX_SAFE_INTEGER : indexA)
+    - (indexB === -1 ? Number.MAX_SAFE_INTEGER : indexB)
+    || a.trader.localeCompare(b.trader);
+});
+
+const wrapQuestName = (label: string) => {
+  const cleanLabel = label.replace(' - ', ' ');
+  if (cleanLabel.length <= 18) return [cleanLabel];
+
+  const words = cleanLabel.split(' ');
+  const lines: string[] = [];
+  let currentLine = '';
+
+  words.forEach((word) => {
+    const nextLine = currentLine ? `${currentLine} ${word}` : word;
+    if (nextLine.length > 16 && currentLine) {
+      lines.push(currentLine);
+      currentLine = word;
+      return;
+    }
+    currentLine = nextLine;
+  });
+
+  if (currentLine) lines.push(currentLine);
+  return lines.slice(0, 2);
+};
+
+function getSubtreeLeafCount(node: QuestTreeNode): number {
+  if (node.children.length === 0) return 1;
+  return node.children.reduce((total, child) => total + getSubtreeLeafCount(child), 0);
+}
+
+function layoutTraderTree(group: QuestTreeGroup) {
+  const nodes: DrawableNode[] = [];
+  const links: DrawableLink[] = [];
+  let leafCursor = 0;
+  let maxDepth = 0;
+
+  const placeNode = (node: QuestTreeNode, depth: number): TreePoint => {
+    maxDepth = Math.max(maxDepth, depth);
+    const childPoints = node.children.map((child) => placeNode(child, depth + 1));
+    const y = childPoints.length > 0
+      ? childPoints.reduce((sum, point) => sum + point.y, 0) / childPoints.length
+      : topPadding + leafCursor++ * yGap;
+    const point = {
+      x: leftPadding + depth * xGap,
+      y,
     };
 
-    order += 1;
-    positioned.push(current);
-    if (parent) links.push({ source: parent, target: current });
-    node.children.forEach((child) => walk(child, depth + 1, current));
+    nodes.push({
+      ...point,
+      id: node.task.id,
+      label: node.task.title,
+      level: node.task.levelRequirement ?? 1,
+      status: node.status,
+      task: node.task,
+      crossTraderPrerequisiteCount: node.crossTraderPrerequisites.length,
+    });
+
+    childPoints.forEach((childPoint, index) => {
+      links.push({ source: point, target: childPoint, status: node.children[index].status });
+    });
+
+    return point;
   };
 
-  nodes.forEach((node) => walk(node, 0));
+  const rootTasks = [...group.roots].sort((a, b) => getSubtreeLeafCount(b) - getSubtreeLeafCount(a));
+  const rootPoints = rootTasks.map((node) => placeNode(node, 1));
+  const traderY = rootPoints.length > 0
+    ? rootPoints.reduce((sum, point) => sum + point.y, 0) / rootPoints.length
+    : topPadding;
+  const traderPoint = { x: leftPadding, y: traderY };
 
-  if (layout === 'polar' && positioned.length > 0) {
-    const maxDepth = Math.max(...positioned.map((node) => node.depth), 1);
-    const centerX = 620;
-    const centerY = 620;
-    const radiusStep = 520 / (maxDepth + 1);
+  nodes.push({
+    ...traderPoint,
+    id: `trader-${group.trader}`,
+    label: group.trader,
+    status: 'trader',
+  });
 
-    positioned.forEach((node) => {
-      const angle = positioned.length === 1
-        ? 0
-        : (node.order / positioned.length) * Math.PI * 2 - Math.PI / 2;
-      const radius = (node.depth + 1) * radiusStep;
-      node.x = centerX + Math.cos(angle) * radius;
-      node.y = centerY + Math.sin(angle) * radius;
-    });
-  }
-
-  const maxX = Math.max(...positioned.map((node) => node.x), 0) + nodeWidth + 160;
-  const maxY = Math.max(...positioned.map((node) => node.y), 0) + nodeHeight + 160;
+  rootPoints.forEach((rootPoint) => {
+    links.push({ source: traderPoint, target: rootPoint, status: 'available' });
+  });
 
   return {
-    nodes: positioned,
+    nodes,
     links,
-    width: layout === 'polar' ? Math.max(maxX, 1280) : maxX,
-    height: layout === 'polar' ? Math.max(maxY, 1280) : maxY,
+    width: Math.max(460, leftPadding * 2 + (maxDepth + 1) * xGap + nodeWidth),
+    height: Math.max(180, topPadding * 2 + Math.max(leafCursor, 1) * yGap),
   };
 }
 
-function getLinkPath(source: PositionedNode, target: PositionedNode, type: LinkType) {
-  const startX = source.x + nodeWidth;
-  const startY = source.y + nodeHeight / 2;
-  const endX = target.x;
-  const endY = target.y + nodeHeight / 2;
+function getPath(source: TreePoint, target: TreePoint) {
+  const startX = source.x + nodeWidth / 2;
+  const startY = source.y;
+  const endX = target.x - nodeWidth / 2;
+  const endY = target.y;
   const midX = startX + (endX - startX) / 2;
-  const midY = startY + (endY - startY) / 2;
 
-  if (type === 'line') return `M ${startX} ${startY} L ${endX} ${endY}`;
-  if (type === 'step') return `M ${startX} ${startY} H ${midX} V ${endY} H ${endX}`;
-  if (type === 'curve') return `M ${startX} ${startY} Q ${midX} ${startY} ${midX} ${midY} T ${endX} ${endY}`;
   return `M ${startX} ${startY} C ${midX} ${startY}, ${midX} ${endY}, ${endX} ${endY}`;
 }
 
 const QuestTreePage: React.FC<QuestTreePageProps> = ({ tasks }) => {
   const [completedIds, setCompletedIds] = useLocalStorage<string[]>('completedTasks', []);
-  const tree = buildQuestTree(tasks, completedIds);
-  const [selectedTrader, setSelectedTrader] = useState(tree[0]?.trader ?? '');
-  const [layout, setLayout] = useState<TreeLayout>('cartesian');
-  const [orientation, setOrientation] = useState<TreeOrientation>('horizontal');
-  const [linkType, setLinkType] = useState<LinkType>('diagonal');
-  const [zoom, setZoom] = useState(0.86);
-  const selectedTree = tree.find((group) => group.trader === selectedTrader) ?? tree[0];
-  const completedForTrader = tasks.filter(
-    (task) => task.trader === selectedTree?.trader && completedIds.includes(task.id)
-  ).length;
-  const treeLayout = layoutTree(selectedTree?.roots ?? [], layout, orientation);
-  const uniqueNodes = selectedTree ? countUniqueNodes(selectedTree.roots) : 0;
+  const groups = sortGroups(buildQuestTree(tasks, completedIds));
+  const completedCount = tasks.filter((task) => completedIds.includes(task.id)).length;
 
   const toggleCompletion = (task: Task) => {
     setCompletedIds((current) => (
@@ -119,119 +166,126 @@ const QuestTreePage: React.FC<QuestTreePageProps> = ({ tasks }) => {
     ));
   };
 
+  const handleNodeKeyDown = (event: React.KeyboardEvent<SVGGElement>, task?: Task) => {
+    if (!task || (event.key !== 'Enter' && event.key !== ' ')) return;
+    event.preventDefault();
+    toggleCompletion(task);
+  };
+
   return (
     <div className="quest-tree-page container-fluid">
-      <section className="quest-tree-hero mb-4">
+      <section className="quest-tree-hero quest-tree-hero--compact mb-4">
         <div>
           <span className="eyebrow">Quest tree</span>
           <h1>Arbol de misiones Kappa</h1>
           <p>
-            Explora la progresion por comerciante, revisa prerequisitos y marca avances
-            desde el mismo arbol. El progreso se sincroniza con el tracker existente.
+            Vista global por comerciante inspirada en eft.monster: secciones horizontales,
+            lineas de progreso y nodos compactos con nivel minimo.
           </p>
         </div>
-        <div className="quest-tree-summary" aria-label="Resumen del comerciante seleccionado">
-          <span>{selectedTree?.trader}</span>
-          <strong>{completedForTrader}/{selectedTree?.totalTasks ?? 0}</strong>
-          <small>{uniqueNodes} nodos visibles</small>
+        <div className="quest-tree-legend" aria-label="Leyenda de estados">
+          <span><i className="is-completed"></i> Completada</span>
+          <span><i className="is-available"></i> Disponible</span>
+          <span><i className="is-locked"></i> Bloqueada</span>
+          <strong>{completedCount}/{tasks.length}</strong>
         </div>
       </section>
 
-      <section className="quest-tree-controls" aria-label="Controles del arbol de misiones">
-        <label>
-          Comerciante
-          <select
-            className="form-select"
-            value={selectedTree?.trader ?? ''}
-            onChange={(event) => setSelectedTrader(event.target.value)}
-          >
-            {tree.map((group) => (
-              <option key={group.trader} value={group.trader}>{group.trader}</option>
-            ))}
-          </select>
-        </label>
-        <label>
-          Layout
-          <select className="form-select" value={layout} onChange={(event) => setLayout(event.target.value as TreeLayout)}>
-            <option value="cartesian">Cartesian</option>
-            <option value="polar">Polar</option>
-          </select>
-        </label>
-        <label>
-          Orientacion
-          <select
-            className="form-select"
-            value={orientation}
-            onChange={(event) => setOrientation(event.target.value as TreeOrientation)}
-            disabled={layout === 'polar'}
-          >
-            <option value="horizontal">Horizontal</option>
-            <option value="vertical">Vertical</option>
-          </select>
-        </label>
-        <label>
-          Enlaces
-          <select className="form-select" value={linkType} onChange={(event) => setLinkType(event.target.value as LinkType)}>
-            <option value="diagonal">Diagonal</option>
-            <option value="step">Step</option>
-            <option value="curve">Curve</option>
-            <option value="line">Line</option>
-          </select>
-        </label>
-        <label>
-          Zoom {Math.round(zoom * 100)}%
-          <input
-            className="form-range"
-            type="range"
-            min="0.45"
-            max="1.35"
-            step="0.05"
-            value={zoom}
-            onChange={(event) => setZoom(Number(event.target.value))}
-          />
-        </label>
-      </section>
+      <div className="quest-tree-stack" aria-label="Arboles de misiones por comerciante">
+        {groups.map((group) => {
+          const layout = layoutTraderTree(group);
+          const accent = getAccent(group.trader);
+          const completedForTrader = tasks.filter(
+            (task) => task.trader === group.trader && completedIds.includes(task.id)
+          ).length;
 
-      <div className="quest-tree-stage" role="region" aria-label="Arbol interactivo de misiones" tabIndex={0}>
-        <svg
-          width={treeLayout.width * zoom}
-          height={treeLayout.height * zoom}
-          viewBox={`0 0 ${treeLayout.width} ${treeLayout.height}`}
-          role="img"
-          aria-label={`Arbol de misiones de ${selectedTree?.trader}`}
-        >
-          <g className="quest-tree-links">
-            {treeLayout.links.map((link) => (
-              <path
-                key={`${link.source.node.task.id}-${link.target.node.task.id}`}
-                d={getLinkPath(link.source, link.target, linkType)}
-                className={`quest-tree-link is-${link.target.node.status}`}
-              />
-            ))}
-          </g>
-          <g>
-            {treeLayout.nodes.map(({ node, x, y }) => (
-              <foreignObject key={`${node.task.id}-${x}-${y}`} x={x} y={y} width={nodeWidth} height={nodeHeight}>
-                <div className={`quest-tree-node is-${node.status}`}>
-                  <div className="quest-tree-node-main">
-                    <span>Nivel {node.task.levelRequirement ?? 1}</span>
-                    <Link to={`/task/${encodeURIComponent(node.task.id)}`}>{node.task.title}</Link>
-                  </div>
-                  <button
-                    type="button"
-                    onClick={() => toggleCompletion(node.task)}
-                    aria-label={`${node.status === 'completed' ? 'Desmarcar' : 'Completar'} ${node.task.title}`}
-                  >
-                    {node.status === 'completed' ? 'Hecha' : node.status === 'available' ? 'Completar' : 'Bloq.'}
-                  </button>
+          return (
+            <section
+              key={group.trader}
+              className="quest-tree-trader-section"
+              style={{ '--trader-accent': accent } as React.CSSProperties}
+              aria-labelledby={`quest-tree-${group.trader}`}
+            >
+              <div className="quest-tree-trader-heading">
+                <div>
+                  <span className="quest-tree-trader-mark">{group.trader.slice(0, 2).toUpperCase()}</span>
+                  <h2 id={`quest-tree-${group.trader}`}>{group.trader}</h2>
                 </div>
-              </foreignObject>
-            ))}
-          </g>
-        </svg>
+                <p>{completedForTrader}/{group.totalTasks} completadas</p>
+              </div>
+              <div className={`quest-tree-scroll scroll-container-${group.trader}`} tabIndex={0}>
+                <svg
+                  width={layout.width}
+                  height={layout.height}
+                  viewBox={`0 0 ${layout.width} ${layout.height}`}
+                  role="img"
+                  aria-label={`Arbol de misiones de ${group.trader}`}
+                >
+                  <g className="quest-tree-links">
+                    {layout.links.map((link, index) => (
+                      <path
+                        key={`${group.trader}-link-${index}`}
+                        d={getPath(link.source, link.target)}
+                        className={`quest-tree-link is-${link.status}`}
+                      />
+                    ))}
+                  </g>
+                  <g>
+                    {layout.nodes.map((node) => {
+                      const lines = wrapQuestName(node.label);
+                      const isTrader = node.status === 'trader';
+
+                      return (
+                        <g
+                          key={node.id}
+                          className={`quest-tree-node-svg is-${node.status}`}
+                          transform={`translate(${node.x}, ${node.y})`}
+                          role={node.task ? 'button' : 'img'}
+                          tabIndex={node.task ? 0 : undefined}
+                          aria-label={node.task ? `${node.label}, nivel ${node.level}, ${node.status}` : group.trader}
+                          onClick={() => node.task && toggleCompletion(node.task)}
+                          onKeyDown={(event) => handleNodeKeyDown(event, node.task)}
+                        >
+                          <title>{node.task ? `${node.label} - nivel ${node.level}` : group.trader}</title>
+                          <rect
+                            x={-nodeWidth / 2}
+                            y={-nodeHeight / 2}
+                            width={nodeWidth}
+                            height={nodeHeight}
+                            rx={isTrader ? 18 : 4}
+                          />
+                          {node.level && !isTrader && (
+                            <text className="quest-tree-level" x={-nodeWidth / 2 - 12} y={5} textAnchor="end">
+                              {node.level}
+                            </text>
+                          )}
+                          {lines.map((line, index) => (
+                            <text
+                              key={`${node.id}-${line}`}
+                              className="quest-tree-label"
+                              y={lines.length === 1 ? 5 : -3 + index * 15}
+                              textAnchor="middle"
+                            >
+                              {line}
+                            </text>
+                          ))}
+                          {Boolean(node.crossTraderPrerequisiteCount) && (
+                            <text className="quest-tree-cross-prereq" x={nodeWidth / 2 - 8} y={-nodeHeight / 2 + 13} textAnchor="end">
+                              +{node.crossTraderPrerequisiteCount}
+                            </text>
+                          )}
+                        </g>
+                      );
+                    })}
+                  </g>
+                </svg>
+              </div>
+            </section>
+          );
+        })}
       </div>
       <p className="quest-tree-help">
-        Usa el scroll del panel para desplazarte por arboles grandes. Los nodos bloqueados tienen prerequisitos pendientes; los disponibles ya pueden completarse.
+        Desplazate horizontalmente dentro de cada comerciante. Pulsa Enter, Espacio o click en una mision para alternar completada.
       </p>
     </div>
   );
