@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import useLocalStorage from '../hooks/useLocalStorage';
+import useProgress from '../hooks/useProgress';
 import { Task } from '../types';
 import { buildQuestTree, getValidCompletedTaskIds, QuestTreeGroup, QuestTreeNode } from '../utils/questTree';
 
@@ -160,22 +160,21 @@ function getPath(source: TreePoint, target: TreePoint) {
 }
 
 const QuestTreePage: React.FC<QuestTreePageProps> = ({ tasks }) => {
-  const [completedIds, setCompletedIds] = useLocalStorage<string[]>('completedTasks', []);
-  const [playerLevel, setPlayerLevel] = useLocalStorage<number>('playerLevel', 1);
+  const { completedTaskIds, setCompletedTaskIds, playerLevel, setPlayerLevel } = useProgress();
   const [selectedTaskId, setSelectedTaskId] = useState<string | null>(null);
-  const validCompletedIds = getValidCompletedTaskIds(tasks, completedIds, playerLevel);
+  const validCompletedIds = getValidCompletedTaskIds(tasks, completedTaskIds, playerLevel);
   const groups = sortGroups(buildQuestTree(tasks, validCompletedIds, playerLevel));
   const completedCount = tasks.filter((task) => validCompletedIds.includes(task.id)).length;
   const selectedTask = selectedTaskId ? tasks.find((task) => task.id === selectedTaskId) : undefined;
 
   useEffect(() => {
-    if (validCompletedIds.join('|') !== completedIds.join('|')) {
-      setCompletedIds(validCompletedIds);
+    if (validCompletedIds.join('|') !== completedTaskIds.join('|')) {
+      setCompletedTaskIds(validCompletedIds);
     }
-  }, [completedIds, setCompletedIds, validCompletedIds]);
+  }, [completedTaskIds, setCompletedTaskIds, validCompletedIds]);
 
   const toggleCompletion = (task: Task) => {
-    setCompletedIds((current) => {
+    setCompletedTaskIds((current) => {
       if (current.includes(task.id)) {
         return getValidCompletedTaskIds(tasks, current.filter((id) => id !== task.id), playerLevel);
       }

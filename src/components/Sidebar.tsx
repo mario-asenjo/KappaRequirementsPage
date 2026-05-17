@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import useLocalStorage from '../hooks/useLocalStorage';
+import useProgress from '../hooks/useProgress';
 import { Task } from '../types';
 
 interface SidebarProps {
@@ -14,7 +14,7 @@ interface SidebarProps {
  * matches. On small screens the sidebar collapses into a vertical list.
  */
 const Sidebar: React.FC<SidebarProps> = ({ tasks }) => {
-  const [completedIds] = useLocalStorage<string[]>('completedTasks', []);
+  const { completedTaskIds } = useProgress();
 
   // Derive a sorted list of unique trader names from the tasks
   const traders = Array.from(new Set(tasks.map((t) => t.trader))).sort();
@@ -28,7 +28,7 @@ const Sidebar: React.FC<SidebarProps> = ({ tasks }) => {
         {traders.map((trader) => {
           const traderTasks = tasks.filter((t) => t.trader === trader);
           const completedForTrader = traderTasks.filter((t) =>
-            completedIds.includes(t.id)
+            completedTaskIds.includes(t.id)
           ).length;
           return (
             <NavLink

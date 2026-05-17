@@ -10,6 +10,7 @@
     "build:goals": "tsx scripts/buildGoals.ts",
     "build:quests": "tsx scripts/buildQuestTree.ts",
     "test:quests": "tsx scripts/testQuestTree.tsx",
+    "test:progress": "tsx scripts/testProgressModel.ts",
     "preview": "vite preview"
   },
   "dependencies": {

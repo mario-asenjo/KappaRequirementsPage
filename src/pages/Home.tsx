@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import useLocalStorage from '../hooks/useLocalStorage';
+import useProgress from '../hooks/useProgress';
 import { Task } from '../types';
 
 interface HomeProps {
@@ -13,14 +13,14 @@ interface HomeProps {
  * individual tasks. Each trader card links to the corresponding list page.
  */
 const Home: React.FC<HomeProps> = ({ tasks }) => {
-  const [completedIds] = useLocalStorage<string[]>('completedTasks', []);
+  const { completedTaskIds } = useProgress();
 
   // Group tasks by trader
   const traders = Array.from(new Set(tasks.map((t) => t.trader))).sort();
-  const totalCompleted = tasks.filter((task) => completedIds.includes(task.id)).length;
+  const totalCompleted = tasks.filter((task) => completedTaskIds.includes(task.id)).length;
   const totalPending = tasks.length - totalCompleted;
   const totalProgress = tasks.length > 0 ? Math.round((totalCompleted / tasks.length) * 100) : 0;
-  const nextPending = tasks.find((task) => !completedIds.includes(task.id));
+  const nextPending = tasks.find((task) => !completedTaskIds.includes(task.id));
 
   return (
     <div className="container-fluid">
@@ -58,7 +58,7 @@ const Home: React.FC<HomeProps> = ({ tasks }) => {
         {traders.map((trader) => {
           const traderTasks = tasks.filter((t) => t.trader === trader);
           const completedForTrader = traderTasks.filter((t) =>
-            completedIds.includes(t.id)
+            completedTaskIds.includes(t.id)
           ).length;
           const progress = traderTasks.length > 0 ? completedForTrader / traderTasks.length : 0;
           const progressPercent = Math.round(progress * 100);
