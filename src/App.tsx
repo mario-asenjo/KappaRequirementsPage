@@ -3,6 +3,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
 import QuestListPage from './pages/QuestListPage';
 import QuestDetailPage from './pages/QuestDetailPage';
+import QuestTreePage from './pages/QuestTreePage';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import { Task } from './types';
@@ -27,6 +28,7 @@ const App: React.FC = () => {
         <main className="app-main flex-grow-1 overflow-auto p-3">
           <Routes>
             <Route path="/" element={<Home tasks={tasks} />} />
+            <Route path="/quest-tree" element={<QuestTreePage tasks={tasks} />} />
             <Route
               path="/trader/:traderName"
               element={<QuestListPage tasks={tasks} />}

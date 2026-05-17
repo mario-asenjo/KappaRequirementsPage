@@ -1,7 +1,7 @@
 {
   "metadata": {
     "source": "https://api.tarkov.dev/graphql",
-    "syncedAt": "2026-05-14T14:33:15.426Z",
+    "syncedAt": "2026-05-17T11:17:55.686Z",
     "kappaTaskCount": 257
   },
   "tasks": [
@@ -9,6 +9,7 @@
       "id": "5c51aac186f77432ea65c552",
       "title": "Collector",
       "trader": "Fence",
+      "levelRequirement": 45,
       "objectives": [
         "Hand over the found in raid item: Old firesteel",
         "Hand over the found in raid item: Antique axe",
@@ -133,6 +134,7 @@
       "id": "5d24b81486f77439c92d6ba8",
       "title": "Acquaintance",
       "trader": "Jaeger",
+      "levelRequirement": 2,
       "objectives": [
         "Hand over the found in raid Iskra ration packs",
         "Hand over the found in raid Packs of instant noodles",
@@ -148,6 +150,7 @@
       "id": "5d25e46e86f77409453bce7c",
       "title": "Ambulance",
       "trader": "Jaeger",
+      "levelRequirement": 25,
       "objectives": [
         "Hand over the defibrillator",
         "Find CMS surgical kits in raid",
@@ -165,6 +168,7 @@
       "title": "Claustrophobia",
       "trader": "Jaeger",
       "location": "Factory",
+      "levelRequirement": 2,
       "objectives": [
         "Eliminate any target in the old cellars while using a shotgun on Factory"
       ],
@@ -179,6 +183,7 @@
       "title": "Courtesy Visit",
       "trader": "Jaeger",
       "location": "Shoreline",
+      "levelRequirement": 20,
       "objectives": [
         "Locate the chairman's house in the abandoned village on Shoreline",
         "Locate the fisherman's house in the abandoned village on Shoreline",
@@ -196,6 +201,7 @@
       "title": "Dragnet",
       "trader": "Jaeger",
       "location": "Factory",
+      "levelRequirement": 15,
       "objectives": [
         "Locate and obtain the chemical container at the TerraGroup warehouse on Factory",
         "Hand over the chemical container"
@@ -210,6 +216,7 @@
       "id": "66b38e144f2ab7cc530c3fe7",
       "title": "Every Hunter Knows This",
       "trader": "Jaeger",
+      "levelRequirement": 2,
       "objectives": [
         "Locate a good tripwire installation spot on Factory",
         "Locate a good tripwire installation spot on Customs"
@@ -224,6 +231,7 @@
       "id": "5d25e4b786f77408251c4bfc",
       "title": "Fishing Place",
       "trader": "Jaeger",
+      "levelRequirement": 28,
       "objectives": [
         "Find TerraGroup Labs access keycards in raid",
         "Hand over the access keycards"
@@ -239,6 +247,7 @@
       "title": "Hunting Trip",
       "trader": "Jaeger",
       "location": "Woods",
+      "levelRequirement": 33,
       "objectives": [
         "Locate and neutralize Shturman with a headshot from over 40 meters away while using an M700 sniper rifle with the specified scope"
       ],
@@ -253,6 +262,7 @@
       "title": "Nostalgia",
       "trader": "Jaeger",
       "location": "Shoreline",
+      "levelRequirement": 28,
       "objectives": [
         "Locate Jaeger's Health Resort room with a view of the bay on Shoreline",
         "Obtain Jaeger's photo album",
@@ -269,6 +279,7 @@
       "title": "Pest Control",
       "trader": "Jaeger",
       "location": "Reserve",
+      "levelRequirement": 20,
       "objectives": [
         "Eliminate Scavs inside the main barracks on Reserve"
       ],
@@ -283,6 +294,7 @@
       "title": "Reserve",
       "trader": "Jaeger",
       "location": "Reserve",
+      "levelRequirement": 20,
       "objectives": [
         "Locate the food storage location on Reserve",
         "Survive and extract from the location"
@@ -298,6 +310,7 @@
       "title": "Rite of Passage",
       "trader": "Jaeger",
       "location": "Customs",
+      "levelRequirement": 2,
       "objectives": [
         "Eliminate Scavs at the old gas station on Customs",
         "Eliminate Scavs at the new gas station on Customs",
@@ -313,6 +326,7 @@
       "id": "66b38c7bf85b8bf7250f9cb6",
       "title": "Rough Tarkov",
       "trader": "Jaeger",
+      "levelRequirement": 2,
       "objectives": [
         "Locate the heavily mined area on Woods",
         "Locate the Claymore mine on Ground Zero"
@@ -327,6 +341,7 @@
       "id": "5d25e48d86f77408251c4bfb",
       "title": "Shady Business",
       "trader": "Jaeger",
+      "levelRequirement": 20,
       "objectives": [
         "Find Secure Flash drives in raid",
         "Hand over the Flash drives"
@@ -342,6 +357,7 @@
       "id": "626bdcc3a371ee3a7a3514c5",
       "title": "Stray Dogs",
       "trader": "Jaeger",
+      "levelRequirement": 35,
       "objectives": [
         "Locate and neutralize Knight",
         "Locate and neutralize Big Pipe",
@@ -360,6 +376,7 @@
       "title": "The Delicious Sausage",
       "trader": "Jaeger",
       "location": "Streets of Tarkov",
+      "levelRequirement": 5,
       "objectives": [
         "Scout the Shestyorochka store at Nikitskaya street",
         "Scout the Sparja store at Primorsky ave",
@@ -378,6 +395,7 @@
       "title": "The Hermit",
       "trader": "Jaeger",
       "location": "Lighthouse",
+      "levelRequirement": 20,
       "objectives": [
         "Locate the hideout of Jaeger's friend on Lighthouse",
         "Find and obtain the message for Jaeger",
@@ -393,6 +411,7 @@
       "id": "5d25e2d886f77442734d335e",
       "title": "The Huntsman Path - Controller",
       "trader": "Jaeger",
+      "levelRequirement": 2,
       "objectives": [
         "Eliminate PMC operatives while they are suffering from the stun effect"
       ],
@@ -407,6 +426,7 @@
       "title": "The Huntsman Path - Eraser - Part 1",
       "trader": "Jaeger",
       "location": "Reserve",
+      "levelRequirement": 20,
       "objectives": [
         "Locate and neutralize Glukhar"
       ],
@@ -420,6 +440,7 @@
       "id": "5d25e45e86f77408251c4bfa",
       "title": "The Huntsman Path - Eraser - Part 2",
       "trader": "Jaeger",
+      "levelRequirement": 30,
       "objectives": [
         "Eliminate Raiders"
       ],
@@ -435,6 +456,7 @@
       "title": "The Huntsman Path - Evil Watchman",
       "trader": "Jaeger",
       "location": "Customs",
+      "levelRequirement": 2,
       "objectives": [
         "Eliminate PMC operatives in the Dorms area on Customs"
       ],
@@ -449,6 +471,7 @@
       "title": "The Huntsman Path - Factory Chief",
       "trader": "Jaeger",
       "location": "Factory",
+      "levelRequirement": 12,
       "objectives": [
         "Locate and neutralize Tagilla",
         "Find Tagilla's BOSS cap in raid",
@@ -465,6 +488,7 @@
       "id": "5d25e2cc86f77443e47ae019",
       "title": "The Huntsman Path - Forest Cleaning",
       "trader": "Jaeger",
+      "levelRequirement": 2,
       "objectives": [
         "Eliminate Scavs all over the Tarkov territory"
       ],
@@ -478,6 +502,7 @@
       "id": "5d25e43786f7740a212217fa",
       "title": "The Huntsman Path - Justice",
       "trader": "Jaeger",
+      "levelRequirement": 2,
       "objectives": [
         "Eliminate Scavs dressed in police uniform (Reshala's bodyguards)"
       ],
@@ -492,6 +517,7 @@
       "title": "The Huntsman Path - Outcasts",
       "trader": "Jaeger",
       "location": "Lighthouse",
+      "levelRequirement": 22,
       "objectives": [
         "Eliminate Rogues on Lighthouse"
       ],
@@ -506,6 +532,7 @@
       "title": "The Huntsman Path - Sadist",
       "trader": "Jaeger",
       "location": "Shoreline",
+      "levelRequirement": 22,
       "objectives": [
         "Locate and neutralize Sanitar"
       ],
@@ -522,6 +549,7 @@
       "title": "The Huntsman Path - Secured Perimeter",
       "trader": "Jaeger",
       "location": "Factory",
+      "levelRequirement": 2,
       "objectives": [
         "Eliminate PMC operatives in the office area (any floor) on Factory"
       ],
@@ -537,6 +565,7 @@
       "title": "The Huntsman Path - Sellout",
       "trader": "Jaeger",
       "location": "Interchange",
+      "levelRequirement": 30,
       "objectives": [
         "Locate and neutralize Killa",
         "Find Killa's Maska-1SCh bulletproof helmet in raid",
@@ -554,6 +583,7 @@
       "title": "The Huntsman Path - Trophy",
       "trader": "Jaeger",
       "location": "Customs",
+      "levelRequirement": 2,
       "objectives": [
         "Locate and neutralize Reshala",
         "Find Reshala's Golden TT in raid",
@@ -570,6 +600,7 @@
       "title": "The Huntsman Path - Woods Keeper",
       "trader": "Jaeger",
       "location": "Woods",
+      "levelRequirement": 13,
       "objectives": [
         "Locate and neutralize Shturman",
         "Find Shturman's stash key in raid",
@@ -586,6 +617,7 @@
       "id": "5d25e2a986f77409dd5cdf2a",
       "title": "The Survivalist Path - Combat Medic",
       "trader": "Jaeger",
+      "levelRequirement": 2,
       "objectives": [
         "Reach the required Vitality skill level"
       ],
@@ -599,6 +631,7 @@
       "id": "5d25e29d86f7740a22516326",
       "title": "The Survivalist Path - Eagle-Owl",
       "trader": "Jaeger",
+      "levelRequirement": 2,
       "objectives": [
         "Eliminate Scavs in the time period of 21:00-04:00 without using any NVGs or thermal sights (Excluding Factory)"
       ],
@@ -613,6 +646,7 @@
       "title": "The Survivalist Path - Junkie",
       "trader": "Jaeger",
       "location": "Woods",
+      "levelRequirement": 2,
       "objectives": [
         "Eliminate Scavs while under any stimulant effect on Woods"
       ],
@@ -627,6 +661,7 @@
       "title": "The Survivalist Path - Thrifty",
       "trader": "Jaeger",
       "location": "Woods",
+      "levelRequirement": 2,
       "objectives": [
         "Stash an Iskra ration pack in the ZB-016 bunker on Woods",
         "Stash a Bottle of water (0.6L) in the ZB-016 bunker on Woods",
@@ -644,6 +679,7 @@
       "title": "The Survivalist Path - Tough Guy",
       "trader": "Jaeger",
       "location": "Woods",
+      "levelRequirement": 2,
       "objectives": [
         "Eliminate Scavs in a single raid without using any medicine on Woods"
       ],
@@ -658,6 +694,7 @@
       "title": "The Survivalist Path - Unprotected but Dangerous",
       "trader": "Jaeger",
       "location": "Woods",
+      "levelRequirement": 2,
       "objectives": [
         "Eliminate Scavs without wearing any body armor on Woods"
       ],
@@ -671,6 +708,7 @@
       "id": "5d25c81b86f77443e625dd71",
       "title": "The Survivalist Path - Wounded Beast",
       "trader": "Jaeger",
+      "levelRequirement": 2,
       "objectives": [
         "Eliminate Scavs while suffering from the pain effect"
       ],
@@ -684,6 +722,7 @@
       "id": "5d25bfd086f77442734d3007",
       "title": "The Survivalist Path - Zhivchik",
       "trader": "Jaeger",
+      "levelRequirement": 2,
       "objectives": [
         "Survive for 5 minutes while suffering from complete dehydration (excluding Factory)",
         "Survive and extract from the location"
@@ -698,6 +737,7 @@
       "id": "5bc4776586f774512d07cf05",
       "title": "The Tarkov Shooter - Part 1",
       "trader": "Jaeger",
+      "levelRequirement": 2,
       "objectives": [
         "Eliminate Scavs from over 40 meters away while using a bolt-action rifle with iron sights"
       ],
@@ -711,6 +751,7 @@
       "id": "5bc479e586f7747f376c7da3",
       "title": "The Tarkov Shooter - Part 2",
       "trader": "Jaeger",
+      "levelRequirement": 2,
       "objectives": [
         "Shoot any target in the legs from over 40 meters away while using a bolt-action rifle",
         "Shoot any target in the head from over 40 meters away while using a bolt-action rifle"
@@ -725,6 +766,7 @@
       "id": "5bc47dbf86f7741ee74e93b9",
       "title": "The Tarkov Shooter - Part 3",
       "trader": "Jaeger",
+      "levelRequirement": 2,
       "objectives": [
         "Eliminate PMC operatives from less than 25 meters away while using a bolt-action rifle"
       ],
@@ -738,6 +780,7 @@
       "id": "5bc480a686f7741af0342e29",
       "title": "The Tarkov Shooter - Part 4",
       "trader": "Jaeger",
+      "levelRequirement": 2,
       "objectives": [
         "Eliminate PMC operatives from over 80 meters away while using a bolt-action rifle"
       ],
@@ -752,6 +795,7 @@
       "title": "The Tarkov Shooter - Part 5",
       "trader": "Jaeger",
       "location": "Customs",
+      "levelRequirement": 2,
       "objectives": [
         "Eliminate Scavs while using a bolt-action rifle in the time period of 21:00-05:00 on Customs"
       ],
@@ -765,6 +809,7 @@
       "id": "5bc4836986f7740c0152911c",
       "title": "The Tarkov Shooter - Part 6",
       "trader": "Jaeger",
+      "levelRequirement": 2,
       "objectives": [
         "Eliminate Sniper Scavs while using a bolt-action rifle"
       ],
@@ -778,6 +823,7 @@
       "id": "5bc4856986f77454c317bea7",
       "title": "The Tarkov Shooter - Part 7",
       "trader": "Jaeger",
+      "levelRequirement": 2,
       "objectives": [
         "Eliminate PMC operatives from over 45 meters away while using a suppressed bolt-action rifle"
       ],
@@ -791,6 +837,7 @@
       "id": "5bc4893c86f774626f5ebf3e",
       "title": "The Tarkov Shooter - Part 8",
       "trader": "Jaeger",
+      "levelRequirement": 2,
       "objectives": [
         "Eliminate PMC operatives with a headshot without dying while using a bolt-action rifle"
       ],
@@ -805,6 +852,7 @@
       "title": "Work Smarter",
       "trader": "Jaeger",
       "location": "Customs",
+      "levelRequirement": 2,
       "objectives": [
         "Obtain the special item to extract through the secret exfil",
         "Locate the secret exfil on Customs"
@@ -819,6 +867,7 @@
       "id": "5c0bde0986f77479cf22c2f8",
       "title": "A Shooter Born in Heaven",
       "trader": "Mechanic",
+      "levelRequirement": 14,
       "objectives": [
         "Eliminate PMC operatives with a headshot while using a bolt-action rifle on Woods",
         "Eliminate PMC operatives with a headshot while using a bolt-action rifle on Reserve",
@@ -840,6 +889,7 @@
       "title": "Back Door",
       "trader": "Mechanic",
       "location": "Reserve",
+      "levelRequirement": 14,
       "objectives": [
         "Find the unpowered secret exit on Reserve",
         "Survive and extract from the location through the secret exit"
@@ -854,6 +904,7 @@
       "id": "5ac3475486f7741d6224abd3",
       "title": "Bad Habit",
       "trader": "Mechanic",
+      "levelRequirement": 12,
       "objectives": [
         "Find Malboro cigarettes in raid",
         "Hand over the items",
@@ -873,6 +924,7 @@
       "title": "Black Swan",
       "trader": "Mechanic",
       "location": "Factory",
+      "levelRequirement": 12,
       "objectives": [
         "Locate and mark the first heat exchanger with an MS2000 Marker on Factory",
         "Locate and mark the second heat exchanger with an MS2000 Marker on Factory",
@@ -889,6 +941,7 @@
       "title": "Broadcast - Part 1",
       "trader": "Mechanic",
       "location": "Lighthouse",
+      "levelRequirement": 12,
       "objectives": [
         "Locate the hidden recording studio on Lighthouse",
         "Place a Signal Jammer inside the studio"
@@ -904,6 +957,7 @@
       "title": "Capacity Check",
       "trader": "Mechanic",
       "location": "Factory",
+      "levelRequirement": 12,
       "objectives": [
         "Fix the first reactor mixer with a Toolset on Factory",
         "Fix the second reactor mixer with a Toolset on Factory",
@@ -921,6 +975,7 @@
       "title": "Chemistry Closet",
       "trader": "Mechanic",
       "location": "Shoreline",
+      "levelRequirement": 22,
       "objectives": [
         "Locate Sanitar's office in the health resort",
         "Survive and extract from the location"
@@ -937,6 +992,7 @@
       "title": "Corporate Secrets",
       "trader": "Mechanic",
       "location": "Lighthouse",
+      "levelRequirement": 17,
       "objectives": [
         "Find the data on the water pump operation on Lighthouse",
         "Hand over the extracted data",
@@ -954,6 +1010,7 @@
       "title": "Energy Crisis",
       "trader": "Mechanic",
       "location": "Lighthouse",
+      "levelRequirement": 25,
       "objectives": [
         "Find and mark the group of fuel tanks with an MS2000 Marker on Lighthouse",
         "Find and mark the first tanker truck with an MS2000 Marker on Lighthouse",
@@ -971,6 +1028,7 @@
       "title": "Farming - Part 1",
       "trader": "Mechanic",
       "location": "Factory",
+      "levelRequirement": 12,
       "objectives": [
         "Fix the first control board with a Toolset on Factory",
         "Fix the second control board with a Toolset on Factory"
@@ -985,6 +1043,7 @@
       "id": "5ac3460c86f7742880308185",
       "title": "Farming - Part 2",
       "trader": "Mechanic",
+      "levelRequirement": 12,
       "objectives": [
         "Find Power cords in raid",
         "Hand over the items",
@@ -1004,6 +1063,7 @@
       "title": "Farming - Part 3",
       "trader": "Mechanic",
       "location": "Customs",
+      "levelRequirement": 14,
       "objectives": [
         "Locate the warehouse of seized goods on Customs",
         "Obtain the package of graphics cards",
@@ -1019,6 +1079,7 @@
       "id": "5ac3464c86f7741d651d6877",
       "title": "Farming - Part 4",
       "trader": "Mechanic",
+      "levelRequirement": 14,
       "objectives": [
         "Find Graphics cards in raid",
         "Hand over the items",
@@ -1035,6 +1096,7 @@
       "id": "5c1128e386f7746565181106",
       "title": "Fertilizers",
       "trader": "Mechanic",
+      "levelRequirement": 30,
       "objectives": [
         "Find Bundles of wires in raid",
         "Find Capacitors in raid",
@@ -1052,6 +1114,7 @@
       "title": "Forklift Certified",
       "trader": "Mechanic",
       "location": "Factory",
+      "levelRequirement": 12,
       "objectives": [
         "Locate the first forklift on Factory",
         "Locate the second forklift on Factory",
@@ -1076,6 +1139,7 @@
       "id": "5ac23c6186f7741247042bad",
       "title": "Gunsmith - Part 1",
       "trader": "Mechanic",
+      "levelRequirement": 2,
       "objectives": [
         "Modify an MP-133 to comply with the given specifications"
       ],
@@ -1089,6 +1153,7 @@
       "id": "5ae327c886f7745c7b3f2f3f",
       "title": "Gunsmith - Part 10",
       "trader": "Mechanic",
+      "levelRequirement": 20,
       "objectives": [
         "Modify an AK-105 to comply with the given specifications"
       ],
@@ -1102,6 +1167,7 @@
       "id": "639872fc93ae507d5858c3a6",
       "title": "Gunsmith - Part 11",
       "trader": "Mechanic",
+      "levelRequirement": 22,
       "objectives": [
         "Modify a KRISS Vector 9x19 to comply with the given specifications"
       ],
@@ -1115,6 +1181,7 @@
       "id": "5b47799d86f7746c5d6a5fd8",
       "title": "Gunsmith - Part 12",
       "trader": "Mechanic",
+      "levelRequirement": 23,
       "objectives": [
         "Modify a SIG MPX to comply with the given specifications"
       ],
@@ -1128,6 +1195,7 @@
       "id": "5ac244c486f77413e12cf945",
       "title": "Gunsmith - Part 13",
       "trader": "Mechanic",
+      "levelRequirement": 25,
       "objectives": [
         "Modify an R11 RSASS to comply with the given specifications"
       ],
@@ -1141,6 +1209,7 @@
       "id": "639872fe8871e1272b10ccf6",
       "title": "Gunsmith - Part 14",
       "trader": "Mechanic",
+      "levelRequirement": 27,
       "objectives": [
         "Modify an HK 416A5 to comply with the given specifications"
       ],
@@ -1154,6 +1223,7 @@
       "id": "5ae3280386f7742a41359364",
       "title": "Gunsmith - Part 15",
       "trader": "Mechanic",
+      "levelRequirement": 29,
       "objectives": [
         "Modify an AS VAL to comply with the given specifications"
       ],
@@ -1167,6 +1237,7 @@
       "id": "5ac242ab86f77412464f68b4",
       "title": "Gunsmith - Part 16",
       "trader": "Mechanic",
+      "levelRequirement": 30,
       "objectives": [
         "Modify a DVL-10 to comply with the given specifications"
       ],
@@ -1180,6 +1251,7 @@
       "id": "5b47749f86f7746c5d6a5fd4",
       "title": "Gunsmith - Part 17",
       "trader": "Mechanic",
+      "levelRequirement": 31,
       "objectives": [
         "Modify an AK-102 to comply with the given specifications"
       ],
@@ -1193,6 +1265,7 @@
       "id": "5b477b6f86f7747290681823",
       "title": "Gunsmith - Part 18",
       "trader": "Mechanic",
+      "levelRequirement": 33,
       "objectives": [
         "Modify an AKMN to comply with the given specifications"
       ],
@@ -1206,6 +1279,7 @@
       "id": "639873003693c63d86328f25",
       "title": "Gunsmith - Part 19",
       "trader": "Mechanic",
+      "levelRequirement": 36,
       "objectives": [
         "Modify an SVDS to comply with the given specifications"
       ],
@@ -1219,6 +1293,7 @@
       "id": "5ac2426c86f774138762edfe",
       "title": "Gunsmith - Part 2",
       "trader": "Mechanic",
+      "levelRequirement": 5,
       "objectives": [
         "Modify an AKS-74U to comply with the given specifications"
       ],
@@ -1232,6 +1307,7 @@
       "id": "5b477f7686f7744d1b23c4d2",
       "title": "Gunsmith - Part 20",
       "trader": "Mechanic",
+      "levelRequirement": 37,
       "objectives": [
         "Modify an M1A to comply with the given specifications"
       ],
@@ -1245,6 +1321,7 @@
       "id": "63987301e11ec11ff5504036",
       "title": "Gunsmith - Part 21",
       "trader": "Mechanic",
+      "levelRequirement": 38,
       "objectives": [
         "Modify an M700 to comply with the given specifications",
         "Modify an M1911 to comply with the given specifications"
@@ -1259,6 +1336,7 @@
       "id": "5b47825886f77468074618d3",
       "title": "Gunsmith - Part 22",
       "trader": "Mechanic",
+      "levelRequirement": 39,
       "objectives": [
         "Modify an M4A1 to comply with the given specifications"
       ],
@@ -1272,6 +1350,7 @@
       "id": "5ac2428686f77412450b42bf",
       "title": "Gunsmith - Part 3",
       "trader": "Mechanic",
+      "levelRequirement": 7,
       "objectives": [
         "Modify an MP5 to comply with the given specifications"
       ],
@@ -1285,6 +1364,7 @@
       "id": "639872f9decada40426d3447",
       "title": "Gunsmith - Part 4",
       "trader": "Mechanic",
+      "levelRequirement": 9,
       "objectives": [
         "Modify an OP-SKS to comply with the given specifications"
       ],
@@ -1299,6 +1379,7 @@
       "id": "5ae3267986f7742a413592fe",
       "title": "Gunsmith - Part 5",
       "trader": "Mechanic",
+      "levelRequirement": 10,
       "objectives": [
         "Modify a Remington Model 870 to comply with the given specifications"
       ],
@@ -1312,6 +1393,7 @@
       "id": "5ae3270f86f77445ba41d4dd",
       "title": "Gunsmith - Part 6",
       "trader": "Mechanic",
+      "levelRequirement": 14,
       "objectives": [
         "Modify an AKM to comply with the given specifications"
       ],
@@ -1325,6 +1407,7 @@
       "id": "5ac244eb86f7741356335af1",
       "title": "Gunsmith - Part 7",
       "trader": "Mechanic",
+      "levelRequirement": 15,
       "objectives": [
         "Modify an M4A1 to comply with the given specifications"
       ],
@@ -1338,6 +1421,7 @@
       "id": "5ae3277186f7745973054106",
       "title": "Gunsmith - Part 8",
       "trader": "Mechanic",
+      "levelRequirement": 17,
       "objectives": [
         "Modify an AKS-74N to comply with the given specifications"
       ],
@@ -1351,6 +1435,7 @@
       "id": "639872fa9b4fb827b200d8e5",
       "title": "Gunsmith - Part 9",
       "trader": "Mechanic",
+      "levelRequirement": 19,
       "objectives": [
         "Modify a P226R to comply with the given specifications"
       ],
@@ -1364,6 +1449,7 @@
       "id": "5c139eb686f7747878361a6f",
       "title": "Import",
       "trader": "Mechanic",
+      "levelRequirement": 35,
       "objectives": [
         "Find UHF RFID Reader in raid",
         "Find VPX Flash Storage Module in raid",
@@ -1380,6 +1466,7 @@
       "id": "5ac3479086f7742880308199",
       "title": "Insider",
       "trader": "Mechanic",
+      "levelRequirement": 12,
       "objectives": [
         "Reach level 3 loyalty with Prapor"
       ],
@@ -1395,6 +1482,7 @@
       "title": "Introduction",
       "trader": "Mechanic",
       "location": "Woods",
+      "levelRequirement": 2,
       "objectives": [
         "Find Jaeger's camp at the specified spot on Woods",
         "Obtain Jaeger's encrypted message",
@@ -1411,6 +1499,7 @@
       "title": "Passion for Ergonomics",
       "trader": "Mechanic",
       "location": "Customs",
+      "levelRequirement": 12,
       "objectives": [
         "Locate and obtain the customized tool set at the garage complex on Customs",
         "Hand over the found item"
@@ -1425,6 +1514,7 @@
       "id": "5c0be13186f7746f016734aa",
       "title": "Psycho Sniper",
       "trader": "Mechanic",
+      "levelRequirement": 35,
       "objectives": [
         "Reach the required Bolt-action Rifles skill level",
         "Eliminate PMC operatives without dying while using a bolt-action rifle"
@@ -1440,6 +1530,7 @@
       "title": "Saving the Mole",
       "trader": "Mechanic",
       "location": "Ground Zero",
+      "levelRequirement": 1,
       "objectives": [
         "Locate the USEC group at the parking lot of the TerraGroup complex",
         "Locate the lab scientist in the TerraGroup complex",
@@ -1456,6 +1547,7 @@
       "title": "Scout",
       "trader": "Mechanic",
       "location": "Factory",
+      "levelRequirement": 12,
       "objectives": [
         "Locate the first Factory extraction",
         "Locate the second Factory extraction",
@@ -1474,6 +1566,7 @@
       "title": "Signal - Part 1",
       "trader": "Mechanic",
       "location": "Shoreline",
+      "levelRequirement": 12,
       "objectives": [
         "Locate the first signal source on Shoreline",
         "Locate the second signal source on Shoreline",
@@ -1489,6 +1582,7 @@
       "id": "5ac346a886f7744e1b083d67",
       "title": "Signal - Part 2",
       "trader": "Mechanic",
+      "levelRequirement": 12,
       "objectives": [
         "Find PC CPUs in raid",
         "Hand over the items",
@@ -1510,6 +1604,7 @@
       "title": "Signal - Part 3",
       "trader": "Mechanic",
       "location": "Shoreline",
+      "levelRequirement": 15,
       "objectives": [
         "Place the Signal jammer on the first specified place on Shoreline",
         "Place the Signal jammer on the second specified place on Shoreline",
@@ -1525,6 +1620,7 @@
       "id": "5ac346e886f7741d6118b99b",
       "title": "Signal - Part 4",
       "trader": "Mechanic",
+      "levelRequirement": 15,
       "objectives": [
         "Reach the required Attention skill level"
       ],
@@ -1539,6 +1635,7 @@
       "title": "Surplus Goods",
       "trader": "Mechanic",
       "location": "Reserve",
+      "levelRequirement": 14,
       "objectives": [
         "Obtain the MBT Integrated Navigation System on Reserve",
         "Hand over the navigation system"
@@ -1554,6 +1651,7 @@
       "title": "Cargo X - Part 1",
       "trader": "Peacekeeper",
       "location": "Shoreline",
+      "levelRequirement": 12,
       "objectives": [
         "Locate and obtain the data in Health Resort east wing computer room on Shoreline",
         "Hand over the retrieved data"
@@ -1569,6 +1667,7 @@
       "title": "Cargo X - Part 2",
       "trader": "Peacekeeper",
       "location": "Shoreline",
+      "levelRequirement": 12,
       "objectives": [
         "Locate the room with reservoirs in the Health Resort on Shoreline",
         "Obtain any information about the second part of the cargo shipment",
@@ -1585,6 +1684,7 @@
       "title": "Cargo X - Part 3",
       "trader": "Peacekeeper",
       "location": "Shoreline",
+      "levelRequirement": 12,
       "objectives": [
         "Locate the TerraGroup cargo hidden inside the Health Resort on Shoreline",
         "Survive and extract from the location"
@@ -1600,6 +1700,7 @@
       "title": "Cargo X - Part 4",
       "trader": "Peacekeeper",
       "location": "Lighthouse",
+      "levelRequirement": 12,
       "objectives": [
         "Locate and mark the TerraGroup cargo with an MS2000 Marker on Lighthouse"
       ],
@@ -1614,6 +1715,7 @@
       "title": "Classified Technologies",
       "trader": "Peacekeeper",
       "location": "Reserve",
+      "levelRequirement": 14,
       "objectives": [
         "Obtain the package with T-90M Commander control panel on Reserve",
         "Hand over the package"
@@ -1629,6 +1731,7 @@
       "title": "Eagle Eye",
       "trader": "Peacekeeper",
       "location": "Shoreline",
+      "levelRequirement": 11,
       "objectives": [
         "Locate the first UAV crash site on Shoreline",
         "Obtain the SAS disk from the first crashed drone",
@@ -1648,6 +1751,7 @@
       "title": "Fishing Gear",
       "trader": "Peacekeeper",
       "location": "Shoreline",
+      "levelRequirement": 10,
       "objectives": [
         "Locate the boat hidden next to the breakwater on Shoreline",
         "Stash an SV-98 sniper rifle in the boat",
@@ -1664,6 +1768,7 @@
       "title": "Humanitarian Supplies",
       "trader": "Peacekeeper",
       "location": "Shoreline",
+      "levelRequirement": 11,
       "objectives": [
         "Locate and mark the first UN truck with an MS2000 Marker",
         "Locate and mark the second UN truck with an MS2000 Marker",
@@ -1683,6 +1788,7 @@
       "id": "5c0bd01e86f7747cdd799e56",
       "title": "Insomnia",
       "trader": "Peacekeeper",
+      "levelRequirement": 25,
       "objectives": [
         "Eliminate PMC operatives in the time period of 21:00-06:00 (excluding Factory and The Lab)"
       ],
@@ -1696,6 +1802,7 @@
       "id": "5c0d0f1886f77457b8210226",
       "title": "Lend-Lease - Part 2",
       "trader": "Peacekeeper",
+      "levelRequirement": 30,
       "objectives": [
         "Find Virtex programmable processors in raid",
         "Find Military COFDM Wireless Signal Transmitter in raid",
@@ -1712,6 +1819,7 @@
       "id": "669fa38fad7f1eac2607ed46",
       "title": "One Less Loose End",
       "trader": "Peacekeeper",
+      "levelRequirement": 15,
       "objectives": [
         "Locate and obtain the lab journal on Factory",
         "Stash the journal at the old sawmill on Woods"
@@ -1727,6 +1835,7 @@
       "title": "Overpopulation",
       "trader": "Peacekeeper",
       "location": "Lighthouse",
+      "levelRequirement": 15,
       "objectives": [
         "Eliminate Scavs around the chalet area on Lighthouse"
       ],
@@ -1740,6 +1849,7 @@
       "id": "5c0d4c12d09282029f539173",
       "title": "Peacekeeping Mission",
       "trader": "Peacekeeper",
+      "levelRequirement": 30,
       "objectives": [
         "Eliminate Scavs while wearing a UN uniform (UNTAR helmet, MF-UNTAR body armor, M4A1 rifle) on Woods",
         "Eliminate Scavs while wearing a UN uniform (UNTAR helmet, MF-UNTAR body armor, M4A1 rifle) on Customs",
@@ -1759,6 +1869,7 @@
       "title": "Revision - Lighthouse",
       "trader": "Peacekeeper",
       "location": "Lighthouse",
+      "levelRequirement": 14,
       "objectives": [
         "Locate and mark the first BRDM with an MS2000 Marker on Lighthouse",
         "Locate and mark the second BRDM with an MS2000 Marker on Lighthouse",
@@ -1776,6 +1887,7 @@
       "title": "Revision - Reserve",
       "trader": "Peacekeeper",
       "location": "Reserve",
+      "levelRequirement": 14,
       "objectives": [
         "Locate and inspect the first BMP-2 on Reserve",
         "Mark the first BMP-2 with an MS2000 Marker",
@@ -1800,6 +1912,7 @@
       "id": "5edac020218d181e29451446",
       "title": "Samples",
       "trader": "Peacekeeper",
+      "levelRequirement": 21,
       "objectives": [
         "Find M.U.L.E. stimulant injector in raid",
         "Hand over the injector",
@@ -1828,6 +1941,7 @@
       "title": "Scrap Metal",
       "trader": "Peacekeeper",
       "location": "Shoreline",
+      "levelRequirement": 10,
       "objectives": [
         "Locate and mark the first T-90 tank with an MS2000 Marker on Shoreline",
         "Locate and mark the second T-90 tank with an MS2000 Marker on Shoreline",
@@ -1844,6 +1958,7 @@
       "title": "Spa Tour - Part 1",
       "trader": "Peacekeeper",
       "location": "Shoreline",
+      "levelRequirement": 12,
       "objectives": [
         "Eliminate Scavs with headshots while using a 12ga shotgun on Shoreline"
       ],
@@ -1858,6 +1973,7 @@
       "title": "Spa Tour - Part 2",
       "trader": "Peacekeeper",
       "location": "Shoreline",
+      "levelRequirement": 12,
       "objectives": [
         "Locate and mark the helicopter at the Health Resort with an MS2000 Marker on Shoreline",
         "Mark the safe passage to the helicopter with an MS2000 Marker on Shoreline"
@@ -1872,6 +1988,7 @@
       "id": "5a0327ba86f77456b9154236",
       "title": "Spa Tour - Part 3",
       "trader": "Peacekeeper",
+      "levelRequirement": 12,
       "objectives": [
         "Hand over the found in raid item: WD-40",
         "Hand over the found in raid item: Clin window cleaner",
@@ -1889,6 +2006,7 @@
       "title": "Spa Tour - Part 4",
       "trader": "Peacekeeper",
       "location": "Shoreline",
+      "levelRequirement": 12,
       "objectives": [
         "Locate the generators in the east wing of the Health Resort on Shoreline",
         "Locate the generators in the west wing of the Health Resort on Shoreline",
@@ -1905,6 +2023,7 @@
       "title": "Spa Tour - Part 5",
       "trader": "Peacekeeper",
       "location": "Shoreline",
+      "levelRequirement": 12,
       "objectives": [
         "Locate and obtain the key to the closed premises of the Health Resort on Shoreline",
         "Hand over the key"
@@ -1919,6 +2038,7 @@
       "id": "5a27ba9586f7741b543d8e85",
       "title": "Spa Tour - Part 6",
       "trader": "Peacekeeper",
+      "levelRequirement": 12,
       "objectives": [
         "Hand over USD"
       ],
@@ -1932,6 +2052,7 @@
       "id": "5a27bafb86f7741c73584017",
       "title": "Spa Tour - Part 7",
       "trader": "Peacekeeper",
+      "levelRequirement": 12,
       "objectives": [
         "Find Morphine injectors in raid",
         "Hand over the items",
@@ -1953,6 +2074,7 @@
       "title": "TerraGroup Employee",
       "trader": "Peacekeeper",
       "location": "The Lab",
+      "levelRequirement": 23,
       "objectives": [
         "Find Sanitar's workplace in The Lab",
         "Obtain information about Sanitar's work",
@@ -1970,6 +2092,7 @@
       "title": "The Cult - Part 1",
       "trader": "Peacekeeper",
       "location": "Shoreline",
+      "levelRequirement": 12,
       "objectives": [
         "Locate the missing informant on Shoreline",
         "Survive and extract from the location"
@@ -1984,6 +2107,7 @@
       "id": "5a27ba1c86f77461ea5a3c56",
       "title": "The Cult - Part 2",
       "trader": "Peacekeeper",
+      "levelRequirement": 18,
       "objectives": [
         "Locate and mark the first ritual spot with an MS2000 Marker on Woods",
         "Locate and mark the ritual spot with an MS2000 Marker on Customs",
@@ -2000,6 +2124,7 @@
       "id": "5c0d4e61d09282029f53920e",
       "title": "The Guide",
       "trader": "Peacekeeper",
+      "levelRequirement": 32,
       "objectives": [
         "Survive and extract from Woods with the \"Survived\" exit status",
         "Survive and extract from Customs with the \"Survived\" exit status",
@@ -2023,6 +2148,7 @@
       "title": "Tigr Safari",
       "trader": "Peacekeeper",
       "location": "Customs",
+      "levelRequirement": 10,
       "objectives": [
         "Locate and mark the first Tigr vehicle with an MS2000 Marker on Customs",
         "Locate and mark the second Tigr vehicle with an MS2000 Marker on Customs",
@@ -2039,6 +2165,7 @@
       "title": "Wet Job - Part 1",
       "trader": "Peacekeeper",
       "location": "Shoreline",
+      "levelRequirement": 14,
       "objectives": [
         "Eliminate Scavs while using a suppressed M4A1, ADAR, or TX-15 on Shoreline"
       ],
@@ -2053,6 +2180,7 @@
       "title": "Wet Job - Part 2",
       "trader": "Peacekeeper",
       "location": "Shoreline",
+      "levelRequirement": 14,
       "objectives": [
         "Locate the fishermen's dwelling on Shoreline",
         "Mark the fishing table with an MS2000 Marker"
@@ -2068,6 +2196,7 @@
       "title": "Wet Job - Part 3",
       "trader": "Peacekeeper",
       "location": "Shoreline",
+      "levelRequirement": 14,
       "objectives": [
         "Locate Artyom’s car on Shoreline",
         "Survive and extract from the location"
@@ -2083,6 +2212,7 @@
       "title": "Wet Job - Part 4",
       "trader": "Peacekeeper",
       "location": "Shoreline",
+      "levelRequirement": 14,
       "objectives": [
         "Locate and obtain the list of Health Resort tenants on Shoreline",
         "Hand over the found items"
@@ -2098,6 +2228,7 @@
       "title": "Wet Job - Part 5",
       "trader": "Peacekeeper",
       "location": "Shoreline",
+      "levelRequirement": 14,
       "objectives": [
         "Locate and obtain any information on Artyom’s work on Shoreline",
         "Hand over the information"
@@ -2112,6 +2243,7 @@
       "id": "5a27bc8586f7741b543d8ea4",
       "title": "Wet Job - Part 6",
       "trader": "Peacekeeper",
+      "levelRequirement": 14,
       "objectives": [
         "Reach the required Bolt-action Rifles skill level"
       ],
@@ -2126,6 +2258,7 @@
       "title": "Anesthesia",
       "trader": "Prapor",
       "location": "Shoreline",
+      "levelRequirement": 21,
       "objectives": [
         "Mark the first trading post with an MS2000 Marker on Shoreline",
         "Mark the second trading post with an MS2000 Marker on Shoreline",
@@ -2142,6 +2275,7 @@
       "title": "Background Check",
       "trader": "Prapor",
       "location": "Customs",
+      "levelRequirement": 2,
       "objectives": [
         "Locate and obtain the bronze pocket watch on Customs",
         "Hand over the found item",
@@ -2157,6 +2291,7 @@
       "id": "5967530a86f77462ba22226b",
       "title": "Bad Rep Evidence",
       "trader": "Prapor",
+      "levelRequirement": 6,
       "objectives": [
         "Gain access to the locked room in the office hallway on the third floor on Factory",
         "Obtain the Portable bunkhouse key",
@@ -2175,6 +2310,7 @@
       "title": "Belka and Strelka",
       "trader": "Prapor",
       "location": "Customs",
+      "levelRequirement": 5,
       "objectives": [
         "Survive and extract from Customs through Railroad Passage"
       ],
@@ -2189,6 +2325,7 @@
       "title": "Big Customer",
       "trader": "Prapor",
       "location": "Customs",
+      "levelRequirement": 11,
       "objectives": [
         "Locate the transport with the chemicals on Customs",
         "Mark the vehicle with an MS2000 Marker"
@@ -2204,6 +2341,7 @@
       "title": "BP Depot",
       "trader": "Prapor",
       "location": "Customs",
+      "levelRequirement": 5,
       "objectives": [
         "Locate and mark the first fuel tank with an MS2000 Marker on Customs",
         "Locate and mark the second fuel tank with an MS2000 Marker on Customs",
@@ -2220,6 +2358,7 @@
       "id": "5936d90786f7742b1420ba5b",
       "title": "Debut",
       "trader": "Prapor",
+      "levelRequirement": 1,
       "objectives": [
         "Eliminate Scavs on any location",
         "Hand over the item: MP-133 12ga shotgun"
@@ -2234,6 +2373,7 @@
       "id": "59674eb386f774539f14813a",
       "title": "Delivery From the Past",
       "trader": "Prapor",
+      "levelRequirement": 5,
       "objectives": [
         "Locate and obtain the valuable folder in Tarcone director's office on Customs",
         "Stash the package in the break room on the 2nd floor near Gate 3 on Factory"
@@ -2249,6 +2389,7 @@
       "title": "Documents",
       "trader": "Prapor",
       "location": "Reserve",
+      "levelRequirement": 19,
       "objectives": [
         "Obtain the first folder with military documents in the command bunker offices on Reserve",
         "Obtain the second folder with military documents in the command bunker offices on Reserve",
@@ -2268,6 +2409,7 @@
       "title": "Easy Job - Part 1",
       "trader": "Prapor",
       "location": "Lighthouse",
+      "levelRequirement": 18,
       "objectives": [
         "Locate the helicopter at the water treatment plant on Lighthouse",
         "Mark the helicopter with an MS2000 Marker"
@@ -2283,6 +2425,7 @@
       "title": "Easy Job - Part 2",
       "trader": "Prapor",
       "location": "Lighthouse",
+      "levelRequirement": 18,
       "objectives": [
         "Eliminate any target around the helicopter area at the water treatment plant on Lighthouse"
       ],
@@ -2297,6 +2440,7 @@
       "title": "Ice Cream Cones",
       "trader": "Prapor",
       "location": "Woods",
+      "levelRequirement": 9,
       "objectives": [
         "Find AK-74 5.45x39 6L31 60-round magazines in raid",
         "Hand over the items",
@@ -2313,6 +2457,7 @@
       "id": "60e71bb4e456d449cd47ca75",
       "title": "Intimidator",
       "trader": "Prapor",
+      "levelRequirement": 45,
       "objectives": [
         "Eliminate Scavs with headshots"
       ],
@@ -2327,6 +2472,7 @@
       "title": "Luxurious Life",
       "trader": "Prapor",
       "location": "Ground Zero",
+      "levelRequirement": 1,
       "objectives": [
         "Locate the liquor store on Ground Zero",
         "Locate and obtain the wine bottle in the store",
@@ -2343,6 +2489,7 @@
       "title": "No Place for Renegades",
       "trader": "Prapor",
       "location": "Reserve",
+      "levelRequirement": 17,
       "objectives": [
         "Eliminate Raiders in the command bunker on Reserve"
       ],
@@ -2356,6 +2503,7 @@
       "id": "5c12452c86f7744b83469073",
       "title": "Perfect Mediator",
       "trader": "Prapor",
+      "levelRequirement": 35,
       "objectives": [
         "Reach level 4 loyalty with Ragman",
         "Reach level 4 loyalty with Skier",
@@ -2376,6 +2524,7 @@
       "title": "Polikhim Hobo",
       "trader": "Prapor",
       "location": "Customs",
+      "levelRequirement": 10,
       "objectives": [
         "Eliminate Scavs on Customs"
       ],
@@ -2390,6 +2539,7 @@
       "title": "Possessor",
       "trader": "Prapor",
       "location": "Factory",
+      "levelRequirement": 10,
       "objectives": [
         "Locate and obtain the helicopter logbook on Factory",
         "Hand over the found information"
@@ -2405,6 +2555,7 @@
       "title": "Postman Pat - Part 1",
       "trader": "Prapor",
       "location": "Factory",
+      "levelRequirement": 10,
       "objectives": [
         "Locate the dead messenger and obtain his letter on Factory",
         "Survive and extract from the location",
@@ -2421,6 +2572,7 @@
       "title": "Reconnaissance",
       "trader": "Prapor",
       "location": "Lighthouse",
+      "levelRequirement": 18,
       "objectives": [
         "Recon the roof of the first water treatment plant facility on Lighthouse",
         "Recon the roof of the second water treatment plant facility on Lighthouse",
@@ -2437,6 +2589,7 @@
       "id": "5d4bec3486f7743cac246665",
       "title": "Regulated Materials",
       "trader": "Prapor",
+      "levelRequirement": 25,
       "objectives": [
         "Find 6-STEN-140-M military battery in raid",
         "Hand over the military battery",
@@ -2454,6 +2607,7 @@
       "title": "Search Mission",
       "trader": "Prapor",
       "location": "Woods",
+      "levelRequirement": 5,
       "objectives": [
         "Locate Prapor's missing convoy on Woods",
         "Locate the temporary USEC camp on Woods",
@@ -2470,6 +2624,7 @@
       "title": "Shaking Up the Teller",
       "trader": "Prapor",
       "location": "Customs",
+      "levelRequirement": 15,
       "objectives": [
         "Locate and obtain the valuable item in dorm room 203 on Customs",
         "Hand over the valuable item",
@@ -2486,6 +2641,7 @@
       "title": "Shooting Cans",
       "trader": "Prapor",
       "location": "Ground Zero",
+      "levelRequirement": 1,
       "objectives": [
         "Locate the Utyos machine gun on Ground Zero",
         "Locate the AGS grenade launcher on Ground Zero",
@@ -2499,6 +2655,7 @@
       "id": "5c0bd94186f7747a727f09b2",
       "title": "Test Drive - Part 1",
       "trader": "Prapor",
+      "levelRequirement": 18,
       "objectives": [
         "Eliminate PMC operatives using an SR-25 rifle with Hybrid 46 suppressor and Schmidt & Bender PM II 1-8x24 scope"
       ],
@@ -2513,6 +2670,7 @@
       "title": "Test Drive - Part 2",
       "trader": "Prapor",
       "location": "Streets of Tarkov",
+      "levelRequirement": 22,
       "objectives": [
         "Eliminate PMCs using an MP5SD on Streets of Tarkov, Ground Zero, or Interchange"
       ],
@@ -2526,6 +2684,7 @@
       "id": "64f5deac39e45b527a7c4232",
       "title": "Test Drive - Part 3",
       "trader": "Prapor",
+      "levelRequirement": 25,
       "objectives": [
         "Eliminate 20 PMCs with AK-12 with the proprietary suppressor and PS-320 scope on Lighthouse, Customs, or Reserve"
       ],
@@ -2540,6 +2699,7 @@
       "title": "Test Drive - Part 4",
       "trader": "Prapor",
       "location": "Shoreline",
+      "levelRequirement": 28,
       "objectives": [
         "Eliminate any target while using an RPDN with EKP-1S-03 sight on Shoreline, Interchange, or Woods"
       ],
@@ -2554,6 +2714,7 @@
       "title": "Test Drive - Part 5",
       "trader": "Prapor",
       "location": "Factory",
+      "levelRequirement": 32,
       "objectives": [
         "Eliminate any target while using an SR-2M with suppressor and KP-SR2 sight on Factory"
       ],
@@ -2568,6 +2729,7 @@
       "title": "Test Drive - Part 6",
       "trader": "Prapor",
       "location": "Customs",
+      "levelRequirement": 35,
       "objectives": [
         "Eliminate any target while using an Aklys Defense Velociraptor on Customs"
       ],
@@ -2582,6 +2744,7 @@
       "title": "The Bunker - Part 1",
       "trader": "Prapor",
       "location": "Reserve",
+      "levelRequirement": 10,
       "objectives": [
         "Locate the underground bunker on Reserve",
         "Locate the control room in the underground bunker on Reserve",
@@ -2598,6 +2761,7 @@
       "title": "The Bunker - Part 2",
       "trader": "Prapor",
       "location": "Reserve",
+      "levelRequirement": 15,
       "objectives": [
         "Locate the hermetic door leading to the hospital (White Bishop) on Reserve",
         "Locate one of the two hermetic doors leading to the academy building (Black Bishop) on Reserve",
@@ -2617,6 +2781,7 @@
       "title": "The Punisher - Part 1",
       "trader": "Prapor",
       "location": "Shoreline",
+      "levelRequirement": 17,
       "objectives": [
         "Eliminate Scavs while using an AKM series weapon on Shoreline"
       ],
@@ -2631,6 +2796,7 @@
       "title": "The Punisher - Part 2",
       "trader": "Prapor",
       "location": "Reserve",
+      "levelRequirement": 18,
       "objectives": [
         "Eliminate Scavs while using a suppressed weapon on Reserve",
         "Find Lower half-masks in raid",
@@ -2647,6 +2813,7 @@
       "title": "The Punisher - Part 3",
       "trader": "Prapor",
       "location": "Customs",
+      "levelRequirement": 19,
       "objectives": [
         "Eliminate Scavs while using an AKS-74U on Customs"
       ],
@@ -2661,6 +2828,7 @@
       "title": "The Punisher - Part 4",
       "trader": "Prapor",
       "location": "Lighthouse",
+      "levelRequirement": 20,
       "objectives": [
         "Eliminate Scavs while using a 12ga shotgun on Lighthouse",
         "Eliminate PMC operatives while wearing a balaclava and Scav vest on Lighthouse",
@@ -2677,6 +2845,7 @@
       "id": "59ca29fb86f77445ab465c87",
       "title": "The Punisher - Part 5",
       "trader": "Prapor",
+      "levelRequirement": 20,
       "objectives": [
         "Find any Kalashnikov AK-74 assault rifle in raid",
         "Hand over the AK-74",
@@ -2696,6 +2865,7 @@
       "id": "59ca2eb686f77445a80ed049",
       "title": "The Punisher - Part 6",
       "trader": "Prapor",
+      "levelRequirement": 21,
       "objectives": [
         "Eliminate PMC operatives while using an SVD rifle (excluding Factory)",
         "Hand over any BEAR dogtags",
@@ -2712,6 +2882,7 @@
       "title": "A Fuel Matter",
       "trader": "Ragman",
       "location": "Reserve",
+      "levelRequirement": 17,
       "objectives": [
         "Mark the first group of fuel tanks with an MS2000 Marker on Reserve",
         "Mark the second group of fuel tanks with an MS2000 Marker on Reserve"
@@ -2727,6 +2898,7 @@
       "title": "Big Sale",
       "trader": "Ragman",
       "location": "Interchange",
+      "levelRequirement": 17,
       "objectives": [
         "Locate the AVOKADO store on Interchange",
         "Locate the KOSTIN store on Interchange",
@@ -2746,6 +2918,7 @@
       "title": "Break the Deal",
       "trader": "Ragman",
       "location": "Customs",
+      "levelRequirement": 17,
       "objectives": [
         "Stash a DVL-10 sniper rifle at the specified spot on Customs",
         "Stash a DVL-10 magazine at the specified spot on Customs",
@@ -2762,6 +2935,7 @@
       "id": "5ae4499a86f77449783815db",
       "title": "Charisma Brings Success",
       "trader": "Ragman",
+      "levelRequirement": 25,
       "objectives": [
         "Reach the required Charisma skill level"
       ],
@@ -2777,6 +2951,7 @@
       "title": "Database - Part 1",
       "trader": "Ragman",
       "location": "Interchange",
+      "levelRequirement": 17,
       "objectives": [
         "Locate and obtain the Goshan cargo manifests on Interchange",
         "Hand over the Goshan cargo manifests",
@@ -2797,6 +2972,7 @@
       "title": "Database - Part 2",
       "trader": "Ragman",
       "location": "Interchange",
+      "levelRequirement": 17,
       "objectives": [
         "Locate and obtain the OLI cargo route documents on Interchange",
         "Hand over the documents"
@@ -2811,6 +2987,7 @@
       "id": "5ae4490786f7744ca822adcc",
       "title": "Dressed to Kill",
       "trader": "Ragman",
+      "levelRequirement": 17,
       "objectives": [
         "Find Kinda Cowboy hats in raid",
         "Find Ushanka ear-flap hats in raid",
@@ -2828,6 +3005,7 @@
       "title": "Gratitude",
       "trader": "Ragman",
       "location": "Woods",
+      "levelRequirement": 17,
       "objectives": [
         "Stash a Ghost balaclava at the sawmill docks on Woods",
         "Stash a Shemagh (Green) at the sawmill docks on Woods",
@@ -2846,6 +3024,7 @@
       "title": "Hot Delivery",
       "trader": "Ragman",
       "location": "Interchange",
+      "levelRequirement": 29,
       "objectives": [
         "Stash the ComTac II headsets in the specified place on Interchange",
         "Stash the 6B47 helmets (Olive Drab) in the specified place on Interchange",
@@ -2862,6 +3041,7 @@
       "title": "Inventory Check",
       "trader": "Ragman",
       "location": "Reserve",
+      "levelRequirement": 17,
       "objectives": [
         "Check the first arsenal in the eastern barracks (Black Pawn) on Reserve",
         "Check the duty room in the eastern barracks (Black Pawn) on Reserve",
@@ -2880,6 +3060,7 @@
       "id": "5b47891f86f7744d1b23c571",
       "title": "Living High is Not a Crime - Part 1",
       "trader": "Ragman",
+      "levelRequirement": 27,
       "objectives": [
         "Find Bronze lion figurines in raid",
         "Hand over the figurines",
@@ -2903,6 +3084,7 @@
       "id": "5c1141f386f77430ff393792",
       "title": "Living High is Not a Crime - Part 2",
       "trader": "Ragman",
+      "levelRequirement": 30,
       "objectives": [
         "Find Antique teapots in raid",
         "Find Antique vases in raid",
@@ -2925,6 +3107,7 @@
       "title": "Make ULTRA Great Again",
       "trader": "Ragman",
       "location": "Interchange",
+      "levelRequirement": 17,
       "objectives": [
         "Eliminate Scavs on Interchange"
       ],
@@ -2939,6 +3122,7 @@
       "title": "Minibus",
       "trader": "Ragman",
       "location": "Interchange",
+      "levelRequirement": 24,
       "objectives": [
         "Locate and mark the first yellow minibus with an MS2000 Marker on Interchange",
         "Locate and mark the second yellow minibus with an MS2000 Marker on Interchange",
@@ -2954,6 +3138,7 @@
       "id": "5ae449a586f7744bde357696",
       "title": "No Fuss Needed",
       "trader": "Ragman",
+      "levelRequirement": 26,
       "objectives": [
         "Reach level 3 loyalty with Therapist"
       ],
@@ -2967,6 +3152,7 @@
       "id": "5ae448a386f7744d3730fff0",
       "title": "Only Business",
       "trader": "Ragman",
+      "levelRequirement": 15,
       "objectives": [
         "Reach level 2 loyalty with Ragman"
       ],
@@ -2979,6 +3165,7 @@
       "title": "Sales Night",
       "trader": "Ragman",
       "location": "Interchange",
+      "levelRequirement": 30,
       "objectives": [
         "Survive and extract from Interchange"
       ],
@@ -2992,6 +3179,7 @@
       "id": "5c112d7e86f7740d6f647486",
       "title": "Scavenger",
       "trader": "Ragman",
+      "levelRequirement": 29,
       "objectives": [
         "Reach the required Search skill level"
       ],
@@ -3005,6 +3193,7 @@
       "id": "5ae4495086f77443c122bc40",
       "title": "Sew it Good - Part 1",
       "trader": "Ragman",
+      "levelRequirement": 25,
       "objectives": [
         "Find a Ski hat with holes for eyes in raid",
         "Hand over the ski hat",
@@ -3021,6 +3210,7 @@
       "id": "5ae4495c86f7744e87761355",
       "title": "Sew it Good - Part 2",
       "trader": "Ragman",
+      "levelRequirement": 25,
       "objectives": [
         "Obtain BNTI Gzhel-K armor in 0-50% durability",
         "Hand over the armor",
@@ -3037,6 +3227,7 @@
       "id": "5ae4496986f774459e77beb6",
       "title": "Sew it Good - Part 3",
       "trader": "Ragman",
+      "levelRequirement": 25,
       "objectives": [
         "Hand over the 6B43 assault armor in 0-75% durability",
         "Hand over the 6B43 assault armor in 75-100% durability"
@@ -3051,6 +3242,7 @@
       "id": "5ae4497b86f7744cf402ed00",
       "title": "Sew it Good - Part 4",
       "trader": "Ragman",
+      "levelRequirement": 25,
       "objectives": [
         "Find WARTECH TV-109 + TV-106 chest rigs in raid",
         "Hand over the chest rigs",
@@ -3067,6 +3259,7 @@
       "id": "5ae449d986f774453a54a7e1",
       "title": "Supervisor",
       "trader": "Ragman",
+      "levelRequirement": 40,
       "objectives": [
         "Obtain the Goshan cash register key",
         "Hand over the key"
@@ -3083,6 +3276,7 @@
       "title": "The Blood of War - Part 1",
       "trader": "Ragman",
       "location": "Interchange",
+      "levelRequirement": 17,
       "objectives": [
         "Locate and mark the first fuel tank with an MS2000 Marker on Interchange",
         "Locate and mark the second fuel tank with an MS2000 Marker on Interchange",
@@ -3100,6 +3294,7 @@
       "id": "5b47876e86f7744d1c353205",
       "title": "The Blood of War - Part 2",
       "trader": "Ragman",
+      "levelRequirement": 25,
       "objectives": [
         "Find Fuel conditioners in raid",
         "Hand over the items"
@@ -3116,6 +3311,7 @@
       "title": "The Blood of War - Part 3",
       "trader": "Ragman",
       "location": "Woods",
+      "levelRequirement": 30,
       "objectives": [
         "Locate and mark the first fuel stash with an MS2000 Marker on Woods",
         "Locate and mark the second fuel stash with an MS2000 Marker on Woods",
@@ -3132,6 +3328,7 @@
       "title": "The Key to Success",
       "trader": "Ragman",
       "location": "Interchange",
+      "levelRequirement": 26,
       "objectives": [
         "Locate and obtain the first book of clothes design on Interchange",
         "Hand over the first book",
@@ -3149,6 +3346,7 @@
       "title": "Burning Rubber",
       "trader": "Skier",
       "location": "Ground Zero",
+      "levelRequirement": 1,
       "objectives": [
         "Use the paid vehicle extraction on Ground Zero"
       ],
@@ -3161,6 +3359,7 @@
       "title": "Chemical - Part 1",
       "trader": "Skier",
       "location": "Customs",
+      "levelRequirement": 10,
       "objectives": [
         "Locate and obtain any information about the deputy chief’s past life on Customs",
         "Hand over the information",
@@ -3179,6 +3378,7 @@
       "title": "Chemical - Part 2",
       "trader": "Skier",
       "location": "Customs",
+      "levelRequirement": 10,
       "objectives": [
         "Locate and obtain any evidence that could help with the investigation on Customs",
         "Hand over the evidence",
@@ -3196,6 +3396,7 @@
       "title": "Chemical - Part 3",
       "trader": "Skier",
       "location": "Factory",
+      "levelRequirement": 11,
       "objectives": [
         "Locate and obtain the chemical syringe on Factory",
         "Hand over the syringe"
@@ -3211,6 +3412,7 @@
       "title": "Chemical - Part 4",
       "trader": "Skier",
       "location": "Customs",
+      "levelRequirement": 11,
       "objectives": [
         "Locate the transport with the chemicals on Customs",
         "Mark the vehicle with an MS2000 Marker"
@@ -3225,6 +3427,7 @@
       "id": "5b4795fb86f7745876267770",
       "title": "Chumming",
       "trader": "Skier",
+      "levelRequirement": 24,
       "objectives": [
         "Stash Golden neck chains under the mattress next to BTR-82A in Generic Store on Interchange",
         "Stash Golden neck chains in the microwave on the 3rd floor of the dorm on Customs",
@@ -3242,6 +3445,7 @@
       "title": "Exit Here",
       "trader": "Skier",
       "location": "Factory",
+      "levelRequirement": 12,
       "objectives": [
         "Survive and extract from Factory through the main exit"
       ],
@@ -3255,6 +3459,7 @@
       "id": "5c0bdb5286f774166e38eed4",
       "title": "Flint",
       "trader": "Skier",
+      "levelRequirement": 35,
       "objectives": [
         "Reach the required Stress Resistance skill level"
       ],
@@ -3268,6 +3473,7 @@
       "id": "5a27c99a86f7747d2c6bdd8e",
       "title": "Friend From the West - Part 1",
       "trader": "Skier",
+      "levelRequirement": 9,
       "objectives": [
         "Eliminate USEC PMC operatives",
         "Hand over any USEC PMC dogtags"
@@ -3282,6 +3488,7 @@
       "id": "5a27d2af86f7744e1115b323",
       "title": "Friend From the West - Part 2",
       "trader": "Skier",
+      "levelRequirement": 9,
       "objectives": [
         "Hand over USD"
       ],
@@ -3296,6 +3503,7 @@
       "title": "Golden Swag",
       "trader": "Skier",
       "location": "Customs",
+      "levelRequirement": 8,
       "objectives": [
         "Locate and obtain the golden Zibbo lighter on Customs",
         "Stash the lighter in the bunkhouse at the trailer park on Customs"
@@ -3310,6 +3518,7 @@
       "id": "5b47926a86f7747ccc057c15",
       "title": "Informed Means Armed",
       "trader": "Skier",
+      "levelRequirement": 24,
       "objectives": [
         "Install a WI-FI Camera to watch the sawmill dock on Woods",
         "Install a WI-FI Camera to watch the road to the port on Customs",
@@ -3325,6 +3534,7 @@
       "id": "596a101f86f7741ddb481582",
       "title": "Kind of Sabotage",
       "trader": "Skier",
+      "levelRequirement": 13,
       "objectives": [
         "Hand over Secure Folder 0052"
       ],
@@ -3338,6 +3548,7 @@
       "id": "5b4794cb86f774598100d5d4",
       "title": "Lend-Lease - Part 1",
       "trader": "Skier",
+      "levelRequirement": 25,
       "objectives": [
         "Obtain the first motor controller on Woods",
         "Hand over the first controller",
@@ -3361,6 +3572,7 @@
       "title": "Long Road",
       "trader": "Skier",
       "location": "Lighthouse",
+      "levelRequirement": 20,
       "objectives": [
         "Eliminate Scavs along the shore and the main road on Lighthouse"
       ],
@@ -3375,6 +3587,7 @@
       "title": "Missing Cargo",
       "trader": "Skier",
       "location": "Lighthouse",
+      "levelRequirement": 30,
       "objectives": [
         "Locate the crashed helicopter on Lighthouse",
         "Find the informant's intelligence folder",
@@ -3391,6 +3604,7 @@
       "title": "Private Club",
       "trader": "Skier",
       "location": "Customs",
+      "levelRequirement": 24,
       "objectives": [
         "Locate and obtain Skier's wallet on Customs",
         "Hand over the found item"
@@ -3406,6 +3620,7 @@
       "title": "Rigged Game",
       "trader": "Skier",
       "location": "Shoreline",
+      "levelRequirement": 21,
       "objectives": [
         "Mark the medical container at the Health Resort with an MS2000 Marker on Shoreline",
         "Mark the medical container by cottages with an MS2000 Marker on Shoreline",
@@ -3422,6 +3637,7 @@
       "title": "Safe Corridor",
       "trader": "Skier",
       "location": "Reserve",
+      "levelRequirement": 15,
       "objectives": [
         "Eliminate Scavs in the underground warehouse on Reserve"
       ],
@@ -3436,6 +3652,7 @@
       "title": "Setup",
       "trader": "Skier",
       "location": "Customs",
+      "levelRequirement": 18,
       "objectives": [
         "Eliminate PMC operatives while wearing the specified gear on Customs"
       ],
@@ -3449,6 +3666,7 @@
       "id": "596b455186f77457cb50eccb",
       "title": "Stirrup",
       "trader": "Skier",
+      "levelRequirement": 8,
       "objectives": [
         "Eliminate PMC operatives while using pistols"
       ],
@@ -3462,6 +3680,7 @@
       "id": "596b36c586f77450d6045ad2",
       "title": "Supplier",
       "trader": "Skier",
+      "levelRequirement": 5,
       "objectives": [
         "Hand over the found in raid item: BNTI Module-3M body armor",
         "Hand over the found in raid item: TOZ-106 20ga bolt-action shotgun"
@@ -3477,6 +3696,7 @@
       "title": "The Extortionist",
       "trader": "Skier",
       "location": "Customs",
+      "levelRequirement": 7,
       "objectives": [
         "Locate and obtain the hidden valuable cargo on Customs",
         "Hand over the valuable cargo",
@@ -3494,6 +3714,7 @@
       "title": "The Walls Have Eyes",
       "trader": "Skier",
       "location": "Factory",
+      "levelRequirement": 12,
       "objectives": [
         "Install a WI-FI Camera in the first crane's cockpit on Factory",
         "Install a WI-FI Camera in the second crane's cockpit on Factory",
@@ -3509,6 +3730,7 @@
       "id": "5b478eca86f7744642012254",
       "title": "Vitamins - Part 1",
       "trader": "Skier",
+      "levelRequirement": 22,
       "objectives": [
         "Locate and obtain the first chemical container on Shoreline",
         "Hand over the first container",
@@ -3527,6 +3749,7 @@
       "id": "5b478ff486f7744d184ecbbf",
       "title": "Vitamins - Part 2",
       "trader": "Skier",
+      "levelRequirement": 22,
       "objectives": [
         "Hand over the respirators",
         "Find Respirators in raid",
@@ -3543,6 +3766,7 @@
       "id": "5979ed3886f77431307dc512",
       "title": "What’s on the Flash Drive?",
       "trader": "Skier",
+      "levelRequirement": 8,
       "objectives": [
         "Find Secure Flash drives in raid",
         "Hand over the Flash drives"
@@ -3557,6 +3781,7 @@
       "id": "669fa3910c828825de06d69f",
       "title": "A Healthy Alternative",
       "trader": "Therapist",
+      "levelRequirement": 15,
       "objectives": [
         "Hand over the lab journal"
       ],
@@ -3571,6 +3796,7 @@
       "title": "Abandoned Cargo",
       "trader": "Therapist",
       "location": "Customs",
+      "levelRequirement": 17,
       "objectives": [
         "Locate and mark the first special TerraGroup cargo with an MS2000 Marker on Customs",
         "Locate and mark the second special TerraGroup cargo with an MS2000 Marker on Customs",
@@ -3591,6 +3817,7 @@
       "title": "All Is Revealed",
       "trader": "Therapist",
       "location": "Factory",
+      "levelRequirement": 12,
       "objectives": [
         "Take a sample of the chemicals from the damaged tank container on Factory",
         "Hand over the collected sample"
@@ -3605,6 +3832,7 @@
       "id": "5c0d0d5086f774363760aef2",
       "title": "Athlete",
       "trader": "Therapist",
+      "levelRequirement": 30,
       "objectives": [
         "Reach the required Health skill level"
       ],
@@ -3618,6 +3846,7 @@
       "id": "596a218586f77420d232807c",
       "title": "Car Repair",
       "trader": "Therapist",
+      "levelRequirement": 10,
       "objectives": [
         "Find Car batteries in raid",
         "Find Spark plugs in raid",
@@ -3635,6 +3864,7 @@
       "title": "Closer to the People",
       "trader": "Therapist",
       "location": "Customs",
+      "levelRequirement": 17,
       "objectives": [
         "Locate and obtain the delivery crew's shipment notes on Customs",
         "Hand over the found information"
@@ -3650,6 +3880,7 @@
       "title": "Colleagues - Part 1",
       "trader": "Therapist",
       "location": "Shoreline",
+      "levelRequirement": 21,
       "objectives": [
         "Locate the group that was sent to the Health Resort on Shoreline",
         "Locate the group that was sent to the pier on Shoreline",
@@ -3667,6 +3898,7 @@
       "title": "Colleagues - Part 2",
       "trader": "Therapist",
       "location": "Shoreline",
+      "levelRequirement": 21,
       "objectives": [
         "Locate and obtain Sanitar's surgery kit marked with a blue symbol on Shoreline",
         "Hand over Sanitar's surgery kit",
@@ -3683,6 +3915,7 @@
       "id": "5edac34d0bb72a50635c2bfa",
       "title": "Colleagues - Part 3",
       "trader": "Therapist",
+      "levelRequirement": 22,
       "objectives": [
         "Do not kill Sanitar",
         "Find TerraGroup Labs access keycards in raid",
@@ -3702,6 +3935,7 @@
       "id": "60e71c48c1bfa3050473b8e5",
       "title": "Crisis",
       "trader": "Therapist",
+      "levelRequirement": 38,
       "objectives": [
         "Find Portable defibrillators in raid",
         "Find Ophthalmoscopes in raid",
@@ -3725,6 +3959,7 @@
       "title": "Decontamination Service",
       "trader": "Therapist",
       "location": "Interchange",
+      "levelRequirement": 35,
       "objectives": [
         "Eliminate Scavs from less than 60 meters away while wearing a gas mask or respirator on Interchange"
       ],
@@ -3740,6 +3975,7 @@
       "title": "Disease History",
       "trader": "Therapist",
       "location": "Reserve",
+      "levelRequirement": 15,
       "objectives": [
         "Obtain Medical record #1 on Reserve",
         "Obtain Medical record #2 on Reserve",
@@ -3757,6 +3993,7 @@
       "title": "Drug Trafficking",
       "trader": "Therapist",
       "location": "Lighthouse",
+      "levelRequirement": 26,
       "objectives": [
         "Locate the hidden drug lab on Lighthouse",
         "Stash a WI-FI Camera in the drug lab"
@@ -3772,6 +4009,7 @@
       "title": "First in Line",
       "trader": "Therapist",
       "location": "Ground Zero",
+      "levelRequirement": 1,
       "objectives": [
         "Locate the Emercom station on Ground Zero",
         "Hand over any found in raid medicine items"
@@ -3784,6 +4022,7 @@
       "id": "596a1e6c86f7741ddc2d3206",
       "title": "General Wares",
       "trader": "Therapist",
+      "levelRequirement": 10,
       "objectives": [
         "Find Cans of beef stew (Small) in raid",
         "Hand over the cans"
@@ -3799,6 +4038,7 @@
       "title": "Health Care Privacy - Part 1",
       "trader": "Therapist",
       "location": "Shoreline",
+      "levelRequirement": 20,
       "objectives": [
         "Locate and mark the first ambulance with an MS2000 Marker on Shoreline",
         "Locate and mark the second ambulance with an MS2000 Marker on Shoreline",
@@ -3815,6 +4055,7 @@
       "title": "Health Care Privacy - Part 2",
       "trader": "Therapist",
       "location": "Shoreline",
+      "levelRequirement": 20,
       "objectives": [
         "Locate and obtain any info about TerraGroup's research in Health Resort west wing on Shoreline",
         "Hand over the retrieved information",
@@ -3831,6 +4072,7 @@
       "title": "Health Care Privacy - Part 3",
       "trader": "Therapist",
       "location": "Woods",
+      "levelRequirement": 20,
       "objectives": [
         "Locate the van of the Health Resort medical services director on Woods",
         "Take a sample of the blood",
@@ -3847,6 +4089,7 @@
       "id": "5a68667486f7742607157d28",
       "title": "Health Care Privacy - Part 4",
       "trader": "Therapist",
+      "levelRequirement": 20,
       "objectives": [
         "Reach the required Health skill level"
       ],
@@ -3861,6 +4104,7 @@
       "title": "Health Care Privacy - Part 5",
       "trader": "Therapist",
       "location": "Night Factory",
+      "levelRequirement": 20,
       "objectives": [
         "Locate the drop spot on night-time Factory",
         "Obtain 3 packs of Gunpowder \"Kite\" and stash them in the designated spot"
@@ -3876,6 +4120,7 @@
       "title": "Health Care Privacy - Part 6",
       "trader": "Therapist",
       "location": "Factory",
+      "levelRequirement": 20,
       "objectives": [
         "Locate the dead worker and take their blood sample on Factory",
         "Hand over the blood sample"
@@ -3891,6 +4136,7 @@
       "title": "Lost Contact",
       "trader": "Therapist",
       "location": "Lighthouse",
+      "levelRequirement": 26,
       "objectives": [
         "Find the lost group in the chalet area on Lighthouse",
         "Survive and extract from the location"
@@ -3906,6 +4152,7 @@
       "title": "Out of Curiosity",
       "trader": "Therapist",
       "location": "Customs",
+      "levelRequirement": 11,
       "objectives": [
         "Locate the transport with the chemicals on Customs",
         "Mark the vehicle with an MS2000 Marker"
@@ -3920,6 +4167,7 @@
       "id": "5969f90786f77420d2328015",
       "title": "Painkiller",
       "trader": "Therapist",
+      "levelRequirement": 8,
       "objectives": [
         "Find Morphine injectors in raid",
         "Hand over the injectors"
@@ -3935,6 +4183,7 @@
       "title": "Pharmacist",
       "trader": "Therapist",
       "location": "Customs",
+      "levelRequirement": 10,
       "objectives": [
         "Locate and obtain the suitcase with the device on Customs",
         "Hand over the suitcase",
@@ -3951,6 +4200,7 @@
       "id": "596760e186f7741e11214d58",
       "title": "Postman Pat - Part 2",
       "trader": "Therapist",
+      "levelRequirement": 10,
       "objectives": [
         "Hand over the letter from Prapor's messenger"
       ],
@@ -3964,6 +4214,7 @@
       "id": "5c0be5fc86f774467a116593",
       "title": "Private Clinic",
       "trader": "Therapist",
+      "levelRequirement": 35,
       "objectives": [
         "Find an Ophthalmoscope in raid",
         "Find a LEDX Skin Transilluminator in raid",
@@ -3981,6 +4232,7 @@
       "title": "Sanitary Standards - Part 1",
       "trader": "Therapist",
       "location": "Factory",
+      "levelRequirement": 4,
       "objectives": [
         "Find a Gas analyzer in raid",
         "Hand over the items"
@@ -3995,6 +4247,7 @@
       "id": "596a204686f774576d4c95de",
       "title": "Sanitary Standards - Part 2",
       "trader": "Therapist",
+      "levelRequirement": 8,
       "objectives": [
         "Find Gas analyzers in raid",
         "Hand over the items"
@@ -4010,6 +4263,7 @@
       "title": "Seaside Vacation",
       "trader": "Therapist",
       "location": "Lighthouse",
+      "levelRequirement": 17,
       "objectives": [
         "Find the informant's briefcase on Lighthouse",
         "Hand over the found package"
@@ -4025,6 +4279,7 @@
       "title": "Shipment Tracking",
       "trader": "Therapist",
       "location": "Customs",
+      "levelRequirement": 17,
       "objectives": [
         "Locate and obtain the TerraGroup shipment lists on Customs",
         "Hand over the found information"
@@ -4039,6 +4294,7 @@
       "id": "5967733e86f774602332fc84",
       "title": "Shortage",
       "trader": "Therapist",
+      "levelRequirement": 1,
       "objectives": [
         "Find Salewa first aid kits in raid",
         "Hand over the items"
@@ -4054,6 +4310,7 @@
       "title": "Supply Plans",
       "trader": "Therapist",
       "location": "Woods",
+      "levelRequirement": 13,
       "objectives": [
         "Locate and obtain Secure Folder 0052 in the sawmill cabin on Woods",
         "Survive and extract from the location",
