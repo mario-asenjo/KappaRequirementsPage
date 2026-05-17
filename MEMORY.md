@@ -40,6 +40,14 @@
 
 ## Historial De Cambios
 
+### 2026-05-17 (revision visual)
+
+- Rama de trabajo: `feature/quest-tree-monster-layout`.
+- Se analizo `https://eft.monster/quest-tree`: usa secciones SVG horizontales por comerciante, apiladas en una pagina global, con fondo oscuro, nodos rectangulares pequenos y enlaces tenues por color de trader.
+- Se redisenio `QuestTreePage` para renderizar todos los traders a la vez en secciones con scroll horizontal, raiz visual de comerciante, nodos compactos, niveles minimos y leyenda de estados.
+- Se eliminaron los controles de layout/zoom de la UI porque no existen en la referencia y hacian la vista mas compleja que el modelo original.
+- Se actualizo `README.md` y `scripts/testQuestTree.tsx` para la nueva presentacion.
+
 ### 2026-05-17
 
 - Rama de trabajo: `feature/quest-tree`.
