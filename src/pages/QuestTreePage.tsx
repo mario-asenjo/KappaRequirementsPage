@@ -200,7 +200,7 @@ const QuestTreePage: React.FC<QuestTreePageProps> = ({ tasks }) => {
       <section className="quest-tree-hero quest-tree-hero--compact mb-4">
         <div>
           <span className="eyebrow">Quest tree</span>
-          <h1>Arbol de misiones Kappa</h1>
+          <h1>Arbol de misiones</h1>
           <p>
             Vista global por comerciante inspirada en eft.monster: secciones horizontales,
             lineas de progreso y nodos compactos con nivel minimo.

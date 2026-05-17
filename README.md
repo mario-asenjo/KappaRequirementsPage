@@ -6,9 +6,10 @@ Este repositorio contiene una aplicación SPA escrita en **React** (con Vite y T
 
 - **Vista por comerciantes**: filtra las misiones por comerciante y muestra el número de misiones completadas y totales de cada uno.
 - **Seguimiento persistente**: las misiones marcadas como completadas se guardan en `localStorage` para que tu progreso persista entre sesiones sin necesidad de registrarse.
-- **Resumen global de Kappa**: una barra de progreso en la cabecera indica cuántas misiones que cuentan para Kappa has completado y cuál es el avance total.
+- **Resumen global por objetivo**: una barra de progreso indica cuántas misiones del objetivo activo has completado y cuál es el avance total.
 - **Página de detalle**: cada misión tiene una página dedicada con su descripción, objetivos, prerrequisitos y recompensas.
 - **Árbol de misiones**: la ruta `/quest-tree` muestra todos los comerciantes en secciones horizontales tipo eft.monster, con desbloqueo por prerequisitos y nivel PMC.
+- **Selector de objetivo**: permite alternar entre Kappa, Lightkeeper, todas las misiones y achievements con quests asociadas.
 - **Datos sincronizables**: `src/data/tasks.json`, `src/data/achievements.json` y `src/data/goals.json` se pueden regenerar desde `tarkov.dev` y la wiki.
 - **Estilos versionados**: Bootstrap se instala como dependencia npm y se complementa con estilos locales responsivos en `src/styles.css`.
 - **Sistema visual Kraken**: `DESIGN.md` documenta paleta, tipografia, radios y componentes base usados por la UI.
@@ -102,6 +103,8 @@ El árbol se construye desde `tasks.json`, agrupa misiones por comerciante y con
 ## Árbol de misiones
 
 La vista `/quest-tree` permite explorar la progresión Kappa por comerciante. Usa el mismo `localStorage` (`completedTasks`) que el tracker y persiste el nivel PMC en `localStorage` bajo `playerLevel`.
+
+El selector `Objetivo` de la cabecera cambia el conjunto de misiones activo. Panel, sidebar, listas, detalle y árbol se recalculan con ese objetivo sin perder el progreso global almacenado en `userProgress`.
 
 La presentación sigue el patrón de eft.monster: cada comerciante aparece como una sección independiente con un SVG horizontal, nodos compactos, nivel mínimo junto al nodo y scroll lateral para cadenas grandes. Solo se renderizan misiones desbloqueadas por prerequisitos y por el nivel PMC indicado. Selecciona un nodo para ver información rápida, marcar/desmarcar la misión o abrir su página de detalle.
 

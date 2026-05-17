@@ -1,10 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useProgress from '../hooks/useProgress';
-import { Task } from '../types';
+import { Goal, Task } from '../types';
 
 interface HomeProps {
   tasks: Task[];
+  goal?: Goal;
+  goalProgress: {
+    percent: number;
+  };
 }
 
 /**
@@ -12,34 +16,34 @@ interface HomeProps {
  * overview of progress for each trader and encourages navigation to view
  * individual tasks. Each trader card links to the corresponding list page.
  */
-const Home: React.FC<HomeProps> = ({ tasks }) => {
+const Home: React.FC<HomeProps> = ({ tasks, goal, goalProgress }) => {
   const { completedTaskIds } = useProgress();
 
   // Group tasks by trader
   const traders = Array.from(new Set(tasks.map((t) => t.trader))).sort();
   const totalCompleted = tasks.filter((task) => completedTaskIds.includes(task.id)).length;
   const totalPending = tasks.length - totalCompleted;
-  const totalProgress = tasks.length > 0 ? Math.round((totalCompleted / tasks.length) * 100) : 0;
+  const totalProgress = goalProgress.percent;
   const nextPending = tasks.find((task) => !completedTaskIds.includes(task.id));
 
   return (
     <div className="container-fluid">
       <section className="hero-panel dashboard-panel mb-4">
         <div className="dashboard-copy">
-          <span className="eyebrow">Kappa mission control</span>
-          <h1>Tu ruta hacia Kappa, limpia y medible.</h1>
+          <span className="eyebrow">Mission control</span>
+          <h1>Tu ruta hacia {goal?.name ?? 'Kappa'}, limpia y medible.</h1>
           <p>
-            Sigue el avance por comerciante, filtra pendientes y conserva el progreso
+            Sigue el avance por comerciante, filtra pendientes y conserva el progreso del objetivo activo
             localmente sin cuentas ni credenciales.
           </p>
           <div className="hero-stats" aria-label="Resumen global">
             <span><strong>{totalCompleted}</strong> completadas</span>
             <span><strong>{totalPending}</strong> pendientes</span>
-            <span><strong>{tasks.length}</strong> misiones Kappa</span>
+            <span><strong>{tasks.length}</strong> misiones</span>
           </div>
         </div>
-        <div className="dashboard-card" aria-label="Progreso global hacia Kappa">
-          <span className="dashboard-label">Progreso global</span>
+        <div className="dashboard-card" aria-label={`Progreso global hacia ${goal?.name ?? 'el objetivo activo'}`}>
+          <span className="dashboard-label">Progreso {goal?.name ?? 'global'}</span>
           <strong>{totalProgress}%</strong>
           <div className="progress" aria-hidden="true">
             <div className="progress-bar" style={{ width: `${totalProgress}%` }}></div>
@@ -49,7 +53,7 @@ const Home: React.FC<HomeProps> = ({ tasks }) => {
               Siguiente: {nextPending.title}
             </Link>
           ) : (
-            <span className="next-task is-done">Todas las misiones Kappa estan completadas</span>
+            <span className="next-task is-done">Todas las misiones del objetivo estan completadas</span>
           )}
         </div>
       </section>
