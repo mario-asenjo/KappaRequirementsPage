@@ -6,6 +6,8 @@
     "dev": "vite",
     "build": "vite build",
     "update:tasks": "tsx scripts/fetchTasks.ts",
+    "update:achievements": "tsx scripts/fetchAchievements.ts",
+    "build:goals": "tsx scripts/buildGoals.ts",
     "build:quests": "tsx scripts/buildQuestTree.ts",
     "test:quests": "tsx scripts/testQuestTree.tsx",
     "preview": "vite preview"

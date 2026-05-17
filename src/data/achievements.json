@@ -1,0 +1,1972 @@
+{
+  "metadata": {
+    "sources": [
+      "https://api.tarkov.dev/graphql",
+      "https://escapefromtarkov.fandom.com/wiki/Achievements"
+    ],
+    "syncedAt": "2026-05-17T13:05:41.138Z",
+    "achievementCount": 105,
+    "wikiEnrichedCount": 105
+  },
+  "achievements": [
+    {
+      "id": "66742c003a67b164a300fcbf",
+      "name": "A Key to Salvation",
+      "description": "Help Therapist save lives and complete the Key to Salvation event task line",
+      "hidden": false,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-66742c003a67b164a300fcbf-icon.webp",
+      "playersCompletedPercent": 0.29,
+      "wiki": {
+        "section": "Event achievements",
+        "reward": "Yes",
+        "rawDescription": "Help Therapist save lives and complete the Key to Salvation event task line",
+        "links": [
+          "Events",
+          "A Key to Salvation",
+          "File:A Key to Salvation Achievement Icon.png",
+          "Therapist"
+        ]
+      }
+    },
+    {
+      "id": "67c838a4c566b0028f0f2d07",
+      "name": "All on Red",
+      "description": "Go all in on the BEAR squad beyond the cordon and complete Skier's Profitable Venture task line",
+      "hidden": false,
+      "rarity": "Rare",
+      "imageLink": "https://assets.tarkov.dev/achievement-67c838a4c566b0028f0f2d07-icon.webp",
+      "playersCompletedPercent": 0.05,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Go all in on the BEAR squad beyond the cordon and complete Skier's Profitable Venture task line",
+        "links": [
+          "File:All on Red Achievement Icon.png",
+          "Profitable Venture"
+        ]
+      }
+    },
+    {
+      "id": "675709bef4e2a2ce0f058f56",
+      "name": "All-Wheel Drive",
+      "description": "Resolve the issue with the BTR driver one way or another",
+      "hidden": false,
+      "rarity": "Rare",
+      "imageLink": "https://assets.tarkov.dev/achievement-675709bef4e2a2ce0f058f56-icon.webp",
+      "playersCompletedPercent": 0.4,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "Modest wallpaper Hideout wall style",
+        "rawDescription": "Resolve the issue with the BTR Driver one way or another",
+        "links": [
+          "File:All-Wheel Drive Achievement Icon.png",
+          "The Price of Independence",
+          "Choose Your Friends Wisely",
+          "Hideout"
+        ]
+      }
+    },
+    {
+      "id": "65141032a3dd9b6aa7159ed3",
+      "name": "Another Cold Case",
+      "description": "Neutralize Glukhar 15 times while playing as a PMC",
+      "hidden": false,
+      "rarity": "Rare",
+      "imageLink": "https://assets.tarkov.dev/achievement-65141032a3dd9b6aa7159ed3-icon.webp",
+      "playersCompletedPercent": 0.18,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Eliminate Glukhar 15 times while playing as a PMC",
+        "links": [
+          "File:Another Cold Case Achievement Icon.png",
+          "Glukhar"
+        ]
+      }
+    },
+    {
+      "id": "6512f1e3be73cc7f07358ed5",
+      "name": "Art of Style",
+      "description": "Neutralize Killa for the first time while playing as a PMC",
+      "hidden": false,
+      "rarity": "Common",
+      "imageLink": "https://assets.tarkov.dev/achievement-6512f1e3be73cc7f07358ed5-icon.webp",
+      "playersCompletedPercent": 6.39,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Eliminate Killa for the first time while playing as a PMC(Not Vengeful Killa)",
+        "links": [
+          "File:Art of Style Achievement Icon.png",
+          "Killa"
+        ]
+      }
+    },
+    {
+      "id": "6a04f93d7a6a2b325906bb5c",
+      "name": "Awaiting Departure",
+      "description": "Complete the Full Speed Ahead event task line",
+      "hidden": false,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-6a04f93d7a6a2b325906bb5c-icon.webp",
+      "playersCompletedPercent": 0.04,
+      "wiki": {
+        "section": "Event achievements",
+        "reward": "No",
+        "rawDescription": "Complete the Full Speed Ahead event task line",
+        "links": [
+          "Events",
+          "Mayday",
+          "File:Awaiting Departure Achievement Icon.png"
+        ]
+      }
+    },
+    {
+      "id": "65141bdfcf2f1c285e606446",
+      "name": "BEAR With Me",
+      "description": "Eliminate 50 BEAR PMC operatives",
+      "hidden": false,
+      "rarity": "Common",
+      "imageLink": "https://assets.tarkov.dev/achievement-65141bdfcf2f1c285e606446-icon.webp",
+      "playersCompletedPercent": 7.48,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Eliminate 50 BEAR PMC operatives",
+        "links": [
+          "File:BEAR With Me Achievement Icon.png",
+          "BEAR"
+        ]
+      }
+    },
+    {
+      "id": "6912163e680e04c5da057e5b",
+      "name": "Better Served",
+      "description": "Refuse to sell TerraGroup technology",
+      "hidden": true,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-6912163e680e04c5da057e5b-icon.webp",
+      "playersCompletedPercent": 0.41,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "Yes",
+        "rawDescription": "Refuse to sell TerraGroup technology(Do not sell Mechanic the Unknown device fragment)",
+        "links": [
+          "File:Better Served Achievement Icon.png",
+          "Mechanic",
+          "Unknown device fragment"
+        ]
+      }
+    },
+    {
+      "id": "651419eea3dd9b6aa7159ee5",
+      "name": "Blind Fury",
+      "description": "Eliminate any enemy while suffering from the Flash effect while playing as a PMC",
+      "hidden": false,
+      "rarity": "Rare",
+      "imageLink": "https://assets.tarkov.dev/achievement-651419eea3dd9b6aa7159ee5-icon.webp",
+      "playersCompletedPercent": 5.86,
+      "wiki": {
+        "section": "Arena achievements",
+        "reward": "No",
+        "rawDescription": "Eliminate an enemy while you are blinded by a flashbang grenade",
+        "links": [
+          "File:Blind Fury Arena Achievement Icon.png"
+        ]
+      }
+    },
+    {
+      "id": "6513eb6e0dc723592b0f9095",
+      "name": "Call Your Brother",
+      "description": "Neutralize Tagilla for the first time while playing as a PMC",
+      "hidden": false,
+      "rarity": "Common",
+      "imageLink": "https://assets.tarkov.dev/achievement-6513eb6e0dc723592b0f9095-icon.webp",
+      "playersCompletedPercent": 11.53,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Eliminate Tagilla for the first time while playing as a PMC(Not Shadow of Tagilla)",
+        "links": [
+          "File:Call Your Brother Achievement Icon.png",
+          "Tagilla",
+          "Shadow of Tagilla"
+        ]
+      }
+    },
+    {
+      "id": "6634c8886e083a141f4aa3f4",
+      "name": "Cardinal Richelieu",
+      "description": "Find out who actually controls Tarkov and complete The Tarkov Mystery event task line",
+      "hidden": true,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-6634c8886e083a141f4aa3f4-icon.webp",
+      "playersCompletedPercent": 0.05,
+      "wiki": {
+        "section": "Event achievements",
+        "reward": "Mr Kerman's cat hologram",
+        "rawDescription": "Find out who actually controls Tarkov and complete The Tarkov Mystery event task line",
+        "links": [
+          "Events",
+          "Ding-Ding-Ding",
+          "File:Cardinal Richelieu Achievement Icon.png",
+          "Mr Kerman's cat hologram"
+        ]
+      }
+    },
+    {
+      "id": "6514174fb1c08b0feb216d73",
+      "name": "Chris's Heir",
+      "description": "Eliminate a PMC operative with a headshot from over 500 meters away while playing as a PMC",
+      "hidden": true,
+      "rarity": "Common",
+      "imageLink": "https://assets.tarkov.dev/achievement-6514174fb1c08b0feb216d73-icon.webp",
+      "playersCompletedPercent": 0.2,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "Yes",
+        "rawDescription": "Eliminate a PMC operative with a headshot from over 500 meters away while playing as a PMC",
+        "links": [
+          "File:Chris's Heir Achievement Icon.png"
+        ]
+      }
+    },
+    {
+      "id": "670feb95a4e71050310cc14b",
+      "name": "Complete Remission",
+      "description": "Cure all the infected and complete the Halloween 2024 event task line",
+      "hidden": false,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-670feb95a4e71050310cc14b-icon.webp",
+      "playersCompletedPercent": 0.2,
+      "wiki": {
+        "section": "Event achievements",
+        "reward": "Saiga-12K FA purchase at Jaeger LL4",
+        "rawDescription": "Cure all the infected and complete the Halloween 2024 event task line",
+        "links": [
+          "Events",
+          "Clear Conscience",
+          "File:Complete Remission Achievement Icon.png",
+          "Saiga-12K FA",
+          "Jaeger"
+        ]
+      }
+    },
+    {
+      "id": "6513ee11a3dd9b6aa7159b4a",
+      "name": "Deal to Make",
+      "description": "Neutralize Reshala for the first time while playing as a PMC",
+      "hidden": false,
+      "rarity": "Common",
+      "imageLink": "https://assets.tarkov.dev/achievement-6513ee11a3dd9b6aa7159b4a-icon.webp",
+      "playersCompletedPercent": 12.14,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Eliminate Reshala for the first time while playing as a PMC",
+        "links": [
+          "File:Deal to Make Achievement Icon.png",
+          "Reshala"
+        ]
+      }
+    },
+    {
+      "id": "68e8f04eb841bc8ac305350a",
+      "name": "Debtor",
+      "description": "Escape from Tarkov without ever escaping from yourself",
+      "hidden": false,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-68e8f04eb841bc8ac305350a-icon.webp",
+      "playersCompletedPercent": 0.07,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Escape from Tarkov without ever escaping from yourself",
+        "links": [
+          "File:Debtor Achievement Icon.png"
+        ]
+      }
+    },
+    {
+      "id": "68f76353c152253a5b01a612",
+      "name": "Debtor (PVE ZONE)",
+      "description": "Escape from Tarkov without ever escaping from yourself",
+      "hidden": false,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-68f76353c152253a5b01a612-icon.webp",
+      "playersCompletedPercent": 0.06,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Escape from Tarkov without ever escaping from yourself",
+        "links": [
+          "File:Debtor (PVE ZONE) Achievement Icon.png"
+        ]
+      }
+    },
+    {
+      "id": "65141ab70dc723592b0f9482",
+      "name": "Drunken Master",
+      "description": "Eliminate a PMC operative with a headshot while under the alcohol effect while playing as a PMC",
+      "hidden": true,
+      "rarity": "Common",
+      "imageLink": "https://assets.tarkov.dev/achievement-65141ab70dc723592b0f9482-icon.webp",
+      "playersCompletedPercent": 0.77,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "Yes",
+        "rawDescription": "Eliminate a PMC operative with a headshot while under the alcohol effect while playing as a PMC",
+        "links": [
+          "File:Drunken Master Achievement Icon.png"
+        ]
+      }
+    },
+    {
+      "id": "6984ab58ee0ae2c0d5075f33",
+      "name": "Duck Hunt",
+      "description": "Complete the Duck Hunt 2026 event task",
+      "hidden": false,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-6984ab58ee0ae2c0d5075f33-icon.webp",
+      "playersCompletedPercent": 0.37,
+      "wiki": {
+        "section": "Event achievements",
+        "reward": "* Escape from Duckov poster\n* Duck figurine\n* Scavenger Hideout shooting range target style",
+        "rawDescription": "Complete the Duck Hunt 2026 event task",
+        "links": [
+          "Events",
+          "Duck Hunt",
+          "File:Duck Hunt Achievement Icon.png",
+          "Escape from Duckov poster",
+          "Duck figurine",
+          "Hideout"
+        ]
+      }
+    },
+    {
+      "id": "67a0e57b972c11a3f50773b2",
+      "name": "Dungeon Master",
+      "description": "Complete the Labyrinth 2025 event task line and all side tasks",
+      "hidden": false,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-67a0e57b972c11a3f50773b2-icon.webp",
+      "playersCompletedPercent": 0.08,
+      "wiki": {
+        "section": "Event achievements",
+        "reward": "* Minotaur's Lair Hideout ceiling style\n* Minotaur's Lair Hideout wall style\n* Minotaur's Lair Hideout floor style",
+        "rawDescription": "Complete the Labyrinth 2025 event task line and all side tasks",
+        "links": [
+          "Events",
+          "Keeper's Word",
+          "File:Dungeon Master Achievement Icon.png",
+          "Hideout"
+        ]
+      }
+    },
+    {
+      "id": "6912153f761a11e52408fbd2",
+      "name": "Easy Way",
+      "description": "Use the instructions given by TerraGroup. Wonder what could go wrong?",
+      "hidden": true,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-6912153f761a11e52408fbd2-icon.webp",
+      "playersCompletedPercent": 0.05,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "Yes",
+        "rawDescription": "Use the instructions given by TerraGroup. Wonder what could go wrong?(Refuse to work with Mr. Kerman)",
+        "links": [
+          "File:Easy Way Achievement Icon.png"
+        ]
+      }
+    },
+    {
+      "id": "69121515e329984a340f00b4",
+      "name": "Enough of Your Games!",
+      "description": "Refuse to fall for Mr. Kerman's schemes",
+      "hidden": true,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-69121515e329984a340f00b4-icon.webp",
+      "playersCompletedPercent": 0.1,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "Yes",
+        "rawDescription": "Refuse to fall for Mr. Kerman's schemes(Refuse to deliver evidence to Mr. Kerman)",
+        "links": [
+          "File:Enough of Your Games Achievement Icon.png"
+        ]
+      }
+    },
+    {
+      "id": "68e8f042b8efa2bbeb009d89",
+      "name": "Fallen",
+      "description": "Escape from Tarkov only to fall in the darkness",
+      "hidden": false,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-68e8f042b8efa2bbeb009d89-icon.webp",
+      "playersCompletedPercent": 0.07,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Escape from Tarkov only to fall in the darkness",
+        "links": [
+          "File:Fallen Achievement Icon.png"
+        ]
+      }
+    },
+    {
+      "id": "68f76344bc0e8927900279f0",
+      "name": "Fallen (PVE ZONE)",
+      "description": "Escape from Tarkov only to fall in the darkness",
+      "hidden": false,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-68f76344bc0e8927900279f0-icon.webp",
+      "playersCompletedPercent": 0.06,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Escape from Tarkov only to fall in the darkness",
+        "links": [
+          "File:Fallen (PVE ZONE) Achievement Icon.png"
+        ]
+      }
+    },
+    {
+      "id": "670febed5ee0fc738a0965a4",
+      "name": "Fatal Outcome",
+      "description": "Destroy the virus along with all the infected and complete the Halloween 2024 event task line",
+      "hidden": false,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-670febed5ee0fc738a0965a4-icon.webp",
+      "playersCompletedPercent": 0.17,
+      "wiki": {
+        "section": "Event achievements",
+        "reward": "Saiga-12K FA purchase at Prapor LL4",
+        "rawDescription": "Destroy the virus along with all the infected and complete the Halloween 2024 event task line",
+        "links": [
+          "Events",
+          "Radical Treatment",
+          "File:Fatal Outcome Achievement Icon.png",
+          "Saiga-12K FA",
+          "Prapor"
+        ]
+      }
+    },
+    {
+      "id": "6514321bec10ff011f17ccac",
+      "name": "Firefly",
+      "description": "Meet Lightkeeper for the first time while playing as a PMC",
+      "hidden": false,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-6514321bec10ff011f17ccac-icon.webp",
+      "playersCompletedPercent": 1.21,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Meet Lightkeeper for the first time while playing as PMC",
+        "links": [
+          "File:Firefly Achievement Icon.png",
+          "Lightkeeper"
+        ]
+      }
+    },
+    {
+      "id": "65141c80ec10ff011f17cc3e",
+      "name": "First Time Always Hurts",
+      "description": "Survive a raid without the Run-through status for the first time",
+      "hidden": true,
+      "rarity": "Common",
+      "imageLink": "https://assets.tarkov.dev/achievement-65141c80ec10ff011f17cc3e-icon.webp",
+      "playersCompletedPercent": 40.8,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "Yes",
+        "rawDescription": "Survive a raid without the Run-through status for the first time",
+        "links": [
+          "File:First Time Always Hurts Achievement Icon.png"
+        ]
+      }
+    },
+    {
+      "id": "68d3fe84757f8967ec09099b",
+      "name": "Five Plus",
+      "description": "Earn the Prestige level 5",
+      "hidden": true,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-68d3fe84757f8967ec09099b-icon.webp",
+      "playersCompletedPercent": 0.03,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "Yes",
+        "rawDescription": "Earn the Prestige level 5",
+        "links": [
+          "File:Five Plus Achievement Icon.png",
+          "Prestige"
+        ]
+      }
+    },
+    {
+      "id": "6513f0a10dc723592b0f90cf",
+      "name": "Funny Graveyard Keeper",
+      "description": "Neutralize Kaban for the first time while playing as a PMC",
+      "hidden": false,
+      "rarity": "Common",
+      "imageLink": "https://assets.tarkov.dev/achievement-6513f0a10dc723592b0f90cf-icon.webp",
+      "playersCompletedPercent": 4.11,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Eliminate Kaban for the first time while playing as a PMC",
+        "links": [
+          "File:Funny Graveyard Keeper Achievement Icon.png",
+          "Kaban"
+        ]
+      }
+    },
+    {
+      "id": "68dfdeb7958a19b62b0ae460",
+      "name": "Going Light",
+      "description": "Final prep before the release!",
+      "hidden": false,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-68dfdeb7958a19b62b0ae460-icon.webp",
+      "playersCompletedPercent": 1,
+      "wiki": {
+        "section": "Event achievements",
+        "reward": "No",
+        "rawDescription": "Final prep before the release!",
+        "links": [
+          "Events",
+          "Staying Light",
+          "File:Going Light Achievement Icon.png"
+        ]
+      }
+    },
+    {
+      "id": "6513eec00dc723592b0f90cc",
+      "name": "Grouse Hunting",
+      "description": "Neutralize Glukhar for the first time while playing as a PMC",
+      "hidden": false,
+      "rarity": "Common",
+      "imageLink": "https://assets.tarkov.dev/achievement-6513eec00dc723592b0f90cc-icon.webp",
+      "playersCompletedPercent": 6.49,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Eliminate Glukhar for the first time while playing as a PMC",
+        "links": [
+          "File:Grouse Hunting Achievement Icon.png",
+          "Glukhar"
+        ]
+      }
+    },
+    {
+      "id": "69de1be5d378f8aef8008409",
+      "name": "Habet, hoc habet!",
+      "description": "Help Skier disrupt the start of the new season in Arena and complete the Casus Belli event task line",
+      "hidden": false,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-69de1be5d378f8aef8008409-icon.webp",
+      "playersCompletedPercent": 0.06,
+      "wiki": {
+        "section": "Event achievements",
+        "reward": "No",
+        "rawDescription": "Help Skier disrupt the start of the new season in Arena and complete the Casus Belli event task line",
+        "links": [
+          "Events",
+          "Habet, hoc habet!",
+          "File:Habet, hoc habet! Achievement Icon.png"
+        ]
+      }
+    },
+    {
+      "id": "65140b55cf2f1c285e606414",
+      "name": "Hammer and Scythe",
+      "description": "Neutralize Tagilla 15 times while playing as a PMC",
+      "hidden": false,
+      "rarity": "Rare",
+      "imageLink": "https://assets.tarkov.dev/achievement-65140b55cf2f1c285e606414-icon.webp",
+      "playersCompletedPercent": 0.57,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "Factory walls Hideout wall style",
+        "rawDescription": "Eliminate Tagilla 15 times while playing as a PMC(Not Shadow of Tagilla)",
+        "links": [
+          "File:Hammer and Scythe Achievement Icon.png",
+          "Tagilla",
+          "Shadow of Tagilla",
+          "Hideout"
+        ]
+      }
+    },
+    {
+      "id": "668bf47c781d446fdc083711",
+      "name": "High Competition",
+      "description": "Choose your side and complete the Arms Race event task line",
+      "hidden": false,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-668bf47c781d446fdc083711-icon.webp",
+      "playersCompletedPercent": 0.18,
+      "wiki": {
+        "section": "Event achievements",
+        "reward": "No",
+        "rawDescription": "Choose your side and complete the Arms Race event task line",
+        "links": [
+          "Events",
+          "Time-Tested",
+          "Western Quality Standards",
+          "File:High Competition Achievement Icon.png"
+        ]
+      }
+    },
+    {
+      "id": "6842c27a38482d35ac0bd847",
+      "name": "Higher and Higher",
+      "description": "Earn the Prestige level 4",
+      "hidden": true,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-6842c27a38482d35ac0bd847-icon.webp",
+      "playersCompletedPercent": 0.05,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "Yes",
+        "rawDescription": "Earn the Prestige level 4",
+        "links": [
+          "File:Higher and Higher Achievement Icon.png",
+          "Prestige"
+        ]
+      }
+    },
+    {
+      "id": "66e2a7e5919bad697104f4b3",
+      "name": "Highway to the Danger Zone",
+      "description": "Complete the Mortar Strike 2024 event task line",
+      "hidden": false,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-66e2a7e5919bad697104f4b3-icon.webp",
+      "playersCompletedPercent": 0.27,
+      "wiki": {
+        "section": "Event achievements",
+        "reward": "No",
+        "rawDescription": "Complete the Mortar Strike 2024 event task line",
+        "links": [
+          "Events",
+          "Cream of the Crop",
+          "File:Highway to the Danger Zone Achievement Icon.png"
+        ]
+      }
+    },
+    {
+      "id": "691216216cd39d8e1d09173b",
+      "name": "I Am Speed",
+      "description": "Complete Prapor's tasks within three days",
+      "hidden": true,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-691216216cd39d8e1d09173b-icon.webp",
+      "playersCompletedPercent": 0.01,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "Yes",
+        "rawDescription": "Complete Prapor's tasks within three days",
+        "links": [
+          "File:I Am Speed Achievement Icon.png"
+        ]
+      }
+    },
+    {
+      "id": "6514134eec10ff011f17cc26",
+      "name": "I Hear the Voice of Darkness",
+      "description": "Neutralize Knight 15 times while playing as a PMC",
+      "hidden": false,
+      "rarity": "Rare",
+      "imageLink": "https://assets.tarkov.dev/achievement-6514134eec10ff011f17cc26-icon.webp",
+      "playersCompletedPercent": 0.15,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Eliminate Knight 15 times while playing as a PMC",
+        "links": [
+          "File:I Hear the Voice of Darkness Achievement Icon.png",
+          "Knight"
+        ]
+      }
+    },
+    {
+      "id": "67a0e57117e34930e50075f3",
+      "name": "In Search of an Exit",
+      "description": "Complete the Labyrinth 2025 event task line",
+      "hidden": false,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-67a0e57117e34930e50075f3-icon.webp",
+      "playersCompletedPercent": 0.24,
+      "wiki": {
+        "section": "Event achievements",
+        "reward": "* Final Moment poster\n* Last Breath poster\n* Tark Souls poster\n* Taurus poster",
+        "rawDescription": "Complete the Labyrinth 2025 event task line",
+        "links": [
+          "Events",
+          "Hypotheses Testing",
+          "File:In Search of an Exit Achievement Icon.png",
+          "Final Moment poster",
+          "Last Breath poster",
+          "Tark Souls poster",
+          "Taurus poster"
+        ]
+      }
+    },
+    {
+      "id": "691213c8680e04c5da0571eb",
+      "name": "Inferno",
+      "description": "Learn everything about the Blue Fire",
+      "hidden": false,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-691213c8680e04c5da0571eb-icon.webp",
+      "playersCompletedPercent": 0.6,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Learn everything about the Blue Fire(Complete Blue Fire)",
+        "links": [
+          "File:Inferno Achievement Icon.png",
+          "Blue Fire"
+        ]
+      }
+    },
+    {
+      "id": "6634ca69ee506a5c3e61be56",
+      "name": "INVOLVED IN PEACE",
+      "description": "Pick Peacekeeper's side and complete The Tarkov Mystery event task line",
+      "hidden": true,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-6634ca69ee506a5c3e61be56-icon.webp",
+      "playersCompletedPercent": 0.06,
+      "wiki": {
+        "section": "Event achievements",
+        "reward": "Mr Kerman's cat hologram",
+        "rawDescription": "Pick Peacekeeper's side and complete The Tarkov Mystery event task line",
+        "links": [
+          "Events",
+          "Redemption",
+          "File:INVOLVED IN PEACE Achievement Icon.png",
+          "Peacekeeper",
+          "Mr Kerman's cat hologram"
+        ]
+      }
+    },
+    {
+      "id": "664f23e44702fd5db50ee732",
+      "name": "Jack of All Trades",
+      "description": "Complete all of Gunsmith series tasks",
+      "hidden": false,
+      "rarity": "Rare",
+      "imageLink": "https://assets.tarkov.dev/achievement-664f23e44702fd5db50ee732-icon.webp",
+      "playersCompletedPercent": 2.37,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "Small tiles Hideout floor style",
+        "rawDescription": "Complete all of Gunsmith series tasks",
+        "links": [
+          "File:Jack of all trades Achievement Icon.png",
+          "Gunsmith - Part 1",
+          "Hideout"
+        ]
+      }
+    },
+    {
+      "id": "651417d6ec10ff011f17cc31",
+      "name": "John's Heir",
+      "description": "Eliminate 4 PMC operatives with a headshot while using a pistol in a single raid while playing as a PMC",
+      "hidden": true,
+      "rarity": "Common",
+      "imageLink": "https://assets.tarkov.dev/achievement-651417d6ec10ff011f17cc31-icon.webp",
+      "playersCompletedPercent": 0.25,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "Yes",
+        "rawDescription": "Eliminate 4 PMC operatives with a headshot while using a pistol in a single raid while playing as a PMC\nNote: Revolvers can't be used.",
+        "links": [
+          "File:John's Heir Achievement Icon.png",
+          "Weapons"
+        ]
+      }
+    },
+    {
+      "id": "691213563d597b2ef80a21cf",
+      "name": "Just Business",
+      "description": "Double-cross Prapor",
+      "hidden": true,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-691213563d597b2ef80a21cf-icon.webp",
+      "playersCompletedPercent": 0.76,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "Yes",
+        "rawDescription": "Double-cross Prapor(Do not give Prapor the Armored case)",
+        "links": [
+          "File:Just Business Achievement Icon.png",
+          "Prapor",
+          "Armored case"
+        ]
+      }
+    },
+    {
+      "id": "655b49bc91aa9e07687ae47c",
+      "name": "Justice",
+      "description": "Neutralize Kollontay for the first time while playing as a PMC",
+      "hidden": false,
+      "rarity": "Common",
+      "imageLink": "https://assets.tarkov.dev/achievement-655b49bc91aa9e07687ae47c-icon.webp",
+      "playersCompletedPercent": 4.52,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Eliminate Kollontay for the first time while playing as a PMC",
+        "links": [
+          "File:Justice Achievement Icon.png",
+          "Kollontay"
+        ]
+      }
+    },
+    {
+      "id": "6842c25bd02bc07d70054019",
+      "name": "Keeping Up the Pace",
+      "description": "Earn the Prestige level 3",
+      "hidden": true,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-6842c25bd02bc07d70054019-icon.webp",
+      "playersCompletedPercent": 0.1,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "Yes",
+        "rawDescription": "Earn the Prestige level 3",
+        "links": [
+          "File:Keeping Up the Pace Achievement Icon.png",
+          "Prestige"
+        ]
+      }
+    },
+    {
+      "id": "675998a894008342eb04e47f",
+      "name": "Khorovod",
+      "description": "Celebrate Christmas and New Year and complete the Khorovod 2024 event task line",
+      "hidden": false,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-675998a894008342eb04e47f-icon.webp",
+      "playersCompletedPercent": 0.12,
+      "wiki": {
+        "section": "Event achievements",
+        "reward": "* Khorovod armband\n* BEAR Winter upper clothing\n* BEAR Winter lower clothing\n* USEC Winter upper clothing\n* USEC Winter lower clothing",
+        "rawDescription": "Celebrate Christmas and New Year and complete the Khorovod 2024 event task line",
+        "links": [
+          "Events",
+          "Khorovod",
+          "File:Khorovod Achievement Icon.png",
+          "Khorovod armband",
+          "BEAR Winter upper",
+          "BEAR Winter lower",
+          "USEC Winter upper",
+          "USEC Winter lower"
+        ]
+      }
+    },
+    {
+      "id": "6512f16bde333c33d5127cbc",
+      "name": "Killer of Killers",
+      "description": "Eliminate one of the hooded men with their own knife at night time while playing as a PMC",
+      "hidden": true,
+      "rarity": "Common",
+      "imageLink": "https://assets.tarkov.dev/achievement-6512f16bde333c33d5127cbc-icon.webp",
+      "playersCompletedPercent": 0.08,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "Yes",
+        "rawDescription": "Eliminate one of the hooded men with their own knife at night time while playing as a PMC",
+        "links": [
+          "File:Killer of Killers Icon.png",
+          "Cultists",
+          "Cultist knife"
+        ]
+      }
+    },
+    {
+      "id": "6514184ec31fcb0e163577d2",
+      "name": "Killer7",
+      "description": "Eliminate 7 PMC operatives in a single raid while playing as a PMC",
+      "hidden": true,
+      "rarity": "Rare",
+      "imageLink": "https://assets.tarkov.dev/achievement-6514184ec31fcb0e163577d2-icon.webp",
+      "playersCompletedPercent": 0.7,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "Yes",
+        "rawDescription": "Kill 7 PMC operatives in one raid, playing as a PMC\nNote: Transiting resets progress.",
+        "links": [
+          "File:Killer7 Achievement Icon.png",
+          "Transits"
+        ]
+      }
+    },
+    {
+      "id": "65140bbec31fcb0e163577b9",
+      "name": "King of the Sawmill",
+      "description": "Neutralize Shturman 15 times while playing as a PMC",
+      "hidden": false,
+      "rarity": "Rare",
+      "imageLink": "https://assets.tarkov.dev/achievement-65140bbec31fcb0e163577b9-icon.webp",
+      "playersCompletedPercent": 0.44,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Eliminate Shturman 15 times while playing as a PMC",
+        "links": [
+          "File:King of the Sawmill Achievement Icon.png",
+          "Shturman"
+        ]
+      }
+    },
+    {
+      "id": "691215e8680e04c5da057e57",
+      "name": "Little Triumphs",
+      "description": "Gather evidence of all of TerraGroup's \"minor\" misdeeds",
+      "hidden": false,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-691215e8680e04c5da057e57-icon.webp",
+      "playersCompletedPercent": 0.22,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Gather evidence of all of TerraGroup's \"minor\" misdeeds(Deliver all 32 minor evidence to Mr. Kerman)",
+        "links": [
+          "File:Little Triumphs Achievement Icon.png",
+          "Minor evidence list"
+        ]
+      }
+    },
+    {
+      "id": "6634cae870af846d2868dada",
+      "name": "Local Strong Man",
+      "description": "Pick Skier's side and complete The Tarkov Mystery event task line",
+      "hidden": true,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-6634cae870af846d2868dada-icon.webp",
+      "playersCompletedPercent": 0.35,
+      "wiki": {
+        "section": "Event achievements",
+        "reward": "Mr Kerman's cat hologram",
+        "rawDescription": "Pick Skier's side and complete The Tarkov Mystery event task line",
+        "links": [
+          "Events",
+          "Redemption",
+          "File:Local strong man Achievement Icon.png",
+          "Skier",
+          "Mr Kerman's cat hologram"
+        ]
+      }
+    },
+    {
+      "id": "651415feb49e3253755f4b68",
+      "name": "Long Live the King!",
+      "description": "Neutralize every Boss once while playing as a PMC",
+      "hidden": false,
+      "rarity": "Rare",
+      "imageLink": "https://assets.tarkov.dev/achievement-651415feb49e3253755f4b68-icon.webp",
+      "playersCompletedPercent": 0.46,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Eliminate every Boss once while playing as a PMC",
+        "links": [
+          "File:Long Live the King! Achievement Icon.png",
+          "Boss"
+        ]
+      }
+    },
+    {
+      "id": "65141eb5c31fcb0e163577dd",
+      "name": "Lost",
+      "description": "Locate the crashed plane on Woods while playing as a PMC",
+      "hidden": true,
+      "rarity": "Common",
+      "imageLink": "https://assets.tarkov.dev/achievement-65141eb5c31fcb0e163577dd-icon.webp",
+      "playersCompletedPercent": 27.86,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "Yes",
+        "rawDescription": "Locate the crashed plane on Woods while playing as a PMC",
+        "links": [
+          "File:Lost Achievement Icon.png",
+          "Woods"
+        ]
+      }
+    },
+    {
+      "id": "65141a3059647d2cb3213c9e",
+      "name": "Make a Notch",
+      "description": "Eliminate 30 PMC operatives with a melee weapon while playing as a PMC",
+      "hidden": false,
+      "rarity": "Common",
+      "imageLink": "https://assets.tarkov.dev/achievement-65141a3059647d2cb3213c9e-icon.webp",
+      "playersCompletedPercent": 0.03,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "Factory floor Hideout floor style",
+        "rawDescription": "Eliminate 30 PMC operatives with a melee weapon while playing as a PMC",
+        "links": [
+          "File:Make a Notch Achievement Icon.png",
+          "Weapons",
+          "Hideout"
+        ]
+      }
+    },
+    {
+      "id": "691212088e10a4e1fb0f48c4",
+      "name": "Man of His Word",
+      "description": "Complete the task given to you to the end",
+      "hidden": true,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-691212088e10a4e1fb0f48c4-icon.webp",
+      "playersCompletedPercent": 1.19,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "Yes",
+        "rawDescription": "Complete the task given to you to the end(Give Prapor the Armored case)",
+        "links": [
+          "File:Man of His Word Achievement Icon.png",
+          "Prapor",
+          "Armored case"
+        ]
+      }
+    },
+    {
+      "id": "66b493bc2d8cd3b5e90a3648",
+      "name": "Marathon",
+      "description": "Visit all locations in one raid as a PMC",
+      "hidden": false,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-66b493bc2d8cd3b5e90a3648-icon.webp",
+      "playersCompletedPercent": 0.27,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Visit all locations in one raid as a PMC(Ground Zero, Streets of Tarkov, The Lab, Interchange, Customs, Factory, Woods, Reserve, Lighthouse, Shoreline)\nNote: Extracting after visiting all locations is required for the raid to count.",
+        "links": [
+          "File:Marathon Achievement Icon.png",
+          "Map_of_Tarkov",
+          "Ground Zero",
+          "Streets of Tarkov",
+          "The Lab",
+          "Interchange",
+          "Customs",
+          "Factory",
+          "Woods",
+          "Reserve",
+          "Lighthouse",
+          "Shoreline"
+        ]
+      }
+    },
+    {
+      "id": "660fe21454670811e304c045",
+      "name": "Maslenitsa",
+      "description": "Сomplete the Maslenitsa 2024 event task line",
+      "hidden": false,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-660fe21454670811e304c045-icon.webp",
+      "playersCompletedPercent": 0.01,
+      "wiki": {
+        "section": "Event achievements",
+        "reward": "No",
+        "rawDescription": "Complete the Maslenitsa 2024 event task line",
+        "links": [
+          "Events",
+          "Spring!",
+          "File:Maslenitsa Achievement Icon.png"
+        ]
+      }
+    },
+    {
+      "id": "6514143d59647d2cb3213c93",
+      "name": "Master of ULTRA",
+      "description": "Neutralize Killa 100 times while playing as a PMC",
+      "hidden": false,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-6514143d59647d2cb3213c93-icon.webp",
+      "playersCompletedPercent": 0.12,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "Adik tracksuit clothing buy option",
+        "rawDescription": "Eliminate Killa 100 times while playing as a PMC(Not Vengeful Killa)",
+        "links": [
+          "File:Master of ULTRA Achievement Icon.png",
+          "Killa",
+          "Adik tracksuit"
+        ]
+      }
+    },
+    {
+      "id": "676094451fec2f7426093be6",
+      "name": "More Prestigious",
+      "description": "Earn the Prestige level 2",
+      "hidden": true,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-676094451fec2f7426093be6-icon.webp",
+      "playersCompletedPercent": 0.24,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "Yes",
+        "rawDescription": "Earn the Prestige level 2",
+        "links": [
+          "File:More Prestigious Achievement Icon.png",
+          "Prestige"
+        ]
+      }
+    },
+    {
+      "id": "69de1c2be33584b09a098e93",
+      "name": "Morituri te salutant",
+      "description": "Help Ref save the start of the new season in Arena and complete the Casus Belli event task line",
+      "hidden": false,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-69de1c2be33584b09a098e93-icon.webp",
+      "playersCompletedPercent": 0.16,
+      "wiki": {
+        "section": "Event achievements",
+        "reward": "No",
+        "rawDescription": "Help Ref save the start of the new season in Arena and complete the Casus Belli event task line",
+        "links": [
+          "Events",
+          "Morituri te salutant",
+          "File:Morituri te salutant Achievement Icon.png"
+        ]
+      }
+    },
+    {
+      "id": "68d3ff840531ed76e808866c",
+      "name": "No Limit to Perfection",
+      "description": "Earn the Prestige level 6",
+      "hidden": true,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-68d3ff840531ed76e808866c-icon.webp",
+      "playersCompletedPercent": 0.01,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "Yes",
+        "rawDescription": "Earn the Prestige level 6",
+        "links": [
+          "File:No Limit to Perfection Achievement Icon.png",
+          "Prestige"
+        ]
+      }
+    },
+    {
+      "id": "651413e9c31fcb0e163577c9",
+      "name": "Now That's a Good Shot",
+      "description": "Neutralize Zryachiy 15 times while playing as a PMC",
+      "hidden": true,
+      "rarity": "Rare",
+      "imageLink": "https://assets.tarkov.dev/achievement-651413e9c31fcb0e163577c9-icon.webp",
+      "playersCompletedPercent": 0.07,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "Yes",
+        "rawDescription": "Eliminate Zryachiy 15 times while playing as a PMC",
+        "links": [
+          "File:Now That's a Good Shot Achievement Icon.png",
+          "Zryachiy"
+        ]
+      }
+    },
+    {
+      "id": "6513f1feec10ff011f17c7ea",
+      "name": "Now There Are Three of Them!",
+      "description": "Neutralize Knight, Birdeye, and Big Pipe in a single raid for the first time while playing as a PMC",
+      "hidden": false,
+      "rarity": "Common",
+      "imageLink": "https://assets.tarkov.dev/achievement-6513f1feec10ff011f17c7ea-icon.webp",
+      "playersCompletedPercent": 4.45,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Eliminate Knight, Birdeye, and Big Pipe in a single raid for the first time while playing as a PMC",
+        "links": [
+          "File:Now There Are Three of Them! Achievement Icon.png",
+          "Knight",
+          "Birdeye",
+          "Big Pipe"
+        ]
+      }
+    },
+    {
+      "id": "651412b8c31fcb0e163577c5",
+      "name": "Old Dog With Old tricks",
+      "description": "Neutralize Kaban 15 times while playing as a PMC",
+      "hidden": false,
+      "rarity": "Rare",
+      "imageLink": "https://assets.tarkov.dev/achievement-651412b8c31fcb0e163577c5-icon.webp",
+      "playersCompletedPercent": 0.24,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Eliminate Kaban 15 times while playing as a PMC",
+        "links": [
+          "File:Old Dog With Old tricks Achievement Icon.png",
+          "Kaban"
+        ]
+      }
+    },
+    {
+      "id": "685d3d6b81d993fda109cdb8",
+      "name": "One Last Ride",
+      "description": "Experience the Hardcore Wipe",
+      "hidden": false,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-685d3d6b81d993fda109cdb8-icon.webp",
+      "playersCompletedPercent": 2.14,
+      "wiki": {
+        "section": "Event achievements",
+        "reward": "No",
+        "rawDescription": "Experience the Hardcore Wipe",
+        "links": [
+          "Changelog",
+          "Only Business",
+          "File:One Last Ride Achievement Icon.png"
+        ]
+      }
+    },
+    {
+      "id": "691213956b60607135006811",
+      "name": "Pathfinder",
+      "description": "Fully explore Tarkov and its inhabitants",
+      "hidden": false,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-691213956b60607135006811-icon.webp",
+      "playersCompletedPercent": 2.59,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Fully explore Tarkov and its inhabitants(Complete Tour)",
+        "links": [
+          "File:Pathfinder Achievement Icon.png",
+          "Tour"
+        ]
+      }
+    },
+    {
+      "id": "69121487d2f0e6de2f0561ef",
+      "name": "Pay Your Debt",
+      "description": "Learn what happened to Kozlov",
+      "hidden": false,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-69121487d2f0e6de2f0561ef-icon.webp",
+      "playersCompletedPercent": 0.7,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Learn what happened to Kozlov(Complete Accidental Witness)",
+        "links": [
+          "File:Pay Your Debt Achievement Icon.png",
+          "Accidental Witness"
+        ]
+      }
+    },
+    {
+      "id": "65141dd6303df252af1c72c9",
+      "name": "PMC",
+      "description": "Survive 300 raids while playing as a PMC",
+      "hidden": false,
+      "rarity": "Rare",
+      "imageLink": "https://assets.tarkov.dev/achievement-65141dd6303df252af1c72c9-icon.webp",
+      "playersCompletedPercent": 2.81,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Survive 300 raids while playing as a PMC",
+        "links": [
+          "File:PMC Achievement Icon.png"
+        ]
+      }
+    },
+    {
+      "id": "6512ea46f7a078264a4376e4",
+      "name": "PMC's Best Friend",
+      "description": "Survive and extract from Interchange through the Scav Co-Op extraction while playing as a PMC",
+      "hidden": false,
+      "rarity": "Common",
+      "imageLink": "https://assets.tarkov.dev/achievement-6512ea46f7a078264a4376e4-icon.webp",
+      "playersCompletedPercent": 2.19,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Survive and extract from Interchange through the Scav Co-Op extraction while playing as a PMC",
+        "links": [
+          "File:PMC's Best Friend Achievement Icon.png",
+          "Interchange"
+        ]
+      }
+    },
+    {
+      "id": "676091c0f457869a94017a23",
+      "name": "Prestigious",
+      "description": "Earn the Prestige level 1",
+      "hidden": true,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-676091c0f457869a94017a23-icon.webp",
+      "playersCompletedPercent": 0.74,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "Yes",
+        "rawDescription": "Earn the Prestige level 1",
+        "links": [
+          "File:Prestigious Achievement Icon.png",
+          "Prestige"
+        ]
+      }
+    },
+    {
+      "id": "65141cd2cf2f1c285e606449",
+      "name": "Ready for Anything",
+      "description": "Survive 10 consecutive raids while playing as a PMC",
+      "hidden": false,
+      "rarity": "Rare",
+      "imageLink": "https://assets.tarkov.dev/achievement-65141cd2cf2f1c285e606449-icon.webp",
+      "playersCompletedPercent": 5.42,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "Blue paint Hideout wall style",
+        "rawDescription": "Survive 10 consecutive raids while playing as a PMC",
+        "links": [
+          "File:Ready for Anything Achievement Icon.png",
+          "Hideout"
+        ]
+      }
+    },
+    {
+      "id": "66c32996b4c0c017a3319cc3",
+      "name": "Samsara Wheel Spins Again",
+      "description": "Neutralize Partisan 15 times while playing as a PMC",
+      "hidden": false,
+      "rarity": "Rare",
+      "imageLink": "https://assets.tarkov.dev/achievement-66c32996b4c0c017a3319cc3-icon.webp",
+      "playersCompletedPercent": 0.31,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Eliminate Partisan 15 times while playing as a PMC",
+        "links": [
+          "File:Samsara wheel spins again Achievement Icon.png",
+          "Partisan"
+        ]
+      }
+    },
+    {
+      "id": "6513efa1b49e3253755f47eb",
+      "name": "Sanatorium Orderly",
+      "description": "Neutralize Sanitar for the first time while playing as a PMC",
+      "hidden": false,
+      "rarity": "Common",
+      "imageLink": "https://assets.tarkov.dev/achievement-6513efa1b49e3253755f47eb-icon.webp",
+      "playersCompletedPercent": 8.34,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Eliminate Sanitar for the first time while playing as a PMC",
+        "links": [
+          "File:Sanatorium Orderly Achievement Icon.png",
+          "Sanitar"
+        ]
+      }
+    },
+    {
+      "id": "68e8f0575eb7e5ce5000ba0a",
+      "name": "Savior",
+      "description": "Escape from Tarkov to save the humanity",
+      "hidden": false,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-68e8f0575eb7e5ce5000ba0a-icon.webp",
+      "playersCompletedPercent": 0.24,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Escape from Tarkov to save the humanity",
+        "links": [
+          "File:Savior Achievement Icon.png"
+        ]
+      }
+    },
+    {
+      "id": "68f7635e006f73031b0336fa",
+      "name": "Savior (PVE ZONE)",
+      "description": "Escape from Tarkov to save the humanity",
+      "hidden": false,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-68f7635e006f73031b0336fa-icon.webp",
+      "playersCompletedPercent": 0.23,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Escape from Tarkov to save the humanity",
+        "links": [
+          "File:Savior (PVE ZONE) Achievement Icon.png"
+        ]
+      }
+    },
+    {
+      "id": "6513ed89cf2f1c285e606068",
+      "name": "Silence of the Sawmill",
+      "description": "Neutralize Shturman for the first time while playing as a PMC",
+      "hidden": false,
+      "rarity": "Common",
+      "imageLink": "https://assets.tarkov.dev/achievement-6513ed89cf2f1c285e606068-icon.webp",
+      "playersCompletedPercent": 9.5,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Eliminate Shturman for the first time while playing as a PMC",
+        "links": [
+          "File:Silence of the Sawmill Achievement Icon.png",
+          "Shturman"
+        ]
+      }
+    },
+    {
+      "id": "6527d2e2c656a951ad1528c3",
+      "name": "Smoke the Peace Pipe",
+      "description": "Neutralize Big Pipe 15 times while playing as a PMC",
+      "hidden": false,
+      "rarity": "Rare",
+      "imageLink": "https://assets.tarkov.dev/achievement-6527d2e2c656a951ad1528c3-icon.webp",
+      "playersCompletedPercent": 0.14,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Eliminate Big Pipe 15 times while playing as a PMC",
+        "links": [
+          "File:Smoke the Peace Pipe Achievement Icon.png",
+          "Big Pipe"
+        ]
+      }
+    },
+    {
+      "id": "6529097eccf6aa5f8737b3d0",
+      "name": "Snowball",
+      "description": "Neutralize every Boss without dying while playing as a PMC",
+      "hidden": false,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-6529097eccf6aa5f8737b3d0-icon.webp",
+      "playersCompletedPercent": 0.07,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "Predator Upper clothing buy option",
+        "rawDescription": "Eliminate every Boss without dying while playing as a PMC(Big Pipe, Birdeye, Glukhar, Kaban, Killa, Knight, Kollontay, Partisan, Reshala, Sanitar, Shturman, Tagilla, Zryachiy)",
+        "links": [
+          "File:Snowball Achievement Icon.png",
+          "Big Pipe",
+          "Birdeye",
+          "Glukhar",
+          "Kaban",
+          "Killa",
+          "Knight",
+          "Kollontay",
+          "Partisan",
+          "Reshala",
+          "Sanitar",
+          "Shturman",
+          "Tagilla",
+          "Zryachiy",
+          "Predator Upper"
+        ]
+      }
+    },
+    {
+      "id": "67fce0c2f18dc20eae02240b",
+      "name": "Star Called Sun",
+      "description": "Obliterate a cultist while using the RShG-2 rocket launcher",
+      "hidden": true,
+      "rarity": "Rare",
+      "imageLink": "https://assets.tarkov.dev/achievement-67fce0c2f18dc20eae02240b-icon.webp",
+      "playersCompletedPercent": 0.07,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "Yes",
+        "rawDescription": "Obliterate a cultist while using the RShG-2 rocket launcher",
+        "links": [
+          "File:Star Called Sun Achievement Icon.png",
+          "cultist",
+          "RShG-2 rocket launcher"
+        ]
+      }
+    },
+    {
+      "id": "68e8f02ff3a1196d1a05f2cb",
+      "name": "Survivor",
+      "description": "Escape from Tarkov no matter the cost",
+      "hidden": false,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-68e8f02ff3a1196d1a05f2cb-icon.webp",
+      "playersCompletedPercent": 0.02,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Escape from Tarkov no matter the cost",
+        "links": [
+          "File:Survivor Achievement Icon.png"
+        ]
+      }
+    },
+    {
+      "id": "68f76335c3f68167b8029c18",
+      "name": "Survivor (PVE ZONE)",
+      "description": "Escape from Tarkov no matter the cost",
+      "hidden": false,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-68f76335c3f68167b8029c18-icon.webp",
+      "playersCompletedPercent": 0.02,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Escape from Tarkov no matter the cost",
+        "links": [
+          "File:Survivor (PVE ZONE) Achievement Icon.png"
+        ]
+      }
+    },
+    {
+      "id": "68936a7a672ffe94a509446b",
+      "name": "Targrad Tales",
+      "description": "He that steals honey, should beware of the sting",
+      "hidden": false,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-68936a7a672ffe94a509446b-icon.webp",
+      "playersCompletedPercent": 0.33,
+      "wiki": {
+        "section": "Event achievements",
+        "reward": "Targrad poster",
+        "rawDescription": "He that steals honey, should beware of the sting.",
+        "links": [
+          "Events",
+          "Game Review - Part 3",
+          "File:Targrad Tales Achievement Icon.png",
+          "Targrad poster"
+        ]
+      }
+    },
+    {
+      "id": "65141e37cf2f1c285e606361",
+      "name": "That's What She Said",
+      "description": "Search the office in Factory while playing as a PMC",
+      "hidden": true,
+      "rarity": "Common",
+      "imageLink": "https://assets.tarkov.dev/achievement-65141e37cf2f1c285e606361-icon.webp",
+      "playersCompletedPercent": 22.62,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "Yes",
+        "rawDescription": "Search the office in Factory while playing as PMC",
+        "links": [
+          "File:hat's What She Said Achievement Icon.png",
+          "Factory"
+        ]
+      }
+    },
+    {
+      "id": "6513f28cb49e3253755f47f3",
+      "name": "The Blind Watcher",
+      "description": "Neutralize Zryachiy for the first time while playing as a PMC",
+      "hidden": true,
+      "rarity": "Common",
+      "imageLink": "https://assets.tarkov.dev/achievement-6513f28cb49e3253755f47f3-icon.webp",
+      "playersCompletedPercent": 0.72,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "Yes",
+        "rawDescription": "Eliminate Zryachiy for the first time while playing as a PMC",
+        "links": [
+          "File:The Blind Watcher Achievement Icon.png",
+          "Zryachiy"
+        ]
+      }
+    },
+    {
+      "id": "664f1f8768508d74604bf556",
+      "name": "The Kappa Path",
+      "description": "Obtain Secure container Kappa",
+      "hidden": false,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-664f1f8768508d74604bf556-icon.webp",
+      "playersCompletedPercent": 1.34,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Obtain Secure container Kappa",
+        "links": [
+          "File:The Kappa path Achievement Icon.png",
+          "Secure container Kappa"
+        ]
+      }
+    },
+    {
+      "id": "6527d3aac656a951ad1528ce",
+      "name": "The Red Book",
+      "description": "Neutralize Birdeye 15 times while playing as a PMC",
+      "hidden": false,
+      "rarity": "Rare",
+      "imageLink": "https://assets.tarkov.dev/achievement-6527d3aac656a951ad1528ce-icon.webp",
+      "playersCompletedPercent": 0.14,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Eliminate Birdeye 15 times while playing as a PMC",
+        "links": [
+          "File:The Red Book Achievement Icon.png",
+          "Birdeye"
+        ]
+      }
+    },
+    {
+      "id": "691214c93d597b2ef80a2206",
+      "name": "Theseus",
+      "description": "Uncover the secret of The Labyrinth",
+      "hidden": false,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-691214c93d597b2ef80a2206-icon.webp",
+      "playersCompletedPercent": 0.76,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Uncover the secret of The Labyrinth(Complete The Labyrinth)",
+        "links": [
+          "File:Theseus Achievement Icon.png",
+          "The Labyrinth (story chapter)"
+        ]
+      }
+    },
+    {
+      "id": "65140c00b1c08b0feb216d50",
+      "name": "This Is a Tarkov Showdown",
+      "description": "Neutralize Reshala 15 times while playing as a PMC",
+      "hidden": false,
+      "rarity": "Rare",
+      "imageLink": "https://assets.tarkov.dev/achievement-65140c00b1c08b0feb216d50-icon.webp",
+      "playersCompletedPercent": 0.5,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Eliminate Reshala 15 times while playing as a PMC",
+        "links": [
+          "File:This Is a Tarkov Showdown Achievement Icon.png",
+          "Reshala"
+        ]
+      }
+    },
+    {
+      "id": "691214eafc9b2bc7f3042a57",
+      "name": "This Is All (Not) Coincidence",
+      "description": "Find out what happened to a certain BEAR squad",
+      "hidden": false,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-691214eafc9b2bc7f3042a57-icon.webp",
+      "playersCompletedPercent": 0.34,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Find out what happened to a certain BEAR squad(Complete Batya)",
+        "links": [
+          "File:This Is All (Not) Coincidence Achievement Icon.png",
+          "Batya"
+        ]
+      }
+    },
+    {
+      "id": "6912145e52ddd29bf002d343",
+      "name": "Through Another's Eyes",
+      "description": "Discover what the cultists were really after",
+      "hidden": false,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-6912145e52ddd29bf002d343-icon.webp",
+      "playersCompletedPercent": 0.4,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Discover what the cultists were really after(Complete They Are Already Here)",
+        "links": [
+          "File:Through Another's Eyes Achievement Icon.png",
+          "They Are Already Here"
+        ]
+      }
+    },
+    {
+      "id": "685d6539127e4806240f3bcd",
+      "name": "Through to the End",
+      "description": "Collect the scars of the Hardcore Wipe",
+      "hidden": false,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-685d6539127e4806240f3bcd-icon.webp",
+      "playersCompletedPercent": 0.12,
+      "wiki": {
+        "section": "Event achievements",
+        "reward": "No",
+        "rawDescription": "Collect the scars of the Hardcore Wipe",
+        "links": [
+          "Changelog",
+          "Collector",
+          "File:Through to the End Achievement Icon.png"
+        ]
+      }
+    },
+    {
+      "id": "66c328de9dc78468f4040f35",
+      "name": "Time To Clean My Karma",
+      "description": "Neutralize Partisan for the first time while playing as a PMC",
+      "hidden": false,
+      "rarity": "Common",
+      "imageLink": "https://assets.tarkov.dev/achievement-66c328de9dc78468f4040f35-icon.webp",
+      "playersCompletedPercent": 11.42,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Eliminate Partisan for the first time while playing as a PMC",
+        "links": [
+          "File:Time to clean my karma Achievement Icon.png",
+          "Partisan"
+        ]
+      }
+    },
+    {
+      "id": "691213f0dbcdbbc54402fe00",
+      "name": "Trail of Breadcrumbs",
+      "description": "Find traces of a mysterious organization in Tarkov",
+      "hidden": false,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-691213f0dbcdbbc54402fe00-icon.webp",
+      "playersCompletedPercent": 0.43,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Find traces of a mysterious organization in Tarkov(Complete The Unheard)",
+        "links": [
+          "File:Trail of Breadcrumbs Achievement Icon.png",
+          "The Unheard"
+        ]
+      }
+    },
+    {
+      "id": "6512eb3ddfb0ae1ee75a0376",
+      "name": "Traveler",
+      "description": "Survive and extract from every location in Tarkov while playing as a PMC ",
+      "hidden": false,
+      "rarity": "Common",
+      "imageLink": "https://assets.tarkov.dev/achievement-6512eb3ddfb0ae1ee75a0376-icon.webp",
+      "playersCompletedPercent": 6.63,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Survive and extract from every location in Tarkov while playing as a PMC",
+        "links": [
+          "File:Traveler Achievement Icon.png"
+        ]
+      }
+    },
+    {
+      "id": "655b4a576689c676ce57acb6",
+      "name": "True Crime",
+      "description": "Neutralize Kollontay 15 times while playing as a PMC",
+      "hidden": false,
+      "rarity": "Rare",
+      "imageLink": "https://assets.tarkov.dev/achievement-655b4a576689c676ce57acb6-icon.webp",
+      "playersCompletedPercent": 0.17,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Eliminate Kollontay 15 times while playing as a PMC",
+        "links": [
+          "File:True Crime Achievement Icon.png",
+          "Kollontay"
+        ]
+      }
+    },
+    {
+      "id": "65141b9859647d2cb3213ca2",
+      "name": "U-SUCC",
+      "description": "Eliminate 50 USEC PMC operatives",
+      "hidden": false,
+      "rarity": "Common",
+      "imageLink": "https://assets.tarkov.dev/achievement-65141b9859647d2cb3213ca2-icon.webp",
+      "playersCompletedPercent": 9.63,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Eliminate 50 USEC PMC operatives",
+        "links": [
+          "File:U-SUCC Achievement Icon.png",
+          "USEC"
+        ]
+      }
+    },
+    {
+      "id": "6912156f3d597b2ef80a2209",
+      "name": "U-Turn",
+      "description": "Agree to the job only to change your mind after",
+      "hidden": true,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-6912156f3d597b2ef80a2209-icon.webp",
+      "playersCompletedPercent": 0.09,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "Yes",
+        "rawDescription": "Agree to the job only to change your mind after(Deliver 2 major evidence to Mr. Kerman then stop working with him)",
+        "links": [
+          "File:U-Turn Achievement Icon.png"
+        ]
+      }
+    },
+    {
+      "id": "66c328aca91e7d66fa1b0b7b",
+      "name": "Vagabond",
+      "description": "Use the transit from any location",
+      "hidden": false,
+      "rarity": "Common",
+      "imageLink": "https://assets.tarkov.dev/achievement-66c328aca91e7d66fa1b0b7b-icon.webp",
+      "playersCompletedPercent": 13.54,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Use the transit from any location",
+        "links": [
+          "File:Vagabond Achievement Icon.png",
+          "transit"
+        ]
+      }
+    },
+    {
+      "id": "65141c30ec10ff011f17cc3b",
+      "name": "Welcome to Tarkov",
+      "description": "Die in Tarkov for the first time",
+      "hidden": true,
+      "rarity": "Common",
+      "imageLink": "https://assets.tarkov.dev/achievement-65141c30ec10ff011f17cc3b-icon.webp",
+      "playersCompletedPercent": 48.47,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "Yes",
+        "rawDescription": "Die in Tarkov for the first time",
+        "links": [
+          "File:Welcome to Tarkov Achievement Icon.png"
+        ]
+      }
+    },
+    {
+      "id": "65140ab8ec10ff011f17cc10",
+      "name": "What Not To Wear",
+      "description": "Neutralize Killa 15 times while playing as a PMC",
+      "hidden": false,
+      "rarity": "Rare",
+      "imageLink": "https://assets.tarkov.dev/achievement-65140ab8ec10ff011f17cc10-icon.webp",
+      "playersCompletedPercent": 0.27,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "Factory ceiling Hideout ceiling style",
+        "rawDescription": "Eliminate Killa 15 times while playing as a PMC(Not Vengeful Killa)",
+        "links": [
+          "File:What Not To Wear Achievement Icon.png",
+          "Killa",
+          "Hideout"
+        ]
+      }
+    },
+    {
+      "id": "6912168c52ddd29bf002d37a",
+      "name": "When the Light Fades",
+      "description": "Free Tarkov from the priests' eyes",
+      "hidden": true,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-6912168c52ddd29bf002d37a-icon.webp",
+      "playersCompletedPercent": 0.39,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "Yes",
+        "rawDescription": "Free Tarkov from the priests' eyes(Complete They Are Already Here)",
+        "links": [
+          "File:When the Light Fades Achievement Icon.png",
+          "They Are Already Here"
+        ]
+      }
+    },
+    {
+      "id": "693a83434cb1cf587c0a63f9",
+      "name": "Whiteout",
+      "description": "Celebrate Christmas and New Year and complete the Kolotun 2025 event task line",
+      "hidden": false,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-693a83434cb1cf587c0a63f9-icon.webp",
+      "playersCompletedPercent": 0.85,
+      "wiki": {
+        "section": "Event achievements",
+        "reward": "New Year ushanka hat purchase at Ragman LL1",
+        "rawDescription": "Celebrate Christmas and New Year and complete the Kolotun 2025 event task",
+        "links": [
+          "Events",
+          "A Small Celebration",
+          "File:Whiteout Achievement Icon.png",
+          "New Year ushanka hat",
+          "Ragman"
+        ]
+      }
+    },
+    {
+      "id": "651411f1cf2f1c285e606423",
+      "name": "Who Called the Doctor?",
+      "description": "Neutralize Sanitar 15 times while playing as a PMC",
+      "hidden": false,
+      "rarity": "Rare",
+      "imageLink": "https://assets.tarkov.dev/achievement-651411f1cf2f1c285e606423-icon.webp",
+      "playersCompletedPercent": 0.21,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "No",
+        "rawDescription": "Eliminate Sanitar 15 times while playing as a PMC",
+        "links": [
+          "File:Who Called the Doctor? Achievement Icon.png",
+          "Sanitar"
+        ]
+      }
+    },
+    {
+      "id": "6912159adf87c6a94a0b9f34",
+      "name": "Will It Blow?",
+      "description": "Hand the case with dangerous contents to the wrong people. You clearly had no other choice!",
+      "hidden": true,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-6912159adf87c6a94a0b9f34-icon.webp",
+      "playersCompletedPercent": 0.08,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "Yes",
+        "rawDescription": "Hand the case with dangerous contents to the wrong people. You clearly had no other choice!(Give Prapor the Case with dangerous cargo)",
+        "links": [
+          "File:Will It Blow Achievement Icon.png",
+          "Prapor",
+          "Case with dangerous cargo"
+        ]
+      }
+    },
+    {
+      "id": "6527ee4a647c29201011defe",
+      "name": "You Are Not My Brother",
+      "description": "Eliminate a Scav while playing as a Scav",
+      "hidden": true,
+      "rarity": "Common",
+      "imageLink": "https://assets.tarkov.dev/achievement-6527ee4a647c29201011defe-icon.webp",
+      "playersCompletedPercent": 35.01,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "Yes",
+        "rawDescription": "Eliminate a Scav while playing as a Scav",
+        "links": [
+          "File:You Are Not My Brother Achievement Icon.png",
+          "Scav"
+        ]
+      }
+    }
+  ]
+}

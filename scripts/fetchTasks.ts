@@ -3,7 +3,7 @@ import { writeFile } from 'fs/promises';
 /**
  * This script demonstrates how you might fetch up‑to‑date quest data from the
  * community API at https://api.tarkov.dev/graphql. It performs a GraphQL
- * query and then writes a simplified representation of Kappa-required tasks
+ * query and then writes a simplified representation of all known tasks
  * into `src/data/tasks.json`. Run it with `npm run update:tasks` from the
  * project root. A modern Node version with native fetch support (v18+) is
  * required.
@@ -16,6 +16,7 @@ const query = `{
     id
     name
     kappaRequired
+    lightkeeperRequired
     minPlayerLevel
     trader {
       name
@@ -32,6 +33,12 @@ const query = `{
       }
     }
     wikiLink
+    finishRewards {
+      achievement {
+        id
+        name
+      }
+    }
   }
 }`;
 
@@ -50,10 +57,7 @@ async function fetchTasks() {
   if (!Array.isArray(tasks)) {
     throw new Error('Unexpected response structure');
   }
-  // Keep only quests that currently count toward Kappa to avoid bloating the
-  // tracker with unrelated optional quests.
   const mapped = tasks
-    .filter((t: any) => Boolean(t.kappaRequired))
     .map((t: any) => ({
       id: t.id,
       title: t.name,
@@ -68,7 +72,14 @@ async function fetchTasks() {
       prerequisites: Array.isArray(t.taskRequirements)
         ? t.taskRequirements.map((requirement: any) => requirement.task?.name).filter(Boolean)
         : [],
-      countsForKappa: true,
+      countsForKappa: Boolean(t.kappaRequired),
+      lightkeeperRequired: Boolean(t.lightkeeperRequired),
+      achievementRewards: Array.isArray(t.finishRewards?.achievement)
+        ? t.finishRewards.achievement.map((achievement: any) => ({
+          id: achievement.id,
+          name: achievement.name,
+        })).filter((achievement: any) => achievement.id && achievement.name)
+        : [],
     }))
     .sort((a: any, b: any) => a.trader.localeCompare(b.trader) || a.title.localeCompare(b.title));
 
@@ -77,12 +88,14 @@ async function fetchTasks() {
     metadata: {
       source: 'https://api.tarkov.dev/graphql',
       syncedAt: new Date().toISOString(),
-      kappaTaskCount: mapped.length,
+      taskCount: mapped.length,
+      kappaTaskCount: mapped.filter((task: any) => task.countsForKappa).length,
+      lightkeeperTaskCount: mapped.filter((task: any) => task.lightkeeperRequired).length,
     },
     tasks: mapped,
   };
   await writeFile(filePath, `${JSON.stringify(payload, null, 2)}\n`, 'utf8');
-  console.log(`Fetched ${mapped.length} Kappa tasks and wrote to ${filePath}`);
+  console.log(`Fetched ${mapped.length} tasks and wrote to ${filePath}`);
 }
 
 fetchTasks().catch((err) => {

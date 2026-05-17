@@ -9,7 +9,7 @@ Este repositorio contiene una aplicación SPA escrita en **React** (con Vite y T
 - **Resumen global de Kappa**: una barra de progreso en la cabecera indica cuántas misiones que cuentan para Kappa has completado y cuál es el avance total.
 - **Página de detalle**: cada misión tiene una página dedicada con su descripción, objetivos, prerrequisitos y recompensas.
 - **Árbol de misiones**: la ruta `/quest-tree` muestra todos los comerciantes en secciones horizontales tipo eft.monster, con desbloqueo por prerequisitos y nivel PMC.
-- **Datos sincronizables**: `src/data/tasks.json` se puede regenerar desde `tarkov.dev` con las misiones que cuentan para Kappa.
+- **Datos sincronizables**: `src/data/tasks.json`, `src/data/achievements.json` y `src/data/goals.json` se pueden regenerar desde `tarkov.dev` y la wiki.
 - **Estilos versionados**: Bootstrap se instala como dependencia npm y se complementa con estilos locales responsivos en `src/styles.css`.
 - **Sistema visual Kraken**: `DESIGN.md` documenta paleta, tipografia, radios y componentes base usados por la UI.
 
@@ -37,12 +37,16 @@ kappa-tracker/
 │   ├── pages/          Vistas de alto nivel (Home, QuestListPage, QuestDetailPage, QuestTreePage)
 │   ├── utils/          Ordenacion y construccion del arbol de misiones
 │   └── data/
-│       ├── tasks.json      Base de datos de misiones sincronizada desde tarkov.dev
-│       └── questTree.json  Arbol generado desde tasks.json
+│       ├── tasks.json         Base de datos de todas las misiones sincronizada desde tarkov.dev
+│       ├── achievements.json  Achievements sincronizados desde tarkov.dev y wiki
+│       ├── goals.json         Perfiles de progreso derivados
+│       └── questTree.json     Arbol generado desde tasks.json
 └── scripts/
-    ├── fetchTasks.ts       Script opcional para actualizar las misiones desde una API
-    ├── buildQuestTree.ts   Script para generar src/data/questTree.json
-    └── testQuestTree.tsx   Pruebas basicas del arbol y renderizado
+    ├── fetchTasks.ts          Script para actualizar todas las misiones
+    ├── fetchAchievements.ts   Script para actualizar achievements
+    ├── buildGoals.ts          Script para generar perfiles de progreso
+    ├── buildQuestTree.ts      Script para generar src/data/questTree.json
+    └── testQuestTree.tsx      Pruebas basicas del arbol y renderizado
 ```
 
 ## Primeros pasos
@@ -66,13 +70,25 @@ kappa-tracker/
 
 ## Actualizar la lista de misiones
 
-El archivo `src/data/tasks.json` contiene las misiones marcadas por [tarkov.dev](https://api.tarkov.dev/graphql) como necesarias para Kappa. Para regenerarlo desde la API pública:
+El archivo `src/data/tasks.json` contiene todas las misiones publicadas por [tarkov.dev](https://api.tarkov.dev/graphql), incluyendo flags para Kappa y Lightkeeper. Para regenerarlo desde la API pública:
 
 ```bash
 npm run update:tasks
 ```
 
-Esto sobrescribe `src/data/tasks.json` con los datos más recientes e incluye metadata con la fuente, fecha de sincronización y total de misiones Kappa. La última sincronización registrada en este repositorio es `2026-05-14` y contiene `257` misiones Kappa.
+Esto sobrescribe `src/data/tasks.json` con los datos más recientes e incluye metadata con la fuente, fecha de sincronización, total de misiones y totales derivados para Kappa/Lightkeeper.
+
+Para actualizar achievements desde `tarkov.dev` y enriquecerlos con la tabla de la wiki:
+
+```bash
+npm run update:achievements
+```
+
+Para generar perfiles de progreso como Kappa, Lightkeeper, todas las misiones y achievements:
+
+```bash
+npm run build:goals
+```
 
 Después de actualizar misiones, regenera el árbol versionado:
 
