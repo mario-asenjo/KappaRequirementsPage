@@ -10,6 +10,7 @@ Este repositorio contiene una aplicación SPA escrita en **React** (con Vite y T
 - **Página de detalle**: cada misión tiene una página dedicada con su descripción, objetivos, prerrequisitos y recompensas.
 - **Árbol de misiones**: la ruta `/quest-tree` muestra todos los comerciantes en secciones horizontales tipo eft.monster, con desbloqueo por prerequisitos y nivel PMC.
 - **Selector de objetivo**: permite alternar entre Kappa, Lightkeeper, todas las misiones y achievements con quests asociadas.
+- **Achievements**: la ruta `/achievements` muestra logros, rareza, progreso, objetivos asociados y checklist manual para logros sin quests.
 - **Datos sincronizables**: `src/data/tasks.json`, `src/data/achievements.json` y `src/data/goals.json` se pueden regenerar desde `tarkov.dev` y la wiki.
 - **Estilos versionados**: Bootstrap se instala como dependencia npm y se complementa con estilos locales responsivos en `src/styles.css`.
 - **Sistema visual Kraken**: `DESIGN.md` documenta paleta, tipografia, radios y componentes base usados por la UI.
@@ -113,6 +114,7 @@ Para validar la construcción del árbol y un render básico de la página:
 ```bash
 npm run test:quests
 npm run test:progress
+npm run test:achievements
 ```
 
 El modelo de progreso nuevo se guarda en `localStorage` bajo `userProgress`, pero mantiene sincronización con las claves antiguas `completedTasks` y `playerLevel` para no perder progreso existente.

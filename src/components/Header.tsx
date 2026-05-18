@@ -34,6 +34,7 @@ const Header: React.FC<HeaderProps> = ({ tasks, goals, activeGoal, goalProgress,
       <nav className="header-nav" aria-label="Navegacion principal">
         <NavLink to="/" end>Panel</NavLink>
         <NavLink to="/quest-tree">Arbol</NavLink>
+        <NavLink to="/achievements">Achievements</NavLink>
       </nav>
       <label className="goal-selector">
         <span>Objetivo</span>
