@@ -846,6 +846,112 @@ a:hover {
   max-width: 1280px;
 }
 
+.achievements-hero {
+  align-items: center;
+  display: grid;
+  gap: 18px;
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.achievements-filters {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: minmax(220px, 1fr) minmax(180px, 260px);
+}
+
+.achievements-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.achievement-card {
+  background: #ffffff;
+  border: 1px solid rgba(104, 107, 130, 0.16);
+  border-radius: 18px;
+  box-shadow: var(--kraken-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 100%;
+  padding: 16px;
+}
+
+.achievement-card.is-legendary {
+  border-color: rgba(217, 158, 11, 0.45);
+}
+
+.achievement-card.is-rare {
+  border-color: rgba(113, 50, 245, 0.3);
+}
+
+.achievement-card-header {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+}
+
+.achievement-card-header img {
+  background: rgba(104, 107, 130, 0.1);
+  border-radius: 12px;
+  height: 58px;
+  object-fit: contain;
+  width: 58px;
+}
+
+.achievement-card h2 {
+  font-size: 1.15rem;
+  margin: 0;
+}
+
+.achievement-card p {
+  color: var(--kraken-neutral);
+  flex-grow: 1;
+  margin: 0;
+}
+
+.achievement-rarity {
+  color: var(--kraken-purple-dark);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.achievement-meta,
+.achievement-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.achievement-meta span {
+  background: rgba(104, 107, 130, 0.1);
+  border-radius: 9999px;
+  color: var(--kraken-neutral);
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 5px 8px;
+}
+
+.achievement-progress {
+  display: grid;
+  gap: 8px;
+}
+
+.achievement-progress span,
+.achievement-manual-check {
+  color: var(--kraken-neutral);
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.achievement-manual-check {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+}
+
 .task-card.is-completed {
   border-color: rgba(20, 158, 97, 0.35);
 }
@@ -959,5 +1065,10 @@ a:hover {
 
   .quest-tree-stage {
     max-height: 62vh;
+  }
+
+  .achievements-hero,
+  .achievements-filters {
+    grid-template-columns: 1fr;
   }
 }

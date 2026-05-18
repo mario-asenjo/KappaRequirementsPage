@@ -47,6 +47,15 @@
 
 ## Historial De Cambios
 
+### 2026-05-17 (fase 4 achievements)
+
+- Rama de trabajo: `feature/achievements-page`.
+- Se anadio la ruta `/achievements` con cards para todos los achievements sincronizados.
+- La pagina muestra rareza, estado oculto/visible, porcentaje de jugadores, seccion wiki, progreso de quests asociadas y acciones.
+- Los achievements sin quests asociadas se pueden marcar manualmente usando `manualAchievementProgress` en `userProgress`.
+- Los achievements con quests asociadas permiten cambiar el objetivo activo a su goal y abrir la primera quest relacionada.
+- Se anadio `npm run test:achievements` para validar render basico de la pagina.
+
 ### 2026-05-17 (fase 3 selector)
 
 - Rama de trabajo: `feature/goal-selector-filtering`.

@@ -55,6 +55,23 @@ export default function useProgress() {
     }));
   };
 
+  const setCompletedAchievementIds: Dispatch<SetStateAction<string[]>> = (value) => {
+    setProgress((current) => ({
+      ...current,
+      completedAchievementIds: value instanceof Function ? value(current.completedAchievementIds) : value,
+    }));
+  };
+
+  const setManualAchievementProgress = (achievementId: string, completed: boolean) => {
+    setProgress((current) => ({
+      ...current,
+      manualAchievementProgress: {
+        ...current.manualAchievementProgress,
+        [achievementId]: completed,
+      },
+    }));
+  };
+
   return {
     progress,
     setProgress,
@@ -62,5 +79,9 @@ export default function useProgress() {
     setCompletedTaskIds,
     playerLevel: progress.playerLevel,
     setPlayerLevel,
+    completedAchievementIds: progress.completedAchievementIds,
+    setCompletedAchievementIds,
+    manualAchievementProgress: progress.manualAchievementProgress,
+    setManualAchievementProgress,
   };
 }
