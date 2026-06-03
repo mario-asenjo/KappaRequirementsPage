@@ -25,6 +25,17 @@ const Sidebar: React.FC<SidebarProps> = ({ tasks }) => {
       aria-label="Comerciantes"
     >
       <div className="list-group list-group-flush">
+        <NavLink
+          to="/tasks"
+          className={({ isActive }) =>
+            `trader-link list-group-item list-group-item-action d-flex justify-content-between align-items-center ${
+              isActive ? 'active' : ''
+            }`
+          }
+        >
+          <span>Todas las misiones</span>
+          <span className="badge trader-badge">{completedTaskIds.filter((id) => tasks.some((task) => task.id === id)).length}/{tasks.length}</span>
+        </NavLink>
         {traders.map((trader) => {
           const traderTasks = tasks.filter((t) => t.trader === trader);
           const completedForTrader = traderTasks.filter((t) =>

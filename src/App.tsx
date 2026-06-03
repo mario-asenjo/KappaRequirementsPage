@@ -37,6 +37,7 @@ const App: React.FC = () => {
         <main className="app-main flex-grow-1 overflow-auto p-3">
           <Routes>
             <Route path="/" element={<Home tasks={activeTasks} goal={activeGoal} goalProgress={goalProgress} />} />
+            <Route path="/tasks" element={<QuestListPage tasks={activeTasks} />} />
             <Route path="/quest-tree" element={<QuestTreePage tasks={activeTasks} />} />
             <Route path="/achievements" element={<AchievementsPage tasks={allTasks} onGoalChange={setActiveGoalId} />} />
             <Route

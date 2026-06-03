@@ -6,6 +6,7 @@ import { Task } from '../types';
 interface TaskCardProps {
   task: Task;
   position?: number;
+  status?: 'completed' | 'available' | 'locked';
 }
 
 /**
@@ -14,7 +15,7 @@ interface TaskCardProps {
  * is persisted in localStorage using the custom hook. Styling is kept
  * minimal using Bootstrap utility classes.
  */
-const TaskCard: React.FC<TaskCardProps> = ({ task, position }) => {
+const TaskCard: React.FC<TaskCardProps> = ({ task, position, status }) => {
   const { completedTaskIds, setCompletedTaskIds } = useProgress();
 
   const isCompleted = completedTaskIds.includes(task.id);
@@ -33,7 +34,17 @@ const TaskCard: React.FC<TaskCardProps> = ({ task, position }) => {
     <div className={`task-card card mb-3 ${isCompleted ? 'is-completed' : ''}`}> 
       <div className="card-body d-flex flex-column flex-sm-row gap-3 justify-content-between align-items-start">
         <div className="task-card-content">
-          {position !== undefined && <span className="task-order">#{position}</span>}
+          <div className="task-card-badges">
+            {position !== undefined && <span className="task-order">#{position}</span>}
+            {status && (
+              <span className={`task-status task-status--${status}`}>
+                {status === 'available' ? 'Disponible' : status === 'locked' ? 'Bloqueada' : 'Completada'}
+              </span>
+            )}
+            {task.levelRequirement && <span className="task-level">Nivel {task.levelRequirement}</span>}
+            {task.lightkeeperRequired && <span className="task-flag task-flag--lightkeeper">LK</span>}
+            {task.countsForKappa && <span className="task-flag task-flag--kappa">Kappa</span>}
+          </div>
           <h5 className="card-title mb-1">
             <Link to={`/task/${encodeURIComponent(task.id)}`}>{task.title}</Link>
           </h5>

@@ -376,6 +376,136 @@ a:hover {
   padding: 4px 9px;
 }
 
+.task-card-badges {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.task-status,
+.task-level,
+.task-flag {
+  border-radius: 9999px;
+  display: inline-flex;
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1;
+  padding: 5px 8px;
+}
+
+.task-status--available {
+  background: rgba(20, 158, 97, 0.14);
+  color: var(--kraken-success-dark);
+}
+
+.task-status--locked {
+  background: rgba(104, 107, 130, 0.14);
+  color: var(--kraken-neutral);
+}
+
+.task-status--completed {
+  background: rgba(113, 50, 245, 0.14);
+  color: var(--kraken-purple-deep);
+}
+
+.task-level {
+  background: rgba(217, 158, 11, 0.14);
+  color: #8a5a00;
+}
+
+.task-flag--kappa {
+  background: rgba(209, 57, 19, 0.12);
+  color: #9e2f12;
+}
+
+.task-flag--lightkeeper {
+  background: rgba(20, 158, 97, 0.12);
+  color: var(--kraken-success-dark);
+}
+
+.quest-board-controls {
+  align-items: center;
+}
+
+.quest-board-controls .form-control,
+.quest-board-controls .form-select {
+  border-color: var(--kraken-border);
+  border-radius: 12px;
+  font-weight: 600;
+  min-height: 46px;
+}
+
+.quest-board-toggle {
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid var(--kraken-border);
+  border-radius: 12px;
+  color: var(--kraken-neutral);
+  display: inline-flex;
+  font-weight: 700;
+  gap: 8px;
+  min-height: 46px;
+  padding: 10px 12px;
+}
+
+.quest-board-toggle input {
+  accent-color: var(--kraken-purple);
+}
+
+.quest-board-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.quest-board-summary span {
+  background: rgba(104, 107, 130, 0.12);
+  border-radius: 9999px;
+  color: #484b5e;
+  font-size: 0.85rem;
+  font-weight: 800;
+  padding: 7px 11px;
+}
+
+.quest-board-groups {
+  display: grid;
+  gap: 16px;
+}
+
+.quest-board-group {
+  min-width: 0;
+}
+
+.quest-board-group-header {
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid rgba(104, 107, 130, 0.16);
+  border-radius: 16px;
+  box-shadow: var(--kraken-micro-shadow);
+  display: grid;
+  gap: 12px;
+  grid-template-columns: minmax(0, 1fr) minmax(120px, 220px);
+  margin-bottom: 10px;
+  padding: 14px 16px;
+}
+
+.quest-board-group-header h3 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.quest-board-group-header p {
+  color: var(--kraken-neutral);
+  font-weight: 700;
+  margin: 3px 0 0;
+}
+
+.quest-board-group-header .progress {
+  height: 0.55rem;
+}
+
 .page-subtitle {
   color: var(--kraken-neutral);
 }

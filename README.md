@@ -7,6 +7,7 @@ Este repositorio contiene una aplicación SPA escrita en **React** (con Vite y T
 - **Vista por comerciantes**: filtra las misiones por comerciante y muestra el número de misiones completadas y totales de cada uno.
 - **Seguimiento persistente**: las misiones marcadas como completadas se guardan en `localStorage` para que tu progreso persista entre sesiones sin necesidad de registrarse.
 - **Resumen global por objetivo**: una barra de progreso indica cuántas misiones del objetivo activo has completado y cuál es el avance total.
+- **Tablero avanzado de misiones**: la ruta `/tasks` muestra todas las misiones del objetivo activo con busqueda por nombre/trader/mapa, ordenacion, agrupacion por comerciante o mapa, filtro de completadas, filtro de disponibles y filtro por nivel PMC.
 - **Página de detalle**: cada misión tiene una página dedicada con su descripción, objetivos, prerrequisitos y recompensas.
 - **Árbol de misiones**: la ruta `/quest-tree` muestra todos los comerciantes en secciones horizontales tipo eft.monster, con desbloqueo por prerequisitos y nivel PMC.
 - **Selector de objetivo**: permite alternar entre Kappa, Lightkeeper, todas las misiones y achievements con quests asociadas.
@@ -100,6 +101,12 @@ npm run build:quests
 ```
 
 El árbol se construye desde `tasks.json`, agrupa misiones por comerciante y conecta misiones cuando un prerequisito pertenece al mismo comerciante. Los prerequisitos cruzados se conservan para calcular el estado de disponibilidad.
+
+## Tablero de misiones
+
+La ruta `/tasks` reutiliza `QuestListPage` sin parametro de comerciante para mostrar todo el objetivo activo. Permite alternar agrupacion por comerciante/mapa, ordenar por disponibilidad, nombre o nivel, cambiar el nivel PMC persistido y mostrar solo misiones disponibles segun prerequisitos y nivel.
+
+Las rutas `/trader/:traderName` mantienen la vista acotada al comerciante, pero comparten los mismos controles avanzados cuando aplica.
 
 ## Árbol de misiones
 
