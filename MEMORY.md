@@ -26,6 +26,10 @@
 - `scripts/fetchAchievements.ts`: sincronizacion de achievements desde `tarkov.dev` y wiki.
 - `scripts/buildGoals.ts`: generacion de perfiles de progreso derivados.
 
+## Planes Persistentes
+
+- `docs/reference-parity-plan.md`: backlog de paridad contra `kappas.pages.dev`, con brechas detectadas y fases de implementacion.
+
 ## Convenciones
 
 - Componentes React en PascalCase.
@@ -46,6 +50,16 @@
 - Total registrado de achievements: `105`.
 
 ## Historial De Cambios
+
+### 2026-06-02 (paridad referencia fase 1)
+
+- Rama de trabajo: `feature/reference-parity-plan`.
+- Se analizo `https://kappas.pages.dev` inspeccionando HTML y bundles publicos para extraer funcionalidades de referencia.
+- Se creo `docs/reference-parity-plan.md` con brechas: tablero avanzado, working-on, objetivos/items, collector, hideout, tracked items, prestiges, storyline, preferencias y SEO.
+- Se anadio la ruta `/tasks` como tablero avanzado de misiones del objetivo activo.
+- `QuestListPage` ahora soporta busqueda por mision/trader/mapa, ordenacion, agrupacion por comerciante/mapa, filtro de completadas, filtro de disponibles y filtro por nivel PMC.
+- `TaskCard` muestra badges de disponibilidad, nivel, Kappa y Lightkeeper.
+- Header y Sidebar enlazan el nuevo tablero.
 
 ### 2026-05-17 (fase 4 achievements)
 

@@ -33,6 +33,7 @@ const Header: React.FC<HeaderProps> = ({ tasks, goals, activeGoal, goalProgress,
       <NavLink to="/" className="navbar-brand mb-0 h1">Kappa Progress Tracker</NavLink>
       <nav className="header-nav" aria-label="Navegacion principal">
         <NavLink to="/" end>Panel</NavLink>
+        <NavLink to="/tasks">Misiones</NavLink>
         <NavLink to="/quest-tree">Arbol</NavLink>
         <NavLink to="/achievements">Achievements</NavLink>
       </nav>
