@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import useProgress from '../hooks/useProgress';
 import { Task } from '../types';
+import { getCompletionIdsWithPrerequisites } from '../utils/taskPrerequisites';
 import { buildQuestTree, getValidCompletedTaskIds, QuestTreeGroup, QuestTreeNode } from '../utils/questTree';
 
 interface QuestTreePageProps {
   tasks: Task[];
+  taskCatalog?: Task[];
 }
 
 interface TreePoint {
@@ -159,28 +161,30 @@ function getPath(source: TreePoint, target: TreePoint) {
   return `M ${startX} ${startY} C ${midX} ${startY}, ${midX} ${endY}, ${endX} ${endY}`;
 }
 
-const QuestTreePage: React.FC<QuestTreePageProps> = ({ tasks }) => {
+const QuestTreePage: React.FC<QuestTreePageProps> = ({ tasks, taskCatalog = tasks }) => {
   const { completedTaskIds, setCompletedTaskIds, playerLevel, setPlayerLevel } = useProgress();
   const [selectedTaskId, setSelectedTaskId] = useState<string | null>(null);
-  const validCompletedIds = getValidCompletedTaskIds(tasks, completedTaskIds, playerLevel);
+  const validAllCompletedIds = getValidCompletedTaskIds(taskCatalog, completedTaskIds, playerLevel);
+  const activeTaskIds = new Set(tasks.map((task) => task.id));
+  const validCompletedIds = validAllCompletedIds.filter((id) => activeTaskIds.has(id));
   const groups = sortGroups(buildQuestTree(tasks, validCompletedIds, playerLevel));
   const completedCount = tasks.filter((task) => validCompletedIds.includes(task.id)).length;
   const selectedTask = selectedTaskId ? tasks.find((task) => task.id === selectedTaskId) : undefined;
 
   useEffect(() => {
-    if (validCompletedIds.join('|') !== completedTaskIds.join('|')) {
-      setCompletedTaskIds(validCompletedIds);
+    if (validAllCompletedIds.join('|') !== completedTaskIds.join('|')) {
+      setCompletedTaskIds(validAllCompletedIds);
     }
-  }, [completedTaskIds, setCompletedTaskIds, validCompletedIds]);
+  }, [completedTaskIds, setCompletedTaskIds, validAllCompletedIds]);
 
   const toggleCompletion = (task: Task) => {
     setCompletedTaskIds((current) => {
       if (current.includes(task.id)) {
-        return getValidCompletedTaskIds(tasks, current.filter((id) => id !== task.id), playerLevel);
+        return getValidCompletedTaskIds(taskCatalog, current.filter((id) => id !== task.id), playerLevel);
       }
 
-      const nextCompletedIds = [...current, task.id];
-      return getValidCompletedTaskIds(tasks, nextCompletedIds, playerLevel);
+      const nextCompletedIds = getCompletionIdsWithPrerequisites(task, taskCatalog, current);
+      return getValidCompletedTaskIds(taskCatalog, nextCompletedIds, playerLevel);
     });
   };
 

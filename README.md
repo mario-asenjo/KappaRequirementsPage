@@ -8,6 +8,7 @@ Este repositorio contiene una aplicación SPA escrita en **React** (con Vite y T
 - **Seguimiento persistente**: las misiones marcadas como completadas se guardan en `localStorage` para que tu progreso persista entre sesiones sin necesidad de registrarse.
 - **Resumen global por objetivo**: una barra de progreso indica cuántas misiones del objetivo activo has completado y cuál es el avance total.
 - **Tablero avanzado de misiones**: la ruta `/tasks` muestra todas las misiones del objetivo activo con busqueda por nombre/trader/mapa, ordenacion, agrupacion por comerciante o mapa, filtro de completadas, filtro de disponibles y filtro por nivel PMC.
+- **Autocompletado de cadenas reales**: al marcar una mision como completada, tambien se marcan sus prerequisitos recursivos segun los datos de `tarkov.dev`, incluso si pertenecen a otros comerciantes.
 - **Página de detalle**: cada misión tiene una página dedicada con su descripción, objetivos, prerrequisitos y recompensas.
 - **Árbol de misiones**: la ruta `/quest-tree` muestra todos los comerciantes en secciones horizontales tipo eft.monster, con desbloqueo por prerequisitos y nivel PMC.
 - **Selector de objetivo**: permite alternar entre Kappa, Lightkeeper, todas las misiones y achievements con quests asociadas.
@@ -107,6 +108,8 @@ El árbol se construye desde `tasks.json`, agrupa misiones por comerciante y con
 La ruta `/tasks` reutiliza `QuestListPage` sin parametro de comerciante para mostrar todo el objetivo activo. Permite alternar agrupacion por comerciante/mapa, ordenar por disponibilidad, nombre o nivel, cambiar el nivel PMC persistido y mostrar solo misiones disponibles segun prerequisitos y nivel.
 
 Las rutas `/trader/:traderName` mantienen la vista acotada al comerciante, pero comparten los mismos controles avanzados cuando aplica.
+
+Al completar una mision desde tarjetas, detalle o arbol, el tracker resuelve la cadena completa de prerequisitos por ID/nombre contra el catalogo completo de misiones. Esto evita marcar misiones solo por orden visual y solo autocompleta relaciones reales declaradas por la fuente de datos.
 
 ## Árbol de misiones
 

@@ -2,9 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import useProgress from '../hooks/useProgress';
 import { Task } from '../types';
+import { getCompletionIdsWithPrerequisites, getTaskPrerequisiteChain } from '../utils/taskPrerequisites';
 
 interface TaskCardProps {
   task: Task;
+  tasks?: Task[];
   position?: number;
   status?: 'completed' | 'available' | 'locked';
 }
@@ -15,17 +17,19 @@ interface TaskCardProps {
  * is persisted in localStorage using the custom hook. Styling is kept
  * minimal using Bootstrap utility classes.
  */
-const TaskCard: React.FC<TaskCardProps> = ({ task, position, status }) => {
+const TaskCard: React.FC<TaskCardProps> = ({ task, tasks = [task], position, status }) => {
   const { completedTaskIds, setCompletedTaskIds } = useProgress();
 
   const isCompleted = completedTaskIds.includes(task.id);
+  const missingPrerequisiteCount = getTaskPrerequisiteChain(task, tasks)
+    .filter((prerequisite) => !completedTaskIds.includes(prerequisite.id)).length;
 
   const toggleCompletion = () => {
     setCompletedTaskIds((prev) => {
       if (prev.includes(task.id)) {
         return prev.filter((id) => id !== task.id);
       } else {
-        return [...prev, task.id];
+        return getCompletionIdsWithPrerequisites(task, tasks, prev);
       }
     });
   };
@@ -56,6 +60,7 @@ const TaskCard: React.FC<TaskCardProps> = ({ task, position, status }) => {
           )}
           <small className="text-muted">
             {task.objectives.length} objetivos
+            {missingPrerequisiteCount > 0 ? ` · marcara ${missingPrerequisiteCount} prerequisitos` : ''}
           </small>
         </div>
         <button

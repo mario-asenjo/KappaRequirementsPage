@@ -7,6 +7,7 @@ import { getQuestStatus } from '../utils/questTree';
 
 interface QuestListPageProps {
   tasks: Task[];
+  taskCatalog?: Task[];
 }
 
 /**
@@ -14,7 +15,7 @@ interface QuestListPageProps {
  * task title and choose whether to hide completed tasks. The tasks are
  * displayed using the TaskCard component.
  */
-const QuestListPage: React.FC<QuestListPageProps> = ({ tasks }) => {
+const QuestListPage: React.FC<QuestListPageProps> = ({ tasks, taskCatalog = tasks }) => {
   const { traderName } = useParams();
   const trader = traderName ? decodeURIComponent(traderName) : '';
   const scopedTasks = trader ? tasks.filter((task) => task.trader === trader) : tasks;
@@ -31,12 +32,12 @@ const QuestListPage: React.FC<QuestListPageProps> = ({ tasks }) => {
     : 0;
   const tasksByNameOrId = useMemo(() => {
     const index = new Map<string, Task>();
-    tasks.forEach((task) => {
+    taskCatalog.forEach((task) => {
       index.set(task.id.trim().toLowerCase(), task);
       index.set(task.title.trim().toLowerCase(), task);
     });
     return index;
-  }, [tasks]);
+  }, [taskCatalog]);
 
   const getStatus = (task: Task) => getQuestStatus(task, completedTaskIds, tasksByNameOrId, playerLevel);
   const filtered = scopedTasks.filter((task) => {
@@ -182,6 +183,7 @@ const QuestListPage: React.FC<QuestListPageProps> = ({ tasks }) => {
                   <TaskCard
                     key={task.id}
                     task={task}
+                    tasks={taskCatalog}
                     position={scopedTasks.findIndex((candidate) => candidate.id === task.id) + 1}
                     status={getStatus(task)}
                   />

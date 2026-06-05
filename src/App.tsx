@@ -37,16 +37,16 @@ const App: React.FC = () => {
         <main className="app-main flex-grow-1 overflow-auto p-3">
           <Routes>
             <Route path="/" element={<Home tasks={activeTasks} goal={activeGoal} goalProgress={goalProgress} />} />
-            <Route path="/tasks" element={<QuestListPage tasks={activeTasks} />} />
-            <Route path="/quest-tree" element={<QuestTreePage tasks={activeTasks} />} />
+            <Route path="/tasks" element={<QuestListPage tasks={activeTasks} taskCatalog={allTasks} />} />
+            <Route path="/quest-tree" element={<QuestTreePage tasks={activeTasks} taskCatalog={allTasks} />} />
             <Route path="/achievements" element={<AchievementsPage tasks={allTasks} onGoalChange={setActiveGoalId} />} />
             <Route
               path="/trader/:traderName"
-              element={<QuestListPage tasks={activeTasks} />}
+              element={<QuestListPage tasks={activeTasks} taskCatalog={allTasks} />}
             />
             <Route
               path="/task/:taskId"
-              element={<QuestDetailPage tasks={activeTasks} />}
+              element={<QuestDetailPage tasks={activeTasks} taskCatalog={allTasks} />}
             />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
