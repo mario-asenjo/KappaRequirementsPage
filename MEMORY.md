@@ -61,6 +61,16 @@
 - `TaskCard` muestra badges de disponibilidad, nivel, Kappa y Lightkeeper.
 - Header y Sidebar enlazan el nuevo tablero.
 
+### 2026-06-02 (paridad referencia fase 2 - autocompletado)
+
+- Rama de trabajo: `feature/auto-complete-prerequisites`.
+- Se confirmo que `feature/reference-parity-plan` ya estaba mergeada en `origin/main` antes de iniciar la fase.
+- Se reviso la referencia `kappas.pages.dev`: no se encontro repositorio publico asociado por dominio; el bundle publico expone componentes pero no sourcemaps ni enlace a repo.
+- Se identifico `https://github.com/the-hideout/tarkov-dev` como fuente abierta relevante de `tarkov.dev`; su README enlaza tambien `the-hideout/tarkov-api` y `TarkovTracker/tarkovdata`.
+- Se anadio `src/utils/taskPrerequisites.ts` para resolver cadenas reales de prerequisitos por ID/titulo contra el catalogo completo de misiones.
+- Al marcar una mision desde tarjetas, detalle o arbol, ahora se marcan tambien sus prerequisitos recursivos reales, incluyendo otros comerciantes si la fuente de datos los conecta.
+- Al desmarcar, se desmarca solo la mision seleccionada para no borrar progreso que el usuario pudiera haber confirmado explicitamente.
+
 ### 2026-05-17 (fase 4 achievements)
 
 - Rama de trabajo: `feature/achievements-page`.

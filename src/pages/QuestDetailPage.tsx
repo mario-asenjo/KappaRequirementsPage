@@ -2,9 +2,11 @@ import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import useProgress from '../hooks/useProgress';
 import { Task } from '../types';
+import { getCompletionIdsWithPrerequisites, getTaskPrerequisiteChain } from '../utils/taskPrerequisites';
 
 interface QuestDetailPageProps {
   tasks: Task[];
+  taskCatalog?: Task[];
 }
 
 /**
@@ -13,7 +15,7 @@ interface QuestDetailPageProps {
  * persists via localStorage. If the task ID is invalid, the user is
  * redirected back to the home page.
  */
-const QuestDetailPage: React.FC<QuestDetailPageProps> = ({ tasks }) => {
+const QuestDetailPage: React.FC<QuestDetailPageProps> = ({ tasks, taskCatalog = tasks }) => {
   const { taskId } = useParams();
   const id = decodeURIComponent(taskId ?? '');
   const task = tasks.find((t) => t.id === id);
@@ -25,12 +27,14 @@ const QuestDetailPage: React.FC<QuestDetailPageProps> = ({ tasks }) => {
   }
 
   const isCompleted = completedTaskIds.includes(task.id);
+  const missingPrerequisites = getTaskPrerequisiteChain(task, taskCatalog)
+    .filter((prerequisite) => !completedTaskIds.includes(prerequisite.id));
   const toggleCompletion = () => {
     setCompletedTaskIds((prev) => {
       if (prev.includes(task.id)) {
         return prev.filter((t) => t !== task.id);
       }
-      return [...prev, task.id];
+      return getCompletionIdsWithPrerequisites(task, taskCatalog, prev);
     });
   };
 
@@ -69,11 +73,24 @@ const QuestDetailPage: React.FC<QuestDetailPageProps> = ({ tasks }) => {
           <p>{task.rewards}</p>
         </div>
       )}
+      {!isCompleted && missingPrerequisites.length > 0 && (
+        <div className="detail-panel detail-panel--chain mb-3">
+          <h5>Cadena real que se marcara</h5>
+          <p>
+            Al completar esta mision tambien se marcaran {missingPrerequisites.length} prerequisitos conectados por la API.
+          </p>
+          <ul>
+            {missingPrerequisites.map((prerequisite) => (
+              <li key={prerequisite.id}>{prerequisite.title} ({prerequisite.trader})</li>
+            ))}
+          </ul>
+        </div>
+      )}
       <button
         className={`btn ${isCompleted ? 'btn-success' : 'btn-outline-secondary'}`}
         onClick={toggleCompletion}
       >
-        {isCompleted ? 'Completada' : 'Marcar como completada'}
+        {isCompleted ? 'Completada' : missingPrerequisites.length > 0 ? 'Marcar cadena completada' : 'Marcar como completada'}
       </button>
     </div>
   );

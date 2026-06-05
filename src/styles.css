@@ -514,6 +514,10 @@ a:hover {
   height: 0.7rem;
 }
 
+.detail-panel--chain {
+  border-left: 4px solid var(--kraken-purple);
+}
+
 .quest-tree-page {
   background: #05090a;
   color: #e6e7ee;

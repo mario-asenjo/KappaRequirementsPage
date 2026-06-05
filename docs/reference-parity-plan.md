@@ -22,7 +22,7 @@ Comparativa realizada el 2026-06-02 contra el HTML y bundles publicos de `https:
 ## Prioridad Recomendada
 
 - Fase 1: tablero avanzado de misiones usando datos actuales: busqueda, sort, agrupacion por comerciante/mapa, filtro nivel, filtro siguiente disponible y ruta `/tasks`.
-- Fase 2: ampliar modelo de progreso con `workingOnTaskIds`, `completedTaskObjectives` y progreso numerico de objetivos inferible desde texto.
+- Fase 2: ampliar modelo de progreso con autocompletado de prerequisitos reales, `workingOnTaskIds`, `completedTaskObjectives` y progreso numerico de objetivos inferible desde texto.
 - Fase 3: extraer/enriquecer items de objetivos desde `tarkov.dev` y construir tracker de items necesarios.
 - Fase 4: collector items e hideout, con datos versionados y progreso persistido.
 - Fase 5: dashboard `Actualmente trabajando`, integrando misiones, collector, hideout y storyline.
@@ -33,3 +33,9 @@ Comparativa realizada el 2026-06-02 contra el HTML y bundles publicos de `https:
 
 - Rama: `feature/reference-parity-plan`.
 - Implementar Fase 1 con el minimo cambio util sobre `QuestListPage` y navegacion existente.
+
+## Fase 2 Iniciada
+
+- Rama: `feature/auto-complete-prerequisites`.
+- Prioridad maxima: al marcar una mision final, completar recursivamente sus prerequisitos reales usando `prerequisites` de `tasks.json`/`tarkov.dev`.
+- Decision: no completar misiones por posicion visual ni por pertenecer al mismo comerciante si no existe relacion declarada.
