@@ -246,6 +246,87 @@ a:hover {
   color: var(--kraken-text);
 }
 
+.import-hero {
+  align-items: center;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 320px);
+}
+
+.import-dropzone {
+  align-items: center;
+  background: linear-gradient(145deg, rgba(113, 50, 245, 0.1), rgba(20, 158, 97, 0.08));
+  border: 1px dashed rgba(113, 50, 245, 0.42);
+  border-radius: 18px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  min-height: 170px;
+  padding: 20px;
+  text-align: center;
+}
+
+.import-dropzone span {
+  color: var(--kraken-purple-deep);
+  font-weight: 800;
+}
+
+.import-dropzone input {
+  max-width: 100%;
+}
+
+.import-schema {
+  background: #11131a;
+  border-radius: 14px;
+  color: #f5f7ff;
+  font-size: 0.86rem;
+  margin: 0;
+  overflow-x: auto;
+  padding: 18px;
+}
+
+.import-stats {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-bottom: 18px;
+}
+
+.import-stats span {
+  background: rgba(104, 107, 130, 0.1);
+  border-radius: 12px;
+  color: var(--kraken-neutral);
+  padding: 12px;
+}
+
+.import-stats strong {
+  color: var(--kraken-text);
+  display: block;
+  font-size: 1.5rem;
+}
+
+.import-meta {
+  display: grid;
+  gap: 6px 14px;
+  grid-template-columns: max-content minmax(0, 1fr);
+}
+
+.import-meta dt {
+  color: var(--kraken-neutral);
+}
+
+.import-meta dd {
+  margin: 0;
+  word-break: break-word;
+}
+
+.import-task-list {
+  columns: 2;
+  margin-bottom: 12px;
+}
+
 .section-title,
 .page-heading h2 {
   font-size: clamp(1.75rem, 3vw, 2.25rem);
@@ -1162,6 +1243,15 @@ a:hover {
 
   .dashboard-panel {
     grid-template-columns: 1fr;
+  }
+
+  .import-hero,
+  .import-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .import-task-list {
+    columns: 1;
   }
 
   .dashboard-card {

@@ -11,6 +11,7 @@
     "build:quests": "tsx scripts/buildQuestTree.ts",
     "test:quests": "tsx scripts/testQuestTree.tsx",
     "test:progress": "tsx scripts/testProgressModel.ts",
+    "test:import": "tsx scripts/testProgressImport.ts",
     "test:achievements": "tsx scripts/testAchievementsPage.tsx",
     "preview": "vite preview"
   },

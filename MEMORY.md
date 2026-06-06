@@ -29,6 +29,7 @@
 ## Planes Persistentes
 
 - `docs/reference-parity-plan.md`: backlog de paridad contra `kappas.pages.dev`, con brechas detectadas y fases de implementacion.
+- `docs/progress-import-plan.md`: fases para importar progreso desde logs locales y construir el extractor externo.
 
 ## Convenciones
 
@@ -50,6 +51,14 @@
 - Total registrado de achievements: `105`.
 
 ## Historial De Cambios
+
+### 2026-06-06 (importacion de progreso fase 3)
+
+- Rama de trabajo: `feature/progress-import`.
+- Se investigo que `backend_*.log` conserva endpoints de quest pero no cuerpos de request/response utiles.
+- Se identifico `push-notifications_*.log` como fuente viable: `templateId` con sufijo `description` indica inicio, `successMessageText` indica completado y `failMessageText` indica fallo/rama alternativa.
+- Se anadio `docs/progress-import-plan.md` para separar importador web, extractor CLI, empaquetado y mejoras de confianza.
+- Se anadio la ruta `/import` para cargar un JSON de progreso, validarlo, previsualizar IDs reconocidos/desconocidos y aplicar completadas sin sobrescribir progreso existente.
 
 ### 2026-06-02 (paridad referencia fase 1)
 
