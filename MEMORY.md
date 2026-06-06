@@ -83,6 +83,13 @@
 - El CLI ahora muestra rutas candidatas probadas y una instruccion accionable cuando no encuentra `EscapeFromTarkov/Logs`.
 - Se amplio `tools/eft-log-importer/README.md` con requisitos, flujo posterior en `/import`, variable de entorno y solucion de problemas.
 
+### 2026-06-06 (descarga del extractor)
+
+- Rama de trabajo: `feature/extractor-download`.
+- Se anadio `scripts/buildExtractorDownload.ts` para generar `public/downloads/eft-log-importer.mjs`, un extractor Node.js standalone con IDs de misiones embebidos desde `src/data/tasks.json`.
+- `/import` ahora ofrece un boton real de descarga para el extractor y muestra el comando `node eft-log-importer.mjs --eft ...`.
+- Se valido el script standalone con `node public/downloads/eft-log-importer.mjs --help` y contra logs locales reales, generando 45 completadas, 43 iniciadas, 3 fallidas/alternativas y 2 IDs no reconocidos.
+
 ### 2026-06-02 (paridad referencia fase 1)
 
 - Rama de trabajo: `feature/reference-parity-plan`.

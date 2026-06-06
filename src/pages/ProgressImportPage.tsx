@@ -8,7 +8,8 @@ interface ProgressImportPageProps {
   tasks: Task[];
 }
 
-const extractorCommand = 'npm run extract:logs -- --eft "C:\\Games\\EscapeFromTarkov" --out kappa-progress-import.json';
+const extractorDownloadPath = '/downloads/eft-log-importer.mjs';
+const extractorCommand = 'node eft-log-importer.mjs --eft "C:\\Games\\EscapeFromTarkov" --out kappa-progress-import.json';
 
 const formatDate = (value: string) => {
   const date = new Date(value);
@@ -97,10 +98,17 @@ const ProgressImportPage: React.FC<ProgressImportPageProps> = ({ tasks }) => {
               <h2 className="h4">Como generar el archivo</h2>
               <ol className="import-steps">
                 <li>Cierra Escape from Tarkov y el launcher para evitar logs en escritura.</li>
-                <li>Ejecuta el extractor desde este repositorio o desde el paquete descargable cuando este publicado.</li>
+                <li>Descarga `eft-log-importer.mjs` y ejecutalo con Node.js.</li>
                 <li>Sube aqui el archivo `kappa-progress-import.json` y revisa el preview antes de aplicar.</li>
               </ol>
+              <a className="btn btn-primary import-download" href={extractorDownloadPath} download>
+                Descargar extractor
+              </a>
+              <p className="text-muted mt-3 mb-2">Comando recomendado despues de descargarlo:</p>
               <pre className="import-command" aria-label="Comando para generar el JSON">{extractorCommand}</pre>
+              <p className="text-muted small">
+                Si la carpeta se detecta automaticamente, tambien puedes ejecutar `node eft-log-importer.mjs`.
+              </p>
               <div className="import-note">
                 El extractor lee `EscapeFromTarkov/Logs/**/push-notifications_*.log`. No modifica la carpeta del juego.
               </div>

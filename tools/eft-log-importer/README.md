@@ -8,6 +8,22 @@ Herramienta local de solo lectura para generar un JSON importable por la ruta `/
 - Dependencias instaladas con `npm install`.
 - Escape from Tarkov y Battlestate Launcher cerrados antes de leer logs.
 
+## Descarga Desde La Web
+
+La ruta `/import` ofrece `eft-log-importer.mjs` como descarga directa. Es un script Node.js standalone, con los IDs de misiones embebidos al momento de generar el sitio.
+
+Despues de descargarlo:
+
+```bash
+node eft-log-importer.mjs --eft "C:\\Games\\EscapeFromTarkov" --out kappa-progress-import.json
+```
+
+Si la autodeteccion encuentra la carpeta del juego, basta con:
+
+```bash
+node eft-log-importer.mjs
+```
+
 ## Uso Rapido
 
 El extractor puede intentar detectar la instalacion automaticamente:
@@ -72,3 +88,17 @@ EFT_PATH="/mnt/c/Users/<usuario>/Desktop/EFTINSTALLFOLDER/EscapeFromTarkov" npm 
 - `Completed quests: 0`: puede que no haya eventos `successMessageText` en los logs conservados.
 - IDs no reconocidos: pueden ser mensajes de sistema, datos nuevos que no estan en `tasks.json` o quests fuera del catalogo actual.
 - Si usas PowerShell, conserva las comillas alrededor de rutas con espacios.
+
+## Mantener El Descargable Sincronizado
+
+Cuando cambie `src/data/tasks.json` o el parser del extractor, regenera el artefacto publico:
+
+```bash
+npm run build:extractor-download
+```
+
+Para validar que el artefacto descargable se regenera y arranca:
+
+```bash
+npm run test:extractor-download
+```
