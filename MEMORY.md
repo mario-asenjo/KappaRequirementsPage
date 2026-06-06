@@ -90,6 +90,14 @@
 - `/import` ahora ofrece un boton real de descarga para el extractor y muestra el comando `node eft-log-importer.mjs --eft ...`.
 - Se valido el script standalone con `node public/downloads/eft-log-importer.mjs --help` y contra logs locales reales, generando 45 completadas, 43 iniciadas, 3 fallidas/alternativas y 2 IDs no reconocidos.
 
+### 2026-06-06 (reset y orden de progreso)
+
+- Rama de trabajo: `feature/progress-reset-import-ux`.
+- Se corrigio la migracion legacy de `useProgress`: `completedTasks` solo se usa si todavia no existe `userProgress`, evitando que la ultima quest completada reaparezca al dejar `completedTaskIds` vacio.
+- Se anadio `resetProgress` para limpiar `userProgress`, `completedTasks` y `playerLevel` desde la UI.
+- `/import` ahora coloca la descarga del extractor antes y el selector JSON dentro del paso de subida, despues de generar el archivo.
+- `QuestListPage` vuelve a usar `Orden de ruta` como orden inicial, con prerequisitos antes de dependientes en lugar de reordenar todo por estado/titulo.
+
 ### 2026-06-02 (paridad referencia fase 1)
 
 - Rama de trabajo: `feature/reference-parity-plan`.

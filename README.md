@@ -140,6 +140,8 @@ La ruta `/import` acepta archivos JSON con `schemaVersion: 1`, `source`, `genera
 
 La importacion une el progreso detectado con el progreso local existente y autocompleta prerequisitos reales usando el catalogo completo. No borra misiones ya marcadas ni aplica IDs desconocidos.
 
+La misma pagina incluye `Borrar todo mi progreso`, que limpia `userProgress`, `completedTasks` y `playerLevel` en este navegador. Usalo si quieres empezar de cero o si un dato legacy mantiene una quest marcada despues de desmarcarla.
+
 El contrato y las fases de la herramienta externa estan documentados en `docs/progress-import-plan.md`.
 
 Para generar el JSON desde logs locales en modo desarrollo:
