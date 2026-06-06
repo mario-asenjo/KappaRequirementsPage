@@ -73,3 +73,36 @@ export interface UserProgress {
   manualAchievementProgress: Record<string, boolean>;
   selectedGoalId: string;
 }
+
+export type ProgressImportEvent = 'completed' | 'started' | 'failed' | 'unknown';
+export type ProgressImportConfidence = 'high' | 'medium' | 'low';
+
+export interface ProgressImportRawMatch {
+  taskId?: string;
+  event: ProgressImportEvent;
+  file?: string;
+  line?: number;
+  templateId?: string;
+  confidence?: ProgressImportConfidence;
+}
+
+export interface ProgressImportUnmatchedTemplate {
+  templateId: string;
+  event: ProgressImportEvent;
+}
+
+export interface ProgressImportFile {
+  schemaVersion: 1;
+  source: 'eft-local-logs' | string;
+  generatedAt: string;
+  profile?: {
+    profileId?: string;
+    mode?: string;
+  };
+  completedTaskIds: string[];
+  startedTaskIds?: string[];
+  failedTaskIds?: string[];
+  rawMatches?: ProgressImportRawMatch[];
+  unmatchedTemplateIds?: ProgressImportUnmatchedTemplate[];
+  warnings?: string[];
+}

@@ -13,6 +13,7 @@ Este repositorio contiene una aplicación SPA escrita en **React** (con Vite y T
 - **Árbol de misiones**: la ruta `/quest-tree` muestra todos los comerciantes en secciones horizontales tipo eft.monster, con desbloqueo por prerequisitos y nivel PMC.
 - **Selector de objetivo**: permite alternar entre Kappa, Lightkeeper, todas las misiones y achievements con quests asociadas.
 - **Achievements**: la ruta `/achievements` muestra logros, rareza, progreso, objetivos asociados y checklist manual para logros sin quests.
+- **Importacion de progreso**: la ruta `/import` permite cargar un JSON generado desde logs locales, previsualizar misiones detectadas y aplicar completadas reconocidas sin sobrescribir progreso existente.
 - **Datos sincronizables**: `src/data/tasks.json`, `src/data/achievements.json` y `src/data/goals.json` se pueden regenerar desde `tarkov.dev` y la wiki.
 - **Estilos versionados**: Bootstrap se instala como dependencia npm y se complementa con estilos locales responsivos en `src/styles.css`.
 - **Sistema visual Kraken**: `DESIGN.md` documenta paleta, tipografia, radios y componentes base usados por la UI.
@@ -39,7 +40,7 @@ kappa-tracker/
 │   │   ├── useLocalStorage.ts Hook base para persistir datos en localStorage
 │   │   └── useProgress.ts Hook de progreso compatible con objetivos
 │   ├── components/     Componentes reutilizables (Header, Sidebar, TaskCard)
-│   ├── pages/          Vistas de alto nivel (Home, QuestListPage, QuestDetailPage, QuestTreePage)
+│   ├── pages/          Vistas de alto nivel (Home, QuestListPage, QuestDetailPage, QuestTreePage, ProgressImportPage)
 │   ├── utils/          Ordenacion y construccion del arbol de misiones
 │   └── data/
 │       ├── tasks.json         Base de datos de todas las misiones sincronizada desde tarkov.dev
@@ -128,6 +129,14 @@ npm run test:achievements
 ```
 
 El modelo de progreso nuevo se guarda en `localStorage` bajo `userProgress`, pero mantiene sincronización con las claves antiguas `completedTasks` y `playerLevel` para no perder progreso existente.
+
+## Importar progreso desde logs
+
+La ruta `/import` acepta archivos JSON con `schemaVersion: 1`, `source`, `generatedAt` y `completedTaskIds`. El importador valida los IDs contra `src/data/tasks.json`, muestra un preview y solo aplica completadas cuando el usuario confirma.
+
+La importacion une el progreso detectado con el progreso local existente y autocompleta prerequisitos reales usando el catalogo completo. No borra misiones ya marcadas ni aplica IDs desconocidos.
+
+El contrato y las fases de la herramienta externa estan documentados en `docs/progress-import-plan.md`.
 
 ## Despliegue en Cloudflare Pages
 
