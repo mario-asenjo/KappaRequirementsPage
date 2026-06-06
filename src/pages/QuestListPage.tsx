@@ -4,6 +4,7 @@ import TaskCard from '../components/TaskCard';
 import useProgress from '../hooks/useProgress';
 import { Task } from '../types';
 import { getQuestStatus } from '../utils/questTree';
+import { sortTasksByGameOrder } from '../utils/taskOrder';
 
 interface QuestListPageProps {
   tasks: Task[];
@@ -25,7 +26,7 @@ const QuestListPage: React.FC<QuestListPageProps> = ({ tasks, taskCatalog = task
   const [nextOnly, setNextOnly] = useState(false);
   const [levelFilter, setLevelFilter] = useState(false);
   const [groupBy, setGroupBy] = useState<'trader' | 'map'>('trader');
-  const [sortBy, setSortBy] = useState<'name' | 'level-asc' | 'level-desc' | 'incomplete-first' | 'available-first'>('available-first');
+  const [sortBy, setSortBy] = useState<'route' | 'name' | 'level-asc' | 'level-desc' | 'incomplete-first' | 'available-first'>('route');
   const completedForScope = scopedTasks.filter((task) => completedTaskIds.includes(task.id)).length;
   const scopeProgress = scopedTasks.length > 0
     ? Math.round((completedForScope / scopedTasks.length) * 100)
@@ -53,18 +54,24 @@ const QuestListPage: React.FC<QuestListPageProps> = ({ tasks, taskCatalog = task
       && (!nextOnly || status === 'available')
       && (!levelFilter || (task.levelRequirement ?? 1) <= playerLevel);
   });
+  const routeOrder = useMemo(() => {
+    const ordered = sortTasksByGameOrder(scopedTasks);
+    return new Map(ordered.map((task, index) => [task.id, index]));
+  }, [scopedTasks]);
+  const byRouteOrder = (a: Task, b: Task) => (routeOrder.get(a.id) ?? 0) - (routeOrder.get(b.id) ?? 0);
   const sorted = [...filtered].sort((a, b) => {
     const completedA = completedTaskIds.includes(a.id);
     const completedB = completedTaskIds.includes(b.id);
     const statusA = getStatus(a);
     const statusB = getStatus(b);
 
-    if (sortBy === 'level-asc') return (a.levelRequirement ?? 1) - (b.levelRequirement ?? 1) || a.title.localeCompare(b.title);
-    if (sortBy === 'level-desc') return (b.levelRequirement ?? 1) - (a.levelRequirement ?? 1) || a.title.localeCompare(b.title);
+    if (sortBy === 'route') return byRouteOrder(a, b);
+    if (sortBy === 'level-asc') return (a.levelRequirement ?? 1) - (b.levelRequirement ?? 1) || byRouteOrder(a, b);
+    if (sortBy === 'level-desc') return (b.levelRequirement ?? 1) - (a.levelRequirement ?? 1) || byRouteOrder(a, b);
     if (sortBy === 'incomplete-first' && completedA !== completedB) return completedA ? 1 : -1;
     if (sortBy === 'available-first' && statusA !== statusB) {
       const order = { available: 0, locked: 1, completed: 2 };
-      return order[statusA] - order[statusB];
+      return order[statusA] - order[statusB] || byRouteOrder(a, b);
     }
 
     return a.title.localeCompare(b.title);
@@ -114,6 +121,7 @@ const QuestListPage: React.FC<QuestListPageProps> = ({ tasks, taskCatalog = task
         </div>
         <div className="col-md-6 col-xl-2">
           <select className="form-select" value={sortBy} onChange={(event) => setSortBy(event.target.value as typeof sortBy)}>
+            <option value="route">Orden de ruta</option>
             <option value="available-first">Disponibles primero</option>
             <option value="incomplete-first">Incompletas primero</option>
             <option value="name">Nombre A-Z</option>

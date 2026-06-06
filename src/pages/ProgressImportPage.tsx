@@ -35,10 +35,11 @@ const getImportedCompletionIds = (
 };
 
 const ProgressImportPage: React.FC<ProgressImportPageProps> = ({ tasks }) => {
-  const { completedTaskIds, setCompletedTaskIds } = useProgress();
+  const { completedTaskIds, resetProgress, setCompletedTaskIds } = useProgress();
   const [preview, setPreview] = useState<ProgressImportPreview | null>(null);
   const [error, setError] = useState('');
   const [appliedCount, setAppliedCount] = useState<number | null>(null);
+  const [resetMessage, setResetMessage] = useState('');
   const tasksById = useMemo(() => new Map(tasks.map((task) => [task.id, task])), [tasks]);
   const newCompletedTitles = preview ? getTaskTitles(preview.newCompletedTaskIds.slice(0, 12), tasksById) : [];
 
@@ -65,6 +66,15 @@ const ProgressImportPage: React.FC<ProgressImportPageProps> = ({ tasks }) => {
     setAppliedCount(next.length - completedTaskIds.length);
   };
 
+  const handleResetProgress = () => {
+    const confirmed = window.confirm('Esto borrara misiones, achievements manuales y nivel PMC guardados en este navegador. Continuar?');
+    if (!confirmed) return;
+    resetProgress();
+    setPreview(null);
+    setAppliedCount(null);
+    setResetMessage('Progreso local borrado. Tambien se limpio la clave legacy completedTasks para evitar restos como Shortage.');
+  };
+
   return (
     <div className="container-fluid progress-import-page">
       <section className="hero-panel import-hero mb-4">
@@ -81,14 +91,12 @@ const ProgressImportPage: React.FC<ProgressImportPageProps> = ({ tasks }) => {
             <span>Sin llamadas de red</span>
           </div>
         </div>
-        <label className="import-dropzone">
-          <span>Seleccionar JSON</span>
-          <input
-            type="file"
-            accept="application/json,.json"
-            onChange={(event) => readFile(event.target.files?.[0])}
-          />
-        </label>
+        <div className="import-quick-actions">
+          <a className="btn btn-primary import-download" href={extractorDownloadPath} download>
+            Descargar extractor
+          </a>
+          <span>Genera el JSON y luego subelo en el paso 3.</span>
+        </div>
       </section>
 
       <div className="row g-3">
@@ -101,9 +109,6 @@ const ProgressImportPage: React.FC<ProgressImportPageProps> = ({ tasks }) => {
                 <li>Descarga `eft-log-importer.mjs` y ejecutalo con Node.js.</li>
                 <li>Sube aqui el archivo `kappa-progress-import.json` y revisa el preview antes de aplicar.</li>
               </ol>
-              <a className="btn btn-primary import-download" href={extractorDownloadPath} download>
-                Descargar extractor
-              </a>
               <p className="text-muted mt-3 mb-2">Comando recomendado despues de descargarlo:</p>
               <pre className="import-command" aria-label="Comando para generar el JSON">{extractorCommand}</pre>
               <p className="text-muted small">
@@ -112,6 +117,14 @@ const ProgressImportPage: React.FC<ProgressImportPageProps> = ({ tasks }) => {
               <div className="import-note">
                 El extractor lee `EscapeFromTarkov/Logs/**/push-notifications_*.log`. No modifica la carpeta del juego.
               </div>
+              <label className="import-dropzone import-dropzone--inline mt-3">
+                <span>Subir JSON generado</span>
+                <input
+                  type="file"
+                  accept="application/json,.json"
+                  onChange={(event) => readFile(event.target.files?.[0])}
+                />
+              </label>
               <h3 className="h5 mt-4">Contrato esperado</h3>
               <p className="text-muted">
                 La herramienta debe generar schemaVersion 1, source, generatedAt y completedTaskIds.
@@ -134,6 +147,7 @@ const ProgressImportPage: React.FC<ProgressImportPageProps> = ({ tasks }) => {
             <div className="card-body">
               <h2 className="h4">Preview</h2>
               {error && <div className="alert alert-danger">{error}</div>}
+              {resetMessage && <div className="alert alert-success">{resetMessage}</div>}
               {appliedCount !== null && (
                 <div className="alert alert-success">
                   Importacion aplicada. Se anadieron {appliedCount} misiones contando prerequisitos reales.
@@ -210,6 +224,21 @@ const ProgressImportPage: React.FC<ProgressImportPageProps> = ({ tasks }) => {
               <p>La web solo une completadas reconocidas despues del preview y nunca elimina progreso manual existente.</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="card mt-3">
+        <div className="card-body import-reset-panel">
+          <div>
+            <h2 className="h4">Borrar progreso local</h2>
+            <p>
+              Si una quest queda marcada por datos antiguos del navegador, usa este reset. Borra `userProgress`,
+              `completedTasks` y `playerLevel` para dejar el tracker limpio antes de volver a importar.
+            </p>
+          </div>
+          <button className="btn btn-outline-danger" type="button" onClick={handleResetProgress}>
+            Borrar todo mi progreso
+          </button>
         </div>
       </section>
     </div>

@@ -277,6 +277,23 @@ a:hover {
   max-width: 100%;
 }
 
+.import-quick-actions {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.import-quick-actions span {
+  color: var(--kraken-neutral);
+  font-weight: 700;
+  text-align: center;
+}
+
+.import-dropzone--inline {
+  min-height: 120px;
+}
+
 .import-privacy-strip {
   display: flex;
   flex-wrap: wrap;
@@ -401,6 +418,18 @@ a:hover {
 }
 
 .import-limit-grid p {
+  color: var(--kraken-neutral);
+  margin: 0;
+}
+
+.import-reset-panel {
+  align-items: center;
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
+}
+
+.import-reset-panel p {
   color: var(--kraken-neutral);
   margin: 0;
 }
@@ -1331,6 +1360,11 @@ a:hover {
 
   .import-task-list {
     columns: 1;
+  }
+
+  .import-reset-panel {
+    align-items: stretch;
+    flex-direction: column;
   }
 
   .dashboard-card {

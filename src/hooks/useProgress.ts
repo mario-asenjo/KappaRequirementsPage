@@ -8,13 +8,12 @@ export default function useProgress() {
   const [legacyCompletedTaskIds, setLegacyCompletedTaskIds] = useLocalStorage<string[]>('completedTasks', []);
   const [legacyPlayerLevel, setLegacyPlayerLevel] = useLocalStorage<number>('playerLevel', 1);
   const [storedProgress, setStoredProgress] = useLocalStorage<UserProgress>('userProgress', defaultUserProgress);
+  const hasStoredProgress = typeof window !== 'undefined' && window.localStorage.getItem('userProgress') !== null;
   const progress = useMemo(() => normalizeUserProgress({
     ...storedProgress,
-    completedTaskIds: storedProgress.completedTaskIds.length > 0
-      ? storedProgress.completedTaskIds
-      : legacyCompletedTaskIds,
-    playerLevel: storedProgress.playerLevel || legacyPlayerLevel,
-  }), [legacyCompletedTaskIds, legacyPlayerLevel, storedProgress]);
+    completedTaskIds: hasStoredProgress ? storedProgress.completedTaskIds : legacyCompletedTaskIds,
+    playerLevel: hasStoredProgress ? storedProgress.playerLevel : storedProgress.playerLevel || legacyPlayerLevel,
+  }), [hasStoredProgress, legacyCompletedTaskIds, legacyPlayerLevel, storedProgress]);
 
   useEffect(() => {
     const normalizedStoredProgress = normalizeUserProgress(storedProgress);
@@ -72,9 +71,17 @@ export default function useProgress() {
     }));
   };
 
+  const resetProgress = () => {
+    const resetValue = normalizeUserProgress(defaultUserProgress);
+    setStoredProgress(resetValue);
+    setLegacyCompletedTaskIds([]);
+    setLegacyPlayerLevel(resetValue.playerLevel);
+  };
+
   return {
     progress,
     setProgress,
+    resetProgress,
     completedTaskIds: progress.completedTaskIds,
     setCompletedTaskIds,
     playerLevel: progress.playerLevel,
