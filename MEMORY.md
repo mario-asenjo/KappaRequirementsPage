@@ -76,6 +76,13 @@
 - Se documento `tools/eft-log-importer/README.md` como guia especifica del extractor hasta publicar binarios descargables.
 - Se reforzo que el extractor es de solo lectura, no usa credenciales, no hace llamadas de red y que los logs no representan una foto completa del perfil.
 
+### 2026-06-06 (usabilidad del extractor)
+
+- Rama de trabajo: `feature/extractor-usability`.
+- Se anadio autodeteccion basica de rutas para `npm run extract:logs` sin `--eft`, incluyendo soporte de `EFT_PATH` y `EFT_INSTALL_PATH`.
+- El CLI ahora muestra rutas candidatas probadas y una instruccion accionable cuando no encuentra `EscapeFromTarkov/Logs`.
+- Se amplio `tools/eft-log-importer/README.md` con requisitos, flujo posterior en `/import`, variable de entorno y solucion de problemas.
+
 ### 2026-06-02 (paridad referencia fase 1)
 
 - Rama de trabajo: `feature/reference-parity-plan`.

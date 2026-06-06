@@ -4,6 +4,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { Task } from '../src/types';
 import { extractProgressFromLogs } from '../tools/eft-log-importer/parser';
+import { getArg, getCandidateEftPaths, resolveEftPath } from '../tools/eft-log-importer/paths';
 
 const tasks: Task[] = [
   { id: '59689ee586f7740d1570bbd5', title: 'Sanitary Standards - Part 1', trader: 'Therapist', objectives: [], countsForKappa: true },
@@ -68,6 +69,10 @@ async function main() {
     assert.deepEqual(result.failedTaskIds, ['597a0f5686f774273b74f676'], 'failMessageText should mark failed quests');
     assert.equal(result.unmatchedTemplateIds?.length, 1, 'unknown task ids should be reported');
     assert.equal(result.rawMatches?.length, 4, 'raw matches should include all recognized quest template suffixes');
+    assert.equal(getArg(['node', 'cli', '--eft', root], '--eft'), root, 'CLI arg helper should read explicit paths');
+    assert.deepEqual(getCandidateEftPaths(['node', 'cli', '--eft', root], {}), [root], 'explicit EFT path should be the only candidate');
+    assert.deepEqual(getCandidateEftPaths(['node', 'cli'], { EFT_PATH: root }), [root], 'EFT_PATH should be supported');
+    assert.equal(await resolveEftPath(['node', 'cli', '--eft', root], {}), root, 'resolver should accept folders with Logs');
   } finally {
     await rm(root, { recursive: true, force: true });
   }
