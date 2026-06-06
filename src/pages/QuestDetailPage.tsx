@@ -19,7 +19,7 @@ const QuestDetailPage: React.FC<QuestDetailPageProps> = ({ tasks, taskCatalog = 
   const { taskId } = useParams();
   const id = decodeURIComponent(taskId ?? '');
   const task = tasks.find((t) => t.id === id);
-  const { completedTaskIds, setCompletedTaskIds } = useProgress();
+  const { completedTaskIds, setCompletedTaskIds, startedTaskIds } = useProgress();
 
   if (!task) {
     // If the task is not found redirect to home
@@ -27,6 +27,7 @@ const QuestDetailPage: React.FC<QuestDetailPageProps> = ({ tasks, taskCatalog = 
   }
 
   const isCompleted = completedTaskIds.includes(task.id);
+  const isStarted = !isCompleted && startedTaskIds.includes(task.id);
   const missingPrerequisites = getTaskPrerequisiteChain(task, taskCatalog)
     .filter((prerequisite) => !completedTaskIds.includes(prerequisite.id));
   const toggleCompletion = () => {
@@ -48,6 +49,11 @@ const QuestDetailPage: React.FC<QuestDetailPageProps> = ({ tasks, taskCatalog = 
       </div>
       {task.description && (
         <p className="detail-lead lead">{task.description}</p>
+      )}
+      {isStarted && (
+        <div className="detail-panel detail-panel--started mb-3">
+          Esta mision aparece como iniciada en tus logs locales, pero no como completada.
+        </div>
       )}
       <div className="detail-panel mb-3">
         <h5>Objetivos</h5>

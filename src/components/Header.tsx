@@ -37,6 +37,7 @@ const Header: React.FC<HeaderProps> = ({ tasks, goals, activeGoal, goalProgress,
         <NavLink to="/quest-tree">Arbol</NavLink>
         <NavLink to="/achievements">Achievements</NavLink>
         <NavLink to="/import">Importar</NavLink>
+        <a href="https://github.com/mario-asenjo/KappaRequirementsPage" target="_blank" rel="noreferrer">Star GitHub</a>
       </nav>
       <label className="goal-selector">
         <span>Objetivo</span>

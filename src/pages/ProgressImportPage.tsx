@@ -36,7 +36,7 @@ const getImportedCompletionIds = (
 };
 
 const ProgressImportPage: React.FC<ProgressImportPageProps> = ({ tasks }) => {
-  const { completedTaskIds, resetProgress, setCompletedTaskIds } = useProgress();
+  const { completedTaskIds, progress, resetProgress, setProgress } = useProgress();
   const [preview, setPreview] = useState<ProgressImportPreview | null>(null);
   const [error, setError] = useState('');
   const [appliedCount, setAppliedCount] = useState<number | null>(null);
@@ -62,9 +62,29 @@ const ProgressImportPage: React.FC<ProgressImportPageProps> = ({ tasks }) => {
   const applyImport = () => {
     if (!preview) return;
 
-    const next = getImportedCompletionIds(preview.newCompletedTaskIds, tasks, tasksById, completedTaskIds);
-    setCompletedTaskIds(next);
-    setAppliedCount(next.length - completedTaskIds.length);
+    const nextCompleted = getImportedCompletionIds(preview.newCompletedTaskIds, tasks, tasksById, progress.completedTaskIds);
+    const nextCompletedSet = new Set(nextCompleted);
+    const started = new Set(progress.startedTaskIds);
+    preview.validStartedTaskIds.forEach((id) => {
+      if (!nextCompletedSet.has(id)) started.add(id);
+    });
+    const addedCompletedCount = nextCompleted.length - progress.completedTaskIds.length;
+
+    setProgress({
+      ...progress,
+      completedTaskIds: nextCompleted,
+      startedTaskIds: Array.from(started).filter((id) => !nextCompletedSet.has(id)),
+      lastImport: {
+        source: preview.importFile.source,
+        importedAt: new Date().toISOString(),
+        generatedAt: preview.importFile.generatedAt,
+        addedCompletedCount,
+        detectedStartedCount: preview.validStartedTaskIds.length,
+        unknownTaskCount: preview.unknownTaskIds.length,
+        warningCount: preview.warnings.length,
+      },
+    });
+    setAppliedCount(addedCompletedCount);
   };
 
   const handleResetProgress = () => {
@@ -158,6 +178,25 @@ const ProgressImportPage: React.FC<ProgressImportPageProps> = ({ tasks }) => {
                 </div>
               )}
               {!preview && !error && <p className="text-muted">Selecciona un archivo para ver que se aplicaria.</p>}
+              {!preview && progress.lastImport && (
+                <div className="import-last-status">
+                  <span className="eyebrow">Ultima importacion</span>
+                  <dl className="import-meta mb-0">
+                    <dt>Fuente</dt>
+                    <dd>{progress.lastImport.source}</dd>
+                    <dt>Importado</dt>
+                    <dd>{formatDate(progress.lastImport.importedAt)}</dd>
+                    <dt>JSON generado</dt>
+                    <dd>{formatDate(progress.lastImport.generatedAt)}</dd>
+                    <dt>Aplicadas</dt>
+                    <dd>{progress.lastImport.addedCompletedCount} completadas nuevas</dd>
+                    <dt>Iniciadas</dt>
+                    <dd>{progress.lastImport.detectedStartedCount} detectadas</dd>
+                    <dt>Alertas</dt>
+                    <dd>{progress.lastImport.warningCount} warnings, {progress.lastImport.unknownTaskCount} IDs no reconocidos</dd>
+                  </dl>
+                </div>
+              )}
               {preview && (
                 <div className="import-preview">
                   <div className="import-stats" aria-label="Resumen de importacion">
