@@ -143,10 +143,16 @@ El contrato y las fases de la herramienta externa estan documentados en `docs/pr
 Para generar el JSON desde logs locales en modo desarrollo:
 
 ```bash
+npm run extract:logs
+```
+
+Si la autodeteccion no encuentra la instalacion, pasa la ruta explicitamente:
+
+```bash
 npm run extract:logs -- --eft "C:\\Games\\EscapeFromTarkov" --out kappa-progress-import.json
 ```
 
-El extractor lee `EscapeFromTarkov/Logs/**/push-notifications_*.log`, no hace llamadas de red y no escribe dentro de la carpeta del juego. Conviene cerrar el juego y el launcher antes de ejecutarlo para evitar leer logs en escritura.
+El extractor lee `EscapeFromTarkov/Logs/**/push-notifications_*.log`, no hace llamadas de red y no escribe dentro de la carpeta del juego. Conviene cerrar el juego y el launcher antes de ejecutarlo para evitar leer logs en escritura. Tambien puedes usar `EFT_PATH` para fijar la carpeta de instalacion.
 
 La guia especifica del extractor vive en `tools/eft-log-importer/README.md`. Hasta publicar binarios descargables, ese documento es la referencia para ejecutar la herramienta desde el repositorio.
 

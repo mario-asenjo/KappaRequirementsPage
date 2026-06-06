@@ -3,17 +3,12 @@ import { dirname, resolve } from 'node:path';
 import taskData from '../../src/data/tasks.json';
 import { Task } from '../../src/types';
 import { extractProgressFromLogs } from './parser';
-
-const DEFAULT_OUTPUT = 'kappa-progress-import.json';
-
-function getArg(name: string) {
-  const index = process.argv.indexOf(name);
-  if (index === -1) return undefined;
-  return process.argv[index + 1];
-}
+import { DEFAULT_OUTPUT, getArg, getCandidateEftPaths, resolveEftPath } from './paths';
 
 function printHelp() {
   console.log(`Usage: npm run extract:logs -- --eft "C:\\Games\\EscapeFromTarkov" --out kappa-progress-import.json
+
+If --eft is omitted, the extractor tries common install locations and EFT_PATH/EFT_INSTALL_PATH.
 
 Options:
   --eft <path>   Path to the EscapeFromTarkov installation folder.
@@ -29,16 +24,19 @@ async function main() {
     return;
   }
 
-  const eftPath = getArg('--eft') ?? getArg('--logs');
+  const eftPath = await resolveEftPath();
   if (!eftPath) {
     printHelp();
+    console.error('\nNo readable EscapeFromTarkov/Logs folder was found. Tried:');
+    getCandidateEftPaths().forEach((candidate) => console.error(`- ${candidate}`));
+    console.error('\nPass the folder explicitly with --eft or set EFT_PATH.');
     process.exitCode = 1;
     return;
   }
 
-  const outputPath = resolve(getArg('--out') ?? DEFAULT_OUTPUT);
+  const outputPath = resolve(getArg(process.argv, '--out') ?? DEFAULT_OUTPUT);
   const result = await extractProgressFromLogs({
-    eftPath: resolve(eftPath),
+    eftPath,
     tasks: taskData.tasks as Task[],
   });
 

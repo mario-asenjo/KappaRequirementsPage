@@ -23,6 +23,7 @@
 - Anadir en `/import` una guia corta de privacidad: solo lectura, sin credenciales, sin red.
 - Mantener `tools/eft-log-importer/README.md` como fuente de uso local hasta publicar binarios.
 - Mostrar en la UI los limites de confianza para evitar que el usuario interprete el JSON como estado completo del perfil.
+- Anadir autodeteccion basica de rutas y soporte de `EFT_PATH` para reducir friccion antes del empaquetado.
 
 ## Fase 6 - Mejoras de confianza
 
