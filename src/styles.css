@@ -312,6 +312,10 @@ a:hover {
   white-space: pre-wrap;
 }
 
+.import-download {
+  width: 100%;
+}
+
 .import-note {
   font-size: 0.9rem;
   font-weight: 700;
