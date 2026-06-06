@@ -97,6 +97,14 @@
 - `/import` descarga el ZIP como opcion principal y mantiene el `.mjs` directo como alternativa avanzada.
 - Los runners comprueban si Node.js esta instalado, intentan instalarlo con gestores comunes o abren/muestran instrucciones, y despues ejecutan el extractor preguntando carpeta EFT y salida.
 
+### 2026-06-06 (estado importador e iniciadas)
+
+- Rama de trabajo: `feature/import-status-started-star`.
+- Se amplio `UserProgress` con `startedTaskIds` y `lastImport` para guardar misiones iniciadas detectadas y el resumen de la ultima importacion aplicada.
+- `/import` muestra estado de ultima importacion cuando no hay preview activo: fuente, fechas, completadas nuevas, iniciadas, warnings e IDs no reconocidos.
+- `TaskCard` y detalle de mision muestran badge/aviso para misiones iniciadas detectadas pero no completadas.
+- La cabecera incluye `Star GitHub`, que abre el repositorio para hacer star desde GitHub.
+
 ### 2026-06-06 (reset y orden de progreso)
 
 - Rama de trabajo: `feature/progress-reset-import-ux`.

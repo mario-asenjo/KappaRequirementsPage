@@ -47,6 +47,13 @@ export default function useProgress() {
     }));
   };
 
+  const setStartedTaskIds: Dispatch<SetStateAction<string[]>> = (value) => {
+    setProgress((current) => ({
+      ...current,
+      startedTaskIds: value instanceof Function ? value(current.startedTaskIds) : value,
+    }));
+  };
+
   const setPlayerLevel: Dispatch<SetStateAction<number>> = (value) => {
     setProgress((current) => ({
       ...current,
@@ -84,6 +91,8 @@ export default function useProgress() {
     resetProgress,
     completedTaskIds: progress.completedTaskIds,
     setCompletedTaskIds,
+    startedTaskIds: progress.startedTaskIds,
+    setStartedTaskIds,
     playerLevel: progress.playerLevel,
     setPlayerLevel,
     completedAchievementIds: progress.completedAchievementIds,

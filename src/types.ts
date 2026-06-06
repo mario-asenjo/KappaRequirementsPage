@@ -69,9 +69,21 @@ export interface UserProgress {
   version: 1;
   playerLevel: number;
   completedTaskIds: string[];
+  startedTaskIds: string[];
   completedAchievementIds: string[];
   manualAchievementProgress: Record<string, boolean>;
   selectedGoalId: string;
+  lastImport?: ProgressImportSummary;
+}
+
+export interface ProgressImportSummary {
+  source: string;
+  importedAt: string;
+  generatedAt: string;
+  addedCompletedCount: number;
+  detectedStartedCount: number;
+  unknownTaskCount: number;
+  warningCount: number;
 }
 
 export type ProgressImportEvent = 'completed' | 'started' | 'failed' | 'unknown';

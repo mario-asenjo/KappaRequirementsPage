@@ -4,6 +4,7 @@ export const defaultUserProgress: UserProgress = {
   version: 1,
   playerLevel: 1,
   completedTaskIds: [],
+  startedTaskIds: [],
   completedAchievementIds: [],
   manualAchievementProgress: {},
   selectedGoalId: 'kappa',
@@ -18,9 +19,11 @@ export function normalizeUserProgress(progress: Partial<UserProgress> | undefine
     version: 1,
     playerLevel: Math.min(79, Math.max(1, Number(progress?.playerLevel) || defaultUserProgress.playerLevel)),
     completedTaskIds: unique(progress?.completedTaskIds ?? []),
+    startedTaskIds: unique(progress?.startedTaskIds ?? []),
     completedAchievementIds: unique(progress?.completedAchievementIds ?? []),
     manualAchievementProgress: progress?.manualAchievementProgress ?? {},
     selectedGoalId: progress?.selectedGoalId || defaultUserProgress.selectedGoalId,
+    lastImport: progress?.lastImport,
   };
 }
 

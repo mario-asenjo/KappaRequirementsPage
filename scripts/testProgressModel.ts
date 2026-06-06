@@ -19,11 +19,13 @@ const goal: Goal = {
 const progress = normalizeUserProgress({
   playerLevel: 120,
   completedTaskIds: ['a', 'a'],
+  startedTaskIds: ['b', 'b'],
   completedAchievementIds: ['achievement-a'],
 });
 
 assert.equal(progress.playerLevel, 79, 'player level should be clamped to max level');
 assert.deepEqual(progress.completedTaskIds, ['a'], 'completed task ids should be unique');
+assert.deepEqual(progress.startedTaskIds, ['b'], 'started task ids should be unique');
 
 const goalProgress = getGoalProgress(goal, progress, tasks);
 assert.equal(goalProgress.completed, 2, 'goal should count completed task and achievement');

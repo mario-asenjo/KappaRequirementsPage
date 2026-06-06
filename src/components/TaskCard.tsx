@@ -18,9 +18,10 @@ interface TaskCardProps {
  * minimal using Bootstrap utility classes.
  */
 const TaskCard: React.FC<TaskCardProps> = ({ task, tasks = [task], position, status }) => {
-  const { completedTaskIds, setCompletedTaskIds } = useProgress();
+  const { completedTaskIds, setCompletedTaskIds, startedTaskIds } = useProgress();
 
   const isCompleted = completedTaskIds.includes(task.id);
+  const isStarted = !isCompleted && startedTaskIds.includes(task.id);
   const missingPrerequisiteCount = getTaskPrerequisiteChain(task, tasks)
     .filter((prerequisite) => !completedTaskIds.includes(prerequisite.id)).length;
 
@@ -45,6 +46,7 @@ const TaskCard: React.FC<TaskCardProps> = ({ task, tasks = [task], position, sta
                 {status === 'available' ? 'Disponible' : status === 'locked' ? 'Bloqueada' : 'Completada'}
               </span>
             )}
+            {isStarted && <span className="task-status task-status--started">Iniciada</span>}
             {task.levelRequirement && <span className="task-level">Nivel {task.levelRequirement}</span>}
             {task.lightkeeperRequired && <span className="task-flag task-flag--lightkeeper">LK</span>}
             {task.countsForKappa && <span className="task-flag task-flag--kappa">Kappa</span>}
