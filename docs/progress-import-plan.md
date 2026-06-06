@@ -24,8 +24,8 @@
 - Mantener `tools/eft-log-importer/README.md` como fuente de uso local hasta publicar binarios.
 - Mostrar en la UI los limites de confianza para evitar que el usuario interprete el JSON como estado completo del perfil.
 - Anadir autodeteccion basica de rutas y soporte de `EFT_PATH` para reducir friccion antes del empaquetado.
-- Publicar `public/downloads/eft-log-importer.mjs` como primer artefacto descargable standalone desde `/import`.
-- Generar el artefacto con `npm run build:extractor-download` para mantenerlo sincronizado con `tasks.json`.
+- Publicar `public/downloads/eft-log-importer.zip` como artefacto principal desde `/import`, con README y runners Windows/Linux.
+- Generar `eft-log-importer.mjs` y `eft-log-importer.zip` con `npm run build:extractor-download` para mantenerlos sincronizados con `tasks.json`.
 
 ## Fase 6 - Mejoras de confianza
 

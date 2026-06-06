@@ -15,7 +15,7 @@
     "test:progress": "tsx scripts/testProgressModel.ts",
     "test:import": "tsx scripts/testProgressImport.ts",
     "test:extractor": "tsx scripts/testEftLogImporter.ts",
-    "test:extractor-download": "npm run build:extractor-download && node public/downloads/eft-log-importer.mjs --help",
+    "test:extractor-download": "npm run build:extractor-download && node public/downloads/eft-log-importer.mjs --help && node -e \"const fs=require('fs'); const zip=fs.readFileSync('public/downloads/eft-log-importer.zip'); if(!zip.includes(Buffer.from('run-windows.bat')) || !zip.includes(Buffer.from('run-linux.sh')) || !zip.includes(Buffer.from('README.txt'))) process.exit(1);\"",
     "test:achievements": "tsx scripts/testAchievementsPage.tsx",
     "preview": "vite preview"
   },

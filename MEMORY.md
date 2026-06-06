@@ -90,6 +90,13 @@
 - `/import` ahora ofrece un boton real de descarga para el extractor y muestra el comando `node eft-log-importer.mjs --eft ...`.
 - Se valido el script standalone con `node public/downloads/eft-log-importer.mjs --help` y contra logs locales reales, generando 45 completadas, 43 iniciadas, 3 fallidas/alternativas y 2 IDs no reconocidos.
 
+### 2026-06-06 (paquete ZIP del extractor)
+
+- Rama de trabajo: `feature/extractor-zip-package`.
+- `scripts/buildExtractorDownload.ts` ahora genera tambien `public/downloads/eft-log-importer.zip` con `README.txt`, `eft-log-importer.mjs`, `run-windows.bat` y `run-linux.sh`.
+- `/import` descarga el ZIP como opcion principal y mantiene el `.mjs` directo como alternativa avanzada.
+- Los runners comprueban si Node.js esta instalado, intentan instalarlo con gestores comunes o abren/muestran instrucciones, y despues ejecutan el extractor preguntando carpeta EFT y salida.
+
 ### 2026-06-06 (reset y orden de progreso)
 
 - Rama de trabajo: `feature/progress-reset-import-ux`.

@@ -10,9 +10,16 @@ Herramienta local de solo lectura para generar un JSON importable por la ruta `/
 
 ## Descarga Desde La Web
 
-La ruta `/import` ofrece `eft-log-importer.mjs` como descarga directa. Es un script Node.js standalone, con los IDs de misiones embebidos al momento de generar el sitio.
+La ruta `/import` ofrece `eft-log-importer.zip` como descarga principal. Incluye:
 
-Despues de descargarlo:
+- `README.txt`
+- `eft-log-importer.mjs`
+- `run-windows.bat`
+- `run-linux.sh`
+
+Los runners preguntan por la carpeta de instalacion y archivo de salida, comprueban si Node.js existe e intentan instalarlo o mostrar instrucciones si falta.
+
+Si prefieres usar solo el `.mjs` directamente:
 
 ```bash
 node eft-log-importer.mjs --eft "C:\\Games\\EscapeFromTarkov" --out kappa-progress-import.json
