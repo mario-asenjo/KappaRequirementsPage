@@ -60,6 +60,15 @@
 - Se anadio `docs/progress-import-plan.md` para separar importador web, extractor CLI, empaquetado y mejoras de confianza.
 - Se anadio la ruta `/import` para cargar un JSON de progreso, validarlo, previsualizar IDs reconocidos/desconocidos y aplicar completadas sin sobrescribir progreso existente.
 
+### 2026-06-06 (importacion de progreso fase 4)
+
+- Rama de trabajo: `feature/eft-log-importer`.
+- Se anadio `tools/eft-log-importer` con parser y CLI TypeScript de solo lectura para logs locales.
+- El comando `npm run extract:logs -- --eft <EscapeFromTarkov> --out kappa-progress-import.json` escanea `Logs/**/push-notifications_*.log` y emite el contrato aceptado por `/import`.
+- El parser interpreta `description` como iniciada, `successMessageText` como completada y `failMessageText` como fallida/alternativa, cruzando IDs contra `src/data/tasks.json`.
+- Se anadio `npm run test:extractor` con logs sinteticos para validar completadas, iniciadas, fallidas, perfil y IDs no reconocidos.
+- Validacion read-only contra logs locales reales en `/mnt/c/Users/masen/Desktop/EFTINSTALLFOLDER/EscapeFromTarkov`: genero JSON temporal en `/tmp/opencode` con 45 completadas, 43 iniciadas, 3 fallidas/alternativas y 2 template IDs no reconocidos.
+
 ### 2026-06-02 (paridad referencia fase 1)
 
 - Rama de trabajo: `feature/reference-parity-plan`.

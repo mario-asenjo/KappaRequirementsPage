@@ -125,6 +125,8 @@ Para validar la construcción del árbol y un render básico de la página:
 ```bash
 npm run test:quests
 npm run test:progress
+npm run test:import
+npm run test:extractor
 npm run test:achievements
 ```
 
@@ -137,6 +139,14 @@ La ruta `/import` acepta archivos JSON con `schemaVersion: 1`, `source`, `genera
 La importacion une el progreso detectado con el progreso local existente y autocompleta prerequisitos reales usando el catalogo completo. No borra misiones ya marcadas ni aplica IDs desconocidos.
 
 El contrato y las fases de la herramienta externa estan documentados en `docs/progress-import-plan.md`.
+
+Para generar el JSON desde logs locales en modo desarrollo:
+
+```bash
+npm run extract:logs -- --eft "C:\\Games\\EscapeFromTarkov" --out kappa-progress-import.json
+```
+
+El extractor lee `EscapeFromTarkov/Logs/**/push-notifications_*.log`, no hace llamadas de red y no escribe dentro de la carpeta del juego. Conviene cerrar el juego y el launcher antes de ejecutarlo para evitar leer logs en escritura.
 
 ## Despliegue en Cloudflare Pages
 

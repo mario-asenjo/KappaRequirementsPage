@@ -13,6 +13,8 @@
 - Escanear `EscapeFromTarkov/Logs/**/push-notifications_*.log`.
 - Detectar `templateId` con sufijos `description`, `successMessageText` y `failMessageText`.
 - Emitir `kappa-progress-import.json` con completadas, iniciadas, fallidas, raw matches, warnings e IDs no reconocidos.
+- Ejecutar desde el repositorio con `npm run extract:logs -- --eft "C:\\Games\\EscapeFromTarkov" --out kappa-progress-import.json`.
+- Mantener el extractor sin llamadas de red y sin escritura dentro de la carpeta de instalacion del juego.
 
 ## Fase 5 - Empaquetado y UX de descarga
 
