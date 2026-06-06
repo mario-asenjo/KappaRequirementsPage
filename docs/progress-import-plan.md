@@ -21,6 +21,8 @@
 - Documentar que el juego y launcher deben estar cerrados antes de ejecutar el extractor.
 - Publicar binarios o instrucciones de ejecucion desde releases.
 - Anadir en `/import` una guia corta de privacidad: solo lectura, sin credenciales, sin red.
+- Mantener `tools/eft-log-importer/README.md` como fuente de uso local hasta publicar binarios.
+- Mostrar en la UI los limites de confianza para evitar que el usuario interprete el JSON como estado completo del perfil.
 
 ## Fase 6 - Mejoras de confianza
 

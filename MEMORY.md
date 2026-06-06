@@ -69,6 +69,13 @@
 - Se anadio `npm run test:extractor` con logs sinteticos para validar completadas, iniciadas, fallidas, perfil y IDs no reconocidos.
 - Validacion read-only contra logs locales reales en `/mnt/c/Users/masen/Desktop/EFTINSTALLFOLDER/EscapeFromTarkov`: genero JSON temporal en `/tmp/opencode` con 45 completadas, 43 iniciadas, 3 fallidas/alternativas y 2 template IDs no reconocidos.
 
+### 2026-06-06 (importacion de progreso fase 5)
+
+- Rama de trabajo: `feature/importer-ux`.
+- Se mejoro `/import` con pasos de generacion del JSON, comando visible, privacidad, advertencias de limites y detalle desplegable de IDs no reconocidos.
+- Se documento `tools/eft-log-importer/README.md` como guia especifica del extractor hasta publicar binarios descargables.
+- Se reforzo que el extractor es de solo lectura, no usa credenciales, no hace llamadas de red y que los logs no representan una foto completa del perfil.
+
 ### 2026-06-02 (paridad referencia fase 1)
 
 - Rama de trabajo: `feature/reference-parity-plan`.

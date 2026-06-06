@@ -8,6 +8,8 @@ interface ProgressImportPageProps {
   tasks: Task[];
 }
 
+const extractorCommand = 'npm run extract:logs -- --eft "C:\\Games\\EscapeFromTarkov" --out kappa-progress-import.json';
+
 const formatDate = (value: string) => {
   const date = new Date(value);
   return Number.isNaN(date.getTime()) ? value : date.toLocaleString();
@@ -72,6 +74,11 @@ const ProgressImportPage: React.FC<ProgressImportPageProps> = ({ tasks }) => {
             Carga un JSON generado por la herramienta externa. La web valida IDs contra el catalogo actual,
             muestra un resumen y solo aplica cambios cuando confirmas.
           </p>
+          <div className="import-privacy-strip" aria-label="Garantias de privacidad">
+            <span>Solo lectura</span>
+            <span>Sin credenciales</span>
+            <span>Sin llamadas de red</span>
+          </div>
         </div>
         <label className="import-dropzone">
           <span>Seleccionar JSON</span>
@@ -87,7 +94,17 @@ const ProgressImportPage: React.FC<ProgressImportPageProps> = ({ tasks }) => {
         <div className="col-lg-5">
           <div className="card h-100">
             <div className="card-body">
-              <h2 className="h4">Contrato esperado</h2>
+              <h2 className="h4">Como generar el archivo</h2>
+              <ol className="import-steps">
+                <li>Cierra Escape from Tarkov y el launcher para evitar logs en escritura.</li>
+                <li>Ejecuta el extractor desde este repositorio o desde el paquete descargable cuando este publicado.</li>
+                <li>Sube aqui el archivo `kappa-progress-import.json` y revisa el preview antes de aplicar.</li>
+              </ol>
+              <pre className="import-command" aria-label="Comando para generar el JSON">{extractorCommand}</pre>
+              <div className="import-note">
+                El extractor lee `EscapeFromTarkov/Logs/**/push-notifications_*.log`. No modifica la carpeta del juego.
+              </div>
+              <h3 className="h5 mt-4">Contrato esperado</h3>
               <p className="text-muted">
                 La herramienta debe generar schemaVersion 1, source, generatedAt y completedTaskIds.
               </p>
@@ -147,6 +164,12 @@ const ProgressImportPage: React.FC<ProgressImportPageProps> = ({ tasks }) => {
                       {preview.warnings.join(' ')}
                     </div>
                   )}
+                  {preview.unknownTaskIds.length > 0 && (
+                    <details className="import-details mb-3">
+                      <summary>Ver IDs no reconocidos</summary>
+                      <code>{preview.unknownTaskIds.join(', ')}</code>
+                    </details>
+                  )}
                   <button
                     className="btn btn-primary"
                     type="button"
@@ -161,6 +184,26 @@ const ProgressImportPage: React.FC<ProgressImportPageProps> = ({ tasks }) => {
           </div>
         </div>
       </div>
+
+      <section className="import-limits card mt-3">
+        <div className="card-body">
+          <h2 className="h4">Limites conocidos</h2>
+          <div className="import-limit-grid">
+            <div>
+              <strong>No reconstruye todo el perfil</strong>
+              <p>Los logs locales no incluyen una foto completa del estado actual. Solo detectamos eventos que siguen presentes en archivos guardados.</p>
+            </div>
+            <div>
+              <strong>Las completadas antiguas pueden faltar</strong>
+              <p>Si el log fue rotado, borrado o la mision se completo antes del rango disponible, no aparecera en el JSON.</p>
+            </div>
+            <div>
+              <strong>Tu confirmas los cambios</strong>
+              <p>La web solo une completadas reconocidas despues del preview y nunca elimina progreso manual existente.</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
