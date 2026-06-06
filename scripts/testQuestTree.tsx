@@ -5,7 +5,7 @@ import { StaticRouter } from 'react-router-dom/server';
 import taskData from '../src/data/tasks.json';
 import QuestTreePage from '../src/pages/QuestTreePage';
 import { Task } from '../src/types';
-import { buildQuestTree, flattenQuestTree, getValidCompletedTaskIds } from '../src/utils/questTree';
+import { buildQuestTree, flattenQuestTree, getQuestStatus, getValidCompletedTaskIds } from '../src/utils/questTree';
 
 const tasks = taskData.tasks as Task[];
 const tree = buildQuestTree(tasks);
@@ -37,6 +37,16 @@ assert.deepEqual(
   getValidCompletedTaskIds(chainTasks, ['a', 'b', 'c'], 5),
   ['a', 'b'],
   'level-gated quests should not count as completed until the player level is high enough'
+);
+
+const chainTasksById = new Map(chainTasks.flatMap((task) => [
+  [task.id, task],
+  [task.title.toLowerCase(), task],
+]));
+assert.equal(
+  getQuestStatus(chainTasks[2], ['a', 'b', 'c'], chainTasksById, 5),
+  'completed',
+  'imported completed quests should stay completed even when the current PMC level is lower'
 );
 
 const html = renderToString(

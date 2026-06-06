@@ -98,6 +98,13 @@
 - `/import` ahora coloca la descarga del extractor antes y el selector JSON dentro del paso de subida, despues de generar el archivo.
 - `QuestListPage` vuelve a usar `Orden de ruta` como orden inicial, con prerequisitos antes de dependientes en lugar de reordenar todo por estado/titulo.
 
+### 2026-06-06 (fix arbol tras importacion)
+
+- Rama de trabajo: `feature/fix-tree-import-pruning`.
+- Se corrigio un bug donde `QuestTreePage` escribia `getValidCompletedTaskIds(...)` sobre el progreso global al renderizar. Con nivel PMC bajo, esto podia borrar casi todo el progreso importado al entrar al arbol.
+- El arbol ya no poda progreso persistido durante el render; el nivel PMC solo afecta disponibilidad visual y acciones manuales desde el arbol.
+- `getQuestStatus` ahora prioriza IDs completados antes del bloqueo por nivel, para que misiones importadas como completadas sigan apareciendo completadas aunque el nivel PMC actual sea inferior.
+
 ### 2026-06-02 (paridad referencia fase 1)
 
 - Rama de trabajo: `feature/reference-parity-plan`.

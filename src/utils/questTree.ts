@@ -30,6 +30,8 @@ export function getQuestStatus(
   tasksByNameOrId: Map<string, Task>,
   playerLevel = 79
 ) {
+  if (completedIds.includes(task.id)) return 'completed';
+
   if ((task.levelRequirement ?? 1) > playerLevel) return 'locked';
 
   const prerequisites = getTaskPrerequisites(task)
@@ -38,8 +40,6 @@ export function getQuestStatus(
 
   const prerequisitesCompleted = prerequisites.every((prerequisite) => completedIds.includes(prerequisite.id));
   if (!prerequisitesCompleted) return 'locked';
-
-  if (completedIds.includes(task.id)) return 'completed';
 
   return 'available';
 }

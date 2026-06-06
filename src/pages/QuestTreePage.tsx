@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import useProgress from '../hooks/useProgress';
 import { Task } from '../types';
@@ -164,18 +164,11 @@ function getPath(source: TreePoint, target: TreePoint) {
 const QuestTreePage: React.FC<QuestTreePageProps> = ({ tasks, taskCatalog = tasks }) => {
   const { completedTaskIds, setCompletedTaskIds, playerLevel, setPlayerLevel } = useProgress();
   const [selectedTaskId, setSelectedTaskId] = useState<string | null>(null);
-  const validAllCompletedIds = getValidCompletedTaskIds(taskCatalog, completedTaskIds, playerLevel);
   const activeTaskIds = new Set(tasks.map((task) => task.id));
-  const validCompletedIds = validAllCompletedIds.filter((id) => activeTaskIds.has(id));
+  const validCompletedIds = completedTaskIds.filter((id) => activeTaskIds.has(id));
   const groups = sortGroups(buildQuestTree(tasks, validCompletedIds, playerLevel));
   const completedCount = tasks.filter((task) => validCompletedIds.includes(task.id)).length;
   const selectedTask = selectedTaskId ? tasks.find((task) => task.id === selectedTaskId) : undefined;
-
-  useEffect(() => {
-    if (validAllCompletedIds.join('|') !== completedTaskIds.join('|')) {
-      setCompletedTaskIds(validAllCompletedIds);
-    }
-  }, [completedTaskIds, setCompletedTaskIds, validAllCompletedIds]);
 
   const toggleCompletion = (task: Task) => {
     setCompletedTaskIds((current) => {
