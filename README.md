@@ -14,7 +14,7 @@ Este repositorio contiene una aplicación SPA escrita en **React** (con Vite y T
 - **Selector de objetivo**: permite alternar entre Kappa, Lightkeeper, todas las misiones y achievements con quests asociadas.
 - **Achievements**: la ruta `/achievements` muestra logros, rareza, progreso, objetivos asociados y checklist manual para logros sin quests.
 - **Importacion de progreso**: la ruta `/import` permite cargar un JSON generado desde logs locales, previsualizar misiones detectadas y aplicar completadas reconocidas sin sobrescribir progreso existente.
-- **Extractor descargable**: la ruta `/import` enlaza `public/downloads/eft-log-importer.mjs`, un script Node.js standalone para generar el JSON sin instalar dependencias del repositorio.
+- **Extractor descargable**: la ruta `/import` enlaza `public/downloads/eft-log-importer.zip`, con script Node.js standalone, README y runners para Windows/Linux.
 - **Datos sincronizables**: `src/data/tasks.json`, `src/data/achievements.json` y `src/data/goals.json` se pueden regenerar desde `tarkov.dev` y la wiki.
 - **Estilos versionados**: Bootstrap se instala como dependencia npm y se complementa con estilos locales responsivos en `src/styles.css`.
 - **Sistema visual Kraken**: `DESIGN.md` documenta paleta, tipografia, radios y componentes base usados por la UI.
@@ -160,7 +160,7 @@ El extractor lee `EscapeFromTarkov/Logs/**/push-notifications_*.log`, no hace ll
 
 La guia especifica del extractor vive en `tools/eft-log-importer/README.md`. Hasta publicar binarios descargables, ese documento es la referencia para ejecutar la herramienta desde el repositorio.
 
-El artefacto descargable de la UI se genera con:
+Los artefactos descargables de la UI (`eft-log-importer.mjs` y `eft-log-importer.zip`) se generan con:
 
 ```bash
 npm run build:extractor-download

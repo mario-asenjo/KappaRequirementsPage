@@ -8,7 +8,8 @@ interface ProgressImportPageProps {
   tasks: Task[];
 }
 
-const extractorDownloadPath = '/downloads/eft-log-importer.mjs';
+const extractorDownloadPath = '/downloads/eft-log-importer.zip';
+const extractorScriptPath = '/downloads/eft-log-importer.mjs';
 const extractorCommand = 'node eft-log-importer.mjs --eft "C:\\Games\\EscapeFromTarkov" --out kappa-progress-import.json';
 
 const formatDate = (value: string) => {
@@ -93,9 +94,12 @@ const ProgressImportPage: React.FC<ProgressImportPageProps> = ({ tasks }) => {
         </div>
         <div className="import-quick-actions">
           <a className="btn btn-primary import-download" href={extractorDownloadPath} download>
-            Descargar extractor
+            Descargar extractor ZIP
           </a>
-          <span>Genera el JSON y luego subelo en el paso 3.</span>
+          <a className="import-script-link" href={extractorScriptPath} download>
+            Descargar solo el script .mjs
+          </a>
+          <span>Descomprime el ZIP, ejecuta el script de tu sistema y luego sube el JSON en el paso 3.</span>
         </div>
       </section>
 
@@ -106,10 +110,10 @@ const ProgressImportPage: React.FC<ProgressImportPageProps> = ({ tasks }) => {
               <h2 className="h4">Como generar el archivo</h2>
               <ol className="import-steps">
                 <li>Cierra Escape from Tarkov y el launcher para evitar logs en escritura.</li>
-                <li>Descarga `eft-log-importer.mjs` y ejecutalo con Node.js.</li>
+                <li>Descarga el ZIP, descomprimelo y ejecuta `run-windows.bat` o `run-linux.sh`.</li>
                 <li>Sube aqui el archivo `kappa-progress-import.json` y revisa el preview antes de aplicar.</li>
               </ol>
-              <p className="text-muted mt-3 mb-2">Comando recomendado despues de descargarlo:</p>
+              <p className="text-muted mt-3 mb-2">Comando avanzado si prefieres ejecutar el `.mjs` directamente:</p>
               <pre className="import-command" aria-label="Comando para generar el JSON">{extractorCommand}</pre>
               <p className="text-muted small">
                 Si la carpeta se detecta automaticamente, tambien puedes ejecutar `node eft-log-importer.mjs`.
