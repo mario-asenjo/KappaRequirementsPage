@@ -277,6 +277,46 @@ a:hover {
   max-width: 100%;
 }
 
+.import-privacy-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.import-privacy-strip span,
+.import-note {
+  background: rgba(20, 158, 97, 0.12);
+  border-radius: 12px;
+  color: var(--kraken-success-dark);
+  font-weight: 800;
+  padding: 8px 10px;
+}
+
+.import-steps {
+  color: var(--kraken-neutral);
+  padding-left: 1.2rem;
+}
+
+.import-steps li {
+  margin-bottom: 8px;
+}
+
+.import-command {
+  background: #11131a;
+  border-radius: 14px;
+  color: #f5f7ff;
+  font-size: 0.86rem;
+  overflow-x: auto;
+  padding: 16px;
+  white-space: pre-wrap;
+}
+
+.import-note {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
 .import-schema {
   background: #11131a;
   border-radius: 14px;
@@ -325,6 +365,40 @@ a:hover {
 .import-task-list {
   columns: 2;
   margin-bottom: 12px;
+}
+
+.import-details {
+  background: rgba(104, 107, 130, 0.08);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.import-details summary {
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.import-details code {
+  display: block;
+  margin-top: 8px;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.import-limit-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.import-limit-grid strong {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.import-limit-grid p {
+  color: var(--kraken-neutral);
+  margin: 0;
 }
 
 .section-title,
@@ -1246,6 +1320,7 @@ a:hover {
   }
 
   .import-hero,
+  .import-limit-grid,
   .import-stats {
     grid-template-columns: 1fr;
   }

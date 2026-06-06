@@ -148,6 +148,8 @@ npm run extract:logs -- --eft "C:\\Games\\EscapeFromTarkov" --out kappa-progress
 
 El extractor lee `EscapeFromTarkov/Logs/**/push-notifications_*.log`, no hace llamadas de red y no escribe dentro de la carpeta del juego. Conviene cerrar el juego y el launcher antes de ejecutarlo para evitar leer logs en escritura.
 
+La guia especifica del extractor vive en `tools/eft-log-importer/README.md`. Hasta publicar binarios descargables, ese documento es la referencia para ejecutar la herramienta desde el repositorio.
+
 ## Despliegue en Cloudflare Pages
 
 1. Conecta este repositorio a Cloudflare Pages y selecciona la rama `main` para desplegar.
