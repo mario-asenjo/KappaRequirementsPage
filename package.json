@@ -7,11 +7,13 @@
     "build": "vite build",
     "update:tasks": "tsx scripts/fetchTasks.ts",
     "update:achievements": "tsx scripts/fetchAchievements.ts",
+    "extract:logs": "tsx tools/eft-log-importer/cli.ts",
     "build:goals": "tsx scripts/buildGoals.ts",
     "build:quests": "tsx scripts/buildQuestTree.ts",
     "test:quests": "tsx scripts/testQuestTree.tsx",
     "test:progress": "tsx scripts/testProgressModel.ts",
     "test:import": "tsx scripts/testProgressImport.ts",
+    "test:extractor": "tsx scripts/testEftLogImporter.ts",
     "test:achievements": "tsx scripts/testAchievementsPage.tsx",
     "preview": "vite preview"
   },
