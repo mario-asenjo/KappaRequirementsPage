@@ -4,9 +4,9 @@
       "https://api.tarkov.dev/graphql",
       "https://escapefromtarkov.fandom.com/wiki/Achievements"
     ],
-    "syncedAt": "2026-05-17T13:05:41.138Z",
-    "achievementCount": 105,
-    "wikiEnrichedCount": 105
+    "syncedAt": "2026-06-07T10:10:38.586Z",
+    "achievementCount": 109,
+    "wikiEnrichedCount": 108
   },
   "achievements": [
     {
@@ -54,7 +54,7 @@
       "hidden": false,
       "rarity": "Rare",
       "imageLink": "https://assets.tarkov.dev/achievement-675709bef4e2a2ce0f058f56-icon.webp",
-      "playersCompletedPercent": 0.4,
+      "playersCompletedPercent": 0.42,
       "wiki": {
         "section": "Achievements",
         "reward": "Modest wallpaper Hideout wall style",
@@ -74,7 +74,7 @@
       "hidden": false,
       "rarity": "Rare",
       "imageLink": "https://assets.tarkov.dev/achievement-65141032a3dd9b6aa7159ed3-icon.webp",
-      "playersCompletedPercent": 0.18,
+      "playersCompletedPercent": 0.19,
       "wiki": {
         "section": "Achievements",
         "reward": "No",
@@ -92,7 +92,7 @@
       "hidden": false,
       "rarity": "Common",
       "imageLink": "https://assets.tarkov.dev/achievement-6512f1e3be73cc7f07358ed5-icon.webp",
-      "playersCompletedPercent": 6.39,
+      "playersCompletedPercent": 6.46,
       "wiki": {
         "section": "Achievements",
         "reward": "No",
@@ -110,7 +110,7 @@
       "hidden": false,
       "rarity": "Legendary",
       "imageLink": "https://assets.tarkov.dev/achievement-6a04f93d7a6a2b325906bb5c-icon.webp",
-      "playersCompletedPercent": 0.04,
+      "playersCompletedPercent": 0.26,
       "wiki": {
         "section": "Event achievements",
         "reward": "No",
@@ -129,7 +129,7 @@
       "hidden": false,
       "rarity": "Common",
       "imageLink": "https://assets.tarkov.dev/achievement-65141bdfcf2f1c285e606446-icon.webp",
-      "playersCompletedPercent": 7.48,
+      "playersCompletedPercent": 7.51,
       "wiki": {
         "section": "Achievements",
         "reward": "No",
@@ -147,7 +147,7 @@
       "hidden": true,
       "rarity": "Legendary",
       "imageLink": "https://assets.tarkov.dev/achievement-6912163e680e04c5da057e5b-icon.webp",
-      "playersCompletedPercent": 0.41,
+      "playersCompletedPercent": 0.44,
       "wiki": {
         "section": "Achievements",
         "reward": "Yes",
@@ -166,7 +166,7 @@
       "hidden": false,
       "rarity": "Rare",
       "imageLink": "https://assets.tarkov.dev/achievement-651419eea3dd9b6aa7159ee5-icon.webp",
-      "playersCompletedPercent": 5.86,
+      "playersCompletedPercent": 5.9,
       "wiki": {
         "section": "Arena achievements",
         "reward": "No",
@@ -183,7 +183,7 @@
       "hidden": false,
       "rarity": "Common",
       "imageLink": "https://assets.tarkov.dev/achievement-6513eb6e0dc723592b0f9095-icon.webp",
-      "playersCompletedPercent": 11.53,
+      "playersCompletedPercent": 11.61,
       "wiki": {
         "section": "Achievements",
         "reward": "No",
@@ -222,7 +222,7 @@
       "hidden": true,
       "rarity": "Common",
       "imageLink": "https://assets.tarkov.dev/achievement-6514174fb1c08b0feb216d73-icon.webp",
-      "playersCompletedPercent": 0.2,
+      "playersCompletedPercent": 0.21,
       "wiki": {
         "section": "Achievements",
         "reward": "Yes",
@@ -254,13 +254,32 @@
       }
     },
     {
+      "id": "6a0344563743e4b101070b92",
+      "name": "Cracks in the Ice",
+      "description": "Decrypt the data of The Unheard from the archives aboard the icebreaker \"Boreas\"",
+      "hidden": false,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-6a0344563743e4b101070b92-icon.webp",
+      "playersCompletedPercent": 0.09,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "Yes",
+        "rawDescription": "Decrypt the data of The Unheard from the archives aboard the icebreaker(Complete Boreas)",
+        "links": [
+          "File:Cracks in the Ice Achievement Icon.png",
+          "icebreaker",
+          "Boreas"
+        ]
+      }
+    },
+    {
       "id": "6513ee11a3dd9b6aa7159b4a",
       "name": "Deal to Make",
       "description": "Neutralize Reshala for the first time while playing as a PMC",
       "hidden": false,
       "rarity": "Common",
       "imageLink": "https://assets.tarkov.dev/achievement-6513ee11a3dd9b6aa7159b4a-icon.webp",
-      "playersCompletedPercent": 12.14,
+      "playersCompletedPercent": 12.23,
       "wiki": {
         "section": "Achievements",
         "reward": "No",
@@ -295,7 +314,7 @@
       "hidden": false,
       "rarity": "Legendary",
       "imageLink": "https://assets.tarkov.dev/achievement-68f76353c152253a5b01a612-icon.webp",
-      "playersCompletedPercent": 0.06,
+      "playersCompletedPercent": 0.07,
       "wiki": {
         "section": "Achievements",
         "reward": "No",
@@ -329,7 +348,7 @@
       "hidden": false,
       "rarity": "Legendary",
       "imageLink": "https://assets.tarkov.dev/achievement-6984ab58ee0ae2c0d5075f33-icon.webp",
-      "playersCompletedPercent": 0.37,
+      "playersCompletedPercent": 0.36,
       "wiki": {
         "section": "Event achievements",
         "reward": "* Escape from Duckov poster\n* Duck figurine\n* Scavenger Hideout shooting range target style",
@@ -351,7 +370,7 @@
       "hidden": false,
       "rarity": "Legendary",
       "imageLink": "https://assets.tarkov.dev/achievement-67a0e57b972c11a3f50773b2-icon.webp",
-      "playersCompletedPercent": 0.08,
+      "playersCompletedPercent": 0.07,
       "wiki": {
         "section": "Event achievements",
         "reward": "* Minotaur's Lair Hideout ceiling style\n* Minotaur's Lair Hideout wall style\n* Minotaur's Lair Hideout floor style",
@@ -388,7 +407,7 @@
       "hidden": true,
       "rarity": "Legendary",
       "imageLink": "https://assets.tarkov.dev/achievement-69121515e329984a340f00b4-icon.webp",
-      "playersCompletedPercent": 0.1,
+      "playersCompletedPercent": 0.11,
       "wiki": {
         "section": "Achievements",
         "reward": "Yes",
@@ -422,7 +441,7 @@
       "hidden": false,
       "rarity": "Legendary",
       "imageLink": "https://assets.tarkov.dev/achievement-68f76344bc0e8927900279f0-icon.webp",
-      "playersCompletedPercent": 0.06,
+      "playersCompletedPercent": 0.07,
       "wiki": {
         "section": "Achievements",
         "reward": "No",
@@ -460,7 +479,7 @@
       "hidden": false,
       "rarity": "Legendary",
       "imageLink": "https://assets.tarkov.dev/achievement-6514321bec10ff011f17ccac-icon.webp",
-      "playersCompletedPercent": 1.21,
+      "playersCompletedPercent": 1.23,
       "wiki": {
         "section": "Achievements",
         "reward": "No",
@@ -478,7 +497,7 @@
       "hidden": true,
       "rarity": "Common",
       "imageLink": "https://assets.tarkov.dev/achievement-65141c80ec10ff011f17cc3e-icon.webp",
-      "playersCompletedPercent": 40.8,
+      "playersCompletedPercent": 40.92,
       "wiki": {
         "section": "Achievements",
         "reward": "Yes",
@@ -513,7 +532,7 @@
       "hidden": false,
       "rarity": "Common",
       "imageLink": "https://assets.tarkov.dev/achievement-6513f0a10dc723592b0f90cf-icon.webp",
-      "playersCompletedPercent": 4.11,
+      "playersCompletedPercent": 4.15,
       "wiki": {
         "section": "Achievements",
         "reward": "No",
@@ -550,7 +569,7 @@
       "hidden": false,
       "rarity": "Common",
       "imageLink": "https://assets.tarkov.dev/achievement-6513eec00dc723592b0f90cc-icon.webp",
-      "playersCompletedPercent": 6.49,
+      "playersCompletedPercent": 6.57,
       "wiki": {
         "section": "Achievements",
         "reward": "No",
@@ -587,7 +606,7 @@
       "hidden": false,
       "rarity": "Rare",
       "imageLink": "https://assets.tarkov.dev/achievement-65140b55cf2f1c285e606414-icon.webp",
-      "playersCompletedPercent": 0.57,
+      "playersCompletedPercent": 0.58,
       "wiki": {
         "section": "Achievements",
         "reward": "Factory walls Hideout wall style",
@@ -627,7 +646,7 @@
       "hidden": true,
       "rarity": "Legendary",
       "imageLink": "https://assets.tarkov.dev/achievement-6842c27a38482d35ac0bd847-icon.webp",
-      "playersCompletedPercent": 0.05,
+      "playersCompletedPercent": 0.06,
       "wiki": {
         "section": "Achievements",
         "reward": "Yes",
@@ -681,7 +700,7 @@
       "hidden": false,
       "rarity": "Rare",
       "imageLink": "https://assets.tarkov.dev/achievement-6514134eec10ff011f17cc26-icon.webp",
-      "playersCompletedPercent": 0.15,
+      "playersCompletedPercent": 0.42,
       "wiki": {
         "section": "Achievements",
         "reward": "No",
@@ -691,6 +710,15 @@
           "Knight"
         ]
       }
+    },
+    {
+      "id": "6a11d9028fd274eb6207c0bc",
+      "name": "I’m on a Boat",
+      "description": "Neutralize 4 members of The Wedge's squad while playing as a PMC",
+      "hidden": false,
+      "rarity": "Common",
+      "imageLink": "https://assets.tarkov.dev/achievement-6a11d9028fd274eb6207c0bc-icon.webp",
+      "playersCompletedPercent": 0.27
     },
     {
       "id": "67a0e57117e34930e50075f3",
@@ -722,7 +750,7 @@
       "hidden": false,
       "rarity": "Legendary",
       "imageLink": "https://assets.tarkov.dev/achievement-691213c8680e04c5da0571eb-icon.webp",
-      "playersCompletedPercent": 0.6,
+      "playersCompletedPercent": 0.63,
       "wiki": {
         "section": "Achievements",
         "reward": "No",
@@ -761,7 +789,7 @@
       "hidden": false,
       "rarity": "Rare",
       "imageLink": "https://assets.tarkov.dev/achievement-664f23e44702fd5db50ee732-icon.webp",
-      "playersCompletedPercent": 2.37,
+      "playersCompletedPercent": 2.38,
       "wiki": {
         "section": "Achievements",
         "reward": "Small tiles Hideout floor style",
@@ -798,7 +826,7 @@
       "hidden": true,
       "rarity": "Legendary",
       "imageLink": "https://assets.tarkov.dev/achievement-691213563d597b2ef80a21cf-icon.webp",
-      "playersCompletedPercent": 0.76,
+      "playersCompletedPercent": 0.8,
       "wiki": {
         "section": "Achievements",
         "reward": "Yes",
@@ -817,7 +845,7 @@
       "hidden": false,
       "rarity": "Common",
       "imageLink": "https://assets.tarkov.dev/achievement-655b49bc91aa9e07687ae47c-icon.webp",
-      "playersCompletedPercent": 4.52,
+      "playersCompletedPercent": 4.56,
       "wiki": {
         "section": "Achievements",
         "reward": "No",
@@ -835,7 +863,7 @@
       "hidden": true,
       "rarity": "Legendary",
       "imageLink": "https://assets.tarkov.dev/achievement-6842c25bd02bc07d70054019-icon.webp",
-      "playersCompletedPercent": 0.1,
+      "playersCompletedPercent": 0.12,
       "wiki": {
         "section": "Achievements",
         "reward": "Yes",
@@ -877,13 +905,13 @@
       "hidden": true,
       "rarity": "Common",
       "imageLink": "https://assets.tarkov.dev/achievement-6512f16bde333c33d5127cbc-icon.webp",
-      "playersCompletedPercent": 0.08,
+      "playersCompletedPercent": 0.09,
       "wiki": {
         "section": "Achievements",
         "reward": "Yes",
         "rawDescription": "Eliminate one of the hooded men with their own knife at night time while playing as a PMC",
         "links": [
-          "File:Killer of Killers Icon.png",
+          "File:Killer of Killers Achievement Icon.png",
           "Cultists",
           "Cultist knife"
         ]
@@ -914,7 +942,7 @@
       "hidden": false,
       "rarity": "Rare",
       "imageLink": "https://assets.tarkov.dev/achievement-65140bbec31fcb0e163577b9-icon.webp",
-      "playersCompletedPercent": 0.44,
+      "playersCompletedPercent": 0.45,
       "wiki": {
         "section": "Achievements",
         "reward": "No",
@@ -932,11 +960,11 @@
       "hidden": false,
       "rarity": "Legendary",
       "imageLink": "https://assets.tarkov.dev/achievement-691215e8680e04c5da057e57-icon.webp",
-      "playersCompletedPercent": 0.22,
+      "playersCompletedPercent": 0.23,
       "wiki": {
         "section": "Achievements",
         "reward": "No",
-        "rawDescription": "Gather evidence of all of TerraGroup's \"minor\" misdeeds(Deliver all 32 minor evidence to Mr. Kerman)",
+        "rawDescription": "Gather evidence of all of TerraGroup's \"minor\" misdeeds(Deliver all 36 minor evidence to Mr. Kerman)",
         "links": [
           "File:Little Triumphs Achievement Icon.png",
           "Minor evidence list"
@@ -950,7 +978,7 @@
       "hidden": true,
       "rarity": "Legendary",
       "imageLink": "https://assets.tarkov.dev/achievement-6634cae870af846d2868dada-icon.webp",
-      "playersCompletedPercent": 0.35,
+      "playersCompletedPercent": 0.34,
       "wiki": {
         "section": "Event achievements",
         "reward": "Mr Kerman's cat hologram",
@@ -989,7 +1017,7 @@
       "hidden": true,
       "rarity": "Common",
       "imageLink": "https://assets.tarkov.dev/achievement-65141eb5c31fcb0e163577dd-icon.webp",
-      "playersCompletedPercent": 27.86,
+      "playersCompletedPercent": 27.91,
       "wiki": {
         "section": "Achievements",
         "reward": "Yes",
@@ -1026,7 +1054,7 @@
       "hidden": true,
       "rarity": "Legendary",
       "imageLink": "https://assets.tarkov.dev/achievement-691212088e10a4e1fb0f48c4-icon.webp",
-      "playersCompletedPercent": 1.19,
+      "playersCompletedPercent": 1.26,
       "wiki": {
         "section": "Achievements",
         "reward": "Yes",
@@ -1111,7 +1139,7 @@
       "hidden": true,
       "rarity": "Legendary",
       "imageLink": "https://assets.tarkov.dev/achievement-676094451fec2f7426093be6-icon.webp",
-      "playersCompletedPercent": 0.24,
+      "playersCompletedPercent": 0.29,
       "wiki": {
         "section": "Achievements",
         "reward": "Yes",
@@ -1184,7 +1212,7 @@
       "hidden": false,
       "rarity": "Common",
       "imageLink": "https://assets.tarkov.dev/achievement-6513f1feec10ff011f17c7ea-icon.webp",
-      "playersCompletedPercent": 4.45,
+      "playersCompletedPercent": 4.59,
       "wiki": {
         "section": "Achievements",
         "reward": "No",
@@ -1204,7 +1232,7 @@
       "hidden": false,
       "rarity": "Rare",
       "imageLink": "https://assets.tarkov.dev/achievement-651412b8c31fcb0e163577c5-icon.webp",
-      "playersCompletedPercent": 0.24,
+      "playersCompletedPercent": 0.25,
       "wiki": {
         "section": "Achievements",
         "reward": "No",
@@ -1222,7 +1250,7 @@
       "hidden": false,
       "rarity": "Legendary",
       "imageLink": "https://assets.tarkov.dev/achievement-685d3d6b81d993fda109cdb8-icon.webp",
-      "playersCompletedPercent": 2.14,
+      "playersCompletedPercent": 2.13,
       "wiki": {
         "section": "Event achievements",
         "reward": "No",
@@ -1235,13 +1263,33 @@
       }
     },
     {
+      "id": "6a03447fb2e3003f8706a400",
+      "name": "Part of the Ship, Part of the Crew",
+      "description": "Learn all the secrets of the icebreaker \"Boreas\"",
+      "hidden": false,
+      "rarity": "Legendary",
+      "imageLink": "https://assets.tarkov.dev/achievement-6a03447fb2e3003f8706a400-icon.webp",
+      "playersCompletedPercent": 0.06,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "Yes",
+        "rawDescription": "Learn all the secrets of the icebreaker \"Boreas\"(Complete Boreas, complete all Icebreaker side quests, enter all locked rooms on Icebreaker)",
+        "links": [
+          "File:Part of the Ship, Part of the Crew Achievement Icon.png",
+          "icebreaker",
+          "Boreas",
+          "Icebreaker"
+        ]
+      }
+    },
+    {
       "id": "691213956b60607135006811",
       "name": "Pathfinder",
       "description": "Fully explore Tarkov and its inhabitants",
       "hidden": false,
       "rarity": "Legendary",
       "imageLink": "https://assets.tarkov.dev/achievement-691213956b60607135006811-icon.webp",
-      "playersCompletedPercent": 2.59,
+      "playersCompletedPercent": 2.75,
       "wiki": {
         "section": "Achievements",
         "reward": "No",
@@ -1259,7 +1307,7 @@
       "hidden": false,
       "rarity": "Legendary",
       "imageLink": "https://assets.tarkov.dev/achievement-69121487d2f0e6de2f0561ef-icon.webp",
-      "playersCompletedPercent": 0.7,
+      "playersCompletedPercent": 0.73,
       "wiki": {
         "section": "Achievements",
         "reward": "No",
@@ -1277,7 +1325,7 @@
       "hidden": false,
       "rarity": "Rare",
       "imageLink": "https://assets.tarkov.dev/achievement-65141dd6303df252af1c72c9-icon.webp",
-      "playersCompletedPercent": 2.81,
+      "playersCompletedPercent": 2.86,
       "wiki": {
         "section": "Achievements",
         "reward": "No",
@@ -1294,7 +1342,7 @@
       "hidden": false,
       "rarity": "Common",
       "imageLink": "https://assets.tarkov.dev/achievement-6512ea46f7a078264a4376e4-icon.webp",
-      "playersCompletedPercent": 2.19,
+      "playersCompletedPercent": 2.18,
       "wiki": {
         "section": "Achievements",
         "reward": "No",
@@ -1312,7 +1360,7 @@
       "hidden": true,
       "rarity": "Legendary",
       "imageLink": "https://assets.tarkov.dev/achievement-676091c0f457869a94017a23-icon.webp",
-      "playersCompletedPercent": 0.74,
+      "playersCompletedPercent": 0.88,
       "wiki": {
         "section": "Achievements",
         "reward": "Yes",
@@ -1330,7 +1378,7 @@
       "hidden": false,
       "rarity": "Rare",
       "imageLink": "https://assets.tarkov.dev/achievement-65141cd2cf2f1c285e606449-icon.webp",
-      "playersCompletedPercent": 5.42,
+      "playersCompletedPercent": 5.45,
       "wiki": {
         "section": "Achievements",
         "reward": "Blue paint Hideout wall style",
@@ -1348,7 +1396,7 @@
       "hidden": false,
       "rarity": "Rare",
       "imageLink": "https://assets.tarkov.dev/achievement-66c32996b4c0c017a3319cc3-icon.webp",
-      "playersCompletedPercent": 0.31,
+      "playersCompletedPercent": 0.32,
       "wiki": {
         "section": "Achievements",
         "reward": "No",
@@ -1366,7 +1414,7 @@
       "hidden": false,
       "rarity": "Common",
       "imageLink": "https://assets.tarkov.dev/achievement-6513efa1b49e3253755f47eb-icon.webp",
-      "playersCompletedPercent": 8.34,
+      "playersCompletedPercent": 8.42,
       "wiki": {
         "section": "Achievements",
         "reward": "No",
@@ -1384,7 +1432,7 @@
       "hidden": false,
       "rarity": "Legendary",
       "imageLink": "https://assets.tarkov.dev/achievement-68e8f0575eb7e5ce5000ba0a-icon.webp",
-      "playersCompletedPercent": 0.24,
+      "playersCompletedPercent": 0.25,
       "wiki": {
         "section": "Achievements",
         "reward": "No",
@@ -1401,7 +1449,7 @@
       "hidden": false,
       "rarity": "Legendary",
       "imageLink": "https://assets.tarkov.dev/achievement-68f7635e006f73031b0336fa-icon.webp",
-      "playersCompletedPercent": 0.23,
+      "playersCompletedPercent": 0.25,
       "wiki": {
         "section": "Achievements",
         "reward": "No",
@@ -1418,7 +1466,7 @@
       "hidden": false,
       "rarity": "Common",
       "imageLink": "https://assets.tarkov.dev/achievement-6513ed89cf2f1c285e606068-icon.webp",
-      "playersCompletedPercent": 9.5,
+      "playersCompletedPercent": 9.58,
       "wiki": {
         "section": "Achievements",
         "reward": "No",
@@ -1436,7 +1484,7 @@
       "hidden": false,
       "rarity": "Rare",
       "imageLink": "https://assets.tarkov.dev/achievement-6527d2e2c656a951ad1528c3-icon.webp",
-      "playersCompletedPercent": 0.14,
+      "playersCompletedPercent": 0.17,
       "wiki": {
         "section": "Achievements",
         "reward": "No",
@@ -1538,7 +1586,7 @@
       "hidden": false,
       "rarity": "Legendary",
       "imageLink": "https://assets.tarkov.dev/achievement-68936a7a672ffe94a509446b-icon.webp",
-      "playersCompletedPercent": 0.33,
+      "playersCompletedPercent": 0.32,
       "wiki": {
         "section": "Event achievements",
         "reward": "Targrad poster",
@@ -1558,7 +1606,7 @@
       "hidden": true,
       "rarity": "Common",
       "imageLink": "https://assets.tarkov.dev/achievement-65141e37cf2f1c285e606361-icon.webp",
-      "playersCompletedPercent": 22.62,
+      "playersCompletedPercent": 22.65,
       "wiki": {
         "section": "Achievements",
         "reward": "Yes",
@@ -1594,7 +1642,7 @@
       "hidden": false,
       "rarity": "Legendary",
       "imageLink": "https://assets.tarkov.dev/achievement-664f1f8768508d74604bf556-icon.webp",
-      "playersCompletedPercent": 1.34,
+      "playersCompletedPercent": 1.35,
       "wiki": {
         "section": "Achievements",
         "reward": "No",
@@ -1612,7 +1660,7 @@
       "hidden": false,
       "rarity": "Rare",
       "imageLink": "https://assets.tarkov.dev/achievement-6527d3aac656a951ad1528ce-icon.webp",
-      "playersCompletedPercent": 0.14,
+      "playersCompletedPercent": 0.17,
       "wiki": {
         "section": "Achievements",
         "reward": "No",
@@ -1630,7 +1678,7 @@
       "hidden": false,
       "rarity": "Legendary",
       "imageLink": "https://assets.tarkov.dev/achievement-691214c93d597b2ef80a2206-icon.webp",
-      "playersCompletedPercent": 0.76,
+      "playersCompletedPercent": 0.8,
       "wiki": {
         "section": "Achievements",
         "reward": "No",
@@ -1648,7 +1696,7 @@
       "hidden": false,
       "rarity": "Rare",
       "imageLink": "https://assets.tarkov.dev/achievement-65140c00b1c08b0feb216d50-icon.webp",
-      "playersCompletedPercent": 0.5,
+      "playersCompletedPercent": 0.52,
       "wiki": {
         "section": "Achievements",
         "reward": "No",
@@ -1666,7 +1714,7 @@
       "hidden": false,
       "rarity": "Legendary",
       "imageLink": "https://assets.tarkov.dev/achievement-691214eafc9b2bc7f3042a57-icon.webp",
-      "playersCompletedPercent": 0.34,
+      "playersCompletedPercent": 0.36,
       "wiki": {
         "section": "Achievements",
         "reward": "No",
@@ -1684,7 +1732,7 @@
       "hidden": false,
       "rarity": "Legendary",
       "imageLink": "https://assets.tarkov.dev/achievement-6912145e52ddd29bf002d343-icon.webp",
-      "playersCompletedPercent": 0.4,
+      "playersCompletedPercent": 0.43,
       "wiki": {
         "section": "Achievements",
         "reward": "No",
@@ -1721,7 +1769,7 @@
       "hidden": false,
       "rarity": "Common",
       "imageLink": "https://assets.tarkov.dev/achievement-66c328de9dc78468f4040f35-icon.webp",
-      "playersCompletedPercent": 11.42,
+      "playersCompletedPercent": 11.53,
       "wiki": {
         "section": "Achievements",
         "reward": "No",
@@ -1739,7 +1787,7 @@
       "hidden": false,
       "rarity": "Legendary",
       "imageLink": "https://assets.tarkov.dev/achievement-691213f0dbcdbbc54402fe00-icon.webp",
-      "playersCompletedPercent": 0.43,
+      "playersCompletedPercent": 0.45,
       "wiki": {
         "section": "Achievements",
         "reward": "No",
@@ -1757,7 +1805,7 @@
       "hidden": false,
       "rarity": "Common",
       "imageLink": "https://assets.tarkov.dev/achievement-6512eb3ddfb0ae1ee75a0376-icon.webp",
-      "playersCompletedPercent": 6.63,
+      "playersCompletedPercent": 6.71,
       "wiki": {
         "section": "Achievements",
         "reward": "No",
@@ -1792,7 +1840,7 @@
       "hidden": false,
       "rarity": "Common",
       "imageLink": "https://assets.tarkov.dev/achievement-65141b9859647d2cb3213ca2-icon.webp",
-      "playersCompletedPercent": 9.63,
+      "playersCompletedPercent": 9.64,
       "wiki": {
         "section": "Achievements",
         "reward": "No",
@@ -1810,7 +1858,7 @@
       "hidden": true,
       "rarity": "Legendary",
       "imageLink": "https://assets.tarkov.dev/achievement-6912156f3d597b2ef80a2209-icon.webp",
-      "playersCompletedPercent": 0.09,
+      "playersCompletedPercent": 0.1,
       "wiki": {
         "section": "Achievements",
         "reward": "Yes",
@@ -1827,7 +1875,7 @@
       "hidden": false,
       "rarity": "Common",
       "imageLink": "https://assets.tarkov.dev/achievement-66c328aca91e7d66fa1b0b7b-icon.webp",
-      "playersCompletedPercent": 13.54,
+      "playersCompletedPercent": 13.75,
       "wiki": {
         "section": "Achievements",
         "reward": "No",
@@ -1845,7 +1893,7 @@
       "hidden": true,
       "rarity": "Common",
       "imageLink": "https://assets.tarkov.dev/achievement-65141c30ec10ff011f17cc3b-icon.webp",
-      "playersCompletedPercent": 48.47,
+      "playersCompletedPercent": 48.61,
       "wiki": {
         "section": "Achievements",
         "reward": "Yes",
@@ -1862,7 +1910,7 @@
       "hidden": false,
       "rarity": "Rare",
       "imageLink": "https://assets.tarkov.dev/achievement-65140ab8ec10ff011f17cc10-icon.webp",
-      "playersCompletedPercent": 0.27,
+      "playersCompletedPercent": 0.28,
       "wiki": {
         "section": "Achievements",
         "reward": "Factory ceiling Hideout ceiling style",
@@ -1881,7 +1929,7 @@
       "hidden": true,
       "rarity": "Legendary",
       "imageLink": "https://assets.tarkov.dev/achievement-6912168c52ddd29bf002d37a-icon.webp",
-      "playersCompletedPercent": 0.39,
+      "playersCompletedPercent": 0.41,
       "wiki": {
         "section": "Achievements",
         "reward": "Yes",
@@ -1899,7 +1947,7 @@
       "hidden": false,
       "rarity": "Legendary",
       "imageLink": "https://assets.tarkov.dev/achievement-693a83434cb1cf587c0a63f9-icon.webp",
-      "playersCompletedPercent": 0.85,
+      "playersCompletedPercent": 0.84,
       "wiki": {
         "section": "Event achievements",
         "reward": "New Year ushanka hat purchase at Ragman LL1",
@@ -1920,7 +1968,7 @@
       "hidden": false,
       "rarity": "Rare",
       "imageLink": "https://assets.tarkov.dev/achievement-651411f1cf2f1c285e606423-icon.webp",
-      "playersCompletedPercent": 0.21,
+      "playersCompletedPercent": 0.22,
       "wiki": {
         "section": "Achievements",
         "reward": "No",
@@ -1932,13 +1980,31 @@
       }
     },
     {
+      "id": "6a11d98a1e4337ff1d0a6dbe",
+      "name": "Who Dares Wins",
+      "description": "Neutralize 60 members of The Wedge's squad while playing as a PMC",
+      "hidden": false,
+      "rarity": "Rare",
+      "imageLink": "https://assets.tarkov.dev/achievement-6a11d98a1e4337ff1d0a6dbe-icon.webp",
+      "playersCompletedPercent": 0.05,
+      "wiki": {
+        "section": "Achievements",
+        "reward": "Yes",
+        "rawDescription": "Neutralize 60 members of The Wedge's squad while playing as a PMC",
+        "links": [
+          "File:Who Dares Wins Achievement Icon.png",
+          "The Wedge"
+        ]
+      }
+    },
+    {
       "id": "6912159adf87c6a94a0b9f34",
       "name": "Will It Blow?",
       "description": "Hand the case with dangerous contents to the wrong people. You clearly had no other choice!",
       "hidden": true,
       "rarity": "Legendary",
       "imageLink": "https://assets.tarkov.dev/achievement-6912159adf87c6a94a0b9f34-icon.webp",
-      "playersCompletedPercent": 0.08,
+      "playersCompletedPercent": 0.09,
       "wiki": {
         "section": "Achievements",
         "reward": "Yes",
@@ -1957,7 +2023,7 @@
       "hidden": true,
       "rarity": "Common",
       "imageLink": "https://assets.tarkov.dev/achievement-6527ee4a647c29201011defe-icon.webp",
-      "playersCompletedPercent": 35.01,
+      "playersCompletedPercent": 35.09,
       "wiki": {
         "section": "Achievements",
         "reward": "Yes",

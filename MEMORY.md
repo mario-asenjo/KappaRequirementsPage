@@ -25,11 +25,14 @@
 - `scripts/fetchTasks.ts`: sincronizacion de todas las misiones desde `tarkov.dev`.
 - `scripts/fetchAchievements.ts`: sincronizacion de achievements desde `tarkov.dev` y wiki.
 - `scripts/buildGoals.ts`: generacion de perfiles de progreso derivados.
+- `.github/workflows/ci.yml`: CI para instalar dependencias, ejecutar tests de scripts y construir produccion.
+- `docs/agent-operating-model.md`: mapa multiagente, carriles, dependencias, labels y politica de verificacion.
 
 ## Planes Persistentes
 
 - `docs/reference-parity-plan.md`: backlog de paridad contra `kappas.pages.dev`, con brechas detectadas y fases de implementacion.
 - `docs/progress-import-plan.md`: fases para importar progreso desde logs locales y construir el extractor externo.
+- `docs/agent-operating-model.md`: operativa multiagente propuesta para UX/UI, frontend, backend/integracion, datos, DevOps/CI y documentacion.
 
 ## Convenciones
 
@@ -41,16 +44,29 @@
 - Modelo de progreso actual persistido en `localStorage` bajo `userProgress`; mantiene compatibilidad con `completedTasks` y `playerLevel`.
 - Las misiones se importan desde `src/data/tasks.json` para quedar incluidas en el bundle de produccion.
 - El arbol se puede regenerar con `npm run build:quests`; las pruebas basicas se ejecutan con `npm run test:quests`.
+- Los scripts de escritura de datos deben resolver rutas desde `import.meta.url` con `fileURLToPath(...)` para funcionar tambien en Windows/MSYS.
 
 ## Fuentes Oficiales De Misiones
 
 - Fuente primaria actual: `https://api.tarkov.dev/graphql`.
 - Fuente secundaria para guias externas: `https://escapefromtarkov.fandom.com` enlazada por `wikiLink` cuando la API la expone.
-- Ultima sincronizacion registrada: `2026-05-14T14:33:15.426Z`.
+- Ultima sincronizacion registrada: `2026-06-07T10:10:26.199Z`.
 - Total registrado de misiones: `499` (`257` Kappa, `102` Lightkeeper).
-- Total registrado de achievements: `105`.
+- Total registrado de achievements: `109`.
 
 ## Historial De Cambios
+
+### 2026-06-07 (operativa multiagente y CI)
+
+- Rama de trabajo: `fix/windows-data-script-paths`.
+- Se instalo GitHub CLI 2.93.0 via `winget` y se enlazo `gh` en `~/bin`; `gh auth login` queda pendiente para operaciones autenticadas desde CLI.
+- Se verifico que SSH contra GitHub funciona para `mario-asenjo` y que no hay issues, PRs abiertos ni workflows existentes antes de esta rama.
+- Se corrigieron `scripts/fetchTasks.ts`, `scripts/fetchAchievements.ts`, `scripts/buildGoals.ts` y `scripts/buildQuestTree.ts` para usar `fileURLToPath(new URL(..., import.meta.url))`; antes `npm run update:tasks` fallaba en Windows/MSYS con ruta `C:\\C:\\...`.
+- Se sincronizaron datos desde `tarkov.dev`: misiones sin cambios de conteo (`499`, `257` Kappa, `102` Lightkeeper), achievements subieron de `105` a `109`, goals derivados subieron de `108` a `112`.
+- Se anadio `.github/workflows/ci.yml` con permisos minimos `contents: read` para ejecutar instalacion limpia, tests de quests/progreso/importador/extractor/achievements y `npm run build` en push a main y PRs.
+- Se anadio `docs/agent-operating-model.md` con carriles de subagentes, skills Hermes equivalentes, dependencias, labels recomendadas y backlog inicial.
+- Se actualizo `react-router-dom`/`react-router` a `6.30.4`, se elimino `@types/react-router-dom` legacy y se corrigio un casteo de `src/utils/progressImport.ts` para que `npm exec tsc -- --noEmit` pase.
+- Verificacion local: `npm exec tsc -- --noEmit`, `npm run test:quests`, `npm run test:progress`, `npm run test:import`, `npm run test:extractor`, `npm run test:extractor-download`, `npm run test:achievements`, `npm run build` y `npm audit --audit-level=moderate --omit=dev` correctos.
 
 ### 2026-06-06 (importacion de progreso fase 3)
 
@@ -144,7 +160,7 @@
 
 - Rama de trabajo: `feature/achievements-page`.
 - Se anadio la ruta `/achievements` con cards para todos los achievements sincronizados.
-- La pagina muestra rareza, estado oculto/visible, porcentaje de jugadores, seccion wiki, progreso de quests asociadas y acciones.
+- La pagina muestra rareza, estado oculto/visible, porcentaje de jugadores, seccion wiki, progreso de quests asociadas y checklist manual para logros sin quests.
 - Los achievements sin quests asociadas se pueden marcar manualmente usando `manualAchievementProgress` en `userProgress`.
 - Los achievements con quests asociadas permiten cambiar el objetivo activo a su goal y abrir la primera quest relacionada.
 - Se anadio `npm run test:achievements` para validar render basico de la pagina.

@@ -1,4 +1,5 @@
 import { writeFile } from 'fs/promises';
+import { fileURLToPath } from 'url';
 import taskData from '../src/data/tasks.json';
 import achievementData from '../src/data/achievements.json';
 import { Achievement, Goal, Task } from '../src/types';
@@ -53,7 +54,7 @@ async function buildGoals() {
     });
   });
 
-  const filePath = new URL('../src/data/goals.json', import.meta.url).pathname;
+  const filePath = fileURLToPath(new URL('../src/data/goals.json', import.meta.url));
   const payload = {
     metadata: {
       source: 'src/data/tasks.json + src/data/achievements.json',

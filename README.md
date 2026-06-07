@@ -28,6 +28,7 @@ kappa-tracker/
 ├── AGENTS.md           Reglas operativas del agente de mantenimiento
 ├── DESIGN.md           Sistema visual inspirado en Kraken
 ├── MEMORY.md           Memoria persistente de estructura, fuentes y cambios
+├── .github/workflows/  CI de GitHub Actions para tests y build
 ├── index.html          Página HTML de entrada que carga la aplicación
 ├── package.json        Dependencias y scripts de npm
 ├── vite.config.ts      Configuración de Vite para React
@@ -169,6 +170,10 @@ npm run build:extractor-download
 ```
 
 El enlace `Star GitHub` de la cabecera abre el repositorio para que el usuario pueda marcarlo con star desde GitHub. La accion directa requiere autenticacion en GitHub, por lo que se delega a la pagina oficial del repositorio.
+
+## Operativa de agentes
+
+El plan multiagente y el backlog inicial viven en `docs/agent-operating-model.md`. Ese documento define carriles de trabajo, dependencias, labels recomendadas de GitHub y la politica de verificacion antes de cerrar PRs.
 
 ## Despliegue en Cloudflare Pages
 
