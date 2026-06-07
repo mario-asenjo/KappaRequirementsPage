@@ -46,7 +46,7 @@ const ProgressImportPage: React.FC<ProgressImportPageProps> = ({ tasks }) => {
   const tasksById = useMemo(() => new Map(tasks.map((task) => [task.id, task])), [tasks]);
   const newCompletedTitles = preview ? getTaskTitles(preview.newCompletedTaskIds.slice(0, 12), tasksById) : [];
   const startedTitles = preview ? getTaskTitles(preview.validStartedTaskIds.slice(0, 8), tasksById) : [];
-  const failedTitles = preview ? getTaskTitles(preview.validFailedTaskIds.slice(0, 6), tasksById) : [];
+  const failedTitles = preview ? getTaskTitles(preview.newFailedTaskIds.slice(0, 8), tasksById) : [];
   const canApplyImport = Boolean(preview && (preview.newCompletedTaskIds.length > 0 || preview.validStartedTaskIds.length > 0));
   const lastImport = progress.lastImport;
 
@@ -87,6 +87,7 @@ const ProgressImportPage: React.FC<ProgressImportPageProps> = ({ tasks }) => {
         generatedAt: preview.importFile.generatedAt,
         addedCompletedCount,
         detectedStartedCount: preview.validStartedTaskIds.length,
+        failedMarkedCompletedCount: preview.newFailedTaskIds.length,
         unknownTaskCount: preview.unknownTaskIds.length,
         warningCount: preview.warnings.length,
       },
@@ -161,7 +162,9 @@ const ProgressImportPage: React.FC<ProgressImportPageProps> = ({ tasks }) => {
             <span className="eyebrow">Última importación</span>
             <strong>{formatDate(lastImport.importedAt)}</strong>
             <p>
-              {lastImport.addedCompletedCount} completadas nuevas · {lastImport.detectedStartedCount} iniciadas · {lastImport.warningCount} avisos · {lastImport.unknownTaskCount} IDs no reconocidos
+              {lastImport.addedCompletedCount} completadas nuevas · {lastImport.detectedStartedCount} iniciadas ·{' '}
+              {lastImport.failedMarkedCompletedCount ?? 0} fallidas cerradas · {lastImport.warningCount} avisos ·{' '}
+              {lastImport.unknownTaskCount} IDs no reconocidos
             </p>
           </div>
           <Link className="btn btn-outline-light" to="/">
@@ -199,7 +202,7 @@ const ProgressImportPage: React.FC<ProgressImportPageProps> = ({ tasks }) => {
               </label>
               <h3 className="h5 mt-4">Contrato esperado</h3>
               <p className="text-muted">
-                La herramienta debe generar schemaVersion 1, source, generatedAt y completedTaskIds.
+                La herramienta debe generar schemaVersion 1, source, generatedAt y al menos completedTaskIds o failedTaskIds.
               </p>
               <pre className="import-schema" aria-label="Ejemplo de JSON de importación">{`{
   "schemaVersion": 1,
@@ -228,7 +231,9 @@ const ProgressImportPage: React.FC<ProgressImportPageProps> = ({ tasks }) => {
               {resetMessage && <div className="alert alert-success">{resetMessage}</div>}
               {appliedCount !== null && (
                 <div className="alert alert-success">
-                  Importación aplicada. Se añadieron {appliedCount} completadas contando prerequisitos reales y {preview?.validStartedTaskIds.length ?? 0} iniciadas detectadas.
+                  Importación aplicada. Se añadieron {appliedCount} completadas contando prerequisitos reales, incluidas{' '}
+                  {preview?.newFailedTaskIds.length ?? 0} fallidas que ya no se pueden completar, y{' '}
+                  {preview?.validStartedTaskIds.length ?? 0} iniciadas detectadas.
                 </div>
               )}
               {!preview && !error && (
@@ -248,6 +253,7 @@ const ProgressImportPage: React.FC<ProgressImportPageProps> = ({ tasks }) => {
                   <div className="import-stats" aria-label="Resumen de importación">
                     <span><strong>{preview.newCompletedTaskIds.length}</strong> nuevas completadas</span>
                     <span><strong>{preview.alreadyCompletedTaskIds.length}</strong> ya estaban completadas</span>
+                    <span><strong>{preview.newFailedTaskIds.length}</strong> fallidas cerradas</span>
                     <span><strong>{preview.validStartedTaskIds.length}</strong> iniciadas detectadas</span>
                     <span><strong>{preview.unknownTaskIds.length}</strong> no reconocidas</span>
                   </div>
@@ -282,11 +288,18 @@ const ProgressImportPage: React.FC<ProgressImportPageProps> = ({ tasks }) => {
                     </div>
                   )}
                   {failedTitles.length > 0 && (
-                    <details className="import-details mb-3">
-                      <summary>Ver misiones fallidas detectadas en logs</summary>
+                    <details className="import-details import-details--failed mb-3" open>
+                      <summary>Fallidas que se marcarán como terminadas automáticamente</summary>
+                      <p className="text-muted mt-2">
+                        Tarkov marca algunas tareas como fallidas al elegir una ruta alternativa. Como no se pueden
+                        completar después, KappaTracker las cierra para no bloquear tu progreso.
+                      </p>
                       <ul className="import-task-list mt-2 mb-0">
                         {failedTitles.map((title) => <li key={title}>{title}</li>)}
                       </ul>
+                      {preview.newFailedTaskIds.length > failedTitles.length && (
+                        <p className="text-muted">Y {preview.newFailedTaskIds.length - failedTitles.length} más.</p>
+                      )}
                     </details>
                   )}
                   {preview.warnings.length > 0 && (
@@ -310,7 +323,7 @@ const ProgressImportPage: React.FC<ProgressImportPageProps> = ({ tasks }) => {
                       Aplicar progreso detectado
                     </button>
                     <p>
-                      Se añadirán completadas/prerequisitos e iniciadas detectadas. Las misiones manuales existentes se conservan.
+                      Se añadirán completadas/prerequisitos, se cerrarán fallidas detectadas y se conservarán las iniciadas pendientes. Las misiones manuales existentes se conservan.
                     </p>
                   </div>
                 </div>

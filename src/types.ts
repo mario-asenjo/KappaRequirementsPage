@@ -84,6 +84,7 @@ export interface ProgressImportSummary {
   detectedStartedCount: number;
   unknownTaskCount: number;
   warningCount: number;
+  failedMarkedCompletedCount?: number;
 }
 
 export type ProgressImportEvent = 'completed' | 'started' | 'failed' | 'unknown';
