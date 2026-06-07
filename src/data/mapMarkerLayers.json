@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "revision": "2026-06-08",
+  "layers": [
+    {
+      "id": "task-objectives",
+      "label": "Objetivos de quests",
+      "description": "Ubicaciones, zonas y rutas necesarias para completar objetivos de misiones.",
+      "priority": 1,
+      "planned": true
+    },
+    {
+      "id": "quest-items",
+      "label": "Items de quest",
+      "description": "Spawns y zonas de objetos necesarios para entregar, colocar, esconder o marcar.",
+      "priority": 2,
+      "planned": true
+    },
+    {
+      "id": "extracts",
+      "label": "Extracts",
+      "description": "Puntos de extraccion PMC/Scav, condiciones, costes, cooperativos y variantes.",
+      "priority": 3,
+      "planned": true
+    },
+    {
+      "id": "spawns",
+      "label": "Spawns",
+      "description": "Zonas de spawn PMC/Scav para planificar rutas seguras y tiempos de contacto.",
+      "priority": 4,
+      "planned": true
+    },
+    {
+      "id": "bosses",
+      "label": "Bosses y eventos",
+      "description": "Zonas de aparicion de bosses, cultists, rogues, raiders y eventos condicionales.",
+      "priority": 5,
+      "planned": true
+    },
+    {
+      "id": "transits",
+      "label": "Transits",
+      "description": "Conexiones de Marathon/transit entre mapas, disponibilidad y condiciones.",
+      "priority": 6,
+      "planned": true
+    }
+  ]
+}

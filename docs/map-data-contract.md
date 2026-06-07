@@ -2,6 +2,13 @@
 
 Este documento define el contrato inicial para que KappaTracker pueda renderizar mapas interactivos con marcadores precisos de quests, items, extracts, spawns, bosses y transits sin acoplar el frontend a una unica fuente de datos.
 
+## Fuentes base
+
+- `tarkov.dev` GraphQL queda como fuente canonica para catalogo de mapas, IDs, `normalizedName` y enlaces de wiki. Verificado con `maps { id name normalizedName wiki }`.
+- La Escape from Tarkov Wiki en Fandom queda como fuente primaria para informacion jugable textual: ubicaciones de quests, extracts, bosses, transits y condiciones. Si automatizar Fandom queda bloqueado por proteccion anti-bot, los datos se importaran conservando URL, fecha y revision manual.
+- Las coordenadas exactas no se inventan: solo se publicaran como `exact`/`high` tras auditoria manual o transformacion documentada en `mapTransforms.json`.
+- Referencias comunitarias externas pueden ayudar a contrastar, pero deben etiquetarse como auxiliares y no reemplazan la wiki.
+
 ## Objetivos
 
 - Mantener los datos auditables: cada coordenada debe tener fuente, fecha y confianza.

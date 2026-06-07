@@ -6,6 +6,7 @@ import QuestDetailPage from './pages/QuestDetailPage';
 import QuestTreePage from './pages/QuestTreePage';
 import AchievementsPage from './pages/AchievementsPage';
 import ProgressImportPage from './pages/ProgressImportPage';
+import InteractiveMapsPage from './pages/InteractiveMapsPage';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import { Task } from './types';
@@ -41,6 +42,7 @@ const App: React.FC = () => {
             <Route path="/tasks" element={<QuestListPage tasks={activeTasks} taskCatalog={allTasks} />} />
             <Route path="/quest-tree" element={<QuestTreePage tasks={activeTasks} taskCatalog={allTasks} />} />
             <Route path="/achievements" element={<AchievementsPage tasks={allTasks} onGoalChange={setActiveGoalId} />} />
+            <Route path="/maps" element={<InteractiveMapsPage />} />
             <Route path="/import" element={<ProgressImportPage tasks={allTasks} />} />
             <Route
               path="/trader/:traderName"

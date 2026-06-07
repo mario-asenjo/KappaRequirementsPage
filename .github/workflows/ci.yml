@@ -44,5 +44,8 @@ jobs:
       - name: Achievements page tests
         run: npm run test:achievements
 
+      - name: Map data tests
+        run: npm run test:maps
+
       - name: Production build
         run: npm run build
