@@ -64,6 +64,50 @@ const Home: React.FC<HomeProps> = ({ tasks, goal, goalProgress }) => {
       cta: firstStartedTask ? firstStartedTask.title : 'Ver tablero',
     },
   ];
+  const featureModules = [
+    {
+      status: 'En marcha',
+      title: 'Mission Control + logs',
+      description: 'Progreso local, importacion segura, iniciadas detectadas y proximos bloqueadores hacia Kappa.',
+      issue: '#25',
+      href: 'https://github.com/mario-asenjo/KappaRequirementsPage/issues/25',
+    },
+    {
+      status: 'Planificado',
+      title: 'Quest Tree + storylines',
+      description: 'Dependencias legibles, cadenas narrativas, capitulos y prerequisitos pendientes por desbloqueo.',
+      issue: '#27 · #40',
+      href: 'https://github.com/mario-asenjo/KappaRequirementsPage/issues/40',
+    },
+    {
+      status: 'Planificado',
+      title: 'Raid planner',
+      description: 'Misiones activas por mapa, handovers, llaves, items FiR y checklist para raid o segundo monitor.',
+      issue: '#28 · #29 · #30 · #34',
+      href: 'https://github.com/mario-asenjo/KappaRequirementsPage/issues/28',
+    },
+    {
+      status: 'Planificado',
+      title: 'Hideout planner',
+      description: 'Estaciones, niveles, dependencias, ediciones y agregacion de materiales necesarios.',
+      issue: '#39',
+      href: 'https://github.com/mario-asenjo/KappaRequirementsPage/issues/39',
+    },
+    {
+      status: 'Backlog avanzado',
+      title: 'Mapas interactivos',
+      description: 'Marcadores de quest, extracts, spawns, bosses, cultists, transits y filtros por progreso.',
+      issue: '#41',
+      href: 'https://github.com/mario-asenjo/KappaRequirementsPage/issues/41',
+    },
+    {
+      status: 'Backlog avanzado',
+      title: 'Economia y profit',
+      description: 'Comparativa flea/traders, barters, crafts, resets y recomendaciones explicables de venta.',
+      issue: '#42',
+      href: 'https://github.com/mario-asenjo/KappaRequirementsPage/issues/42',
+    },
+  ];
 
   return (
     <div className="container-fluid">
@@ -143,6 +187,29 @@ const Home: React.FC<HomeProps> = ({ tasks, goal, goalProgress }) => {
                 <span>{card.cta} →</span>
               </span>
             </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className="feature-coverage-panel mb-4" aria-labelledby="feature-coverage-title">
+        <div className="feature-coverage-heading">
+          <div>
+            <span className="eyebrow">Cobertura TarkovBuddy+</span>
+            <h2 id="feature-coverage-title">Todos los grandes modulos, ordenados por impacto.</h2>
+          </div>
+          <p>
+            El objetivo no es copiar una lista infinita: es cubrir quests, hideout, mapas, economia y planificacion
+            con flujos que respondan que hacer ahora y que preparar para la siguiente raid.
+          </p>
+        </div>
+        <div className="feature-coverage-grid">
+          {featureModules.map((module) => (
+            <a key={module.title} className="feature-module-card" href={module.href} target="_blank" rel="noreferrer">
+              <span className="feature-module-status">{module.status}</span>
+              <strong>{module.title}</strong>
+              <p>{module.description}</p>
+              <span className="feature-module-footer">{module.issue} · Ver issue →</span>
+            </a>
           ))}
         </div>
       </section>
