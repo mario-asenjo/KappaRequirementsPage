@@ -5,6 +5,7 @@ export interface ProgressImportPreview {
   validCompletedTaskIds: string[];
   validStartedTaskIds: string[];
   validFailedTaskIds: string[];
+  newFailedTaskIds: string[];
   newCompletedTaskIds: string[];
   alreadyCompletedTaskIds: string[];
   unknownTaskIds: string[];
@@ -45,8 +46,9 @@ export function parseProgressImportJson(value: string): ProgressImportFile {
   }
 
   const completedTaskIds = uniqueStrings(parsed.completedTaskIds);
-  if (completedTaskIds.length === 0) {
-    throw new Error('El archivo no contiene completedTaskIds para importar.');
+  const failedTaskIds = uniqueStrings(parsed.failedTaskIds);
+  if (completedTaskIds.length === 0 && failedTaskIds.length === 0) {
+    throw new Error('El archivo no contiene completedTaskIds ni failedTaskIds para importar.');
   }
 
   return {
@@ -54,7 +56,7 @@ export function parseProgressImportJson(value: string): ProgressImportFile {
     schemaVersion: 1,
     completedTaskIds,
     startedTaskIds: uniqueStrings(parsed.startedTaskIds),
-    failedTaskIds: uniqueStrings(parsed.failedTaskIds),
+    failedTaskIds,
     warnings: uniqueStrings(parsed.warnings),
   };
 }
@@ -71,10 +73,13 @@ export function getProgressImportPreview(
     ...(importFile.startedTaskIds ?? []),
     ...(importFile.failedTaskIds ?? []),
   ]);
-  const validCompletedTaskIds = importFile.completedTaskIds.filter((id) => taskIds.has(id));
-  const validStartedTaskIds = (importFile.startedTaskIds ?? []).filter((id) => taskIds.has(id));
+  const validRawCompletedTaskIds = importFile.completedTaskIds.filter((id) => taskIds.has(id));
   const validFailedTaskIds = (importFile.failedTaskIds ?? []).filter((id) => taskIds.has(id));
+  const validCompletedTaskIds = Array.from(new Set([...validRawCompletedTaskIds, ...validFailedTaskIds]));
+  const completedOrFailed = new Set(validCompletedTaskIds);
+  const validStartedTaskIds = (importFile.startedTaskIds ?? []).filter((id) => taskIds.has(id) && !completedOrFailed.has(id));
   const newCompletedTaskIds = validCompletedTaskIds.filter((id) => !currentCompleted.has(id));
+  const newFailedTaskIds = validFailedTaskIds.filter((id) => !currentCompleted.has(id));
   const alreadyCompletedTaskIds = validCompletedTaskIds.filter((id) => currentCompleted.has(id));
   const unknownTaskIds = Array.from(allImportedIds).filter((id) => !taskIds.has(id));
   const warnings = [
@@ -87,6 +92,7 @@ export function getProgressImportPreview(
     validCompletedTaskIds,
     validStartedTaskIds,
     validFailedTaskIds,
+    newFailedTaskIds,
     newCompletedTaskIds,
     alreadyCompletedTaskIds,
     unknownTaskIds,

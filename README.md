@@ -13,8 +13,8 @@ Este repositorio contiene una aplicación SPA escrita en **React** (con Vite y T
 - **Árbol de misiones**: la ruta `/quest-tree` muestra todos los comerciantes en secciones horizontales tipo eft.monster, con desbloqueo por prerequisitos y nivel PMC.
 - **Selector de objetivo**: permite alternar entre Kappa, Lightkeeper, todas las misiones y achievements con quests asociadas.
 - **Achievements**: la ruta `/achievements` muestra logros, rareza, progreso, objetivos asociados y checklist manual para logros sin quests.
-- **Importacion de progreso**: la ruta `/import` permite cargar un JSON generado desde logs locales, previsualizar misiones detectadas y aplicar completadas reconocidas sin sobrescribir progreso existente.
-- **Estado de importacion**: despues de aplicar un JSON, `/import` conserva la ultima fuente, fecha, completadas anadidas, iniciadas detectadas, warnings e IDs no reconocidos.
+- **Importacion de progreso**: la ruta `/import` permite cargar un JSON generado desde logs locales, previsualizar misiones detectadas y aplicar completadas/fallidas reconocidas sin sobrescribir progreso existente.
+- **Estado de importacion**: despues de aplicar un JSON, `/import` conserva la ultima fuente, fecha, completadas anadidas, iniciadas detectadas, fallidas cerradas, warnings e IDs no reconocidos.
 - **Misiones iniciadas**: las quests detectadas como iniciadas en logs se guardan y se muestran con badge propio sin contarlas como completadas.
 - **Extractor descargable**: la ruta `/import` enlaza `public/downloads/eft-log-importer.zip`, con script Node.js standalone, README y runners para Windows/Linux.
 - **Datos sincronizables**: `src/data/tasks.json`, `src/data/achievements.json` y `src/data/goals.json` se pueden regenerar desde `tarkov.dev` y la wiki.
@@ -139,7 +139,7 @@ El modelo de progreso nuevo se guarda en `localStorage` bajo `userProgress`, per
 
 ## Importar progreso desde logs
 
-La ruta `/import` acepta archivos JSON con `schemaVersion: 1`, `source`, `generatedAt` y `completedTaskIds`. El importador valida los IDs contra `src/data/tasks.json`, muestra un preview y solo aplica completadas cuando el usuario confirma.
+La ruta `/import` acepta archivos JSON con `schemaVersion: 1`, `source`, `generatedAt` y al menos uno de `completedTaskIds` o `failedTaskIds`. El importador valida los IDs contra `src/data/tasks.json`, muestra un preview y solo aplica completadas cuando el usuario confirma. Las tareas detectadas en `failedTaskIds` se tratan como terminadas automáticamente porque Tarkov ya no permite completarlas después de elegir la ruta alternativa.
 
 La importacion une el progreso detectado con el progreso local existente y autocompleta prerequisitos reales usando el catalogo completo. No borra misiones ya marcadas ni aplica IDs desconocidos.
 
@@ -174,6 +174,10 @@ El enlace `Star GitHub` de la cabecera abre el repositorio para que el usuario p
 ## Operativa de agentes
 
 El plan multiagente y el backlog inicial viven en `docs/agent-operating-model.md`. Ese documento define carriles de trabajo, dependencias, labels recomendadas de GitHub y la politica de verificacion antes de cerrar PRs.
+
+## Mapas interactivos
+
+El contrato inicial para datos de mapas vive en `docs/map-data-contract.md`. Define mapas, capas, marcadores, geometria, coordinate spaces, fuentes, confianza, precision y validaciones minimas antes de renderizar tareas, items, extracts, spawns, bosses o transits.
 
 ## Despliegue en Cloudflare Pages
 

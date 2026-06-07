@@ -1984,6 +1984,15 @@ body {
   border-color: rgba(113, 112, 255, 0.3);
 }
 
+.import-details--failed {
+  background: rgba(245, 158, 11, 0.08);
+  border-color: rgba(245, 158, 11, 0.35);
+}
+
+.import-details--failed summary {
+  color: #fbbf24;
+}
+
 .import-dropzone span,
 .import-script-link,
 .btn-link {

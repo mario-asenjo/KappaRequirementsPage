@@ -22,8 +22,9 @@ assert.deepEqual(importFile.completedTaskIds, ['done', 'missing-complete'], 'com
 
 const preview = getProgressImportPreview(importFile, tasks, ['done']);
 
-assert.deepEqual(preview.validCompletedTaskIds, ['done'], 'preview should keep only known completed IDs');
-assert.deepEqual(preview.newCompletedTaskIds, [], 'preview should not reapply already completed tasks');
+assert.deepEqual(preview.validCompletedTaskIds, ['done', 'failed'], 'preview should treat known failed tasks as effectively completed');
+assert.deepEqual(preview.newCompletedTaskIds, ['failed'], 'preview should apply failed tasks as new completed tasks');
+assert.deepEqual(preview.newFailedTaskIds, ['failed'], 'preview should expose newly closed failed tasks separately');
 assert.deepEqual(preview.alreadyCompletedTaskIds, ['done'], 'preview should report already completed tasks');
 assert.deepEqual(preview.validStartedTaskIds, ['accepted'], 'preview should report known started tasks');
 assert.deepEqual(preview.validFailedTaskIds, ['failed'], 'preview should report known failed tasks');
@@ -33,6 +34,17 @@ assert.deepEqual(
   'preview should report unknown imported IDs'
 );
 assert.equal(preview.warnings.length, 2, 'preview should include importer and local-log warnings');
+
+const failedOnlyImport = parseProgressImportJson(JSON.stringify({
+  schemaVersion: 1,
+  source: 'eft-local-logs',
+  generatedAt: '2026-06-05T20:00:00.000Z',
+  completedTaskIds: [],
+  failedTaskIds: ['failed'],
+}));
+const failedOnlyPreview = getProgressImportPreview(failedOnlyImport, tasks, []);
+assert.deepEqual(failedOnlyPreview.newCompletedTaskIds, ['failed'], 'failed-only imports should still mark known failed tasks completed');
+assert.deepEqual(failedOnlyPreview.newFailedTaskIds, ['failed'], 'failed-only imports should expose failed closure count');
 
 assert.throws(
   () => parseProgressImportJson('{'),
