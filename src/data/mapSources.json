@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "revision": "2026-06-08",
+  "sources": [
+    {
+      "id": "tarkov-dev-maps",
+      "label": "tarkov.dev GraphQL maps",
+      "kind": "api",
+      "url": "https://api.tarkov.dev/graphql",
+      "role": "Catalogo canonico de mapas, ids, normalizedName y enlaces wiki.",
+      "confidenceFloor": "high",
+      "notes": "Verificado via query maps { id name normalizedName wiki } el 2026-06-08."
+    },
+    {
+      "id": "eft-wiki",
+      "label": "Escape from Tarkov Wiki",
+      "kind": "wiki",
+      "url": "https://escapefromtarkov.fandom.com/wiki/Map_of_Tarkov",
+      "role": "Fuente primaria para informacion jugable textual: quests, ubicaciones, extracts, bosses, transits y condiciones.",
+      "confidenceFloor": "high",
+      "notes": "Se usaran URLs de paginas wiki por mapa y por quest. El acceso automatizado puede requerir tratamiento anti-bot, asi que cada importacion debe conservar URL y fecha."
+    },
+    {
+      "id": "manual-coordinate-audit",
+      "label": "Auditoria manual KappaTracker",
+      "kind": "manual-verification",
+      "url": "https://github.com/mario-asenjo/KappaRequirementsPage/issues/41",
+      "role": "Validacion de coordenadas normalizadas antes de mostrarlas como exactas.",
+      "confidenceFloor": "exact",
+      "notes": "Ninguna coordenada se marcara exact/high sin fuente y revision humana o transformacion documentada."
+    },
+    {
+      "id": "community-map-reference",
+      "label": "Referencias visuales comunitarias",
+      "kind": "community-reference",
+      "url": "https://mapgenie.io/tarkov",
+      "role": "Referencia auxiliar para contraste visual cuando la wiki no tenga coordenadas estructuradas.",
+      "confidenceFloor": "medium",
+      "notes": "No sustituye a la wiki; cualquier dato comunitario debe quedar etiquetado como auxiliar y revisable."
+    }
+  ]
+}

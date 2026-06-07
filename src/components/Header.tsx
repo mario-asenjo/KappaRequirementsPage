@@ -35,6 +35,7 @@ const Header: React.FC<HeaderProps> = ({ tasks, goals, activeGoal, goalProgress,
         <NavLink to="/" end>Panel</NavLink>
         <NavLink to="/tasks">Misiones</NavLink>
         <NavLink to="/quest-tree">Arbol</NavLink>
+        <NavLink to="/maps">Mapas</NavLink>
         <NavLink to="/achievements">Achievements</NavLink>
         <NavLink
           to="/import"

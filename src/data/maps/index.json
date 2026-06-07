@@ -1,0 +1,391 @@
+{
+  "schemaVersion": 1,
+  "revision": "2026-06-08",
+  "generatedFrom": "tarkov.dev maps query + EFT Wiki URLs",
+  "maps": [
+    {
+      "id": "factory",
+      "tarkovDevId": "55f2d3fd4bdc2d5f408b4567",
+      "name": "Factory",
+      "normalizedName": "factory",
+      "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Factory",
+      "familyId": "factory",
+      "minPmcLevelHint": 1,
+      "sourceIds": [
+        "tarkov-dev-maps",
+        "eft-wiki"
+      ],
+      "plannedLayers": [
+        "task-objectives",
+        "quest-items",
+        "extracts",
+        "spawns",
+        "bosses",
+        "transits"
+      ],
+      "coverageStatus": "cataloged",
+      "markerCount": 0,
+      "sourcePolicy": "Sin coordenadas exactas hasta enlazar evidencia wiki/manual; mientras tanto se muestra cobertura de mapa y capas previstas."
+    },
+    {
+      "id": "night-factory",
+      "tarkovDevId": "59fc81d786f774390775787e",
+      "name": "Night Factory",
+      "normalizedName": "night-factory",
+      "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Factory",
+      "familyId": "factory",
+      "minPmcLevelHint": 1,
+      "sourceIds": [
+        "tarkov-dev-maps",
+        "eft-wiki"
+      ],
+      "plannedLayers": [
+        "task-objectives",
+        "quest-items",
+        "extracts",
+        "spawns",
+        "bosses",
+        "transits"
+      ],
+      "coverageStatus": "cataloged",
+      "markerCount": 0,
+      "sourcePolicy": "Sin coordenadas exactas hasta enlazar evidencia wiki/manual; mientras tanto se muestra cobertura de mapa y capas previstas."
+    },
+    {
+      "id": "customs",
+      "tarkovDevId": "56f40101d2720b2a4d8b45d6",
+      "name": "Customs",
+      "normalizedName": "customs",
+      "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Customs",
+      "familyId": "customs",
+      "minPmcLevelHint": 1,
+      "sourceIds": [
+        "tarkov-dev-maps",
+        "eft-wiki"
+      ],
+      "plannedLayers": [
+        "task-objectives",
+        "quest-items",
+        "extracts",
+        "spawns",
+        "bosses",
+        "transits"
+      ],
+      "coverageStatus": "cataloged",
+      "markerCount": 0,
+      "sourcePolicy": "Sin coordenadas exactas hasta enlazar evidencia wiki/manual; mientras tanto se muestra cobertura de mapa y capas previstas."
+    },
+    {
+      "id": "woods",
+      "tarkovDevId": "5704e3c2d2720bac5b8b4567",
+      "name": "Woods",
+      "normalizedName": "woods",
+      "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Woods",
+      "familyId": "woods",
+      "minPmcLevelHint": 1,
+      "sourceIds": [
+        "tarkov-dev-maps",
+        "eft-wiki"
+      ],
+      "plannedLayers": [
+        "task-objectives",
+        "quest-items",
+        "extracts",
+        "spawns",
+        "bosses",
+        "transits"
+      ],
+      "coverageStatus": "cataloged",
+      "markerCount": 0,
+      "sourcePolicy": "Sin coordenadas exactas hasta enlazar evidencia wiki/manual; mientras tanto se muestra cobertura de mapa y capas previstas."
+    },
+    {
+      "id": "shoreline",
+      "tarkovDevId": "5704e554d2720bac5b8b456e",
+      "name": "Shoreline",
+      "normalizedName": "shoreline",
+      "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Shoreline",
+      "familyId": "shoreline",
+      "minPmcLevelHint": 1,
+      "sourceIds": [
+        "tarkov-dev-maps",
+        "eft-wiki"
+      ],
+      "plannedLayers": [
+        "task-objectives",
+        "quest-items",
+        "extracts",
+        "spawns",
+        "bosses",
+        "transits"
+      ],
+      "coverageStatus": "cataloged",
+      "markerCount": 0,
+      "sourcePolicy": "Sin coordenadas exactas hasta enlazar evidencia wiki/manual; mientras tanto se muestra cobertura de mapa y capas previstas."
+    },
+    {
+      "id": "interchange",
+      "tarkovDevId": "5714dbc024597771384a510d",
+      "name": "Interchange",
+      "normalizedName": "interchange",
+      "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Interchange",
+      "familyId": "interchange",
+      "minPmcLevelHint": 1,
+      "sourceIds": [
+        "tarkov-dev-maps",
+        "eft-wiki"
+      ],
+      "plannedLayers": [
+        "task-objectives",
+        "quest-items",
+        "extracts",
+        "spawns",
+        "bosses",
+        "transits"
+      ],
+      "coverageStatus": "cataloged",
+      "markerCount": 0,
+      "sourcePolicy": "Sin coordenadas exactas hasta enlazar evidencia wiki/manual; mientras tanto se muestra cobertura de mapa y capas previstas."
+    },
+    {
+      "id": "reserve",
+      "tarkovDevId": "5704e5fad2720bc05b8b4567",
+      "name": "Reserve",
+      "normalizedName": "reserve",
+      "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Reserve",
+      "familyId": "reserve",
+      "minPmcLevelHint": 1,
+      "sourceIds": [
+        "tarkov-dev-maps",
+        "eft-wiki"
+      ],
+      "plannedLayers": [
+        "task-objectives",
+        "quest-items",
+        "extracts",
+        "spawns",
+        "bosses",
+        "transits"
+      ],
+      "coverageStatus": "cataloged",
+      "markerCount": 0,
+      "sourcePolicy": "Sin coordenadas exactas hasta enlazar evidencia wiki/manual; mientras tanto se muestra cobertura de mapa y capas previstas."
+    },
+    {
+      "id": "the-lab",
+      "tarkovDevId": "5b0fc42d86f7744a585f9105",
+      "name": "The Lab",
+      "normalizedName": "the-lab",
+      "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Lab",
+      "familyId": "the-lab",
+      "minPmcLevelHint": 1,
+      "sourceIds": [
+        "tarkov-dev-maps",
+        "eft-wiki"
+      ],
+      "plannedLayers": [
+        "task-objectives",
+        "quest-items",
+        "extracts",
+        "spawns",
+        "bosses",
+        "transits"
+      ],
+      "coverageStatus": "cataloged",
+      "markerCount": 0,
+      "sourcePolicy": "Sin coordenadas exactas hasta enlazar evidencia wiki/manual; mientras tanto se muestra cobertura de mapa y capas previstas."
+    },
+    {
+      "id": "lighthouse",
+      "tarkovDevId": "5704e4dad2720bb55b8b4567",
+      "name": "Lighthouse",
+      "normalizedName": "lighthouse",
+      "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Lighthouse",
+      "familyId": "lighthouse",
+      "minPmcLevelHint": 1,
+      "sourceIds": [
+        "tarkov-dev-maps",
+        "eft-wiki"
+      ],
+      "plannedLayers": [
+        "task-objectives",
+        "quest-items",
+        "extracts",
+        "spawns",
+        "bosses",
+        "transits"
+      ],
+      "coverageStatus": "cataloged",
+      "markerCount": 0,
+      "sourcePolicy": "Sin coordenadas exactas hasta enlazar evidencia wiki/manual; mientras tanto se muestra cobertura de mapa y capas previstas."
+    },
+    {
+      "id": "streets-of-tarkov",
+      "tarkovDevId": "5714dc692459777137212e12",
+      "name": "Streets of Tarkov",
+      "normalizedName": "streets-of-tarkov",
+      "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Streets_of_Tarkov",
+      "familyId": "streets-of-tarkov",
+      "minPmcLevelHint": 1,
+      "sourceIds": [
+        "tarkov-dev-maps",
+        "eft-wiki"
+      ],
+      "plannedLayers": [
+        "task-objectives",
+        "quest-items",
+        "extracts",
+        "spawns",
+        "bosses",
+        "transits"
+      ],
+      "coverageStatus": "cataloged",
+      "markerCount": 0,
+      "sourcePolicy": "Sin coordenadas exactas hasta enlazar evidencia wiki/manual; mientras tanto se muestra cobertura de mapa y capas previstas."
+    },
+    {
+      "id": "ground-zero",
+      "tarkovDevId": "653e6760052c01c1c805532f",
+      "name": "Ground Zero",
+      "normalizedName": "ground-zero",
+      "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Ground_Zero",
+      "familyId": "ground-zero",
+      "minPmcLevelHint": 1,
+      "sourceIds": [
+        "tarkov-dev-maps",
+        "eft-wiki"
+      ],
+      "plannedLayers": [
+        "task-objectives",
+        "quest-items",
+        "extracts",
+        "spawns",
+        "bosses",
+        "transits"
+      ],
+      "coverageStatus": "cataloged",
+      "markerCount": 0,
+      "sourcePolicy": "Sin coordenadas exactas hasta enlazar evidencia wiki/manual; mientras tanto se muestra cobertura de mapa y capas previstas."
+    },
+    {
+      "id": "ground-zero-21",
+      "tarkovDevId": "65b8d6f5cdde2479cb2a3125",
+      "name": "Ground Zero 21+",
+      "normalizedName": "ground-zero-21",
+      "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Ground_Zero",
+      "familyId": "ground-zero",
+      "minPmcLevelHint": 21,
+      "sourceIds": [
+        "tarkov-dev-maps",
+        "eft-wiki"
+      ],
+      "plannedLayers": [
+        "task-objectives",
+        "quest-items",
+        "extracts",
+        "spawns",
+        "bosses",
+        "transits"
+      ],
+      "coverageStatus": "cataloged",
+      "markerCount": 0,
+      "sourcePolicy": "Sin coordenadas exactas hasta enlazar evidencia wiki/manual; mientras tanto se muestra cobertura de mapa y capas previstas."
+    },
+    {
+      "id": "ground-zero-tutorial",
+      "tarkovDevId": "68236e8153654e8c1200798a",
+      "name": "Ground Zero Tutorial",
+      "normalizedName": "ground-zero-tutorial",
+      "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Ground_Zero",
+      "familyId": "ground-zero",
+      "minPmcLevelHint": 1,
+      "sourceIds": [
+        "tarkov-dev-maps",
+        "eft-wiki"
+      ],
+      "plannedLayers": [
+        "task-objectives",
+        "quest-items",
+        "extracts",
+        "spawns",
+        "bosses",
+        "transits"
+      ],
+      "coverageStatus": "cataloged",
+      "markerCount": 0,
+      "sourcePolicy": "Sin coordenadas exactas hasta enlazar evidencia wiki/manual; mientras tanto se muestra cobertura de mapa y capas previstas."
+    },
+    {
+      "id": "the-labyrinth",
+      "tarkovDevId": "6733700029c367a3d40b02af",
+      "name": "The Labyrinth",
+      "normalizedName": "the-labyrinth",
+      "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/The_Labyrinth",
+      "familyId": "the-labyrinth",
+      "minPmcLevelHint": 1,
+      "sourceIds": [
+        "tarkov-dev-maps",
+        "eft-wiki"
+      ],
+      "plannedLayers": [
+        "task-objectives",
+        "quest-items",
+        "extracts",
+        "spawns",
+        "bosses",
+        "transits"
+      ],
+      "coverageStatus": "cataloged",
+      "markerCount": 0,
+      "sourcePolicy": "Sin coordenadas exactas hasta enlazar evidencia wiki/manual; mientras tanto se muestra cobertura de mapa y capas previstas."
+    },
+    {
+      "id": "terminal",
+      "tarkovDevId": "6925a2c38bdebd9e2302692e",
+      "name": "Terminal",
+      "normalizedName": "terminal",
+      "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Terminal",
+      "familyId": "terminal",
+      "minPmcLevelHint": 1,
+      "sourceIds": [
+        "tarkov-dev-maps",
+        "eft-wiki"
+      ],
+      "plannedLayers": [
+        "task-objectives",
+        "quest-items",
+        "extracts",
+        "spawns",
+        "bosses",
+        "transits"
+      ],
+      "coverageStatus": "cataloged",
+      "markerCount": 0,
+      "sourcePolicy": "Sin coordenadas exactas hasta enlazar evidencia wiki/manual; mientras tanto se muestra cobertura de mapa y capas previstas."
+    },
+    {
+      "id": "icebreaker",
+      "tarkovDevId": "69af492a4819ea4ba10a69c5",
+      "name": "Icebreaker",
+      "normalizedName": "icebreaker",
+      "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Icebreaker",
+      "familyId": "icebreaker",
+      "minPmcLevelHint": 1,
+      "sourceIds": [
+        "tarkov-dev-maps",
+        "eft-wiki"
+      ],
+      "plannedLayers": [
+        "task-objectives",
+        "quest-items",
+        "extracts",
+        "spawns",
+        "bosses",
+        "transits"
+      ],
+      "coverageStatus": "cataloged",
+      "markerCount": 0,
+      "sourcePolicy": "Sin coordenadas exactas hasta enlazar evidencia wiki/manual; mientras tanto se muestra cobertura de mapa y capas previstas."
+    }
+  ]
+}
