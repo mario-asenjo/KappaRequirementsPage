@@ -90,6 +90,20 @@ a:hover {
   color: var(--kraken-purple-deep);
 }
 
+.header-nav a.nav-import-cta {
+  background: linear-gradient(135deg, rgba(113, 50, 245, 0.14), rgba(20, 158, 97, 0.12));
+  border: 1px solid rgba(113, 50, 245, 0.26);
+  color: var(--kraken-purple-deep);
+  box-shadow: rgba(113, 50, 245, 0.12) 0 8px 20px;
+}
+
+.header-nav a.nav-import-cta.active,
+.header-nav a.nav-import-cta:hover {
+  background: linear-gradient(135deg, var(--kraken-purple), var(--kraken-purple-deep));
+  border-color: transparent;
+  color: #ffffff;
+}
+
 .header-nav a[href*="github.com"] {
   color: var(--kraken-purple-deep);
 }
@@ -248,6 +262,59 @@ a:hover {
 
 .hero-stats strong {
   color: var(--kraken-text);
+}
+
+.import-callout {
+  align-items: center;
+  background:
+    linear-gradient(135deg, rgba(113, 50, 245, 0.08), rgba(20, 158, 97, 0.08)),
+    #ffffff;
+  border: 1px solid rgba(113, 50, 245, 0.18);
+  border-radius: 18px;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  margin-top: 22px;
+  padding: 18px;
+}
+
+.import-callout h2 {
+  font-size: clamp(1.2rem, 2.5vw, 1.55rem);
+  letter-spacing: -0.4px;
+  margin: 4px 0 8px;
+}
+
+.import-callout p {
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+.import-callout-kicker {
+  color: var(--kraken-success-dark);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.import-callout-status {
+  color: var(--kraken-neutral);
+  margin-top: 10px;
+}
+
+.import-callout-status strong {
+  color: var(--kraken-text);
+}
+
+.import-callout-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 190px;
+}
+
+.import-callout-actions .btn {
+  white-space: nowrap;
 }
 
 .import-hero {
@@ -1371,8 +1438,13 @@ a:hover {
     min-height: 0;
   }
 
-  .dashboard-panel {
+  .dashboard-panel,
+  .import-callout {
     grid-template-columns: 1fr;
+  }
+
+  .import-callout-actions {
+    min-width: 0;
   }
 
   .import-hero,

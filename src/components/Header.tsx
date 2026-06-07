@@ -36,7 +36,12 @@ const Header: React.FC<HeaderProps> = ({ tasks, goals, activeGoal, goalProgress,
         <NavLink to="/tasks">Misiones</NavLink>
         <NavLink to="/quest-tree">Arbol</NavLink>
         <NavLink to="/achievements">Achievements</NavLink>
-        <NavLink to="/import">Importar</NavLink>
+        <NavLink
+          to="/import"
+          className={({ isActive }) => `nav-import-cta${isActive ? ' active' : ''}`}
+        >
+          Importar logs
+        </NavLink>
         <a href="https://github.com/mario-asenjo/KappaRequirementsPage" target="_blank" rel="noreferrer">Star GitHub</a>
       </nav>
       <label className="goal-selector">
