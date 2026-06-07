@@ -1,10 +1,10 @@
 {
   "metadata": {
     "source": "src/data/tasks.json + src/data/achievements.json",
-    "builtAt": "2026-05-17T13:05:42.313Z",
-    "goalCount": 108,
+    "builtAt": "2026-06-07T10:10:44.863Z",
+    "goalCount": 112,
     "taskGoalCount": 6,
-    "manualAchievementGoalCount": 102
+    "manualAchievementGoalCount": 106
   },
   "goals": [
     {
@@ -1045,6 +1045,17 @@
       "source": "wiki"
     },
     {
+      "id": "achievement-6a0344563743e4b101070b92",
+      "name": "Cracks in the Ice",
+      "type": "manual-achievement",
+      "description": "Decrypt the data of The Unheard from the archives aboard the icebreaker \"Boreas\"",
+      "taskIds": [],
+      "achievementIds": [
+        "6a0344563743e4b101070b92"
+      ],
+      "source": "wiki"
+    },
+    {
       "id": "achievement-6513ee11a3dd9b6aa7159b4a",
       "name": "Deal to Make",
       "type": "manual-achievement",
@@ -1307,6 +1318,17 @@
         "6514134eec10ff011f17cc26"
       ],
       "source": "wiki"
+    },
+    {
+      "id": "achievement-6a11d9028fd274eb6207c0bc",
+      "name": "I’m on a Boat",
+      "type": "manual-achievement",
+      "description": "Neutralize 4 members of The Wedge's squad while playing as a PMC",
+      "taskIds": [],
+      "achievementIds": [
+        "6a11d9028fd274eb6207c0bc"
+      ],
+      "source": "tarkov.dev"
     },
     {
       "id": "achievement-67a0e57117e34930e50075f3",
@@ -1615,6 +1637,17 @@
       "taskIds": [],
       "achievementIds": [
         "685d3d6b81d993fda109cdb8"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-6a03447fb2e3003f8706a400",
+      "name": "Part of the Ship, Part of the Crew",
+      "type": "manual-achievement",
+      "description": "Learn all the secrets of the icebreaker \"Boreas\"",
+      "taskIds": [],
+      "achievementIds": [
+        "6a03447fb2e3003f8706a400"
       ],
       "source": "wiki"
     },
@@ -2035,6 +2068,17 @@
       "taskIds": [],
       "achievementIds": [
         "651411f1cf2f1c285e606423"
+      ],
+      "source": "wiki"
+    },
+    {
+      "id": "achievement-6a11d98a1e4337ff1d0a6dbe",
+      "name": "Who Dares Wins",
+      "type": "manual-achievement",
+      "description": "Neutralize 60 members of The Wedge's squad while playing as a PMC",
+      "taskIds": [],
+      "achievementIds": [
+        "6a11d98a1e4337ff1d0a6dbe"
       ],
       "source": "wiki"
     },

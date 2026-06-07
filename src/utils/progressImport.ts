@@ -50,7 +50,7 @@ export function parseProgressImportJson(value: string): ProgressImportFile {
   }
 
   return {
-    ...(parsed as ProgressImportFile),
+    ...(parsed as unknown as ProgressImportFile),
     schemaVersion: 1,
     completedTaskIds,
     startedTaskIds: uniqueStrings(parsed.startedTaskIds),

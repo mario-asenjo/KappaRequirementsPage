@@ -1,4 +1,5 @@
 import { writeFile } from 'fs/promises';
+import { fileURLToPath } from 'url';
 import { Achievement } from '../src/types';
 
 const query = `{
@@ -125,7 +126,7 @@ async function fetchAchievements() {
     }))
     .sort((a: Achievement, b: Achievement) => a.name.localeCompare(b.name));
 
-  const filePath = new URL('../src/data/achievements.json', import.meta.url).pathname;
+  const filePath = fileURLToPath(new URL('../src/data/achievements.json', import.meta.url));
   const payload = {
     metadata: {
       sources: ['https://api.tarkov.dev/graphql', 'https://escapefromtarkov.fandom.com/wiki/Achievements'],

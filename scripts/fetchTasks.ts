@@ -1,4 +1,5 @@
 import { writeFile } from 'fs/promises';
+import { fileURLToPath } from 'url';
 
 /**
  * This script demonstrates how you might fetch up‑to‑date quest data from the
@@ -83,7 +84,7 @@ async function fetchTasks() {
     }))
     .sort((a: any, b: any) => a.trader.localeCompare(b.trader) || a.title.localeCompare(b.title));
 
-  const filePath = new URL('../src/data/tasks.json', import.meta.url).pathname;
+  const filePath = fileURLToPath(new URL('../src/data/tasks.json', import.meta.url));
   const payload = {
     metadata: {
       source: 'https://api.tarkov.dev/graphql',
