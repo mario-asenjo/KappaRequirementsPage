@@ -21,7 +21,7 @@
 - `src/data/questTree.json`: arbol de misiones generado desde `tasks.json`.
 - `src/utils/questTree.ts`: construccion de arbol por comerciante y estados de nodos.
 - `src/styles.css`: ajustes visuales y responsivos locales.
-- `DESIGN.md`: sistema visual inspirado en Kraken para guiar cualquier cambio de interfaz.
+- `DESIGN.md`: direccion visual tactica dark-first para guiar futuros cambios de interfaz.
 - `scripts/fetchTasks.ts`: sincronizacion de todas las misiones desde `tarkov.dev`.
 - `scripts/fetchAchievements.ts`: sincronizacion de achievements desde `tarkov.dev` y wiki.
 - `scripts/buildGoals.ts`: generacion de perfiles de progreso derivados.
@@ -39,7 +39,7 @@
 - Componentes React en PascalCase.
 - Tipos compartidos en `src/types.ts`.
 - Estilos base con Bootstrap y ajustes propios en `src/styles.css`.
-- Look and feel basado en `DESIGN.md`: superficies blancas, texto near-black, acentos `#7132f5`, botones de 12px y sombras suaves.
+- Look and feel futuro basado en `DESIGN.md`: interfaz tactica dark-first, superficies elevadas, acentos violeta/verde, importacion como CTA principal y foco en decisiones accionables.
 - Progreso del usuario persistido solo en `localStorage` bajo `completedTasks`.
 - Modelo de progreso actual persistido en `localStorage` bajo `userProgress`; mantiene compatibilidad con `completedTasks` y `playerLevel`.
 - Las misiones se importan desde `src/data/tasks.json` para quedar incluidas en el bundle de produccion.
@@ -55,6 +55,16 @@
 - Total registrado de achievements: `109`.
 
 ## Historial De Cambios
+
+### 2026-06-07 (benchmark TarkovBuddy e import-first UX)
+
+- Rama de trabajo: `feat/import-first-ux-benchmark`.
+- Se verifico `gh auth status`: GitHub CLI autenticado como `mario-asenjo` con protocolo SSH y scopes `repo`, `read:org`, `gist` y `admin:public_key`.
+- Se analizo `https://www.tarkovbuddy.org/` como benchmark de producto y se documento en `docs/tarkovbuddy-benchmark.md`.
+- Se identificaron oportunidades para KappaTracker: importacion desde logs como diferencial, home tipo Mission Control, planner de raid, progreso explicable, menos ruido visual y mejor localizacion.
+- `DESIGN.md` se sustituyo por una direccion tactica dark-first orientada a herramientas de progreso/raid, dejando atras la inspiracion Kraken.
+- `Home` ahora destaca la importacion desde logs con CTA visible, descarga del extractor y estado de ultima importacion/iniciadas detectadas.
+- La navbar renombra y destaca `/import` como `Importar logs`.
 
 ### 2026-06-07 (operativa multiagente y CI)
 

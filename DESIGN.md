@@ -1,125 +1,146 @@
-# Design System Inspired by Kraken
+# KappaTracker Design Direction
 
-## 1. Visual Theme & Atmosphere
+Este documento sustituye la direccion anterior inspirada en Kraken. La UI no debe sentirse como una landing de crypto; debe sentirse como una herramienta tactica para jugadores de Escape from Tarkov: oscura, clara, densa cuando aporte valor y siempre orientada a la siguiente decision del jugador.
 
-Kraken's website is a clean, trustworthy crypto exchange that uses purple as its commanding brand color. The design operates on white backgrounds with Kraken Purple (`#7132f5`, `#5741d8`, `#5b1ecf`) creating a distinctive, professional crypto identity. The proprietary Kraken-Brand font handles display headings with bold (700) weight and negative tracking, while Kraken-Product (with IBM Plex Sans fallback) serves as the UI workhorse.
+## 1. Principios de producto
 
-**Key Characteristics:**
-- Kraken Purple (`#7132f5`) as primary brand with darker variants (`#5741d8`, `#5b1ecf`)
-- Kraken-Brand (display) + Kraken-Product (UI) dual font system
-- Near-black (`#101114`) text with cool blue-gray neutral scale
-- 12px radius buttons (rounded but not pill)
-- Subtle shadows (`rgba(0,0,0,0.03) 0px 4px 24px`) — whisper-level
-- Green accent (`#149e61`) for positive/success states
+1. Import-first: la importacion desde logs locales es el diferencial de KappaTracker y debe aparecer en la home, navbar y onboarding.
+2. Local-first: no pedir cuenta ni credenciales para funcionalidades core. Explicar siempre que el extractor es de solo lectura y sin llamadas de red.
+3. Decision over checklist: no solo listar misiones; responder “que hago ahora”, “que llevo” y “que me bloquea”.
+4. Menos ruido que la competencia: sin ads, sin embeds, sin popups innecesarios.
+5. Mobile/second-monitor friendly: checklists grandes, estados claros y acciones rapidas.
+6. Progreso explicable: cada recomendacion futura debe decir por que se prioriza o se bloquea.
 
-## 2. Color Palette & Roles
+## 2. Atmosfera visual
 
-### Primary
-- **Kraken Purple** (`#7132f5`): Primary CTA, brand accent, links
-- **Purple Dark** (`#5741d8`): Button borders, outlined variants
-- **Purple Deep** (`#5b1ecf`): Deepest purple
-- **Purple Subtle** (`rgba(133,91,251,0.16)`): Purple at 16% — subtle button backgrounds
-- **Near Black** (`#101114`): Primary text
+Inspiracion: dashboards oscuros tipo Linear/Sentry, con lectura tactica y acentos violeta/verde. No copiar TarkovBuddy: usar su cobertura funcional como benchmark, no su densidad visual.
 
-### Neutral
-- **Cool Gray** (`#686b82`): Primary neutral, borders at 24% opacity
-- **Silver Blue** (`#9497a9`): Secondary text, muted elements
-- **White** (`#ffffff`): Primary surface
-- **Border Gray** (`#dedee5`): Divider borders
+- Fondo principal: dark-first, casi negro, con paneles ligeramente elevados.
+- Superficies: cards con bordes sutiles, sin sombras pesadas.
+- Acento primario: violeta/indigo para CTAs y foco.
+- Acento de exito: verde para completado/importado/seguro.
+- Acento de aviso: ambar para bloqueadores, llaves faltantes o warnings.
+- Tipografia: Inter o system-ui; pesos medios, titulares compactos.
 
-### Semantic
-- **Green** (`#149e61`): Success/positive at 16% opacity for badges
-- **Green Dark** (`#026b3f`): Badge text
+## 3. Paleta propuesta
 
-## 3. Typography Rules
+### Fondos
 
-### Font Families
-- **Display**: `Kraken-Brand`, fallbacks: `IBM Plex Sans, Helvetica, Arial`
-- **UI / Body**: `Kraken-Product`, fallbacks: `Helvetica Neue, Helvetica, Arial`
+- `--surface-page`: #080a0f
+- `--surface-shell`: #0d1118
+- `--surface-panel`: #141925
+- `--surface-elevated`: #1b2230
 
-### Hierarchy
+### Texto
 
-| Role | Font | Size | Weight | Line Height | Letter Spacing |
-|------|------|------|--------|-------------|----------------|
-| Display Hero | Kraken-Brand | 48px | 700 | 1.17 | -1px |
-| Section Heading | Kraken-Brand | 36px | 700 | 1.22 | -0.5px |
-| Sub-heading | Kraken-Brand | 28px | 700 | 1.29 | -0.5px |
-| Feature Title | Kraken-Product | 22px | 600 | 1.20 | normal |
-| Body | Kraken-Product | 16px | 400 | 1.38 | normal |
-| Body Medium | Kraken-Product | 16px | 500 | 1.38 | normal |
-| Button | Kraken-Product | 16px | 500–600 | 1.38 | normal |
-| Caption | Kraken-Product | 14px | 400–700 | 1.43–1.71 | normal |
-| Small | Kraken-Product | 12px | 400–500 | 1.33 | normal |
-| Micro | Kraken-Product | 7px | 500 | 1.00 | uppercase |
+- `--text-primary`: #f5f7fb
+- `--text-secondary`: #c7cedb
+- `--text-muted`: #8d96a8
+- `--text-disabled`: #5f6878
 
-## 4. Component Stylings
+### Acentos
 
-### Buttons
+- `--accent-primary`: #7c5cff
+- `--accent-primary-hover`: #9b87ff
+- `--accent-success`: #2fd17c
+- `--accent-warning`: #f4b942
+- `--accent-danger`: #ff5f6d
 
-**Primary Purple**
-- Background: `#7132f5`
-- Text: `#ffffff`
-- Padding: 13px 16px
-- Radius: 12px
+### Bordes
 
-**Purple Outlined**
-- Background: `#ffffff`
-- Text: `#5741d8`
-- Border: `1px solid #5741d8`
-- Radius: 12px
+- `--border-subtle`: rgba(255,255,255,0.07)
+- `--border-strong`: rgba(255,255,255,0.14)
 
-**Purple Subtle**
-- Background: `rgba(133,91,251,0.16)`
-- Text: `#7132f5`
-- Padding: 8px
-- Radius: 12px
+## 4. Componentes clave
 
-**White Button**
-- Background: `#ffffff`
-- Text: `#101114`
-- Radius: 10px
-- Shadow: `rgba(0,0,0,0.03) 0px 4px 24px`
+### Navbar
 
-**Secondary Gray**
-- Background: `rgba(148,151,169,0.08)`
-- Text: `#101114`
-- Radius: 12px
+- Debe mantener acceso a Panel, Misiones, Arbol, Achievements e Importar logs.
+- “Importar logs” se considera accion destacada, no un link secundario.
+- En mobile debe mantener touch targets amplios y poder envolver sin romper la lectura.
 
-### Badges
-- Success: `rgba(20,158,97,0.16)` bg, `#026b3f` text, 6px radius
-- Neutral: `rgba(104,107,130,0.12)` bg, `#484b5e` text, 8px radius
+### Home / Mission Control
 
-## 5. Layout Principles
+La home no debe ser solo resumen por comerciante. Debe evolucionar hacia:
 
-### Spacing: 1px, 2px, 3px, 4px, 5px, 6px, 8px, 10px, 12px, 13px, 15px, 16px, 20px, 24px, 25px
-### Border Radius: 3px, 6px, 8px, 10px, 12px, 16px, 9999px, 50%
+1. Progreso del objetivo activo.
+2. Panel de importacion de logs.
+3. Ultima importacion y misiones iniciadas detectadas.
+4. Siguiente accion recomendada.
+5. Resumen por trader o mapa.
 
-## 6. Depth & Elevation
-- Subtle: `rgba(0,0,0,0.03) 0px 4px 24px`
-- Micro: `rgba(16,24,40,0.04) 0px 1px 4px`
+### Importacion
 
-## 7. Do's and Don'ts
+El panel de importacion debe ser el flujo con mayor confianza del producto:
 
-### Do
-- Use Kraken Purple (#7132f5) for CTAs and links
-- Apply 12px radius on all buttons
-- Use Kraken-Brand for headings, Kraken-Product for body
+- CTA principal: Descargar extractor ZIP.
+- Explicacion clara: solo lectura, sin credenciales, sin red.
+- Pasos cortos: descargar, ejecutar, subir JSON, previsualizar, aplicar.
+- Estados visibles: primera vez, ultima importacion, warnings, IDs desconocidos.
 
-### Don't
-- Don't use pill buttons — 12px is the max radius for buttons
-- Don't use other purples outside the defined scale
+### Cards de mision
 
-## 8. Responsive Behavior
-Breakpoints: 375px, 425px, 640px, 768px, 1024px, 1280px, 1536px
+- Mostrar estado: bloqueada, disponible, iniciada por logs, completada.
+- Mostrar trader, mapa, nivel y prerequisitos cuando existan.
+- La accion principal debe ser clara: ver detalle, marcar completada o continuar.
 
-## 9. Agent Prompt Guide
+### Arbol de misiones
 
-### Quick Color Reference
-- Brand: Kraken Purple (`#7132f5`)
-- Dark variant: `#5741d8`
-- Text: Near Black (`#101114`)
-- Secondary text: `#9497a9`
-- Background: White (`#ffffff`)
+- Priorizar legibilidad antes que espectacularidad.
+- Mostrar blockers y camino critico hacia Kappa/Collector.
+- Permitir filtros por trader, mapa y estado.
+- Explicar por que un nodo esta bloqueado.
 
-### Example Component Prompts
-- "Create hero: white background. Kraken-Brand 48px weight 700, letter-spacing -1px. Purple CTA (#7132f5, 12px radius, 13px 16px padding)."
+## 5. UX copy
+
+Tono: directo, jugador a jugador, sin marketing vacio.
+
+Buenos ejemplos:
+
+- “Importa tu progreso real desde los logs locales.”
+- “Sin cuentas, sin credenciales, sin llamadas de red.”
+- “Detectamos estas misiones iniciadas, pero aun no completadas.”
+- “Bloqueada por nivel PMC o prerequisitos.”
+- “Siguiente raid recomendada: Customs.”
+
+Evitar:
+
+- Claims genericos tipo “la mejor herramienta”.
+- Copy ambiguo como “automatizacion avanzada” sin explicar.
+- Mezcla innecesaria de idiomas en labels de UI.
+
+## 6. Accesibilidad y responsive
+
+- Contraste AA minimo para texto normal.
+- Botones y links con foco visible.
+- No depender solo del color para estados de mision.
+- Touch targets de al menos 44px en mobile.
+- Tablas largas deben tener alternativa en cards.
+- Grafos/mapas deben tener lista textual equivalente.
+
+## 7. Roadmap visual
+
+### Fase 1 - Incremental
+
+- Destacar Importar logs en navbar.
+- Anadir panel de importacion/logs en Home.
+- Documentar benchmark y nueva direccion visual.
+
+### Fase 2 - Home tactica
+
+- Redisenar Home como Mission Control real.
+- Mostrar ultima importacion, iniciadas, bloqueadores y siguiente accion.
+- Reducir dependencia de tarjetas por trader como unica vista inicial.
+
+### Fase 3 - Redesign dark-first
+
+- Migrar variables CSS a paleta tactica oscura.
+- Revisar Header, Sidebar, Home, QuestList, QuestTree e Import.
+- Validar accesibilidad, mobile y build en cada PR.
+
+### Fase 4 - Planner
+
+- Vista por raid/mapa.
+- Items/llaves a llevar.
+- Handovers post-raid.
+- Recomendaciones explicables.

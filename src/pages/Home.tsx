@@ -17,14 +17,22 @@ interface HomeProps {
  * individual tasks. Each trader card links to the corresponding list page.
  */
 const Home: React.FC<HomeProps> = ({ tasks, goal, goalProgress }) => {
-  const { completedTaskIds } = useProgress();
+  const { completedTaskIds, progress } = useProgress();
 
   // Group tasks by trader
   const traders = Array.from(new Set(tasks.map((t) => t.trader))).sort();
+  const activeTaskIds = new Set(tasks.map((task) => task.id));
   const totalCompleted = tasks.filter((task) => completedTaskIds.includes(task.id)).length;
   const totalPending = tasks.length - totalCompleted;
   const totalProgress = goalProgress.percent;
   const nextPending = tasks.find((task) => !completedTaskIds.includes(task.id));
+  const detectedStarted = progress.startedTaskIds.filter((taskId) =>
+    activeTaskIds.has(taskId) && !completedTaskIds.includes(taskId)
+  ).length;
+  const lastImport = progress.lastImport;
+  const formattedLastImport = lastImport
+    ? new Intl.DateTimeFormat('es-ES', { dateStyle: 'short', timeStyle: 'short' }).format(new Date(lastImport.importedAt))
+    : null;
 
   return (
     <div className="container-fluid">
@@ -40,6 +48,31 @@ const Home: React.FC<HomeProps> = ({ tasks, goal, goalProgress }) => {
             <span><strong>{totalCompleted}</strong> completadas</span>
             <span><strong>{totalPending}</strong> pendientes</span>
             <span><strong>{tasks.length}</strong> misiones</span>
+            <span><strong>{detectedStarted}</strong> iniciadas por logs</span>
+          </div>
+          <div className="import-callout" aria-label="Importacion automatica desde logs locales">
+            <div>
+              <span className="import-callout-kicker">Diferencial KappaTracker</span>
+              <h2>Importa tu progreso real desde los logs locales.</h2>
+              <p>
+                Descarga el extractor, genera un JSON de solo lectura y actualiza completadas e iniciadas sin cuentas,
+                credenciales ni llamadas de red.
+              </p>
+              {lastImport ? (
+                <p className="import-callout-status">
+                  Ultima importacion: <strong>{formattedLastImport}</strong> · {lastImport.addedCompletedCount} nuevas ·{' '}
+                  {lastImport.detectedStartedCount} iniciadas detectadas
+                </p>
+              ) : (
+                <p className="import-callout-status">
+                  Primer paso recomendado: generar tu snapshot local antes de planificar la siguiente raid.
+                </p>
+              )}
+            </div>
+            <div className="import-callout-actions">
+              <Link className="btn btn-primary" to="/import">Importar desde logs</Link>
+              <Link className="btn btn-outline-secondary" to="/import">Descargar extractor</Link>
+            </div>
           </div>
         </div>
         <div className="dashboard-card" aria-label={`Progreso global hacia ${goal?.name ?? 'el objetivo activo'}`}>
