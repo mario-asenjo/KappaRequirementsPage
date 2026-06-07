@@ -1504,3 +1504,475 @@ a:hover {
     grid-template-columns: 1fr;
   }
 }
+
+/* UX/UI phase 1: dark-first Mission Control shell */
+:root {
+  --kappa-bg: #08090a;
+  --kappa-panel: #0f1011;
+  --kappa-surface: rgba(255, 255, 255, 0.04);
+  --kappa-surface-strong: rgba(255, 255, 255, 0.07);
+  --kappa-border: rgba(255, 255, 255, 0.08);
+  --kappa-border-strong: rgba(255, 255, 255, 0.14);
+  --kappa-text: #f7f8f8;
+  --kappa-muted: #8a8f98;
+  --kappa-soft: #d0d6e0;
+  --kappa-accent: #7170ff;
+  --kappa-accent-strong: #5e6ad2;
+  --kappa-success: #10b981;
+  --kappa-warning: #f3c94b;
+}
+
+html,
+body,
+#root {
+  background: var(--kappa-bg);
+  min-height: 100%;
+}
+
+body {
+  background: var(--kappa-bg);
+  color: var(--kappa-text);
+  font-family: Inter, Kraken-Product, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-feature-settings: "cv01", "ss03";
+}
+
+.app-shell {
+  background:
+    radial-gradient(circle at top left, rgba(113, 112, 255, 0.2), transparent 32rem),
+    radial-gradient(circle at 80% 10%, rgba(16, 185, 129, 0.1), transparent 26rem),
+    var(--kappa-bg);
+}
+
+.app-header {
+  background: rgba(8, 9, 10, 0.9);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--kappa-border);
+  box-shadow: rgba(0, 0, 0, 0.22) 0 12px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.app-header .navbar-brand,
+.app-header h1,
+.app-header h2,
+.app-header h3,
+.app-header h4,
+.app-header h5 {
+  color: var(--kappa-text);
+}
+
+.header-nav {
+  flex-wrap: wrap;
+}
+
+.header-nav a {
+  border: 1px solid transparent;
+  color: var(--kappa-soft);
+  font-weight: 600;
+}
+
+.header-nav a.active,
+.header-nav a:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--kappa-border);
+  color: var(--kappa-text);
+}
+
+.header-nav a.nav-import-cta {
+  background: linear-gradient(135deg, rgba(113, 112, 255, 0.24), rgba(16, 185, 129, 0.14));
+  border-color: rgba(113, 112, 255, 0.36);
+  box-shadow: rgba(113, 112, 255, 0.16) 0 10px 26px;
+  color: #ffffff;
+}
+
+.goal-selector span,
+.kappa-progress-label {
+  color: var(--kappa-muted);
+}
+
+.goal-selector select,
+.form-control,
+.form-select {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: var(--kappa-border-strong);
+  color: var(--kappa-text);
+}
+
+.goal-selector select:focus,
+.form-control:focus,
+.form-select:focus {
+  background-color: rgba(255, 255, 255, 0.07);
+  border-color: var(--kappa-accent);
+  box-shadow: 0 0 0 0.25rem rgba(113, 112, 255, 0.2);
+  color: var(--kappa-text);
+}
+
+.form-control::placeholder {
+  color: var(--kappa-muted);
+}
+
+.form-select option {
+  background: #11131b;
+  color: var(--kappa-text);
+}
+
+.app-sidebar {
+  background: rgba(15, 16, 17, 0.88) !important;
+  border-color: var(--kappa-border) !important;
+  box-shadow: rgba(0, 0, 0, 0.2) 12px 0 34px;
+}
+
+.trader-link {
+  background: transparent !important;
+  border-color: rgba(255, 255, 255, 0.05) !important;
+  color: var(--kappa-soft);
+}
+
+.trader-link:hover,
+.trader-link.active,
+.trader-link.active:hover {
+  background: rgba(113, 112, 255, 0.14) !important;
+  border-color: rgba(113, 112, 255, 0.28) !important;
+  color: #ffffff;
+}
+
+.trader-badge,
+.hero-stats span,
+.quest-board-summary span,
+.achievement-meta span {
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--kappa-soft);
+}
+
+.trader-link.active .trader-badge {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+.app-main {
+  background:
+    radial-gradient(circle at top left, rgba(113, 112, 255, 0.16), transparent 28rem),
+    linear-gradient(180deg, rgba(15, 16, 17, 0.88) 0%, rgba(8, 9, 10, 0.98) 100%);
+}
+
+.hero-panel,
+.card,
+.filter-panel,
+.detail-panel,
+.detail-lead,
+.empty-state,
+.quest-board-group-header,
+.achievement-card {
+  background: var(--kappa-surface);
+  border: 1px solid var(--kappa-border);
+  box-shadow: rgba(0, 0, 0, 0.28) 0 20px 60px;
+  color: var(--kappa-text);
+}
+
+.hero-panel h1,
+.hero-panel h2,
+.section-title,
+.page-heading h2,
+.card-title,
+.trader-card .card-title,
+.task-card .card-title,
+.quest-board-group-header h3,
+.achievement-card h2 {
+  color: var(--kappa-text);
+  font-weight: 650;
+}
+
+.hero-panel p,
+.page-subtitle,
+.card-text,
+.quest-board-group-header p,
+.achievement-card p,
+.import-limit-grid p,
+.import-reset-panel p,
+.text-muted {
+  color: var(--kappa-muted) !important;
+}
+
+.eyebrow {
+  color: var(--kappa-accent);
+  font-weight: 800;
+}
+
+.hero-stats strong,
+.trader-card-header span,
+.import-callout-status strong,
+.import-stats strong {
+  color: var(--kappa-text);
+}
+
+.dashboard-panel {
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.025)),
+    radial-gradient(circle at top right, rgba(113, 112, 255, 0.24), transparent 24rem);
+  border-radius: 24px;
+  padding: clamp(22px, 4vw, 34px);
+}
+
+.dashboard-card {
+  background:
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.22), transparent 13rem),
+    linear-gradient(145deg, #5e6ad2, #271d78 64%, #11131b);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 24px;
+  box-shadow: rgba(94, 106, 210, 0.28) 0 24px 80px;
+}
+
+.dashboard-card strong {
+  color: #ffffff;
+  letter-spacing: -0.09em;
+}
+
+.import-callout,
+.mission-route-panel {
+  background:
+    linear-gradient(135deg, rgba(113, 112, 255, 0.13), rgba(16, 185, 129, 0.08)),
+    rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(113, 112, 255, 0.22);
+  color: var(--kappa-text);
+}
+
+.import-callout-kicker {
+  color: var(--kappa-success);
+}
+
+.btn {
+  border-radius: 12px;
+  font-weight: 700;
+}
+
+.btn-primary,
+.btn-primary:focus,
+.btn-primary:active {
+  background: var(--kappa-accent-strong) !important;
+  border-color: var(--kappa-accent-strong) !important;
+}
+
+.btn-primary:hover {
+  background: var(--kappa-accent) !important;
+  border-color: var(--kappa-accent) !important;
+}
+
+.btn-outline-secondary,
+.btn-outline-light {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: var(--kappa-border-strong);
+  color: var(--kappa-soft);
+}
+
+.btn-outline-secondary:hover,
+.btn-outline-secondary:focus,
+.btn-outline-light:hover,
+.btn-outline-light:focus {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(113, 112, 255, 0.5);
+  color: #ffffff;
+}
+
+.mission-route-panel {
+  border-radius: 24px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0 18px 50px;
+  padding: clamp(18px, 3vw, 26px);
+}
+
+.mission-route-heading {
+  align-items: end;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 420px);
+  margin-bottom: 18px;
+}
+
+.mission-route-heading h2 {
+  color: var(--kappa-text);
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  margin: 0;
+}
+
+.mission-route-heading p {
+  color: var(--kappa-muted);
+  font-weight: 600;
+  margin: 0;
+}
+
+.mission-route-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.mission-route-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--kappa-border);
+  border-radius: 18px;
+  color: var(--kappa-text);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 210px;
+  padding: 18px;
+  text-decoration: none;
+  transition: border-color 160ms ease, transform 160ms ease, background 160ms ease;
+}
+
+.mission-route-card:hover,
+.mission-route-card:focus {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(113, 112, 255, 0.5);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.route-card-label {
+  color: var(--kappa-accent);
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.mission-route-card strong {
+  font-size: 1.2rem;
+  line-height: 1.2;
+}
+
+.mission-route-card p {
+  color: var(--kappa-muted);
+  flex: 1;
+  margin: 0;
+}
+
+.route-card-footer {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.route-card-footer span:first-child {
+  background: rgba(113, 112, 255, 0.16);
+  border-radius: 999px;
+  color: var(--kappa-soft);
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 6px 9px;
+}
+
+.route-card-footer span:last-child {
+  color: #ffffff;
+  font-weight: 800;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.trader-card,
+.task-card,
+.achievement-card {
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.trader-card:hover,
+.task-card:hover,
+.achievement-card:hover {
+  border-color: rgba(113, 112, 255, 0.42);
+  box-shadow: rgba(0, 0, 0, 0.36) 0 24px 70px;
+}
+
+.import-command,
+.import-schema {
+  background: #050607;
+  border: 1px solid var(--kappa-border);
+}
+
+.import-dropzone,
+.import-last-status,
+.import-details {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(113, 112, 255, 0.3);
+}
+
+.import-dropzone span,
+.import-script-link,
+.btn-link {
+  color: var(--kappa-accent);
+}
+
+.import-dropzone input {
+  color: var(--kappa-soft);
+}
+
+.import-dropzone input::file-selector-button {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--kappa-border-strong);
+  border-radius: 10px;
+  color: var(--kappa-text);
+  cursor: pointer;
+  font-weight: 800;
+  margin-right: 10px;
+  padding: 8px 10px;
+}
+
+.import-dropzone input::file-selector-button:hover {
+  background: rgba(113, 112, 255, 0.18);
+  border-color: rgba(113, 112, 255, 0.48);
+}
+
+.import-stats span,
+.import-note,
+.import-privacy-strip span {
+  background: rgba(16, 185, 129, 0.1);
+  color: #6ee7b7;
+}
+
+.quest-board-toggle {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--kappa-border);
+  color: var(--kappa-soft);
+}
+
+.alert-success,
+.alert-danger,
+.alert-warning {
+  border-color: var(--kappa-border-strong);
+}
+
+@media (max-width: 991.98px) {
+  .mission-route-heading,
+  .mission-route-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mission-route-card {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .app-header {
+    position: static;
+  }
+
+  .header-nav {
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+
+  .header-nav a {
+    white-space: nowrap;
+  }
+
+  .app-sidebar {
+    box-shadow: none;
+  }
+
+  .dashboard-panel {
+    border-radius: 18px;
+  }
+}
