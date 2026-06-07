@@ -13,7 +13,7 @@ Este repositorio contiene una aplicación SPA escrita en **React** (con Vite y T
 - **Árbol de misiones**: la ruta `/quest-tree` muestra todos los comerciantes en secciones horizontales tipo eft.monster, con desbloqueo por prerequisitos y nivel PMC.
 - **Selector de objetivo**: permite alternar entre Kappa, Lightkeeper, todas las misiones y achievements con quests asociadas.
 - **Achievements**: la ruta `/achievements` muestra logros, rareza, progreso, objetivos asociados y checklist manual para logros sin quests.
-- **Mapas interactivos**: la ruta `/maps` cataloga todos los mapas/variantes de `tarkov.dev`, enlaza la wiki por mapa y muestra las capas previstas antes de aceptar coordenadas auditadas.
+- **Mapas interactivos**: la ruta `/maps` cataloga todos los mapas/variantes de `tarkov.dev`, enlaza la wiki por mapa y ya incluye Ground Zero como piloto con SVG táctico, marcadores y filtros por capas.
 - **Importacion de progreso**: la ruta `/import` permite cargar un JSON generado desde logs locales, previsualizar misiones detectadas y aplicar completadas/fallidas reconocidas sin sobrescribir progreso existente.
 - **Estado de importacion**: despues de aplicar un JSON, `/import` conserva la ultima fuente, fecha, completadas anadidas, iniciadas detectadas, fallidas cerradas, warnings e IDs no reconocidos.
 - **Misiones iniciadas**: las quests detectadas como iniciadas en logs se guardan y se muestran con badge propio sin contarlas como completadas.
@@ -178,7 +178,7 @@ El plan multiagente y el backlog inicial viven en `docs/agent-operating-model.md
 
 ## Mapas interactivos
 
-El contrato inicial para datos de mapas vive en `docs/map-data-contract.md`. Define mapas, capas, marcadores, geometria, coordinate spaces, fuentes, confianza, precision y validaciones minimas antes de renderizar tareas, items, extracts, spawns, bosses o transits. La primera version visible esta en `/maps`: cataloga todos los mapas/variantes devueltos por `tarkov.dev`, enlaza la wiki por mapa y deja claro que las coordenadas exactas solo se publicaran cuando exista fuente auditada.
+El contrato inicial para datos de mapas vive en `docs/map-data-contract.md`. Define mapas, capas, marcadores, geometria, coordinate spaces, fuentes, confianza, precision y validaciones minimas antes de renderizar tareas, items, extracts, spawns, bosses o transits. La ruta `/maps` ya muestra Ground Zero como primer piloto: SVG tactico generado desde coordenadas de `tarkov.dev`, filtros activables por capa, panel de marcadores y fuentes enlazadas a la wiki. Las imagenes/calibraciones oficiales o comunitarias se añadiran solo cuando haya fuente y permiso/atribucion claros.
 
 ## Despliegue en Cloudflare Pages
 

@@ -263,9 +263,9 @@
         "bosses",
         "transits"
       ],
-      "coverageStatus": "cataloged",
-      "markerCount": 0,
-      "sourcePolicy": "Sin coordenadas exactas hasta enlazar evidencia wiki/manual; mientras tanto se muestra cobertura de mapa y capas previstas."
+      "coverageStatus": "pilot-markers",
+      "markerCount": 200,
+      "sourcePolicy": "Mapa piloto con coordenadas exactas de extracts, transits, spawns y armas estacionarias desde tarkov.dev; la Wiki se cita para contexto de objetivos enlazados."
     },
     {
       "id": "ground-zero-21",
