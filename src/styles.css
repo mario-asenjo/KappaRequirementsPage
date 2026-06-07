@@ -1729,7 +1729,8 @@ body {
 }
 
 .import-callout,
-.mission-route-panel {
+.mission-route-panel,
+.feature-coverage-panel {
   background:
     linear-gradient(135deg, rgba(113, 112, 255, 0.13), rgba(16, 185, 129, 0.08)),
     rgba(255, 255, 255, 0.035);
@@ -1870,6 +1871,91 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.feature-coverage-panel {
+  border-radius: 24px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0 18px 50px;
+  padding: clamp(18px, 3vw, 26px);
+}
+
+.feature-coverage-heading {
+  align-items: end;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 520px);
+  margin-bottom: 18px;
+}
+
+.feature-coverage-heading h2 {
+  color: var(--kappa-text);
+  font-size: clamp(1.45rem, 3vw, 2.05rem);
+  margin: 0;
+}
+
+.feature-coverage-heading p {
+  color: var(--kappa-muted);
+  font-weight: 600;
+  margin: 0;
+}
+
+.feature-coverage-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.feature-module-card {
+  background:
+    radial-gradient(circle at top right, rgba(113, 112, 255, 0.12), transparent 12rem),
+    rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--kappa-border);
+  border-radius: 18px;
+  color: var(--kappa-text);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 190px;
+  padding: 18px;
+  text-decoration: none;
+  transition: border-color 160ms ease, transform 160ms ease, background 160ms ease;
+}
+
+.feature-module-card:hover,
+.feature-module-card:focus {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(113, 112, 255, 0.5);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.feature-module-status {
+  align-self: flex-start;
+  background: rgba(16, 185, 129, 0.1);
+  border-radius: 999px;
+  color: #6ee7b7;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  padding: 6px 9px;
+  text-transform: uppercase;
+}
+
+.feature-module-card strong {
+  font-size: 1.18rem;
+  line-height: 1.2;
+}
+
+.feature-module-card p {
+  color: var(--kappa-muted);
+  flex: 1;
+  margin: 0;
+}
+
+.feature-module-footer {
+  color: var(--kappa-soft);
+  font-size: 0.86rem;
+  font-weight: 900;
 }
 
 .trader-card,
@@ -2126,12 +2212,15 @@ body {
 @media (max-width: 991.98px) {
   .mission-route-heading,
   .mission-route-grid,
+  .feature-coverage-heading,
+  .feature-coverage-grid,
   .import-flow-panel,
   .import-flow-steps {
     grid-template-columns: 1fr;
   }
 
   .mission-route-card,
+  .feature-module-card,
   .import-flow-step {
     min-height: 0;
   }
