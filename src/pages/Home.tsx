@@ -33,6 +33,37 @@ const Home: React.FC<HomeProps> = ({ tasks, goal, goalProgress }) => {
   const formattedLastImport = lastImport
     ? new Intl.DateTimeFormat('es-ES', { dateStyle: 'short', timeStyle: 'short' }).format(new Date(lastImport.importedAt))
     : null;
+  const firstStartedTask = tasks.find((task) => progress.startedTaskIds.includes(task.id) && !completedTaskIds.includes(task.id));
+  const routeCards = [
+    {
+      label: 'Paso 1',
+      title: lastImport ? 'Revisar importacion' : 'Importar logs',
+      description: lastImport
+        ? `${lastImport.addedCompletedCount} completadas nuevas y ${lastImport.detectedStartedCount} iniciadas en el ultimo snapshot.`
+        : 'Carga un snapshot local para transformar logs en progreso verificable antes de planificar.',
+      metric: lastImport ? 'Snapshot listo' : 'Sin cuentas',
+      to: '/import',
+      cta: lastImport ? 'Ver estado' : 'Importar ahora',
+    },
+    {
+      label: 'Paso 2',
+      title: 'Desbloquear el arbol',
+      description: 'Consulta dependencias visibles por comerciante y detecta que bloquea tu siguiente cadena.',
+      metric: `${detectedStarted} iniciadas`,
+      to: '/quest-tree',
+      cta: 'Abrir arbol',
+    },
+    {
+      label: 'Paso 3',
+      title: firstStartedTask ? 'Continuar mision iniciada' : 'Elegir siguiente mision',
+      description: firstStartedTask
+        ? `${firstStartedTask.trader} · ${firstStartedTask.location ?? 'Mapa por definir'}`
+        : 'Filtra por disponibles, nivel PMC y mapa para preparar la siguiente raid con menos ruido.',
+      metric: firstStartedTask ? 'Detectada por logs' : `${totalPending} pendientes`,
+      to: firstStartedTask ? `/task/${encodeURIComponent(firstStartedTask.id)}` : '/tasks',
+      cta: firstStartedTask ? firstStartedTask.title : 'Ver tablero',
+    },
+  ];
 
   return (
     <div className="container-fluid">
@@ -88,6 +119,31 @@ const Home: React.FC<HomeProps> = ({ tasks, goal, goalProgress }) => {
           ) : (
             <span className="next-task is-done">Todas las misiones del objetivo estan completadas</span>
           )}
+        </div>
+      </section>
+
+      <section className="mission-route-panel mb-4" aria-labelledby="mission-route-title">
+        <div className="mission-route-heading">
+          <div>
+            <span className="eyebrow">Siguiente decision</span>
+            <h2 id="mission-route-title">De los logs a la siguiente raid</h2>
+          </div>
+          <p>
+            Un flujo de tres pasos para reducir friccion: importar, entender bloqueos y actuar sobre la mision correcta.
+          </p>
+        </div>
+        <div className="mission-route-grid">
+          {routeCards.map((card) => (
+            <Link key={card.label} className="mission-route-card" to={card.to}>
+              <span className="route-card-label">{card.label}</span>
+              <strong>{card.title}</strong>
+              <p>{card.description}</p>
+              <span className="route-card-footer">
+                <span>{card.metric}</span>
+                <span>{card.cta} →</span>
+              </span>
+            </Link>
+          ))}
         </div>
       </section>
       <h2 className="section-title mb-4">Resumen por comerciante</h2>
