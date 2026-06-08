@@ -14,9 +14,36 @@ assert.ok(mapIds.has(groundZeroMarkers.mapId), 'Ground Zero marker file should r
 assert.ok(groundZeroMarkers.bounds.minX < groundZeroMarkers.bounds.maxX, 'Ground Zero bounds should include X range');
 assert.ok(groundZeroMarkers.bounds.minZ < groundZeroMarkers.bounds.maxZ, 'Ground Zero bounds should include Z range');
 assert.ok(groundZeroMarkers.markers.length >= 20, 'Ground Zero should ship a real marker set, not a placeholder');
+assert.equal(groundZeroMarkers.mapArt.kind, 'tarkovbuddy-local-image', 'Ground Zero should use the TarkovBuddy-style image map asset');
+assert.equal(groundZeroMarkers.tarkovBuddy.mapImage, '/images/maps/ground-zero-tarkovbuddy.webp', 'Ground Zero should expose the TarkovBuddy map image path');
+assert.equal(groundZeroMarkers.tarkovBuddy.staticMarkers.length, 38, 'Ground Zero should mirror the TarkovBuddy static marker contract');
+assert.equal(groundZeroMarkers.tarkovBuddy.questMarkers.length, 0, 'Ground Zero should mirror TarkovBuddy quest marker availability');
+
+const tarkovBuddyMarkerIds = new Set<string>();
+for (const [index, marker] of groundZeroMarkers.tarkovBuddy.staticMarkers.entries()) {
+  assert.ok(marker.id, `TarkovBuddy marker ${index} should have a stable id`);
+  assert.ok(!tarkovBuddyMarkerIds.has(marker.id), `${marker.id} should be unique in TarkovBuddy marker contract`);
+  tarkovBuddyMarkerIds.add(marker.id);
+  assert.ok(['extract', 'spawn', 'cultist', 'transit'].includes(marker.type), `${marker.id} should use a known TarkovBuddy marker type`);
+  assert.ok(marker.x >= 0 && marker.x <= 100, `${marker.id} should use image-percent x coordinate`);
+  assert.ok(marker.y >= 0 && marker.y <= 100, `${marker.id} should use image-percent y coordinate`);
+  assert.ok(marker.title, `${marker.id} should keep the marker title`);
+}
 
 const markersByLayer = new Map<string, number>();
 const markerIds = new Set<string>();
+const markersById = new Map(groundZeroMarkers.markers.map((marker) => [marker.id, marker]));
+for (const staticMarker of groundZeroMarkers.tarkovBuddy.staticMarkers) {
+  const converted = markersById.get(staticMarker.id);
+  assert.ok(converted, `${staticMarker.id} should have a converted render marker`);
+  assert.equal(converted.title, staticMarker.title, `${staticMarker.id} should mirror title`);
+  assert.equal(converted.description, staticMarker.desc, `${staticMarker.id} should mirror description`);
+  assert.equal(converted.geometry.x, staticMarker.x, `${staticMarker.id} should mirror x coordinate`);
+  assert.equal(converted.geometry.z, staticMarker.y, `${staticMarker.id} should mirror y coordinate`);
+  assert.equal(converted.meta?.tarkovBuddyType, staticMarker.type, `${staticMarker.id} should mirror marker type`);
+  assert.equal(converted.meta?.tarkovBuddySubtype ?? null, staticMarker.subtype ?? null, `${staticMarker.id} should mirror marker subtype`);
+}
+
 const allowedConfidence = new Set(['exact', 'high', 'medium', 'low']);
 const allowedPrecision = new Set(['coordinate', 'zone', 'map-only']);
 for (const marker of groundZeroMarkers.markers) {

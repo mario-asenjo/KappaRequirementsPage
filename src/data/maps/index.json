@@ -264,8 +264,8 @@
         "transits"
       ],
       "coverageStatus": "pilot-markers",
-      "markerCount": 200,
-      "sourcePolicy": "Mapa piloto con coordenadas exactas de extracts, transits, spawns y armas estacionarias desde tarkov.dev; la Wiki se cita para contexto de objetivos enlazados."
+      "markerCount": 38,
+      "sourcePolicy": "Contrato y visual adaptados al patrón de TarkovBuddy: imagen local + coordenadas x/y porcentuales; fuentes de contexto wiki/tarkov.dev."
     },
     {
       "id": "ground-zero-21",

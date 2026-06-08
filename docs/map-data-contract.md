@@ -47,10 +47,10 @@ src/data/mapTransforms.json
 ## Estado actual del piloto Ground Zero
 
 - `src/data/mapMarkers/ground-zero.json` contiene el primer set renderizable.
-- Fuentes: `tarkov.dev` GraphQL para coordenadas de spawns, extracts, transits y armas estacionarias; EFT Wiki/Fandom para contexto de objetivos enlazados.
-- Capas con marcadores: `task-objectives`, `extracts`, `spawns`, `transits`.
-- La visual es un SVG tactico generado desde coordenadas x/z de `tarkov.dev`; no se usa aun una imagen wiki/oficial calibrada.
-- Las imagenes de mapa reales se añadiran solo si hay fuente, atribucion/licencia y transformacion documentada.
+- Fuentes: contrato visual y `staticMarkers["Ground Zero"]` de la ruta pública TarkovBuddy `/maps`; EFT Wiki/Fandom y `tarkov.dev` se mantienen para contexto jugable.
+- Capas con marcadores: `extracts`, `spawns`, `bosses`/cultists y `transits`.
+- La visual usa una imagen local `/images/maps/ground-zero-tarkovbuddy.webp` con coordenadas x/y porcentuales, igual que el contrato observado de TarkovBuddy.
+- El benchmark de UI/contrato vive en `docs/tarkovbuddy-map-benchmark.md`; si aparece repo/licencia oficial visible, actualizar atribución antes de ampliar assets.
 
 ## `maps/index.json`
 

@@ -93,6 +93,24 @@ export interface MapMarkerDefinition {
   meta?: Record<string, unknown>;
 }
 
+export type TarkovBuddyStaticMarkerType = 'extract' | 'spawn' | 'boss' | 'cultist' | 'transit' | string;
+
+export interface TarkovBuddyStaticMarker {
+  id: string;
+  type: TarkovBuddyStaticMarkerType;
+  subtype?: 'pmc' | 'scav' | 'coop' | string;
+  x: number;
+  y: number;
+  title: string;
+  desc: string;
+}
+
+export interface TarkovBuddyMapCompatibility {
+  mapImage: string;
+  staticMarkers: TarkovBuddyStaticMarker[];
+  questMarkers: unknown[];
+}
+
 export interface MapMarkerFile {
   schemaVersion: 1;
   revision: string;
@@ -117,7 +135,11 @@ export interface MapMarkerFile {
     kind: string;
     title: string;
     sourceIds: string[];
+    asset?: string;
+    width?: number;
+    height?: number;
     note: string;
   };
+  tarkovBuddy?: TarkovBuddyMapCompatibility;
   markers: MapMarkerDefinition[];
 }
