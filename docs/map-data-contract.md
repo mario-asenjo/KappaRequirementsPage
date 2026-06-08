@@ -44,12 +44,13 @@ src/data/mapSources.json
 src/data/mapTransforms.json
 ```
 
-## Estado actual del piloto Ground Zero
+## Estado actual de mapas piloto TarkovBuddy
 
-- `src/data/mapMarkers/ground-zero.json` contiene el primer set renderizable.
-- Fuentes: contrato visual y `staticMarkers["Ground Zero"]` de la ruta pública TarkovBuddy `/maps`; EFT Wiki/Fandom y `tarkov.dev` se mantienen para contexto jugable.
-- Capas con marcadores: `extracts`, `spawns`, `bosses`/cultists y `transits`.
-- La visual usa una imagen local `/images/maps/ground-zero-tarkovbuddy.webp` con coordenadas x/y porcentuales, igual que el contrato observado de TarkovBuddy.
+- `src/data/mapMarkers/ground-zero.json` y `src/data/mapMarkers/customs.json` contienen los primeros sets renderizables.
+- Fuentes: contrato visual y `staticMarkers`/`questMarkers` de la ruta pública TarkovBuddy `/maps`; EFT Wiki/Fandom y `tarkov.dev` se mantienen para contexto jugable.
+- Ground Zero cubre 38 static markers; Customs cubre 62 static markers y 40 quest marker positions.
+- Capas con marcadores: `task-objectives`, `extracts`, `spawns`, `bosses`/cultists y `transits` según disponibilidad por mapa.
+- La visual usa imagenes locales `/images/maps/ground-zero-tarkovbuddy.webp` y `/images/maps/customs-tarkovbuddy.webp` con coordenadas x/y porcentuales, igual que el contrato observado de TarkovBuddy.
 - El benchmark de UI/contrato vive en `docs/tarkovbuddy-map-benchmark.md`; si aparece repo/licencia oficial visible, actualizar atribución antes de ampliar assets.
 
 ## `maps/index.json`

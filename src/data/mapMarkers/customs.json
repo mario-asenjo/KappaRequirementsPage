@@ -1,0 +1,3181 @@
+{
+  "schemaVersion": 1,
+  "mapId": "customs",
+  "revision": "2026-06-08",
+  "projection": {
+    "type": "tarkovbuddy-percent",
+    "invertZ": false,
+    "coordinateSpace": "image-percent"
+  },
+  "bounds": {
+    "minX": 0,
+    "maxX": 100,
+    "minZ": 0,
+    "maxZ": 100
+  },
+  "mapArt": {
+    "kind": "tarkovbuddy-local-image",
+    "title": "Customs TarkovBuddy map",
+    "sourceIds": [
+      "tarkovbuddy-map-bundle"
+    ],
+    "asset": "/images/maps/customs-tarkovbuddy.webp",
+    "width": 4097,
+    "height": 2142,
+    "note": "Local map image copied from the public TarkovBuddy map route after user confirmed the resource is open source."
+  },
+  "tarkovBuddy": {
+    "mapName": "Customs",
+    "mapImage": "/images/maps/customs-tarkovbuddy.webp",
+    "imageWidth": 4097,
+    "imageHeight": 2142,
+    "staticMarkers": [
+      {
+        "type": "extract",
+        "subtype": "pmc",
+        "x": 4.65,
+        "y": 26.12,
+        "title": "ZB-1011",
+        "desc": "",
+        "id": "customs-tb-extract-pmc"
+      },
+      {
+        "type": "extract",
+        "subtype": "pmc",
+        "x": 20.9,
+        "y": 29.31,
+        "title": "Smugglers' Bunker (ZB-1012)",
+        "desc": "Requires: \"Note with code word Voron\" to extract",
+        "id": "customs-tb-extract-pmc-2"
+      },
+      {
+        "type": "extract",
+        "subtype": "pmc",
+        "x": 35.36,
+        "y": 17.77,
+        "title": "Old Gas Station",
+        "desc": "Green flares indicate the exfil is open.",
+        "id": "customs-tb-extract-pmc-3"
+      },
+      {
+        "type": "extract",
+        "subtype": "pmc",
+        "x": 47.87,
+        "y": 1.6,
+        "title": "Railroad Passage (Flare)",
+        "desc": "Requires: Green Flare",
+        "id": "customs-tb-extract-pmc-4"
+      },
+      {
+        "type": "extract",
+        "subtype": "pmc",
+        "x": 47.17,
+        "y": 23.27,
+        "title": "ZB-013",
+        "desc": "• Factory emergency exit key is required to unlock the door.\n• Lever in Warehouse #4 needs to be activated",
+        "id": "customs-tb-extract-pmc-5"
+      },
+      {
+        "type": "extract",
+        "subtype": "pmc",
+        "x": 68.81,
+        "y": 71.74,
+        "title": "Smugglers' Boat",
+        "desc": "Requires: \"Note with code word Voron\" to extract",
+        "id": "customs-tb-extract-pmc-6"
+      },
+      {
+        "type": "extract",
+        "subtype": "pmc",
+        "x": 48.16,
+        "y": 89.55,
+        "title": "Dorms V-Ex",
+        "desc": "",
+        "id": "customs-tb-extract-pmc-7"
+      },
+      {
+        "type": "extract",
+        "subtype": "pmc",
+        "x": 94.54,
+        "y": 10.86,
+        "title": "Trailer Park",
+        "desc": "",
+        "id": "customs-tb-extract-pmc-8"
+      },
+      {
+        "type": "extract",
+        "subtype": "pmc",
+        "x": 97.18,
+        "y": 34.5,
+        "title": "Crossroads",
+        "desc": "",
+        "id": "customs-tb-extract-pmc-9"
+      },
+      {
+        "type": "extract",
+        "subtype": "coop",
+        "x": 55,
+        "y": 40.61,
+        "title": "Boiler Room Basement (Co-Op)",
+        "desc": "Needs Friendly Scav/PMC",
+        "id": "customs-tb-extract-coop"
+      },
+      {
+        "type": "transit",
+        "x": 97.37,
+        "y": 13.29,
+        "title": "Transit to Interchange",
+        "desc": "",
+        "id": "customs-tb-transit-transit-to-interchange"
+      },
+      {
+        "type": "transit",
+        "x": 63.88,
+        "y": 74.25,
+        "title": "Transit to Shoreline",
+        "desc": "",
+        "id": "customs-tb-transit-transit-to-shoreline"
+      },
+      {
+        "type": "transit",
+        "x": 31.88,
+        "y": 16.02,
+        "title": "Transit to Factory",
+        "desc": "",
+        "id": "customs-tb-transit-transit-to-factory"
+      },
+      {
+        "type": "transit",
+        "x": 3.17,
+        "y": 79.34,
+        "title": "Transit to Reserve",
+        "desc": "",
+        "id": "customs-tb-transit-transit-to-reserve"
+      },
+      {
+        "type": "extract",
+        "subtype": "scav",
+        "x": 81.24,
+        "y": 11.05,
+        "title": "Railroad to Tarkov",
+        "desc": "",
+        "id": "customs-tb-extract-scav"
+      },
+      {
+        "type": "extract",
+        "subtype": "scav",
+        "x": 89.24,
+        "y": 9.25,
+        "title": "Trailer Park Worker's Shack",
+        "desc": "",
+        "id": "customs-tb-extract-scav-2"
+      },
+      {
+        "type": "extract",
+        "subtype": "scav",
+        "x": 97.2,
+        "y": 33.39,
+        "title": "Crossroads",
+        "desc": "",
+        "id": "customs-tb-extract-scav-3"
+      },
+      {
+        "type": "extract",
+        "subtype": "scav",
+        "x": 79.12,
+        "y": 59.66,
+        "title": "Railroad to Port",
+        "desc": "",
+        "id": "customs-tb-extract-scav-4"
+      },
+      {
+        "type": "extract",
+        "subtype": "scav",
+        "x": 68.3,
+        "y": 72.56,
+        "title": "Smugglers' Boat",
+        "desc": "Requires: \"Note with code word Voron\" to extract",
+        "id": "customs-tb-extract-scav-5"
+      },
+      {
+        "type": "extract",
+        "subtype": "scav",
+        "x": 64.16,
+        "y": 73.09,
+        "title": "Sniper Roadblock",
+        "desc": "",
+        "id": "customs-tb-extract-scav-6"
+      },
+      {
+        "type": "extract",
+        "subtype": "scav",
+        "x": 47.41,
+        "y": 89.66,
+        "title": "Old Road Gate",
+        "desc": "",
+        "id": "customs-tb-extract-scav-7"
+      },
+      {
+        "type": "extract",
+        "subtype": "scav",
+        "x": 19.15,
+        "y": 88.91,
+        "title": "Railroad to Military Base",
+        "desc": "",
+        "id": "customs-tb-extract-scav-8"
+      },
+      {
+        "type": "extract",
+        "subtype": "scav",
+        "x": 14.88,
+        "y": 86.47,
+        "title": "Passage Between Rocks",
+        "desc": "",
+        "id": "customs-tb-extract-scav-9"
+      },
+      {
+        "type": "extract",
+        "subtype": "scav",
+        "x": 3.95,
+        "y": 80.09,
+        "title": "Military Base CP",
+        "desc": "",
+        "id": "customs-tb-extract-scav-10"
+      },
+      {
+        "type": "extract",
+        "subtype": "scav",
+        "x": 66.64,
+        "y": 22.65,
+        "title": "RUAF Roadblock",
+        "desc": "",
+        "id": "customs-tb-extract-scav-11"
+      },
+      {
+        "type": "extract",
+        "subtype": "scav",
+        "x": 60.58,
+        "y": 37.53,
+        "title": "Warehouse 17",
+        "desc": "",
+        "id": "customs-tb-extract-scav-12"
+      },
+      {
+        "type": "extract",
+        "subtype": "scav",
+        "x": 3.23,
+        "y": 45.98,
+        "title": "Scav Checkpoint",
+        "desc": "",
+        "id": "customs-tb-extract-scav-13"
+      },
+      {
+        "type": "extract",
+        "subtype": "scav",
+        "x": 1.45,
+        "y": 41.15,
+        "title": "Administration Gate",
+        "desc": "",
+        "id": "customs-tb-extract-scav-14"
+      },
+      {
+        "type": "extract",
+        "subtype": "scav",
+        "x": 3.16,
+        "y": 21.37,
+        "title": "Factory Far Corner",
+        "desc": "",
+        "id": "customs-tb-extract-scav-15"
+      },
+      {
+        "type": "extract",
+        "subtype": "scav",
+        "x": 20.59,
+        "y": 29.31,
+        "title": "Smugglers' Bunker (ZB-1012)",
+        "desc": "Requires: \"Note with code word Voron\" to extract",
+        "id": "customs-tb-extract-scav-16"
+      },
+      {
+        "type": "extract",
+        "subtype": "scav",
+        "x": 33.07,
+        "y": 46.38,
+        "title": "Warehouse 4",
+        "desc": "",
+        "id": "customs-tb-extract-scav-17"
+      },
+      {
+        "type": "extract",
+        "subtype": "scav",
+        "x": 45.67,
+        "y": 52.1,
+        "title": "Factory Shacks",
+        "desc": "",
+        "id": "customs-tb-extract-scav-18"
+      },
+      {
+        "type": "extract",
+        "subtype": "scav",
+        "x": 36.73,
+        "y": 14.23,
+        "title": "Old Gas Station Gate",
+        "desc": "",
+        "id": "customs-tb-extract-scav-19"
+      },
+      {
+        "type": "boss",
+        "x": 46.89,
+        "y": 28.26,
+        "title": "Reshala Spawn",
+        "desc": "• Reshala is followed by 4 aggressive guards that push the player.\n• The followers all have the last name Zavodskoy.\n• Reshala can spawn with Physical Bitcoin in his pockets.",
+        "id": "customs-tb-boss-reshala-spawn"
+      },
+      {
+        "type": "boss",
+        "x": 46.91,
+        "y": 80.07,
+        "title": "Reshala Spawn",
+        "desc": "• Reshala is followed by 4 aggressive guards that push the player.\n• The followers all have the last name Zavodskoy.\n• Reshala can spawn with Physical Bitcoin in his pockets.",
+        "id": "customs-tb-boss-reshala-spawn-2"
+      },
+      {
+        "type": "boss",
+        "x": 25.6,
+        "y": 56.72,
+        "title": "Reshala Spawn",
+        "desc": "• Reshala is followed by 4 aggressive guards that push the player.\n• The followers all have the last name Zavodskoy.\n• Reshala can spawn with Physical Bitcoin in his pockets.",
+        "id": "customs-tb-boss-reshala-spawn-3"
+      },
+      {
+        "type": "cultist",
+        "x": 47.1,
+        "y": 30.98,
+        "title": "Cultist Spawn",
+        "desc": "• Cultists appear between 22:00 and 6:30.\n• Cultist's footsteps have reduced volume.\n• Cultists are cold blooded,can hardly be spotted with thermals.\n• Killing Cultists as a Scav does not carry any penalties towards Scav karma.",
+        "id": "customs-tb-cultist-cultist-spawn"
+      },
+      {
+        "type": "boss",
+        "x": 46.42,
+        "y": 23.74,
+        "title": "Goons Spawn",
+        "desc": "• Killing Goons as a Scav doesn’t result in any Scav karma penalties.\n• Birdeyes's footsteps have reduced volume.\n• When any one of the Goons spots a player, Knight and Big Pipe will both push the player, while Birdeye stands and lets them engage the player first.\n• Birdeye will only push the player after both Knight and Big Pipe are dead.",
+        "id": "customs-tb-boss-goons-spawn"
+      },
+      {
+        "type": "spawn",
+        "x": 12.12,
+        "y": 60.22,
+        "title": "PMC Spawn",
+        "desc": "",
+        "id": "customs-tb-spawn-pmc-spawn"
+      },
+      {
+        "type": "spawn",
+        "x": 4.41,
+        "y": 61.59,
+        "title": "PMC Spawn",
+        "desc": "",
+        "id": "customs-tb-spawn-pmc-spawn-2"
+      },
+      {
+        "type": "spawn",
+        "x": 18.65,
+        "y": 85.55,
+        "title": "PMC Spawn",
+        "desc": "",
+        "id": "customs-tb-spawn-pmc-spawn-3"
+      },
+      {
+        "type": "spawn",
+        "x": 30.94,
+        "y": 78.32,
+        "title": "PMC Spawn",
+        "desc": "",
+        "id": "customs-tb-spawn-pmc-spawn-4"
+      },
+      {
+        "type": "spawn",
+        "x": 66.43,
+        "y": 72.88,
+        "title": "PMC Spawn",
+        "desc": "",
+        "id": "customs-tb-spawn-pmc-spawn-5"
+      },
+      {
+        "type": "spawn",
+        "x": 78.01,
+        "y": 58.04,
+        "title": "PMC Spawn",
+        "desc": "",
+        "id": "customs-tb-spawn-pmc-spawn-6"
+      },
+      {
+        "type": "spawn",
+        "x": 85.81,
+        "y": 50.25,
+        "title": "PMC Spawn",
+        "desc": "",
+        "id": "customs-tb-spawn-pmc-spawn-7"
+      },
+      {
+        "type": "spawn",
+        "x": 97.52,
+        "y": 50.01,
+        "title": "PMC Spawn",
+        "desc": "",
+        "id": "customs-tb-spawn-pmc-spawn-8"
+      },
+      {
+        "type": "spawn",
+        "x": 94.89,
+        "y": 33.62,
+        "title": "PMC Spawn",
+        "desc": "",
+        "id": "customs-tb-spawn-pmc-spawn-9"
+      },
+      {
+        "type": "spawn",
+        "x": 95.74,
+        "y": 9.86,
+        "title": "PMC Spawn",
+        "desc": "",
+        "id": "customs-tb-spawn-pmc-spawn-10"
+      },
+      {
+        "type": "spawn",
+        "x": 83.9,
+        "y": 8.72,
+        "title": "PMC Spawn",
+        "desc": "",
+        "id": "customs-tb-spawn-pmc-spawn-11"
+      },
+      {
+        "type": "spawn",
+        "x": 79.66,
+        "y": 25.03,
+        "title": "PMC Spawn",
+        "desc": "",
+        "id": "customs-tb-spawn-pmc-spawn-12"
+      },
+      {
+        "type": "spawn",
+        "x": 63.55,
+        "y": 25.43,
+        "title": "PMC Spawn",
+        "desc": "",
+        "id": "customs-tb-spawn-pmc-spawn-13"
+      },
+      {
+        "type": "spawn",
+        "x": 56.3,
+        "y": 31.6,
+        "title": "PMC Spawn",
+        "desc": "",
+        "id": "customs-tb-spawn-pmc-spawn-14"
+      },
+      {
+        "type": "spawn",
+        "x": 37.38,
+        "y": 15.37,
+        "title": "PMC Spawn",
+        "desc": "",
+        "id": "customs-tb-spawn-pmc-spawn-15"
+      },
+      {
+        "type": "spawn",
+        "x": 29.41,
+        "y": 34.44,
+        "title": "PMC Spawn",
+        "desc": "",
+        "id": "customs-tb-spawn-pmc-spawn-16"
+      },
+      {
+        "type": "spawn",
+        "x": 28.71,
+        "y": 29.57,
+        "title": "PMC Spawn",
+        "desc": "",
+        "id": "customs-tb-spawn-pmc-spawn-17"
+      },
+      {
+        "type": "spawn",
+        "x": 35.35,
+        "y": 34.92,
+        "title": "PMC Spawn",
+        "desc": "",
+        "id": "customs-tb-spawn-pmc-spawn-18"
+      },
+      {
+        "type": "spawn",
+        "x": 19.45,
+        "y": 37.17,
+        "title": "PMC Spawn",
+        "desc": "",
+        "id": "customs-tb-spawn-pmc-spawn-19"
+      },
+      {
+        "type": "spawn",
+        "x": 10.82,
+        "y": 41.42,
+        "title": "PMC Spawn",
+        "desc": "",
+        "id": "customs-tb-spawn-pmc-spawn-20"
+      },
+      {
+        "type": "spawn",
+        "x": 6.54,
+        "y": 32.22,
+        "title": "PMC Spawn",
+        "desc": "",
+        "id": "customs-tb-spawn-pmc-spawn-21"
+      },
+      {
+        "type": "spawn",
+        "x": 10.56,
+        "y": 29.8,
+        "title": "PMC Spawn",
+        "desc": "",
+        "id": "customs-tb-spawn-pmc-spawn-22"
+      },
+      {
+        "type": "spawn",
+        "x": 17.19,
+        "y": 41.52,
+        "title": "PMC Spawn",
+        "desc": "",
+        "id": "customs-tb-spawn-pmc-spawn-23"
+      },
+      {
+        "type": "spawn",
+        "x": 11.58,
+        "y": 81.9,
+        "title": "PMC Spawn",
+        "desc": "",
+        "id": "customs-tb-spawn-pmc-spawn-24"
+      }
+    ],
+    "questMarkers": [
+      {
+        "quest": "Operation Aquarius - Part 1",
+        "x": 61.91,
+        "y": 83.58,
+        "index": 1,
+        "total": 1
+      },
+      {
+        "quest": "Pharmacist",
+        "x": 66.89,
+        "y": 94.84,
+        "index": 1,
+        "total": 1
+      },
+      {
+        "quest": "Chemical - Part 2",
+        "x": 83.42,
+        "y": 91.25,
+        "index": 1,
+        "total": 1
+      },
+      {
+        "quest": "Against the Conscience - Part 1",
+        "x": 86.91,
+        "y": 87.44,
+        "index": 1,
+        "total": 1
+      },
+      {
+        "quest": "Decisions, Decisions",
+        "x": 85.72,
+        "y": 85.62,
+        "index": 1,
+        "total": 1
+      },
+      {
+        "quest": "Between Two Fires",
+        "x": 85.77,
+        "y": 87.38,
+        "index": 1,
+        "total": 1
+      },
+      {
+        "quest": "Surprise Gift",
+        "x": 86.71,
+        "y": 85.4,
+        "index": 1,
+        "total": 1
+      },
+      {
+        "quest": "Shaking Up the Teller",
+        "x": 86.33,
+        "y": 79.13,
+        "index": 1,
+        "total": 1
+      },
+      {
+        "quest": "Delivery From the Past",
+        "x": 90.09,
+        "y": 66.79,
+        "index": 1,
+        "total": 1
+      },
+      {
+        "quest": "Farming - Part 3",
+        "x": 90.09,
+        "y": 65.15,
+        "index": 1,
+        "total": 1
+      },
+      {
+        "quest": "Passion for Ergonomics",
+        "x": 95.77,
+        "y": 18.5,
+        "index": 1,
+        "total": 1
+      },
+      {
+        "quest": "Background Check",
+        "x": 55.85,
+        "y": 50.67,
+        "index": 1,
+        "total": 1
+      },
+      {
+        "quest": "Bad Rep Evidence",
+        "x": 46.09,
+        "y": 53.64,
+        "index": 1,
+        "total": 1
+      },
+      {
+        "quest": "Chemical - Part 1",
+        "x": 17.68,
+        "y": 25.31,
+        "index": 1,
+        "total": 1
+      },
+      {
+        "quest": "Out of Curiosity",
+        "x": 19.43,
+        "y": 38.03,
+        "index": 1,
+        "total": 1
+      },
+      {
+        "quest": "Big Customer",
+        "x": 19.43,
+        "y": 38.03,
+        "index": 1,
+        "total": 1
+      },
+      {
+        "quest": "Chemical - Part 4",
+        "x": 19.43,
+        "y": 38.03,
+        "index": 1,
+        "total": 1
+      },
+      {
+        "quest": "The Extortionist",
+        "x": 30.18,
+        "y": 41.84,
+        "index": 1,
+        "total": 1
+      },
+      {
+        "quest": "Easy Money - Part 1",
+        "x": 57.29,
+        "y": 9.39,
+        "index": 1,
+        "total": 2
+      },
+      {
+        "quest": "Easy Money - Part 1",
+        "x": 58.55,
+        "y": 14.14,
+        "index": 2,
+        "total": 2
+      },
+      {
+        "quest": "Bullshit",
+        "x": 78.15,
+        "y": 85.64,
+        "index": 1,
+        "total": 2
+      },
+      {
+        "quest": "Bullshit",
+        "x": 73.89,
+        "y": 52.06,
+        "index": 2,
+        "total": 2
+      },
+      {
+        "quest": "Golden Swag",
+        "x": 78.26,
+        "y": 79.31,
+        "index": 1,
+        "total": 2
+      },
+      {
+        "quest": "Golden Swag",
+        "x": 83.92,
+        "y": 12.83,
+        "index": 2,
+        "total": 2
+      },
+      {
+        "quest": "BP Depot",
+        "x": 97.32,
+        "y": 21.26,
+        "index": 1,
+        "total": 4
+      },
+      {
+        "quest": "BP Depot",
+        "x": 55.99,
+        "y": 49.02,
+        "index": 2,
+        "total": 4
+      },
+      {
+        "quest": "BP Depot",
+        "x": 24.42,
+        "y": 54.17,
+        "index": 3,
+        "total": 4
+      },
+      {
+        "quest": "BP Depot",
+        "x": 33.43,
+        "y": 15.81,
+        "index": 4,
+        "total": 4
+      },
+      {
+        "quest": "Tigr Safari",
+        "x": 64.08,
+        "y": 51.47,
+        "index": 1,
+        "total": 3
+      },
+      {
+        "quest": "Tigr Safari",
+        "x": 17.93,
+        "y": 49.35,
+        "index": 2,
+        "total": 3
+      },
+      {
+        "quest": "Tigr Safari",
+        "x": 11.28,
+        "y": 46.59,
+        "index": 3,
+        "total": 3
+      },
+      {
+        "quest": "Chumming",
+        "x": 81.29,
+        "y": 90.35,
+        "index": 1,
+        "total": 1
+      },
+      {
+        "quest": "Thirsty - Delivery",
+        "x": 64.1,
+        "y": 58.76,
+        "index": 1,
+        "total": 1
+      },
+      {
+        "quest": "Informed Means Armed",
+        "x": 63.27,
+        "y": 70.29,
+        "index": 1,
+        "total": 1
+      },
+      {
+        "quest": "The Cult - Part 2",
+        "x": 78.43,
+        "y": 96.68,
+        "index": 1,
+        "total": 1
+      },
+      {
+        "quest": "Secrets of Polikhim",
+        "x": 63.95,
+        "y": 9.67,
+        "index": 1,
+        "total": 1
+      },
+      {
+        "quest": "Every Hunter Knows This",
+        "x": 96.58,
+        "y": 84.08,
+        "index": 1,
+        "total": 1
+      },
+      {
+        "quest": "Hobby Club",
+        "x": 9.83,
+        "y": 52.13,
+        "index": 1,
+        "total": 2
+      },
+      {
+        "quest": "Hobby Club",
+        "x": 18.56,
+        "y": 71.01,
+        "index": 2,
+        "total": 2
+      },
+      {
+        "quest": "The Price of Independence",
+        "x": 39.28,
+        "y": 47.42,
+        "index": 1,
+        "total": 1
+      }
+    ]
+  },
+  "markers": [
+    {
+      "id": "customs-tb-extract-pmc",
+      "mapId": "customs",
+      "layerId": "extracts",
+      "category": "pmc",
+      "title": "ZB-1011",
+      "geometry": {
+        "type": "point",
+        "x": 4.65,
+        "z": 26.12
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "extract",
+        "tarkovBuddySubtype": "pmc"
+      }
+    },
+    {
+      "id": "customs-tb-extract-pmc-2",
+      "mapId": "customs",
+      "layerId": "extracts",
+      "category": "pmc",
+      "title": "Smugglers' Bunker (ZB-1012)",
+      "description": "Requires: \"Note with code word Voron\" to extract",
+      "geometry": {
+        "type": "point",
+        "x": 20.9,
+        "z": 29.31
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "extract",
+        "tarkovBuddySubtype": "pmc"
+      }
+    },
+    {
+      "id": "customs-tb-extract-pmc-3",
+      "mapId": "customs",
+      "layerId": "extracts",
+      "category": "pmc",
+      "title": "Old Gas Station",
+      "description": "Green flares indicate the exfil is open.",
+      "geometry": {
+        "type": "point",
+        "x": 35.36,
+        "z": 17.77
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "extract",
+        "tarkovBuddySubtype": "pmc"
+      }
+    },
+    {
+      "id": "customs-tb-extract-pmc-4",
+      "mapId": "customs",
+      "layerId": "extracts",
+      "category": "pmc",
+      "title": "Railroad Passage (Flare)",
+      "description": "Requires: Green Flare",
+      "geometry": {
+        "type": "point",
+        "x": 47.87,
+        "z": 1.6
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "extract",
+        "tarkovBuddySubtype": "pmc"
+      }
+    },
+    {
+      "id": "customs-tb-extract-pmc-5",
+      "mapId": "customs",
+      "layerId": "extracts",
+      "category": "pmc",
+      "title": "ZB-013",
+      "description": "• Factory emergency exit key is required to unlock the door.\n• Lever in Warehouse #4 needs to be activated",
+      "geometry": {
+        "type": "point",
+        "x": 47.17,
+        "z": 23.27
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "extract",
+        "tarkovBuddySubtype": "pmc"
+      }
+    },
+    {
+      "id": "customs-tb-extract-pmc-6",
+      "mapId": "customs",
+      "layerId": "extracts",
+      "category": "pmc",
+      "title": "Smugglers' Boat",
+      "description": "Requires: \"Note with code word Voron\" to extract",
+      "geometry": {
+        "type": "point",
+        "x": 68.81,
+        "z": 71.74
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "extract",
+        "tarkovBuddySubtype": "pmc"
+      }
+    },
+    {
+      "id": "customs-tb-extract-pmc-7",
+      "mapId": "customs",
+      "layerId": "extracts",
+      "category": "pmc",
+      "title": "Dorms V-Ex",
+      "geometry": {
+        "type": "point",
+        "x": 48.16,
+        "z": 89.55
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "extract",
+        "tarkovBuddySubtype": "pmc"
+      }
+    },
+    {
+      "id": "customs-tb-extract-pmc-8",
+      "mapId": "customs",
+      "layerId": "extracts",
+      "category": "pmc",
+      "title": "Trailer Park",
+      "geometry": {
+        "type": "point",
+        "x": 94.54,
+        "z": 10.86
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "extract",
+        "tarkovBuddySubtype": "pmc"
+      }
+    },
+    {
+      "id": "customs-tb-extract-pmc-9",
+      "mapId": "customs",
+      "layerId": "extracts",
+      "category": "pmc",
+      "title": "Crossroads",
+      "geometry": {
+        "type": "point",
+        "x": 97.18,
+        "z": 34.5
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "extract",
+        "tarkovBuddySubtype": "pmc"
+      }
+    },
+    {
+      "id": "customs-tb-extract-coop",
+      "mapId": "customs",
+      "layerId": "extracts",
+      "category": "coop",
+      "title": "Boiler Room Basement (Co-Op)",
+      "description": "Needs Friendly Scav/PMC",
+      "geometry": {
+        "type": "point",
+        "x": 55,
+        "z": 40.61
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "extract",
+        "tarkovBuddySubtype": "coop"
+      }
+    },
+    {
+      "id": "customs-tb-transit-transit-to-interchange",
+      "mapId": "customs",
+      "layerId": "transits",
+      "category": "transit",
+      "title": "Transit to Interchange",
+      "geometry": {
+        "type": "point",
+        "x": 97.37,
+        "z": 13.29
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "transit",
+        "tarkovBuddySubtype": null
+      }
+    },
+    {
+      "id": "customs-tb-transit-transit-to-shoreline",
+      "mapId": "customs",
+      "layerId": "transits",
+      "category": "transit",
+      "title": "Transit to Shoreline",
+      "geometry": {
+        "type": "point",
+        "x": 63.88,
+        "z": 74.25
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "transit",
+        "tarkovBuddySubtype": null
+      }
+    },
+    {
+      "id": "customs-tb-transit-transit-to-factory",
+      "mapId": "customs",
+      "layerId": "transits",
+      "category": "transit",
+      "title": "Transit to Factory",
+      "geometry": {
+        "type": "point",
+        "x": 31.88,
+        "z": 16.02
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "transit",
+        "tarkovBuddySubtype": null
+      }
+    },
+    {
+      "id": "customs-tb-transit-transit-to-reserve",
+      "mapId": "customs",
+      "layerId": "transits",
+      "category": "transit",
+      "title": "Transit to Reserve",
+      "geometry": {
+        "type": "point",
+        "x": 3.17,
+        "z": 79.34
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "transit",
+        "tarkovBuddySubtype": null
+      }
+    },
+    {
+      "id": "customs-tb-extract-scav",
+      "mapId": "customs",
+      "layerId": "extracts",
+      "category": "scav",
+      "title": "Railroad to Tarkov",
+      "geometry": {
+        "type": "point",
+        "x": 81.24,
+        "z": 11.05
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "extract",
+        "tarkovBuddySubtype": "scav"
+      }
+    },
+    {
+      "id": "customs-tb-extract-scav-2",
+      "mapId": "customs",
+      "layerId": "extracts",
+      "category": "scav",
+      "title": "Trailer Park Worker's Shack",
+      "geometry": {
+        "type": "point",
+        "x": 89.24,
+        "z": 9.25
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "extract",
+        "tarkovBuddySubtype": "scav"
+      }
+    },
+    {
+      "id": "customs-tb-extract-scav-3",
+      "mapId": "customs",
+      "layerId": "extracts",
+      "category": "scav",
+      "title": "Crossroads",
+      "geometry": {
+        "type": "point",
+        "x": 97.2,
+        "z": 33.39
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "extract",
+        "tarkovBuddySubtype": "scav"
+      }
+    },
+    {
+      "id": "customs-tb-extract-scav-4",
+      "mapId": "customs",
+      "layerId": "extracts",
+      "category": "scav",
+      "title": "Railroad to Port",
+      "geometry": {
+        "type": "point",
+        "x": 79.12,
+        "z": 59.66
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "extract",
+        "tarkovBuddySubtype": "scav"
+      }
+    },
+    {
+      "id": "customs-tb-extract-scav-5",
+      "mapId": "customs",
+      "layerId": "extracts",
+      "category": "scav",
+      "title": "Smugglers' Boat",
+      "description": "Requires: \"Note with code word Voron\" to extract",
+      "geometry": {
+        "type": "point",
+        "x": 68.3,
+        "z": 72.56
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "extract",
+        "tarkovBuddySubtype": "scav"
+      }
+    },
+    {
+      "id": "customs-tb-extract-scav-6",
+      "mapId": "customs",
+      "layerId": "extracts",
+      "category": "scav",
+      "title": "Sniper Roadblock",
+      "geometry": {
+        "type": "point",
+        "x": 64.16,
+        "z": 73.09
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "extract",
+        "tarkovBuddySubtype": "scav"
+      }
+    },
+    {
+      "id": "customs-tb-extract-scav-7",
+      "mapId": "customs",
+      "layerId": "extracts",
+      "category": "scav",
+      "title": "Old Road Gate",
+      "geometry": {
+        "type": "point",
+        "x": 47.41,
+        "z": 89.66
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "extract",
+        "tarkovBuddySubtype": "scav"
+      }
+    },
+    {
+      "id": "customs-tb-extract-scav-8",
+      "mapId": "customs",
+      "layerId": "extracts",
+      "category": "scav",
+      "title": "Railroad to Military Base",
+      "geometry": {
+        "type": "point",
+        "x": 19.15,
+        "z": 88.91
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "extract",
+        "tarkovBuddySubtype": "scav"
+      }
+    },
+    {
+      "id": "customs-tb-extract-scav-9",
+      "mapId": "customs",
+      "layerId": "extracts",
+      "category": "scav",
+      "title": "Passage Between Rocks",
+      "geometry": {
+        "type": "point",
+        "x": 14.88,
+        "z": 86.47
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "extract",
+        "tarkovBuddySubtype": "scav"
+      }
+    },
+    {
+      "id": "customs-tb-extract-scav-10",
+      "mapId": "customs",
+      "layerId": "extracts",
+      "category": "scav",
+      "title": "Military Base CP",
+      "geometry": {
+        "type": "point",
+        "x": 3.95,
+        "z": 80.09
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "extract",
+        "tarkovBuddySubtype": "scav"
+      }
+    },
+    {
+      "id": "customs-tb-extract-scav-11",
+      "mapId": "customs",
+      "layerId": "extracts",
+      "category": "scav",
+      "title": "RUAF Roadblock",
+      "geometry": {
+        "type": "point",
+        "x": 66.64,
+        "z": 22.65
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "extract",
+        "tarkovBuddySubtype": "scav"
+      }
+    },
+    {
+      "id": "customs-tb-extract-scav-12",
+      "mapId": "customs",
+      "layerId": "extracts",
+      "category": "scav",
+      "title": "Warehouse 17",
+      "geometry": {
+        "type": "point",
+        "x": 60.58,
+        "z": 37.53
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "extract",
+        "tarkovBuddySubtype": "scav"
+      }
+    },
+    {
+      "id": "customs-tb-extract-scav-13",
+      "mapId": "customs",
+      "layerId": "extracts",
+      "category": "scav",
+      "title": "Scav Checkpoint",
+      "geometry": {
+        "type": "point",
+        "x": 3.23,
+        "z": 45.98
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "extract",
+        "tarkovBuddySubtype": "scav"
+      }
+    },
+    {
+      "id": "customs-tb-extract-scav-14",
+      "mapId": "customs",
+      "layerId": "extracts",
+      "category": "scav",
+      "title": "Administration Gate",
+      "geometry": {
+        "type": "point",
+        "x": 1.45,
+        "z": 41.15
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "extract",
+        "tarkovBuddySubtype": "scav"
+      }
+    },
+    {
+      "id": "customs-tb-extract-scav-15",
+      "mapId": "customs",
+      "layerId": "extracts",
+      "category": "scav",
+      "title": "Factory Far Corner",
+      "geometry": {
+        "type": "point",
+        "x": 3.16,
+        "z": 21.37
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "extract",
+        "tarkovBuddySubtype": "scav"
+      }
+    },
+    {
+      "id": "customs-tb-extract-scav-16",
+      "mapId": "customs",
+      "layerId": "extracts",
+      "category": "scav",
+      "title": "Smugglers' Bunker (ZB-1012)",
+      "description": "Requires: \"Note with code word Voron\" to extract",
+      "geometry": {
+        "type": "point",
+        "x": 20.59,
+        "z": 29.31
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "extract",
+        "tarkovBuddySubtype": "scav"
+      }
+    },
+    {
+      "id": "customs-tb-extract-scav-17",
+      "mapId": "customs",
+      "layerId": "extracts",
+      "category": "scav",
+      "title": "Warehouse 4",
+      "geometry": {
+        "type": "point",
+        "x": 33.07,
+        "z": 46.38
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "extract",
+        "tarkovBuddySubtype": "scav"
+      }
+    },
+    {
+      "id": "customs-tb-extract-scav-18",
+      "mapId": "customs",
+      "layerId": "extracts",
+      "category": "scav",
+      "title": "Factory Shacks",
+      "geometry": {
+        "type": "point",
+        "x": 45.67,
+        "z": 52.1
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "extract",
+        "tarkovBuddySubtype": "scav"
+      }
+    },
+    {
+      "id": "customs-tb-extract-scav-19",
+      "mapId": "customs",
+      "layerId": "extracts",
+      "category": "scav",
+      "title": "Old Gas Station Gate",
+      "geometry": {
+        "type": "point",
+        "x": 36.73,
+        "z": 14.23
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "extract",
+        "tarkovBuddySubtype": "scav"
+      }
+    },
+    {
+      "id": "customs-tb-boss-reshala-spawn",
+      "mapId": "customs",
+      "layerId": "bosses",
+      "category": "boss",
+      "title": "Reshala Spawn",
+      "description": "• Reshala is followed by 4 aggressive guards that push the player.\n• The followers all have the last name Zavodskoy.\n• Reshala can spawn with Physical Bitcoin in his pockets.",
+      "geometry": {
+        "type": "point",
+        "x": 46.89,
+        "z": 28.26
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "boss",
+        "tarkovBuddySubtype": null
+      }
+    },
+    {
+      "id": "customs-tb-boss-reshala-spawn-2",
+      "mapId": "customs",
+      "layerId": "bosses",
+      "category": "boss",
+      "title": "Reshala Spawn",
+      "description": "• Reshala is followed by 4 aggressive guards that push the player.\n• The followers all have the last name Zavodskoy.\n• Reshala can spawn with Physical Bitcoin in his pockets.",
+      "geometry": {
+        "type": "point",
+        "x": 46.91,
+        "z": 80.07
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "boss",
+        "tarkovBuddySubtype": null
+      }
+    },
+    {
+      "id": "customs-tb-boss-reshala-spawn-3",
+      "mapId": "customs",
+      "layerId": "bosses",
+      "category": "boss",
+      "title": "Reshala Spawn",
+      "description": "• Reshala is followed by 4 aggressive guards that push the player.\n• The followers all have the last name Zavodskoy.\n• Reshala can spawn with Physical Bitcoin in his pockets.",
+      "geometry": {
+        "type": "point",
+        "x": 25.6,
+        "z": 56.72
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "boss",
+        "tarkovBuddySubtype": null
+      }
+    },
+    {
+      "id": "customs-tb-cultist-cultist-spawn",
+      "mapId": "customs",
+      "layerId": "bosses",
+      "category": "cultist",
+      "title": "Cultist Spawn",
+      "description": "• Cultists appear between 22:00 and 6:30.\n• Cultist's footsteps have reduced volume.\n• Cultists are cold blooded,can hardly be spotted with thermals.\n• Killing Cultists as a Scav does not carry any penalties towards Scav karma.",
+      "geometry": {
+        "type": "point",
+        "x": 47.1,
+        "z": 30.98
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "cultist",
+        "tarkovBuddySubtype": null
+      }
+    },
+    {
+      "id": "customs-tb-boss-goons-spawn",
+      "mapId": "customs",
+      "layerId": "bosses",
+      "category": "boss",
+      "title": "Goons Spawn",
+      "description": "• Killing Goons as a Scav doesn’t result in any Scav karma penalties.\n• Birdeyes's footsteps have reduced volume.\n• When any one of the Goons spots a player, Knight and Big Pipe will both push the player, while Birdeye stands and lets them engage the player first.\n• Birdeye will only push the player after both Knight and Big Pipe are dead.",
+      "geometry": {
+        "type": "point",
+        "x": 46.42,
+        "z": 23.74
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "boss",
+        "tarkovBuddySubtype": null
+      }
+    },
+    {
+      "id": "customs-tb-spawn-pmc-spawn",
+      "mapId": "customs",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "PMC Spawn",
+      "geometry": {
+        "type": "point",
+        "x": 12.12,
+        "z": 60.22
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "spawn",
+        "tarkovBuddySubtype": null
+      }
+    },
+    {
+      "id": "customs-tb-spawn-pmc-spawn-2",
+      "mapId": "customs",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "PMC Spawn",
+      "geometry": {
+        "type": "point",
+        "x": 4.41,
+        "z": 61.59
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "spawn",
+        "tarkovBuddySubtype": null
+      }
+    },
+    {
+      "id": "customs-tb-spawn-pmc-spawn-3",
+      "mapId": "customs",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "PMC Spawn",
+      "geometry": {
+        "type": "point",
+        "x": 18.65,
+        "z": 85.55
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "spawn",
+        "tarkovBuddySubtype": null
+      }
+    },
+    {
+      "id": "customs-tb-spawn-pmc-spawn-4",
+      "mapId": "customs",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "PMC Spawn",
+      "geometry": {
+        "type": "point",
+        "x": 30.94,
+        "z": 78.32
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "spawn",
+        "tarkovBuddySubtype": null
+      }
+    },
+    {
+      "id": "customs-tb-spawn-pmc-spawn-5",
+      "mapId": "customs",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "PMC Spawn",
+      "geometry": {
+        "type": "point",
+        "x": 66.43,
+        "z": 72.88
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "spawn",
+        "tarkovBuddySubtype": null
+      }
+    },
+    {
+      "id": "customs-tb-spawn-pmc-spawn-6",
+      "mapId": "customs",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "PMC Spawn",
+      "geometry": {
+        "type": "point",
+        "x": 78.01,
+        "z": 58.04
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "spawn",
+        "tarkovBuddySubtype": null
+      }
+    },
+    {
+      "id": "customs-tb-spawn-pmc-spawn-7",
+      "mapId": "customs",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "PMC Spawn",
+      "geometry": {
+        "type": "point",
+        "x": 85.81,
+        "z": 50.25
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "spawn",
+        "tarkovBuddySubtype": null
+      }
+    },
+    {
+      "id": "customs-tb-spawn-pmc-spawn-8",
+      "mapId": "customs",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "PMC Spawn",
+      "geometry": {
+        "type": "point",
+        "x": 97.52,
+        "z": 50.01
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "spawn",
+        "tarkovBuddySubtype": null
+      }
+    },
+    {
+      "id": "customs-tb-spawn-pmc-spawn-9",
+      "mapId": "customs",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "PMC Spawn",
+      "geometry": {
+        "type": "point",
+        "x": 94.89,
+        "z": 33.62
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "spawn",
+        "tarkovBuddySubtype": null
+      }
+    },
+    {
+      "id": "customs-tb-spawn-pmc-spawn-10",
+      "mapId": "customs",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "PMC Spawn",
+      "geometry": {
+        "type": "point",
+        "x": 95.74,
+        "z": 9.86
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "spawn",
+        "tarkovBuddySubtype": null
+      }
+    },
+    {
+      "id": "customs-tb-spawn-pmc-spawn-11",
+      "mapId": "customs",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "PMC Spawn",
+      "geometry": {
+        "type": "point",
+        "x": 83.9,
+        "z": 8.72
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "spawn",
+        "tarkovBuddySubtype": null
+      }
+    },
+    {
+      "id": "customs-tb-spawn-pmc-spawn-12",
+      "mapId": "customs",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "PMC Spawn",
+      "geometry": {
+        "type": "point",
+        "x": 79.66,
+        "z": 25.03
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "spawn",
+        "tarkovBuddySubtype": null
+      }
+    },
+    {
+      "id": "customs-tb-spawn-pmc-spawn-13",
+      "mapId": "customs",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "PMC Spawn",
+      "geometry": {
+        "type": "point",
+        "x": 63.55,
+        "z": 25.43
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "spawn",
+        "tarkovBuddySubtype": null
+      }
+    },
+    {
+      "id": "customs-tb-spawn-pmc-spawn-14",
+      "mapId": "customs",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "PMC Spawn",
+      "geometry": {
+        "type": "point",
+        "x": 56.3,
+        "z": 31.6
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "spawn",
+        "tarkovBuddySubtype": null
+      }
+    },
+    {
+      "id": "customs-tb-spawn-pmc-spawn-15",
+      "mapId": "customs",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "PMC Spawn",
+      "geometry": {
+        "type": "point",
+        "x": 37.38,
+        "z": 15.37
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "spawn",
+        "tarkovBuddySubtype": null
+      }
+    },
+    {
+      "id": "customs-tb-spawn-pmc-spawn-16",
+      "mapId": "customs",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "PMC Spawn",
+      "geometry": {
+        "type": "point",
+        "x": 29.41,
+        "z": 34.44
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "spawn",
+        "tarkovBuddySubtype": null
+      }
+    },
+    {
+      "id": "customs-tb-spawn-pmc-spawn-17",
+      "mapId": "customs",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "PMC Spawn",
+      "geometry": {
+        "type": "point",
+        "x": 28.71,
+        "z": 29.57
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "spawn",
+        "tarkovBuddySubtype": null
+      }
+    },
+    {
+      "id": "customs-tb-spawn-pmc-spawn-18",
+      "mapId": "customs",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "PMC Spawn",
+      "geometry": {
+        "type": "point",
+        "x": 35.35,
+        "z": 34.92
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "spawn",
+        "tarkovBuddySubtype": null
+      }
+    },
+    {
+      "id": "customs-tb-spawn-pmc-spawn-19",
+      "mapId": "customs",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "PMC Spawn",
+      "geometry": {
+        "type": "point",
+        "x": 19.45,
+        "z": 37.17
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "spawn",
+        "tarkovBuddySubtype": null
+      }
+    },
+    {
+      "id": "customs-tb-spawn-pmc-spawn-20",
+      "mapId": "customs",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "PMC Spawn",
+      "geometry": {
+        "type": "point",
+        "x": 10.82,
+        "z": 41.42
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "spawn",
+        "tarkovBuddySubtype": null
+      }
+    },
+    {
+      "id": "customs-tb-spawn-pmc-spawn-21",
+      "mapId": "customs",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "PMC Spawn",
+      "geometry": {
+        "type": "point",
+        "x": 6.54,
+        "z": 32.22
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "spawn",
+        "tarkovBuddySubtype": null
+      }
+    },
+    {
+      "id": "customs-tb-spawn-pmc-spawn-22",
+      "mapId": "customs",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "PMC Spawn",
+      "geometry": {
+        "type": "point",
+        "x": 10.56,
+        "z": 29.8
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "spawn",
+        "tarkovBuddySubtype": null
+      }
+    },
+    {
+      "id": "customs-tb-spawn-pmc-spawn-23",
+      "mapId": "customs",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "PMC Spawn",
+      "geometry": {
+        "type": "point",
+        "x": 17.19,
+        "z": 41.52
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "spawn",
+        "tarkovBuddySubtype": null
+      }
+    },
+    {
+      "id": "customs-tb-spawn-pmc-spawn-24",
+      "mapId": "customs",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "PMC Spawn",
+      "geometry": {
+        "type": "point",
+        "x": 11.58,
+        "z": 81.9
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "spawn",
+        "tarkovBuddySubtype": null
+      }
+    },
+    {
+      "id": "customs-tb-quest-operation-aquarius-part-1",
+      "mapId": "customs",
+      "layerId": "task-objectives",
+      "category": "quest-marker",
+      "title": "Operation Aquarius - Part 1",
+      "description": "TarkovBuddy quest marker",
+      "geometry": {
+        "type": "point",
+        "x": 61.91,
+        "z": 83.58
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "quest",
+        "tarkovBuddyQuest": "Operation Aquarius - Part 1",
+        "tarkovBuddyQuestIndex": 1
+      }
+    },
+    {
+      "id": "customs-tb-quest-pharmacist",
+      "mapId": "customs",
+      "layerId": "task-objectives",
+      "category": "quest-marker",
+      "title": "Pharmacist",
+      "description": "TarkovBuddy quest marker",
+      "geometry": {
+        "type": "point",
+        "x": 66.89,
+        "z": 94.84
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "quest",
+        "tarkovBuddyQuest": "Pharmacist",
+        "tarkovBuddyQuestIndex": 1
+      }
+    },
+    {
+      "id": "customs-tb-quest-chemical-part-2",
+      "mapId": "customs",
+      "layerId": "task-objectives",
+      "category": "quest-marker",
+      "title": "Chemical - Part 2",
+      "description": "TarkovBuddy quest marker",
+      "geometry": {
+        "type": "point",
+        "x": 83.42,
+        "z": 91.25
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "quest",
+        "tarkovBuddyQuest": "Chemical - Part 2",
+        "tarkovBuddyQuestIndex": 1
+      }
+    },
+    {
+      "id": "customs-tb-quest-against-the-conscience-part-1",
+      "mapId": "customs",
+      "layerId": "task-objectives",
+      "category": "quest-marker",
+      "title": "Against the Conscience - Part 1",
+      "description": "TarkovBuddy quest marker",
+      "geometry": {
+        "type": "point",
+        "x": 86.91,
+        "z": 87.44
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "quest",
+        "tarkovBuddyQuest": "Against the Conscience - Part 1",
+        "tarkovBuddyQuestIndex": 1
+      }
+    },
+    {
+      "id": "customs-tb-quest-decisions-decisions",
+      "mapId": "customs",
+      "layerId": "task-objectives",
+      "category": "quest-marker",
+      "title": "Decisions, Decisions",
+      "description": "TarkovBuddy quest marker",
+      "geometry": {
+        "type": "point",
+        "x": 85.72,
+        "z": 85.62
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "quest",
+        "tarkovBuddyQuest": "Decisions, Decisions",
+        "tarkovBuddyQuestIndex": 1
+      }
+    },
+    {
+      "id": "customs-tb-quest-between-two-fires",
+      "mapId": "customs",
+      "layerId": "task-objectives",
+      "category": "quest-marker",
+      "title": "Between Two Fires",
+      "description": "TarkovBuddy quest marker",
+      "geometry": {
+        "type": "point",
+        "x": 85.77,
+        "z": 87.38
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "quest",
+        "tarkovBuddyQuest": "Between Two Fires",
+        "tarkovBuddyQuestIndex": 1
+      }
+    },
+    {
+      "id": "customs-tb-quest-surprise-gift",
+      "mapId": "customs",
+      "layerId": "task-objectives",
+      "category": "quest-marker",
+      "title": "Surprise Gift",
+      "description": "TarkovBuddy quest marker",
+      "geometry": {
+        "type": "point",
+        "x": 86.71,
+        "z": 85.4
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "quest",
+        "tarkovBuddyQuest": "Surprise Gift",
+        "tarkovBuddyQuestIndex": 1
+      }
+    },
+    {
+      "id": "customs-tb-quest-shaking-up-the-teller",
+      "mapId": "customs",
+      "layerId": "task-objectives",
+      "category": "quest-marker",
+      "title": "Shaking Up the Teller",
+      "description": "TarkovBuddy quest marker",
+      "geometry": {
+        "type": "point",
+        "x": 86.33,
+        "z": 79.13
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "quest",
+        "tarkovBuddyQuest": "Shaking Up the Teller",
+        "tarkovBuddyQuestIndex": 1
+      }
+    },
+    {
+      "id": "customs-tb-quest-delivery-from-the-past",
+      "mapId": "customs",
+      "layerId": "task-objectives",
+      "category": "quest-marker",
+      "title": "Delivery From the Past",
+      "description": "TarkovBuddy quest marker",
+      "geometry": {
+        "type": "point",
+        "x": 90.09,
+        "z": 66.79
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "quest",
+        "tarkovBuddyQuest": "Delivery From the Past",
+        "tarkovBuddyQuestIndex": 1
+      }
+    },
+    {
+      "id": "customs-tb-quest-farming-part-3",
+      "mapId": "customs",
+      "layerId": "task-objectives",
+      "category": "quest-marker",
+      "title": "Farming - Part 3",
+      "description": "TarkovBuddy quest marker",
+      "geometry": {
+        "type": "point",
+        "x": 90.09,
+        "z": 65.15
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "quest",
+        "tarkovBuddyQuest": "Farming - Part 3",
+        "tarkovBuddyQuestIndex": 1
+      }
+    },
+    {
+      "id": "customs-tb-quest-passion-for-ergonomics",
+      "mapId": "customs",
+      "layerId": "task-objectives",
+      "category": "quest-marker",
+      "title": "Passion for Ergonomics",
+      "description": "TarkovBuddy quest marker",
+      "geometry": {
+        "type": "point",
+        "x": 95.77,
+        "z": 18.5
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "quest",
+        "tarkovBuddyQuest": "Passion for Ergonomics",
+        "tarkovBuddyQuestIndex": 1
+      }
+    },
+    {
+      "id": "customs-tb-quest-background-check",
+      "mapId": "customs",
+      "layerId": "task-objectives",
+      "category": "quest-marker",
+      "title": "Background Check",
+      "description": "TarkovBuddy quest marker",
+      "geometry": {
+        "type": "point",
+        "x": 55.85,
+        "z": 50.67
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "quest",
+        "tarkovBuddyQuest": "Background Check",
+        "tarkovBuddyQuestIndex": 1
+      }
+    },
+    {
+      "id": "customs-tb-quest-bad-rep-evidence",
+      "mapId": "customs",
+      "layerId": "task-objectives",
+      "category": "quest-marker",
+      "title": "Bad Rep Evidence",
+      "description": "TarkovBuddy quest marker",
+      "geometry": {
+        "type": "point",
+        "x": 46.09,
+        "z": 53.64
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "quest",
+        "tarkovBuddyQuest": "Bad Rep Evidence",
+        "tarkovBuddyQuestIndex": 1
+      }
+    },
+    {
+      "id": "customs-tb-quest-chemical-part-1",
+      "mapId": "customs",
+      "layerId": "task-objectives",
+      "category": "quest-marker",
+      "title": "Chemical - Part 1",
+      "description": "TarkovBuddy quest marker",
+      "geometry": {
+        "type": "point",
+        "x": 17.68,
+        "z": 25.31
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "quest",
+        "tarkovBuddyQuest": "Chemical - Part 1",
+        "tarkovBuddyQuestIndex": 1
+      }
+    },
+    {
+      "id": "customs-tb-quest-out-of-curiosity",
+      "mapId": "customs",
+      "layerId": "task-objectives",
+      "category": "quest-marker",
+      "title": "Out of Curiosity",
+      "description": "TarkovBuddy quest marker",
+      "geometry": {
+        "type": "point",
+        "x": 19.43,
+        "z": 38.03
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "quest",
+        "tarkovBuddyQuest": "Out of Curiosity",
+        "tarkovBuddyQuestIndex": 1
+      }
+    },
+    {
+      "id": "customs-tb-quest-big-customer",
+      "mapId": "customs",
+      "layerId": "task-objectives",
+      "category": "quest-marker",
+      "title": "Big Customer",
+      "description": "TarkovBuddy quest marker",
+      "geometry": {
+        "type": "point",
+        "x": 19.43,
+        "z": 38.03
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "quest",
+        "tarkovBuddyQuest": "Big Customer",
+        "tarkovBuddyQuestIndex": 1
+      }
+    },
+    {
+      "id": "customs-tb-quest-chemical-part-4",
+      "mapId": "customs",
+      "layerId": "task-objectives",
+      "category": "quest-marker",
+      "title": "Chemical - Part 4",
+      "description": "TarkovBuddy quest marker",
+      "geometry": {
+        "type": "point",
+        "x": 19.43,
+        "z": 38.03
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "quest",
+        "tarkovBuddyQuest": "Chemical - Part 4",
+        "tarkovBuddyQuestIndex": 1
+      }
+    },
+    {
+      "id": "customs-tb-quest-the-extortionist",
+      "mapId": "customs",
+      "layerId": "task-objectives",
+      "category": "quest-marker",
+      "title": "The Extortionist",
+      "description": "TarkovBuddy quest marker",
+      "geometry": {
+        "type": "point",
+        "x": 30.18,
+        "z": 41.84
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "quest",
+        "tarkovBuddyQuest": "The Extortionist",
+        "tarkovBuddyQuestIndex": 1
+      }
+    },
+    {
+      "id": "customs-tb-quest-easy-money-part-1-1",
+      "mapId": "customs",
+      "layerId": "task-objectives",
+      "category": "quest-marker",
+      "title": "Easy Money - Part 1 #1",
+      "description": "TarkovBuddy quest marker",
+      "geometry": {
+        "type": "point",
+        "x": 57.29,
+        "z": 9.39
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "quest",
+        "tarkovBuddyQuest": "Easy Money - Part 1",
+        "tarkovBuddyQuestIndex": 1
+      }
+    },
+    {
+      "id": "customs-tb-quest-easy-money-part-1-2",
+      "mapId": "customs",
+      "layerId": "task-objectives",
+      "category": "quest-marker",
+      "title": "Easy Money - Part 1 #2",
+      "description": "TarkovBuddy quest marker",
+      "geometry": {
+        "type": "point",
+        "x": 58.55,
+        "z": 14.14
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "quest",
+        "tarkovBuddyQuest": "Easy Money - Part 1",
+        "tarkovBuddyQuestIndex": 2
+      }
+    },
+    {
+      "id": "customs-tb-quest-bullshit-1",
+      "mapId": "customs",
+      "layerId": "task-objectives",
+      "category": "quest-marker",
+      "title": "Bullshit #1",
+      "description": "TarkovBuddy quest marker",
+      "geometry": {
+        "type": "point",
+        "x": 78.15,
+        "z": 85.64
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "quest",
+        "tarkovBuddyQuest": "Bullshit",
+        "tarkovBuddyQuestIndex": 1
+      }
+    },
+    {
+      "id": "customs-tb-quest-bullshit-2",
+      "mapId": "customs",
+      "layerId": "task-objectives",
+      "category": "quest-marker",
+      "title": "Bullshit #2",
+      "description": "TarkovBuddy quest marker",
+      "geometry": {
+        "type": "point",
+        "x": 73.89,
+        "z": 52.06
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "quest",
+        "tarkovBuddyQuest": "Bullshit",
+        "tarkovBuddyQuestIndex": 2
+      }
+    },
+    {
+      "id": "customs-tb-quest-golden-swag-1",
+      "mapId": "customs",
+      "layerId": "task-objectives",
+      "category": "quest-marker",
+      "title": "Golden Swag #1",
+      "description": "TarkovBuddy quest marker",
+      "geometry": {
+        "type": "point",
+        "x": 78.26,
+        "z": 79.31
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "quest",
+        "tarkovBuddyQuest": "Golden Swag",
+        "tarkovBuddyQuestIndex": 1
+      }
+    },
+    {
+      "id": "customs-tb-quest-golden-swag-2",
+      "mapId": "customs",
+      "layerId": "task-objectives",
+      "category": "quest-marker",
+      "title": "Golden Swag #2",
+      "description": "TarkovBuddy quest marker",
+      "geometry": {
+        "type": "point",
+        "x": 83.92,
+        "z": 12.83
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "quest",
+        "tarkovBuddyQuest": "Golden Swag",
+        "tarkovBuddyQuestIndex": 2
+      }
+    },
+    {
+      "id": "customs-tb-quest-bp-depot-1",
+      "mapId": "customs",
+      "layerId": "task-objectives",
+      "category": "quest-marker",
+      "title": "BP Depot #1",
+      "description": "TarkovBuddy quest marker",
+      "geometry": {
+        "type": "point",
+        "x": 97.32,
+        "z": 21.26
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "quest",
+        "tarkovBuddyQuest": "BP Depot",
+        "tarkovBuddyQuestIndex": 1
+      }
+    },
+    {
+      "id": "customs-tb-quest-bp-depot-2",
+      "mapId": "customs",
+      "layerId": "task-objectives",
+      "category": "quest-marker",
+      "title": "BP Depot #2",
+      "description": "TarkovBuddy quest marker",
+      "geometry": {
+        "type": "point",
+        "x": 55.99,
+        "z": 49.02
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "quest",
+        "tarkovBuddyQuest": "BP Depot",
+        "tarkovBuddyQuestIndex": 2
+      }
+    },
+    {
+      "id": "customs-tb-quest-bp-depot-3",
+      "mapId": "customs",
+      "layerId": "task-objectives",
+      "category": "quest-marker",
+      "title": "BP Depot #3",
+      "description": "TarkovBuddy quest marker",
+      "geometry": {
+        "type": "point",
+        "x": 24.42,
+        "z": 54.17
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "quest",
+        "tarkovBuddyQuest": "BP Depot",
+        "tarkovBuddyQuestIndex": 3
+      }
+    },
+    {
+      "id": "customs-tb-quest-bp-depot-4",
+      "mapId": "customs",
+      "layerId": "task-objectives",
+      "category": "quest-marker",
+      "title": "BP Depot #4",
+      "description": "TarkovBuddy quest marker",
+      "geometry": {
+        "type": "point",
+        "x": 33.43,
+        "z": 15.81
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "quest",
+        "tarkovBuddyQuest": "BP Depot",
+        "tarkovBuddyQuestIndex": 4
+      }
+    },
+    {
+      "id": "customs-tb-quest-tigr-safari-1",
+      "mapId": "customs",
+      "layerId": "task-objectives",
+      "category": "quest-marker",
+      "title": "Tigr Safari #1",
+      "description": "TarkovBuddy quest marker",
+      "geometry": {
+        "type": "point",
+        "x": 64.08,
+        "z": 51.47
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "quest",
+        "tarkovBuddyQuest": "Tigr Safari",
+        "tarkovBuddyQuestIndex": 1
+      }
+    },
+    {
+      "id": "customs-tb-quest-tigr-safari-2",
+      "mapId": "customs",
+      "layerId": "task-objectives",
+      "category": "quest-marker",
+      "title": "Tigr Safari #2",
+      "description": "TarkovBuddy quest marker",
+      "geometry": {
+        "type": "point",
+        "x": 17.93,
+        "z": 49.35
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "quest",
+        "tarkovBuddyQuest": "Tigr Safari",
+        "tarkovBuddyQuestIndex": 2
+      }
+    },
+    {
+      "id": "customs-tb-quest-tigr-safari-3",
+      "mapId": "customs",
+      "layerId": "task-objectives",
+      "category": "quest-marker",
+      "title": "Tigr Safari #3",
+      "description": "TarkovBuddy quest marker",
+      "geometry": {
+        "type": "point",
+        "x": 11.28,
+        "z": 46.59
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "quest",
+        "tarkovBuddyQuest": "Tigr Safari",
+        "tarkovBuddyQuestIndex": 3
+      }
+    },
+    {
+      "id": "customs-tb-quest-chumming",
+      "mapId": "customs",
+      "layerId": "task-objectives",
+      "category": "quest-marker",
+      "title": "Chumming",
+      "description": "TarkovBuddy quest marker",
+      "geometry": {
+        "type": "point",
+        "x": 81.29,
+        "z": 90.35
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "quest",
+        "tarkovBuddyQuest": "Chumming",
+        "tarkovBuddyQuestIndex": 1
+      }
+    },
+    {
+      "id": "customs-tb-quest-thirsty-delivery",
+      "mapId": "customs",
+      "layerId": "task-objectives",
+      "category": "quest-marker",
+      "title": "Thirsty - Delivery",
+      "description": "TarkovBuddy quest marker",
+      "geometry": {
+        "type": "point",
+        "x": 64.1,
+        "z": 58.76
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "quest",
+        "tarkovBuddyQuest": "Thirsty - Delivery",
+        "tarkovBuddyQuestIndex": 1
+      }
+    },
+    {
+      "id": "customs-tb-quest-informed-means-armed",
+      "mapId": "customs",
+      "layerId": "task-objectives",
+      "category": "quest-marker",
+      "title": "Informed Means Armed",
+      "description": "TarkovBuddy quest marker",
+      "geometry": {
+        "type": "point",
+        "x": 63.27,
+        "z": 70.29
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "quest",
+        "tarkovBuddyQuest": "Informed Means Armed",
+        "tarkovBuddyQuestIndex": 1
+      }
+    },
+    {
+      "id": "customs-tb-quest-the-cult-part-2",
+      "mapId": "customs",
+      "layerId": "task-objectives",
+      "category": "quest-marker",
+      "title": "The Cult - Part 2",
+      "description": "TarkovBuddy quest marker",
+      "geometry": {
+        "type": "point",
+        "x": 78.43,
+        "z": 96.68
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "quest",
+        "tarkovBuddyQuest": "The Cult - Part 2",
+        "tarkovBuddyQuestIndex": 1
+      }
+    },
+    {
+      "id": "customs-tb-quest-secrets-of-polikhim",
+      "mapId": "customs",
+      "layerId": "task-objectives",
+      "category": "quest-marker",
+      "title": "Secrets of Polikhim",
+      "description": "TarkovBuddy quest marker",
+      "geometry": {
+        "type": "point",
+        "x": 63.95,
+        "z": 9.67
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "quest",
+        "tarkovBuddyQuest": "Secrets of Polikhim",
+        "tarkovBuddyQuestIndex": 1
+      }
+    },
+    {
+      "id": "customs-tb-quest-every-hunter-knows-this",
+      "mapId": "customs",
+      "layerId": "task-objectives",
+      "category": "quest-marker",
+      "title": "Every Hunter Knows This",
+      "description": "TarkovBuddy quest marker",
+      "geometry": {
+        "type": "point",
+        "x": 96.58,
+        "z": 84.08
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "quest",
+        "tarkovBuddyQuest": "Every Hunter Knows This",
+        "tarkovBuddyQuestIndex": 1
+      }
+    },
+    {
+      "id": "customs-tb-quest-hobby-club-1",
+      "mapId": "customs",
+      "layerId": "task-objectives",
+      "category": "quest-marker",
+      "title": "Hobby Club #1",
+      "description": "TarkovBuddy quest marker",
+      "geometry": {
+        "type": "point",
+        "x": 9.83,
+        "z": 52.13
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "quest",
+        "tarkovBuddyQuest": "Hobby Club",
+        "tarkovBuddyQuestIndex": 1
+      }
+    },
+    {
+      "id": "customs-tb-quest-hobby-club-2",
+      "mapId": "customs",
+      "layerId": "task-objectives",
+      "category": "quest-marker",
+      "title": "Hobby Club #2",
+      "description": "TarkovBuddy quest marker",
+      "geometry": {
+        "type": "point",
+        "x": 18.56,
+        "z": 71.01
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "quest",
+        "tarkovBuddyQuest": "Hobby Club",
+        "tarkovBuddyQuestIndex": 2
+      }
+    },
+    {
+      "id": "customs-tb-quest-the-price-of-independence",
+      "mapId": "customs",
+      "layerId": "task-objectives",
+      "category": "quest-marker",
+      "title": "The Price of Independence",
+      "description": "TarkovBuddy quest marker",
+      "geometry": {
+        "type": "point",
+        "x": 39.28,
+        "z": 47.42
+      },
+      "links": [],
+      "sourceIds": [
+        "tarkovbuddy-map-bundle"
+      ],
+      "confidence": "medium",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovBuddyType": "quest",
+        "tarkovBuddyQuest": "The Price of Independence",
+        "tarkovBuddyQuestIndex": 1
+      }
+    }
+  ]
+}

@@ -43,7 +43,7 @@
       "label": "TarkovBuddy public map bundle",
       "kind": "community-reference",
       "url": "https://www.tarkovbuddy.org/maps",
-      "role": "Reference implementation for map image, percent marker contract, UI behavior and Ground Zero static markers per user request.",
+      "role": "Reference implementation for map image, percent marker contract, UI behavior and TarkovBuddy static/quest markers per user request.",
       "confidenceFloor": "high",
       "notes": "No repository/license link was visible during inspection; keep attribution and avoid claiming exclusive ownership of the asset."
     }

@@ -2958,7 +2958,6 @@ body {
   position: relative;
   overflow: hidden;
   display: block;
-  min-height: 520px;
   border-radius: 0.75rem;
   background: #05070c;
   cursor: crosshair;
@@ -2967,9 +2966,8 @@ body {
 .tb-map-stage img {
   display: block;
   width: 100%;
-  height: auto;
-  min-height: 520px;
-  object-fit: contain;
+  height: 100%;
+  object-fit: fill;
   user-select: none;
 }
 
@@ -3133,11 +3131,6 @@ body {
 }
 
 @media (max-width: 720px) {
-  .tb-map-stage,
-  .tb-map-stage img {
-    min-height: 360px;
-  }
-
   .tb-map-pin {
     width: 1.75rem;
     height: 1.75rem;

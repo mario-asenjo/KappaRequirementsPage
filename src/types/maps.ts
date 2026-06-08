@@ -105,19 +105,30 @@ export interface TarkovBuddyStaticMarker {
   desc: string;
 }
 
+export interface TarkovBuddyQuestMarker {
+  quest: string;
+  x: number;
+  y: number;
+  index?: number;
+  total?: number;
+}
+
 export interface TarkovBuddyMapCompatibility {
+  mapName?: string;
   mapImage: string;
+  imageWidth?: number;
+  imageHeight?: number;
   staticMarkers: TarkovBuddyStaticMarker[];
-  questMarkers: unknown[];
+  questMarkers: TarkovBuddyQuestMarker[];
 }
 
 export interface MapMarkerFile {
   schemaVersion: 1;
   revision: string;
   mapId: string;
-  familyId: string;
-  sourceQuery: string;
-  coordinateSpace: string;
+  familyId?: string;
+  sourceQuery?: string;
+  coordinateSpace?: string;
   bounds: {
     minX: number;
     maxX: number;
@@ -126,10 +137,11 @@ export interface MapMarkerFile {
   };
   projection: {
     type: string;
-    xAxis: string;
-    yAxis: string;
+    xAxis?: string;
+    yAxis?: string;
+    coordinateSpace?: string;
     invertZ: boolean;
-    note: string;
+    note?: string;
   };
   mapArt: {
     kind: string;

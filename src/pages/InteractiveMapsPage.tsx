@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import mapsIndexData from '../data/maps/index.json';
 import mapSourcesData from '../data/mapSources.json';
+import customsMarkersData from '../data/mapMarkers/customs.json';
 import groundZeroMarkersData from '../data/mapMarkers/ground-zero.json';
 import {
   InteractiveMapDefinition,
@@ -11,10 +12,12 @@ import {
 
 const mapsIndex = mapsIndexData as unknown as { maps: InteractiveMapDefinition[] } & Omit<typeof mapsIndexData, 'maps'>;
 const mapSources = mapSourcesData as unknown as InteractiveMapSources;
+const customsMarkers = customsMarkersData as unknown as MapMarkerFile;
 const groundZeroMarkers = groundZeroMarkersData as unknown as MapMarkerFile;
 
 const mapTabOrder = ['customs', 'factory', 'ground-zero', 'interchange', 'lighthouse', 'reserve', 'shoreline', 'streets-of-tarkov', 'the-lab', 'woods'];
 const pilotMarkerFiles: Record<string, MapMarkerFile> = {
+  customs: customsMarkers,
   'ground-zero': groundZeroMarkers,
 };
 
@@ -103,14 +106,15 @@ const countVisibleLayers = (markers: MapMarkerDefinition[]) => new Set(markers.m
 const mapTabs = mapTabOrder.map((familyId) => mapsIndex.maps.find((map) => map.familyId === familyId || map.id === familyId)).filter(Boolean) as InteractiveMapDefinition[];
 
 const InteractiveMapsPage: React.FC = () => {
-  const [selectedMapId, setSelectedMapId] = useState('ground-zero');
-  const [activeFilters, setActiveFilters] = useState<BuddyFilterId[]>(['pmc-extracts', 'scav-extracts', 'coop-extracts', 'transits']);
+  const [selectedMapId, setSelectedMapId] = useState('customs');
+  const [activeFilters, setActiveFilters] = useState<BuddyFilterId[]>(['quest-markers', 'pmc-extracts', 'scav-extracts', 'coop-extracts', 'transits']);
   const [query, setQuery] = useState('');
   const [playerLevel, setPlayerLevel] = useState(1);
   const [selectedMarkerId, setSelectedMarkerId] = useState<string | null>(null);
   const [lockedCoordinate, setLockedCoordinate] = useState<string | null>(null);
 
   const selectedMap = mapsIndex.maps.find((map) => map.id === selectedMapId)
+    ?? mapsIndex.maps.find((map) => map.id === 'customs')
     ?? mapsIndex.maps.find((map) => map.id === 'ground-zero')
     ?? mapsIndex.maps[0];
   const markerFile = selectedMap ? pilotMarkerFiles[selectedMap.id] : undefined;
@@ -125,7 +129,7 @@ const InteractiveMapsPage: React.FC = () => {
   }), [activeFilters, allMarkers, query]);
 
   const selectedMarker = visibleMarkers.find((marker) => marker.id === selectedMarkerId) ?? visibleMarkers[0];
-  const questCount = allMarkers.filter((marker) => marker.layerId === 'task-objectives').length + (markerFile?.tarkovBuddy?.questMarkers.length ?? 0);
+  const questCount = allMarkers.filter((marker) => marker.layerId === 'task-objectives').length;
   const layerCount = countVisibleLayers(visibleMarkers);
   const completionPercent = Math.round((visibleMarkers.length / Math.max(1, allMarkers.length)) * 100);
 
@@ -234,6 +238,7 @@ const InteractiveMapsPage: React.FC = () => {
           <div className="tb-map-card">
             <div
               className="tb-map-stage"
+              style={{ aspectRatio: `${markerFile.tarkovBuddy?.imageWidth ?? markerFile.mapArt.width ?? 1} / ${markerFile.tarkovBuddy?.imageHeight ?? markerFile.mapArt.height ?? 1}` }}
               onClick={handleMapClick}
               onKeyDown={handleMapKeyDown}
               role="button"
@@ -309,7 +314,7 @@ const InteractiveMapsPage: React.FC = () => {
       <section className="maps-source-strip" aria-label="Fuentes del mapa piloto">
         <strong>Fuentes usadas:</strong>
         <span>
-          TarkovBuddy como referencia de contrato visual y mapa Ground Zero: imagen local + marcadores x/y porcentuales ·{' '}
+          TarkovBuddy como referencia de contrato visual y mapa {selectedMap?.name}: imagen local + marcadores x/y porcentuales ·{' '}
           <a href="https://www.tarkovbuddy.org/maps" target="_blank" rel="noreferrer">fuente de referencia</a>.
         </span>
         <span>Escape from Tarkov Wiki/Fandom y tarkov.dev se mantienen como fuentes primarias de contexto jugable.</span>
