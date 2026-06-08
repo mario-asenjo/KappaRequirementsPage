@@ -13,7 +13,7 @@ Este repositorio contiene una aplicación SPA escrita en **React** (con Vite y T
 - **Árbol de misiones**: la ruta `/quest-tree` muestra todos los comerciantes en secciones horizontales tipo eft.monster, con desbloqueo por prerequisitos y nivel PMC.
 - **Selector de objetivo**: permite alternar entre Kappa, Lightkeeper, todas las misiones y achievements con quests asociadas.
 - **Achievements**: la ruta `/achievements` muestra logros, rareza, progreso, objetivos asociados y checklist manual para logros sin quests.
-- **Mapas interactivos**: la ruta `/maps` cataloga todos los mapas/variantes de `tarkov.dev`, enlaza la wiki por mapa y ya incluye Customs + Ground Zero como pilotos visuales estilo TarkovBuddy con imagen local, marcadores x/y porcentuales, filtros tipo chip y captura de coordenadas.
+- **Mapas interactivos**: la ruta `/maps` cataloga todos los mapas/variantes de `tarkov.dev` y ya usa Customs + Ground Zero como pilotos con UX inspirada en MapGenie: pan/zoom libre, sidebar de capas, labels pequenos bajo los marcadores, fichas contextuales y contrato x/y porcentual basado en TarkovBuddy.
 - **Importacion de progreso**: la ruta `/import` permite cargar un JSON generado desde logs locales, previsualizar misiones detectadas y aplicar completadas/fallidas reconocidas sin sobrescribir progreso existente.
 - **Estado de importacion**: despues de aplicar un JSON, `/import` conserva la ultima fuente, fecha, completadas anadidas, iniciadas detectadas, fallidas cerradas, warnings e IDs no reconocidos.
 - **Misiones iniciadas**: las quests detectadas como iniciadas en logs se guardan y se muestran con badge propio sin contarlas como completadas.
@@ -178,7 +178,7 @@ El plan multiagente y el backlog inicial viven en `docs/agent-operating-model.md
 
 ## Mapas interactivos
 
-El contrato inicial para datos de mapas vive en `docs/map-data-contract.md`. Define mapas, capas, marcadores, geometria, coordinate spaces, fuentes, confianza, precision y validaciones minimas antes de renderizar tareas, items, extracts, spawns, bosses o transits. La ruta `/maps` ya muestra Customs y Ground Zero como pilotos estilo TarkovBuddy: imagenes locales basadas en `/maps/customs.webp` y `/maps/gz.webp`, contrato x/y porcentual, tabs de mapas, filtros tipo chip, lista lateral de marcadores y captura/copia de coordenadas. El benchmark de referencia vive en `docs/tarkovbuddy-map-benchmark.md`.
+El contrato inicial para datos de mapas vive en `docs/map-data-contract.md`. Define mapas, capas, marcadores, geometria, coordinate spaces, fuentes, confianza, precision y validaciones minimas antes de renderizar tareas, items, extracts, spawns, bosses o transits. La ruta `/maps` ya muestra Customs y Ground Zero como pilotos: MapGenie es el benchmark de interaccion (pan/zoom, sidebar, labels y fichas contextuales) y TarkovBuddy aporta el contrato x/y porcentual e imagenes locales basadas en `/maps/customs.webp` y `/maps/gz.webp`. Los benchmarks viven en `docs/mapgenie-interactive-map-benchmark.md` y `docs/tarkovbuddy-map-benchmark.md`.
 
 ## Despliegue en Cloudflare Pages
 
