@@ -1,0 +1,5959 @@
+{
+  "schemaVersion": 1,
+  "revision": "2026-06-08",
+  "mapId": "ground-zero",
+  "familyId": "ground-zero",
+  "sourceQuery": "tarkov.dev GraphQL maps(name:[\"Ground Zero\"]) { spawns extracts transits stationaryWeapons } plus EFT Wiki links for linked quest objectives",
+  "coordinateSpace": "tarkov-dev-world-xz",
+  "bounds": {
+    "minX": -72.634,
+    "maxX": 245.674,
+    "minZ": -118.068,
+    "maxZ": 352.497
+  },
+  "projection": {
+    "type": "linear-xz",
+    "xAxis": "x",
+    "yAxis": "z",
+    "invertZ": true,
+    "note": "World x/z coordinates are projected linearly into the SVG viewport; visual calibration against a wiki map image remains future work."
+  },
+  "mapArt": {
+    "kind": "generated-tactical-svg",
+    "title": "Ground Zero tactical coordinate map",
+    "sourceIds": [
+      "tarkov-dev-maps"
+    ],
+    "note": "Generated from tarkov.dev coordinate ranges to avoid unsourced/copyrighted image use in the first pilot."
+  },
+  "markers": [
+    {
+      "id": "ground-zero-task-objectives-shooting-cans-ags-30-30x29mm-automatic-grenade-launcher-001",
+      "mapId": "ground-zero",
+      "layerId": "task-objectives",
+      "category": "quest-objective",
+      "title": "Shooting Cans: AGS-30 30x29mm automatic grenade launcher",
+      "description": "Quest objective location for Shooting Cans; coordinates from tarkov.dev stationary weapon data.",
+      "geometry": {
+        "type": "point",
+        "x": 98.561,
+        "y": 33.918,
+        "z": 277.283
+      },
+      "links": {
+        "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Shooting_Cans"
+      },
+      "sourceIds": [
+        "tarkov-dev-maps",
+        "eft-wiki"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "weaponId": "5d52cc5ba4b9367408500062",
+        "weaponName": "AGS-30 30x29mm automatic grenade launcher"
+      }
+    },
+    {
+      "id": "ground-zero-task-objectives-shooting-cans-nsv-utyos-12-7x108-heavy-machine-gun-002",
+      "mapId": "ground-zero",
+      "layerId": "task-objectives",
+      "category": "quest-objective",
+      "title": "Shooting Cans: NSV Utyos 12.7x108 heavy machine gun",
+      "description": "Quest objective location for Shooting Cans; coordinates from tarkov.dev stationary weapon data.",
+      "geometry": {
+        "type": "point",
+        "x": 57.226,
+        "y": 32.073,
+        "z": 128.324
+      },
+      "links": {
+        "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/Shooting_Cans"
+      },
+      "sourceIds": [
+        "tarkov-dev-maps",
+        "eft-wiki"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "weaponId": "5cdeb229d7f00c000e7ce174",
+        "weaponName": "NSV Utyos 12.7x108 heavy machine gun"
+      }
+    },
+    {
+      "id": "ground-zero-extracts-emercom-checkpoint-003",
+      "mapId": "ground-zero",
+      "layerId": "extracts",
+      "category": "shared",
+      "title": "Emercom Checkpoint",
+      "description": "Faction: shared; Extraction point from tarkov.dev map data",
+      "geometry": {
+        "type": "point",
+        "x": 151.625,
+        "y": 24.662,
+        "z": -97.457
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovDevId": "549ceec177747468ebe86bcfd5a486d1dce9ed64"
+      }
+    },
+    {
+      "id": "ground-zero-extracts-mira-ave-flare-004",
+      "mapId": "ground-zero",
+      "layerId": "extracts",
+      "category": "pmc",
+      "title": "Mira Ave (Flare)",
+      "description": "Faction: pmc; Extraction point from tarkov.dev map data",
+      "geometry": {
+        "type": "point",
+        "x": 218.225,
+        "y": 17.992,
+        "z": -38.507
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovDevId": "89ff19116feeafdf4a2b4e538cafb5364ffbe862"
+      }
+    },
+    {
+      "id": "ground-zero-extracts-nakatani-basement-stairs-005",
+      "mapId": "ground-zero",
+      "layerId": "extracts",
+      "category": "shared",
+      "title": "Nakatani Basement Stairs",
+      "description": "Faction: shared; Extraction point from tarkov.dev map data",
+      "geometry": {
+        "type": "point",
+        "x": -16.125,
+        "y": 14.762,
+        "z": 335.063
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovDevId": "ab623005251ffcd3603a5df2610917a998d9a17e"
+      }
+    },
+    {
+      "id": "ground-zero-extracts-police-cordon-v-ex-006",
+      "mapId": "ground-zero",
+      "layerId": "extracts",
+      "category": "pmc",
+      "title": "Police Cordon V-Ex",
+      "description": "Faction: pmc; Extraction point from tarkov.dev map data",
+      "geometry": {
+        "type": "point",
+        "x": -19.513,
+        "y": 23.711,
+        "z": 114.942
+      },
+      "links": {
+        "taskIds": [
+          "657315e270bb0b8dba00cc48",
+          "63966faeea19ac7ed845db2c"
+        ],
+        "objectiveIds": [
+          "65733e571b7e7ed95fcd2f0c",
+          "65e09d3f0d1442c78274027e"
+        ]
+      },
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovDevId": "d6870dda31937ff93662ce903afe1099b24011a1"
+      }
+    },
+    {
+      "id": "ground-zero-extracts-scav-checkpoint-co-op-007",
+      "mapId": "ground-zero",
+      "layerId": "extracts",
+      "category": "shared",
+      "title": "Scav Checkpoint (Co-op)",
+      "description": "Faction: shared; Extraction point from tarkov.dev map data",
+      "geometry": {
+        "type": "point",
+        "x": 25.22,
+        "y": 24.509,
+        "z": -79.541
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovDevId": "118fa7e3eae47190871eb4ea20d4f3ca2718b73f"
+      }
+    },
+    {
+      "id": "ground-zero-extracts-tartowers-sales-office-008",
+      "mapId": "ground-zero",
+      "layerId": "extracts",
+      "category": "pmc",
+      "title": "Tartowers Sales Office",
+      "description": "Faction: pmc; Extraction point from tarkov.dev map data",
+      "geometry": {
+        "type": "point",
+        "x": 190.804,
+        "y": 17.645,
+        "z": 133.389
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovDevId": "122676fe448d426d085e9516114534966a69c3ff"
+      }
+    },
+    {
+      "id": "ground-zero-transits-transit-to-streets-of-tarkov-009",
+      "mapId": "ground-zero",
+      "layerId": "transits",
+      "category": "transit",
+      "title": "Transit to Streets of Tarkov",
+      "description": "Transit connection from Ground Zero.",
+      "geometry": {
+        "type": "point",
+        "x": 222.829,
+        "y": 15.993,
+        "z": 65.72
+      },
+      "links": {
+        "taskIds": [
+          "66aa58245ab22944110db6e9"
+        ],
+        "objectiveIds": [
+          "66aa5be8035c6a410dc570b2"
+        ],
+        "wikiUrl": "https://escapefromtarkov.fandom.com/wiki/New_Day,_New_Paths"
+      },
+      "sourceIds": [
+        "tarkov-dev-maps",
+        "eft-wiki"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "tarkovDevId": "1",
+        "targetMapId": "streets-of-tarkov"
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-1-010",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 1",
+      "description": "Sides: scav. Categories: player, botpmc.",
+      "geometry": {
+        "type": "point",
+        "x": 109.432,
+        "y": 23.193,
+        "z": 176.401
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "botpmc"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-10-011",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 10",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 67.59,
+        "y": 14.18,
+        "z": 104.54
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "0dadcf0c-b3b8-4837-a16e-12ef201c21e1",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-100-012",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 100",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 143.33,
+        "y": 22.74,
+        "z": -69.41
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "818d8bb3-2bb9-4323-be8a-f03b1cfc2137",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-101-013",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 101",
+      "description": "Sides: scav. Categories: player, botpmc.",
+      "geometry": {
+        "type": "point",
+        "x": 40.972,
+        "y": 23.47,
+        "z": 147.219
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "botpmc"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-102-014",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 102",
+      "description": "Sides: scav. Categories: player, botpmc.",
+      "geometry": {
+        "type": "point",
+        "x": 182.397,
+        "y": 17.039,
+        "z": -2.284
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "botpmc"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-103-015",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 103",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 111.536,
+        "y": 23.448,
+        "z": 271.632
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "894397aa-eb45-4371-a2da-dcaa55bbc2df",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-104-016",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 104",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 72.741,
+        "y": 14.139,
+        "z": 29.97
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-105-017",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 105",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 179.893,
+        "y": 17.01,
+        "z": -6.997
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "8991994e-2dd2-4335-8fb9-5f906a80c0f8",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-106-018",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 106",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 99.644,
+        "y": 28.142,
+        "z": 314.177
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "8a478f38-07d3-4e3d-8322-d2f1f6137aff",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-107-019",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 107",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 134.04,
+        "y": 23.45,
+        "z": 271.91
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "8aa4f53e-1ecd-4bda-900a-3c650e197c8e",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-108-020",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 108",
+      "description": "Sides: scav. Categories: player, botpmc.",
+      "geometry": {
+        "type": "point",
+        "x": 74.183,
+        "y": 14.139,
+        "z": 4.26
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "botpmc"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-109-021",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 109",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 57.718,
+        "y": 23.437,
+        "z": 226.738
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-11-022",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 11",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 137.37,
+        "y": 22.74,
+        "z": -70.18
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "0eebe151-c53b-417e-a349-18c070ce5dac",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-110-023",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 110",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 144.95,
+        "y": 22.949,
+        "z": 253.29
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "8e2cf7d7-6b81-4686-be31-1f169492165f",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-111-024",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 111",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 109.208,
+        "y": 23.193,
+        "z": 174.245
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "8e70071b-0949-4f6a-b106-dcc689714e07",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-112-025",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 112",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 183.821,
+        "y": 17.209,
+        "z": -6.948
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "8f3bef35-3e52-47ec-a072-02b3ad071433",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-113-026",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 113",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 112.207,
+        "y": 22.689,
+        "z": 220.926
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-114-027",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 114",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": -13.111,
+        "y": 23.876,
+        "z": 98.929
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-115-028",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 115",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 22.637,
+        "y": 23.539,
+        "z": 257.985
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-116-029",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 116",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 57.237,
+        "y": 14.099,
+        "z": -31.154
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-117-030",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 117",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": -60.634,
+        "y": 24.195,
+        "z": 43.01
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-118-031",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 118",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 147.74,
+        "y": 23.3,
+        "z": 253.63
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "96c84440-4cc8-410e-afd2-15dc920dca8b",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-119-032",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 119",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 11.189,
+        "y": 23.49,
+        "z": 159.017
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-12-033",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 12",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 72.227,
+        "y": 13.959,
+        "z": 159.386
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-120-034",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 120",
+      "description": "Sides: scav. Categories: player, botpmc.",
+      "geometry": {
+        "type": "point",
+        "x": 130.498,
+        "y": 23.45,
+        "z": 269.578
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "botpmc"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-121-035",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 121",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 119.189,
+        "y": 22.834,
+        "z": -2.685
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "989cfb81-3a2e-4cef-b3c1-a2a914dceaad",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-122-036",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 122",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 17.022,
+        "y": 24.206,
+        "z": 66.791
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-123-037",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 123",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 57.487,
+        "y": 14.069,
+        "z": -33.824
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-124-038",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 124",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 142.85,
+        "y": 22.74,
+        "z": -67.64
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "9c0e31a8-2008-41ef-b42b-b8888cc523ba",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-125-039",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 125",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 135.85,
+        "y": 14.088,
+        "z": 68.92
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "9cc6b2c3-948c-4902-8344-fa12d0c0e700",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-126-040",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 126",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 71.867,
+        "y": 14.139,
+        "z": -13.074
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-127-041",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 127",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 117.413,
+        "y": 28.963,
+        "z": 154.495
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "9fbe814b-9217-4d81-84c2-cc43e67f7bda",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-128-042",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 128",
+      "description": "Sides: scav. Categories: player, botpmc.",
+      "geometry": {
+        "type": "point",
+        "x": 184.31,
+        "y": 16.285,
+        "z": 127.065
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "botpmc"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-129-043",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 129",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 36.137,
+        "y": 22.669,
+        "z": 334.686
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-13-044",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 13",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 32.777,
+        "y": 22.669,
+        "z": 335.656
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-130-045",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 130",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": -8.37,
+        "y": 23.86,
+        "z": -0.39
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "a5654bc0-d8a6-4897-9f9a-768c4af478c1",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-131-046",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 131",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": -10.593,
+        "y": 23.982,
+        "z": 22.866
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-132-047",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 132",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 67.72,
+        "y": 13.981,
+        "z": 164.591
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "a8b2e367-82fd-4e64-a37c-906955df399f",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-133-048",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 133",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": -11.19,
+        "y": 23.86,
+        "z": -2.82
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "a9f2fbc7-fa61-4538-9e91-39ca505f86e7",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-134-049",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 134",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 96.97,
+        "y": 22.879,
+        "z": -86.926
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-135-050",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 135",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 29.927,
+        "y": 23.869,
+        "z": -25.214
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-136-051",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 136",
+      "description": "Sides: scav. Categories: player, botpmc.",
+      "geometry": {
+        "type": "point",
+        "x": 118.239,
+        "y": 22.89,
+        "z": -0.144
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "botpmc"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-137-052",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 137",
+      "description": "Sides: scav. Categories: player, botpmc.",
+      "geometry": {
+        "type": "point",
+        "x": 119.395,
+        "y": 28.963,
+        "z": 156.377
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "botpmc"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-138-053",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 138",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 180.967,
+        "y": 16.219,
+        "z": 130.086
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-139-054",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 139",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 74.228,
+        "y": 14.18,
+        "z": 8.866
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "b2d85104-d574-4482-8962-9dbeae1221f5",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-14-055",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 14",
+      "description": "Sides: scav. Categories: player, botpmc.",
+      "geometry": {
+        "type": "point",
+        "x": 71.227,
+        "y": 14.202,
+        "z": 107.348
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "botpmc"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-140-056",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 140",
+      "description": "Sides: scav. Categories: player, botpmc.",
+      "geometry": {
+        "type": "point",
+        "x": -10.132,
+        "y": 23.88,
+        "z": -11.104
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "botpmc"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-141-057",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 141",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 67.816,
+        "y": 13.981,
+        "z": 166.22
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "b5e02957-b03d-4295-b05d-9be69f6f2e82",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-142-058",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 142",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 46.561,
+        "y": 23.306,
+        "z": -102.121
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-143-059",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 143",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 103.8,
+        "y": 28.142,
+        "z": 316.122
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "b7183870-a16c-4429-a8e7-2c2710fe3b57",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-144-060",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 144",
+      "description": "Sides: scav. Categories: player, botpmc.",
+      "geometry": {
+        "type": "point",
+        "x": 102.578,
+        "y": 28.142,
+        "z": 315.593
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "botpmc"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-145-061",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 145",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 42.021,
+        "y": 23.276,
+        "z": -104.487
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ba5a0138-2a24-4ceb-bdb2-92d351fec342",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-146-062",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 146",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 26.607,
+        "y": 23.869,
+        "z": -26.964
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-147-063",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 147",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 162.277,
+        "y": 22.769,
+        "z": -86.234
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-148-064",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 148",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 38.7,
+        "y": 23.48,
+        "z": 147.19
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "c081b15d-fb2d-4a02-afeb-b0664e2bdb02",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-149-065",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 149",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 127.225,
+        "y": 23.225,
+        "z": 192.607
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "c106dee0-2b28-461f-8d43-1ca961ff1d04",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-15-066",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 15",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 121.832,
+        "y": 22.796,
+        "z": -1.133
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "14e76203-f6d3-49d3-bb5e-300ff6bd3773",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-150-067",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 150",
+      "description": "Sides: scav. Categories: player, botpmc.",
+      "geometry": {
+        "type": "point",
+        "x": 137.026,
+        "y": 14.113,
+        "z": 66.332
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "botpmc"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-151-068",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 151",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 101.579,
+        "y": 28.142,
+        "z": 314.783
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "c6b7ada3-06e1-4c17-bbfc-805297968e04",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-152-069",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 152",
+      "description": "Sides: scav. Categories: player, botpmc.",
+      "geometry": {
+        "type": "point",
+        "x": 112.954,
+        "y": 23.448,
+        "z": 268.15
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "botpmc"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-153-070",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 153",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 147.55,
+        "y": 23.3,
+        "z": 250.06
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "c83cfa66-d6c2-4b78-8dfd-23d3fc83413c",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-154-071",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 154",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 176.79,
+        "y": 17.01,
+        "z": -6.32
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "c94a8465-be54-4bf3-833b-b83822b582df",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-155-072",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 155",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 177.581,
+        "y": 17.01,
+        "z": -4.079
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "cbf941fc-9b66-4a2c-aa00-b1d9b1ba7f9f",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-156-073",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 156",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": -11,
+        "y": 23.86,
+        "z": -5.77
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "cc5ed6f2-1e4e-43d4-9ad4-9fc3aaf1e162",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-157-074",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 157",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 101.809,
+        "y": 28.142,
+        "z": 317.117
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ced4b14f-e478-467d-bed1-0314278e555a",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-158-075",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 158",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 71.977,
+        "y": 14.139,
+        "z": 20.196
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-159-076",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 159",
+      "description": "Sides: scav. Categories: player, botpmc.",
+      "geometry": {
+        "type": "point",
+        "x": 77.388,
+        "y": 14.085,
+        "z": -47.686
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "botpmc"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-16-077",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 16",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 111.243,
+        "y": 23.193,
+        "z": 174.479
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "16b9cd7d-ebea-41eb-8c9f-fe01aa2c9245",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-160-078",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 160",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 26.137,
+        "y": 23.869,
+        "z": -24.014
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-161-079",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 161",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 119.705,
+        "y": 22.834,
+        "z": -4.314
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "d4f55d16-038b-455e-bc9a-74a49e57ab89",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-162-080",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 162",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 109.117,
+        "y": 22.709,
+        "z": 234.206
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-163-081",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 163",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 136.6,
+        "y": 22.74,
+        "z": -66.89
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "d9e3c316-cf61-454b-8fca-aae78f2c0622",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-164-082",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 164",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 47.123,
+        "y": 23.276,
+        "z": -103.068
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "db5b9d0d-3105-4814-b413-03d28d4a87d2",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-165-083",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 165",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 130.538,
+        "y": 23.45,
+        "z": 271.616
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "dcbe096a-7083-4dc0-a7e2-8149e7c153d4",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-166-084",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 166",
+      "description": "Sides: scav. Categories: player, botpmc.",
+      "geometry": {
+        "type": "point",
+        "x": 141.677,
+        "y": 22.808,
+        "z": 253.916
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "botpmc"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-167-085",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 167",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 121.453,
+        "y": 23.193,
+        "z": 190.09
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-168-086",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 168",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 60.9,
+        "y": 14.18,
+        "z": 105.16
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "de5f4d8c-1411-446e-b67b-269830a40a15",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-169-087",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 169",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": -14.633,
+        "y": 23.819,
+        "z": -58.764
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-17-088",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 17",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 73.699,
+        "y": 14.164,
+        "z": 117.035
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-170-089",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 170",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 122.356,
+        "y": 22.834,
+        "z": -4.153
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "df92e08a-08a9-4a19-8b90-cc8aa13b3062",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-171-090",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 171",
+      "description": "Sides: scav. Categories: player, botpmc.",
+      "geometry": {
+        "type": "point",
+        "x": 72.575,
+        "y": 14.139,
+        "z": 3.942
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "botpmc"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-172-091",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 172",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 57.487,
+        "y": 23.437,
+        "z": 229.566
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-173-092",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 173",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 182.987,
+        "y": 16.219,
+        "z": 127.556
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-174-093",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 174",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 180.81,
+        "y": 16.24,
+        "z": 119.29
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "e545318d-f757-4a76-90be-079bf41998d2",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-175-094",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 175",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 110.82,
+        "y": 23.193,
+        "z": 176.03
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "eaa886c4-d771-4f7d-89f8-03b0c6d38365",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-176-095",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 176",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 64.88,
+        "y": 14.22,
+        "z": 105.85
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "eb268aaa-dfde-4021-bdfa-44faed92c139",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-177-096",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 177",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 180.85,
+        "y": 16.24,
+        "z": 121.4
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ec099d7a-f15a-488b-8402-4113f56c5822",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-178-097",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 178",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 4.36,
+        "y": 23.89,
+        "z": -59.74
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ec13b292-f7ef-4a17-85ae-84b356502878",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-179-098",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 179",
+      "description": "Sides: scav. Categories: player, botpmc.",
+      "geometry": {
+        "type": "point",
+        "x": 103.887,
+        "y": 28.142,
+        "z": 314.326
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "botpmc"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-18-099",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 18",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 98.95,
+        "y": 22.879,
+        "z": -85.031
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-180-100",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 180",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": -15.473,
+        "y": 23.819,
+        "z": -56.624
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-181-101",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 181",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": -2.8,
+        "y": 23.89,
+        "z": -59.58
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "f2187ee3-7751-441b-a7ef-b88e072a94c3",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-182-102",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 182",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 44.427,
+        "y": 23.276,
+        "z": -104.867
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "f2a7bbe4-cd32-4e72-875e-3624083ec8e8",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-183-103",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 183",
+      "description": "Sides: scav. Categories: player, botpmc.",
+      "geometry": {
+        "type": "point",
+        "x": 179.097,
+        "y": 16.169,
+        "z": 126.496
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "botpmc"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-184-104",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 184",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 74.49,
+        "y": 14.18,
+        "z": 10.55
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "f5481928-9ee3-47cd-8998-77edfd1626d3",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-185-105",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 185",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 66.95,
+        "y": 14.18,
+        "z": 107.25
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "f5ba4d5f-08f4-411d-b246-2bac60595f01",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-186-106",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 186",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 127.474,
+        "y": 23.225,
+        "z": 194.108
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "f76c3749-0412-41cb-a61c-0d7bca49e779",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-187-107",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 187",
+      "description": "Sides: scav. Categories: player, botpmc.",
+      "geometry": {
+        "type": "point",
+        "x": 71.567,
+        "y": 13.959,
+        "z": 161.796
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "botpmc"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-188-108",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 188",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 175.107,
+        "y": 16.996,
+        "z": 2.176
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-189-109",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 189",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 39.85,
+        "y": 23.42,
+        "z": 150.63
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "fc1387ee-e540-4433-9022-d3c53a04b8c2",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-19-110",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 19",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 164.697,
+        "y": 22.769,
+        "z": -85.884
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-190-111",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 190",
+      "description": "Sides: scav. Categories: player, botpmc.",
+      "geometry": {
+        "type": "point",
+        "x": 36.926,
+        "y": 23.47,
+        "z": 148.462
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "botpmc"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-191-112",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 191",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 13.433,
+        "y": 23.49,
+        "z": 157.56
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-2-113",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 2",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 72.81,
+        "y": 14.18,
+        "z": 5.446
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "0344832c-a6f2-4c58-8d89-85e9d451a7ed",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-20-114",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 20",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 180.9,
+        "y": 16.27,
+        "z": 114.89
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "1c2fe835-f486-4f7e-847d-9ff1dfadc5c5",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-21-115",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 21",
+      "description": "Sides: scav. Categories: player, botpmc.",
+      "geometry": {
+        "type": "point",
+        "x": 149.586,
+        "y": 22.72,
+        "z": -65.311
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "botpmc"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-22-116",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 22",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 184.961,
+        "y": 17.209,
+        "z": -8.589
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "1d60dfbb-d470-4557-8309-deb68d3cd7a4",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-23-117",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 23",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 117.106,
+        "y": 28.963,
+        "z": 150.689
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "2251a0dd-f096-483c-88c6-d8abe1f0a8d8",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-24-118",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 24",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 38.43,
+        "y": 23.44,
+        "z": 149.07
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "22c535e6-6d49-46bd-9009-e688aace63d1",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-25-119",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 25",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 22.879,
+        "y": 23.539,
+        "z": 253.5
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-26-120",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 26",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 44.227,
+        "y": 23.306,
+        "z": -104.874
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-27-121",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 27",
+      "description": "Sides: scav. Categories: player, botpmc.",
+      "geometry": {
+        "type": "point",
+        "x": 2.935,
+        "y": 23.832,
+        "z": -58.936
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "botpmc"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-28-122",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 28",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 143.1,
+        "y": 23.3,
+        "z": 248.83
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "2790d68f-c087-45d2-8b63-660e26858b34",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-29-123",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 29",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": -15.647,
+        "y": 23.876,
+        "z": 101.717
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-3-124",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 3",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 109.397,
+        "y": 22.689,
+        "z": 239.436
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-30-125",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 30",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 11.521,
+        "y": 23.49,
+        "z": 156.329
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-31-126",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 31",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 172.247,
+        "y": 16.989,
+        "z": 9.426
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-32-127",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 32",
+      "description": "Sides: scav. Categories: player, botpmc.",
+      "geometry": {
+        "type": "point",
+        "x": 113.676,
+        "y": 23.448,
+        "z": 267.24
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "botpmc"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-33-128",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 33",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 137.567,
+        "y": 14.113,
+        "z": 61.816
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-34-129",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 34",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 71.757,
+        "y": 14.139,
+        "z": 0.676
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-35-130",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 35",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 110.661,
+        "y": 23.193,
+        "z": 171.344
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "31fca074-b125-48d7-9beb-4cc6f67c82d2",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-36-131",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 36",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 127.32,
+        "y": 23.193,
+        "z": 195.126
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-37-132",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 37",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": -10.458,
+        "y": 23.982,
+        "z": 19.655
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-38-133",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 38",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": -8.02,
+        "y": 23.86,
+        "z": -4.96
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "36a3716c-e3f2-43c7-8b98-ea68c59f8238",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-39-134",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 39",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 8.987,
+        "y": 23.49,
+        "z": 158.426
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-4-135",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 4",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 65.03,
+        "y": 14.722,
+        "z": 161.741
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "0524be03-bcd4-4e28-98d4-f477dd0e550d",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-40-136",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 40",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 1.43,
+        "y": 23.89,
+        "z": -60.42
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "3c5c66f2-5ce2-443f-b962-8938f67bf2b4",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-41-137",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 41",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 58.368,
+        "y": 23.437,
+        "z": 229.127
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-42-138",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 42",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 112.67,
+        "y": 23.193,
+        "z": 175.8
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "3d869992-11e2-4ebf-9d24-f160b612ed17",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-43-139",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 43",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": -12.644,
+        "y": 23.819,
+        "z": -59.954
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-44-140",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 44",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 67.764,
+        "y": 13.981,
+        "z": 163.128
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "412cc11b-b2ec-4d7b-bfbe-9691162949b7",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-45-141",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 45",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 163.617,
+        "y": 22.769,
+        "z": -88.244
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-46-142",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 46",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": -0.66,
+        "y": 23.89,
+        "z": -60.43
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "419a0f20-e32e-4f17-a526-675314485814",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-47-143",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 47",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 73.07,
+        "y": 14.18,
+        "z": 2.276
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "4274c09b-9544-45e0-aa8a-011b6e929b70",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-48-144",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 48",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 73.09,
+        "y": 14.147,
+        "z": -56.52
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "442298dc-403c-4550-9c2f-60398a638c07",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-49-145",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 49",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 64.94,
+        "y": 14.14,
+        "z": 103.31
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "45bf1ce6-cab7-4b6b-a420-aefc135a942a",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-5-146",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 5",
+      "description": "Sides: scav. Categories: player, botpmc.",
+      "geometry": {
+        "type": "point",
+        "x": 117.507,
+        "y": 22.89,
+        "z": -8.844
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "botpmc"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-50-147",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 50",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 139.255,
+        "y": 14.088,
+        "z": 65.609
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "469bf936-cee9-4b9c-9fa9-54ccdc5467f2",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-51-148",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 51",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 36.95,
+        "y": 23.47,
+        "z": 146.98
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "46cb5fbc-3d56-45a1-a6ab-18b22b51cf15",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-52-149",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 52",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 73.881,
+        "y": 14.139,
+        "z": 37.233
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-53-150",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 53",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 127.454,
+        "y": 23.204,
+        "z": 196.106
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "4a3e3ae1-e6fb-442f-99c6-f74b25b06a28",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-54-151",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 54",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": -6.32,
+        "y": 23.86,
+        "z": -2.04
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "4ad4b25c-70f0-47a0-84fd-f8dc685cf399",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-55-152",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 55",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 17.099,
+        "y": 24.206,
+        "z": 73.367
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-56-153",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 56",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 127.266,
+        "y": 23.199,
+        "z": 186.033
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "4e5dd2d4-cbee-4f97-8f88-18b9a7897e72",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-57-154",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 57",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 44.67,
+        "y": 23.276,
+        "z": -102.55
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "5051d4e9-291a-4384-9557-e10d149f3282",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-58-155",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 58",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 180.187,
+        "y": 16.219,
+        "z": 128.166
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-59-156",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 59",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 176.302,
+        "y": 16.996,
+        "z": 10.249
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-6-157",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 6",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 22.287,
+        "y": 23.539,
+        "z": 255.131
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-60-158",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 60",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 113.966,
+        "y": 23.448,
+        "z": 269.982
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "52521917-58bb-412f-b509-ed69191bf6a3",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-61-159",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 61",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 75.12,
+        "y": 14.18,
+        "z": 6.036
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "551f5ea8-4bea-474d-a3d1-0af1e507aa73",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-62-160",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 62",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 102.15,
+        "y": 28.142,
+        "z": 311.83
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "564c09fb-f464-4c30-b61b-4cc1943808be",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-63-161",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 63",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 72.766,
+        "y": 14.202,
+        "z": 113.209
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-64-162",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 64",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 117.61,
+        "y": 28.963,
+        "z": 146.43
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "5a4e21b9-8234-45a5-b24a-1cd71ffc9d4a",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-65-163",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 65",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 40.19,
+        "y": 23.45,
+        "z": 148.61
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "5cb1309d-05b9-4043-ba3a-1ef53d52c012",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-66-164",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 66",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 73.815,
+        "y": 14.147,
+        "z": -54.394
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "5d711f09-edc9-4ec1-94f8-2e1765929dbd",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-67-165",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 67",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": -49.863,
+        "y": 24.195,
+        "z": 42.176
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-68-166",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 68",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 117.49,
+        "y": 28.963,
+        "z": 148.6
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "5fa59046-4e17-408e-8531-14766ae4a7c4",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-69-167",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 69",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 74.687,
+        "y": 14.009,
+        "z": 160.916
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-7-168",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 7",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 127.158,
+        "y": 23.21,
+        "z": 187.909
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "0b110691-b8a9-4020-9ea1-910386dde586",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-70-169",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 70",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 72.331,
+        "y": 14.147,
+        "z": -51.719
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "612fd960-fdd6-422b-9b5b-8161d4e5ec12",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-71-170",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 71",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 137.174,
+        "y": 14.088,
+        "z": 67.36
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "61bc3b0f-bbb7-41a6-a3cb-fc647cb4d57d",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-72-171",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 72",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 96.257,
+        "y": 22.879,
+        "z": -85.194
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-73-172",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 73",
+      "description": "Sides: scav. Categories: player, botpmc.",
+      "geometry": {
+        "type": "point",
+        "x": 44.194,
+        "y": 23.306,
+        "z": -100.597
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "botpmc"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-74-173",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 74",
+      "description": "Sides: scav. Categories: player, botpmc.",
+      "geometry": {
+        "type": "point",
+        "x": 184.227,
+        "y": 17.039,
+        "z": -2.134
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "botpmc"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-75-174",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 75",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 131.006,
+        "y": 23.45,
+        "z": 268.826
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "65f10e3a-3f0c-415a-82c9-65c494071117",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-76-175",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 76",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 133.446,
+        "y": 14.113,
+        "z": 66.437
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-77-176",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 77",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 18.539,
+        "y": 24.206,
+        "z": 73.822
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-78-177",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 78",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 180.8,
+        "y": 16.21,
+        "z": 117.5
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "6a18e621-14cc-4de5-83e9-4dbb5d57db3d",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-79-178",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 79",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 130.64,
+        "y": 14.113,
+        "z": 63.121
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-8-179",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 8",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": -60.111,
+        "y": 24.195,
+        "z": 37.582
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-80-180",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 80",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 46.38,
+        "y": 23.276,
+        "z": -101.48
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "6a4b6afe-e215-4d9b-8d1e-4c2f7187baef",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-81-181",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 81",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 64.41,
+        "y": 14.702,
+        "z": 164.414
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "6acdf3c0-2c89-4824-97b9-7d5d10969670",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-82-182",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 82",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 151.47,
+        "y": 22.85,
+        "z": 243.36
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "6b4a840c-fc42-4b8c-bc68-04d7f6c2113a",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-83-183",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 83",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 180.58,
+        "y": 16.2,
+        "z": 123.16
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "6bb1d97d-c152-4467-b67b-bcd052438a96",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-84-184",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 84",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 45.61,
+        "y": 23.306,
+        "z": -99.784
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-85-185",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 85",
+      "description": "Sides: scav. Categories: player, botpmc.",
+      "geometry": {
+        "type": "point",
+        "x": 132.127,
+        "y": 23.45,
+        "z": 271.666
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "botpmc"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-86-186",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 86",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": -4.45,
+        "y": 23.89,
+        "z": -58.9
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "6f70381f-dcd2-4b4b-8f7e-27a787298af6",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-87-187",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 87",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 113.346,
+        "y": 23.448,
+        "z": 273.162
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "71e27ce2-54ef-4070-942c-c8a136e81fcf",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-88-188",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 88",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 137.609,
+        "y": 14.088,
+        "z": 63.101
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "734798e9-93cc-4239-93eb-8f23476b1f3d",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-89-189",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 89",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 73.57,
+        "y": 14.147,
+        "z": -48.848
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "74ce5970-afa4-4bfa-9a57-5f1725adb6f6",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-9-190",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 9",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": 55.267,
+        "y": 14.069,
+        "z": -32.354
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-90-191",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 90",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 74.271,
+        "y": 14.147,
+        "z": -51.551
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "74da28f8-d773-4ede-9c03-83811cf9563f",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-91-192",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 91",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 135.18,
+        "y": 14.088,
+        "z": 66.07
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "75f2a001-06c8-40a2-99f0-715c75b38138",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-92-193",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 92",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 117.819,
+        "y": 28.963,
+        "z": 152.665
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "76076875-b690-43f3-8917-68f7b077742f",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-93-194",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 93",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 143.83,
+        "y": 22.74,
+        "z": -71.39
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "7650aa3e-7ab6-4e76-9b71-af60211b4ad1",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-94-195",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 94",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 133.66,
+        "y": 23.45,
+        "z": 268.62
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "7689966a-e33d-45af-bec8-7f4161438b74",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-95-196",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 95",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 121.494,
+        "y": 22.834,
+        "z": -2.778
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "7abcf691-7aa8-4dff-a592-5cd860701676",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-96-197",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 96",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 115.777,
+        "y": 23.426,
+        "z": 274.272
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "7b81d205-9028-4a06-81ce-b1d73922fce0",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-97-198",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 97",
+      "description": "Sides: scav. Categories: player, bot, boss.",
+      "geometry": {
+        "type": "point",
+        "x": -10.793,
+        "y": 23.982,
+        "z": 16.736
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "ZoneSandbox",
+        "sides": [
+          "scav"
+        ],
+        "categories": [
+          "player",
+          "bot",
+          "boss"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-98-199",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 98",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 132.107,
+        "y": 23.45,
+        "z": 270.349
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "7f0d4fce-32a8-4d9a-ac19-d27ab617a45a",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    },
+    {
+      "id": "ground-zero-spawns-spawn-99-200",
+      "mapId": "ground-zero",
+      "layerId": "spawns",
+      "category": "spawn",
+      "title": "Spawn 99",
+      "description": "Sides: all. Categories: player.",
+      "geometry": {
+        "type": "point",
+        "x": 111.826,
+        "y": 23.448,
+        "z": 269.082
+      },
+      "links": {},
+      "sourceIds": [
+        "tarkov-dev-maps"
+      ],
+      "confidence": "exact",
+      "precision": "coordinate",
+      "meta": {
+        "zoneName": "811063e9-7b4c-4e88-b571-dda14fc5c422",
+        "sides": [
+          "all"
+        ],
+        "categories": [
+          "player"
+        ]
+      }
+    }
+  ]
+}

@@ -47,5 +47,8 @@ jobs:
       - name: Map data tests
         run: npm run test:maps
 
+      - name: Map marker tests
+        run: npm run test:map-markers
+
       - name: Production build
         run: npm run build

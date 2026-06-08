@@ -1,6 +1,7 @@
 export type MapCoverageStatus = 'cataloged' | 'source-audit' | 'pilot-markers' | 'complete';
 export type MapConfidence = 'exact' | 'high' | 'medium' | 'low';
 export type MapPrecision = 'coordinate' | 'zone' | 'map-only';
+export type MapGeometryType = 'point' | 'area' | 'circle' | 'route';
 
 export type MapLayerId =
   | 'task-objectives'
@@ -60,4 +61,63 @@ export interface InteractiveMapLayerCatalog {
   schemaVersion: 1;
   revision: string;
   layers: MapLayerDefinition[];
+}
+
+export interface MapMarkerGeometryPoint {
+  type: 'point';
+  x: number;
+  y?: number;
+  z: number;
+}
+
+export interface MapMarkerLinks {
+  taskIds?: string[];
+  objectiveIds?: string[];
+  itemIds?: string[];
+  traderIds?: string[];
+  wikiUrl?: string;
+}
+
+export interface MapMarkerDefinition {
+  id: string;
+  mapId: string;
+  layerId: MapLayerId;
+  category: string;
+  title: string;
+  description?: string;
+  geometry: MapMarkerGeometryPoint;
+  links: MapMarkerLinks;
+  sourceIds: string[];
+  confidence: MapConfidence;
+  precision: MapPrecision;
+  meta?: Record<string, unknown>;
+}
+
+export interface MapMarkerFile {
+  schemaVersion: 1;
+  revision: string;
+  mapId: string;
+  familyId: string;
+  sourceQuery: string;
+  coordinateSpace: string;
+  bounds: {
+    minX: number;
+    maxX: number;
+    minZ: number;
+    maxZ: number;
+  };
+  projection: {
+    type: string;
+    xAxis: string;
+    yAxis: string;
+    invertZ: boolean;
+    note: string;
+  };
+  mapArt: {
+    kind: string;
+    title: string;
+    sourceIds: string[];
+    note: string;
+  };
+  markers: MapMarkerDefinition[];
 }
