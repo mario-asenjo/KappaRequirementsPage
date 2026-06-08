@@ -28,7 +28,7 @@ Reference route inspected: `https://www.tarkovbuddy.org/maps`.
 interface TarkovBuddyMapBundle {
   mapImages: Record<MapName, string>;
   staticMarkers: Record<MapName, TarkovBuddyStaticMarker[]>;
-  questMarkers: Record<MapName, TarkovBuddyQuestMarker[]>;
+  questMarkers: Record<QuestName, Record<MapName, TarkovBuddyQuestMarker | TarkovBuddyQuestMarker[]>>;
 }
 
 interface TarkovBuddyStaticMarker {
@@ -40,6 +40,13 @@ interface TarkovBuddyStaticMarker {
   desc: string;
 }
 ```
+
+## Customs observed data
+
+- `mapImages['Customs']` points to `/maps/customs.webp` in the reference app.
+- `staticMarkers['Customs']` has 62 markers across extracts, PMC spawns, bosses, cultists and transits.
+- The inspected `questMarkers` bundle contains 40 Customs quest marker positions when expanded from quest-name keys into map-specific coordinates.
+- KappaTracker stores the raw static markers plus expanded quest positions, and creates renderable `task-objectives` markers for those quest positions.
 
 ## Ground Zero observed data
 

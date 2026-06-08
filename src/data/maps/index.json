@@ -60,6 +60,7 @@
       "familyId": "customs",
       "minPmcLevelHint": 1,
       "sourceIds": [
+        "tarkovbuddy-map-bundle",
         "tarkov-dev-maps",
         "eft-wiki"
       ],
@@ -71,9 +72,9 @@
         "bosses",
         "transits"
       ],
-      "coverageStatus": "cataloged",
-      "markerCount": 0,
-      "sourcePolicy": "Sin coordenadas exactas hasta enlazar evidencia wiki/manual; mientras tanto se muestra cobertura de mapa y capas previstas."
+      "coverageStatus": "pilot-markers",
+      "markerCount": 102,
+      "sourcePolicy": "Mapa y marcadores porcentuales alineados con TarkovBuddy; contexto jugable contrastado con wiki/tarkov.dev."
     },
     {
       "id": "woods",

@@ -346,7 +346,9 @@
         "subtype": "pmc"
       }
     ],
-    "questMarkers": []
+    "questMarkers": [],
+    "imageWidth": 6920,
+    "imageHeight": 6920
   },
   "markers": [
     {
