@@ -34,16 +34,16 @@
       "label": "Referencias visuales comunitarias",
       "kind": "community-reference",
       "url": "https://mapgenie.io/tarkov",
-      "role": "Referencia auxiliar para contraste visual cuando la wiki no tenga coordenadas estructuradas.",
+      "role": "UX benchmark for pan/zoom map navigation, layer sidebar, tiny marker labels and contextual marker detail cards.",
       "confidenceFloor": "medium",
-      "notes": "No sustituye a la wiki; cualquier dato comunitario debe quedar etiquetado como auxiliar y revisable."
+      "notes": "Use as interaction inspiration only. Do not depend on runtime MapGenie data or copy proprietary assets/media without a verified license."
     },
     {
       "id": "tarkovbuddy-map-bundle",
       "label": "TarkovBuddy public map bundle",
       "kind": "community-reference",
       "url": "https://www.tarkovbuddy.org/maps",
-      "role": "Reference implementation for map image, percent marker contract, UI behavior and TarkovBuddy static/quest markers per user request.",
+      "role": "Reference implementation for map image, percent marker contract and TarkovBuddy static/quest markers per user request.",
       "confidenceFloor": "high",
       "notes": "No repository/license link was visible during inspection; keep attribution and avoid claiming exclusive ownership of the asset."
     }
