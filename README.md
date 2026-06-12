@@ -178,7 +178,7 @@ El plan multiagente y el backlog inicial viven en `docs/agent-operating-model.md
 
 ## Mapas interactivos
 
-El contrato inicial para datos de mapas vive en `docs/map-data-contract.md`. Define mapas, capas, marcadores, geometria, coordinate spaces, fuentes, confianza, precision y validaciones minimas antes de renderizar tareas, items, extracts, spawns, bosses o transits. La ruta `/maps` ya muestra Customs y Ground Zero como pilotos: MapGenie es el benchmark de interaccion (pan/zoom, sidebar, labels y fichas contextuales) y TarkovBuddy aporta el contrato x/y porcentual e imagenes locales basadas en `/maps/customs.webp` y `/maps/gz.webp`. Los benchmarks viven en `docs/mapgenie-interactive-map-benchmark.md` y `docs/tarkovbuddy-map-benchmark.md`.
+El contrato inicial para datos de mapas vive en `docs/map-data-contract.md`. Define mapas, capas, marcadores, geometria, coordinate spaces, fuentes, confianza, precision y validaciones minimas antes de renderizar tareas, items, extracts, spawns, bosses o transits. La ruta `/maps` ya muestra Customs y Ground Zero como pilotos: MapGenie es el benchmark de interaccion (pan/zoom, sidebar, labels y fichas contextuales) y TarkovBuddy aporta el contrato x/y porcentual e imagenes locales basadas en `/maps/customs.webp` y `/maps/gz.webp`. Los benchmarks viven en `docs/mapgenie-interactive-map-benchmark.md` y `docs/tarkovbuddy-map-benchmark.md`; el backlog para hacer mapas mejores que MapGenie queda aparcado en `docs/maps-next-roadmap.md`.
 
 ## Despliegue en Cloudflare Pages
 
