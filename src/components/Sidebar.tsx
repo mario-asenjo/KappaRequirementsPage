@@ -26,6 +26,17 @@ const Sidebar: React.FC<SidebarProps> = ({ tasks }) => {
     >
       <div className="list-group list-group-flush">
         <NavLink
+          to="/items"
+          className={({ isActive }) =>
+            `trader-link list-group-item list-group-item-action d-flex justify-content-between align-items-center ${
+              isActive ? 'active' : ''
+            }`
+          }
+        >
+          <span>Calculadora de items</span>
+          <span className="badge trader-badge">nuevo</span>
+        </NavLink>
+        <NavLink
           to="/tasks"
           className={({ isActive }) =>
             `trader-link list-group-item list-group-item-action d-flex justify-content-between align-items-center ${

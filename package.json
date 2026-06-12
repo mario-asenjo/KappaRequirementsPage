@@ -7,6 +7,7 @@
     "build": "vite build",
     "update:tasks": "tsx scripts/fetchTasks.ts",
     "update:achievements": "tsx scripts/fetchAchievements.ts",
+    "update:item-requirements": "tsx scripts/fetchItemRequirements.ts",
     "extract:logs": "tsx tools/eft-log-importer/cli.ts",
     "build:extractor-download": "tsx scripts/buildExtractorDownload.ts",
     "build:goals": "tsx scripts/buildGoals.ts",
@@ -17,6 +18,7 @@
     "test:extractor": "tsx scripts/testEftLogImporter.ts",
     "test:extractor-download": "npm run build:extractor-download && node public/downloads/eft-log-importer.mjs --help && node -e \"const fs=require('fs'); const zip=fs.readFileSync('public/downloads/eft-log-importer.zip'); if(!zip.includes(Buffer.from('run-windows.bat')) || !zip.includes(Buffer.from('run-linux.sh')) || !zip.includes(Buffer.from('README.txt'))) process.exit(1);\"",
     "test:achievements": "tsx scripts/testAchievementsPage.tsx",
+    "test:item-requirements": "tsx scripts/testItemRequirements.ts",
     "test:maps": "tsx scripts/testMapData.ts",
     "test:map-markers": "tsx scripts/testMapMarkers.ts",
     "preview": "vite preview"

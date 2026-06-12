@@ -14,11 +14,12 @@ Este repositorio contiene una aplicación SPA escrita en **React** (con Vite y T
 - **Selector de objetivo**: permite alternar entre Kappa, Lightkeeper, todas las misiones y achievements con quests asociadas.
 - **Achievements**: la ruta `/achievements` muestra logros, rareza, progreso, objetivos asociados y checklist manual para logros sin quests.
 - **Mapas interactivos**: la ruta `/maps` cataloga todos los mapas/variantes de `tarkov.dev` y ya usa Customs + Ground Zero como pilotos con UX inspirada en MapGenie: pan/zoom libre, sidebar de capas, labels pequenos bajo los marcadores, fichas contextuales y contrato x/y porcentual basado en TarkovBuddy.
+- **Calculadora de items**: la ruta `/items` permite buscar cualquier item requerido por quests o hideout, activar/desactivar requisitos concretos y calcular cuanto guardar antes de vender excedentes.
 - **Importacion de progreso**: la ruta `/import` permite cargar un JSON generado desde logs locales, previsualizar misiones detectadas y aplicar completadas/fallidas reconocidas sin sobrescribir progreso existente.
 - **Estado de importacion**: despues de aplicar un JSON, `/import` conserva la ultima fuente, fecha, completadas anadidas, iniciadas detectadas, fallidas cerradas, warnings e IDs no reconocidos.
 - **Misiones iniciadas**: las quests detectadas como iniciadas en logs se guardan y se muestran con badge propio sin contarlas como completadas.
 - **Extractor descargable**: la ruta `/import` enlaza `public/downloads/eft-log-importer.zip`, con script Node.js standalone, README y runners para Windows/Linux.
-- **Datos sincronizables**: `src/data/tasks.json`, `src/data/achievements.json` y `src/data/goals.json` se pueden regenerar desde `tarkov.dev` y la wiki.
+- **Datos sincronizables**: `src/data/tasks.json`, `src/data/achievements.json`, `src/data/goals.json` y `src/data/itemRequirements.json` se pueden regenerar desde `tarkov.dev` y la wiki.
 - **Estilos versionados**: Bootstrap se instala como dependencia npm y se complementa con estilos locales responsivos en `src/styles.css`.
 - **Sistema visual Kraken**: `DESIGN.md` documenta paleta, tipografia, radios y componentes base usados por la UI.
 
@@ -175,6 +176,10 @@ El enlace `Star GitHub` de la cabecera abre el repositorio para que el usuario p
 ## Operativa de agentes
 
 El plan multiagente y el backlog inicial viven en `docs/agent-operating-model.md`. Ese documento define carriles de trabajo, dependencias, labels recomendadas de GitHub y la politica de verificacion antes de cerrar PRs.
+
+## Calculadora de items
+
+La ruta `/items` usa `src/data/itemRequirements.json`, generado con `npm run update:item-requirements` desde `tarkov.dev`. El indice cubre todos los items que aparecen en requisitos de misiones o mejoras del hideout, no solo un item de ejemplo. El panel permite buscar por nombre/short name, revisar cantidades por quests y hideout, excluir filas individuales y conservar esas decisiones en `localStorage` para calcular cuanto guardar antes de vender.
 
 ## Mapas interactivos
 
