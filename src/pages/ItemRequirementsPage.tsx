@@ -142,7 +142,7 @@ const ItemRequirementsPage: React.FC = () => {
         <div className="item-planner-source-card">
           <strong>{formatter.format(index.metadata.itemCount)}</strong>
           <span>items con requisitos</span>
-          <small>{formatter.format(index.metadata.requirementCount)} requisitos desde tarkov.dev</small>
+          <small>{formatter.format(index.metadata.requirementCount)} requisitos desde tarkov.dev + Fandom</small>
         </div>
       </div>
 
@@ -260,7 +260,7 @@ const ItemRequirementsPage: React.FC = () => {
           ) : (
             <div className="item-empty-panel">
               <h2>Busca un item para empezar</h2>
-              <p>El panel cubre todos los items con requisitos detectados en tarkov.dev.</p>
+              <p>El panel cubre todos los items con requisitos detectados en tarkov.dev y enriquecidos desde Fandom.</p>
             </div>
           )}
         </div>
