@@ -10,6 +10,7 @@ import {
   setRequirementInclusion,
 } from '../utils/itemRequirements';
 import {
+  ItemBarterEntry,
   ItemPlannerPreferences,
   ItemRequirementEntry,
   ItemRequirementIndexEntry,
@@ -33,6 +34,39 @@ const getSafeExternalUrl = (url: string | undefined) => {
 const getItemSearchText = (item: ItemRequirementIndexEntry) => [item.name, item.shortName, item.normalizedName]
   .filter(Boolean)
   .join(' ');
+
+const formatTradeItems = (items: ItemBarterEntry['requiredItems']) => items
+  .map((item) => `${formatter.format(item.quantity)}× ${item.name}`)
+  .join(' + ');
+
+const BarterRow: React.FC<{ barter: ItemBarterEntry }> = ({ barter }) => {
+  const sourceUrl = getSafeExternalUrl(barter.sourceUrl);
+  return (
+    <article className={`item-barter-row item-barter-row--${barter.direction}`}>
+      <div className="item-barter-trader">
+        <span>{barter.traderName}</span>
+        {barter.traderLevel && <small>LL{barter.traderLevel}</small>}
+      </div>
+      <div className="item-barter-main">
+        <div className="item-barter-titleline">
+          <h3>{barter.direction === 'required' ? 'Usas este item' : 'Puedes conseguir este item'}</h3>
+          <strong>{barter.direction === 'required' ? 'Gastas' : 'Recibes'}</strong>
+        </div>
+        <p>
+          <span>{formatTradeItems(barter.requiredItems)}</span>
+          <span aria-hidden="true" className="item-barter-arrow">→</span>
+          <span>{formatTradeItems(barter.receivedItems)}</span>
+        </p>
+        {barter.description && <small className="item-barter-note">{barter.description}</small>}
+        {sourceUrl && (
+          <a href={sourceUrl} target="_blank" rel="noreferrer" className="item-source-link">
+            Ver fuente
+          </a>
+        )}
+      </div>
+    </article>
+  );
+};
 
 const RequirementRow: React.FC<{
   itemId: string;
@@ -108,6 +142,9 @@ const ItemRequirementsPage: React.FC = () => {
 
   const questRows = summary?.rows.filter((row) => row.kind === 'quest') ?? [];
   const hideoutRows = summary?.rows.filter((row) => row.kind === 'hideout') ?? [];
+  const barterRows = selectedItem?.barters ?? [];
+  const requiredBarters = barterRows.filter((barter) => barter.direction === 'required');
+  const receivedBarters = barterRows.filter((barter) => barter.direction === 'received');
 
   const toggleRequirement = (requirementId: string, included: boolean) => {
     if (!selectedItem) return;
@@ -141,8 +178,8 @@ const ItemRequirementsPage: React.FC = () => {
         </div>
         <div className="item-planner-source-card">
           <strong>{formatter.format(index.metadata.itemCount)}</strong>
-          <span>items con requisitos</span>
-          <small>{formatter.format(index.metadata.requirementCount)} requisitos desde tarkov.dev + Fandom</small>
+          <span>items con usos</span>
+          <small>{formatter.format(index.metadata.requirementCount)} requisitos · {formatter.format(index.metadata.fandomBarterCount ?? 0)} intercambios desde tarkov.dev + Fandom</small>
         </div>
       </div>
 
@@ -160,7 +197,7 @@ const ItemRequirementsPage: React.FC = () => {
             placeholder="Toolset, Gas analyzer, LEDX..."
           />
           <p className="item-search-hint">
-            Se buscan todos los items con requisitos de quests o hideout. Toolset es solo el ejemplo canario.
+            Se buscan todos los items con requisitos de quests/hideout o intercambios de traders. Toolset es solo el ejemplo canario.
           </p>
           <div className="item-result-list" aria-label="Resultados de items">
             {results.map((item) => (
@@ -168,12 +205,13 @@ const ItemRequirementsPage: React.FC = () => {
                 key={item.id}
                 type="button"
                 className={`item-result${selectedItem?.id === item.id ? ' active' : ''}`}
+                aria-pressed={selectedItem?.id === item.id}
                 onClick={() => setSelectedItemId(item.id)}
               >
                 {getSafeExternalUrl(item.iconLink) && <img src={getSafeExternalUrl(item.iconLink)} alt="" loading="lazy" />}
                 <span>
                   <strong>{item.name}</strong>
-                  <small>{item.shortName || 'Sin short name'} · {item.requirements.length} usos</small>
+                  <small>{item.requirements.length} requisitos · {(item.barters ?? []).length} intercambios</small>
                 </span>
               </button>
             ))}
@@ -197,8 +235,8 @@ const ItemRequirementsPage: React.FC = () => {
                 </div>
                 <div className="selected-item-actions">
                   {getSafeExternalUrl(selectedItem.wikiLink) && <a className="btn btn-outline-light btn-sm" href={getSafeExternalUrl(selectedItem.wikiLink)} target="_blank" rel="noreferrer">Wiki</a>}
-                  <button className="btn btn-outline-light btn-sm" type="button" onClick={() => setAll(true)}>Seleccionar todo</button>
-                  <button className="btn btn-outline-warning btn-sm" type="button" onClick={() => setAll(false)}>Deseleccionar todo</button>
+                  <button className="btn btn-outline-light btn-sm" type="button" onClick={() => setAll(true)} disabled={summary.rows.length === 0}>Seleccionar todo</button>
+                  <button className="btn btn-outline-warning btn-sm" type="button" onClick={() => setAll(false)} disabled={summary.rows.length === 0}>Deseleccionar todo</button>
                 </div>
               </div>
 
@@ -217,6 +255,11 @@ const ItemRequirementsPage: React.FC = () => {
                   <span>Hideout</span>
                   <strong>{formatter.format(summary.hideoutRequired)}</strong>
                   <small>{hideoutRows.length} mejoras</small>
+                </div>
+                <div className="item-summary-card">
+                  <span>Intercambios</span>
+                  <strong>{formatter.format(barterRows.length)}</strong>
+                  <small>{receivedBarters.length} conseguir · {requiredBarters.length} gastar</small>
                 </div>
                 <div className="item-summary-card">
                   <span>Excluidos</span>
@@ -254,6 +297,29 @@ const ItemRequirementsPage: React.FC = () => {
                       onToggle={toggleRequirement}
                     />
                   )) : <p className="item-empty-state">Este item no aparece en mejoras del hideout.</p>}
+                </section>
+
+                <section className="requirement-section requirement-section--barters">
+                  <div className="requirement-section-heading">
+                    <span className="eyebrow">Traders</span>
+                    <h2>Intercambios disponibles</h2>
+                  </div>
+                  {barterRows.length > 0 ? (
+                    <div className="item-barter-groups">
+                      {receivedBarters.length > 0 && (
+                        <div>
+                          <h3 className="item-barter-group-title">Puedes conseguir este item</h3>
+                          {receivedBarters.map((barter) => <BarterRow key={barter.id} barter={barter} />)}
+                        </div>
+                      )}
+                      {requiredBarters.length > 0 && (
+                        <div>
+                          <h3 className="item-barter-group-title">Usas este item en trades</h3>
+                          {requiredBarters.map((barter) => <BarterRow key={barter.id} barter={barter} />)}
+                        </div>
+                      )}
+                    </div>
+                  ) : <p className="item-empty-state">Fandom no lista intercambios de traders para este item.</p>}
                 </section>
               </div>
             </>

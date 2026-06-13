@@ -10,6 +10,7 @@ export interface ItemRequirementIndexFile {
     fandomPageCount?: number;
     fandomRequirementCount?: number;
     fandomMergedRequirementCount?: number;
+    fandomBarterCount?: number;
     fandomError?: string;
   };
   items: ItemRequirementIndexEntry[];
@@ -23,6 +24,27 @@ export interface ItemRequirementIndexEntry {
   iconLink?: string;
   wikiLink?: string;
   requirements: ItemRequirementEntry[];
+  barters?: ItemBarterEntry[];
+}
+
+export type ItemBarterDirection = 'required' | 'received';
+
+export interface ItemBarterItem {
+  name: string;
+  quantity: number;
+  wikiLink?: string;
+}
+
+export interface ItemBarterEntry {
+  id: string;
+  direction: ItemBarterDirection;
+  traderName: string;
+  traderLevel?: number;
+  traderRequirement?: string;
+  requiredItems: ItemBarterItem[];
+  receivedItems: ItemBarterItem[];
+  sourceUrl?: string;
+  description?: string;
 }
 
 export type ItemRequirementKind = 'quest' | 'hideout';
