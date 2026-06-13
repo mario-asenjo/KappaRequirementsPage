@@ -1,6 +1,11 @@
 import { writeFile } from 'fs/promises';
 import { fileURLToPath } from 'url';
 import {
+  FandomRequirementParseResult,
+  fetchFandomItemRequirements,
+  mergeFandomRequirements,
+} from './fandomItemRequirements';
+import {
   HideoutStationLevelRequirement,
   ItemRequirementEntry,
   ItemRequirementIndexEntry,
@@ -139,7 +144,12 @@ function doesQuestObjectiveCountTowardKeepTotal(objective: ApiObjective) {
   return questObjectiveTypesThatConsumeItems.has(objective.type);
 }
 
-function buildIndex(items: ApiItem[], hideoutStations: ApiHideoutStation[]): ItemRequirementIndexFile {
+function buildIndex(
+  items: ApiItem[],
+  hideoutStations: ApiHideoutStation[],
+  fandomItems: FandomRequirementParseResult[] = [],
+  fandomError?: string,
+): ItemRequirementIndexFile {
   const index = new Map<string, ItemRequirementIndexEntry>();
 
   for (const item of items) {
@@ -207,6 +217,8 @@ function buildIndex(items: ApiItem[], hideoutStations: ApiHideoutStation[]): Ite
     }
   }
 
+  const fandomMergeStats = mergeFandomRequirements(index, fandomItems);
+
   const itemsWithRequirements = [...index.values()]
     .map((item) => ({
       ...item,
@@ -229,12 +241,16 @@ function buildIndex(items: ApiItem[], hideoutStations: ApiHideoutStation[]): Ite
   return {
     schemaVersion: 1,
     metadata: {
-      source: 'https://api.tarkov.dev/graphql',
+      source: 'https://api.tarkov.dev/graphql + https://escapefromtarkov.fandom.com/wiki',
       syncedAt: new Date().toISOString(),
       itemCount: itemsWithRequirements.length,
       requirementCount,
       questRequirementCount,
       hideoutRequirementCount,
+      fandomPageCount: fandomMergeStats.pagesWithRequirements,
+      fandomRequirementCount: fandomMergeStats.parsedRequirementCount,
+      fandomMergedRequirementCount: fandomMergeStats.mergedRequirementCount,
+      ...(fandomError ? { fandomError } : {}),
     },
     items: itemsWithRequirements,
   };
@@ -269,12 +285,21 @@ async function fetchItemRequirements() {
     throw new Error('Unexpected item requirement response structure');
   }
 
-  const index = buildIndex(items, hideoutStations);
+  let fandomItems: FandomRequirementParseResult[] = [];
+  let fandomError: string | undefined;
+  try {
+    fandomItems = await fetchFandomItemRequirements();
+  } catch (error) {
+    fandomError = error instanceof Error ? error.message : String(error);
+    console.warn(`Warning: Fandom enrichment failed; continuing with tarkov.dev data only. ${fandomError}`);
+  }
+  const index = buildIndex(items, hideoutStations, fandomItems, fandomError);
   const filePath = fileURLToPath(new URL('../src/data/itemRequirements.json', import.meta.url));
   await writeFile(filePath, `${JSON.stringify(index, null, 2)}\n`, 'utf8');
   console.log(
     `Built ${index.metadata.itemCount} item entries with ${index.metadata.requirementCount} requirements `
-    + `(${index.metadata.questRequirementCount} quest, ${index.metadata.hideoutRequirementCount} hideout)`,
+    + `(${index.metadata.questRequirementCount} quest, ${index.metadata.hideoutRequirementCount} hideout; `
+    + `${index.metadata.fandomMergedRequirementCount} merged from Fandom)`,
   );
 }
 

@@ -19,6 +19,7 @@
     "test:extractor-download": "npm run build:extractor-download && node public/downloads/eft-log-importer.mjs --help && node -e \"const fs=require('fs'); const zip=fs.readFileSync('public/downloads/eft-log-importer.zip'); if(!zip.includes(Buffer.from('run-windows.bat')) || !zip.includes(Buffer.from('run-linux.sh')) || !zip.includes(Buffer.from('README.txt'))) process.exit(1);\"",
     "test:achievements": "tsx scripts/testAchievementsPage.tsx",
     "test:item-requirements": "tsx scripts/testItemRequirements.ts",
+    "test:fandom-item-requirements": "tsx scripts/testFandomItemRequirements.ts",
     "test:maps": "tsx scripts/testMapData.ts",
     "test:map-markers": "tsx scripts/testMapMarkers.ts",
     "preview": "vite preview"

@@ -52,6 +52,7 @@ kappa-tracker/
 │       ├── tasks.json         Base de datos de todas las misiones sincronizada desde tarkov.dev
 │       ├── achievements.json  Achievements sincronizados desde tarkov.dev y wiki
 │       ├── goals.json         Perfiles de progreso derivados
+│       ├── itemRequirements.json  Items requeridos por quests/hideout desde tarkov.dev + Fandom
 │       └── questTree.json     Arbol generado desde tasks.json
 └── scripts/
     ├── fetchTasks.ts          Script para actualizar todas las misiones
@@ -179,7 +180,7 @@ El plan multiagente y el backlog inicial viven en `docs/agent-operating-model.md
 
 ## Calculadora de items
 
-La ruta `/items` usa `src/data/itemRequirements.json`, generado con `npm run update:item-requirements` desde `tarkov.dev`. El indice cubre todos los items que aparecen en requisitos de misiones o mejoras del hideout, no solo un item de ejemplo. El panel permite buscar por nombre/short name, revisar cantidades por quests y hideout, excluir filas individuales y conservar esas decisiones en `localStorage` para calcular cuanto guardar antes de vender.
+La ruta `/items` usa `src/data/itemRequirements.json`, generado con `npm run update:item-requirements` desde `tarkov.dev` y enriquecido con la wiki de Fandom para capturar items/requisitos publicados allí antes de que aparezcan en la API. El indice cubre todos los items que aparecen en requisitos de misiones o mejoras del hideout, no solo un item de ejemplo. El panel permite buscar por nombre/short name, revisar cantidades por quests y hideout, excluir filas individuales y conservar esas decisiones en `localStorage` para calcular cuanto guardar antes de vender.
 
 ## Mapas interactivos
 
@@ -193,4 +194,4 @@ El contrato inicial para datos de mapas vive en `docs/map-data-contract.md`. Def
 
 ## Nota sobre scraping y API
 
-La fuente primaria del proyecto es `tarkov.dev`, que a su vez enlaza a la wiki de Fandom cuando existe una guía externa para la misión. Si en el futuro se necesita enriquecer descripciones o recompensas no expuestas por la API, el scraping de Fandom debería ejecutarse como paso separado y con control de errores para no bloquear el build.
+La fuente primaria del proyecto es `tarkov.dev`. Para la calculadora de items, `scripts/fetchItemRequirements.ts` ejecuta además un paso controlado contra la API pública de MediaWiki/Fandom: descubre páginas de `Category:Items`, parsea las secciones `Quests` y `Hideout`, deduplica por quest/estación frente a tarkov.dev y sólo fusiona requisitos que faltan o items nuevos. Si Fandom cambia el formato de sus secciones, `npm run test:fandom-item-requirements` debe fallar antes de publicar datos corruptos.

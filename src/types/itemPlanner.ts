@@ -7,6 +7,10 @@ export interface ItemRequirementIndexFile {
     requirementCount: number;
     questRequirementCount: number;
     hideoutRequirementCount: number;
+    fandomPageCount?: number;
+    fandomRequirementCount?: number;
+    fandomMergedRequirementCount?: number;
+    fandomError?: string;
   };
   items: ItemRequirementIndexEntry[];
 }
