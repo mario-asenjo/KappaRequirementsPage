@@ -14,7 +14,7 @@ Este repositorio contiene una aplicación SPA escrita en **React** (con Vite y T
 - **Selector de objetivo**: permite alternar entre Kappa, Lightkeeper, todas las misiones y achievements con quests asociadas.
 - **Achievements**: la ruta `/achievements` muestra logros, rareza, progreso, objetivos asociados y checklist manual para logros sin quests.
 - **Mapas interactivos**: la ruta `/maps` cataloga todos los mapas/variantes de `tarkov.dev` y ya usa Customs + Ground Zero como pilotos con UX inspirada en MapGenie: pan/zoom libre, sidebar de capas, labels pequenos bajo los marcadores, fichas contextuales y contrato x/y porcentual basado en TarkovBuddy.
-- **Calculadora de items**: la ruta `/items` permite buscar cualquier item requerido por quests o hideout, activar/desactivar requisitos concretos y calcular cuanto guardar antes de vender excedentes.
+- **Calculadora de items**: la ruta `/items` permite buscar cualquier item requerido por quests/hideout o usado en intercambios de traders, activar/desactivar requisitos concretos y calcular cuanto guardar antes de vender excedentes.
 - **Importacion de progreso**: la ruta `/import` permite cargar un JSON generado desde logs locales, previsualizar misiones detectadas y aplicar completadas/fallidas reconocidas sin sobrescribir progreso existente.
 - **Estado de importacion**: despues de aplicar un JSON, `/import` conserva la ultima fuente, fecha, completadas anadidas, iniciadas detectadas, fallidas cerradas, warnings e IDs no reconocidos.
 - **Misiones iniciadas**: las quests detectadas como iniciadas en logs se guardan y se muestran con badge propio sin contarlas como completadas.
@@ -52,7 +52,7 @@ kappa-tracker/
 │       ├── tasks.json         Base de datos de todas las misiones sincronizada desde tarkov.dev
 │       ├── achievements.json  Achievements sincronizados desde tarkov.dev y wiki
 │       ├── goals.json         Perfiles de progreso derivados
-│       ├── itemRequirements.json  Items requeridos por quests/hideout desde tarkov.dev + Fandom
+│       ├── itemRequirements.json  Items, requisitos e intercambios desde tarkov.dev + Fandom
 │       └── questTree.json     Arbol generado desde tasks.json
 └── scripts/
     ├── fetchTasks.ts          Script para actualizar todas las misiones
@@ -180,7 +180,7 @@ El plan multiagente y el backlog inicial viven en `docs/agent-operating-model.md
 
 ## Calculadora de items
 
-La ruta `/items` usa `src/data/itemRequirements.json`, generado con `npm run update:item-requirements` desde `tarkov.dev` y enriquecido con la wiki de Fandom para capturar items/requisitos publicados allí antes de que aparezcan en la API. El indice cubre todos los items que aparecen en requisitos de misiones o mejoras del hideout, no solo un item de ejemplo. El panel permite buscar por nombre/short name, revisar cantidades por quests y hideout, excluir filas individuales y conservar esas decisiones en `localStorage` para calcular cuanto guardar antes de vender.
+La ruta `/items` usa `src/data/itemRequirements.json`, generado con `npm run update:item-requirements` desde `tarkov.dev` y enriquecido con la wiki de Fandom para capturar items/requisitos/intercambios publicados allí antes de que aparezcan en la API. El indice cubre todos los items que aparecen en requisitos de misiones, mejoras del hideout o barters de traders, no solo un item de ejemplo. El panel permite buscar por nombre/short name, revisar cantidades por quests y hideout, excluir filas individuales, ver si el item se gasta o se obtiene en intercambios de traders y conservar esas decisiones en `localStorage`.
 
 ## Mapas interactivos
 
@@ -194,4 +194,4 @@ El contrato inicial para datos de mapas vive en `docs/map-data-contract.md`. Def
 
 ## Nota sobre scraping y API
 
-La fuente primaria del proyecto es `tarkov.dev`. Para la calculadora de items, `scripts/fetchItemRequirements.ts` ejecuta además un paso controlado contra la API pública de MediaWiki/Fandom: descubre páginas de `Category:Items`, parsea las secciones `Quests` y `Hideout`, deduplica por quest/estación frente a tarkov.dev y sólo fusiona requisitos que faltan o items nuevos. Si Fandom cambia el formato de sus secciones, `npm run test:fandom-item-requirements` debe fallar antes de publicar datos corruptos.
+La fuente primaria del proyecto es `tarkov.dev`. Para la calculadora de items, `scripts/fetchItemRequirements.ts` ejecuta además un paso controlado contra la API pública de MediaWiki/Fandom: descubre páginas de `Category:Items`, parsea las secciones `Quests`, `Hideout` y `Trading`, deduplica por quest/estación frente a tarkov.dev y fusiona requisitos, barters o items nuevos que falten en la API. Si Fandom cambia el formato de sus secciones, `npm run test:fandom-item-requirements` debe fallar antes de publicar datos corruptos.

@@ -16,6 +16,17 @@ const toolsetSnippet = `{{Infobox item
 ==Hideout==
 * 3 need to be found [[Found in raid|<font color="red">in raid</font>]] for the [[Hideout#Modules|Workbench level 2]]
 * 1 needs to be found [[Found in raid|<font color="red">in raid</font>]] for the [[Hideout#Modules|Gym]]
+
+==Trading==
+{|class="wikitable"
+|-
+![[File:Plier Icon.png|frameless|link=Pliers]] x1<br/>[[Pliers]]<br/>+<br/>[[File:Screwdriver Icon.png|frameless|link=Screwdriver]] x1<br/>[[Screwdriver]]<br/>+<br/>[[File:Wrench Icon.png|frameless|link=Wrench]] x1<br/>[[Wrench]]<br/>+<br/>[[File:Insulating tape Icon.png|frameless|link=Insulating tape]] x1<br/>[[Insulating tape]]<br/>+<br/>[[File:Construction Measuring Tape Icon.png|frameless|link=Construction measuring tape]] x1<br/>[[Construction measuring tape]]
+!<big>→</big>
+![[File:Mechanic 1 icon.png|frameless|link=Mechanic]]<br/>[[Mechanic|Mechanic LL1]]
+!<big>→</big>
+![[File:Toolsicon.png|frameless|link=Toolset]]
+[[Toolset]]
+|}
 `;
 
 const gasAnalyzerSnippet = `{{Infobox item
@@ -28,6 +39,24 @@ const gasAnalyzerSnippet = `{{Infobox item
 * 1 needs to be found [[Found in raid|<font color="red">in raid</font>]] for the quest [[Sanitary Standards - Part 1]]
 * 2 need to be found [[Found in raid|<font color="red">in raid</font>]] for the quest [[Sanitary Standards - Part 2]]
 * 4 need to be found [[Found in raid|<font color="red">in raid</font>]] for the quest [[Network Provider - Part 1]]
+
+==Trading==
+{|class="wikitable"
+|-
+![[File:Gas Analyzer Icon.png|frameless|link=Gas analyzer]] x2<br/>[[Gas analyzer]]
+!<big>→</big>
+![[File:Skier 2 icon.png|frameless|link=Skier]]<br/>[[Skier|Skier LL2]] After completing his task [[Chemical - Part 4]]
+!<big>→</big>
+![[File:RFB icon.png|frameless|link=Kel-Tec RFB 7.62x51 rifle]]
+[[Kel-Tec RFB 7.62x51 rifle]]
+|-
+![[File:CPU Fan Icon.png|frameless|link=CPU fan]] x1<br/>[[CPU fan]]
+!<big>→</big>
+![[File:Mechanic 1 icon.png|frameless|link=Mechanic]]<br/>[[Mechanic|Mechanic LL1]]
+!<big>→</big>
+![[File:Gas Analyzer Icon.png|frameless|link=Gas analyzer]]
+[[Gas analyzer]]
+|}
 `;
 
 const uppercaseIdSnippet = `{{Infobox item
@@ -45,6 +74,13 @@ assert.ok(parsedToolset, 'Toolset snippet should parse requirements');
 assert.equal(parsedToolset.item.id, '590c2e1186f77425357b6124', 'Fandom node should be used as stable item id');
 assert.equal(parsedToolset.item.shortName, 'TSet', 'short name should be extracted from intro');
 assert.equal(parsedToolset.requirements.length, 5, 'Toolset snippet should parse quest and hideout rows');
+assert.equal(parsedToolset.barters.length, 1, 'Toolset snippet should parse Trading barter rows');
+assert.equal(parsedToolset.barters[0].direction, 'received', 'Toolset barter should show the item as the trader output');
+assert.equal(parsedToolset.barters[0].traderName, 'Mechanic');
+assert.equal(parsedToolset.barters[0].traderLevel, 1);
+assert.equal(parsedToolset.barters[0].receivedItems[0].name, 'Toolset');
+assert.equal(parsedToolset.barters[0].requiredItems.length, 5);
+
 assert.ok(
   parsedToolset.requirements.some((requirement) => requirement.sourceName === 'They Are Already Here' && requirement.objectiveType === 'fandomStoryRequirement'),
   'story chapter rows should be retained as Fandom quest requirements',
@@ -66,6 +102,15 @@ assert.ok(parsedToolset.requirements.every((requirement) => requirement.countsTo
 const parsedGasAnalyzer = parseFandomItemPage({ title: 'Gas analyzer', wikitext: gasAnalyzerSnippet });
 assert.ok(parsedGasAnalyzer, 'Gas analyzer snippet should parse requirements');
 assert.equal(parsedGasAnalyzer.requirements.reduce((total, requirement) => total + requirement.quantity, 0), 7, 'Fandom Gas analyzer requirements should represent keep total directly');
+assert.equal(parsedGasAnalyzer.barters.length, 2, 'Gas analyzer should parse spent and received barter rows');
+assert.ok(
+  parsedGasAnalyzer.barters.some((barter) => barter.direction === 'required' && barter.traderName === 'Skier' && barter.traderLevel === 2 && barter.traderRequirement === 'After completing his task Chemical - Part 4' && barter.requiredItems.some((item) => item.name === 'Gas analyzer' && item.quantity === 2) && barter.receivedItems.some((item) => item.name === 'Kel-Tec RFB 7.62x51 rifle')),
+  'Gas analyzer spent barter should capture trader, prerequisite, quantity, and reward',
+);
+assert.ok(
+  parsedGasAnalyzer.barters.some((barter) => barter.direction === 'received' && barter.traderName === 'Mechanic' && barter.traderLevel === 1 && barter.requiredItems.some((item) => item.name === 'CPU fan' && item.quantity === 1) && barter.receivedItems.some((item) => item.name === 'Gas analyzer')),
+  'Gas analyzer received barter should capture source ingredient and trader',
+);
 
 const parsedUppercaseId = parseFandomItemPage({ title: 'Airdrop container', wikitext: uppercaseIdSnippet });
 assert.ok(parsedUppercaseId, 'uppercase ID snippet should parse requirements');

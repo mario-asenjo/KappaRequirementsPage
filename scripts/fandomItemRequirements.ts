@@ -1,4 +1,4 @@
-import { ItemRequirementEntry, ItemRequirementIndexEntry } from '../src/types/itemPlanner';
+import { ItemBarterEntry, ItemBarterItem, ItemRequirementEntry, ItemRequirementIndexEntry } from '../src/types/itemPlanner';
 
 const fandomApiUrl = 'https://escapefromtarkov.fandom.com/api.php';
 const fandomPageBaseUrl = 'https://escapefromtarkov.fandom.com/wiki/';
@@ -18,6 +18,7 @@ export interface FandomRequirementParseResult {
     wikiLink: string;
   };
   requirements: ItemRequirementEntry[];
+  barters: ItemBarterEntry[];
 }
 
 interface WikiPageRevisionResponse {
@@ -191,6 +192,92 @@ function parseFandomHideoutRows(itemId: string, wikitext: string): ItemRequireme
   return rows;
 }
 
+function parseTableCells(row: string) {
+  return row
+    .split(/\n!/)
+    .map((cell) => cell.replace(/^!/, '').trim())
+    .filter(Boolean)
+    .filter((cell) => !/→|&rarr;|&rightarrow;/i.test(stripWikiMarkup(cell)));
+}
+
+function parseBarterItems(cell: string): ItemBarterItem[] {
+  const items = new Map<string, ItemBarterItem>();
+  const imageLinkPattern = /\[\[File:[^\]]*?\|[^\]]*?link=([^\]|]+)[^\]]*\]\](?:\s*x(\d+))?/gi;
+  for (const match of cell.matchAll(imageLinkPattern)) {
+    const name = stripWikiMarkup(match[1]);
+    if (!name || /^File:/i.test(name)) continue;
+    items.set(normalizeName(name) ?? name, {
+      name,
+      quantity: match[2] ? Number(match[2]) : 1,
+      wikiLink: pageUrl(name),
+    });
+  }
+
+  if (items.size === 0) {
+    for (const link of extractLinks(cell).filter((item) => !item.title.startsWith('File:'))) {
+      const key = normalizeName(link.label) ?? link.label;
+      if (!items.has(key)) items.set(key, { name: link.label, quantity: 1, wikiLink: pageUrl(link.title) });
+    }
+  }
+
+  return [...items.values()];
+}
+
+function parseTraderCell(cell: string) {
+  const links = extractLinks(cell).filter((link) => !link.title.startsWith('File:'));
+  const traderLink = links.find((link) => /\bLL\d+\b/i.test(link.label)) ?? links[0];
+  const levelMatch = stripWikiMarkup(cell).match(/\bLL\s*(\d+)\b/i);
+  const traderMarkupPattern = traderLink
+    ? new RegExp(`\\[\\[[^\\]]*${traderLink.title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}[^\\]]*\\]\\]`, 'gi')
+    : undefined;
+  const traderRequirement = stripWikiMarkup(cell
+    .replace(/\[\[File:[^\]]+\]\]/gi, '')
+    .replace(traderMarkupPattern ?? /^$/, '')
+    .replace(traderLink?.label ?? '', ''))
+    .replace(/^\s*\|+\s*/, '')
+    .trim();
+  return {
+    traderName: traderLink ? stripWikiMarkup(traderLink.title) : 'Trader',
+    traderLevel: levelMatch ? Number(levelMatch[1]) : undefined,
+    traderRequirement: traderRequirement || undefined,
+  };
+}
+
+function itemListIncludes(items: ItemBarterItem[], itemTitle: string) {
+  return items.some((item) => normalizeName(item.name) === normalizeName(itemTitle));
+}
+
+function parseFandomTradingRows(itemId: string, itemTitle: string, wikitext: string): ItemBarterEntry[] {
+  const section = extractSection(wikitext, 'Trading');
+  if (!section) return [];
+  const rows: ItemBarterEntry[] = [];
+  for (const rawRow of section.split(/\n\|-\s*/).slice(1)) {
+    const cells = parseTableCells(rawRow.replace(/\n\|}\s*$/m, ''));
+    if (cells.length < 3) continue;
+    const requiredItems = parseBarterItems(cells[0]);
+    const trader = parseTraderCell(cells[1]);
+    const receivedItems = parseBarterItems(cells[2]);
+    if (requiredItems.length === 0 || receivedItems.length === 0) continue;
+    const itemIsRequired = itemListIncludes(requiredItems, itemTitle);
+    const itemIsReceived = itemListIncludes(receivedItems, itemTitle);
+    if (!itemIsRequired && !itemIsReceived) continue;
+    const direction = itemIsRequired ? 'required' : 'received';
+    const tradeSlug = slug(`${requiredItems.map((item) => `${item.quantity}-${item.name}`).join('-')}-for-${receivedItems.map((item) => `${item.quantity}-${item.name}`).join('-')}`);
+    rows.push({
+      id: `fandom:barter:${direction}:${tradeSlug}:${itemId}`,
+      direction,
+      traderName: trader.traderName,
+      traderLevel: trader.traderLevel,
+      traderRequirement: trader.traderRequirement,
+      requiredItems,
+      receivedItems,
+      sourceUrl: pageUrl(itemTitle),
+      description: `${requiredItems.map((item) => `${item.name} x${item.quantity}`).join(' + ')} → ${trader.traderName}${trader.traderLevel ? ` LL${trader.traderLevel}` : ''} → ${receivedItems.map((item) => `${item.name} x${item.quantity}`).join(' + ')}`,
+    });
+  }
+  return rows;
+}
+
 export function parseFandomItemPage(page: FandomItemPage): FandomRequirementParseResult | undefined {
   const node = extractInfoboxField(page.wikitext, 'node');
   const templateId = extractInfoboxField(page.wikitext, 'id');
@@ -201,7 +288,9 @@ export function parseFandomItemPage(page: FandomItemPage): FandomRequirementPars
     ...parseFandomHideoutRows(id, page.wikitext),
   ];
 
-  if (requirements.length === 0) return undefined;
+  const barters = parseFandomTradingRows(id, page.title, page.wikitext);
+
+  if (requirements.length === 0 && barters.length === 0) return undefined;
 
   return {
     item: {
@@ -212,6 +301,7 @@ export function parseFandomItemPage(page: FandomItemPage): FandomRequirementPars
       wikiLink: pageUrl(page.title),
     },
     requirements,
+    barters,
   };
 }
 
@@ -239,7 +329,7 @@ export function mergeFandomRequirements(
   let mergedRequirementCount = 0;
 
   for (const fandomItem of fandomItems) {
-    if (fandomItem.requirements.length === 0) continue;
+    if (fandomItem.requirements.length === 0 && fandomItem.barters.length === 0) continue;
     pagesWithRequirements += 1;
     parsedRequirementCount += fandomItem.requirements.length;
     const existingById = index.get(fandomItem.item.id);
@@ -253,6 +343,7 @@ export function mergeFandomRequirements(
       shortName: fandomItem.item.shortName,
       wikiLink: fandomItem.item.wikiLink,
       requirements: [],
+      barters: [],
     };
 
     entry.shortName = entry.shortName || fandomItem.item.shortName;
@@ -271,6 +362,19 @@ export function mergeFandomRequirements(
       if (entry.requirements.some((existing) => existing.id === normalizedRequirement.id)) continue;
       entry.requirements.push(normalizedRequirement);
       mergedRequirementCount += 1;
+    }
+
+    entry.barters = entry.barters ?? [];
+    for (const barter of fandomItem.barters) {
+      const normalizedBarter = {
+        ...barter,
+        id: entry.id === fandomItem.item.id
+          ? barter.id
+          : barter.id.replace(new RegExp(`:${fandomItem.item.id.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}$`), `:${entry.id}`),
+      };
+      if (!entry.barters.some((existing) => existing.id === normalizedBarter.id)) {
+        entry.barters.push(normalizedBarter);
+      }
     }
   }
 

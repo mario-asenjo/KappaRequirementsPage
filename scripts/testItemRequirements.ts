@@ -13,8 +13,9 @@ const data = itemRequirementData as ItemRequirementIndexFile;
 
 assert.equal(data.schemaVersion, 1, 'item requirement index should use schemaVersion 1');
 assert.equal(data.metadata.itemCount, data.items.length, 'metadata itemCount should match actual item count');
-assert.ok(data.items.length > 330, 'index should cover all required items, not a hand-picked subset');
+assert.ok(data.items.length > 430, 'index should cover required items plus Fandom barter-only items');
 assert.ok(data.metadata.requirementCount > 950, 'index should include global quest and hideout requirements plus Fandom wiki deltas');
+assert.ok((data.metadata.fandomBarterCount ?? 0) > 600, 'index should include Fandom trader barter rows');
 assert.ok(data.metadata.questRequirementCount > 650, 'index should include quest item requirements from tarkov.dev and Fandom');
 assert.ok(data.metadata.hideoutRequirementCount > 300, 'index should include hideout item requirements');
 assert.ok((data.metadata.fandomPageCount ?? 0) > 200, 'index should parse Fandom item pages as a freshness supplement');
@@ -29,7 +30,22 @@ let actualHideoutRequirementCount = 0;
 for (const item of data.items) {
   assert.ok(item.id, 'item id is required');
   assert.ok(item.name, `item ${item.id} should have a name`);
-  assert.ok(item.requirements.length > 0, `${item.name} should have at least one requirement`);
+  assert.ok(item.requirements.length > 0 || (item.barters?.length ?? 0) > 0, `${item.name} should have at least one requirement or barter`);
+
+  const itemBarterIds = new Set<string>();
+  for (const barter of item.barters ?? []) {
+    assert.ok(barter.id.includes(item.id), `${barter.id} should include item id for stable trade rows`);
+    assert.ok(!itemBarterIds.has(barter.id), `${item.name} has duplicate barter id ${barter.id}`);
+    itemBarterIds.add(barter.id);
+    assert.ok(barter.direction === 'required' || barter.direction === 'received', `${barter.id} should classify item role in trade`);
+    assert.ok(barter.traderName, `${barter.id} should keep trader name`);
+    assert.ok(barter.requiredItems.length > 0, `${barter.id} should include required trade inputs`);
+    assert.ok(barter.receivedItems.length > 0, `${barter.id} should include received trade outputs`);
+    for (const tradeItem of [...barter.requiredItems, ...barter.receivedItems]) {
+      assert.ok(tradeItem.name, `${barter.id} trade item should have a name`);
+      assert.ok(tradeItem.quantity > 0, `${barter.id} trade item should have positive quantity`);
+    }
+  }
 
   const itemRequirementIds = new Set<string>();
   for (const requirement of item.requirements) {
@@ -86,6 +102,11 @@ assert.ok(
   'Toolset should include Fandom-only story chapter requirements missing from tarkov.dev',
 );
 
+assert.ok(
+  toolset.barters?.some((barter) => barter.direction === 'received' && barter.traderName === 'Mechanic' && barter.receivedItems.some((item) => item.name === 'Toolset')),
+  'Toolset should expose trader barters that can provide the item',
+);
+
 const workbenchLevelTwo = toolset.requirements.find(
   (requirement) => requirement.kind === 'hideout' && requirement.stationName === 'Workbench' && requirement.level === 2,
 );
@@ -138,6 +159,15 @@ assert.equal(gasAnalyzerSummary.totalRequired, 7, 'Gas analyzer should not be in
 assert.ok(
   gasAnalyzer.requirements.some((requirement) => requirement.objectiveType === 'findItem' && !requirement.countsTowardTotal),
   'Gas analyzer should keep findItem rows visible but excluded from keep totals',
+);
+
+assert.ok(
+  gasAnalyzer.barters?.some((barter) => barter.direction === 'required' && barter.traderName === 'Skier' && barter.requiredItems.some((item) => item.name === 'Gas analyzer' && item.quantity === 2)),
+  'Gas analyzer should expose barters that spend the item with a trader',
+);
+assert.ok(
+  gasAnalyzer.barters?.some((barter) => barter.direction === 'received' && barter.traderName === 'Mechanic' && barter.receivedItems.some((item) => item.name === 'Gas analyzer')),
+  'Gas analyzer should expose barters that provide the item',
 );
 
 console.log('Item requirement planner tests passed');

@@ -222,13 +222,14 @@ function buildIndex(
   const itemsWithRequirements = [...index.values()]
     .map((item) => ({
       ...item,
+      barters: (item.barters ?? []).sort((a, b) => a.traderName.localeCompare(b.traderName) || a.id.localeCompare(b.id)),
       requirements: item.requirements.sort((a, b) => {
         const kindOrder = a.kind.localeCompare(b.kind);
         if (kindOrder !== 0) return kindOrder;
         return a.sourceName.localeCompare(b.sourceName) || (a.level ?? 0) - (b.level ?? 0) || a.id.localeCompare(b.id);
       }),
     }))
-    .filter((item) => item.requirements.length > 0)
+    .filter((item) => item.requirements.length > 0 || item.barters.length > 0)
     .sort((a, b) => a.name.localeCompare(b.name));
 
   const requirementCount = itemsWithRequirements.reduce((total, item) => total + item.requirements.length, 0);
@@ -237,6 +238,7 @@ function buildIndex(
     0,
   );
   const hideoutRequirementCount = requirementCount - questRequirementCount;
+  const fandomBarterCount = itemsWithRequirements.reduce((total, item) => total + item.barters.length, 0);
 
   return {
     schemaVersion: 1,
@@ -250,6 +252,7 @@ function buildIndex(
       fandomPageCount: fandomMergeStats.pagesWithRequirements,
       fandomRequirementCount: fandomMergeStats.parsedRequirementCount,
       fandomMergedRequirementCount: fandomMergeStats.mergedRequirementCount,
+      fandomBarterCount,
       ...(fandomError ? { fandomError } : {}),
     },
     items: itemsWithRequirements,
@@ -299,7 +302,7 @@ async function fetchItemRequirements() {
   console.log(
     `Built ${index.metadata.itemCount} item entries with ${index.metadata.requirementCount} requirements `
     + `(${index.metadata.questRequirementCount} quest, ${index.metadata.hideoutRequirementCount} hideout; `
-    + `${index.metadata.fandomMergedRequirementCount} merged from Fandom)`,
+    + `${index.metadata.fandomMergedRequirementCount} merged and ${index.metadata.fandomBarterCount} barters from Fandom)`,
   );
 }
 
