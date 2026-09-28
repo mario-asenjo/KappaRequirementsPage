@@ -3810,7 +3810,7 @@ body {
 
 .item-summary-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
   gap: 0.75rem;
   margin-bottom: 1rem;
 }
@@ -3982,4 +3982,47 @@ body {
   .item-summary-grid {
     grid-template-columns: 1fr;
   }
+}
+
+.item-barter-groups {
+  display: grid;
+  gap: 1rem;
+}
+
+.item-barter-groups h3 {
+  color: #dfe8f6;
+  font-size: 0.95rem;
+  margin: 0 0 0.4rem;
+}
+
+.item-barter-row {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.8rem 0;
+}
+
+.item-barter-row--input {
+  border-left: 3px solid rgba(255, 173, 72, 0.72);
+  padding-left: 0.7rem;
+}
+
+.item-barter-row--output {
+  border-left: 3px solid rgba(100, 207, 151, 0.72);
+  padding-left: 0.7rem;
+}
+
+.item-barter-titleline {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  color: #dfe8f6;
+}
+
+.item-barter-titleline span {
+  color: #9aa8bc;
+  font-size: 0.85rem;
+}
+
+.item-barter-row p {
+  color: #aeb8c8;
+  margin: 0.35rem 0 0;
 }

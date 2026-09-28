@@ -256,3 +256,11 @@
 - Auditoria: `npm audit --audit-level=moderate` detecto 2 vulnerabilidades moderadas en `vite/esbuild`; la correccion automatica requiere actualizacion mayor con `npm audit fix --force`, no aplicada.
 - Se anadio `DESIGN.md` con el preset `kraken` mediante `npx getdesign@latest add kraken`.
 - Se adapto el look and feel a Kraken: hero de progreso, header blanco, CTAs purpura, badges neutros/verdes, tarjetas con sombras suaves y estados responsivos.
+
+### 2026-09-28 (Trader Barters clean port)
+
+- Rama de trabajo: `feat/trader-barters-clean`, creada desde `main` sin merge ni cherry-pick de la PR #61.
+- `/items` ahora indexa Trader Barters de `json.tarkov.dev/pve/barters` junto con IDs de items y traders de JSON; Fandom no se usa ni se atribuye para barters.
+- Cada barter conserva ID, trader/ID, `loyaltyLevel`, costes y resultado; cada item lo expone explícitamente como `input` o `output`, sin entrar en los totales de quests/hideout.
+- El pipeline separa adapter JSON, normalizador/validación determinista y orquestador con escritura temporal+rename para no sobrescribir el dataset ante fallos upstream.
+- Verificación: `test:item-requirement-normalizer`, `test:item-requirements`, `test:fandom-item-requirements`, TypeScript y build correctos; fallo DNS simulado contra JSON dejó el SHA-256 de `itemRequirements.json` sin cambios.

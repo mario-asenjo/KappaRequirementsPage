@@ -1,5 +1,5 @@
 export interface ItemRequirementIndexFile {
-  schemaVersion: 1;
+  schemaVersion: 2;
   metadata: {
     source: string;
     syncedAt: string;
@@ -7,6 +7,12 @@ export interface ItemRequirementIndexFile {
     requirementCount: number;
     questRequirementCount: number;
     hideoutRequirementCount: number;
+    barterCount: number;
+    barterItemLinkCount: number;
+    barterTraderCount: number;
+    bartersWithLoyaltyLevel: number;
+    bartersWithoutLoyaltyLevel: number;
+    sources: string[];
     fandomPageCount?: number;
     fandomRequirementCount?: number;
     fandomMergedRequirementCount?: number;
@@ -23,6 +29,25 @@ export interface ItemRequirementIndexEntry {
   iconLink?: string;
   wikiLink?: string;
   requirements: ItemRequirementEntry[];
+  barters: ItemBarterEntry[];
+}
+
+export type ItemBarterDirection = 'input' | 'output';
+
+export interface ItemBarterItem {
+  itemId: string;
+  name: string;
+  quantity: number;
+}
+
+export interface ItemBarterEntry {
+  id: string;
+  direction: ItemBarterDirection;
+  traderId: string;
+  traderName: string;
+  loyaltyLevel?: number;
+  requiredItems: ItemBarterItem[];
+  receivedItems: ItemBarterItem[];
 }
 
 export type ItemRequirementKind = 'quest' | 'hideout';
