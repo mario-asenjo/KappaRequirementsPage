@@ -113,7 +113,7 @@ const Home: React.FC<HomeProps> = ({ tasks, goal, goalProgress }) => {
     <div className="container-fluid">
       <section className="hero-panel dashboard-panel mb-4">
         <div className="dashboard-copy">
-          <span className="eyebrow">Mission control</span>
+          <span className="eyebrow">Mission control · {progress.mode === 'pve' ? 'PvE Zone' : progress.mode === 'pvp' ? 'PvP Zone' : 'PvP Seasonal'}</span>
           <h1>Tu ruta hacia {goal?.name ?? 'Kappa'}, limpia y medible.</h1>
           <p>
             Sigue el avance por comerciante, filtra pendientes y conserva el progreso del objetivo activo

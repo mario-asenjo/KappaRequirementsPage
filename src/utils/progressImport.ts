@@ -1,4 +1,4 @@
-import { ProgressImportFile, Task } from '../types';
+import { GameMode, ProgressImportFile, Task } from '../types';
 
 export interface ProgressImportPreview {
   importFile: ProgressImportFile;
@@ -33,8 +33,8 @@ export function parseProgressImportJson(value: string): ProgressImportFile {
     throw new Error('El archivo de importacion debe ser un objeto JSON.');
   }
 
-  if (parsed.schemaVersion !== 1) {
-    throw new Error('Version de importacion no soportada. Se esperaba schemaVersion 1.');
+  if (parsed.schemaVersion !== 1 && parsed.schemaVersion !== 2) {
+    throw new Error('Version de importacion no soportada. Se esperaba schemaVersion 1 o 2.');
   }
 
   if (typeof parsed.source !== 'string' || parsed.source.length === 0) {
@@ -53,10 +53,14 @@ export function parseProgressImportJson(value: string): ProgressImportFile {
 
   return {
     ...(parsed as unknown as ProgressImportFile),
-    schemaVersion: 1,
+    schemaVersion: parsed.schemaVersion,
     completedTaskIds,
     startedTaskIds: uniqueStrings(parsed.startedTaskIds),
     failedTaskIds,
+    unknownTaskIds: uniqueStrings(parsed.unknownTaskIds),
+    profile: isObject(parsed.profile) ? { profileId: typeof parsed.profile.profileId === 'string' ? parsed.profile.profileId : undefined, mode: ['pve', 'pvp', 'seasonal-pvp'].includes(String(parsed.profile.mode)) ? parsed.profile.mode as GameMode : undefined } : undefined,
+    clientVersion: typeof parsed.clientVersion === 'string' ? parsed.clientVersion : undefined,
+    logVersionRange: isObject(parsed.logVersionRange) ? { oldest: typeof parsed.logVersionRange.oldest === 'string' ? parsed.logVersionRange.oldest : undefined, newest: typeof parsed.logVersionRange.newest === 'string' ? parsed.logVersionRange.newest : undefined } : undefined,
     warnings: uniqueStrings(parsed.warnings),
   };
 }
@@ -72,6 +76,7 @@ export function getProgressImportPreview(
     ...importFile.completedTaskIds,
     ...(importFile.startedTaskIds ?? []),
     ...(importFile.failedTaskIds ?? []),
+    ...(importFile.unknownTaskIds ?? []),
   ]);
   const validRawCompletedTaskIds = importFile.completedTaskIds.filter((id) => taskIds.has(id));
   const validFailedTaskIds = (importFile.failedTaskIds ?? []).filter((id) => taskIds.has(id));

@@ -256,3 +256,10 @@
 - Auditoria: `npm audit --audit-level=moderate` detecto 2 vulnerabilidades moderadas en `vite/esbuild`; la correccion automatica requiere actualizacion mayor con `npm audit fix --force`, no aplicada.
 - Se anadio `DESIGN.md` con el preset `kraken` mediante `npx getdesign@latest add kraken`.
 - Se adapto el look and feel a Kraken: hero de progreso, header blanco, CTAs purpura, badges neutros/verdes, tarjetas con sombras suaves y estados responsivos.
+
+### 2026-09-28 (#54/#55 profile-mode importer v2)
+
+- El progreso local se migra de `userProgress` v1 a v2 por perfil/modo; los datos legacy pasan al perfil PvE por defecto.
+- Header/Home muestran el modo activo (PvE, PvP o Seasonal PvP) y el progreso no se comparte entre perfiles.
+- El extractor local emite `schemaVersion: 2`, modo detectado, profileId local, versión explícita o `unknown`, rango de logs e IDs de quest desconocidos agregados; no extrae IDs de cuenta.
+- Se mantienen imports v1 y se muestran modo/version del snapshot antes de aplicar.

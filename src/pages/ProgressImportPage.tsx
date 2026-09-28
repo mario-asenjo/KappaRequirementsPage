@@ -90,6 +90,7 @@ const ProgressImportPage: React.FC<ProgressImportPageProps> = ({ tasks }) => {
         failedMarkedCompletedCount: preview.newFailedTaskIds.length,
         unknownTaskCount: preview.unknownTaskIds.length,
         warningCount: preview.warnings.length,
+        mode: preview.importFile.profile?.mode,
       },
     });
     setAppliedCount(addedCompletedCount);
@@ -262,8 +263,12 @@ const ProgressImportPage: React.FC<ProgressImportPageProps> = ({ tasks }) => {
                     <dd>{preview.importFile.source}</dd>
                     <dt>Generado</dt>
                     <dd>{formatDate(preview.importFile.generatedAt)}</dd>
+                    {preview.importFile.clientVersion && <><dt>Versión cliente</dt><dd>{preview.importFile.clientVersion}</dd></>}
+                    <dt>Modo detectado</dt>
+                    <dd>{preview.importFile.profile?.mode ?? 'No indicado'}</dd>
                     <dt>Perfil</dt>
-                    <dd>{preview.importFile.profile?.profileId ?? 'No indicado'}</dd>
+                    <dd>{preview.importFile.profile?.profileId ? 'Detectado localmente' : 'No indicado'}</dd>
+                    {preview.importFile.profile?.mode && preview.importFile.profile.mode !== progress.mode && <><dt>Destino actual</dt><dd>{progress.mode}; cambia el selector Perfil de la cabecera antes de aplicar para no mezclar progreso.</dd></>}
                   </dl>
                   {newCompletedTitles.length > 0 && (
                     <div>

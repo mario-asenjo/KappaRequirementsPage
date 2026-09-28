@@ -14,7 +14,7 @@ import { basename, dirname, join, relative, resolve } from 'node:path';
 
 const TASK_IDS = new Set(${JSON.stringify(taskIds)});
 const DEFAULT_OUTPUT = 'kappa-progress-import.json';
-const PUSH_LOG_PATTERN = /push-notifications_.*\\.log$/i;
+const LOG_PATTERN = /(?:push-notifications|output)_.*\\.log$/i;
 const TEMPLATE_PATTERN = /"templateId"\\s*:\\s*"([0-9a-f]{24})\\s+(description|successMessageText|failMessageText)"/g;
 const PROFILE_PATTERN = /"profileid"\\s*:\\s*"([^"]+)"/i;
 
@@ -32,6 +32,13 @@ function eventFromSuffix(suffix) {
   if (suffix === 'successMessageText') return 'completed';
   if (suffix === 'failMessageText') return 'failed';
   return 'started';
+}
+
+function detectMode(text) {
+  if (/gw-pvp-season/i.test(text)) return 'seasonal-pvp';
+  if (/onlinePveRaidStates|gw-pve/i.test(text)) return 'pve';
+  if (/gw-pvp/i.test(text)) return 'pvp';
+  return 'pve';
 }
 
 function getCandidateEftPaths(argv = process.argv, env = process.env) {
@@ -79,7 +86,7 @@ async function walkLogs(directory) {
   const files = await Promise.all(entries.map(async (entry) => {
     const path = join(directory, entry.name);
     if (entry.isDirectory()) return walkLogs(path);
-    if (entry.isFile() && PUSH_LOG_PATTERN.test(entry.name)) return [path];
+    if (entry.isFile() && LOG_PATTERN.test(entry.name)) return [path];
     return [];
   }));
 
@@ -107,7 +114,7 @@ function parsePushLog(text, file) {
     if (profileMatch) profileIds.push(profileMatch[1]);
   });
 
-  return { matches, profileIds };
+  return { matches, profileIds, mode: detectMode(text) };
 }
 
 async function extractProgressFromLogs(eftPath) {
@@ -119,12 +126,15 @@ async function extractProgressFromLogs(eftPath) {
   const rawMatches = [];
   const unmatchedTemplateIds = [];
   const profileIds = [];
+  const modes = [];
+  const unknownTaskIds = [];
 
   for (const logFile of logFiles) {
     const text = await readFile(logFile, 'utf8').catch(() => '');
     const relativeFile = relative(eftPath, logFile) || basename(logFile);
     const parsed = parsePushLog(text, relativeFile);
     profileIds.push(...parsed.profileIds);
+    modes.push(parsed.mode);
 
     parsed.matches.forEach((templateMatch) => {
       const event = eventFromSuffix(templateMatch.suffix);
@@ -133,7 +143,7 @@ async function extractProgressFromLogs(eftPath) {
       if (event === 'completed' && isKnownTask) completedTaskIds.push(templateMatch.taskId);
       if (event === 'started' && isKnownTask) startedTaskIds.push(templateMatch.taskId);
       if (event === 'failed' && isKnownTask) failedTaskIds.push(templateMatch.taskId);
-      if (!isKnownTask) unmatchedTemplateIds.push({ templateId: templateMatch.templateId, event });
+      if (!isKnownTask) { unmatchedTemplateIds.push({ templateId: templateMatch.templateId, event }); unknownTaskIds.push(templateMatch.taskId); }
 
       rawMatches.push({
         taskId: templateMatch.taskId,
@@ -150,13 +160,15 @@ async function extractProgressFromLogs(eftPath) {
   if (logFiles.length === 0) warnings.push('No push-notifications logs were found under EscapeFromTarkov/Logs.');
 
   return {
-    schemaVersion: 1,
+    schemaVersion: 2,
     source: 'eft-local-logs',
     generatedAt: new Date().toISOString(),
-    profile: { profileId: unique(profileIds)[0] },
+    profile: { profileId: unique(profileIds)[0], mode: unique(modes)[0] ?? 'pve' },
+    clientVersion: 'unknown',
     completedTaskIds: unique(completedTaskIds),
     startedTaskIds: unique(startedTaskIds).filter((id) => !completedTaskIds.includes(id)),
     failedTaskIds: unique(failedTaskIds),
+    unknownTaskIds: unique(unknownTaskIds),
     rawMatches,
     unmatchedTemplateIds,
     warnings,
