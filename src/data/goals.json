@@ -1,7 +1,7 @@
 {
   "metadata": {
     "source": "src/data/tasks.json + src/data/achievements.json",
-    "builtAt": "2026-09-28T10:08:40.008Z",
+    "builtAt": "2026-09-28T10:29:28.864Z",
     "goalCount": 112,
     "taskGoalCount": 3,
     "manualAchievementGoalCount": 109

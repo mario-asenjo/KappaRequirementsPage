@@ -30,10 +30,12 @@ export interface Task {
   rewards?: string;
   /** Names of tasks that must be completed first */
   prerequisites?: string[];
-  /** First known trader loyalty level gate from structured data */
-  traderLoyaltyLevel?: number;
+  /** Required trader loyalty level gate from structured data; not a 1.1 unlock pool assertion */
+  requiredTraderLoyaltyLevel?: number;
   /** Source provenance for normalized task data */
-  dataSources?: TaskDataSources;
+  provenance?: SourceProvenance[];
+  /** Minimal representation for future structured-vs-semantic source conflicts */
+  sourceConflicts?: SourceConflict[];
   /** Whether this task counts toward the legacy Kappa secure container data flag */
   countsForKappa: boolean;
   /** Whether this task counts toward Lightkeeper progression */
@@ -48,9 +50,19 @@ export interface TaskObjectiveDetail {
   maps: string[];
 }
 
-export interface TaskDataSources {
-  structured: string;
-  semantic: string;
+export interface SourceProvenance {
+  provider: string;
+  endpoint: string;
+  retrievedAt: string;
+  gameMode?: string;
+}
+
+export interface SourceConflict {
+  field: string;
+  structuredValue: unknown;
+  semanticValue?: unknown;
+  sources: SourceProvenance[];
+  conflict: boolean;
 }
 
 export interface AchievementReference {

@@ -14,7 +14,7 @@ Tarkov ya no es un flujo unico de wipe global -> quest checklist fija -> Kappa. 
 
 La wiki confirma que las Seasonal Characters son independientes de PvP Zone y PvE Zone, que Battle Pass progresa entre modos, que algunas recompensas estacionales se vuelven disponibles en todos los modos, y que las side tasks se reordenaron por Trader Loyalty Level.
 
-Conclusion Ponytail: no toca reescribir la app entera primero. El primer corte que aguanta es cambiar el modelo de datos y progreso para soportar `gameMode`, `profileId`, `traderLoyaltyLevel` y `objectiveMaps`; despues la UI se vuelve una vista por perfil/modo usando el mismo tracker.
+Conclusion Ponytail: no toca reescribir la app entera primero. El primer corte que aguanta es cambiar el modelo de datos y progreso para soportar `gameMode`, `profileId`, `requiredTraderLoyaltyLevel` y `objectiveMaps`; despues la UI se vuelve una vista por perfil/modo usando el mismo tracker.
 
 ## Fuentes consultadas
 
@@ -70,7 +70,7 @@ Fandom `Changelog` 1.1.0:
 
 Impacto:
 
-- `Task` necesita `traderLoyaltyLevel?: number`, `unlockGroup?: string|number`, `unlockKind?: 'loyalty-pool'|'chain'|'event'|'unknown'`.
+- `Task` necesita `requiredTraderLoyaltyLevel?: number` para requisitos estructurados; `traderLoyaltyLevel`, `unlockGroup` y `unlockKind` quedan reservados para unlock pools verificados por Wiki/Fandom u otra evidencia suficiente.
 - El arbol actual por prerequisitos sigue sirviendo para cadenas, pero no modela pools por LL. La nueva UX debe ser tablero por trader+LL, no solo grafo.
 - Filtros actuales por nivel/prerequisito dan falsos negativos/positivos porque faltan grupos de LL.
 
@@ -195,7 +195,7 @@ Impacto para importer:
 
 ### Phase 3 - Datos de misiones modernos
 
-- Ampliar `Task` con objective-level maps, trader LL y unlockKind.
+- Ampliar `Task` con objective-level maps y `requiredTraderLoyaltyLevel`; reservar unlockKind/unlockGroup para datos semanticamente verificados.
 - Regenerar `tasks.json` cuando API vuelva o crear fallback Fandom.
 - Cambiar `buildGoals`: Kappa actual como goal compuesto, no como lista antigua de Kappa tasks.
 - Marcar data confidence: `verified`, `stale`, `fallback-wiki`, `unknown`.

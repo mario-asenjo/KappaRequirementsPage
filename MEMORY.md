@@ -272,3 +272,11 @@
 - Tras #59, se corrigio el diagnostico: el problema no es tarkov.dev completo, sino el endpoint GraphQL legacy `https://api.tarkov.dev/graphql`; `json.tarkov.dev` es la fuente estructurada recomendada.
 - Arquitectura de fuentes acordada: Fandom/Wiki como autoridad funcional/editorial; `json.tarkov.dev` como autoridad estructurada para IDs, tasks, objectives/maps, traders/items/hideout; GraphQL no debe alimentar `src/data/*`.
 - El orden de implementacion cambia a: migrar pipeline de datos y procedencia, despues perfiles/importer PvE-first, despues Collector/Kappa, despues Trader LL/UI.
+
+### 2026-09-28 (PR #60 hardening: data adapter/provenance/validation)
+
+- En PR #60 se separo el pipeline de tasks en `scripts/data-sources/tarkovDevJson.ts`, `scripts/data-normalizers/tasks.ts` y `scripts/fetchTasks.ts` como orquestador.
+- La provenance por task solo atribuye `json.tarkov.dev`; Fandom queda como `primarySemanticSource` hasta que un adapter wiki lea/verifique campos concretos.
+- Se renombro `traderLoyaltyLevel` a `requiredTraderLoyaltyLevel` para no confundir requisitos LL estructurados con unlock pools LL del rework 1.1.
+- Se anadio validacion no-overwrite antes de escribir `src/data/tasks.json` y tests offline `npm run test:data-pipeline`.
+- La comprobacion de los 17 IDs desconocidos del discovery resolvio 10/17 contra el catalogo PvE JSON; 7 quedaron `absent-upstream`.
