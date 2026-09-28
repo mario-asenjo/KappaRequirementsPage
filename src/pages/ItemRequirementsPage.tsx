@@ -10,6 +10,7 @@ import {
   setRequirementInclusion,
 } from '../utils/itemRequirements';
 import {
+  ItemBarterEntry,
   ItemPlannerPreferences,
   ItemRequirementEntry,
   ItemRequirementIndexEntry,
@@ -33,6 +34,20 @@ const getSafeExternalUrl = (url: string | undefined) => {
 const getItemSearchText = (item: ItemRequirementIndexEntry) => [item.name, item.shortName, item.normalizedName]
   .filter(Boolean)
   .join(' ');
+
+const formatTradeItems = (items: ItemBarterEntry['requiredItems']) => items
+  .map((item) => `${formatter.format(item.quantity)} × ${item.name}`)
+  .join(' + ');
+
+const BarterRow: React.FC<{ barter: ItemBarterEntry }> = ({ barter }) => (
+  <article className={`item-barter-row item-barter-row--${barter.direction}`}>
+    <div className="item-barter-titleline">
+      <strong>{barter.direction === 'input' ? 'Entregas este item' : 'Obtienes este item'}</strong>
+      <span>{barter.traderName}{barter.loyaltyLevel ? ` · LL ${barter.loyaltyLevel}` : ''}</span>
+    </div>
+    <p>{formatTradeItems(barter.requiredItems)} <span aria-hidden="true">→</span> {formatTradeItems(barter.receivedItems)}</p>
+  </article>
+);
 
 const RequirementRow: React.FC<{
   itemId: string;
@@ -108,6 +123,8 @@ const ItemRequirementsPage: React.FC = () => {
 
   const questRows = summary?.rows.filter((row) => row.kind === 'quest') ?? [];
   const hideoutRows = summary?.rows.filter((row) => row.kind === 'hideout') ?? [];
+  const inputBarters = selectedItem?.barters.filter((barter) => barter.direction === 'input') ?? [];
+  const outputBarters = selectedItem?.barters.filter((barter) => barter.direction === 'output') ?? [];
 
   const toggleRequirement = (requirementId: string, included: boolean) => {
     if (!selectedItem) return;
@@ -141,8 +158,8 @@ const ItemRequirementsPage: React.FC = () => {
         </div>
         <div className="item-planner-source-card">
           <strong>{formatter.format(index.metadata.itemCount)}</strong>
-          <span>items con requisitos</span>
-          <small>{formatter.format(index.metadata.requirementCount)} requisitos desde tarkov.dev + Fandom</small>
+          <span>items con usos</span>
+          <small>{formatter.format(index.metadata.requirementCount)} requisitos · {formatter.format(index.metadata.barterCount)} barters</small>
         </div>
       </div>
 
@@ -160,7 +177,7 @@ const ItemRequirementsPage: React.FC = () => {
             placeholder="Toolset, Gas analyzer, LEDX..."
           />
           <p className="item-search-hint">
-            Se buscan todos los items con requisitos de quests o hideout. Toolset es solo el ejemplo canario.
+            Se buscan items con requisitos de quests/hideout o intercambios de traders. Toolset es solo el ejemplo canario.
           </p>
           <div className="item-result-list" aria-label="Resultados de items">
             {results.map((item) => (
@@ -168,12 +185,13 @@ const ItemRequirementsPage: React.FC = () => {
                 key={item.id}
                 type="button"
                 className={`item-result${selectedItem?.id === item.id ? ' active' : ''}`}
+                aria-pressed={selectedItem?.id === item.id}
                 onClick={() => setSelectedItemId(item.id)}
               >
                 {getSafeExternalUrl(item.iconLink) && <img src={getSafeExternalUrl(item.iconLink)} alt="" loading="lazy" />}
                 <span>
                   <strong>{item.name}</strong>
-                  <small>{item.shortName || 'Sin short name'} · {item.requirements.length} usos</small>
+                  <small>{item.requirements.length} requisitos · {item.barters.length} barters</small>
                 </span>
               </button>
             ))}
@@ -197,8 +215,8 @@ const ItemRequirementsPage: React.FC = () => {
                 </div>
                 <div className="selected-item-actions">
                   {getSafeExternalUrl(selectedItem.wikiLink) && <a className="btn btn-outline-light btn-sm" href={getSafeExternalUrl(selectedItem.wikiLink)} target="_blank" rel="noreferrer">Wiki</a>}
-                  <button className="btn btn-outline-light btn-sm" type="button" onClick={() => setAll(true)}>Seleccionar todo</button>
-                  <button className="btn btn-outline-warning btn-sm" type="button" onClick={() => setAll(false)}>Deseleccionar todo</button>
+                  <button className="btn btn-outline-light btn-sm" type="button" onClick={() => setAll(true)} disabled={summary.rows.length === 0}>Seleccionar todo</button>
+                  <button className="btn btn-outline-warning btn-sm" type="button" onClick={() => setAll(false)} disabled={summary.rows.length === 0}>Deseleccionar todo</button>
                 </div>
               </div>
 
@@ -217,6 +235,11 @@ const ItemRequirementsPage: React.FC = () => {
                   <span>Hideout</span>
                   <strong>{formatter.format(summary.hideoutRequired)}</strong>
                   <small>{hideoutRows.length} mejoras</small>
+                </div>
+                <div className="item-summary-card">
+                  <span>Barters</span>
+                  <strong>{formatter.format(selectedItem.barters.length)}</strong>
+                  <small>{outputBarters.length} obtener · {inputBarters.length} entregar</small>
                 </div>
                 <div className="item-summary-card">
                   <span>Excluidos</span>
@@ -255,12 +278,25 @@ const ItemRequirementsPage: React.FC = () => {
                     />
                   )) : <p className="item-empty-state">Este item no aparece en mejoras del hideout.</p>}
                 </section>
+
+                <section className="requirement-section requirement-section--barters">
+                  <div className="requirement-section-heading">
+                    <span className="eyebrow">Traders</span>
+                    <h2>Intercambios de traders</h2>
+                  </div>
+                  {selectedItem.barters.length > 0 ? (
+                    <div className="item-barter-groups">
+                      {outputBarters.length > 0 && <div><h3>Obtienes este item</h3>{outputBarters.map((barter) => <BarterRow key={`${barter.id}-output`} barter={barter} />)}</div>}
+                      {inputBarters.length > 0 && <div><h3>Entregas este item</h3>{inputBarters.map((barter) => <BarterRow key={`${barter.id}-input`} barter={barter} />)}</div>}
+                    </div>
+                  ) : <p className="item-empty-state">Este item no participa en intercambios de traders.</p>}
+                </section>
               </div>
             </>
           ) : (
             <div className="item-empty-panel">
               <h2>Busca un item para empezar</h2>
-              <p>El panel cubre todos los items con requisitos detectados en tarkov.dev y enriquecidos desde Fandom.</p>
+              <p>El panel cubre items con requisitos y barters estructurados de json.tarkov.dev, enriquecidos desde Fandom cuando se lee esa fuente.</p>
             </div>
           )}
         </div>

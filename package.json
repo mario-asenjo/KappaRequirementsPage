@@ -22,7 +22,8 @@
     "test:fandom-item-requirements": "tsx scripts/testFandomItemRequirements.ts",
     "test:maps": "tsx scripts/testMapData.ts",
     "test:map-markers": "tsx scripts/testMapMarkers.ts",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test:item-requirement-normalizer": "tsx scripts/testItemRequirementNormalizer.ts"
   },
   "dependencies": {
     "bootstrap": "^5.3.8",
