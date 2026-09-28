@@ -12,24 +12,45 @@ export interface Task {
   title: string;
   /** Name of the trader who gives the task */
   trader: string;
+  /** Machine-friendly task slug when provided by the structured source */
+  normalizedName?: string;
   /** Map or location associated with the task, if any */
   location?: string;
+  /** Maps referenced by specific objectives, used when task-level location is generic */
+  objectiveMaps?: string[];
   /** Minimum player level required to unlock the task */
   levelRequirement?: number;
   /** List of objectives to complete this task */
   objectives: string[];
+  /** Objective descriptions with per-objective maps from structured data */
+  objectiveDetails?: TaskObjectiveDetail[];
   /** Task description giving more detail */
   description?: string;
   /** Rewards given upon completion */
   rewards?: string;
   /** Names of tasks that must be completed first */
   prerequisites?: string[];
-  /** Whether this task counts toward the Kappa secure container */
+  /** First known trader loyalty level gate from structured data */
+  traderLoyaltyLevel?: number;
+  /** Source provenance for normalized task data */
+  dataSources?: TaskDataSources;
+  /** Whether this task counts toward the legacy Kappa secure container data flag */
   countsForKappa: boolean;
   /** Whether this task counts toward Lightkeeper progression */
   lightkeeperRequired?: boolean;
   /** Achievement rewards granted by finishing this task */
   achievementRewards?: AchievementReference[];
+}
+
+
+export interface TaskObjectiveDetail {
+  description: string;
+  maps: string[];
+}
+
+export interface TaskDataSources {
+  structured: string;
+  semantic: string;
 }
 
 export interface AchievementReference {

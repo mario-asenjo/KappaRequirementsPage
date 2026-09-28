@@ -266,3 +266,9 @@
 - Collector actual ya no se modela bien con `countsForKappa`: requiere LL4 con traders principales, Fence karma +3 y quests concretas como Chemical - Part 3, Sew it Good - Part 2, Shooter Born in Heaven y The Tarkov Shooter - Part 4.
 - `npm run update:tasks` fallo porque `https://api.tarkov.dev/graphql` devolvio `422 {"errors":["GraphQL server unavailable. Try again later."]}`; no se regenero `tasks.json`.
 - Extractor actual contra `C:\Users\masen\Desktop\EFTINSTALLFOLDER\EscapeFromTarkov` genero 117 completadas, 83 iniciadas, 5 fallidas/alternativas y 24 template events no reconocidos (17 quest IDs unicos), senal clara de catalogo desactualizado.
+
+### 2026-09-28 (pipeline JSON API PvE-first)
+
+- Tras #59, se corrigio el diagnostico: el problema no es tarkov.dev completo, sino el endpoint GraphQL legacy `https://api.tarkov.dev/graphql`; `json.tarkov.dev` es la fuente estructurada recomendada.
+- Arquitectura de fuentes acordada: Fandom/Wiki como autoridad funcional/editorial; `json.tarkov.dev` como autoridad estructurada para IDs, tasks, objectives/maps, traders/items/hideout; GraphQL no debe alimentar `src/data/*`.
+- El orden de implementacion cambia a: migrar pipeline de datos y procedencia, despues perfiles/importer PvE-first, despues Collector/Kappa, despues Trader LL/UI.
