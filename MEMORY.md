@@ -256,3 +256,13 @@
 - Auditoria: `npm audit --audit-level=moderate` detecto 2 vulnerabilidades moderadas en `vite/esbuild`; la correccion automatica requiere actualizacion mayor con `npm audit fix --force`, no aplicada.
 - Se anadio `DESIGN.md` con el preset `kraken` mediante `npx getdesign@latest add kraken`.
 - Se adapto el look and feel a Kraken: hero de progreso, header blanco, CTAs purpura, badges neutros/verdes, tarjetas con sombras suaves y estados responsivos.
+
+### 2026-09-28 (discovery Tarkov 1.1+ profiles/tasks/logs)
+
+- Rama de trabajo: `discovery/tarkov-2026-rework`.
+- Se documento `docs/tarkov-2026-discovery.md` con hallazgos de Fandom `Changelog`, `Game modes`, `Collector`, logs locales reales y estado del repo.
+- Tarkov actual tiene perfiles separados: PvP Zone, PvE Zone y PvP Season; el progreso de KappaTracker debe separarse por perfil/modo antes de tocar UI grande.
+- El rework 1.1.0 ata la mayoria de side tasks a Trader Loyalty Level en grupos de 2-4; el arbol por prerequisitos no basta para modelar desbloqueos.
+- Collector actual ya no se modela bien con `countsForKappa`: requiere LL4 con traders principales, Fence karma +3 y quests concretas como Chemical - Part 3, Sew it Good - Part 2, Shooter Born in Heaven y The Tarkov Shooter - Part 4.
+- `npm run update:tasks` fallo porque `https://api.tarkov.dev/graphql` devolvio `422 {"errors":["GraphQL server unavailable. Try again later."]}`; no se regenero `tasks.json`.
+- Extractor actual contra `C:\Users\masen\Desktop\EFTINSTALLFOLDER\EscapeFromTarkov` genero 117 completadas, 83 iniciadas, 5 fallidas/alternativas y 24 template events no reconocidos (17 quest IDs unicos), senal clara de catalogo desactualizado.
