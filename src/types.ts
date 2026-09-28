@@ -12,24 +12,57 @@ export interface Task {
   title: string;
   /** Name of the trader who gives the task */
   trader: string;
+  /** Machine-friendly task slug when provided by the structured source */
+  normalizedName?: string;
   /** Map or location associated with the task, if any */
   location?: string;
+  /** Maps referenced by specific objectives, used when task-level location is generic */
+  objectiveMaps?: string[];
   /** Minimum player level required to unlock the task */
   levelRequirement?: number;
   /** List of objectives to complete this task */
   objectives: string[];
+  /** Objective descriptions with per-objective maps from structured data */
+  objectiveDetails?: TaskObjectiveDetail[];
   /** Task description giving more detail */
   description?: string;
   /** Rewards given upon completion */
   rewards?: string;
   /** Names of tasks that must be completed first */
   prerequisites?: string[];
-  /** Whether this task counts toward the Kappa secure container */
+  /** Required trader loyalty level gate from structured data; not a 1.1 unlock pool assertion */
+  requiredTraderLoyaltyLevel?: number;
+  /** Source provenance for normalized task data */
+  provenance?: SourceProvenance[];
+  /** Minimal representation for future structured-vs-semantic source conflicts */
+  sourceConflicts?: SourceConflict[];
+  /** Whether this task counts toward the legacy Kappa secure container data flag */
   countsForKappa: boolean;
   /** Whether this task counts toward Lightkeeper progression */
   lightkeeperRequired?: boolean;
   /** Achievement rewards granted by finishing this task */
   achievementRewards?: AchievementReference[];
+}
+
+
+export interface TaskObjectiveDetail {
+  description: string;
+  maps: string[];
+}
+
+export interface SourceProvenance {
+  provider: string;
+  endpoint: string;
+  retrievedAt: string;
+  gameMode?: string;
+}
+
+export interface SourceConflict {
+  field: string;
+  structuredValue: unknown;
+  semanticValue?: unknown;
+  sources: SourceProvenance[];
+  conflict: boolean;
 }
 
 export interface AchievementReference {

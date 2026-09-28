@@ -1,102 +1,22 @@
-import { writeFile } from 'fs/promises';
 import { fileURLToPath } from 'url';
+import { fetchTarkovDevJsonTaskDataset } from './data-sources/tarkovDevJson';
+import { buildTasksPayload, writeValidatedTasksPayload } from './data-normalizers/tasks';
 
 /**
- * This script demonstrates how you might fetch up‑to‑date quest data from the
- * community API at https://api.tarkov.dev/graphql. It performs a GraphQL
- * query and then writes a simplified representation of all known tasks
- * into `src/data/tasks.json`. Run it with `npm run update:tasks` from the
- * project root. A modern Node version with native fetch support (v18+) is
- * required.
+ * Orchestrates PvE task sync from tarkov.dev's JSON API.
+ *
+ * Fandom/wiki remains the primary semantic source for rules and exceptions, but
+ * this script only writes data actually retrieved from json.tarkov.dev.
  */
 
-// GraphQL query requesting tasks with relevant fields. See the API docs for
-// more information: https://github.com/the-hideout/tarkov-api
-const query = `{
-  tasks {
-    id
-    name
-    kappaRequired
-    lightkeeperRequired
-    minPlayerLevel
-    trader {
-      name
-    }
-    map {
-      name
-    }
-    objectives {
-      description
-    }
-    taskRequirements {
-      task {
-        name
-      }
-    }
-    wikiLink
-    finishRewards {
-      achievement {
-        id
-        name
-      }
-    }
-  }
-}`;
+const GAME_MODE = 'pve';
 
 async function fetchTasks() {
-  const endpoint = 'https://api.tarkov.dev/graphql';
-  const url = `${endpoint}?query=${encodeURIComponent(query)}`;
-  const res = await fetch(url);
-  if (!res.ok) {
-    throw new Error(`HTTP error ${res.status} ${res.statusText}`);
-  }
-  const json = (await res.json()) as any;
-  if (Array.isArray(json?.errors) && json.errors.length > 0) {
-    throw new Error(`GraphQL error: ${json.errors.map((error: any) => error.message).join('; ')}`);
-  }
-  const tasks = json?.data?.tasks;
-  if (!Array.isArray(tasks)) {
-    throw new Error('Unexpected response structure');
-  }
-  const mapped = tasks
-    .map((t: any) => ({
-      id: t.id,
-      title: t.name,
-      trader: t.trader?.name || 'Unknown',
-      location: t.map?.name || undefined,
-      levelRequirement: t.minPlayerLevel || undefined,
-      objectives: Array.isArray(t.objectives)
-        ? t.objectives.map((o: any) => o.description).filter(Boolean)
-        : [],
-      description: t.wikiLink ? `Guia externa: ${t.wikiLink}` : undefined,
-      rewards: undefined,
-      prerequisites: Array.isArray(t.taskRequirements)
-        ? t.taskRequirements.map((requirement: any) => requirement.task?.name).filter(Boolean)
-        : [],
-      countsForKappa: Boolean(t.kappaRequired),
-      lightkeeperRequired: Boolean(t.lightkeeperRequired),
-      achievementRewards: Array.isArray(t.finishRewards?.achievement)
-        ? t.finishRewards.achievement.map((achievement: any) => ({
-          id: achievement.id,
-          name: achievement.name,
-        })).filter((achievement: any) => achievement.id && achievement.name)
-        : [],
-    }))
-    .sort((a: any, b: any) => a.trader.localeCompare(b.trader) || a.title.localeCompare(b.title));
-
+  const dataset = await fetchTarkovDevJsonTaskDataset(GAME_MODE);
+  const payload = buildTasksPayload(dataset);
   const filePath = fileURLToPath(new URL('../src/data/tasks.json', import.meta.url));
-  const payload = {
-    metadata: {
-      source: 'https://api.tarkov.dev/graphql',
-      syncedAt: new Date().toISOString(),
-      taskCount: mapped.length,
-      kappaTaskCount: mapped.filter((task: any) => task.countsForKappa).length,
-      lightkeeperTaskCount: mapped.filter((task: any) => task.lightkeeperRequired).length,
-    },
-    tasks: mapped,
-  };
-  await writeFile(filePath, `${JSON.stringify(payload, null, 2)}\n`, 'utf8');
-  console.log(`Fetched ${mapped.length} tasks and wrote to ${filePath}`);
+  await writeValidatedTasksPayload(filePath, payload);
+  console.log(`Fetched ${payload.tasks.length} ${GAME_MODE} tasks from json.tarkov.dev and wrote to ${filePath}`);
 }
 
 fetchTasks().catch((err) => {

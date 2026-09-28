@@ -266,3 +266,17 @@
 - Collector actual ya no se modela bien con `countsForKappa`: requiere LL4 con traders principales, Fence karma +3 y quests concretas como Chemical - Part 3, Sew it Good - Part 2, Shooter Born in Heaven y The Tarkov Shooter - Part 4.
 - `npm run update:tasks` fallo porque `https://api.tarkov.dev/graphql` devolvio `422 {"errors":["GraphQL server unavailable. Try again later."]}`; no se regenero `tasks.json`.
 - Extractor actual contra `C:\Users\masen\Desktop\EFTINSTALLFOLDER\EscapeFromTarkov` genero 117 completadas, 83 iniciadas, 5 fallidas/alternativas y 24 template events no reconocidos (17 quest IDs unicos), senal clara de catalogo desactualizado.
+
+### 2026-09-28 (pipeline JSON API PvE-first)
+
+- Tras #59, se corrigio el diagnostico: el problema no es tarkov.dev completo, sino el endpoint GraphQL legacy `https://api.tarkov.dev/graphql`; `json.tarkov.dev` es la fuente estructurada recomendada.
+- Arquitectura de fuentes acordada: Fandom/Wiki como autoridad funcional/editorial; `json.tarkov.dev` como autoridad estructurada para IDs, tasks, objectives/maps, traders/items/hideout; GraphQL no debe alimentar `src/data/*`.
+- El orden de implementacion cambia a: migrar pipeline de datos y procedencia, despues perfiles/importer PvE-first, despues Collector/Kappa, despues Trader LL/UI.
+
+### 2026-09-28 (PR #60 hardening: data adapter/provenance/validation)
+
+- En PR #60 se separo el pipeline de tasks en `scripts/data-sources/tarkovDevJson.ts`, `scripts/data-normalizers/tasks.ts` y `scripts/fetchTasks.ts` como orquestador.
+- La provenance por task solo atribuye `json.tarkov.dev`; Fandom queda como `primarySemanticSource` hasta que un adapter wiki lea/verifique campos concretos.
+- Se renombro `traderLoyaltyLevel` a `requiredTraderLoyaltyLevel` para no confundir requisitos LL estructurados con unlock pools LL del rework 1.1.
+- Se anadio validacion no-overwrite antes de escribir `src/data/tasks.json` y tests offline `npm run test:data-pipeline`.
+- La comprobacion de los 17 IDs desconocidos del discovery resolvio 10/17 contra el catalogo PvE JSON; 7 quedaron `absent-upstream`.

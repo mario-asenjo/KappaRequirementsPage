@@ -14,7 +14,7 @@ Tarkov ya no es un flujo unico de wipe global -> quest checklist fija -> Kappa. 
 
 La wiki confirma que las Seasonal Characters son independientes de PvP Zone y PvE Zone, que Battle Pass progresa entre modos, que algunas recompensas estacionales se vuelven disponibles en todos los modos, y que las side tasks se reordenaron por Trader Loyalty Level.
 
-Conclusion Ponytail: no toca reescribir la app entera primero. El primer corte que aguanta es cambiar el modelo de datos y progreso para soportar `gameMode`, `profileId`, `traderLoyaltyLevel` y `objectiveMaps`; despues la UI se vuelve una vista por perfil/modo usando el mismo tracker.
+Conclusion Ponytail: no toca reescribir la app entera primero. El primer corte que aguanta es cambiar el modelo de datos y progreso para soportar `gameMode`, `profileId`, `requiredTraderLoyaltyLevel` y `objectiveMaps`; despues la UI se vuelve una vista por perfil/modo usando el mismo tracker.
 
 ## Fuentes consultadas
 
@@ -22,7 +22,14 @@ Conclusion Ponytail: no toca reescribir la app entera primero. El primer corte q
 - Pagina principal Fandom: https://escapefromtarkov.fandom.com/wiki/Wiki
 - Datos locales del repo: `src/data/tasks.json`, scripts `fetchTasks`, `buildGoals`, `buildQuestTree`, `tools/eft-log-importer`.
 - Logs reales: `C:\Users\masen\Desktop\EFTINSTALLFOLDER\EscapeFromTarkov\Logs`.
-- tarkov.dev GraphQL: actualmente responde `422 {"errors":["GraphQL server unavailable. Try again later."]}`; el script `npm run update:tasks` falla por esa causa.
+- tarkov.dev GraphQL legacy responde `422 {"errors":["GraphQL server unavailable. Try again later."]}` desde julio de 2026; la ruta recomendada para datos estructurados es `https://json.tarkov.dev`.
+
+## Modelo de fuentes recomendado
+
+- Fandom / Official Escape from Tarkov Wiki: autoridad funcional/editorial para reglas, requisitos, cambios, excepciones, Kappa/Collector y significado de perfiles/modos.
+- `json.tarkov.dev`: autoridad estructurada/de soporte para IDs, nombres normalizados, traders, objectives, objective maps, rewards, items, barters, hideout y relaciones serializables.
+- GraphQL tarkov.dev: legacy/maintenance; no debe alimentar `src/data/*`.
+
 
 ## Cambios funcionales detectados en Tarkov
 
@@ -63,7 +70,7 @@ Fandom `Changelog` 1.1.0:
 
 Impacto:
 
-- `Task` necesita `traderLoyaltyLevel?: number`, `unlockGroup?: string|number`, `unlockKind?: 'loyalty-pool'|'chain'|'event'|'unknown'`.
+- `Task` necesita `requiredTraderLoyaltyLevel?: number` para requisitos estructurados; `traderLoyaltyLevel`, `unlockGroup` y `unlockKind` quedan reservados para unlock pools verificados por Wiki/Fandom u otra evidencia suficiente.
 - El arbol actual por prerequisitos sigue sirviendo para cadenas, pero no modela pools por LL. La nueva UX debe ser tablero por trader+LL, no solo grafo.
 - Filtros actuales por nivel/prerequisito dan falsos negativos/positivos porque faltan grupos de LL.
 
@@ -93,7 +100,7 @@ El repo actual guarda `location: t.map?.name`, una sola location por task. Eso p
 
 Impacto:
 
-- Hay que consumir `objectives.maps` cuando tarkov.dev vuelva, y/o enriquecer desde Fandom.
+- Hay que consumir `objectives.maps` desde `json.tarkov.dev` y enriquecer reglas/excepciones desde Fandom.
 - Nueva forma minima: `objectiveMaps: string[]` y `objectives: { description, maps }[]` en vez de solo `string[]`.
 - Raid planner y mapas deben usar objective-level maps, no task-level map.
 
@@ -106,7 +113,7 @@ Impacto:
 
 Scripts afectados:
 
-- `scripts/fetchTasks.ts` falla porque `https://api.tarkov.dev/graphql` esta caido/indisponible ahora mismo.
+- `scripts/fetchTasks.ts` dependia del endpoint GraphQL legacy `https://api.tarkov.dev/graphql`; debe migrar a `json.tarkov.dev`.
 - `fetchTasks` no pide fields para profile/mode/LL/objective maps.
 - `buildGoals` deriva Kappa desde `countsForKappa`; queda obsoleto como goal principal.
 - `buildQuestTree` agrupa por prerequisitos, no por Trader LL.
@@ -166,9 +173,9 @@ Impacto para importer:
 ### Phase 0 - Discovery cerrado y datos desbloqueados
 
 1. Documentar hallazgos y crear issues. Hecho en este branch.
-2. Arreglar/rodear indisponibilidad de tarkov.dev GraphQL.
-3. Comparar IDs desconocidos de logs contra Fandom/tarkov.dev cuando vuelva.
-4. Decidir fuente primaria/fallback: tarkov.dev si disponible; Fandom MediaWiki para fields nuevos y emergencia.
+2. Migrar el pipeline de datos a `json.tarkov.dev` para estructura y mantener Fandom como autoridad funcional/editorial.
+3. Comparar IDs desconocidos de logs contra Fandom y `json.tarkov.dev`.
+4. Persistir procedencia por campo/fuente en la capa normalizada.
 
 ### Phase 1 - Modelo por perfil/modo
 
@@ -188,7 +195,7 @@ Impacto para importer:
 
 ### Phase 3 - Datos de misiones modernos
 
-- Ampliar `Task` con objective-level maps, trader LL y unlockKind.
+- Ampliar `Task` con objective-level maps y `requiredTraderLoyaltyLevel`; reservar unlockKind/unlockGroup para datos semanticamente verificados.
 - Regenerar `tasks.json` cuando API vuelva o crear fallback Fandom.
 - Cambiar `buildGoals`: Kappa actual como goal compuesto, no como lista antigua de Kappa tasks.
 - Marcar data confidence: `verified`, `stale`, `fallback-wiki`, `unknown`.
@@ -203,7 +210,7 @@ Impacto para importer:
 
 ## Riesgos / bloqueadores
 
-- `tarkov.dev` esta caido ahora mismo para GraphQL. No se debe inventar sync verde.
+- GraphQL de tarkov.dev es legacy/maintenance y no debe volver a ser la fuente primaria; `json.tarkov.dev` es el camino estructurado recomendado.
 - Fandom no siempre expone estructura machine-readable para LL/unlock groups; puede requerir parser MediaWiki por pagina.
 - Logs contienen profile IDs/account-like values; cualquier fixture debe redactar o sintetizar.
 - Los conteos de logs no son foto completa del perfil; solo eventos retenidos.
