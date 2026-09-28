@@ -65,8 +65,11 @@ export interface Goal {
   source: 'tarkov.dev' | 'wiki' | 'derived';
 }
 
-export interface UserProgress {
-  version: 1;
+export type GameMode = 'pvp' | 'pve' | 'seasonal-pvp';
+
+export interface ProfileProgress {
+  mode: GameMode;
+  profileId?: string;
   playerLevel: number;
   completedTaskIds: string[];
   startedTaskIds: string[];
@@ -74,6 +77,12 @@ export interface UserProgress {
   manualAchievementProgress: Record<string, boolean>;
   selectedGoalId: string;
   lastImport?: ProgressImportSummary;
+}
+
+export interface UserProgress {
+  version: 2;
+  activeProfileKey: string;
+  profiles: Record<string, ProfileProgress>;
 }
 
 export interface ProgressImportSummary {
@@ -85,6 +94,7 @@ export interface ProgressImportSummary {
   unknownTaskCount: number;
   warningCount: number;
   failedMarkedCompletedCount?: number;
+  mode?: GameMode;
 }
 
 export type ProgressImportEvent = 'completed' | 'started' | 'failed' | 'unknown';
@@ -105,16 +115,16 @@ export interface ProgressImportUnmatchedTemplate {
 }
 
 export interface ProgressImportFile {
-  schemaVersion: 1;
+  schemaVersion: 1 | 2;
   source: 'eft-local-logs' | string;
   generatedAt: string;
-  profile?: {
-    profileId?: string;
-    mode?: string;
-  };
+  profile?: { profileId?: string; mode?: GameMode };
+  clientVersion?: string;
+  logVersionRange?: { oldest?: string; newest?: string };
   completedTaskIds: string[];
   startedTaskIds?: string[];
   failedTaskIds?: string[];
+  unknownTaskIds?: string[];
   rawMatches?: ProgressImportRawMatch[];
   unmatchedTemplateIds?: ProgressImportUnmatchedTemplate[];
   warnings?: string[];

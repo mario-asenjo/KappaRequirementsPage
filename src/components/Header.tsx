@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import useProgress from '../hooks/useProgress';
 import { Goal, Task } from '../types';
+import { gameModes } from '../utils/progress';
 
 interface HeaderProps {
   tasks: Task[];
@@ -23,7 +24,7 @@ interface HeaderProps {
  * journey.
  */
 const Header: React.FC<HeaderProps> = ({ tasks, goals, activeGoal, goalProgress, onGoalChange }) => {
-  const { completedTaskIds } = useProgress();
+  const { completedTaskIds, progress, selectProfile } = useProgress();
 
   const completedTasks = tasks.filter((task) => completedTaskIds.includes(task.id)).length;
   const progressPercent = goalProgress.percent;
@@ -46,6 +47,12 @@ const Header: React.FC<HeaderProps> = ({ tasks, goals, activeGoal, goalProgress,
         </NavLink>
         <a href="https://github.com/mario-asenjo/KappaRequirementsPage" target="_blank" rel="noreferrer">Star GitHub</a>
       </nav>
+      <label className="goal-selector">
+        <span>Perfil</span>
+        <select value={progress.mode} onChange={(event) => selectProfile(event.target.value as typeof progress.mode)}>
+          {gameModes.map((mode) => <option key={mode.id} value={mode.id}>{mode.label}</option>)}
+        </select>
+      </label>
       <label className="goal-selector">
         <span>Objetivo</span>
         <select value={activeGoal?.id ?? ''} onChange={(event) => onGoalChange(event.target.value)}>

@@ -142,7 +142,7 @@ El modelo de progreso nuevo se guarda en `localStorage` bajo `userProgress`, per
 
 ## Importar progreso desde logs
 
-La ruta `/import` acepta archivos JSON con `schemaVersion: 1`, `source`, `generatedAt` y al menos uno de `completedTaskIds` o `failedTaskIds`. El importador valida los IDs contra `src/data/tasks.json`, muestra un preview y solo aplica completadas cuando el usuario confirma. Las tareas detectadas en `failedTaskIds` se tratan como terminadas automáticamente porque Tarkov ya no permite completarlas después de elegir la ruta alternativa.
+La ruta `/import` acepta archivos JSON con `schemaVersion: 1` (compatibilidad) o `schemaVersion: 2` (perfil/modo/version), `source`, `generatedAt` y al menos uno de `completedTaskIds` o `failedTaskIds`. El importador valida los IDs contra `src/data/tasks.json`, muestra modo/version y avisa si el snapshot pertenece a otro modo antes de aplicar completadas cuando el usuario confirma. Las tareas detectadas en `failedTaskIds` se tratan como terminadas automáticamente porque Tarkov ya no permite completarlas después de elegir la ruta alternativa.
 
 La importacion une el progreso detectado con el progreso local existente y autocompleta prerequisitos reales usando el catalogo completo. No borra misiones ya marcadas ni aplica IDs desconocidos.
 

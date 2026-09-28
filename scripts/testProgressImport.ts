@@ -53,3 +53,7 @@ assert.throws(
 );
 
 console.log('Progress import tests passed');
+
+const v2 = parseProgressImportJson(JSON.stringify({ schemaVersion: 2, source: 'eft-local-logs', generatedAt: '2026-09-28T00:00:00Z', profile: { mode: 'seasonal-pvp', profileId: 'profile-season' }, clientVersion: '1.1.0.0', completedTaskIds: ['done'], unknownTaskIds: ['unknown-v2'] }));
+assert.equal(v2.profile?.mode, 'seasonal-pvp', 'v2 imports retain detected game mode');
+assert.deepEqual(v2.unknownTaskIds, ['unknown-v2'], 'v2 imports retain aggregated unknown IDs');

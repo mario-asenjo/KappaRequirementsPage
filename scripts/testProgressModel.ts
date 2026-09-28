@@ -23,11 +23,12 @@ const progress = normalizeUserProgress({
   completedAchievementIds: ['achievement-a'],
 });
 
-assert.equal(progress.playerLevel, 79, 'player level should be clamped to max level');
-assert.deepEqual(progress.completedTaskIds, ['a'], 'completed task ids should be unique');
-assert.deepEqual(progress.startedTaskIds, ['b'], 'started task ids should be unique');
+const active = progress.profiles[progress.activeProfileKey];
+assert.equal(active.playerLevel, 79, 'player level should be clamped to max level');
+assert.deepEqual(active.completedTaskIds, ['a'], 'completed task ids should be unique');
+assert.deepEqual(active.startedTaskIds, ['b'], 'started task ids should be unique');
 
-const goalProgress = getGoalProgress(goal, progress, tasks);
+const goalProgress = getGoalProgress(goal, active, tasks);
 assert.equal(goalProgress.completed, 2, 'goal should count completed task and achievement');
 assert.equal(goalProgress.total, 3, 'goal should include tasks and achievements');
 assert.equal(goalProgress.percent, 67, 'goal percent should be rounded');
@@ -51,3 +52,7 @@ assert.deepEqual(
 );
 
 console.log('Progress model tests passed');
+
+const separated = normalizeUserProgress({ version: 2, activeProfileKey: 'pvp:one', profiles: { 'pve:default': { ...active, mode: 'pve', completedTaskIds: ['a'] }, 'pvp:one': { ...active, mode: 'pvp', completedTaskIds: ['b'] } } });
+assert.deepEqual(separated.profiles['pve:default'].completedTaskIds, ['a'], 'profiles keep isolated completed tasks');
+assert.deepEqual(separated.profiles['pvp:one'].completedTaskIds, ['b'], 'active PvP profile does not leak PvE tasks');

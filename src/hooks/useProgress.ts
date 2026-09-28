@@ -1,103 +1,30 @@
 import { useEffect, useMemo } from 'react';
 import type { Dispatch, SetStateAction } from 'react';
 import useLocalStorage from './useLocalStorage';
-import { UserProgress } from '../types';
-import { defaultUserProgress, normalizeUserProgress } from '../utils/progress';
+import { GameMode, ProfileProgress, UserProgress } from '../types';
+import { defaultProfileProgress, defaultUserProgress, normalizeUserProgress, profileKey } from '../utils/progress';
 
 export default function useProgress() {
   const [legacyCompletedTaskIds, setLegacyCompletedTaskIds] = useLocalStorage<string[]>('completedTasks', []);
   const [legacyPlayerLevel, setLegacyPlayerLevel] = useLocalStorage<number>('playerLevel', 1);
-  const [storedProgress, setStoredProgress] = useLocalStorage<UserProgress>('userProgress', defaultUserProgress);
+  const [storedProgress, setStoredProgress] = useLocalStorage<UserProgress | Partial<ProfileProgress>>('userProgress', defaultUserProgress);
   const hasStoredProgress = typeof window !== 'undefined' && window.localStorage.getItem('userProgress') !== null;
-  const progress = useMemo(() => normalizeUserProgress({
-    ...storedProgress,
-    completedTaskIds: hasStoredProgress ? storedProgress.completedTaskIds : legacyCompletedTaskIds,
-    playerLevel: hasStoredProgress ? storedProgress.playerLevel : storedProgress.playerLevel || legacyPlayerLevel,
-  }), [hasStoredProgress, legacyCompletedTaskIds, legacyPlayerLevel, storedProgress]);
+  const state = useMemo(() => normalizeUserProgress((hasStoredProgress ? storedProgress : { completedTaskIds: legacyCompletedTaskIds, playerLevel: legacyPlayerLevel }) as unknown as UserProgress), [hasStoredProgress, legacyCompletedTaskIds, legacyPlayerLevel, storedProgress]);
+  const progress = state.profiles[state.activeProfileKey] ?? defaultProfileProgress;
 
-  useEffect(() => {
-    const normalizedStoredProgress = normalizeUserProgress(storedProgress);
-    if (JSON.stringify(normalizedStoredProgress) !== JSON.stringify(progress)) {
-      setStoredProgress(progress);
-    }
-  }, [progress, setStoredProgress, storedProgress]);
+  useEffect(() => { if (JSON.stringify(storedProgress) !== JSON.stringify(state)) setStoredProgress(state); }, [state, setStoredProgress, storedProgress]);
+  useEffect(() => { if (legacyCompletedTaskIds.join('|') !== progress.completedTaskIds.join('|')) setLegacyCompletedTaskIds(progress.completedTaskIds); }, [legacyCompletedTaskIds, progress.completedTaskIds, setLegacyCompletedTaskIds]);
+  useEffect(() => { if (legacyPlayerLevel !== progress.playerLevel) setLegacyPlayerLevel(progress.playerLevel); }, [legacyPlayerLevel, progress.playerLevel, setLegacyPlayerLevel]);
 
-  useEffect(() => {
-    if (legacyCompletedTaskIds.join('|') !== progress.completedTaskIds.join('|')) {
-      setLegacyCompletedTaskIds(progress.completedTaskIds);
-    }
-  }, [legacyCompletedTaskIds, progress.completedTaskIds, setLegacyCompletedTaskIds]);
-
-  useEffect(() => {
-    if (legacyPlayerLevel !== progress.playerLevel) {
-      setLegacyPlayerLevel(progress.playerLevel);
-    }
-  }, [legacyPlayerLevel, progress.playerLevel, setLegacyPlayerLevel]);
-
-  const setProgress: Dispatch<SetStateAction<UserProgress>> = (value) => {
-    setStoredProgress((current) => normalizeUserProgress(
-      value instanceof Function ? value(normalizeUserProgress(current)) : value
-    ));
-  };
-
-  const setCompletedTaskIds: Dispatch<SetStateAction<string[]>> = (value) => {
-    setProgress((current) => ({
-      ...current,
-      completedTaskIds: value instanceof Function ? value(current.completedTaskIds) : value,
-    }));
-  };
-
-  const setStartedTaskIds: Dispatch<SetStateAction<string[]>> = (value) => {
-    setProgress((current) => ({
-      ...current,
-      startedTaskIds: value instanceof Function ? value(current.startedTaskIds) : value,
-    }));
-  };
-
-  const setPlayerLevel: Dispatch<SetStateAction<number>> = (value) => {
-    setProgress((current) => ({
-      ...current,
-      playerLevel: value instanceof Function ? value(current.playerLevel) : value,
-    }));
-  };
-
-  const setCompletedAchievementIds: Dispatch<SetStateAction<string[]>> = (value) => {
-    setProgress((current) => ({
-      ...current,
-      completedAchievementIds: value instanceof Function ? value(current.completedAchievementIds) : value,
-    }));
-  };
-
-  const setManualAchievementProgress = (achievementId: string, completed: boolean) => {
-    setProgress((current) => ({
-      ...current,
-      manualAchievementProgress: {
-        ...current.manualAchievementProgress,
-        [achievementId]: completed,
-      },
-    }));
-  };
-
-  const resetProgress = () => {
-    const resetValue = normalizeUserProgress(defaultUserProgress);
-    setStoredProgress(resetValue);
-    setLegacyCompletedTaskIds([]);
-    setLegacyPlayerLevel(resetValue.playerLevel);
-  };
-
-  return {
-    progress,
-    setProgress,
-    resetProgress,
-    completedTaskIds: progress.completedTaskIds,
-    setCompletedTaskIds,
-    startedTaskIds: progress.startedTaskIds,
-    setStartedTaskIds,
-    playerLevel: progress.playerLevel,
-    setPlayerLevel,
-    completedAchievementIds: progress.completedAchievementIds,
-    setCompletedAchievementIds,
-    manualAchievementProgress: progress.manualAchievementProgress,
-    setManualAchievementProgress,
-  };
+  const setProgress: Dispatch<SetStateAction<ProfileProgress>> = (value) => setStoredProgress((current) => {
+    const normalized = normalizeUserProgress(current as UserProgress); const active = normalized.profiles[normalized.activeProfileKey];
+    return { ...normalized, profiles: { ...normalized.profiles, [normalized.activeProfileKey]: value instanceof Function ? value(active) : value } };
+  });
+  const selectProfile = (mode: GameMode, profileId?: string) => setStoredProgress((current) => {
+    const normalized = normalizeUserProgress(current as UserProgress); const key = profileKey(mode, profileId);
+    return { ...normalized, activeProfileKey: key, profiles: { ...normalized.profiles, [key]: normalized.profiles[key] ?? { ...defaultProfileProgress, mode, profileId } } };
+  });
+  const resetProgress = () => { setStoredProgress(defaultUserProgress); setLegacyCompletedTaskIds([]); setLegacyPlayerLevel(1); };
+  const update = <T,>(field: keyof ProfileProgress, value: SetStateAction<T>) => setProgress((current) => ({ ...current, [field]: value instanceof Function ? value(current[field] as T) : value }));
+  return { progress, state, setProgress, resetProgress, selectProfile, activeProfileKey: state.activeProfileKey, completedTaskIds: progress.completedTaskIds, setCompletedTaskIds: (value: SetStateAction<string[]>) => update('completedTaskIds', value), startedTaskIds: progress.startedTaskIds, setStartedTaskIds: (value: SetStateAction<string[]>) => update('startedTaskIds', value), playerLevel: progress.playerLevel, setPlayerLevel: (value: SetStateAction<number>) => update('playerLevel', value), completedAchievementIds: progress.completedAchievementIds, setCompletedAchievementIds: (value: SetStateAction<string[]>) => update('completedAchievementIds', value), manualAchievementProgress: progress.manualAchievementProgress, setManualAchievementProgress: (id: string, completed: boolean) => setProgress((current) => ({ ...current, manualAchievementProgress: { ...current.manualAchievementProgress, [id]: completed } })) };
 }
