@@ -17,6 +17,7 @@
     "test:progress": "tsx scripts/testProgressModel.ts",
     "test:import": "tsx scripts/testProgressImport.ts",
     "test:extractor": "tsx scripts/testEftLogImporter.ts",
+    "test:extractor-v2": "tsx scripts/testExtractorV2.ts",
     "test:log-sessions": "tsx scripts/testLogSessions.ts",
     "test:extractor-download": "npm run build:extractor-download && node public/downloads/eft-log-importer.mjs --help && node -e \"const fs=require('fs'); const zip=fs.readFileSync('public/downloads/eft-log-importer.zip'); if(!zip.includes(Buffer.from('run-windows.bat')) || !zip.includes(Buffer.from('run-linux.sh')) || !zip.includes(Buffer.from('README.txt'))) process.exit(1);\"",
     "test:data-pipeline": "tsx scripts/testDataPipeline.ts",
@@ -37,6 +38,7 @@
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
     "@vitejs/plugin-react": "^4.0.0",
+    "esbuild": "^0.18.20",
     "tsx": "^4.22.0",
     "typescript": "^5.0.2",
     "vite": "^4.2.0"

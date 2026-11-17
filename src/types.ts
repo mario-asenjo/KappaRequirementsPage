@@ -191,6 +191,9 @@ export interface ProgressImportSummary {
   unknownTaskCount: number;
   warningCount: number;
   failedMarkedCompletedCount?: number;
+  /** Profile chosen from an extractor 2.0 file */
+  profileKey?: string;
+  mode?: ProgressImportMode;
 }
 
 export type ProgressImportEvent = 'completed' | 'started' | 'failed' | 'unknown';
@@ -224,4 +227,41 @@ export interface ProgressImportFile {
   rawMatches?: ProgressImportRawMatch[];
   unmatchedTemplateIds?: ProgressImportUnmatchedTemplate[];
   warnings?: string[];
+}
+
+export type ProgressImportMode = 'pve' | 'pvp' | 'seasonal-pvp' | 'unknown';
+
+export interface ProgressImportUnknownTask {
+  id: string;
+  event: 'completed' | 'started' | 'failed';
+  /** other-mode: exists only in another mode's catalog; removed: tombstoned; unresolved: not in any catalog */
+  classification: 'other-mode' | 'removed' | 'unresolved';
+}
+
+export interface ProgressImportProfile {
+  /** `<mode>:<sha256-8 of the profile id>`; the real id never leaves the user's machine */
+  profileKey: string;
+  mode: ProgressImportMode;
+  modeConfidence: 'high' | 'low' | 'unknown';
+  versionRange: { oldest?: string; newest?: string };
+  sessionCount: number;
+  firstSeen?: string;
+  lastSeen?: string;
+  completedTaskIds: string[];
+  startedTaskIds: string[];
+  failedTaskIds: string[];
+  unknownTasks: ProgressImportUnknownTask[];
+}
+
+/** Extractor 2.0 output: one block per profile detected in the logs (#73). */
+export interface ProgressImportFileV2 {
+  schemaVersion: 2;
+  source: 'eft-local-logs' | string;
+  generatedAt: string;
+  extractorVersion: string;
+  since: string;
+  catalog: { pveSyncedAt?: string; pvpSyncedAt?: string };
+  sessionCount: number;
+  profiles: ProgressImportProfile[];
+  warnings: string[];
 }

@@ -1,5 +1,7 @@
 # EFT Log Importer
 
+> **Version 2.0** (#73): genera `schemaVersion: 2` con un bloque por perfil detectado (PvE, PvP, PvP Season). Solo lee sesiones desde la 1.2 (`--since` para cambiarlo), asigna cada evento al perfil seleccionado en ese momento y nunca guarda IDs de cuenta o perfil (usa un hash corto). En `/import` eliges que perfil aplicar; PvE viene preseleccionado. `--schema 1` mantiene el formato antiguo en el CLI del repo.
+
 Herramienta local de solo lectura para generar un JSON importable por la ruta `/import` de Kappa Progress Tracker.
 
 ## Requisitos

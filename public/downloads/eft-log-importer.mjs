@@ -1,200 +1,4118 @@
 #!/usr/bin/env node
-import { access, mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
-import { homedir, platform } from 'node:os';
-import { basename, dirname, join, relative, resolve } from 'node:path';
+// Generado por scripts/buildExtractorDownload.ts - no editar a mano.
 
-const TASK_IDS = new Set(["5936d90786f7742b1420ba5b","5936da9e86f7742d65037edf","59674cd986f7744ab26e32f2","59674eb386f774539f14813a","5967530a86f77462ba22226b","59675d6c86f7740a842fc482","59675ea386f77414b32bded2","596760e186f7741e11214d58","5967725e86f774601a446662","5967733e86f774602332fc84","59689ee586f7740d1570bbd5","59689fbd86f7740d137ebfc4","5968eb3186f7741dde183a4d","5969f90786f77420d2328015","5969f9e986f7741dde183a50","596a0e1686f7741ddf17dbee","596a101f86f7741ddb481582","596a1e6c86f7741ddc2d3206","596a204686f774576d4c95de","596a218586f77420d232807c","596b36c586f77450d6045ad2","596b43fb86f77457ca186186","596b455186f77457cb50eccb","5979ed3886f77431307dc512","5979eee086f774311955e614","5979f8bb86f7743ec214c7a6","5979f9ba86f7740f6c3fe9f2","597a0b2986f77426d66c0633","597a0e5786f77426d66c0636","597a0f5686f774273b74f676","597a160786f77477531d39d2","597a171586f77405ba6887d3","59c124d686f774189b3c843f","59c50a9e86f7745fef66f4ff","59c50c8886f7745fed3193bf","59c512ad86f7741f0d09de9b","59c9392986f7742f6923add2","59c93e8e86f7742a406989c4","59ca1a6286f774509a270942","59ca264786f77445a80ed044","59ca29fb86f77445ab465c87","59ca2eb686f77445a80ed049","5a03153686f77442d90e2171","5a03173786f77451cb427172","5a0327ba86f77456b9154236","5a03296886f774569778596a","5a0449d586f77474e66227b7","5a27b75b86f7742e97191958","5a27b7a786f774579c3eb376","5a27b7d686f77460d847e6a6","5a27b80086f774429a5d7e20","5a27b87686f77460de0252a8","5a27b9de86f77464e5044585","5a27ba1c86f77461ea5a3c56","5a27ba9586f7741b543d8e85","5a27bafb86f7741c73584017","5a27bb1e86f7741f27621b7e","5a27bb3d86f77411ea361a21","5a27bb5986f7741dfb660900","5a27bb8386f7741c770d2d0a","5a27bbf886f774333a418eeb","5a27bc1586f7741f6d40fa2f","5a27bc3686f7741c73584026","5a27bc6986f7741c7358402b","5a27bc8586f7741b543d8ea4","5a27c99a86f7747d2c6bdd8e","5a27d2af86f7744e1115b323","5a68661a86f774500f48afb0","5a68663e86f774501078f78a","5a68665c86f774255929b4c7","5a68667486f7742607157d28","5a68669a86f774255929b4d4","5ac23c6186f7741247042bad","5ac2426c86f774138762edfe","5ac2428686f77412450b42bf","5ac242ab86f77412464f68b4","5ac244c486f77413e12cf945","5ac244eb86f7741356335af1","5ac345dc86f774288030817f","5ac3460c86f7742880308185","5ac3462b86f7741d6118b983","5ac3464c86f7741d651d6877","5ac3467986f7741d6224abc2","5ac346a886f7744e1b083d67","5ac346cf86f7741d63233a02","5ac346e886f7741d6118b99b","5ac3475486f7741d6224abd3","5ac3477486f7741d651d6885","5ac3479086f7742880308199","5ae3267986f7742a413592fe","5ae3270f86f77445ba41d4dd","5ae3277186f7745973054106","5ae327c886f7745c7b3f2f3f","5ae3280386f7742a41359364","5ae448a386f7744d3730fff0","5ae448bf86f7744d733e55ee","5ae448e586f7744dcf0c2a67","5ae448f286f77448d73c0131","5ae4490786f7744ca822adcc","5ae4493486f7744efa289417","5ae4493d86f7744b8e15aa8f","5ae4495086f77443c122bc40","5ae4495c86f7744e87761355","5ae4496986f774459e77beb6","5ae4497b86f7744cf402ed00","5ae4498786f7744bde357695","5ae4499a86f77449783815db","5ae449a586f7744bde357696","5ae449b386f77446d8741719","5ae449c386f7744bde357697","5ae449d986f774453a54a7e1","5b47749f86f7746c5d6a5fd4","5b47799d86f7746c5d6a5fd8","5b477b6f86f7747290681823","5b477f7686f7744d1b23c4d2","5b47825886f77468074618d3","5b47876e86f7744d1c353205","5b47891f86f7744d1b23c571","5b478b1886f7744d1b23c57d","5b478d0f86f7744d190d91b5","5b478eca86f7744642012254","5b478ff486f7744d184ecbbf","5b47926a86f7747ccc057c15","5b4794cb86f774598100d5d4","5b4795fb86f7745876267770","5bc4776586f774512d07cf05","5bc479e586f7747f376c7da3","5bc47dbf86f7741ee74e93b9","5bc480a686f7741af0342e29","5bc4826c86f774106d22d88b","5bc4836986f7740c0152911c","5bc4856986f77454c317bea7","5bc4893c86f774626f5ebf3e","5c0bbaa886f7746941031d82","5c0bc91486f7746ab41857a2","5c0bd01e86f7747cdd799e56","5c0bd94186f7747a727f09b2","5c0bdb5286f774166e38eed4","5c0bde0986f77479cf22c2f8","5c0be13186f7746f016734aa","5c0be5fc86f774467a116593","5c0d0d5086f774363760aef2","5c0d0f1886f77457b8210226","5c0d190cd09282029f5390d8","5c0d1c4cd0928202a02a6f5c","5c0d4c12d09282029f539173","5c0d4e61d09282029f53920e","5c10f94386f774227172c572","5c1128e386f7746565181106","5c112d7e86f7740d6f647486","5c1141f386f77430ff393792","5c1234c286f77406fa13baeb","5c12452c86f7744b83469073","5c139eb686f7747878361a6f","5c51aac186f77432ea65c552","5d2495a886f77425cd51e403","5d24b81486f77439c92d6ba8","5d25aed386f77442734d25d2","5d25b6be86f77444001e1b89","5d25bfd086f77442734d3007","5d25c81b86f77443e625dd71","5d25cf2686f77443e75488d4","5d25d2c186f77443e35162e5","5d25e29d86f7740a22516326","5d25e2a986f77409dd5cdf2a","5d25e2b486f77409de05bba0","5d25e2c386f77443e7549029","5d25e2cc86f77443e47ae019","5d25e2d886f77442734d335e","5d25e2e286f77444001e2e48","5d25e2ee86f77443e35162ea","5d25e43786f7740a212217fa","5d25e44386f77409453bce7b","5d25e44f86f77443e625e385","5d25e45e86f77408251c4bfa","5d25e46e86f77409453bce7c","5d25e48186f77443e625e386","5d25e48d86f77408251c4bfb","5d25e4ad86f77443e625e387","5d25e4b786f77408251c4bfc","5d25e4ca86f77409dd5cdf2c","5d25e4d586f77443e625e388","5d4bec3486f7743cac246665","5d6fb2c086f77449da599c24","5d6fbc2886f77449d825f9d3","5e381b0286f77420e3417a74","5e383a6386f77465910ce1f3","5e4d4ac186f774264f758336","5e4d515e86f77438b2195244","5eaaaa7c93afa0558f3b5a1c","5eda19f0edce541157209cee","5edab4b1218d181e29451435","5edab736cc183c769d778bc2","5edaba7c0c502106f869bc02","5edabd13218d181e29451442","5edac020218d181e29451446","5edac34d0bb72a50635c2bfa","5edac63b930f5454f51e128b","5ede55112c95834b583f052a","5ede567cfa6dc072ce15d6e3","5f04886a3937dc337a6b8238","5fd9fad9c1ce6b1a3b486d00","600302d73b897b11364cd161","6086c852c945025d41566124","60896888e4a85c72ef3fa300","60896b7bfa70fc097863b8f5","60896bca6ee58f38c417d4f2","60896e28e4a85c72ef3fa301","6089732b59b92115597ad789","6089736efa70fc097863b8f6","6089743983426423753cd58a","608974af4b05530f55550c21","608974d01a66564e74191fc0","608a768d82e40b3c727fd17d","60c0c018f7afb4354815096a","60e71b62a0beca400d69efc4","60e71b9bbd90872cb85440f3","60e71bb4e456d449cd47ca75","60e71c11d54b755a3b53eb65","60e71c48c1bfa3050473b8e5","60e71c9ad54b755a3b53eb66","60e71ccb5688f6424c7bfec4","60e71ce009d7c801eb0c0ec6","60e71d23c1bfa3050473b8e6","60e71d6d7fcf9c556f325055","60e71dc0a94be721b065bbfc","60e71dc67fcf9c556f325056","60e71e8ed54b755a3b53eb67","60e729cf5698ee7b05057439","60effd818b669d08a35bfad5","6179ac7511973d018217d0b9","6179acbdc760af5ad2053585","6179ad0a6e9dd54ac275e3f2","6179ad56c760af5ad2053587","6179afd0bca27a099552e040","6179aff8f57fb279792c60a1","6179b3a12153c15e937d52bc","6179b3bdc7560e13d23eeb8d","6179b4d1bca27a099552e04e","6179b4f16e9dd54ac275e407","6179b5b06e9dd54ac275e409","6179b5eabca27a099552e052","61904daa7d0d857927447b9c","6193850f60b34236ee0483de","61958c366726521dd96828ec","61e6e5e0f5b9633f6719ed95","61e6e60223374d168a4576a6","61e6e60c5ca3b3783662be27","61e6e615eea2935bc018a2c5","61e6e621bfeab00251576265","626bd75b05f287031503c7f6","626bd75c71bd851e971b82a5","626bd75d5bef5d7d590bd415","626bd75e47ea7f506e5493c5","626bdcc3a371ee3a7a3514c5","638fcd23dc65553116701d33","639135534b15ca31f76bc317","6391359b9444fb141f4e6ee6","639135a7e705511c8a4a1b78","639135b04ed9512be67647d7","639135bbc115f907b14700a6","639135c3744e452011470807","639135cd8ba6894d155e77cb","639135d89444fb141f4e6eea","639135e0fa894f0a866afde6","639135e8c115f907b14700aa","639135f286e646067c176a87","639136d68ba6894d155e77cf","639136df4b15ca31f76bc31f","639136e84ed9512be67647db","639136f086e646067c176a8b","639136fa9444fb141f4e6eee","63913715f8e5dd32bf4e3aaa","6391372c8ba6894d155e77d7","639282134ed9512be67647ed","63966faeea19ac7ed845db2c","63966fbeea19ac7ed845db2e","63966fccac6f8f3c677b9d89","63966fd9ea19ac7ed845db30","63966fe7ea74a47c2d3fc0e6","63966ff54c3ef01b6f3ffad8","639670029113f06a7c3b2377","6396700fea19ac7ed845db32","6396701b9113f06a7c3b2379","63967028c4a91c5cb76abd81","639872f9decada40426d3447","639872fa9b4fb827b200d8e5","639872fc93ae507d5858c3a6","639872fe8871e1272b10ccf6","639873003693c63d86328f25","63987301e11ec11ff5504036","639dbaf17c898a131e1cffff","63a511ea30d85e10e375b045","63a5cf262964a7488f5243ce","63a88045abf76d719f42d715","63a9ae24009ffc6a551631a5","63a9b229813bba58a50c9ee5","63a9b36cc31b00242d28a99f","63ab180c87413d64ae0ac20a","64e7b971f9d6fa49d6769b44","64e7b99017ab941a6f7bf9d7","64e7b9a4aac4cd0a726562cb","64e7b9bffd30422ed03dad38","64ee99639878a0569d6ec8c9","64ee9df4496db64f9b7a4432","64f3176921045e77405d63b5","64f5aac4b63b74469b6c14c2","64f5deac39e45b527a7c4232","64f5e20652fc01298e2c61e3","64f6aafd67e11a7c6206e0d0","64f731ab83cfca080a361e42","64f83bb69878a0569d6ecfbe","64f83bcdde58fc437700d8fa","64f83bd983cfca080a362c82","6572e876dc0d635f633a5714","657315ddab5a49b71f098853","657315df034d76585f032e01","657315e1dccd301f1301416a","657315e270bb0b8dba00cc48","657315e4a6af4ab4b50f3459","65733403eefc2c312a759ddb","6573382e557ff128bf3da536","6573387d0b26ed4fde798de3","6573397ef3f8344c4575cd87","65734c186dc1e402c80dc19e","6574e0dedc0d635f633a5805","6578eb36e5020875d64645cd","6578ec473dbd035d04531a8d","658027799634223183395339","65802b627b44fa5e14638899","6613f3007f6666d56807c929","6613f307fca4f2f386029409","66151401efb0539ae10875ae","6615141bfda04449120269a7","665eeacf5d86b6c8aa03c79b","665eec1f5e47a79f8605565a","665eec4a4dfc83b0ed0a9dca","665eeca45d86b6c8aa03c79d","665eeca92f7aedcc900b0437","66631489acf8442f8b05319f","6663148ca9290f9e0806cca1","6663148ed7f171c4c20226c1","6663149196a9349baa021baa","66631493312343839d032d22","6663149cfd5ca9577902e037","6663149f1d3ec95634095e75","666314a1920800278d0f6746","666314a31cd52e3d040a2e76","666314a50aa5c7436c00908a","666314b0acf8442f8b0531a1","666314b2a9290f9e0806cca3","666314b4d7f171c4c20226c3","666314b696a9349baa021bac","666314b8312343839d032d24","666314bafd5ca9577902e03a","666314bc1d3ec95634095e77","666314bd920800278d0f6748","666314bf1cd52e3d040a2e78","666314c10aa5c7436c00908c","666314c3acf8442f8b0531a3","666314c5a9290f9e0806cca5","6672d9def1c88688a707d042","669fa38fad7f1eac2607ed46","669fa3910c828825de06d69f","669fa395c4c5c04798002497","669fa3979b0ce3feae01a130","669fa399033a3ce9870338a8","669fa39b91b0a8c9680fc467","669fa39c64ea11e84c0642a6","669fa39ee749756c920d02c8","669fa3a08b4a64b332041ff7","669fa3a3ad7f1eac2607ed48","669fa3a40c828825de06d6a1","66aa58245ab22944110db6e9","66aa61663aa37705c5024277","66aa74571e5e199ecd094f18","66ab970848ddbe9d4a0c49a8","66ab9da7eb102b9bcd08591c","66aba85403e0ee3101042877","66b38c7bf85b8bf7250f9cb6","66b38e144f2ab7cc530c3fe7","66d9cbb67b491f9d5304f6e6","671a49f77d49aea42c029b5f","671a59e43d73dac1360765cc","673f2cd5d3346c2167020484","673f348dd3346c21670217e7","673f4e956f1b89c7bc0f56ef","673f5a4976553f78350bdac1","673f6027352b4da8e00322d2","673f61a066e6a521aa04b62b","673f629c5b555b53460cf827","6740a02a69a58fceba0ff399","6740a15566e6a521aa051b15","6740a2c17e3818d5bb0648b6","6740a3f4eca8acb2d2055159","6740b60c60a98cad1b0e0aa0","674492b6909d2013670a347a","6744a4717e3818d5bb0680bb","6744a728352b4da8e003eda9","6744a9dfef61d56e020b5c4a","6744ab1def61d56e020b5c56","6744aca8d3346c216702c583","6744af0969a58fceba101fed","6745cbee909d2013670a4a55","6745fae369a58fceba10343d","6745fcded0fbbc74ca0f721d","6745fdddd3346c216702e0bf","674600a366e6a521aa05eb66","674602307e3818d5bb069489","6746053b5b555b53460d9896","674605df60a98cad1b0ec799","67460662d0fbbc74ca0f7229","6752f6d83038f7df520c83e8","675c03d1f7da9792a405549a","675c047fa46173572a0bd878","675c04f4db8807b75d0f38e8","675c085d59b0575973005f52","675c1570526ff496850895d9","675c15fbf7da9792a4059871","675c1cf4a757ddd00404f0a3","675c1d6d59b0575973008fc7","675c1ec7a46173572a0bf20a","675c1ff1a757ddd00404f0aa","675c3507a06634b5110e3c18","675c3582f6ddc329a90f9c6d","6764174c86addd02bc033d68","676529af9c90953d090882e7","67a09636b8725511260bc421","67a0964e972c11a3f507731b","67a096577e86e067eb045733","67a09673972c11a3f507731d","67a0967c003a9986cb0f5ac1","67a096ed77dd677f600804ba","67a0970744893b9f3f0d9b68","67a0970f05d1611ed90be75d","67a09724972c11a3f5077324","67a0972e77dd677f600804bd","67a097379f2068e74603c6ac","67a09761e720611a6a01f288","67af4c1405c58dc6f7056667","67af4c169d95ad16e004fd86","67af4c17f4f1fb58a907f8f6","67af4c1991ee75c6d7060a16","67af4c1a6c3ebfd8e6034916","67af4c1cc0e59d55e2010b97","67af4c1d8c9482eca103e477","67b45467814ab0ffa000c7e7","67d03be712fb5f8fd2096332","6834145ebc1f443d7603c8a7","6834158f2f0e2a7eb90b62c8","68341846186efa3c5b07f989","68341a0b2f0e2a7eb90b62d4","68341b407559f4e6d50bc0ce","68341c4babec72d95d0c1260","68341d7d7559f4e6d50bc0db","68341eb25619c8e2a9031501","68341f6fe2e7ef70a3060a0a","6834202a186efa3c5b07f9a2","683421515619c8e2a9031511","68342265a8d674b5740b31f0","6834233fecd5cf3a440d855b","68342446a8d674b5740b31fc","6834254f2f0e2a7eb90b62ef","683425dd8f5b18d29a05d9d1","683427418f5b18d29a05d9e3","6834287b7559f4e6d50bc0fa","684009026ceedc792c09b2a7","68400926706e0a55e90b0007","68400953506db3b4db0700e7","68db9c7557bc51a8c804c14b","68ee1c18b4e5bc9a68018cd7","6942b44f891369fc790e385a","697878057aa1273126030fb0","69788d4e963f08d9140bce19","6978907718bd6d7cbd0e8b8e","697895277d31587eab080266","69789660b2187365e70bb94a","69c26c07683c9831020018c7","69c27158e350f01390049e77","69c277f3ea6da9c23e07f8d2","69c2a2d004de49c8f0055a3d","69ce1cfb298a6529b30d712b","69ce1de03e15cd80bd06f6c9","69ce1f84ebbdbf36a200627c","69ce204c8702b378f9091e4b","69ce213a298a6529b30d7134","69ce21e990144e437802b1e0","69e5583240c3e6c8ba0edbd5","6a45208043b8d7604d00b8d5","6a4532e48e82d8ffea0c3eae","6a5424ae135497b9df0c68be","6a5c1578f2689567c30eb0f3","6a5ccda873f06065630d61b0","6a5cd2178fd7c2b201032f3f","6a7ae35b2dbf91eb050af95a","6a7aef2360157cb5e3029a5f","6a7af2e48fddc3979d0510b8","6a7b0df31ea00c9a980e2742","6a959d33b9b22567ed0d0a4e"]);
-const DEFAULT_OUTPUT = 'kappa-progress-import.json';
-const PUSH_LOG_PATTERN = /push-notifications_.*\.log$/i;
-const TEMPLATE_PATTERN = /"templateId"\s*:\s*"([0-9a-f]{24})\s+(description|successMessageText|failMessageText)"/g;
-const PROFILE_PATTERN = /"profileid"\s*:\s*"([^"]+)"/i;
+// tools/eft-log-importer/standalone.ts
+import { mkdir, writeFile } from "node:fs/promises";
+import { dirname, resolve as resolve2 } from "node:path";
 
+// src/data/catalog-index.json
+var catalog_index_default = {
+  metadata: {
+    builtAt: "2026-11-17T22:03:13.795Z",
+    pveSyncedAt: "2026-11-17T22:03:12.860Z",
+    pvpSyncedAt: "2026-11-17T22:03:13.431Z",
+    pveCount: 499,
+    pvpCount: 503,
+    sharedCount: 476
+  },
+  tasks: {
+    "5936d90786f7742b1420ba5b": {
+      title: "Debut",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5936da9e86f7742d65037edf": {
+      title: "Background Check",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "59674cd986f7744ab26e32f2": {
+      title: "Shootout Picnic",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "59674eb386f774539f14813a": {
+      title: "Delivery From the Past",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5967530a86f77462ba22226b": {
+      title: "Bad Rep Evidence",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "59675d6c86f7740a842fc482": {
+      title: "Ice Cream Cones",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "59675ea386f77414b32bded2": {
+      title: "Postman Pat - Part 1",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "596760e186f7741e11214d58": {
+      title: "Postman Pat - Part 2",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5967725e86f774601a446662": {
+      title: "Shaking Up the Teller",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5967733e86f774602332fc84": {
+      title: "Shortage",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "59689ee586f7740d1570bbd5": {
+      title: "Sanitary Standards",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "59689fbd86f7740d137ebfc4": {
+      title: "Operation Aquarius",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5968eb3186f7741dde183a4d": {
+      title: "Blood in the Water",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5969f90786f77420d2328015": {
+      title: "Charity",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5969f9e986f7741dde183a50": {
+      title: "Pharmacist",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "596a0e1686f7741ddf17dbee": {
+      title: "Supply Plans",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "596a101f86f7741ddb481582": {
+      title: "Kind of Sabotage",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "596a1e6c86f7741ddc2d3206": {
+      title: "General Wares",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "596a204686f774576d4c95de": {
+      title: "Sanitary Standards - Part 2",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "596a218586f77420d232807c": {
+      title: "Car Repair",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "596b36c586f77450d6045ad2": {
+      title: "Supplier",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "596b43fb86f77457ca186186": {
+      title: "The Extortionist",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "596b455186f77457cb50eccb": {
+      title: "Stirrup",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5979ed3886f77431307dc512": {
+      title: "What\u2019s on the Flash Drive?",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5979eee086f774311955e614": {
+      title: "Golden Swag",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5979f8bb86f7743ec214c7a6": {
+      title: "Polikhim Hobo",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5979f9ba86f7740f6c3fe9f2": {
+      title: "Chemical - Part 1",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "597a0b2986f77426d66c0633": {
+      title: "Chemical - Part 2",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "597a0e5786f77426d66c0636": {
+      title: "Chemical - Part 3",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "597a0f5686f774273b74f676": {
+      title: "Chemical - Part 4",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "597a160786f77477531d39d2": {
+      title: "Out of Curiosity",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "597a171586f77405ba6887d3": {
+      title: "Big Customer",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "59c124d686f774189b3c843f": {
+      title: "Oil Run",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "59c50a9e86f7745fef66f4ff": {
+      title: "The Punisher - Part 2",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "59c50c8886f7745fed3193bf": {
+      title: "The Punisher - Part 3",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "59c512ad86f7741f0d09de9b": {
+      title: "The Punisher - Part 1",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "59c9392986f7742f6923add2": {
+      title: "Aid Stations",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "59c93e8e86f7742a406989c4": {
+      title: "Loyalty Buyout",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "59ca1a6286f774509a270942": {
+      title: "Ironclad Proof",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "59ca264786f77445a80ed044": {
+      title: "The Punisher - Part 4",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "59ca29fb86f77445ab465c87": {
+      title: "The Punisher - Part 5",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "59ca2eb686f77445a80ed049": {
+      title: "The Punisher - Part 6",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5a03153686f77442d90e2171": {
+      title: "One-Way Ticket",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5a03173786f77451cb427172": {
+      title: "Spa Tour - Part 2",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5a0327ba86f77456b9154236": {
+      title: "Fuel Shortage",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5a03296886f774569778596a": {
+      title: "I Need More Power",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5a0449d586f77474e66227b7": {
+      title: "Master Key",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5a27b75b86f7742e97191958": {
+      title: "Fishing Gear",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5a27b7a786f774579c3eb376": {
+      title: "Tigr Safari",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5a27b7d686f77460d847e6a6": {
+      title: "Scrap Metal",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5a27b80086f774429a5d7e20": {
+      title: "Eagle Eye",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5a27b87686f77460de0252a8": {
+      title: "Humanitarian Supplies",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5a27b9de86f77464e5044585": {
+      title: "The Cult",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5a27ba1c86f77461ea5a3c56": {
+      title: "Weapons Circulation",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5a27ba9586f7741b543d8e85": {
+      title: "Spa Tour - Part 6",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5a27bafb86f7741c73584017": {
+      title: "Chemical Experiments",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5a27bb1e86f7741f27621b7e": {
+      title: "Cargo X",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5a27bb3d86f77411ea361a21": {
+      title: "Tracker",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5a27bb5986f7741dfb660900": {
+      title: "Cargo X - Part 3",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5a27bb8386f7741c770d2d0a": {
+      title: "Wet Job - Part 1",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5a27bbf886f774333a418eeb": {
+      title: "Wet Job - Part 2",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5a27bc1586f7741f6d40fa2f": {
+      title: "Wet Job - Part 3",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5a27bc3686f7741c73584026": {
+      title: "Wet Job - Part 4",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5a27bc6986f7741c7358402b": {
+      title: "Wet Job - Part 5",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5a27bc8586f7741b543d8ea4": {
+      title: "Wet Job - Part 6",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5a27c99a86f7747d2c6bdd8e": {
+      title: "Friend From the West",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5a27d2af86f7744e1115b323": {
+      title: "Friend From the West - Part 2",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5a68661a86f774500f48afb0": {
+      title: "Health Care Privacy - Part 1",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5a68663e86f774501078f78a": {
+      title: "Health Care Privacy - Part 2",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5a68665c86f774255929b4c7": {
+      title: "Health Care Privacy - Part 3",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5a68667486f7742607157d28": {
+      title: "Health Care Privacy - Part 4",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5a68669a86f774255929b4d4": {
+      title: "Health Care Privacy - Part 5",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5ac23c6186f7741247042bad": {
+      title: "Gunsmith - MP-133",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5ac2426c86f774138762edfe": {
+      title: "Gunsmith - AKS-74U",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5ac2428686f77412450b42bf": {
+      title: "Gunsmith - HK MP5",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5ac242ab86f77412464f68b4": {
+      title: "Gunsmith Master - Part 3",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5ac244c486f77413e12cf945": {
+      title: "Gunsmith Master - Part 2",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5ac244eb86f7741356335af1": {
+      title: "Gunsmith - M4A1",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5ac345dc86f774288030817f": {
+      title: "Playing the Market",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5ac3460c86f7742880308185": {
+      title: "Farming - Part 2",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5ac3462b86f7741d6118b983": {
+      title: "Farming",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5ac3464c86f7741d651d6877": {
+      title: "Semiconductor Crisis",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5ac3467986f7741d6224abc2": {
+      title: "Ill-Wisher",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5ac346a886f7744e1b083d67": {
+      title: "Rat Hunting",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5ac346cf86f7741d63233a02": {
+      title: "Signal - Part 3",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5ac346e886f7741d6118b99b": {
+      title: "Signal - Part 4",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5ac3475486f7741d6224abd3": {
+      title: "Bad Habit",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5ac3477486f7741d651d6885": {
+      title: "Scout",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5ac3479086f7742880308199": {
+      title: "Insider",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5ae3267986f7742a413592fe": {
+      title: "Gunsmith - Model 870",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5ae3270f86f77445ba41d4dd": {
+      title: "Gunsmith - AKM",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5ae3277186f7745973054106": {
+      title: "Gunsmith - AKS-74N",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5ae327c886f7745c7b3f2f3f": {
+      title: "Gunsmith - AK-105",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5ae3280386f7742a41359364": {
+      title: "Gunsmith - AS VAL",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5ae448a386f7744d3730fff0": {
+      title: "Only Business",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5ae448bf86f7744d733e55ee": {
+      title: "Make ULTRA Great Again",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5ae448e586f7744dcf0c2a67": {
+      title: "Big Sale",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5ae448f286f77448d73c0131": {
+      title: "Fuel Crisis",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5ae4490786f7744ca822adcc": {
+      title: "Dressed to Kill",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5ae4493486f7744efa289417": {
+      title: "Inventory Files",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5ae4493d86f7744b8e15aa8f": {
+      title: "A Big Loss",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5ae4495086f77443c122bc40": {
+      title: "Sew it Good - Part 1",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5ae4495c86f7744e87761355": {
+      title: "Sew it Good - Part 3",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5ae4496986f774459e77beb6": {
+      title: "Sew it Good - Part 4",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5ae4497b86f7744cf402ed00": {
+      title: "Sew it Good - Part 2",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5ae4498786f7744bde357695": {
+      title: "The Key to Success",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5ae4499a86f77449783815db": {
+      title: "Charisma Brings Success",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5ae449a586f7744bde357696": {
+      title: "No Fuss Needed",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5ae449b386f77446d8741719": {
+      title: "Gratitude",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5ae449c386f7744bde357697": {
+      title: "Pathfinder",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5ae449d986f774453a54a7e1": {
+      title: "Supervisor",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5b47749f86f7746c5d6a5fd4": {
+      title: "Gunsmith Master - Part 4",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5b47799d86f7746c5d6a5fd8": {
+      title: "Gunsmith - MPX",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5b477b6f86f7747290681823": {
+      title: "Gunsmith Master - Part 5",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5b477f7686f7744d1b23c4d2": {
+      title: "Gunsmith Master - Part 7",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5b47825886f77468074618d3": {
+      title: "Gunsmith Master - Part 9",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5b47876e86f7744d1c353205": {
+      title: "The Blood of War - Part 2",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5b47891f86f7744d1b23c571": {
+      title: "Living High is Not a Crime",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5b478b1886f7744d1b23c57d": {
+      title: "Hot Delivery",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5b478d0f86f7744d190d91b5": {
+      title: "Minibus",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5b478eca86f7744642012254": {
+      title: "Vitamins",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5b478ff486f7744d184ecbbf": {
+      title: "Supplements",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5b47926a86f7747ccc057c15": {
+      title: "Informed Means Armed",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5b4794cb86f774598100d5d4": {
+      title: "Metal Birds",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5b4795fb86f7745876267770": {
+      title: "Chumming",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5bc4776586f774512d07cf05": {
+      title: "The Tarkov Shooter - Part 1",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5bc479e586f7747f376c7da3": {
+      title: "The Tarkov Shooter - Part 2",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5bc47dbf86f7741ee74e93b9": {
+      title: "The Tarkov Shooter - Part 3",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5bc480a686f7741af0342e29": {
+      title: "The Tarkov Shooter - Part 4",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5bc4826c86f774106d22d88b": {
+      title: "The Tarkov Shooter - Part 5",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5bc4836986f7740c0152911c": {
+      title: "The Tarkov Shooter - Part 5",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5bc4856986f77454c317bea7": {
+      title: "The Tarkov Shooter - Part 6",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5bc4893c86f774626f5ebf3e": {
+      title: "The Tarkov Shooter - Part 7",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5c0bbaa886f7746941031d82": {
+      title: "Bullshit",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5c0bc91486f7746ab41857a2": {
+      title: "Silent Caliber",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5c0bd01e86f7747cdd799e56": {
+      title: "Insomnia",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5c0bd94186f7747a727f09b2": {
+      title: "The Tarkov Import",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5c0bdb5286f774166e38eed4": {
+      title: "Flint",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5c0bde0986f77479cf22c2f8": {
+      title: "Shooter Born in Heaven",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5c0be13186f7746f016734aa": {
+      title: "Psycho Sniper",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5c0be5fc86f774467a116593": {
+      title: "Private Clinic",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5c0d0d5086f774363760aef2": {
+      title: "Athlete",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5c0d0f1886f77457b8210226": {
+      title: "From Hand to Hand",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5c0d190cd09282029f5390d8": {
+      title: "Grenadier",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5c0d1c4cd0928202a02a6f5c": {
+      title: "Decontamination Service",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5c0d4c12d09282029f539173": {
+      title: "Peacekeeping Mission",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5c0d4e61d09282029f53920e": {
+      title: "The Guide",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5c10f94386f774227172c572": {
+      title: "Small Things, Big Help",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5c1128e386f7746565181106": {
+      title: "Fertilizers",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5c112d7e86f7740d6f647486": {
+      title: "Scavenger",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5c1141f386f77430ff393792": {
+      title: "Antique Enthusiast",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5c1234c286f77406fa13baeb": {
+      title: "Setup",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5c12452c86f7744b83469073": {
+      title: "Perfect Mediator",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5c139eb686f7747878361a6f": {
+      title: "Import",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5c51aac186f77432ea65c552": {
+      title: "Collector",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5d2495a886f77425cd51e403": {
+      title: "Introduction",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5d24b81486f77439c92d6ba8": {
+      title: "Acquaintance",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5d25aed386f77442734d25d2": {
+      title: "The Survivalist Path - Unprotected but Dangerous",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5d25b6be86f77444001e1b89": {
+      title: "The Survivalist Path - Thrifty",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5d25bfd086f77442734d3007": {
+      title: "The Survivalist Path - Zhivchik",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5d25c81b86f77443e625dd71": {
+      title: "The Survivalist Path - Wounded Beast",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5d25cf2686f77443e75488d4": {
+      title: "The Survivalist Path - Tough Guy",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5d25d2c186f77443e35162e5": {
+      title: "The Survivalist Path - Cold Blooded",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5d25e29d86f7740a22516326": {
+      title: "The Survivalist Path - Eagle-Owl",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5d25e2a986f77409dd5cdf2a": {
+      title: "The Survivalist Path - Combat Medic",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5d25e2b486f77409de05bba0": {
+      title: "The Huntsman Path - Secured Perimeter",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5d25e2c386f77443e7549029": {
+      title: "The Huntsman Path - Trophy",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5d25e2cc86f77443e47ae019": {
+      title: "The Huntsman Path - Forest Cleaning",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5d25e2d886f77442734d335e": {
+      title: "The Huntsman Path - Controller",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5d25e2e286f77444001e2e48": {
+      title: "The Huntsman Path - Sellout",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5d25e2ee86f77443e35162ea": {
+      title: "The Huntsman Path - Woods Keeper",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5d25e43786f7740a212217fa": {
+      title: "The Huntsman Path - Justice",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5d25e44386f77409453bce7b": {
+      title: "The Huntsman Path - Angry Watchman",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5d25e44f86f77443e625e385": {
+      title: "The Huntsman Path - Eraser",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5d25e45e86f77408251c4bfa": {
+      title: "The Huntsman Path - Liberation",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5d25e46e86f77409453bce7c": {
+      title: "First Aid",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5d25e48186f77443e625e386": {
+      title: "Courtesy Visit",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5d25e48d86f77408251c4bfb": {
+      title: "Shady Business",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5d25e4ad86f77443e625e387": {
+      title: "Nostalgia",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5d25e4b786f77408251c4bfc": {
+      title: "Fishing Place",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5d25e4ca86f77409dd5cdf2c": {
+      title: "Hunting Trip",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5d25e4d586f77443e625e388": {
+      title: "Reserve",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5d4bec3486f7743cac246665": {
+      title: "Regulated Materials",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5d6fb2c086f77449da599c24": {
+      title: "An Apple a Day Keeps the Doctor Away",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5d6fbc2886f77449d825f9d3": {
+      title: "Mentor",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5e381b0286f77420e3417a74": {
+      title: "Textile - Part 1",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5e383a6386f77465910ce1f3": {
+      title: "Textile - Part 1",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5e4d4ac186f774264f758336": {
+      title: "Textile - Part 2",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5e4d515e86f77438b2195244": {
+      title: "Textile - Part 2",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5eaaaa7c93afa0558f3b5a1c": {
+      title: "The Survivalist Path - Junkie",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5eda19f0edce541157209cee": {
+      title: "Anesthesia",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5edab4b1218d181e29451435": {
+      title: "The Huntsman Path - Sadist",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5edab736cc183c769d778bc2": {
+      title: "Colleagues",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5edaba7c0c502106f869bc02": {
+      title: "Tarkov-Style Diplomacy",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5edabd13218d181e29451442": {
+      title: "Rigged Game",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5edac020218d181e29451446": {
+      title: "Samples",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5edac34d0bb72a50635c2bfa": {
+      title: "A Difficult Choice",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5edac63b930f5454f51e128b": {
+      title: "TerraGroup Employee",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5ede55112c95834b583f052a": {
+      title: "The Bunker",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5ede567cfa6dc072ce15d6e3": {
+      title: "The Bunker - Part 2",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5f04886a3937dc337a6b8238": {
+      title: "Chemistry Closet",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "5fd9fad9c1ce6b1a3b486d00": {
+      title: "Search Mission",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "600302d73b897b11364cd161": {
+      title: "All This Filth...",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6086c852c945025d41566124": {
+      title: "Revision - Reserve",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "60896888e4a85c72ef3fa300": {
+      title: "Classified Technologies",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "60896b7bfa70fc097863b8f5": {
+      title: "Documents",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "60896bca6ee58f38c417d4f2": {
+      title: "No Place for Renegades",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "60896e28e4a85c72ef3fa301": {
+      title: "Disease History",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6089732b59b92115597ad789": {
+      title: "Surplus Goods",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6089736efa70fc097863b8f6": {
+      title: "Back Door",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6089743983426423753cd58a": {
+      title: "Safe Corridor",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "608974af4b05530f55550c21": {
+      title: "Reserve Expert",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "608974d01a66564e74191fc0": {
+      title: "A Fuel Matter",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "608a768d82e40b3c727fd17d": {
+      title: "Pest Control",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "60c0c018f7afb4354815096a": {
+      title: "The Huntsman Path - Factory Chief",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "60e71b62a0beca400d69efc4": {
+      title: "Escort",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "60e71b9bbd90872cb85440f3": {
+      title: "Capturing Outposts",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "60e71bb4e456d449cd47ca75": {
+      title: "Intimidator",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "60e71c11d54b755a3b53eb65": {
+      title: "Night Sweep",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "60e71c48c1bfa3050473b8e5": {
+      title: "Crisis",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "60e71c9ad54b755a3b53eb66": {
+      title: "The Cleaner",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "60e71ccb5688f6424c7bfec4": {
+      title: "Trophies",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "60e71ce009d7c801eb0c0ec6": {
+      title: "Special Equipment",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "60e71d23c1bfa3050473b8e6": {
+      title: "Calibration",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "60e71d6d7fcf9c556f325055": {
+      title: "The Courier",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "60e71dc0a94be721b065bbfc": {
+      title: "Long Line",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "60e71dc67fcf9c556f325056": {
+      title: "Booze",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "60e71e8ed54b755a3b53eb67": {
+      title: "The Huntsman Path - Relentless",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "60e729cf5698ee7b05057439": {
+      title: "Swift",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "60effd818b669d08a35bfad5": {
+      title: "The Choice",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6179ac7511973d018217d0b9": {
+      title: "Easy Job",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6179acbdc760af5ad2053585": {
+      title: "Easy Job - Part 2",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6179ad0a6e9dd54ac275e3f2": {
+      title: "The Huntsman Path - Outcasts",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6179ad56c760af5ad2053587": {
+      title: "Seaside Vacation",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6179afd0bca27a099552e040": {
+      title: "Lost Contact",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6179aff8f57fb279792c60a1": {
+      title: "Overpopulation",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6179b3a12153c15e937d52bc": {
+      title: "Energy Crisis",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6179b3bdc7560e13d23eeb8d": {
+      title: "Corporate Secrets",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6179b4d1bca27a099552e04e": {
+      title: "Revision - Lighthouse",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6179b4f16e9dd54ac275e407": {
+      title: "Missing Cargo",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6179b5b06e9dd54ac275e409": {
+      title: "Our Own Land",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6179b5eabca27a099552e052": {
+      title: "Counteraction",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "61904daa7d0d857927447b9c": {
+      title: "The Hermit",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6193850f60b34236ee0483de": {
+      title: "Long Road",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "61958c366726521dd96828ec": {
+      title: "Gifts from Tarkov",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "61e6e5e0f5b9633f6719ed95": {
+      title: "Compensation for Damage - Trust",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "61e6e60223374d168a4576a6": {
+      title: "Compensation for Damage - Wager",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "61e6e60c5ca3b3783662be27": {
+      title: "Compensation for Damage - Wergild",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "61e6e615eea2935bc018a2c5": {
+      title: "Compensation for Damage - Barkeep",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "61e6e621bfeab00251576265": {
+      title: "Compensation for Damage - Collection",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "626bd75b05f287031503c7f6": {
+      title: "Drug Trafficking",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "626bd75c71bd851e971b82a5": {
+      title: "Reconnaissance",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "626bd75d5bef5d7d590bd415": {
+      title: "Top Secret",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "626bd75e47ea7f506e5493c5": {
+      title: "Broadcast - Part 1",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "626bdcc3a371ee3a7a3514c5": {
+      title: "Stray Dogs",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "638fcd23dc65553116701d33": {
+      title: "Audit",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "639135534b15ca31f76bc317": {
+      title: "Your Car Needs a Service",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6391359b9444fb141f4e6ee6": {
+      title: "You've Got Mail",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "639135a7e705511c8a4a1b78": {
+      title: "Ballet Lover",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "639135b04ed9512be67647d7": {
+      title: "Glory to CPSU - Part 1",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "639135bbc115f907b14700a6": {
+      title: "Audiophile",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "639135c3744e452011470807": {
+      title: "House Arrest",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "639135cd8ba6894d155e77cb": {
+      title: "House Arrest - Part 2",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "639135d89444fb141f4e6eea": {
+      title: "Population Census",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "639135e0fa894f0a866afde6": {
+      title: "Urban Medicine",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "639135e8c115f907b14700aa": {
+      title: "Surveillance",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "639135f286e646067c176a87": {
+      title: "Revision - Streets of Tarkov",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "639136d68ba6894d155e77cf": {
+      title: "Green Corridor",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "639136df4b15ca31f76bc31f": {
+      title: "The Huntsman Path - Administrator",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "639136e84ed9512be67647db": {
+      title: "Cease Fire!",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "639136f086e646067c176a8b": {
+      title: "Kings of the Rooftops",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "639136fa9444fb141f4e6eee": {
+      title: "Watching You",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "63913715f8e5dd32bf4e3aaa": {
+      title: "Broadcast - Part 2",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6391372c8ba6894d155e77d7": {
+      title: "Broadcast - Part 4",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "639282134ed9512be67647ed": {
+      title: "Road Closed",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "63966faeea19ac7ed845db2c": {
+      title: "Information Source",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "63966fbeea19ac7ed845db2e": {
+      title: "Missing Informant",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "63966fccac6f8f3c677b9d89": {
+      title: "Snatch",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "63966fd9ea19ac7ed845db30": {
+      title: "Payback",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "63966fe7ea74a47c2d3fc0e6": {
+      title: "Return the Favor",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "63966ff54c3ef01b6f3ffad8": {
+      title: "Provocation",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "639670029113f06a7c3b2377": {
+      title: "Following the Bread Crumbs",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6396700fea19ac7ed845db32": {
+      title: "Spotter",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6396701b9113f06a7c3b2379": {
+      title: "Make an Impression",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "63967028c4a91c5cb76abd81": {
+      title: "Trouble in the Big City",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "639872f9decada40426d3447": {
+      title: "Gunsmith - OP-SKS",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "639872fa9b4fb827b200d8e5": {
+      title: "Gunsmith - P226R",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "639872fc93ae507d5858c3a6": {
+      title: "Gunsmith - Vector 9x19",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "639872fe8871e1272b10ccf6": {
+      title: "Gunsmith Master - Part 1",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "639873003693c63d86328f25": {
+      title: "Gunsmith Master - Part 6",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "63987301e11ec11ff5504036": {
+      title: "Gunsmith Master - Part 8",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "639dbaf17c898a131e1cffff": {
+      title: "Debtor",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "63a511ea30d85e10e375b045": {
+      title: "Broadcast - Part 3",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "63a5cf262964a7488f5243ce": {
+      title: "Power of Persuasion",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "63a88045abf76d719f42d715": {
+      title: "The Delicious Sausage",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "63a9ae24009ffc6a551631a5": {
+      title: "Best Job in the World",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "63a9b229813bba58a50c9ee5": {
+      title: "Worst Job in the World",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "63a9b36cc31b00242d28a99f": {
+      title: "Slaughterhouse",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "63ab180c87413d64ae0ac20a": {
+      title: "Dangerous Road",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "64e7b971f9d6fa49d6769b44": {
+      title: "The Huntsman Path - Big Game",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "64e7b99017ab941a6f7bf9d7": {
+      title: "Gendarmerie - Mall Cop",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "64e7b9a4aac4cd0a726562cb": {
+      title: "Gendarmerie - Tickets, Please",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "64e7b9bffd30422ed03dad38": {
+      title: "District Patrol",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "64ee99639878a0569d6ec8c9": {
+      title: "Broadcast - Part 5",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "64ee9df4496db64f9b7a4432": {
+      title: "The Door",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "64f3176921045e77405d63b5": {
+      title: "Paramedic",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "64f5aac4b63b74469b6c14c2": {
+      title: "Glory to CPSU",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "64f5deac39e45b527a7c4232": {
+      title: "Job for a Patriot",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "64f5e20652fc01298e2c61e3": {
+      title: "Beyond the Red Meat",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "64f6aafd67e11a7c6206e0d0": {
+      title: "The Secret Recipe",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "64f731ab83cfca080a361e42": {
+      title: "Pets Won't Need It",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "64f83bb69878a0569d6ecfbe": {
+      title: "Gunsmith Master - Part 10",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "64f83bcdde58fc437700d8fa": {
+      title: "Gunsmith Master - Part 11",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "64f83bd983cfca080a362c82": {
+      title: "Gunsmith Master - Part 13",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6572e876dc0d635f633a5714": {
+      title: "Pyramid Scheme",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "657315ddab5a49b71f098853": {
+      title: "First in Line",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "657315df034d76585f032e01": {
+      title: "Shooting Cans",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "657315e1dccd301f1301416a": {
+      title: "Luxurious Life",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "657315e270bb0b8dba00cc48": {
+      title: "Burning Rubber",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "657315e4a6af4ab4b50f3459": {
+      title: "Saving the Mole",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "65733403eefc2c312a759ddb": {
+      title: "Corporate Perks",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6573382e557ff128bf3da536": {
+      title: "The Secret to Productivity",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6573387d0b26ed4fde798de3": {
+      title: "Pets Won't Need It - Part 2",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6573397ef3f8344c4575cd87": {
+      title: "Properties All Around",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "65734c186dc1e402c80dc19e": {
+      title: "Dandies",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6574e0dedc0d635f633a5805": {
+      title: "Getting Some Air",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6578eb36e5020875d64645cd": {
+      title: "The Huntsman Path - Crooked Cop",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6578ec473dbd035d04531a8d": {
+      title: "Steady Signal",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "658027799634223183395339": {
+      title: "No Swiping",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "65802b627b44fa5e14638899": {
+      title: "Nothing Fishy About This",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "66058cb22cee99303f1ba067": {
+      title: "Easy Money - Part 1 [PVP ZONE]",
+      modes: [
+        "pvp"
+      ]
+    },
+    "66058cb5ae4719735349b9e8": {
+      title: "Easy Money - Part 2 [PVP ZONE]",
+      modes: [
+        "pvp"
+      ]
+    },
+    "66058cb7c7f3584787181476": {
+      title: "Balancing - Part 1 [PVP ZONE]",
+      modes: [
+        "pvp"
+      ]
+    },
+    "66058cb9e8e4f17985230805": {
+      title: "Balancing - Part 2 [PVP ZONE]",
+      modes: [
+        "pvp"
+      ]
+    },
+    "66058cbb06ef1d50a60c1f46": {
+      title: "Surprise [PVP ZONE]",
+      modes: [
+        "pvp"
+      ]
+    },
+    "66058cbd9f59e625462acc8e": {
+      title: "Create a Distraction - Part 1 [PVP ZONE]",
+      modes: [
+        "pvp"
+      ]
+    },
+    "66058cbf2f19c31a5a1337ec": {
+      title: "Create a Distraction - Part 2 [PVP ZONE]",
+      modes: [
+        "pvp"
+      ]
+    },
+    "66058cc1da30b620a34e6e86": {
+      title: "To Great Heights! - Part 1 [PVP ZONE]",
+      modes: [
+        "pvp"
+      ]
+    },
+    "66058cc208308761cf390993": {
+      title: "To Great Heights! - Part 2 [PVP ZONE]",
+      modes: [
+        "pvp"
+      ]
+    },
+    "66058cc5bb83da7ba474aba9": {
+      title: "To Great Heights! - Part 3 [PVP ZONE]",
+      modes: [
+        "pvp"
+      ]
+    },
+    "66058cc72cee99303f1ba069": {
+      title: "To Great Heights! - Part 4 [PVP ZONE]",
+      modes: [
+        "pvp"
+      ]
+    },
+    "66058cc9ae4719735349b9ea": {
+      title: "To Great Heights! - Part 5 [PVP ZONE]",
+      modes: [
+        "pvp"
+      ]
+    },
+    "66058ccbc7f3584787181478": {
+      title: "Against the Conscience - Part 1 [PVP ZONE]",
+      modes: [
+        "pvp"
+      ]
+    },
+    "66058ccde8e4f17985230807": {
+      title: "Against the Conscience - Part 2 [PVP ZONE]",
+      modes: [
+        "pvp"
+      ]
+    },
+    "66058ccf06ef1d50a60c1f48": {
+      title: "Between Two Fires [PVP ZONE]",
+      modes: [
+        "pvp"
+      ]
+    },
+    "66058cd19f59e625462acc90": {
+      title: "Decisions, Decisions [PVP ZONE]",
+      modes: [
+        "pvp"
+      ]
+    },
+    "6613f3007f6666d56807c929": {
+      title: "Drip-Out - Part 1",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6613f307fca4f2f386029409": {
+      title: "Drip-Out - Part 2",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "66151401efb0539ae10875ae": {
+      title: "Drip-Out - Part 1",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6615141bfda04449120269a7": {
+      title: "Drip-Out - Part 2",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "665eeacf5d86b6c8aa03c79b": {
+      title: "Thirsty - Hounds",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "665eec1f5e47a79f8605565a": {
+      title: "Thirsty - Breadwinner",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "665eec4a4dfc83b0ed0a9dca": {
+      title: "Thirsty - Delivery",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "665eeca45d86b6c8aa03c79d": {
+      title: "Thirsty - Echo",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "665eeca92f7aedcc900b0437": {
+      title: "Thirsty - Secrets",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "66631489acf8442f8b05319f": {
+      title: "Friend Among Strangers",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6663148ca9290f9e0806cca1": {
+      title: "Immunity",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6663148ed7f171c4c20226c1": {
+      title: "Small Business - Part 1",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6663149196a9349baa021baa": {
+      title: "Small Business - Part 2",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "66631493312343839d032d22": {
+      title: "Small Business - Part 3",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6663149cfd5ca9577902e037": {
+      title: "The Invisible Hand",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6663149f1d3ec95634095e75": {
+      title: "Circulate",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "666314a1920800278d0f6746": {
+      title: "Special Offer",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "666314a31cd52e3d040a2e76": {
+      title: "Combat Proven",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "666314a50aa5c7436c00908a": {
+      title: "Old Patterns",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "666314b0acf8442f8b0531a1": {
+      title: "Hell on Earth - Part 1",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "666314b2a9290f9e0806cca3": {
+      title: "Hell on Earth - Part 2",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "666314b4d7f171c4c20226c3": {
+      title: "The Good Times - Part 1",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "666314b696a9349baa021bac": {
+      title: "Quality Standard",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "666314b8312343839d032d24": {
+      title: "Airmail",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "666314bafd5ca9577902e03a": {
+      title: "The Good Times - Part 2",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "666314bc1d3ec95634095e77": {
+      title: "Minute of Fame",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "666314bd920800278d0f6748": {
+      title: "Viewer",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "666314bf1cd52e3d040a2e78": {
+      title: "Serious Allegations",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "666314c10aa5c7436c00908c": {
+      title: "Camera, Action!",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "666314c3acf8442f8b0531a3": {
+      title: "Proper Comeback",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "666314c5a9290f9e0806cca5": {
+      title: "Key to the City",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6672d9def1c88688a707d042": {
+      title: "Establish Contact",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "669fa38fad7f1eac2607ed46": {
+      title: "One Less Loose End",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "669fa3910c828825de06d69f": {
+      title: "A Healthy Alternative",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "669fa395c4c5c04798002497": {
+      title: "Exit Here",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "669fa3979b0ce3feae01a130": {
+      title: "Claustrophobia",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "669fa399033a3ce9870338a8": {
+      title: "Possessor",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "669fa39b91b0a8c9680fc467": {
+      title: "Black Swan",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "669fa39c64ea11e84c0642a6": {
+      title: "The Walls Have Eyes",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "669fa39ee749756c920d02c8": {
+      title: "All Is Revealed",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "669fa3a08b4a64b332041ff7": {
+      title: "Dragnet",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "669fa3a3ad7f1eac2607ed48": {
+      title: "Health Care Privacy - Part 6",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "669fa3a40c828825de06d6a1": {
+      title: "Easy-Breezy",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "66aa58245ab22944110db6e9": {
+      title: "New Paths",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "66aa61663aa37705c5024277": {
+      title: "Know Your Place!",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "66aa74571e5e199ecd094f18": {
+      title: "Secrets of Polikhim",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "66ab970848ddbe9d4a0c49a8": {
+      title: "Special Comms",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "66ab9da7eb102b9bcd08591c": {
+      title: "Forester's Duty",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "66aba85403e0ee3101042877": {
+      title: "Beneath The Streets",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "66b38c7bf85b8bf7250f9cb6": {
+      title: "Rough Tarkov",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "66b38e144f2ab7cc530c3fe7": {
+      title: "Every Hunter Knows This",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "66d9cbb67b491f9d5304f6e6": {
+      title: "Is This a Reference?",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "671a49f77d49aea42c029b5f": {
+      title: "Irresistible",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "671a59e43d73dac1360765cc": {
+      title: "Dangerous Props",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "673f2cd5d3346c2167020484": {
+      title: "Shipping Delay - Part 2",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "673f348dd3346c21670217e7": {
+      title: "Shipping Delay - Part 1",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "673f4e956f1b89c7bc0f56ef": {
+      title: "Hot Wheels",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "673f5a4976553f78350bdac1": {
+      title: "Hot Wheels - Let's Try Again",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "673f6027352b4da8e00322d2": {
+      title: "Inevitable Response",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "673f61a066e6a521aa04b62b": {
+      title: "Order From Outside",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "673f629c5b555b53460cf827": {
+      title: "Building Foundations",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6740a02a69a58fceba0ff399": {
+      title: "Natural Exchange",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6740a15566e6a521aa051b15": {
+      title: "Forge a Friendship",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6740a2c17e3818d5bb0648b6": {
+      title: "Half-Empty",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6740a3f4eca8acb2d2055159": {
+      title: "Stick in the Wheel",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6740b60c60a98cad1b0e0aa0": {
+      title: "Another Shipping Delay",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "674492b6909d2013670a347a": {
+      title: "Ask for Directions",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6744a4717e3818d5bb0680bb": {
+      title: "Stabilize Business",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6744a728352b4da8e003eda9": {
+      title: "Battery Change",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6744a9dfef61d56e020b5c4a": {
+      title: "Battery Change",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6744ab1def61d56e020b5c56": {
+      title: "Protect the Sky",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6744aca8d3346c216702c583": {
+      title: "Discombobulate",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6744af0969a58fceba101fed": {
+      title: "The Price of Independence",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6745cbee909d2013670a4a55": {
+      title: "The Price of Independence",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6745fae369a58fceba10343d": {
+      title: "The Higher They Fly",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6745fcded0fbbc74ca0f721d": {
+      title: "Swift Retribution",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6745fdddd3346c216702e0bf": {
+      title: "Simple Side Job",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "674600a366e6a521aa05eb66": {
+      title: "Route Deviation",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "674602307e3818d5bb069489": {
+      title: "Hindsight 20/20",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6746053b5b555b53460d9896": {
+      title: "Key Partner",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "674605df60a98cad1b0ec799": {
+      title: "Killer Argument",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "67460662d0fbbc74ca0f7229": {
+      title: "Choose Your Friends Wisely",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6752f6d83038f7df520c83e8": {
+      title: "A Helping Hand",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "675c03d1f7da9792a405549a": {
+      title: "Abandoned Cargo",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "675c047fa46173572a0bd878": {
+      title: "Shipment Tracking",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "675c04f4db8807b75d0f38e8": {
+      title: "Closer to the People",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "675c085d59b0575973005f52": {
+      title: "Break the Deal",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "675c1570526ff496850895d9": {
+      title: "Passion for Ergonomics",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "675c15fbf7da9792a4059871": {
+      title: "Provide Viewership",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "675c1cf4a757ddd00404f0a3": {
+      title: "Work Smarter",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "675c1d6d59b0575973008fc7": {
+      title: "Seizing the Initiative",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "675c1ec7a46173572a0bf20a": {
+      title: "Rite of Passage",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "675c1ff1a757ddd00404f0aa": {
+      title: "Unique Experience",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "675c3507a06634b5110e3c18": {
+      title: "Belka and Strelka",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "675c3582f6ddc329a90f9c6d": {
+      title: "Private Club",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6761f28a022f60bb320f3e95": {
+      title: "New Beginning",
+      modes: [
+        "pvp"
+      ]
+    },
+    "6761ff17cdc36bd66102e9d0": {
+      title: "New Beginning",
+      modes: [
+        "pvp"
+      ]
+    },
+    "6764174c86addd02bc033d68": {
+      title: "Connections Up North",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "676529af9c90953d090882e7": {
+      title: "Gunsmith Master - Part 12",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "67a09636b8725511260bc421": {
+      title: "Shady Contractor",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "67a0964e972c11a3f507731b": {
+      title: "Needle in a Haystack",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "67a096577e86e067eb045733": {
+      title: "Hidden Layer",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "67a09673972c11a3f507731d": {
+      title: "The Tarkov Butcher",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "67a0967c003a9986cb0f5ac1": {
+      title: "Sensory Analysis - Part 1",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "67a096ed77dd677f600804ba": {
+      title: "Sensory Analysis - Part 2",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "67a0970744893b9f3f0d9b68": {
+      title: "Offensive Reconnaissance",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "67a0970f05d1611ed90be75d": {
+      title: "Hypotheses Testing",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "67a09724972c11a3f5077324": {
+      title: "Confidential Info",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "67a0972e77dd677f600804bd": {
+      title: "This Tape Sucks",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "67a097379f2068e74603c6ac": {
+      title: "Indisputable Authority",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "67a09761e720611a6a01f288": {
+      title: "Keeper's Word",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "67af4c1405c58dc6f7056667": {
+      title: "Profitable Venture",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "67af4c169d95ad16e004fd86": {
+      title: "Safety Guarantee",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "67af4c17f4f1fb58a907f8f6": {
+      title: "Never Too Late To Learn",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "67af4c1991ee75c6d7060a16": {
+      title: "Get a Foothold",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "67af4c1a6c3ebfd8e6034916": {
+      title: "Profit Retention",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "67af4c1cc0e59d55e2010b97": {
+      title: "A Life Lesson",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "67af4c1d8c9482eca103e477": {
+      title: "Consolation Prize",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "67b45467814ab0ffa000c7e7": {
+      title: "The Art of Explosion",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "67d03be712fb5f8fd2096332": {
+      title: "Vacate the Premises",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "67e993b1ac26bf29380a320b": {
+      title: "Surprise Gift [PVP ZONE]",
+      modes: [
+        "pvp"
+      ]
+    },
+    "67e993f5ed537409f009da75": {
+      title: "Postponed Reward [PVP ZONE]",
+      modes: [
+        "pvp"
+      ]
+    },
+    "6834145ebc1f443d7603c8a7": {
+      title: "Easy Money - Part 1 [PVE ZONE]",
+      modes: [
+        "pve"
+      ]
+    },
+    "6834158f2f0e2a7eb90b62c8": {
+      title: "Easy Money - Part 2 [PVE ZONE]",
+      modes: [
+        "pve"
+      ]
+    },
+    "68341846186efa3c5b07f989": {
+      title: "Balancing - Part 1 [PVE ZONE]",
+      modes: [
+        "pve"
+      ]
+    },
+    "68341a0b2f0e2a7eb90b62d4": {
+      title: "Balancing - Part 2 [PVE ZONE]",
+      modes: [
+        "pve"
+      ]
+    },
+    "68341b407559f4e6d50bc0ce": {
+      title: "Surprise [PVE ZONE]",
+      modes: [
+        "pve"
+      ]
+    },
+    "68341c4babec72d95d0c1260": {
+      title: "Create a Distraction - Part 1 [PVE ZONE]",
+      modes: [
+        "pve"
+      ]
+    },
+    "68341d7d7559f4e6d50bc0db": {
+      title: "Create a Distraction - Part 2 [PVE ZONE]",
+      modes: [
+        "pve"
+      ]
+    },
+    "68341eb25619c8e2a9031501": {
+      title: "To Great Heights! - Part 1 [PVE ZONE]",
+      modes: [
+        "pve"
+      ]
+    },
+    "68341f6fe2e7ef70a3060a0a": {
+      title: "To Great Heights! - Part 2 [PVE ZONE]",
+      modes: [
+        "pve"
+      ]
+    },
+    "6834202a186efa3c5b07f9a2": {
+      title: "To Great Heights! - Part 3 [PVE ZONE]",
+      modes: [
+        "pve"
+      ]
+    },
+    "683421515619c8e2a9031511": {
+      title: "To Great Heights! - Part 4 [PVE ZONE]",
+      modes: [
+        "pve"
+      ]
+    },
+    "68342265a8d674b5740b31f0": {
+      title: "To Great Heights! - Part 5 [PVE ZONE]",
+      modes: [
+        "pve"
+      ]
+    },
+    "6834233fecd5cf3a440d855b": {
+      title: "Against the Conscience - Part 1 [PVE ZONE]",
+      modes: [
+        "pve"
+      ]
+    },
+    "68342446a8d674b5740b31fc": {
+      title: "Against the Conscience - Part 2 [PVE ZONE]",
+      modes: [
+        "pve"
+      ]
+    },
+    "6834254f2f0e2a7eb90b62ef": {
+      title: "Decisions, Decisions [PVE ZONE]",
+      modes: [
+        "pve"
+      ]
+    },
+    "683425dd8f5b18d29a05d9d1": {
+      title: "Between Two Fires [PVE ZONE]",
+      modes: [
+        "pve"
+      ]
+    },
+    "683427418f5b18d29a05d9e3": {
+      title: "Surprise Gift [PVE ZONE]",
+      modes: [
+        "pve"
+      ]
+    },
+    "6834287b7559f4e6d50bc0fa": {
+      title: "Postponed Reward [PVE ZONE]",
+      modes: [
+        "pve"
+      ]
+    },
+    "684009026ceedc792c09b2a7": {
+      title: "Hobby Club",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "68400926706e0a55e90b0007": {
+      title: "Fair Price - Part 1",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "68400953506db3b4db0700e7": {
+      title: "Fair Price - Part 2",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6848100b00afffa81f09e365": {
+      title: "New Beginning",
+      modes: [
+        "pvp"
+      ]
+    },
+    "68481881f43abfdda2058369": {
+      title: "New Beginning",
+      modes: [
+        "pvp"
+      ]
+    },
+    "68db9c7557bc51a8c804c14b": {
+      title: "Goals and Means",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "68ee1c18b4e5bc9a68018cd7": {
+      title: "Special Order",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6942b44f891369fc790e385a": {
+      title: "Setting Priorities",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "697877e0c639962b2e0cf24f": {
+      title: "Arena Business [PVP ZONE]",
+      modes: [
+        "pvp"
+      ]
+    },
+    "697878057aa1273126030fb0": {
+      title: "Arena Business [PVE ZONE]",
+      modes: [
+        "pve"
+      ]
+    },
+    "69788c2bac719606e40b4e77": {
+      title: "Professional Fitness - Part 1 [PVP ZONE]",
+      modes: [
+        "pvp"
+      ]
+    },
+    "69788d4e963f08d9140bce19": {
+      title: "Professional Fitness - Part 1 [PVE ZONE]",
+      modes: [
+        "pve"
+      ]
+    },
+    "69788db3878a4385d10c0718": {
+      title: "Professional Fitness - Part 2 [PVP ZONE]",
+      modes: [
+        "pvp"
+      ]
+    },
+    "6978907718bd6d7cbd0e8b8e": {
+      title: "Professional Fitness - Part 2 [PVE ZONE]",
+      modes: [
+        "pve"
+      ]
+    },
+    "69789418b2187365e70bb947": {
+      title: "To Great Heights! - Part 6 [PVP ZONE]",
+      modes: [
+        "pvp"
+      ]
+    },
+    "697895277d31587eab080266": {
+      title: "To Great Heights! - Part 6 [PVE ZONE]",
+      modes: [
+        "pve"
+      ]
+    },
+    "697895b6c639962b2e0cf268": {
+      title: "Hold the Lead [PVP ZONE]",
+      modes: [
+        "pvp"
+      ]
+    },
+    "69789660b2187365e70bb94a": {
+      title: "Hold the Lead [PVE ZONE]",
+      modes: [
+        "pve"
+      ]
+    },
+    "69c26c07683c9831020018c7": {
+      title: "Stick to It",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "69c27158e350f01390049e77": {
+      title: "Saving Private Roman",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "69c277f3ea6da9c23e07f8d2": {
+      title: "A Bitter Victory",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "69c2a2d004de49c8f0055a3d": {
+      title: "Hangover",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "69ce1cfb298a6529b30d712b": {
+      title: "A Wedge Between Us",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "69ce1de03e15cd80bd06f6c9": {
+      title: "Oil Change",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "69ce1f84ebbdbf36a200627c": {
+      title: "Peaceful Atom",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "69ce204c8702b378f9091e4b": {
+      title: "War Never Changes",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "69ce213a298a6529b30d7134": {
+      title: "Biochemistry",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "69ce21e990144e437802b1e0": {
+      title: "Fresh Stock",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "69e5583240c3e6c8ba0edbd5": {
+      title: "Wiring the Vessel",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6a45208043b8d7604d00b8d5": {
+      title: "The Huntsman Path - Administrator",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6a4532e48e82d8ffea0c3eae": {
+      title: "The Huntsman Path - Control",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6a5424ae135497b9df0c68be": {
+      title: "Fall Ailment",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6a5c1578f2689567c30eb0f3": {
+      title: "Hiking",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6a5ccda873f06065630d61b0": {
+      title: "Secret Message",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6a5cd2178fd7c2b201032f3f": {
+      title: "Demonstration Model",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6a7ae35b2dbf91eb050af95a": {
+      title: "Invasive Therapy",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6a7aef2360157cb5e3029a5f": {
+      title: "Stimulating Demand",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6a7af2e48fddc3979d0510b8": {
+      title: "Akimbo",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6a7b0df31ea00c9a980e2742": {
+      title: "Sisyphus",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    },
+    "6a959d33b9b22567ed0d0a4e": {
+      title: "Can't Drink Away Skill",
+      modes: [
+        "pve",
+        "pvp"
+      ]
+    }
+  },
+  tombstones: [
+    {
+      id: "625d6ffcaa168e51321d69d7",
+      lastTitle: "Assessment - Part 1",
+      lastMode: "legacy",
+      removedDetectedAt: "2026-11-17T21:59:45.059Z"
+    },
+    {
+      id: "625d6fff4149f1149b5b12c9",
+      lastTitle: "Assessment - Part 2",
+      lastMode: "legacy",
+      removedDetectedAt: "2026-11-17T21:59:45.059Z"
+    },
+    {
+      id: "625d7001c4874104f230c0c5",
+      lastTitle: "Assessment - Part 3",
+      lastMode: "legacy",
+      removedDetectedAt: "2026-11-17T21:59:45.059Z"
+    },
+    {
+      id: "669fa3a1c26f13bd04030f37",
+      lastTitle: "Capacity Check",
+      lastMode: "legacy",
+      removedDetectedAt: "2026-11-17T21:59:45.059Z"
+    },
+    {
+      id: "669fa394e0c9f9fafa082897",
+      lastTitle: "Forklift Certified",
+      lastMode: "legacy",
+      removedDetectedAt: "2026-11-17T21:59:45.059Z"
+    },
+    {
+      id: "625d700cc48e6c62a440fab5",
+      lastTitle: "Getting Acquainted",
+      lastMode: "legacy",
+      removedDetectedAt: "2026-11-17T21:59:45.059Z"
+    },
+    {
+      id: "625d70031ed3bb5bcc5bd9e5",
+      lastTitle: "Key to the Tower",
+      lastMode: "legacy",
+      removedDetectedAt: "2026-11-17T21:59:45.059Z"
+    },
+    {
+      id: "625d7005a4eb80027c4f2e09",
+      lastTitle: "Knock-Knock",
+      lastMode: "legacy",
+      removedDetectedAt: "2026-11-17T21:59:45.059Z"
+    },
+    {
+      id: "6391d90f4ed9512be67647df",
+      lastTitle: "Make Amends",
+      lastMode: "legacy",
+      removedDetectedAt: "2026-11-17T21:59:45.059Z"
+    },
+    {
+      id: "6391d912f8e5dd32bf4e3ab2",
+      lastTitle: "Make Amends",
+      lastMode: "legacy",
+      removedDetectedAt: "2026-11-17T21:59:45.059Z"
+    },
+    {
+      id: "6391d9144b15ca31f76bc323",
+      lastTitle: "Make Amends",
+      lastMode: "legacy",
+      removedDetectedAt: "2026-11-17T21:59:45.059Z"
+    },
+    {
+      id: "626148251ed3bb5bcc5bd9ed",
+      lastTitle: "Make Amends - Buyout",
+      lastMode: "legacy",
+      removedDetectedAt: "2026-11-17T21:59:45.059Z"
+    },
+    {
+      id: "6261482fa4eb80027c4f2e11",
+      lastTitle: "Make Amends - Equipment",
+      lastMode: "legacy",
+      removedDetectedAt: "2026-11-17T21:59:45.059Z"
+    },
+    {
+      id: "6261483dc4874104f230c0cd",
+      lastTitle: "Make Amends - Quarantine",
+      lastMode: "legacy",
+      removedDetectedAt: "2026-11-17T21:59:45.059Z"
+    },
+    {
+      id: "626148334149f1149b5b12ca",
+      lastTitle: "Make Amends - Security",
+      lastMode: "legacy",
+      removedDetectedAt: "2026-11-17T21:59:45.059Z"
+    },
+    {
+      id: "6261483ac48e6c62a440fab7",
+      lastTitle: "Make Amends - Software",
+      lastMode: "legacy",
+      removedDetectedAt: "2026-11-17T21:59:45.059Z"
+    },
+    {
+      id: "62614836f7308432be1d44cc",
+      lastTitle: "Make Amends - Sweep Up",
+      lastMode: "legacy",
+      removedDetectedAt: "2026-11-17T21:59:45.059Z"
+    },
+    {
+      id: "625d6ff5ddc94657c21a1625",
+      lastTitle: "Network Provider - Part 1",
+      lastMode: "legacy",
+      removedDetectedAt: "2026-11-17T21:59:45.059Z"
+    },
+    {
+      id: "625d6ffaf7308432be1d44c5",
+      lastTitle: "Network Provider - Part 2",
+      lastMode: "legacy",
+      removedDetectedAt: "2026-11-17T21:59:45.059Z"
+    }
+  ]
+};
+
+// tools/eft-log-importer/sessions.ts
+import { createHash } from "node:crypto";
+import { readdir, readFile } from "node:fs/promises";
+import { join } from "node:path";
+var SESSION_FOLDER = /^log_(\d{4}\.\d{2}\.\d{2}_\d{1,2}-\d{2}-\d{2})_(\d+\.\d+\.\d+\.\d+)(?:\.\d+)?$/;
+var LINE_TIMESTAMP = /^(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}(?:\.\d+)?)\|/;
+var PROFILE_SWITCH = /CompleteSelectedProfile ProfileId:([0-9a-f]{24})/;
+var GATEWAY = /https?:\/\/gw-(pve|pvp-season|pvp)\.escapefromtarkov\.com/;
+var QUEST_TEMPLATE = /"templateId"\s*:\s*"([0-9a-f]{24}) (description|successMessageText|failMessageText)"/;
+var MESSAGE_TYPE = /"type"\s*:\s*(\d+)\s*,/;
+var GATEWAY_MODE = { pve: "pve", pvp: "pvp", "pvp-season": "seasonal-pvp" };
+var SUFFIX_EVENT = {
+  description: "started",
+  failMessageText: "failed",
+  successMessageText: "completed"
+};
+var TYPE_EVENT = { "10": "started", "11": "failed", "12": "completed" };
+var hashProfileId = (profileId) => createHash("sha256").update(profileId).digest("hex").slice(0, 8);
+function compareVersions(a, b) {
+  const left = a.split(".").map(Number);
+  const right = b.split(".").map(Number);
+  for (let index = 0; index < Math.max(left.length, right.length); index += 1) {
+    const difference = (left[index] ?? 0) - (right[index] ?? 0);
+    if (difference !== 0)
+      return difference;
+  }
+  return 0;
+}
+var channelOf = (fileName) => fileName.split(" ").pop()?.replace(/_\d+\.log$/i, "") ?? fileName;
+async function readChannel(folderPath, files, channel) {
+  const matching = files.filter((file) => channelOf(file) === channel).sort();
+  const contents = await Promise.all(matching.map((file) => readFile(join(folderPath, file), "utf8").catch(() => "")));
+  return contents.join("\n");
+}
+function profileAt(switches, timestamp) {
+  let active;
+  for (const entry of switches) {
+    if (entry.timestamp > timestamp)
+      break;
+    active = entry.profileHash;
+  }
+  return active;
+}
+async function readSession(logsRoot, folder) {
+  const match = SESSION_FOLDER.exec(folder);
+  if (!match)
+    return void 0;
+  const folderPath = join(logsRoot, folder);
+  let files;
+  try {
+    files = (await readdir(folderPath, { withFileTypes: true })).filter((entry) => entry.isFile()).map((entry) => entry.name);
+  } catch {
+    return void 0;
+  }
+  const [application, backend, push] = await Promise.all([
+    readChannel(folderPath, files, "application"),
+    readChannel(folderPath, files, "backend"),
+    readChannel(folderPath, files, "push-notifications")
+  ]);
+  const profileSwitches = [];
+  application.split("\n").forEach((line) => {
+    const timestamp2 = LINE_TIMESTAMP.exec(line)?.[1];
+    const profile = PROFILE_SWITCH.exec(line)?.[1];
+    if (timestamp2 && profile)
+      profileSwitches.push({ timestamp: timestamp2, profileHash: hashProfileId(profile) });
+  });
+  profileSwitches.sort((a, b) => a.timestamp.localeCompare(b.timestamp));
+  const gatewayHits = {};
+  backend.split("\n").forEach((line) => {
+    const timestamp2 = LINE_TIMESTAMP.exec(line)?.[1];
+    const gateway = GATEWAY.exec(line)?.[1];
+    if (!timestamp2 || !gateway)
+      return;
+    const key = profileAt(profileSwitches, timestamp2) ?? "before-profile-selection";
+    const mode = GATEWAY_MODE[gateway];
+    gatewayHits[key] = { ...gatewayHits[key], [mode]: (gatewayHits[key]?.[mode] ?? 0) + 1 };
+  });
+  const events = [];
+  let timestamp = "";
+  let messageType;
+  push.split("\n").forEach((line) => {
+    const header = LINE_TIMESTAMP.exec(line);
+    if (header) {
+      timestamp = header[1];
+      messageType = void 0;
+    }
+    const type = MESSAGE_TYPE.exec(line)?.[1];
+    if (type)
+      messageType = type;
+    const template = QUEST_TEMPLATE.exec(line);
+    if (!template)
+      return;
+    const event = messageType && TYPE_EVENT[messageType] || SUFFIX_EVENT[template[2]];
+    events.push({ timestamp, taskId: template[1], event, profileHash: profileAt(profileSwitches, timestamp) });
+  });
+  return {
+    folder,
+    startedAt: match[1],
+    clientVersion: match[2],
+    channels: Array.from(new Set(files.map(channelOf))).sort(),
+    profileSwitches,
+    gatewayHits,
+    events
+  };
+}
+async function readSessions(eftPath, options = {}) {
+  const logsRoot = join(eftPath, "Logs");
+  let entries;
+  try {
+    entries = await readdir(logsRoot, { withFileTypes: true });
+  } catch {
+    return [];
+  }
+  const since = options.sinceVersion ?? "1.2.0.0";
+  const folders = entries.filter((entry) => entry.isDirectory() && SESSION_FOLDER.test(entry.name)).map((entry) => entry.name).filter((folder) => compareVersions(SESSION_FOLDER.exec(folder)[2], since) >= 0).sort();
+  const sessions = await Promise.all(folders.map((folder) => readSession(logsRoot, folder)));
+  return sessions.filter((session) => Boolean(session));
+}
+function resolveProfileModes(sessions) {
+  const totals = {};
+  sessions.forEach((session) => {
+    Object.entries(session.gatewayHits).forEach(([profileHash, hits]) => {
+      if (profileHash === "before-profile-selection")
+        return;
+      Object.entries(hits).forEach(([mode, count]) => {
+        totals[profileHash] = { ...totals[profileHash], [mode]: (totals[profileHash]?.[mode] ?? 0) + (count ?? 0) };
+      });
+    });
+  });
+  return Object.fromEntries(Object.entries(totals).map(([profileHash, hits]) => {
+    const ranked = Object.entries(hits).sort((a, b) => (b[1] ?? 0) - (a[1] ?? 0));
+    const [top] = ranked;
+    const total = ranked.reduce((sum, [, count]) => sum + (count ?? 0), 0);
+    if (!top || total === 0)
+      return [profileHash, { confidence: "unknown", hits }];
+    const share = (top[1] ?? 0) / total;
+    const confidence = share >= 0.95 ? "high" : share >= 0.75 ? "low" : "unknown";
+    return [profileHash, {
+      mode: confidence === "unknown" ? void 0 : top[0],
+      confidence,
+      hits
+    }];
+  }));
+}
+
+// tools/eft-log-importer/extractV2.ts
+var EXTRACTOR_VERSION = "2.0.0";
+var DEFAULT_SINCE_VERSION = "1.2.0.0";
+var catalogMode = (mode) => {
+  if (mode === "pve")
+    return "pve";
+  if (mode === "pvp" || mode === "seasonal-pvp")
+    return "pvp";
+  return void 0;
+};
+async function extractProfilesFromLogs({
+  eftPath,
+  catalog,
+  sinceVersion = DEFAULT_SINCE_VERSION,
+  now = /* @__PURE__ */ new Date()
+}) {
+  const sessions = await readSessions(eftPath, { sinceVersion });
+  const modes = resolveProfileModes(sessions);
+  const tombstones = new Set((catalog.tombstones ?? []).map((tombstone) => tombstone.id));
+  const accumulators = /* @__PURE__ */ new Map();
+  let unattributedEventCount = 0;
+  sessions.forEach((session) => {
+    session.events.forEach((event) => {
+      if (!event.profileHash) {
+        unattributedEventCount += 1;
+        return;
+      }
+      const accumulator = accumulators.get(event.profileHash) ?? {
+        sessions: /* @__PURE__ */ new Set(),
+        versions: [],
+        lastEvent: /* @__PURE__ */ new Map()
+      };
+      accumulator.sessions.add(session.folder);
+      accumulator.versions.push(session.clientVersion);
+      if (!accumulator.firstSeen || event.timestamp < accumulator.firstSeen)
+        accumulator.firstSeen = event.timestamp;
+      if (!accumulator.lastSeen || event.timestamp > accumulator.lastSeen)
+        accumulator.lastSeen = event.timestamp;
+      const previous = accumulator.lastEvent.get(event.taskId);
+      if (!previous || event.timestamp >= previous.timestamp) {
+        accumulator.lastEvent.set(event.taskId, { event: event.event, timestamp: event.timestamp });
+      }
+      accumulators.set(event.profileHash, accumulator);
+    });
+  });
+  const profiles = Array.from(accumulators.entries()).map(([profileHash, accumulator]) => {
+    const resolution = modes[profileHash];
+    const mode = resolution?.mode ?? "unknown";
+    const wanted = catalogMode(resolution?.mode);
+    const completed = [];
+    const started = [];
+    const failed = [];
+    const unknownTasks = [];
+    Array.from(accumulator.lastEvent.entries()).sort(([, a], [, b]) => a.timestamp.localeCompare(b.timestamp)).forEach(([taskId, { event }]) => {
+      const entry = catalog.tasks[taskId];
+      const known = entry && (!wanted || entry.modes.includes(wanted));
+      if (!known) {
+        unknownTasks.push({
+          id: taskId,
+          event,
+          classification: entry ? "other-mode" : tombstones.has(taskId) ? "removed" : "unresolved"
+        });
+        return;
+      }
+      if (event === "completed")
+        completed.push(taskId);
+      else if (event === "failed")
+        failed.push(taskId);
+      else
+        started.push(taskId);
+    });
+    const versions = Array.from(new Set(accumulator.versions)).sort(compareVersions);
+    return {
+      profileKey: `${mode}:${profileHash}`,
+      mode,
+      modeConfidence: resolution?.confidence ?? "unknown",
+      versionRange: { oldest: versions[0], newest: versions[versions.length - 1] },
+      sessionCount: accumulator.sessions.size,
+      firstSeen: accumulator.firstSeen,
+      lastSeen: accumulator.lastSeen,
+      completedTaskIds: completed,
+      startedTaskIds: started,
+      failedTaskIds: failed,
+      unknownTasks
+    };
+  });
+  const modeOrder = { pve: 0, pvp: 1, "seasonal-pvp": 2, unknown: 3 };
+  profiles.sort((a, b) => (modeOrder[a.mode] ?? 9) - (modeOrder[b.mode] ?? 9) || (b.lastSeen ?? "").localeCompare(a.lastSeen ?? ""));
+  const warnings = [];
+  if (sessions.length === 0)
+    warnings.push(`No hay sesiones de logs con version >= ${sinceVersion}.`);
+  if (unattributedEventCount > 0) {
+    warnings.push(`${unattributedEventCount} eventos de quest ocurrieron antes de seleccionar perfil y no se han asignado.`);
+  }
+  if (profiles.some((profile) => profile.mode === "unknown")) {
+    warnings.push("Hay perfiles cuyo modo no se pudo determinar con seguridad; revisa antes de aplicarlos.");
+  }
+  return {
+    schemaVersion: 2,
+    source: "eft-local-logs",
+    generatedAt: now.toISOString(),
+    extractorVersion: EXTRACTOR_VERSION,
+    since: sinceVersion,
+    catalog: { pveSyncedAt: catalog.metadata?.pveSyncedAt, pvpSyncedAt: catalog.metadata?.pvpSyncedAt },
+    sessionCount: sessions.length,
+    profiles,
+    warnings
+  };
+}
+var MODE_LABEL = { pve: "PvE", pvp: "PvP", "seasonal-pvp": "PvP Season", unknown: "modo desconocido" };
+function formatExtractionSummary(result, outputPath) {
+  return [
+    `Escrito ${outputPath}`,
+    `Sesiones leidas (>= ${result.since}): ${result.sessionCount}`,
+    ...result.profiles.map((profile) => `- Perfil ${MODE_LABEL[profile.mode] ?? profile.mode} (${profile.profileKey.split(":")[1]}): ${profile.completedTaskIds.length} completadas, ${profile.startedTaskIds.length} en curso, ${profile.failedTaskIds.length} fallidas, ${profile.unknownTasks.length} sin resolver`),
+    ...result.warnings.map((warning) => `Aviso: ${warning}`),
+    "Sube el JSON en la pagina Importar y elige el perfil que quieres aplicar."
+  ];
+}
+
+// tools/eft-log-importer/paths.ts
+import { access } from "node:fs/promises";
+import { homedir, platform } from "node:os";
+import { join as join2, resolve } from "node:path";
+var DEFAULT_OUTPUT = "kappa-progress-import.json";
 function getArg(argv, name) {
   const index = argv.indexOf(name);
-  if (index === -1) return undefined;
+  if (index === -1)
+    return void 0;
   return argv[index + 1];
 }
-
-function unique(values) {
-  return Array.from(new Set(values));
-}
-
-function eventFromSuffix(suffix) {
-  if (suffix === 'successMessageText') return 'completed';
-  if (suffix === 'failMessageText') return 'failed';
-  return 'started';
-}
-
 function getCandidateEftPaths(argv = process.argv, env = process.env) {
-  const explicitPath = getArg(argv, '--eft') ?? getArg(argv, '--logs') ?? env.EFT_PATH;
-  if (explicitPath) return [resolve(explicitPath)];
-
+  const explicitPath = getArg(argv, "--eft") ?? getArg(argv, "--logs") ?? env.EFT_PATH;
+  if (explicitPath)
+    return [resolve(explicitPath)];
   const candidates = [
     env.EFT_INSTALL_PATH,
-    platform() === 'win32' ? 'C:\\Battlestate Games\\EFT\\EscapeFromTarkov' : undefined,
-    platform() === 'win32' ? 'C:\\Games\\EscapeFromTarkov' : undefined,
-    join(homedir(), 'Desktop', 'EFTINSTALLFOLDER', 'EscapeFromTarkov'),
-    '/mnt/c/Battlestate Games/EFT/EscapeFromTarkov',
-    '/mnt/c/Games/EscapeFromTarkov',
-    '/mnt/c/Users/masen/Desktop/EFTINSTALLFOLDER/EscapeFromTarkov',
+    platform() === "win32" ? "C:\\Battlestate Games\\EFT\\EscapeFromTarkov" : void 0,
+    platform() === "win32" ? "C:\\Games\\EscapeFromTarkov" : void 0,
+    join2(homedir(), "Desktop", "EFTINSTALLFOLDER", "EscapeFromTarkov"),
+    "/mnt/c/Battlestate Games/EFT/EscapeFromTarkov",
+    "/mnt/c/Games/EscapeFromTarkov",
+    "/mnt/c/Users/masen/Desktop/EFTINSTALLFOLDER/EscapeFromTarkov"
   ];
-
-  return unique(candidates.filter(Boolean).map((value) => resolve(value)));
+  return Array.from(new Set(candidates.filter((value) => Boolean(value)).map((value) => resolve(value))));
 }
-
 async function hasReadableLogs(eftPath) {
   try {
-    await access(join(eftPath, 'Logs'));
+    await access(join2(eftPath, "Logs"));
     return true;
   } catch {
     return false;
   }
 }
-
 async function resolveEftPath(argv = process.argv, env = process.env) {
   const candidates = getCandidateEftPaths(argv, env);
   for (const candidate of candidates) {
-    if (await hasReadableLogs(candidate)) return candidate;
+    if (await hasReadableLogs(candidate))
+      return candidate;
   }
-  return undefined;
+  return void 0;
 }
 
-async function walkLogs(directory) {
-  let entries;
-  try {
-    entries = await readdir(directory, { withFileTypes: true });
-  } catch {
-    return [];
-  }
-
-  const files = await Promise.all(entries.map(async (entry) => {
-    const path = join(directory, entry.name);
-    if (entry.isDirectory()) return walkLogs(path);
-    if (entry.isFile() && PUSH_LOG_PATTERN.test(entry.name)) return [path];
-    return [];
-  }));
-
-  return files.flat();
-}
-
-function parsePushLog(text, file) {
-  const matches = [];
-  const profileIds = [];
-  let match;
-  TEMPLATE_PATTERN.lastIndex = 0;
-
-  while ((match = TEMPLATE_PATTERN.exec(text))) {
-    matches.push({
-      taskId: match[1],
-      suffix: match[2],
-      templateId: match[0].match(/"([0-9a-f]{24}\s+[^"]+)"/)?.[1] ?? match[1] + ' ' + match[2],
-      file,
-      line: text.slice(0, match.index).split('\n').length,
-    });
-  }
-
-  text.split('\n').forEach((line) => {
-    const profileMatch = PROFILE_PATTERN.exec(line);
-    if (profileMatch) profileIds.push(profileMatch[1]);
-  });
-
-  return { matches, profileIds };
-}
-
-async function extractProgressFromLogs(eftPath) {
-  const logsRoot = join(eftPath, 'Logs');
-  const logFiles = await walkLogs(logsRoot);
-  const completedTaskIds = [];
-  const startedTaskIds = [];
-  const failedTaskIds = [];
-  const rawMatches = [];
-  const unmatchedTemplateIds = [];
-  const profileIds = [];
-
-  for (const logFile of logFiles) {
-    const text = await readFile(logFile, 'utf8').catch(() => '');
-    const relativeFile = relative(eftPath, logFile) || basename(logFile);
-    const parsed = parsePushLog(text, relativeFile);
-    profileIds.push(...parsed.profileIds);
-
-    parsed.matches.forEach((templateMatch) => {
-      const event = eventFromSuffix(templateMatch.suffix);
-      const isKnownTask = TASK_IDS.has(templateMatch.taskId);
-
-      if (event === 'completed' && isKnownTask) completedTaskIds.push(templateMatch.taskId);
-      if (event === 'started' && isKnownTask) startedTaskIds.push(templateMatch.taskId);
-      if (event === 'failed' && isKnownTask) failedTaskIds.push(templateMatch.taskId);
-      if (!isKnownTask) unmatchedTemplateIds.push({ templateId: templateMatch.templateId, event });
-
-      rawMatches.push({
-        taskId: templateMatch.taskId,
-        event,
-        file: templateMatch.file,
-        line: templateMatch.line,
-        templateId: templateMatch.templateId,
-        confidence: isKnownTask ? 'high' : 'low',
-      });
-    });
-  }
-
-  const warnings = ['Local logs may be incomplete. Completed quests before retained logs cannot be detected.'];
-  if (logFiles.length === 0) warnings.push('No push-notifications logs were found under EscapeFromTarkov/Logs.');
-
-  return {
-    schemaVersion: 1,
-    source: 'eft-local-logs',
-    generatedAt: new Date().toISOString(),
-    profile: { profileId: unique(profileIds)[0] },
-    completedTaskIds: unique(completedTaskIds),
-    startedTaskIds: unique(startedTaskIds).filter((id) => !completedTaskIds.includes(id)),
-    failedTaskIds: unique(failedTaskIds),
-    rawMatches,
-    unmatchedTemplateIds,
-    warnings,
-  };
-}
-
+// tools/eft-log-importer/standalone.ts
 function printHelp() {
-  console.log(`Usage: node eft-log-importer.mjs --eft "C:\\Games\\EscapeFromTarkov" --out kappa-progress-import.json
+  console.log(`Kappa Progress Tracker - extractor de logs ${EXTRACTOR_VERSION}
 
-If --eft is omitted, the extractor tries common install locations and EFT_PATH/EFT_INSTALL_PATH.
+Uso: node eft-log-importer.mjs --eft "C:\\Games\\EscapeFromTarkov" --out kappa-progress-import.json
 
-Options:
-  --eft <path>   Path to the EscapeFromTarkov installation folder.
-  --out <path>   Output JSON path. Defaults to ./kappa-progress-import.json.
-  --help         Show this help.
+Opciones:
+  --eft <ruta>      Carpeta de instalacion de EscapeFromTarkov (la que contiene Logs).
+  --out <ruta>      JSON de salida. Por defecto ./${DEFAULT_OUTPUT}.
+  --since <version> Ignora sesiones anteriores (por defecto ${DEFAULT_SINCE_VERSION}).
+  --help            Muestra esta ayuda.
 
-The extractor is read-only: it scans EscapeFromTarkov/Logs and writes only the output JSON.`);
+Solo lectura. Separa el progreso de cada perfil (PvE, PvP, PvP Season) y no guarda IDs de cuenta ni de perfil.`);
 }
-
 async function main() {
-  if (process.argv.includes('--help')) {
+  if (process.argv.includes("--help")) {
     printHelp();
     return;
   }
-
   const eftPath = await resolveEftPath();
   if (!eftPath) {
     printHelp();
-    console.error('\nNo readable EscapeFromTarkov/Logs folder was found. Tried:');
-    getCandidateEftPaths().forEach((candidate) => console.error('- ' + candidate));
-    console.error('\nPass the folder explicitly with --eft or set EFT_PATH.');
+    console.error("\nNo se encontro una carpeta EscapeFromTarkov/Logs legible. Probadas:");
+    getCandidateEftPaths().forEach((candidate) => console.error(`- ${candidate}`));
     process.exitCode = 1;
     return;
   }
-
-  const outputPath = resolve(getArg(process.argv, '--out') ?? DEFAULT_OUTPUT);
-  const result = await extractProgressFromLogs(eftPath);
+  const outputPath = resolve2(getArg(process.argv, "--out") ?? DEFAULT_OUTPUT);
+  const result = await extractProfilesFromLogs({
+    eftPath,
+    catalog: catalog_index_default,
+    sinceVersion: getArg(process.argv, "--since") ?? DEFAULT_SINCE_VERSION
+  });
   await mkdir(dirname(outputPath), { recursive: true });
-  await writeFile(outputPath, JSON.stringify(result, null, 2) + '\n', 'utf8');
-
-  console.log('Wrote ' + outputPath);
-  console.log('Completed quests: ' + result.completedTaskIds.length);
-  console.log('Started quests: ' + (result.startedTaskIds?.length ?? 0));
-  console.log('Failed/alternative quests: ' + (result.failedTaskIds?.length ?? 0));
-  console.log('Unmatched template IDs: ' + (result.unmatchedTemplateIds?.length ?? 0));
+  await writeFile(outputPath, `${JSON.stringify(result, null, 2)}
+`, "utf8");
+  formatExtractionSummary(result, outputPath).forEach((line) => console.log(line));
 }
-
 main().catch((error) => {
   console.error(error instanceof Error ? error.message : error);
   process.exitCode = 1;

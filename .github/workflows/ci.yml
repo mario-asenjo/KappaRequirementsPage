@@ -41,6 +41,9 @@ jobs:
       - name: Log session tests
         run: npm run test:log-sessions
 
+      - name: EFT log extractor v2 tests
+        run: npm run test:extractor-v2
+
       - name: EFT log extractor tests
         run: npm run test:extractor
 

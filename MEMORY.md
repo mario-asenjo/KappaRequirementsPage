@@ -56,6 +56,16 @@
 
 ## Historial De Cambios
 
+### 2026-11-18 (extractor 2.0 y seleccion de perfil, #73 #74)
+
+- Rama de trabajo: `feat/extractor-v2` (incluye #83 y #84).
+- Motivo: el usuario vio resultados raros. El extractor publicado (v1, junio) sobre sus logs daba 130 completadas: solo 10 eran PvE >= 1.2 (87 PvE < 1.2, 31 PvP < 1.2, 2 PvP actuales); ademas mostraba el profileId real.
+- `tools/eft-log-importer/extractV2.ts`: un bloque por perfil, estado final = ultimo evento, desconocidos clasificados (`other-mode`, `removed`, `unresolved`), sin IDs reales.
+- El `.mjs` descargable se genera ahora con esbuild desde `standalone.ts` (antes era una copia a mano del parser en una plantilla). Mismo resultado que el CLI del repo verificado con los logs reales.
+- `/import`: acepta v1 y v2; selector de perfil (PvE preseleccionado); aviso y confirmacion obligatoria para aplicar un perfil de otro modo; `lastImport` guarda `profileKey` y `mode`; ya no muestra profileId reales.
+- Logs reales: PvE 10 completadas, 16 en curso, 2 fallidas, 2 sin resolver; PvP 2 completadas. Con `--since 1.0.0.0` aparece tambien un perfil PvP Season (`gw-pvp-season` certificado).
+- Verificacion: todos los `test:*` (nuevo `test:extractor-v2`), `tsc --noEmit`, `npm run build` y capturas de `/import` en escritorio y movil.
+
 ### 2026-11-17 (survey de logs, #66)
 
 - Rama de trabajo: `feat/logs-survey`.
