@@ -24,13 +24,14 @@ done
 field() { sed -n "2,/^---$/p" "$1" | sed -n "s/^$2: //p" | head -n1; }
 body() { awk 'BEGIN{n=0} /^---$/{n++; next} n>=2{print}' "$1"; }
 
-existing_labels="$(gh label list -R "$REPO" --limit 300 --json name --jq '.[].name')"
+# Solo API REST (gh api): funciona tambien donde GraphQL no esta disponible.
+existing_labels="$(gh api --paginate "repos/$REPO/labels?per_page=100" --jq '.[].name')"
 ensure_labels() {
   local IFS=','
   for label in $1; do
     if ! grep -qx "$label" <<<"$existing_labels"; then
       echo "  creando label que falta: $label"
-      $DRY_RUN || gh label create "$label" -R "$REPO" >/dev/null
+      $DRY_RUN || gh api -X POST "repos/$REPO/labels" -f name="$label" >/dev/null
       existing_labels+=$'\n'"$label"
     fi
   done
@@ -42,14 +43,14 @@ create_issue() {
   labels="$(field "$file" labels)"
   ensure_labels "$labels"
   local IFS=','
-  for label in $labels; do label_args+=(--label "$label"); done
+  for label in $labels; do label_args+=(-f "labels[]=$label"); done
   unset IFS
   if $DRY_RUN; then
     echo "[dry-run] $title" >&2
     echo "0"
     return
   fi
-  gh issue create -R "$REPO" --title "$title" --body "$(body "$file")" "${label_args[@]}" | sed 's#.*/##'
+  gh api -X POST "repos/$REPO/issues" -f title="$title" -f body="$(body "$file")" "${label_args[@]}" --jq .number
 }
 
 echo "Creando epic..."
@@ -73,16 +74,19 @@ for file in "$DIR"/[0-9][0-9]-*.md; do
     IFS=',' read -ra old <<<"$supersedes"
     for o in "${old[@]}"; do
       echo "  cerrando #$o (sustituida por #$number)"
-      $DRY_RUN || gh issue close "$o" -R "$REPO" --reason "not planned" \
-        --comment "Sustituida por #$number dentro del epic #$EPIC (plan PvE-first, \`docs/pve-first-plan.md\`)."
+      if ! $DRY_RUN; then
+        gh api -X POST "repos/$REPO/issues/$o/comments" \
+          -f body="Sustituida por #$number dentro del epic #$EPIC (plan PvE-first, \`docs/pve-first-plan.md\`)." >/dev/null
+        gh api -X PATCH "repos/$REPO/issues/$o" -f state=closed -f state_reason=not_planned >/dev/null
+      fi
     done
   fi
 done
 
 if ! $DRY_RUN; then
-  gh issue edit "$EPIC" -R "$REPO" --body "$(body "$DIR/00-epic.md")
+  gh api -X PATCH "repos/$REPO/issues/$EPIC" -f body="$(body "$DIR/00-epic.md")
 
 ## Issues hijas
-$checklist"
+$checklist" >/dev/null
 fi
 echo "Hecho."

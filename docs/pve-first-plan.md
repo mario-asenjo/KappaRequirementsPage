@@ -2,7 +2,7 @@
 
 Fecha: 2026-11-17
 Rama: `docs/pve-first-plan`
-Estado: propuesta para iterar. Issues listas en `docs/pve-first/issues/` (crear con `bash scripts/create-pve-first-issues.sh`).
+Estado: propuesta para iterar. Epic: #64 (sub-issues #65-#81). Fuente de las issues: `docs/pve-first/issues/`.
 
 ## 1. Objetivo
 
@@ -76,7 +76,7 @@ Prestige PvE (hoy): P1 nivel 15 + 5M rublos; P2 nivel 25 + skills + estaciones +
 
 ### 2.4 Logs
 
-**Pendiente**: la carpeta de logs no llego a esta sesion. Lo que sabemos viene del discovery (2026-09-28): carpetas `log_YYYY.MM.DD_HH-MM-SS_<version>` de 1.0.4.6 a 1.1.5.1; senales de modo `gw-pvp`, `gw-pvp-season`, `onlinePveRaidStates`, `TRACE-NetworkGameCreate ... GameMode`; eventos de quest en `push-notifications_*.log` y tambien en `output_*.log`; 7 IDs sin resolver (ver 2.5). La issue 02 define la certificacion.
+**Pendiente**: la carpeta de logs no llego a esta sesion. Lo que sabemos viene del discovery (2026-09-28): carpetas `log_YYYY.MM.DD_HH-MM-SS_<version>` de 1.0.4.6 a 1.1.5.1; senales de modo `gw-pvp`, `gw-pvp-season`, `onlinePveRaidStates`, `TRACE-NetworkGameCreate ... GameMode`; eventos de quest en `push-notifications_*.log` y tambien en `output_*.log`; 7 IDs sin resolver (ver 2.5). #66 define la certificacion.
 
 ### 2.5 IDs de logs sin resolver
 
@@ -143,7 +143,7 @@ interface ProfileProgress {
 interface UserProgress { version: 3; activeProfileKey: string; profiles: Record<string, ProfileProgress> }
 ```
 
-Migracion: v1 (`userProgress` global) y v2 (PR #63) -> v3 en perfil `pve:default`, conservando IDs, y pasando cada ID por la tabla de reconciliacion (issue 08).
+Migracion: v1 (`userProgress` global) y v2 (PR #63) -> v3 en perfil `pve:default`, conservando IDs, y pasando cada ID por la tabla de reconciliacion (#72).
 
 ### 3.3 Extractor
 
@@ -158,64 +158,64 @@ Migracion: v1 (`userProgress` global) y v2 (PR #63) -> v3 en perfil `pve:default
 
 | Fase | Issue | Titulo | Depende de | Prioridad |
 | --- | --- | --- | --- | --- |
-| 0 | 01 | Saneamiento de backlog, ramas y PRs | - | P1 |
-| 0 | 02 | Certificacion con logs reales 1.0 -> 1.3.x | logs del usuario | P1 |
-| 1 | 03 | Pipeline de tasks multi-modo desde json.tarkov.dev | 01 | P1 |
-| 1 | 04 | Achievements, prestige y quest items por modo | 03 | P1 |
-| 1 | 05 | Items, hideout y barters PvE (integra #62) | 03 | P2 |
-| 1 | 06 | Capa semantica wiki: Collector, pools LL, reglas PvE | 03 | P2 |
-| 2 | 07 | Progreso por perfil/modo, faccion, LL y prestige | 03 | P1 |
-| 2 | 08 | Reconciliacion de IDs y migracion de progreso existente | 03, 07 | P1 |
-| 3 | 09 | Extractor 2.0: atribucion por sesion | 02, 03 | P1 |
-| 3 | 10 | Importador web v2 por perfil | 07, 09 | P1 |
-| 3 | 11 | Distribucion del extractor (ZIP/mjs) post Unity 6 | 09 | P2 |
-| 4 | 12 | Shell y Mission Control PvE-first | 07 | P1 |
-| 4 | 13 | Collector/Kappa 1.3 y Lightkeeper actual | 04, 06, 07 | P1 |
-| 4 | 14 | Quests (lista, detalle, arbol, LL board) con datos 1.3 | 03, 07 | P2 |
-| 4 | 15 | Mapas y raid planner sobre objetivos PvE | 03 | P2 |
-| 4 | 16 | Prestige y achievements PvE | 04, 07 | P2 |
-| 5 | 17 | Invariantes de datos en CI, sync automatico y docs | 03 | P1 |
+| 0 | #65 | Saneamiento de backlog, ramas y PRs | - | P1 |
+| 0 | #66 | Certificacion con logs reales 1.0 -> 1.3.x | logs del usuario | P1 |
+| 1 | #67 | Pipeline de tasks multi-modo desde json.tarkov.dev | #65 | P1 |
+| 1 | #68 | Achievements, prestige y quest items por modo | #67 | P1 |
+| 1 | #69 | Items, hideout y barters PvE (integra #62) | #67 | P2 |
+| 1 | #70 | Capa semantica wiki: Collector, pools LL, reglas PvE | #67 | P2 |
+| 2 | #71 | Progreso por perfil/modo, faccion, LL y prestige | #67 | P1 |
+| 2 | #72 | Reconciliacion de IDs y migracion de progreso existente | #67, #71 | P1 |
+| 3 | #73 | Extractor 2.0: atribucion por sesion | #66, #67 | P1 |
+| 3 | #74 | Importador web v2 por perfil | #71, #73 | P1 |
+| 3 | #75 | Distribucion del extractor (ZIP/mjs) post Unity 6 | #73 | P2 |
+| 4 | #76 | Shell y Mission Control PvE-first | #71 | P1 |
+| 4 | #77 | Collector/Kappa 1.3 y Lightkeeper actual | #68, #70, #71 | P1 |
+| 4 | #78 | Quests (lista, detalle, arbol, LL board) con datos 1.3 | #67, #71 | P2 |
+| 4 | #79 | Mapas y raid planner sobre objetivos PvE | #67 | P2 |
+| 4 | #80 | Prestige y achievements PvE | #68, #71 | P2 |
+| 5 | #81 | Invariantes de datos en CI, sync automatico y docs | #67 | P1 |
 
-Camino critico: 01 -> 03 -> 07 -> 08 -> 12/13, y en paralelo 02 -> 09 -> 10.
+Camino critico: #65 -> #67 -> #71 -> #72 -> #76/#77, y en paralelo #66 -> #73 -> #74.
 
 Orden de PRs sugerido (pequenos y verificables):
 
 1. `docs/pve-first-plan` (este documento + discovery rescatado).
-2. `feat/data-json-multimode` (03) regenerando `src/data/pve/*` y `src/data/pvp/*`; la app sigue leyendo un alias `src/data/tasks.json -> pve` hasta 07.
-3. `feat/data-achievements-prestige` (04) y `feat/trader-barters-clean` (#62 rebased, 05).
-4. `feat/profile-progress-v3` (07 + 08) reutilizando el modelo de #63.
-5. `feat/extractor-sessions` (09) -> `feat/import-v2-ui` (10) -> `chore/extractor-dist` (11).
-6. Vistas: 12 -> 13 -> 14/15/16.
-7. `ci/data-invariants` (17) puede ir en paralelo desde el paso 2.
+2. `feat/data-json-multimode` (#67) regenerando `src/data/pve/*` y `src/data/pvp/*`; la app sigue leyendo un alias `src/data/tasks.json -> pve` hasta #71.
+3. `feat/data-achievements-prestige` (#68) y `feat/trader-barters-clean` (#62 rebased, 05).
+4. `feat/profile-progress-v3` (#71 + #72) reutilizando el modelo de #63.
+5. `feat/extractor-sessions` (#73) -> `feat/import-v2-ui` (#74) -> `chore/extractor-dist` (#75).
+6. Vistas: #76 -> #77 -> #78/#79/#80.
+7. `ci/data-invariants` (#81) puede ir en paralelo desde el paso 2.
 
 ## 5. Triaje propuesto de issues existentes
 
-| Issue | Propuesta | Motivo |
+| Issue | Decision | Motivo |
 | --- | --- | --- |
-| #54 Progreso por modo | Cerrar como duplicada de 07 | 07 amplia con faccion, LL, prestige. |
-| #55 Importer 2.0 | Cerrar como duplicada de 09/10 | Atribucion por sesion corrige el diseno de #63. |
-| #56 Datos 1.1+ (GraphQL) | Cerrar como duplicada de 03 | Contexto GraphQL obsoleto. |
-| #57 Kappa/Collector 1.1 | Cerrar como duplicada de 13 | Datos corregidos (Fence LL3, Postman Pat 2, nivel 42). |
-| #36 Spike logs | Cerrar como duplicada de 02 | |
-| #58 Trader LL board | Mantener, enlazar a 14 | Ahora hay datos (`traderRequirements`, `globalVariable`). |
-| #33 Sync automatico | Mantener, re-scope en 17 | JSON multi-modo y PR por modo. |
-| #35 Docs/FAQ | Mantener, enlazar a 17 | |
+| #54 Progreso por modo | Cerrada (2026-11-17) como sustituida de #71 | 07 amplia con faccion, LL, prestige. |
+| #55 Importer 2.0 | Cerrada (2026-11-17) como sustituida de #73/#74 | Atribucion por sesion corrige el diseno de #63. |
+| #56 Datos 1.1+ (GraphQL) | Cerrada (2026-11-17) como sustituida de #67 | Contexto GraphQL obsoleto. |
+| #57 Kappa/Collector 1.1 | Cerrada (2026-11-17) como sustituida de #77 | Datos corregidos (Fence LL3, Postman Pat 2, nivel 42). |
+| #36 Spike logs | Cerrada (2026-11-17) como sustituida de #66 | |
+| #58 Trader LL board | Mantener, enlazar a #78 | Ahora hay datos (`traderRequirements`, `globalVariable`). |
+| #33 Sync automatico | Mantener, re-scope en #81 | JSON multi-modo y PR por modo. |
+| #35 Docs/FAQ | Mantener, enlazar a #81 | |
 | #25 Iniciadas por logs | Mantener (Fase 4) | Debe ser por perfil. |
-| #26 Bloqueadores Kappa | Mantener, depende de 13 | El camino critico cambia con Collector 1.3. |
-| #27 Quest tree UX | Mantener, enlazar a 14 | Solo cadenas reales. |
-| #28 Raid planner, #41 Mapas | Mantener, enlazar a 15 | |
+| #26 Bloqueadores Kappa | Mantener, depende de #77 | El camino critico cambia con Collector 1.3. |
+| #27 Quest tree UX | Mantener, enlazar a #78 | Solo cadenas reales. |
+| #28 Raid planner, #41 Mapas | Mantener, enlazar a #79 | |
 | #29 Quest items FiR, #30 Llaves | Mantener | Ahora hay `questItems`, `neededKeys`, `foundInRaid`. |
-| #39 Hideout | Mantener, enlazar a 05 | PvE hideout + requisitos de Prestige. |
+| #39 Hideout | Mantener, enlazar a #69 | PvE hideout + requisitos de Prestige. |
 | #42 Economia | Mantener (P3) | Los precios PvE difieren de PvP: usar endpoints `/pve`. |
 | #31, #32, #34, #40 | Mantener en backlog | Sin cambios de alcance. |
-| PR #63 | Cerrar tras portar el modelo a 07 | Parser con modo global unico. |
-| PR #62 | Rebase y merge como parte de 05 | Ya usa JSON PvE. |
+| PR #63 | Cerrar tras portar el modelo a #71 | Parser con modo global unico. |
+| PR #62 | Rebase y merge como parte de #69 | Ya usa JSON PvE. |
 
-Limpieza de ramas: borrar las ~35 ramas remotas ya mergeadas en `main`; conservar `feat/trader-barters-clean` y `feat/profile-mode-importer-v2` hasta cerrar 05/07.
+Limpieza de ramas: borrar las ~35 ramas remotas ya mergeadas en `main`; conservar `feat/trader-barters-clean` y `feat/profile-mode-importer-v2` hasta cerrar #69/#71.
 
 ## 6. Riesgos
 
-- **Unity 6 (1.3.5.0)** puede cambiar logs: la issue 02 debe repetirse con una sesion post-migracion antes de cerrar 09.
+- **Unity 6 (1.3.5.0)** puede cambiar logs: #66 debe repetirse con una sesion post-migracion antes de cerrar #73.
 - `json.tarkov.dev` no expone que tasks incrementan cada `globalVariable`: los pools LL necesitan capa wiki o inferencia por trader+LL marcada `structured`.
 - Tasks de evento (Halloween) entran y salen del catalogo: el indice de tombstones evita "perder" progreso o contar fantasmas.
 - Prestige resetea el perfil PvE: hay que archivar progreso, no borrarlo.

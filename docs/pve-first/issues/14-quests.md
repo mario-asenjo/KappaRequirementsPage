@@ -13,4 +13,4 @@ Explotar los nuevos campos en todas las vistas de quests del perfil activo.
 
 ## Criterios de aceptacion
 - [ ] Ninguna vista usa `location` como unica fuente de mapa.
-- [ ] Disponibilidad coherente con la regla de la issue de perfiles.
+- [ ] Disponibilidad coherente con la regla de #71.

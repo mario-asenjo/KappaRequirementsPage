@@ -9,7 +9,7 @@ Reescribir el parser para que cada evento de quest pertenezca a la sesion (y por
 ## Contexto verificado
 - Parser de main: solo `push-notifications`, sin modo ni version.
 - PR #63: `modes[0]` global para todas las sesiones, `output` sin deduplicar, regex de version generica.
-- La matriz de senales sale de la issue de certificacion de logs.
+- La matriz de senales sale de #66.
 
 ## Alcance minimo
 - Agrupar ficheros por carpeta `log_*`; `clientVersion` desde el nombre de carpeta.

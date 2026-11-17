@@ -14,7 +14,7 @@ Dejar el repositorio en un punto de partida limpio: trabajo 1.1 rescatado, PRs a
 ## Alcance minimo
 - Mergear `docs/pve-first-plan` (plan + docs de discovery rescatados).
 - Aplicar el triaje de la seccion 5 de `docs/pve-first-plan.md` (cerrar #36/#54/#55/#56/#57 como duplicadas, comentar enlaces en las que se mantienen).
-- Decidir PR #62 (rebase en Fase 1) y PR #63 (cerrar tras portar el modelo a la issue de progreso por perfil).
+- Decidir PR #62 (rebase en Fase 1) y PR #63 (cerrar tras portar el modelo a #71).
 - Borrar ramas remotas mergeadas.
 - Actualizar `MEMORY.md` con el nuevo estado.
 

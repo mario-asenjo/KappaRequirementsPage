@@ -10,7 +10,7 @@ Dejar el planner de items y el hideout sobre datos PvE actuales, incluyendo item
 - Collector pide 44 items FiR; Prestige pide estaciones de hideout y millones de rublos.
 
 ## Alcance minimo
-- Rebase y merge de PR #62 sobre el pipeline de tasks multi-modo.
+- Rebase y merge de PR #62 sobre el pipeline de tasks multi-modo (#67).
 - Requisitos de items derivados del nuevo catalogo de tasks (objetivos `giveItem`/`findItem` con `foundInRaid`).
 - Hideout PvE: estaciones, niveles y requisitos (base para #39).
 - Requisitos de Prestige incluidos como fuente de demanda de items.
