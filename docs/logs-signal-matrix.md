@@ -1,7 +1,7 @@
 # Matriz de senales de logs de EFT (certificada)
 
 Issue: #66 · Fecha: 2026-11-17 · Muestra: 7 sesiones `1.3.0.2.48779` (2026-11-14 a 2026-11-17), 6 con contenido. Las sesiones < 1.2.0 se excluyen.
-Herramienta: `npm run survey:logs -- --eft <EscapeFromTarkov> [--since 1.2.0.0]` (solo lectura, salida redactada).
+Herramienta: `npm run survey:logs -- --eft <EscapeFromTarkov> [--since 1.2.0.0]` (solo lectura, salida redactada; PR #84).
 
 ## Ficheros por sesion
 
@@ -23,8 +23,7 @@ Formato de linea: `YYYY-MM-DD HH:MM:SS.mmm|<version>|<Nivel>|<canal>|<mensaje>`;
 | Evento de quest | `push-notifications` | `"type": 10|11|12` + `"templateId": "<taskId> description|failMessageText|successMessageText"` | alta | 10 iniciada, 11 fallida, 12 completada. `text` siempre "quest started". |
 | Evento de quest (duplicado) | `output` | mismo bloque | - | 100% duplicado de `push-notifications` en la muestra: no leer. |
 | Timestamp del evento | cabecera del bloque | `Got notification | ChatMessageReceived` | alta | Necesario para atribuir perfil. |
-| Nivel, faccion, prestige, edicion | `push-notifications` | `onlinePveRaidStates...extendedProfile.Info.{Level,Side,PrestigeLevel,GameVersion}` | media | Solo PvE y solo al entrar en raid. Incluye miembros de grupo: filtrar por perfil propio. |
-| Mapas desbloqueados | idem | `unlockedLocations[]` | media | |
+| Nivel, faccion, prestige, edicion | `push-notifications` | `members[].Info.{Level,Side,PrestigeLevel,GameVersion}` | **no usable** | Son de otras cuentas (invitaciones de grupo): su `aid` no coincide con el `AccountId` propio. No hay instantanea fiable del perfil del usuario en logs. |
 
 ## Resultado de la muestra (redactado)
 
@@ -39,7 +38,7 @@ Formato de linea: `YYYY-MM-DD HH:MM:SS.mmm|<version>|<Nivel>|<canal>|<mensaje>`;
 
 Perfil -> host: `e3277b1f` 4818 `gw-pve` / 0 `gw-pvp`; `e3a79fa2` 276 `gw-pvp` / 0 `gw-pve`.
 
-Instantanea PvE: nivel 15 -> 16, USEC, prestige 0, edicion `unheard_edition`.
+Nota: el nivel 15-16 / USEC / `unheard_edition` que aparece en `members[]` corresponde a otra cuenta del grupo, no al usuario.
 
 ## IDs sin resolver
 

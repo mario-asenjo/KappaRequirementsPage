@@ -83,8 +83,7 @@ Detalle completo: `docs/logs-signal-matrix.md`. Muestra: 7 sesiones `1.3.0.2.487
 - `gw-pve` es senal nueva y fuerte. `onlinePveRaidStates` solo aparece en algunas sesiones PvE. `GameMode`/`mode` valen `deathmatch` y `raidMode` `Online` en PvE: no sirven para el modo.
 - `push-notifications` y `output` contienen **exactamente** los mismos eventos de quest: leer solo `push-notifications` o deduplicar.
 - Codigo de mensaje: `type 10` = iniciada, `11` = fallida, `12` = completada (el campo `text` dice "quest started" siempre).
-- Bloques `onlinePveRaidStates.extendedProfile` exponen `Level`, `Side`, `PrestigeLevel`, `GameVersion` (edicion) y `unlockedLocations`; incluyen tambien a companeros de grupo, filtrar por perfil propio.
-- PvE: `PrestigeLevel` = 0, edicion `unheard_edition`, faccion USEC, nivel 15 -> 16 durante la muestra.
+- Los bloques `members[]` con `Level`/`Side`/`PrestigeLevel`/`GameVersion` son de **otras cuentas** (invitaciones de grupo; su `aid` no coincide con el `AccountId` propio). Nivel, faccion, prestige y edicion del usuario no se pueden sacar de los logs: los introduce el usuario en su perfil (#71).
 - Eventos PvE en la muestra: 10 completadas, 2 fallidas (Big Customer y Out of Curiosity, alternativas cerradas al completar Chemical - Part 4), 13 iniciadas; PvP: 2 completadas.
 - 2 IDs nuevos sin resolver iniciados en PvE el 14-11: `6a763df2161e4b45b1015663` (ObjectId de 2026-08-07) y `6aba40a15ef26da1360746b8` (2026-09-28). No estan en `/pve` ni `/regular` de `json.tarkov.dev`.
 
@@ -163,8 +162,7 @@ Migracion: v1 (`userProgress` global) y v2 (PR #63) -> v3 en perfil `pve:default
 3. `backend_*.log`: host `gw-pve` / `gw-pvp` / `gw-pvp-season` por timestamp; modo de cada perfil = host mayoritario mientras esta activo (si hay empate o conflicto: `unknown`).
 4. `push-notifications_*.log`: bloques con cabecera `fecha|version|nivel|canal|...`; `templateId "<taskId> <suffix>"` + `type` (10/11/12) -> evento con timestamp -> perfil activo en ese instante. `output_*.log` no se lee para quests (duplicado).
 5. Estado final por task y perfil = ultimo evento cronologico.
-6. `extendedProfile` del perfil propio -> `level`, `faction`, `prestigeLevel`, `edition`.
-7. Salida `schemaVersion: 2`:
+6. Salida `schemaVersion: 2`:
 
 ```json
 {
@@ -174,7 +172,6 @@ Migracion: v1 (`userProgress` global) y v2 (PR #63) -> v3 en perfil `pve:default
   "profiles": [{
     "profileKey": "pve:<sha256-8>", "mode": "pve", "modeConfidence": "high",
     "versionRange": { "oldest": "1.3.0.2.48779", "newest": "1.3.0.2.48779" }, "sessionCount": 6,
-    "snapshot": { "level": 16, "faction": "USEC", "prestigeLevel": 0, "edition": "unheard_edition" },
     "completedTaskIds": [], "startedTaskIds": [], "failedTaskIds": [],
     "unknownTasks": [{ "id": "...", "event": "started", "classification": "unresolved" }]
   }],
