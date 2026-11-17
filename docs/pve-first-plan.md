@@ -74,15 +74,26 @@ Prestige PvE (hoy): P1 nivel 15 + 5M rublos; P2 nivel 25 + skills + estaciones +
 - Fuentes legacy aun activas: `fetchTasks.ts`, `fetchAchievements.ts` y `fetchItemRequirements.ts` usan `api.tarkov.dev/graphql` (en mantenimiento desde julio 2026).
 - Catalogo de mapas: falta `Infected Factory`, `Infected Lab`, `The Lab (Dark)` (variantes de evento). Markers solo en Customs y Ground Zero.
 
-### 2.4 Logs
+### 2.4 Logs (certificado 2026-11-17, sesiones >= 1.2.0)
 
-**Pendiente**: la carpeta de logs no llego a esta sesion. Lo que sabemos viene del discovery (2026-09-28): carpetas `log_YYYY.MM.DD_HH-MM-SS_<version>` de 1.0.4.6 a 1.1.5.1; senales de modo `gw-pvp`, `gw-pvp-season`, `onlinePveRaidStates`, `TRACE-NetworkGameCreate ... GameMode`; eventos de quest en `push-notifications_*.log` y tambien en `output_*.log`; 7 IDs sin resolver (ver 2.5). #66 define la certificacion.
+Detalle completo: `docs/logs-signal-matrix.md`. Muestra: 7 sesiones `1.3.0.2.48779` (14-17 nov 2026), ninguna 1.2.x ni 1.3.5 (Unity 6). Las sesiones anteriores a 1.2 se excluyen a peticion del usuario.
+
+- **Atribucion por perfil, no por carpeta ni global.** `application_*.log` registra `CompleteSelectedProfile ProfileId:<id> AccountId:<n>` con timestamp. Cruzado con el host del backend: el perfil PvE solo habla con `gw-pve.escapefromtarkov.com` (4818 peticiones) y el PvP solo con `gw-pvp` (276). Cero cruces.
+- **Una sesion puede ser PvP** (16-11 00:52: Semiconductor Crisis y Fuel Crisis completadas en el perfil PvP) y **una carpeta puede mezclar modos** (16-11 13:46 empieza en PvP y pasa a PvE). Asignar un modo por carpeta o global (PR #63) mezcla progreso.
+- `gw-pve` es senal nueva y fuerte. `onlinePveRaidStates` solo aparece en algunas sesiones PvE. `GameMode`/`mode` valen `deathmatch` y `raidMode` `Online` en PvE: no sirven para el modo.
+- `push-notifications` y `output` contienen **exactamente** los mismos eventos de quest: leer solo `push-notifications` o deduplicar.
+- Codigo de mensaje: `type 10` = iniciada, `11` = fallida, `12` = completada (el campo `text` dice "quest started" siempre).
+- Bloques `onlinePveRaidStates.extendedProfile` exponen `Level`, `Side`, `PrestigeLevel`, `GameVersion` (edicion) y `unlockedLocations`; incluyen tambien a companeros de grupo, filtrar por perfil propio.
+- PvE: `PrestigeLevel` = 0, edicion `unheard_edition`, faccion USEC, nivel 15 -> 16 durante la muestra.
+- Eventos PvE en la muestra: 10 completadas, 2 fallidas (Big Customer y Out of Curiosity, alternativas cerradas al completar Chemical - Part 4), 13 iniciadas; PvP: 2 completadas.
+- 2 IDs nuevos sin resolver iniciados en PvE el 14-11: `6a763df2161e4b45b1015663` (ObjectId de 2026-08-07) y `6aba40a15ef26da1360746b8` (2026-09-28). No estan en `/pve` ni `/regular` de `json.tarkov.dev`.
 
 ### 2.5 IDs de logs sin resolver
 
-`69fa5e0f04087f435106b9c7`, `6a1c766939a00fb24a0b8d25`, `6a1c79503bec45f2d70000da`, `6a39936fec86c6005a0656c1`, `6a446573cd2959c3a609f2a9`, `6a7637fed31fb1191903fc07`, `6a91840a740be0cff50e0310`.
+- Sesiones >= 1.2: `6a763df2161e4b45b1015663`, `6aba40a15ef26da1360746b8` (iniciadas en PvE, ausentes de ambos catalogos).
+- Historicos (pre 1.2, fuera de alcance): `69fa5e0f04087f435106b9c7`, `6a1c766939a00fb24a0b8d25`, `6a1c79503bec45f2d70000da`, `6a39936fec86c6005a0656c1`, `6a446573cd2959c3a609f2a9`, `6a7637fed31fb1191903fc07`, `6a91840a740be0cff50e0310`.
 
-Hoy no existen ni en `/pve/tasks` ni en `/regular/tasks`. Hipotesis a validar con logs: tasks de evento temporal, Seasonal PvP, Arena o tareas de Battle Pass. Hasta entonces: clasificar como `unresolved`, nunca como completadas.
+Clasificar como `unresolved`, nunca como completadas; reintentar resolucion en cada sync.
 
 ## 3. Arquitectura objetivo
 
@@ -145,21 +156,40 @@ interface UserProgress { version: 3; activeProfileKey: string; profiles: Record<
 
 Migracion: v1 (`userProgress` global) y v2 (PR #63) -> v3 en perfil `pve:default`, conservando IDs, y pasando cada ID por la tabla de reconciliacion (#72).
 
-### 3.3 Extractor
+### 3.3 Extractor (diseno certificado con logs 1.3.0.2)
 
-- Unidad de analisis = **sesion** (carpeta `log_*`), no el arbol completo.
-- Por sesion: `clientVersion` (del nombre de carpeta), `mode` (senales ponderadas), `profileId` (redactable), eventos con timestamp.
-- Eventos de `push-notifications` y `output` deduplicados por `(taskId, suffix, timestamp aproximado)`.
-- Estado final por task = ultimo evento cronologico (soporta `restartable` y fallos).
-- Salida `schemaVersion: 2` con `profiles[]` (uno por `mode+profileId`), cada uno con sus listas, `versionRange`, `sessionCount` y `unknownTaskIds` clasificados.
-- v1 sigue importable.
+1. Recorrer `Logs/log_<fecha>_<version>/`; descartar sesiones con version < `--since` (por defecto `1.2.0.0`, configurable; tambien acepta fecha).
+2. `application_*.log`: linea temporal de `CompleteSelectedProfile ProfileId` (perfil activo por timestamp).
+3. `backend_*.log`: host `gw-pve` / `gw-pvp` / `gw-pvp-season` por timestamp; modo de cada perfil = host mayoritario mientras esta activo (si hay empate o conflicto: `unknown`).
+4. `push-notifications_*.log`: bloques con cabecera `fecha|version|nivel|canal|...`; `templateId "<taskId> <suffix>"` + `type` (10/11/12) -> evento con timestamp -> perfil activo en ese instante. `output_*.log` no se lee para quests (duplicado).
+5. Estado final por task y perfil = ultimo evento cronologico.
+6. `extendedProfile` del perfil propio -> `level`, `faction`, `prestigeLevel`, `edition`.
+7. Salida `schemaVersion: 2`:
+
+```json
+{
+  "schemaVersion": 2, "source": "eft-local-logs", "generatedAt": "...", "extractorVersion": "2.0.0",
+  "catalog": { "syncedAt": "...", "modes": ["pve", "pvp"] },
+  "since": "1.2.0.0",
+  "profiles": [{
+    "profileKey": "pve:<sha256-8>", "mode": "pve", "modeConfidence": "high",
+    "versionRange": { "oldest": "1.3.0.2.48779", "newest": "1.3.0.2.48779" }, "sessionCount": 6,
+    "snapshot": { "level": 16, "faction": "USEC", "prestigeLevel": 0, "edition": "unheard_edition" },
+    "completedTaskIds": [], "startedTaskIds": [], "failedTaskIds": [],
+    "unknownTasks": [{ "id": "...", "event": "started", "classification": "unresolved" }]
+  }],
+  "warnings": []
+}
+```
+
+El `profileId` real nunca sale del equipo del usuario: se usa un hash corto como clave.
 
 ## 4. Fases
 
 | Fase | Issue | Titulo | Depende de | Prioridad |
 | --- | --- | --- | --- | --- |
 | 0 | #65 | Saneamiento de backlog, ramas y PRs | - | P1 |
-| 0 | #66 | Certificacion con logs reales 1.0 -> 1.3.x | logs del usuario | P1 |
+| 0 | #66 | Certificacion con logs reales (>= 1.2; hecho para 1.3.0.2, falta Unity 6) | - | P1 |
 | 1 | #67 | Pipeline de tasks multi-modo desde json.tarkov.dev | #65 | P1 |
 | 1 | #68 | Achievements, prestige y quest items por modo | #67 | P1 |
 | 1 | #69 | Items, hideout y barters PvE (integra #62) | #67 | P2 |
@@ -215,7 +245,7 @@ Limpieza de ramas: borrar las ~35 ramas remotas ya mergeadas en `main`; conserva
 
 ## 6. Riesgos
 
-- **Unity 6 (1.3.5.0)** puede cambiar logs: #66 debe repetirse con una sesion post-migracion antes de cerrar #73.
+- **Unity 6 (1.3.5.0)** puede cambiar logs: repetir `npm run survey:logs` con la primera sesion post-migracion; #73 se disena con lo certificado en 1.3.0.2 y se valida despues.
 - `json.tarkov.dev` no expone que tasks incrementan cada `globalVariable`: los pools LL necesitan capa wiki o inferencia por trader+LL marcada `structured`.
 - Tasks de evento (Halloween) entran y salen del catalogo: el indice de tombstones evita "perder" progreso o contar fantasmas.
 - Prestige resetea el perfil PvE: hay que archivar progreso, no borrarlo.
