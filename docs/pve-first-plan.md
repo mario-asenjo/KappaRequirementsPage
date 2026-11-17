@@ -61,7 +61,7 @@ Campos estructurados nuevos por task (PvE):
 | `finishRewards.*Unlock` | varios | offer/craft/trader/location unlocks: "por que hacer esta task". |
 | `objectives[].type/maps/zones/items/count/foundInRaid` | todas | Mapas por objetivo, items FiR, planner. |
 
-Collector (PvE, hoy): nivel 42; LL4 con Prapor, Therapist, Skier, Peacekeeper, Mechanic, Ragman y Jaeger; **Fence LL3**; tasks previas Chemical - Part 3, Sew it Good - Part 2, Shooter Born in Heaven, The Tarkov Shooter - Part 4 y **Postman Pat - Part 2** (la issue #57 solo listaba 4); 44 items de streamers FiR. Cadena Kappa completa = 13 tasks (incluida Collector).
+Collector (PvE, hoy): nivel 42; LL4 con Prapor, Therapist, Skier, Peacekeeper, Mechanic, Ragman y Jaeger; **reputacion Fence (karma Scav) >= 3**; tasks previas Chemical - Part 3, Sew it Good - Part 2, Shooter Born in Heaven, The Tarkov Shooter - Part 4 y **Postman Pat - Part 2** (la issue #57 solo listaba 4); 44 items de streamers FiR. Cadena Kappa completa = 13 tasks (incluida Collector).
 
 Prestige PvE (hoy): P1 nivel 15 + 5M rublos; P2 nivel 25 + skills + estaciones + 10M; P3 nivel 35 + 15M; P4 nivel 40 + 15M; P5/P6 nivel 47 + taskStatus + estaciones nivel 3 + 20M.
 
@@ -144,7 +144,7 @@ type GameMode = 'pve' | 'pvp' | 'seasonal-pvp';
 interface ProfileProgress {
   mode: GameMode; profileId?: string; label?: string;
   faction?: 'BEAR' | 'USEC'; prestigeLevel: number; playerLevel: number;
-  traderLoyalty: Record<string, number>; fenceLevel?: number;
+  traderLoyalty: Record<string, number>; fenceReputation?: number;   // karma Scav
   completedTaskIds: string[]; startedTaskIds: string[]; failedTaskIds: string[];
   collectorItemsHandedOver: string[];
   completedAchievementIds: string[]; manualAchievementProgress: Record<string, boolean>;
@@ -225,7 +225,7 @@ Orden de PRs sugerido (pequenos y verificables):
 | #54 Progreso por modo | Cerrada (2026-11-17) como sustituida de #71 | 07 amplia con faccion, LL, prestige. |
 | #55 Importer 2.0 | Cerrada (2026-11-17) como sustituida de #73/#74 | Atribucion por sesion corrige el diseno de #63. |
 | #56 Datos 1.1+ (GraphQL) | Cerrada (2026-11-17) como sustituida de #67 | Contexto GraphQL obsoleto. |
-| #57 Kappa/Collector 1.1 | Cerrada (2026-11-17) como sustituida de #77 | Datos corregidos (Fence LL3, Postman Pat 2, nivel 42). |
+| #57 Kappa/Collector 1.1 | Cerrada (2026-11-17) como sustituida de #77 | Datos corregidos (reputacion Fence (karma Scav) >= 3, Postman Pat 2, nivel 42). |
 | #36 Spike logs | Cerrada (2026-11-17) como sustituida de #66 | |
 | #58 Trader LL board | Mantener, enlazar a #78 | Ahora hay datos (`traderRequirements`, `globalVariable`). |
 | #33 Sync automatico | Mantener, re-scope en #81 | JSON multi-modo y PR por modo. |

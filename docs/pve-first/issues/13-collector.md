@@ -7,7 +7,7 @@ supersedes: 57
 Modelar Kappa con sus puertas reales y rehacer el goal Lightkeeper, ahora vacio.
 
 ## Contexto verificado (PvE, 2026-11-17)
-- Collector: nivel 42; LL4 Prapor, Therapist, Skier, Peacekeeper, Mechanic, Ragman, Jaeger; Fence LL3; tasks Chemical - Part 3, Sew it Good - Part 2, Shooter Born in Heaven, The Tarkov Shooter - Part 4, Postman Pat - Part 2; 44 items FiR.
+- Collector: nivel 42; LL4 Prapor, Therapist, Skier, Peacekeeper, Mechanic, Ragman, Jaeger; reputacion Fence (karma Scav) >= 3; tasks Chemical - Part 3, Sew it Good - Part 2, Shooter Born in Heaven, The Tarkov Shooter - Part 4, Postman Pat - Part 2; 44 items FiR.
 - Cadena `kappaRequired` = 13 tasks.
 - `lightkeeperRequired` = 0; Lightkeeper tiene 14 tasks, 9 con delay de 10 h.
 

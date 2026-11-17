@@ -7,7 +7,7 @@ Completar lo que `json.tarkov.dev` no expone y registrar conflictos entre fuente
 
 ## Contexto verificado
 - 168 tasks dependen de `globalVariable` (contadores de pool LL) pero la fuente no dice que tasks incrementan cada contador.
-- Collector: los datos estructurados incluyen Postman Pat - Part 2 y Fence LL3; #57 (wiki de septiembre) no.
+- Collector: los datos estructurados incluyen Postman Pat - Part 2 y reputacion Fence (karma Scav) >= 3; #57 (wiki de septiembre) no.
 - `docs/data-source-model.md` define `SourceConflict`.
 
 ## Alcance minimo

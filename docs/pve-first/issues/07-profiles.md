@@ -8,11 +8,11 @@ Persistir progreso por perfil (`mode + profileId`) con PvE como perfil por defec
 
 ## Contexto verificado
 - `UserProgress` v1 es global. PR #63 propone v2 con `profiles`.
-- 34 tasks son exclusivas de faccion; 105 tienen gate de LL; Collector depende de LL4 x7 y Fence LL3; Prestige PvE resetea el perfil.
+- 34 tasks son exclusivas de faccion; 105 tienen gate de LL; Collector depende de LL4 x7 y reputacion Fence (karma Scav) >= 3; Prestige PvE resetea el perfil.
 
 ## Alcance minimo
 - `UserProgress v3` (esquema en `docs/pve-first-plan.md` 3.2) portando el modelo de #63.
-- Campos nuevos: `faction`, `prestigeLevel`, `traderLoyalty`, `fenceLevel`, `failedTaskIds`, `collectorItemsHandedOver`, `prestigeHistory`.
+- Campos nuevos: `faction`, `prestigeLevel`, `traderLoyalty`, `fenceReputation` (karma Scav), `failedTaskIds`, `collectorItemsHandedOver`, `prestigeHistory`.
 - Migracion v1/v2 -> v3 a `pve:default` sin perder IDs.
 - La app carga el dataset del modo del perfil activo (`src/data/<mode>/*`).
 - Selector de perfil en Header; crear/renombrar/borrar perfiles; "Hacer prestige" archiva y resetea.
