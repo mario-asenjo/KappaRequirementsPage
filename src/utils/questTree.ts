@@ -1,4 +1,5 @@
 import { Task } from '../types';
+import { getPrerequisiteRefs } from './taskPrerequisites';
 
 export type QuestTreeStatus = 'completed' | 'available' | 'locked';
 
@@ -21,7 +22,7 @@ const sortByLevelAndTitle = (a: Task, b: Task) =>
 const normalize = (value: string) => value.trim().toLowerCase();
 
 export function getTaskPrerequisites(task: Task) {
-  return task.prerequisites?.filter(Boolean) ?? [];
+  return getPrerequisiteRefs(task);
 }
 
 export function getQuestStatus(
@@ -76,10 +77,10 @@ export function buildQuestTree(tasks: Task[], completedIds: string[] = [], playe
       const children = (childrenByParentId.get(task.id) ?? [])
         .filter((child) => !nextPath.has(child.id))
         .map((child) => createNode(child, nextPath));
-      const crossTraderPrerequisites = getTaskPrerequisites(task).filter((prerequisiteNameOrId) => {
-        const prerequisite = tasksByNameOrId.get(normalize(prerequisiteNameOrId));
-        return prerequisite ? prerequisite.trader !== trader : true;
-      });
+      const crossTraderPrerequisites = getTaskPrerequisites(task)
+        .map((prerequisiteNameOrId) => ({ ref: prerequisiteNameOrId, task: tasksByNameOrId.get(normalize(prerequisiteNameOrId)) }))
+        .filter(({ task: prerequisite }) => (prerequisite ? prerequisite.trader !== trader : true))
+        .map(({ ref, task: prerequisite }) => prerequisite?.title ?? ref);
 
       return {
         task,

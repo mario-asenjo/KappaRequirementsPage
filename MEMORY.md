@@ -56,6 +56,19 @@
 
 ## Historial De Cambios
 
+### 2026-11-17 (pipeline de tasks multi-modo, #67)
+
+- Rama de trabajo: `feat/data-json-multimode`.
+- `scripts/fetchTasks.ts` sincroniza `json.tarkov.dev` `/pve` y `/regular` con `--mode` y `--force`; ya no usa GraphQL.
+- Nuevo esquema `Task`: `gameMode`, `modeExclusive`, `faction`, `objectiveDetails` tipados (mapas, items, FiR, `acceptedItemCount`), `prerequisiteIds`, `traderLevelRequirements`, `traderReputationRequirements`, `unlockPools`, `dialogueUnlockTraders`, `neededKeys`, `failConditions`, `restartable`, `availableDelaySeconds`, `rewardUnlocks`, `kappaRequired`, `dataConfidence`.
+- Corregido: el normalizador anterior leia `traderRequirements[].level` (la fuente usa `value`), asi que el LL requerido salia siempre vacio.
+- Corregido en el plan: Collector exige reputacion de Fence (karma Scav) >= 3, no Fence LL3.
+- Datos 2026-11-17: PvE 499 tasks (13 kappaRequired, 338 con mapas por objetivo, 98 con gate de LL, 34 de faccion, 23 exclusivas PvE); PvP 503; 19 tombstones (Make Amends, Assessment, Network Provider, etc.).
+- `src/data/tasks.json` pasa a ser alias PvE: desaparecen las 23 `[PVP ZONE]` y las 19 eliminadas; entran las 23 `[PVE ZONE]` y 23 nuevas. Goal Kappa = 13 tasks de la cadena actual; Lightkeeper provisional = tasks del trader Lightkeeper hasta #77.
+- Prerequisitos resueltos por id (`getPrerequisiteRefs`): los titulos ya no son unicos (variantes BEAR/USEC).
+- Bundle JS: 1.29 MB -> 1.70 MB (297 kB gzip); carga diferida por modo prevista en #71.
+- Verificacion: todos los `test:*`, `tsc --noEmit` y `npm run build` correctos.
+
 ### 2026-06-07 (benchmark TarkovBuddy e import-first UX)
 
 - Rama de trabajo: `feat/import-first-ux-benchmark`.
