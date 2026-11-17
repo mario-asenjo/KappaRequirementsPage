@@ -26,6 +26,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Data pipeline tests
+        run: npm run test:data-pipeline
+
       - name: Quest tree tests
         run: npm run test:quests
 
