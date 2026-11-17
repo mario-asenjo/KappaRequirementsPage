@@ -56,6 +56,15 @@
 
 ## Historial De Cambios
 
+### 2026-11-17 (survey de logs, #66)
+
+- Rama de trabajo: `feat/logs-survey`.
+- `tools/eft-log-importer/sessions.ts`: lectura por sesion (`log_<fecha>_<version>`), perfil activo por timestamp (`CompleteSelectedProfile`), modo por gateway del backend, eventos de quest solo desde `push-notifications` con `type` 10/11/12, corte `--since` (por defecto 1.2.0.0) e IDs de perfil hasheados.
+- `npm run survey:logs`: informe redactado. Contra los logs reales 1.3.0.2: perfil PvE 4818 peticiones `gw-pve`, perfil PvP 276 `gw-pvp`, 0 cruces.
+- Descartado: los bloques `members[]` (Level/Side/PrestigeLevel/GameVersion) son de otras cuentas (invitaciones de grupo; su `aid` no coincide con el `AccountId` propio). No hay instantanea fiable de nivel/faccion en logs.
+- Visto con el catalogo de main: varias tasks se renombraron manteniendo ID (p. ej. Farming - Part 4 -> Fuel Crisis, Gunsmith - Part 6 -> Gunsmith - AKM); dato para #72.
+- `npm run test:log-sessions` (fixtures sinteticos, en CI). Verificacion: todos los `test:*`, `tsc --noEmit` y `npm run build` correctos.
+
 ### 2026-06-07 (benchmark TarkovBuddy e import-first UX)
 
 - Rama de trabajo: `feat/import-first-ux-benchmark`.

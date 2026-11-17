@@ -35,6 +35,9 @@ jobs:
       - name: Progress import tests
         run: npm run test:import
 
+      - name: Log session tests
+        run: npm run test:log-sessions
+
       - name: EFT log extractor tests
         run: npm run test:extractor
 
