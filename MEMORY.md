@@ -56,6 +56,14 @@
 
 ## Historial De Cambios
 
+### 2026-11-17 (plan PvE-first 1.3)
+
+- Rama de trabajo: `docs/pve-first-plan`.
+- Se verifico que el trabajo 1.1 (#59, #60) se mergeo en `feat/item-barter-trades-panel` y no en `main` (#61 cerrado sin merge); se rescatan `docs/tarkov-2026-discovery.md`, `docs/data-source-model.md` y `docs/tarkov-2026-unknown-id-check.md`.
+- Se comparo `src/data/tasks.json` (2026-06-07) con `json.tarkov.dev` del 2026-11-17: PvE 499 tasks, PvP 503; 46 tasks de main no son PvE y faltan 46; `kappaRequired` = 13; `lightkeeperRequired` = 0; prestige PvE de 6 niveles; 131 achievements.
+- Se anadio `docs/pve-first-plan.md` y se crearon el epic #64 y las sub-issues #65-#81 con `scripts/create-pve-first-issues.sh` (solo API REST). Se cerraron como sustituidas #36, #54, #55, #56 y #57; se comentaron enlaces en las issues que se mantienen y en las PRs #62 y #63. PR del plan: #82.
+- Pendiente: certificar senales con logs reales 1.0 -> 1.3.x y post Unity 6 (1.3.5.0).
+
 ### 2026-06-07 (benchmark TarkovBuddy e import-first UX)
 
 - Rama de trabajo: `feat/import-first-ux-benchmark`.
