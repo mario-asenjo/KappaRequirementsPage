@@ -1,8 +1,14 @@
 import React, { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import useProgress from '../hooks/useProgress';
-import { Task } from '../types';
-import { getProgressImportPreview, parseProgressImportJson, ProgressImportPreview } from '../utils/progressImport';
+import { ProgressImportFileV2, ProgressImportProfile, Task } from '../types';
+import {
+  getDefaultImportProfile,
+  getProgressImportPreview,
+  parseProgressImportDocument,
+  ProgressImportPreview,
+  selectImportProfile,
+} from '../utils/progressImport';
 import { getCompletionIdsWithPrerequisites } from '../utils/taskPrerequisites';
 
 interface ProgressImportPageProps {
@@ -12,6 +18,16 @@ interface ProgressImportPageProps {
 const extractorDownloadPath = '/downloads/eft-log-importer.zip';
 const extractorScriptPath = '/downloads/eft-log-importer.mjs';
 const extractorCommand = 'node eft-log-importer.mjs --eft "C:\\Games\\EscapeFromTarkov" --out kappa-progress-import.json';
+
+const MODE_LABEL: Record<ProgressImportProfile['mode'], string> = {
+  pve: 'PvE',
+  pvp: 'PvP',
+  'seasonal-pvp': 'PvP Season',
+  unknown: 'Modo desconocido',
+};
+
+/** The task catalog loaded by the app is PvE (src/data/tasks.json). */
+const APP_CATALOG_MODE: ProgressImportProfile['mode'] = 'pve';
 
 const formatDate = (value: string) => {
   const date = new Date(value);
@@ -43,27 +59,52 @@ const ProgressImportPage: React.FC<ProgressImportPageProps> = ({ tasks }) => {
   const [appliedCount, setAppliedCount] = useState<number | null>(null);
   const [resetMessage, setResetMessage] = useState('');
   const [selectedFileName, setSelectedFileName] = useState('');
+  const [importDocument, setImportDocument] = useState<ProgressImportFileV2 | null>(null);
+  const [selectedProfileKey, setSelectedProfileKey] = useState('');
+  const [confirmOtherMode, setConfirmOtherMode] = useState(false);
   const tasksById = useMemo(() => new Map(tasks.map((task) => [task.id, task])), [tasks]);
   const newCompletedTitles = preview ? getTaskTitles(preview.newCompletedTaskIds.slice(0, 12), tasksById) : [];
   const startedTitles = preview ? getTaskTitles(preview.validStartedTaskIds.slice(0, 8), tasksById) : [];
   const failedTitles = preview ? getTaskTitles(preview.newFailedTaskIds.slice(0, 8), tasksById) : [];
-  const canApplyImport = Boolean(preview && (preview.newCompletedTaskIds.length > 0 || preview.validStartedTaskIds.length > 0));
+  const selectedProfile = importDocument?.profiles.find((profile) => profile.profileKey === selectedProfileKey);
+  const isOtherMode = Boolean(selectedProfile && selectedProfile.mode !== APP_CATALOG_MODE);
+  const canApplyImport = Boolean(
+    preview
+    && (preview.newCompletedTaskIds.length > 0 || preview.validStartedTaskIds.length > 0)
+    && (!isOtherMode || confirmOtherMode)
+  );
   const lastImport = progress.lastImport;
 
   const readFile = async (file?: File) => {
     setError('');
     setAppliedCount(null);
     setPreview(null);
+    setImportDocument(null);
+    setSelectedProfileKey('');
+    setConfirmOtherMode(false);
     setSelectedFileName(file?.name ?? '');
 
     if (!file) return;
 
     try {
-      const importFile = parseProgressImportJson(await file.text());
-      setPreview(getProgressImportPreview(importFile, tasks, completedTaskIds));
+      const parsed = parseProgressImportDocument(await file.text());
+      if (parsed.schemaVersion === 1) {
+        setPreview(getProgressImportPreview(parsed.file, tasks, completedTaskIds));
+        return;
+      }
+      const profile = getDefaultImportProfile(parsed.document);
+      setImportDocument(parsed.document);
+      if (profile) chooseProfile(parsed.document, profile.profileKey);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'No se pudo leer el archivo de importación.');
     }
+  };
+
+  const chooseProfile = (document: ProgressImportFileV2, profileKey: string) => {
+    setSelectedProfileKey(profileKey);
+    setConfirmOtherMode(false);
+    setAppliedCount(null);
+    setPreview(getProgressImportPreview(selectImportProfile(document, profileKey), tasks, completedTaskIds));
   };
 
   const applyImport = () => {
@@ -90,6 +131,7 @@ const ProgressImportPage: React.FC<ProgressImportPageProps> = ({ tasks }) => {
         failedMarkedCompletedCount: preview.newFailedTaskIds.length,
         unknownTaskCount: preview.unknownTaskIds.length,
         warningCount: preview.warnings.length,
+        ...(selectedProfile ? { profileKey: selectedProfile.profileKey, mode: selectedProfile.mode } : {}),
       },
     });
     setAppliedCount(addedCompletedCount);
@@ -102,6 +144,8 @@ const ProgressImportPage: React.FC<ProgressImportPageProps> = ({ tasks }) => {
     setPreview(null);
     setAppliedCount(null);
     setSelectedFileName('');
+    setImportDocument(null);
+    setSelectedProfileKey('');
     setResetMessage('Progreso local borrado. También se limpió la clave legacy completedTasks para evitar restos como Shortage.');
   };
 
@@ -162,6 +206,7 @@ const ProgressImportPage: React.FC<ProgressImportPageProps> = ({ tasks }) => {
             <span className="eyebrow">Última importación</span>
             <strong>{formatDate(lastImport.importedAt)}</strong>
             <p>
+              {lastImport.mode ? `Perfil ${MODE_LABEL[lastImport.mode]} · ` : ''}
               {lastImport.addedCompletedCount} completadas nuevas · {lastImport.detectedStartedCount} iniciadas ·{' '}
               {lastImport.failedMarkedCompletedCount ?? 0} fallidas cerradas · {lastImport.warningCount} avisos ·{' '}
               {lastImport.unknownTaskCount} IDs no reconocidos
@@ -189,7 +234,9 @@ const ProgressImportPage: React.FC<ProgressImportPageProps> = ({ tasks }) => {
                 Si la carpeta se detecta automáticamente, también puedes ejecutar <code>node eft-log-importer.mjs</code>.
               </p>
               <div className="import-note">
-                El extractor lee <code>EscapeFromTarkov/Logs/**/push-notifications_*.log</code>. No modifica la carpeta del juego.
+                El extractor lee las sesiones de <code>EscapeFromTarkov/Logs</code> desde la versión 1.2 y separa el progreso de
+                cada perfil (PvE, PvP y PvP Season) según el servidor con el que habla. No modifica la carpeta del juego ni guarda
+                tus IDs de cuenta o perfil.
               </div>
               <label className="import-dropzone import-dropzone--inline mt-3">
                 <span>Subir JSON generado</span>
@@ -202,15 +249,23 @@ const ProgressImportPage: React.FC<ProgressImportPageProps> = ({ tasks }) => {
               </label>
               <h3 className="h5 mt-4">Contrato esperado</h3>
               <p className="text-muted">
-                La herramienta debe generar schemaVersion 1, source, generatedAt y al menos completedTaskIds o failedTaskIds.
+                El extractor 2.0 genera <code>schemaVersion: 2</code> con un bloque por perfil detectado. Los archivos antiguos
+                (<code>schemaVersion: 1</code>) se siguen aceptando.
               </p>
               <pre className="import-schema" aria-label="Ejemplo de JSON de importación">{`{
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "source": "eft-local-logs",
-  "generatedAt": "2026-06-05T20:00:00.000Z",
-  "completedTaskIds": ["59689ee586f7740d1570bbd5"],
-  "startedTaskIds": [],
-  "failedTaskIds": [],
+  "generatedAt": "2026-11-18T00:00:00.000Z",
+  "since": "1.2.0.0",
+  "profiles": [{
+    "profileKey": "pve:e3277b1f",
+    "mode": "pve",
+    "sessionCount": 4,
+    "completedTaskIds": ["59689ee586f7740d1570bbd5"],
+    "startedTaskIds": [],
+    "failedTaskIds": [],
+    "unknownTasks": []
+  }],
   "warnings": []
 }`}</pre>
             </div>
@@ -235,6 +290,59 @@ const ProgressImportPage: React.FC<ProgressImportPageProps> = ({ tasks }) => {
                   {preview?.newFailedTaskIds.length ?? 0} fallidas que ya no se pueden completar, y{' '}
                   {preview?.validStartedTaskIds.length ?? 0} iniciadas detectadas.
                 </div>
+              )}
+              {importDocument && (
+                <fieldset className="import-profile-picker mb-3">
+                  <legend className="h5">Perfil a importar</legend>
+                  <p className="text-muted small mb-2">
+                    Sesiones desde la versión {importDocument.since || '—'} ({importDocument.sessionCount} leídas). Elige qué perfil
+                    aplicar: solo se importan sus misiones.
+                  </p>
+                  <div className="import-profile-options">
+                    {importDocument.profiles.map((profile) => (
+                      <label
+                        key={profile.profileKey}
+                        className={`import-profile-option${profile.profileKey === selectedProfileKey ? ' is-selected' : ''}`}
+                      >
+                        <input
+                          type="radio"
+                          name="import-profile"
+                          value={profile.profileKey}
+                          checked={profile.profileKey === selectedProfileKey}
+                          onChange={() => chooseProfile(importDocument, profile.profileKey)}
+                        />
+                        <span className={`import-mode-badge import-mode-badge--${profile.mode}`}>{MODE_LABEL[profile.mode]}</span>
+                        <span className="import-profile-id">Perfil {profile.profileKey.split(':')[1]}</span>
+                        <span className="import-profile-counts">
+                          {profile.completedTaskIds.length} completadas · {profile.startedTaskIds.length} en curso ·{' '}
+                          {profile.failedTaskIds.length} fallidas · {profile.sessionCount} {profile.sessionCount === 1 ? 'sesión' : 'sesiones'}
+                          {profile.versionRange.newest ? ` · v${profile.versionRange.newest}` : ''}
+                          {profile.lastSeen ? ` · último evento ${formatDate(profile.lastSeen.replace(' ', 'T'))}` : ''}
+                        </span>
+                        {profile.modeConfidence !== 'high' && (
+                          <span className="import-profile-warning">Modo detectado con poca seguridad</span>
+                        )}
+                      </label>
+                    ))}
+                  </div>
+                  {isOtherMode && selectedProfile && (
+                    <div className="alert alert-warning mt-3 mb-0">
+                      <p className="mb-2">
+                        Has elegido un perfil {MODE_LABEL[selectedProfile.mode]}, pero el progreso de la web es PvE. Aplicarlo
+                        mezclaría progresos de modos distintos hasta que existan perfiles separados (#71).
+                      </p>
+                      <label className="form-check mb-0">
+                        <input
+                          className="form-check-input"
+                          type="checkbox"
+                          checked={confirmOtherMode}
+                          onChange={(event) => setConfirmOtherMode(event.target.checked)}
+                        />{' '}
+                        <span className="form-check-label">Entiendo el riesgo y quiero aplicarlo igualmente</span>
+                      </label>
+                    </div>
+                  )}
+                </fieldset>
               )}
               {!preview && !error && (
                 <div className="import-empty-preview">
@@ -263,7 +371,11 @@ const ProgressImportPage: React.FC<ProgressImportPageProps> = ({ tasks }) => {
                     <dt>Generado</dt>
                     <dd>{formatDate(preview.importFile.generatedAt)}</dd>
                     <dt>Perfil</dt>
-                    <dd>{preview.importFile.profile?.profileId ?? 'No indicado'}</dd>
+                    <dd>
+                      {selectedProfile
+                        ? `${MODE_LABEL[selectedProfile.mode]} · ${selectedProfile.profileKey.split(':')[1]}`
+                        : 'No indicado (archivo antiguo: puede mezclar PvE y PvP)'}
+                    </dd>
                   </dl>
                   {newCompletedTitles.length > 0 && (
                     <div>

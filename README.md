@@ -83,13 +83,17 @@ kappa-tracker/
 
 ## Actualizar la lista de misiones
 
-El archivo `src/data/tasks.json` contiene todas las misiones publicadas por [tarkov.dev](https://api.tarkov.dev/graphql), incluyendo flags para Kappa y Lightkeeper. Para regenerarlo desde la API pública:
+Las misiones se sincronizan por modo desde [json.tarkov.dev](https://json.tarkov.dev) (el GraphQL `api.tarkov.dev/graphql` ya no se usa):
 
 ```bash
-npm run update:tasks
+npm run update:tasks                 # PvE + PvP
+npm run update:tasks -- --mode pve   # solo un modo
+npm run update:tasks -- --force      # aceptar una caida de mas del 10% en el numero de misiones
+npm run build:goals && npm run build:quests          # derivados PvE
+npm run build:goals -- --mode pvp && npm run build:quests -- --mode pvp
 ```
 
-Esto sobrescribe `src/data/tasks.json` con los datos más recientes e incluye metadata con la fuente, fecha de sincronización, total de misiones y totales derivados para Kappa/Lightkeeper.
+Genera `src/data/pve/tasks.json` y `src/data/pvp/tasks.json` (objetivos tipados con mapas/items/FiR, gates de Loyalty Level y reputacion, faccion, llaves, condiciones de fallo, delays y unlocks), `src/data/catalog-index.json` (IDs por modo y tombstones de misiones eliminadas del juego) y `src/data/tasks.json` como alias PvE para las vistas actuales. La sincronizacion se niega a escribir si aparecen misiones del otro modo, prerequisitos sin resolver o una caida brusca de datos.
 
 Para actualizar achievements desde `tarkov.dev` y enriquecerlos con la tabla de la wiki:
 

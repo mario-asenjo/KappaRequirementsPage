@@ -1,5 +1,7 @@
 # EFT Log Importer
 
+> **Version 2.0** (#73): genera `schemaVersion: 2` con un bloque por perfil detectado (PvE, PvP, PvP Season). Solo lee sesiones desde la 1.2 (`--since` para cambiarlo), asigna cada evento al perfil seleccionado en ese momento y nunca guarda IDs de cuenta o perfil (usa un hash corto). En `/import` eliges que perfil aplicar; PvE viene preseleccionado. `--schema 1` mantiene el formato antiguo en el CLI del repo.
+
 Herramienta local de solo lectura para generar un JSON importable por la ruta `/import` de Kappa Progress Tracker.
 
 ## Requisitos
@@ -109,3 +111,14 @@ Para validar que el artefacto descargable se regenera y arranca:
 ```bash
 npm run test:extractor-download
 ```
+
+## Inspeccionar logs (survey)
+
+Informe de solo lectura y redactado (sin profile ni account IDs) de lo que contienen los logs, por sesion, perfil y modo:
+
+```bash
+npm run survey:logs -- --eft "C:\\Games\\EscapeFromTarkov"            # sesiones >= 1.2.0.0
+npm run survey:logs -- --eft "C:\\Games\\EscapeFromTarkov" --since 1.0.0.0 --json
+```
+
+Cada evento de quest se atribuye al perfil seleccionado en ese momento (`CompleteSelectedProfile` en `application`) y el modo del perfil sale del gateway que usa (`gw-pve`, `gw-pvp`, `gw-pvp-season`). Detalle en `docs/logs-signal-matrix.md` (#66). El modulo `sessions.ts` es la base del extractor 2.0 (#73).

@@ -56,6 +56,36 @@
 
 ## Historial De Cambios
 
+### 2026-11-18 (extractor 2.0 y seleccion de perfil, #73 #74)
+
+- Rama de trabajo: `feat/extractor-v2` (incluye #83 y #84).
+- Motivo: el usuario vio resultados raros. El extractor publicado (v1, junio) sobre sus logs daba 130 completadas: solo 10 eran PvE >= 1.2 (87 PvE < 1.2, 31 PvP < 1.2, 2 PvP actuales); ademas mostraba el profileId real.
+- `tools/eft-log-importer/extractV2.ts`: un bloque por perfil, estado final = ultimo evento, desconocidos clasificados (`other-mode`, `removed`, `unresolved`), sin IDs reales.
+- El `.mjs` descargable se genera ahora con esbuild desde `standalone.ts` (antes era una copia a mano del parser en una plantilla). Mismo resultado que el CLI del repo verificado con los logs reales.
+- `/import`: acepta v1 y v2; selector de perfil (PvE preseleccionado); aviso y confirmacion obligatoria para aplicar un perfil de otro modo; `lastImport` guarda `profileKey` y `mode`; ya no muestra profileId reales.
+- Logs reales: PvE 10 completadas, 16 en curso, 2 fallidas, 2 sin resolver; PvP 2 completadas. Con `--since 1.0.0.0` aparece tambien un perfil PvP Season (`gw-pvp-season` certificado).
+- Verificacion: todos los `test:*` (nuevo `test:extractor-v2`), `tsc --noEmit`, `npm run build` y capturas de `/import` en escritorio y movil.
+
+### 2026-11-17 (survey de logs, #66)
+
+- Rama de trabajo: `feat/logs-survey`.
+- `tools/eft-log-importer/sessions.ts`: lectura por sesion (`log_<fecha>_<version>`), perfil activo por timestamp (`CompleteSelectedProfile`), modo por gateway del backend, eventos de quest solo desde `push-notifications` con `type` 10/11/12, corte `--since` (por defecto 1.2.0.0) e IDs de perfil hasheados.
+- `npm run survey:logs`: informe redactado. Contra los logs reales 1.3.0.2: perfil PvE 4818 peticiones `gw-pve`, perfil PvP 276 `gw-pvp`, 0 cruces.
+- Descartado: los bloques `members[]` (Level/Side/PrestigeLevel/GameVersion) son de otras cuentas (invitaciones de grupo; su `aid` no coincide con el `AccountId` propio). No hay instantanea fiable de nivel/faccion en logs.
+- Visto con el catalogo de main: varias tasks se renombraron manteniendo ID (p. ej. Farming - Part 4 -> Fuel Crisis, Gunsmith - Part 6 -> Gunsmith - AKM); dato para #72.
+- `npm run test:log-sessions` (fixtures sinteticos, en CI). Verificacion: todos los `test:*`, `tsc --noEmit` y `npm run build` correctos.
+### 2026-11-17 (pipeline de tasks multi-modo, #67)
+
+- Rama de trabajo: `feat/data-json-multimode`.
+- `scripts/fetchTasks.ts` sincroniza `json.tarkov.dev` `/pve` y `/regular` con `--mode` y `--force`; ya no usa GraphQL.
+- Nuevo esquema `Task`: `gameMode`, `modeExclusive`, `faction`, `objectiveDetails` tipados (mapas, items, FiR, `acceptedItemCount`), `prerequisiteIds`, `traderLevelRequirements`, `traderReputationRequirements`, `unlockPools`, `dialogueUnlockTraders`, `neededKeys`, `failConditions`, `restartable`, `availableDelaySeconds`, `rewardUnlocks`, `kappaRequired`, `dataConfidence`.
+- Corregido: el normalizador anterior leia `traderRequirements[].level` (la fuente usa `value`), asi que el LL requerido salia siempre vacio.
+- Corregido en el plan: Collector exige reputacion de Fence (karma Scav) >= 3, no Fence LL3.
+- Datos 2026-11-17: PvE 499 tasks (13 kappaRequired, 338 con mapas por objetivo, 98 con gate de LL, 34 de faccion, 23 exclusivas PvE); PvP 503; 19 tombstones (Make Amends, Assessment, Network Provider, etc.).
+- `src/data/tasks.json` pasa a ser alias PvE: desaparecen las 23 `[PVP ZONE]` y las 19 eliminadas; entran las 23 `[PVE ZONE]` y 23 nuevas. Goal Kappa = 13 tasks de la cadena actual; Lightkeeper provisional = tasks del trader Lightkeeper hasta #77.
+- Prerequisitos resueltos por id (`getPrerequisiteRefs`): los titulos ya no son unicos (variantes BEAR/USEC).
+- Bundle JS: 1.29 MB -> 1.70 MB (297 kB gzip); carga diferida por modo prevista en #71.
+- Verificacion: todos los `test:*`, `tsc --noEmit` y `npm run build` correctos.
 ### 2026-11-17 (plan PvE-first 1.3)
 
 - Rama de trabajo: `docs/pve-first-plan`.
